@@ -1,0 +1,879 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Java_StringBuffer类</title>
+    <url>/2023/06/04/Java-StringBuffer%E7%B1%BB/</url>
+    <content><![CDATA[<h1 id="Java常用实用类学习——StringBuffer类"><a href="#Java常用实用类学习——StringBuffer类" class="headerlink" title="Java常用实用类学习——StringBuffer类"></a>Java常用实用类学习——StringBuffer类</h1><p>StringBuffer类与String类不同，StringBuffer类的对象的的实体的内存空间可以自动改变大小，便于存放一个可变的字符序列。尽管String类是Java.lang包中的final类，但该类提供了修改字符序列的方法。</p>
+<h2 id="StringBuffer类的对象"><a href="#StringBuffer类的对象" class="headerlink" title="StringBuffer类的对象"></a>StringBuffer类的对象</h2><p>StringBuffer类有3个构造方法</p>
+<h3 id="StringBuffer-；"><a href="#StringBuffer-；" class="headerlink" title="StringBuffer()；"></a>StringBuffer()；</h3><p>使用无参的构造方法创建一个StringBuffer对象，那么分配给该对象的实体初始容量可以容纳16个字符，实体容量大于16时，容量自动增加。StringBuffer对象可以通过***length()<em><strong>方法获取实体中存放的字符序列的长度，通过</strong></em>capacity()***方法获取当前实体的实际容量。</p>
+<h3 id="StringBuffer-int-size"><a href="#StringBuffer-int-size" class="headerlink" title="StringBuffer(int size);"></a>StringBuffer(int size);</h3><p>使用本构造方法创建一个StringBuffer对象，那么可以分配给该对象的实体初始容量为参数size指定的字符个数，实体容量大于size时，容量自动增加。</p>
+<h3 id="StringBuffer-String-s"><a href="#StringBuffer-String-s" class="headerlink" title="StringBuffer(String s);"></a>StringBuffer(String s);</h3><p>使用本构造方法创建一个StringBuffer对象，那么可以分配给该对象的实体初始容量为参数s的字符序列的长度再加16。</p>
+<h2 id="StringBuffer类的常用方法"><a href="#StringBuffer类的常用方法" class="headerlink" title="StringBuffer类的常用方法"></a>StringBuffer类的常用方法</h2><h3 id="append"><a href="#append" class="headerlink" title="append();"></a>append();</h3><ul>
+<li>StringBuffer append(String s)：</li>
+</ul>
+<p>将字符串s的字符序列追加到当前StringBuffer对象的字符序列中，并返回当前对象的引用</p>
+<ul>
+<li>StringBuffer append(int n)：</li>
+</ul>
+<p>将int型数组n转换为String对象，再将其加入当前StringBuffer对象的字符序列中，并返回当前对象的引用</p>
+<ul>
+<li>StringBuffer append(Object o)：</li>
+</ul>
+<p>将一个对象o的字符序列表示追加到当前StringBuffer对象的字符序列中，并返回当前对象的引用</p>
+<p>类似的方法还有**StringBuffer append(long n)<strong>、</strong>StringBuffer append(boolean n)<strong>、</strong>StringBuffer append(float n)<strong>、</strong>StringBuffer append(double n)<strong>和</strong>StringBuffer append(char n)**。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">StringBuffer</span> <span class="variable">s</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuffer</span>(<span class="string">&quot;我喜欢&quot;</span>);</span><br><span class="line">s.append(<span class="string">&quot;篮球&quot;</span>);</span><br><span class="line"><span class="comment">//当前s的实体为：我喜欢篮球</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="public-char-charAt-int-n"><a href="#public-char-charAt-int-n" class="headerlink" title="public char charAt(int n);"></a>public char charAt(int n);</h3><p>得到对象的字符序列位置n上的字符</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">StringBuffer</span> <span class="variable">s</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuffer</span>(<span class="string">&quot;我喜欢篮球&quot;</span>);</span><br><span class="line"><span class="type">char</span> <span class="variable">c</span> <span class="operator">=</span> s.charAt(<span class="number">2</span>);</span><br><span class="line"><span class="comment">//c为：欢</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="public-void-setCharAt-int-n-char-ch"><a href="#public-void-setCharAt-int-n-char-ch" class="headerlink" title="public void setCharAt(int n,char ch);"></a>public void setCharAt(int n,char ch);</h3><p>将对象的字符序列位置n上的字符用参数ch代替</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">StringBuffer</span> <span class="variable">s</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuffer</span>(<span class="string">&quot;我喜欢篮球&quot;</span>);</span><br><span class="line">s.charAt(<span class="number">3</span>，<span class="string">&#x27;足&#x27;</span>);</span><br><span class="line"><span class="comment">//此时s的实体为：我喜欢足球</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="StringBuffer-insert-int-index-String-str"><a href="#StringBuffer-insert-int-index-String-str" class="headerlink" title="StringBuffer insert(int index,String str);"></a>StringBuffer insert(int index,String str);</h3><p>将str插入到index位置，并返回当前对象的引用</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">StringBuffer</span> <span class="variable">s</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuffer</span>(<span class="string">&quot;我喜欢篮球&quot;</span>);</span><br><span class="line">s.charAt(<span class="number">3</span>,<span class="string">&quot;唱、跳、rap和&quot;</span>);</span><br><span class="line"><span class="comment">//此时s为：我喜欢唱、跳、rap和篮球</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="public-StringBuffer-reverse"><a href="#public-StringBuffer-reverse" class="headerlink" title="public StringBuffer reverse();"></a>public StringBuffer reverse();</h3><p>将当前对象实体中的字符序列翻转</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">StringBuffer</span> <span class="variable">s</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuffer</span>(<span class="string">&quot;我喜欢篮球&quot;</span>);</span><br><span class="line">s.reverse();</span><br><span class="line"><span class="comment">//此时s为：球蓝欢喜我</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="StringBuffer-delete-int-startIndex-int-endIndex"><a href="#StringBuffer-delete-int-startIndex-int-endIndex" class="headerlink" title="StringBuffer delete(int startIndex,int endIndex);"></a>StringBuffer delete(int startIndex,int endIndex);</h3><p>将当前对象的字符序列中删除一个子字符序列，删除的子字符序列从下标<em><strong>startIndex</strong></em>到<em><strong>endIndex-1</strong></em></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">StringBuffer</span> <span class="variable">s</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuffer</span>(<span class="string">&quot;我喜欢篮球&quot;</span>);</span><br><span class="line">s.delete(<span class="number">3</span>,<span class="number">5</span>);</span><br><span class="line"><span class="comment">//此时s为：我喜欢</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="StringBuffer-replace-int-startIndex-int-endIndex-String-str"><a href="#StringBuffer-replace-int-startIndex-int-endIndex-String-str" class="headerlink" title="StringBuffer replace(int startIndex,int endIndex,String str);"></a>StringBuffer replace(int startIndex,int endIndex,String str);</h3><p>将当前对象的字符序列从下标<em><strong>startIndex</strong></em>到<em><strong>endIndex-1</strong></em>替换为参数str</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">StringBuffer</span> <span class="variable">s</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuffer</span>(<span class="string">&quot;我喜欢篮球&quot;</span>);</span><br><span class="line">s.replace(<span class="number">3</span>,<span class="number">5</span>,<span class="string">&quot;足球&quot;</span>);</span><br><span class="line"><span class="comment">//此时s为：我喜欢足球</span></span><br></pre></td></tr></table></figure>
+
+
+
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Java_String类</title>
+    <url>/2023/06/02/Java-String%E7%B1%BB/</url>
+    <content><![CDATA[<h1 id="Java常用实用类学习——String类"><a href="#Java常用实用类学习——String类" class="headerlink" title="Java常用实用类学习——String类"></a>Java常用实用类学习——String类</h1><p>String类是java中用于处理字符序列的类。String类在java.lang包中，java把String类定义为final类，用户不能拓展String类，即String类不能有子类。</p>
+<h2 id="构造String对象"><a href="#构造String对象" class="headerlink" title="构造String对象"></a>构造String对象</h2><p>String对象习惯地被翻译为字符串对象。</p>
+<h3 id="常量对象"><a href="#常量对象" class="headerlink" title="常量对象"></a>常量对象</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">hi</span> <span class="operator">=</span> <span class="string">&quot;你好&quot;</span>;</span><br><span class="line"><span class="type">String</span> <span class="variable">hello</span> <span class="operator">=</span> <span class="string">&quot;你好&quot;</span>;</span><br></pre></td></tr></table></figure>
+
+<p>Java把用户程序的String常量都放在常量池，所以hi和hello的引用和实体是相同的</p>
+<h3 id="String对象"><a href="#String对象" class="headerlink" title="String对象"></a>String对象</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">&quot;hello&quot;</span>);</span><br><span class="line"><span class="type">String</span> <span class="variable">t</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">&quot;hello&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>使用String类声明对象并创建对象，凡是new运算符构造构造出的对象都不放在常量池中，所以，尽管s和t的实体是相同（s.equals(t)的值是true），但二者引用不同（ s&#x3D;&#x3D;t 结果是false）。</p>
+<p>String类还有两个常见方法</p>
+<ol>
+<li>String(char a[]);</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">char</span> a[] = &#123;<span class="string">&#x27;h&#x27;</span>,<span class="string">&#x27;i&#x27;</span>&#125;;</span><br><span class="line"><span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(a);</span><br><span class="line"></span><br><span class="line"><span class="comment">//相当于</span></span><br><span class="line"></span><br><span class="line"><span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">&quot;hi&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+
+
+<ol start="2">
+<li>String(char a[],int startIndex,int count);</li>
+</ol>
+<p>提取字符数组a中的一部分字符创建对象，startIndex和count是截取的起始位置和截取长度</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">char</span> a[] = &#123;<span class="string">&#x27;你&#x27;</span>,<span class="string">&#x27;好&#x27;</span>,<span class="string">&#x27;呀&#x27;</span>&#125;;</span><br><span class="line"><span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(a,<span class="number">1</span>,<span class="number">2</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//相当于</span></span><br><span class="line"></span><br><span class="line"><span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">&quot;好呀&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="不可变对象"><a href="#不可变对象" class="headerlink" title="不可变对象"></a>不可变对象</h3><p>对象的变量中存储的值不能再发生变化，原因是String是final类，String类也没有给其对象提供修改实体的方法。</p>
+<h2 id="String对象的并置"><a href="#String对象的并置" class="headerlink" title="String对象的并置"></a>String对象的并置</h2><p>String对象可以使用”+“进行并置运算，即首尾相接得到一个新的String对象。</p>
+<ul>
+<li>参与并置运算的String对象中有一个是变量，那么就会得到新的引用和实体</li>
+<li>参与并置运算的对象都是常量，那么得到的仍然是常量</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">hello</span> <span class="operator">=</span> <span class="string">&quot;你好&quot;</span>;</span><br><span class="line"><span class="type">String</span> <span class="variable">testOne</span> <span class="operator">=</span> <span class="string">&quot;你&quot;</span> + <span class="string">&quot;好&quot;</span>;</span><br><span class="line"><span class="comment">//hello、testOne的引用相同，即hello == testOne的结果为true</span></span><br><span class="line"></span><br><span class="line"><span class="type">String</span> <span class="variable">you</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">&quot;你&quot;</span>);</span><br><span class="line"><span class="type">String</span> <span class="variable">hi</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">&quot;好&quot;</span>);</span><br><span class="line"><span class="type">String</span> <span class="variable">textTwo</span> <span class="operator">=</span> you + hi;</span><br><span class="line"><span class="comment">//textTwo、testOne的引用不同，即textTwo == testOne的结果为false</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="String类的常用方法"><a href="#String类的常用方法" class="headerlink" title="String类的常用方法"></a>String类的常用方法</h2><h3 id="public-int-length"><a href="#public-int-length" class="headerlink" title="public int length();"></a>public int length();</h3><p>String类中的length()方法来获取一个String对象的字符序列的长度。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="string">&quot;戈仑石人&quot;</span>;</span><br><span class="line"><span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> s.length();      <span class="comment">//n的值为4</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="public-boolean-equals-String-s"><a href="#public-boolean-equals-String-s" class="headerlink" title="public boolean equals(String s);"></a>public boolean equals(String s);</h3><p>调用该方法比较当前String对象的字符序列是否与参数s指定的String对象的字符序列相同（比较实体是否相同）</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">s1</span> <span class="operator">=</span> <span class="string">&quot;加农炮&quot;</span>;</span><br><span class="line"><span class="type">String</span> <span class="variable">s2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">&quot;加农炮&quot;</span>);</span><br><span class="line">s1.equals(s2);                    		<span class="comment">//true</span></span><br><span class="line">s1 == s2;						 	 	<span class="comment">//false</span></span><br><span class="line"><span class="comment">//注意“==”和equals(String s)用法的区别。前者比较引用是否相同，后者判断实体是否相同</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h3 id="public-boolean-startsWith-String-s"><a href="#public-boolean-startsWith-String-s" class="headerlink" title="public boolean startsWith(String s);"></a>public boolean startsWith(String s);</h3><p>判断当前对象的字符序列前缀是否为参数指定的s</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="string">&quot;每张卡牌生来平等，皇家巨人也不例外&quot;</span>;</span><br><span class="line">s.startsWith(<span class="string">&quot;每张&quot;</span>);                                 <span class="comment">//true</span></span><br><span class="line">s.startsWith(<span class="string">&quot;卡牌&quot;</span>);								 <span class="comment">//false</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="public-boolean-endWith-String-s"><a href="#public-boolean-endWith-String-s" class="headerlink" title="public boolean endWith(String s);"></a>public boolean endWith(String s);</h3><p>判断当前对象的字符序列后缀是否为参数指定的s</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="string">&quot;每张卡牌生来平等，皇家巨人也不例外&quot;</span>;</span><br><span class="line">s.endsWith(<span class="string">&quot;例外&quot;</span>);                                 <span class="comment">//true</span></span><br><span class="line">s.endsWith(<span class="string">&quot;卡牌&quot;</span>);								 <span class="comment">//false</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="public-int-compareTo-String-s"><a href="#public-int-compareTo-String-s" class="headerlink" title="public int compareTo(String s);"></a>public int compareTo(String s);</h3><p>对象调用该方法按字典序与参数s的字符序列比较大小。相同返回0，大于s返回正值，小于s返回负值。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="string">&quot;abcde&quot;</span>;</span><br><span class="line">s.compareTo(<span class="string">&quot;boy&quot;</span>);      <span class="comment">//负值</span></span><br><span class="line">s.compareTo(<span class="string">&quot;aba&quot;</span>);      <span class="comment">//正值</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="public-boolean-contains-String-s"><a href="#public-boolean-contains-String-s" class="headerlink" title="public boolean contains(String s);"></a>public boolean contains(String s);</h3><p>判断当前对象中是否包含参数s中的字符序列</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="string">&quot;瓦基丽武神&quot;</span>; </span><br><span class="line">s.contains(<span class="string">&quot;武神&quot;</span>);       <span class="comment">//true</span></span><br><span class="line">s.contains(<span class="string">&quot;丽丽&quot;</span>);		<span class="comment">//false</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="public-int-indexOf-String-s"><a href="#public-int-indexOf-String-s" class="headerlink" title="public int indexOf(String s);"></a>public int indexOf(String s);</h3><p>从0位置开始索引首次出现参数s出现位置，并返回该位置，如果没有检索到则返回-1</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="string">&quot;上海自来水来自海上&quot;</span>;</span><br><span class="line"><span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> s.indexOf(<span class="string">&quot;海&quot;</span>);          <span class="comment">//n等于1</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="public-int-lastIndexOf-String-s"><a href="#public-int-lastIndexOf-String-s" class="headerlink" title="public int lastIndexOf(String s);"></a>public int lastIndexOf(String s);</h3><p>从0位置开始索引最后一次出现参数s出现位置，并返回该位置，如果没有检索到则返回-1</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="string">&quot;上海自来水来自海上&quot;</span>;</span><br><span class="line"><span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> s.lastIndexOf(<span class="string">&quot;海&quot;</span>);       <span class="comment">//n等于7</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="public-String-substring-int-startpoint"><a href="#public-String-substring-int-startpoint" class="headerlink" title="public String substring(int startpoint);"></a>public String substring(int startpoint);</h3><p>复制从位置startpoint到最后位置上的字符到新的字符序列。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">s1</span> <span class="operator">=</span> <span class="string">&quot;我喜欢唱、跳、rap、篮球&quot;</span>;</span><br><span class="line"><span class="type">String</span> <span class="variable">s2</span> <span class="operator">=</span> s7.substring(<span class="number">3</span>);           <span class="comment">//s2的字符序列是：唱、跳、rap、篮球</span></span><br></pre></td></tr></table></figure>
+
+<p>PS：substring(int start，int end)为复制从start位置至end-1位置</p>
+<h3 id="public-String-trim"><a href="#public-String-trim" class="headerlink" title="public String trim();"></a>public String trim();</h3><p>调用该方法将得到一个新的对象，该对象是当前对象的字符序列<em><strong>去掉前后空格</strong></em>的字符序列</p>
+<h2 id="String对象与基本数据的相互转换"><a href="#String对象与基本数据的相互转换" class="headerlink" title="String对象与基本数据的相互转换"></a>String对象与基本数据的相互转换</h2><h3 id="将String转换为基本型"><a href="#将String转换为基本型" class="headerlink" title="将String转换为基本型"></a>将String转换为基本型</h3><p>使用Java.lang包中的<em><strong>Integer</strong></em>类调用其类方法***public static int parseInt(String s)***可以将由”数字“字符组成的字符序列转化为int型数据。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> x;</span><br><span class="line"><span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="string">&quot;1234&quot;</span>;</span><br><span class="line">x = Integer.parseInt(s);</span><br></pre></td></tr></table></figure>
+
+<p>类似，使用java.lang包中的Byte、Short、Long、Float、Double类调用相应的类方法</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Floatpublic <span class="keyword">static</span> <span class="type">byte</span> <span class="title function_">parseByte</span><span class="params">(String s)</span> <span class="keyword">throws</span> NumberFormatException</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">short</span> <span class="title function_">parseShort</span><span class="params">(String s)</span> <span class="keyword">throws</span> NumberFormatException</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">long</span> <span class="title function_">parseLong</span><span class="params">(String s)</span> <span class="keyword">throws</span> NumberFormatException</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">float</span> <span class="title function_">parseFloat</span><span class="params">(String s)</span> <span class="keyword">throws</span> NumberFormatException</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">double</span> <span class="title function_">parseDouble</span><span class="params">(String s)</span> <span class="keyword">throws</span> NumberFormatException    </span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="将基本型转换为String对象"><a href="#将基本型转换为String对象" class="headerlink" title="将基本型转换为String对象"></a>将基本型转换为String对象</h3><p>可以使用以下String类的类方法</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">valueOf</span><span class="params">(<span class="type">byte</span> n)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">valueOf</span><span class="params">(<span class="type">int</span> n)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">valueOf</span><span class="params">(<span class="type">long</span> n)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">valueOf</span><span class="params">(<span class="type">float</span> n)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">valueOf</span><span class="params">(<span class="type">double</span> n)</span>    </span><br></pre></td></tr></table></figure>
+
+<p>例：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">s1</span> <span class="operator">=</span> String.valueOf(<span class="number">1234</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//也可以用到上面介绍的并置运算，即使用一个空字符串与基本型数据进行并置运算</span></span><br><span class="line"><span class="type">String</span> <span class="variable">s2</span> <span class="operator">=</span> <span class="string">&quot;&quot;</span> + <span class="number">1234</span>;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="基本型数据的进制表示"><a href="#基本型数据的进制表示" class="headerlink" title="基本型数据的进制表示"></a>基本型数据的进制表示</h3><p>可以把整形数据（例如int、long型数据的二进制、八进制、或十六进制）转换成String对象，即让String对象封装的字符序列是int或long型数据的二进制、八进制或十六进制。</p>
+<p>Integer和long类的下列类方法返回整数的进制的String对象表示（负数返回补码），即返回的String对象封装的字符序列是<em><strong>参数的相应进制</strong></em></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">toBinaryString</span><span class="params">(<span class="type">int</span> i)</span>       <span class="comment">//二进制</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">toOctalString</span><span class="params">(<span class="type">int</span> i)</span>		 <span class="comment">//八进制</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">toHexString</span><span class="params">(<span class="type">int</span> i)</span>			 <span class="comment">//十六进制</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">toBinaryString</span><span class="params">(<span class="type">long</span> i)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">toOctalString</span><span class="params">(<span class="type">long</span> i)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">tohexString</span><span class="params">(<span class="type">long</span> i)</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="关于main-方法的参数化"><a href="#关于main-方法的参数化" class="headerlink" title="关于main()方法的参数化"></a>关于main()方法的参数化</h3><p>使用解释器java.exe执行程序来执行主类时，从键盘输入若干字符序列 ，用空格分开，它们分别对应args[0]、args[1]、args[2]……</p>
+<h2 id="对象的String表示"><a href="#对象的String表示" class="headerlink" title="对象的String表示"></a>对象的String表示</h2><p>所有的类都默认是java.lang包中Object类的子类或间接子类。Object类有一个public String toString()方法，一个对象调用该方法返回String对象的字符序列的一般形式为</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">创建对象的类的名字@对象的引用</span><br><span class="line"></span><br><span class="line">System.out.println(object);</span><br><span class="line">//等价于</span><br><span class="line">System.out,println(object.toString)</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Hello myblog</title>
+    <url>/2023/04/14/Hello-myblog/</url>
+    <content><![CDATA[<h1 id="Hello-myblog"><a href="#Hello-myblog" class="headerlink" title="Hello myblog"></a>Hello myblog</h1><h2 id="这是我的发布-水-的第一篇博客，简单纪念一下！！！"><a href="#这是我的发布-水-的第一篇博客，简单纪念一下！！！" class="headerlink" title="这是我的发布(水)的第一篇博客，简单纪念一下！！！"></a>这是我的发布(水)的第一篇博客，简单纪念一下！！！</h2><h2 id="大概花了五天时间搭建并美化了博客，前三天搭建，后两天美化"><a href="#大概花了五天时间搭建并美化了博客，前三天搭建，后两天美化" class="headerlink" title="大概花了五天时间搭建并美化了博客，前三天搭建，后两天美化"></a>大概花了五天时间搭建并美化了博客，前三天搭建，后两天美化</h2><h2 id="下面简单介绍一下-GitHub-Hexo-搭建个人博客的准备吧"><a href="#下面简单介绍一下-GitHub-Hexo-搭建个人博客的准备吧" class="headerlink" title="下面简单介绍一下 GitHub + Hexo 搭建个人博客的准备吧"></a>下面简单介绍一下 GitHub + Hexo 搭建个人博客的准备吧</h2><h3 id="搭建准备"><a href="#搭建准备" class="headerlink" title="搭建准备"></a>搭建准备</h3><ul>
+<li>注册Github账号，并搭建仓库（文件托管平台，我们博客目录文件存放的地方）<br><a href="https://github.com/">github地址，点击即可传送</a></li>
+<li>下载安装并配置Node.js<br><a href="https://nodejs.org/en/download">Node.js下载地址</a> </li>
+<li>下载Git（访问和修改博客的接口）<br><a href="https://git-scm.com/download/win">Git下载地址</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>others</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Markdown语法学习</title>
+    <url>/2023/04/22/Markdown%E8%AF%AD%E6%B3%95%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[<h1 id="Markdown语法学习"><a href="#Markdown语法学习" class="headerlink" title="Markdown语法学习"></a>Markdown语法学习</h1><h2 id="Markdown介绍"><a href="#Markdown介绍" class="headerlink" title="Markdown介绍"></a>Markdown介绍</h2><p>Markdown是一种轻量级标记语言，它使用纯文本格式编写，可通过转换工具将其转换成 HTML、PDF 和其他格式，常用于撰写技术文档、博客、论坛帖子等。它语法简单、清晰易读，可以让写作者更加专注于内容的表达和组织，减少排版和格式化的时间，提高效率和创作体验。</p>
+<h2 id="使用工具"><a href="#使用工具" class="headerlink" title="使用工具"></a>使用工具</h2><ul>
+<li>VS Code： 轻量级文本编辑器，插件丰富，可拓展性强</li>
+<li>Typora：UI简洁，所见即所得</li>
+</ul>
+<h2 id="标题标签"><a href="#标题标签" class="headerlink" title="标题标签"></a>标题标签</h2><p>几个”#”即表示几级标签，共六级标题，字体大小依次减小</p>
+<p>代码：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section"># 一级标题</span></span><br><span class="line"><span class="section">## 二级标题</span></span><br><span class="line"><span class="section">### 三级标题</span></span><br><span class="line"><span class="section">#### 四级标题</span></span><br><span class="line"><span class="section">##### 五级标题</span></span><br><span class="line"><span class="section">###### 六级标题</span></span><br></pre></td></tr></table></figure>
+
+<p>效果展示：</p>
+<h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4><h5 id="五级标题"><a href="#五级标题" class="headerlink" title="五级标题"></a>五级标题</h5><h6 id="六级标题"><a href="#六级标题" class="headerlink" title="六级标题"></a>六级标题</h6><h2 id="文本标签"><a href="#文本标签" class="headerlink" title="文本标签"></a>文本标签</h2><h3 id="加粗"><a href="#加粗" class="headerlink" title="加粗"></a>加粗</h3><p>代码：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="strong">**加粗内容**</span></span><br></pre></td></tr></table></figure>
+
+<p>效果展示：</p>
+<p><strong>加粗内容</strong></p>
+<h3 id="倾斜"><a href="#倾斜" class="headerlink" title="倾斜"></a>倾斜</h3><p>代码：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="emphasis">*倾斜内容1*</span></span><br><span class="line"><span class="emphasis">_倾斜内容2_</span></span><br></pre></td></tr></table></figure>
+
+<p>效果展示：</p>
+<p><em>倾斜内容1</em></p>
+<p><em>倾斜内容2</em></p>
+<h3 id="下划线"><a href="#下划线" class="headerlink" title="下划线"></a>下划线</h3><p>代码：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">u</span>&gt;</span></span>下划线<span class="language-xml"><span class="tag">&lt;/<span class="name">u</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<p>效果展示：</p>
+<p><u>下划线</u></p>
+<h3 id="删除线"><a href="#删除线" class="headerlink" title="删除线"></a>删除线</h3><p>代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">~~删除~~</span><br></pre></td></tr></table></figure>
+
+<p>效果展示：</p>
+<p><del>删除</del></p>
+<h3 id="标记（高亮）"><a href="#标记（高亮）" class="headerlink" title="标记（高亮）"></a>标记（高亮）</h3><p>代码：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">==标记==</span><br></pre></td></tr></table></figure>
+
+<p>效果展示：</p>
+<p>&#x3D;&#x3D;标记&#x3D;&#x3D;</p>
+<h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><p>代码：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="quote">&gt; 引用</span></span><br></pre></td></tr></table></figure>
+
+<p>效果展示</p>
+<blockquote>
+<p>引用</p>
+</blockquote>
+<h3 id="上下标"><a href="#上下标" class="headerlink" title="上下标"></a>上下标</h3><p>代码（注意都是双标签，中间夹的为上(下)标内容）：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">m^2^</span><br><span class="line">H~2~O</span><br></pre></td></tr></table></figure>
+
+<p>效果展示：</p>
+<p>m^2^</p>
+<p>H<del>2</del>O</p>
+<h2 id="列表标签"><a href="#列表标签" class="headerlink" title="列表标签"></a>列表标签</h2><h3 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h3><p>代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">- 中国</span><br><span class="line">+ 辽宁</span><br><span class="line">* 沈阳</span><br></pre></td></tr></table></figure>
+
+<p>效果展示：</p>
+<ul>
+<li>中国<ul>
+<li>辽宁<ul>
+<li>沈阳</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h3><p>代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">1. 尤塞恩·博尔特</span><br><span class="line">2. 约翰·布雷克</span><br><span class="line">3. 泰森·盖伊</span><br></pre></td></tr></table></figure>
+
+<p>效果展示：</p>
+<ol>
+<li>尤塞恩·博尔特</li>
+<li>约翰·布雷克</li>
+<li>泰森·盖伊</li>
+</ol>
+<h3 id="任务列表"><a href="#任务列表" class="headerlink" title="任务列表"></a>任务列表</h3><p>代码（”-“和”[ ]”之间有三个空格）：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="bullet">-</span>   [x] 早饭</span><br><span class="line"><span class="bullet">-</span>   [ ] 午饭</span><br><span class="line"><span class="bullet">-</span>   [ ] 晚饭</span><br></pre></td></tr></table></figure>
+
+<p>效果展示：</p>
+<ul>
+<li><p><input checked="" disabled="" type="checkbox"> 
+早饭</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+午饭</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+晚饭</p>
+</li>
+</ul>
+<h2 id="公式代码"><a href="#公式代码" class="headerlink" title="公式代码"></a>公式代码</h2><h3 id="行内代码"><a href="#行内代码" class="headerlink" title="行内代码"></a>行内代码</h3><p>代码（在”1”左边，注意要使用英文输入）：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="code">`int`</span> 整形</span><br></pre></td></tr></table></figure>
+
+<p>效果展示：</p>
+<p><code>int</code> 整形</p>
+<h3 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h3><p>代码（第一行”&#96;”后面的为语言类型，建议直接使用快捷键）：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">````c</span><br><span class="line">void main()&#123;</span><br><span class="line">	……</span><br><span class="line">&#125;</span><br><span class="line">````</span><br></pre></td></tr></table></figure>
+
+<p>效果展示：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">	……</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="行内公式"><a href="#行内公式" class="headerlink" title="行内公式"></a>行内公式</h3><p>代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">二倍角公式：$sin2x = 2sinxcosx$ </span><br></pre></td></tr></table></figure>
+
+<p>效果展示：</p>
+<p> 二倍角公式：$sin2x &#x3D; 2sinxcosx$ </p>
+<h3 id="公式块"><a href="#公式块" class="headerlink" title="公式块"></a>公式块</h3><p>代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$$</span><br><span class="line">E_&#123;\rm k&#125; = \frac 1 2 m v^2</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
+
+<p>效果展示：<br>$$<br>E_{\rm k} &#x3D; \frac 1 2 m v^2<br>$$</p>
+<h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><p>代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">|      |   小米   |   vivo   |</span><br><span class="line">| ---- | ---- | ---- |</span><br><span class="line">|   手机   |      |      |</span><br><span class="line">|   平板   |      |      |</span><br></pre></td></tr></table></figure>
+
+<p>效果展示：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>小米</th>
+<th>vivo</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>手机</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>平板</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="超链接"><a href="#超链接" class="headerlink" title="超链接"></a>超链接</h2><p>代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[哔哩哔哩](https://www.bilibili.com/)</span><br></pre></td></tr></table></figure>
+
+<p>效果展示：</p>
+<p><a href="https://www.bilibili.com/">哔哩哔哩</a></p>
+<h2 id="插入图片"><a href="#插入图片" class="headerlink" title="插入图片"></a>插入图片</h2><p>代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">![](图片路径)</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><p>代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[^1]</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h2><p>代码（三个以上减号即可）：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">----</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><p>代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[TOC]</span><br></pre></td></tr></table></figure>
+
+
+
+]]></content>
+      <categories>
+        <category>Markdown</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Python基础(一)——基本数据类型</title>
+    <url>/2023/07/13/Python%E5%9F%BA%E7%A1%80(%E4%B8%80)%E2%80%94%E2%80%94%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</url>
+    <content><![CDATA[<h1 id="初识Python"><a href="#初识Python" class="headerlink" title="初识Python"></a>初识Python</h1><h2 id="起源"><a href="#起源" class="headerlink" title="起源"></a>起源</h2><p>1989年，Guidio van Rossum吉多·范罗苏姆决心开发一个新的解释程序（Python雏形）</p>
+<p>1991年，第一个Python解释器诞生，Pyhton名字来自于吉多·范罗苏姆喜欢的电视：<em>Monty Python‘s Flying Circus</em></p>
+<h2 id="适用面"><a href="#适用面" class="headerlink" title="适用面"></a>适用面</h2><table>
+<thead>
+<tr>
+<th>人群</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>IT从业者</td>
+<td>自动化脚本（运维开发、测试工具等）</td>
+</tr>
+<tr>
+<td>普通白领</td>
+<td>自动化办公</td>
+</tr>
+<tr>
+<td>后端开发</td>
+<td>WEB应用程序</td>
+</tr>
+<tr>
+<td>科学家基于</td>
+<td>基于Python完成数据计算（生物、化学、物理）</td>
+</tr>
+<tr>
+<td>人工智能&#x2F;机器学习</td>
+<td>基于Python开发AI程序</td>
+</tr>
+<tr>
+<td>大数据开发</td>
+<td>基于Python完成大数据任务开发（Spark、Flink）</td>
+</tr>
+</tbody></table>
+<h2 id="开发环境"><a href="#开发环境" class="headerlink" title="开发环境"></a>开发环境</h2><ul>
+<li>Python解释器环境内，执行单行代码</li>
+<li>使用Python解释器执行，执行Python代码文件</li>
+<li>使用第三方IDE(集成开发工具)，如PyCharm软件、开发Python程序</li>
+</ul>
+<h1 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h1><h2 id="字面量"><a href="#字面量" class="headerlink" title="字面量"></a>字面量</h2><p>字面量：在代码中，被写下来的固定值，成为字面量</p>
+<p>常用的值的类型：Python中常用的6种值（数据）的类型</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>描述</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>数字（Number）</td>
+<td>整数（int）、浮点数（float）、复数（complex）、布尔（bool）</td>
+<td></td>
+</tr>
+<tr>
+<td>字符串（Strng）</td>
+<td>描述文本的一种数据类型</td>
+<td>字符串由任意数量的字符组成</td>
+</tr>
+<tr>
+<td>列表（List）</td>
+<td>有序的可变序列</td>
+<td>Python中使用在频繁的数据类型，可有序记录一堆数据</td>
+</tr>
+<tr>
+<td>元组（Tuple）</td>
+<td>有序的不可变序列</td>
+<td>可有序记录一堆不可变的Python数据集合</td>
+</tr>
+<tr>
+<td>集合（Set）</td>
+<td>无序不重合集合</td>
+<td>可无序记录一堆不重复的Python数据集合</td>
+</tr>
+<tr>
+<td>字典（Dictionary）</td>
+<td>无序Key-Value集合</td>
+<td>可无序纪律一堆Key-Value型的Python数据集合</td>
+</tr>
+</tbody></table>
+<h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 这是注释1，只能单行</span></span><br><span class="line"><span class="string">&quot;&quot;&quot; 这是注释2，可以多行注释 &quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><p>变量就是在程序运行时，记录数据的，变量的值可以改变</p>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><p>目前入门阶段，主要接触三类数据类型</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>描述</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>string</td>
+<td>字符串类型</td>
+<td>用引号引起来的数据都是字符串</td>
+</tr>
+<tr>
+<td>int</td>
+<td>整形（有符号）</td>
+<td>数字类型，存放整数</td>
+</tr>
+<tr>
+<td>float</td>
+<td>浮点型（有符号）</td>
+<td>数字类型，存放小数</td>
+</tr>
+</tbody></table>
+<p>可以使用type()语句查看数据类型：<em><strong>type(被查看类型的数据)</strong></em></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 使用print直接输出类型信息</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(<span class="string">&quot;hello&quot;</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(<span class="number">666</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(<span class="number">3.1415926</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用变量储存type()语句的结果</span></span><br><span class="line">string_type = <span class="built_in">type</span>(<span class="string">&quot;hello&quot;</span>)</span><br><span class="line">int_type = <span class="built_in">type</span>(<span class="number">666</span>)</span><br><span class="line">float_type = <span class="built_in">type</span>(<span class="number">3.1415926</span>)</span><br><span class="line"><span class="built_in">print</span>(string_type)</span><br><span class="line"><span class="built_in">print</span>(int_type)</span><br><span class="line"><span class="built_in">print</span>(float_type)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用type()语句，查看存储的数据类型信息</span></span><br><span class="line">name = <span class="number">2.71828</span></span><br><span class="line">name_type = <span class="built_in">type</span>(name)</span><br><span class="line"><span class="built_in">print</span>(name_type)</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">输出结果：</span></span><br><span class="line"><span class="string">&lt;class &#x27;str&#x27;&gt;</span></span><br><span class="line"><span class="string">&lt;class &#x27;int&#x27;&gt;</span></span><br><span class="line"><span class="string">&lt;class &#x27;float&#x27;&gt;</span></span><br><span class="line"><span class="string">&lt;class &#x27;str&#x27;&gt;</span></span><br><span class="line"><span class="string">&lt;class &#x27;int&#x27;&gt;</span></span><br><span class="line"><span class="string">&lt;class &#x27;float&#x27;&gt;</span></span><br><span class="line"><span class="string">&lt;class &#x27;float&#x27;&gt;</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>python中变量是没有类型的，而变量储存的数据是有类型的</strong></p>
+<h2 id="数据类型转化"><a href="#数据类型转化" class="headerlink" title="数据类型转化"></a>数据类型转化</h2><p>数据类型转化使用场景：</p>
+<ul>
+<li>从文件中读取数字，默认是字符串，我们需要转换成数字类型</li>
+<li>input()语句，默认结果是字符串，若需要数字也需要转化</li>
+</ul>
+<p>………</p>
+<p>常见转换语句</p>
+<table>
+<thead>
+<tr>
+<th>语句(函数)</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>int(x)</td>
+<td>将x转换成一个整数</td>
+</tr>
+<tr>
+<td>float(x)</td>
+<td>将x转换成一个浮点数</td>
+</tr>
+<tr>
+<td>str(x)</td>
+<td>将x转换成字符串</td>
+</tr>
+</tbody></table>
+<p>PS：同前面的type()语句一样，这三个语句都是带有结果的（返回值），我们可以直接用print输出，或用变量存储返回值</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 将数字类型转换成字符串类型</span></span><br><span class="line">num_str = <span class="built_in">str</span>(<span class="number">11</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(num_str),num_str)</span><br><span class="line"></span><br><span class="line">float_str = <span class="built_in">str</span>(<span class="number">3.14</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(float_str),float_str)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将字符串转换成数字</span></span><br><span class="line">num1 = <span class="built_in">int</span>(<span class="string">&quot;1234&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(num1),num1)</span><br><span class="line"></span><br><span class="line">num2 = <span class="built_in">float</span>(<span class="string">&quot;11&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(num2),num2)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 整数转浮点</span></span><br><span class="line">float_num = <span class="built_in">float</span>(<span class="number">11</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(float_num),float_num)</span><br></pre></td></tr></table></figure>
+
+<p>注意：</p>
+<ul>
+<li>任意类型都可以转换成字符串，但字符串中有数字才可以转换成数字类型</li>
+<li>浮点型可以转换成整型，但会精度损失（小数部分丢失）</li>
+</ul>
+<h2 id="标识符"><a href="#标识符" class="headerlink" title="标识符"></a>标识符</h2><p>在python中，我们可以给许多东西起名字，如</p>
+<ul>
+<li>变量名字</li>
+<li>方法名字</li>
+<li>类的名字</li>
+</ul>
+<p>……</p>
+<p>这些名字，我们把它统一的称之为标识符，用来做内容的标识</p>
+<p><strong>标识符命名规则</strong></p>
+<ul>
+<li>只允许使用<strong>英文</strong>，中文（不推荐），<strong>数字</strong>，<strong>下划线</strong>这四种内容</li>
+<li>数字不可以开头</li>
+<li>区分大小写</li>
+<li>不可以使用关键字</li>
+</ul>
+<h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><h3 id="算数运算符（数学运算符）"><a href="#算数运算符（数学运算符）" class="headerlink" title="算数运算符（数学运算符）"></a>算数运算符（数学运算符）</h3><table>
+<thead>
+<tr>
+<th align="center">运算符</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">+</td>
+<td align="center">加</td>
+</tr>
+<tr>
+<td align="center">-</td>
+<td align="center">减</td>
+</tr>
+<tr>
+<td align="center">*</td>
+<td align="center">乘</td>
+</tr>
+<tr>
+<td align="center">&#x2F;</td>
+<td align="center">除</td>
+</tr>
+<tr>
+<td align="center">&#x2F;&#x2F;</td>
+<td align="center">取整除</td>
+</tr>
+<tr>
+<td align="center">%</td>
+<td align="center">取余</td>
+</tr>
+<tr>
+<td align="center">**</td>
+<td align="center">指数</td>
+</tr>
+</tbody></table>
+<h3 id="赋值运算符"><a href="#赋值运算符" class="headerlink" title="赋值运算符"></a>赋值运算符</h3><table>
+<thead>
+<tr>
+<th align="center">运算符</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">&#x3D;</td>
+<td align="center">赋值运算符</td>
+</tr>
+</tbody></table>
+<h3 id="复合赋值运算符"><a href="#复合赋值运算符" class="headerlink" title="复合赋值运算符"></a>复合赋值运算符</h3><table>
+<thead>
+<tr>
+<th align="center">运算符</th>
+<th align="center">描述</th>
+<th align="center">实例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">+&#x3D;</td>
+<td align="center">加法赋值运算符</td>
+<td align="center">c +&#x3D; a等效于c &#x3D; c + a</td>
+</tr>
+<tr>
+<td align="center">-&#x3D;</td>
+<td align="center">减法赋值运算符</td>
+<td align="center">c -&#x3D; a等效于c &#x3D; c - a</td>
+</tr>
+<tr>
+<td align="center">*&#x3D;</td>
+<td align="center">乘法赋值运算符</td>
+<td align="center">c *&#x3D; a等效于c &#x3D; c * a</td>
+</tr>
+<tr>
+<td align="center">&#x2F;&#x3D;</td>
+<td align="center">除法赋值运算符</td>
+<td align="center">c &#x2F;&#x3D; a等效于c &#x3D; c &#x2F; a</td>
+</tr>
+<tr>
+<td align="center">%&#x3D;</td>
+<td align="center">取模赋值运算符</td>
+<td align="center">c %&#x3D; a等效于c &#x3D; c % a</td>
+</tr>
+<tr>
+<td align="center">**&#x3D;</td>
+<td align="center">幂赋值运算符</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">&#x2F;&#x2F;&#x3D;</td>
+<td align="center">取整除赋值运算符</td>
+<td align="center">c &#x2F;&#x2F;&#x3D; a等效于c &#x3D; c &#x2F;&#x2F; a</td>
+</tr>
+</tbody></table>
+<h2 id="字符串扩展"><a href="#字符串扩展" class="headerlink" title="字符串扩展"></a>字符串扩展</h2><h3 id="三种定义方法"><a href="#三种定义方法" class="headerlink" title="三种定义方法"></a>三种定义方法</h3><p>字符串在python中有多种定义形式</p>
+<ol>
+<li>单引号定义法：name &#x3D; ‘hello’</li>
+<li>双引号定义法：name &#x3D; “hello”</li>
+<li>三引号定义法：name &#x3D; “”” hello “””</li>
+</ol>
+<p>PS：三引号定义法，和多行注释的写法一样，同样支持换行操作。</p>
+<p>使用变量接收它，他就是字符串，否则是多行注释</p>
+<p>如果想在字符串中使用单引号或双引号：</p>
+<ul>
+<li>单引号定义法，可以内含双引号</li>
+<li>双引号定义法，可以内含单引号</li>
+<li>使用转义字符（\）</li>
+</ul>
+<h3 id="字符串拼接"><a href="#字符串拼接" class="headerlink" title="字符串拼接"></a>字符串拼接</h3><p>如果我们有多个字符串，可以通过“**+**”将其拼接成一个字符串</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;hello &quot;</span>+<span class="string">&quot;world&quot;</span>)</span><br><span class="line">str1 = <span class="string">&quot;大家好&quot;</span></span><br><span class="line">str2 = <span class="string">&quot;我用Python&quot;</span></span><br><span class="line"><span class="built_in">print</span>(str1 + <span class="string">&quot;，人生苦短，&quot;</span> + str2)</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">输出结果：</span></span><br><span class="line"><span class="string">hello world</span></span><br><span class="line"><span class="string">大家好，人生苦短，我用Python</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>注意：</p>
+<p>”+“无法将非字符串类型的数据拼接</p>
+<h3 id="字符串格式化"><a href="#字符串格式化" class="headerlink" title="字符串格式化"></a>字符串格式化</h3><p>由于拼接字符串变量过多时拼接太麻烦，且字符串无法和数字或其他类型完成拼接，因而引入字符串的格式化</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">str1 = <span class="number">64</span></span><br><span class="line">str2 = <span class="number">8</span></span><br><span class="line">message = <span class="string">&quot;%s除以%s等于%s&quot;</span> % (str1,str2,str2)</span><br><span class="line"><span class="built_in">print</span>(message)</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">输出结果：</span></span><br><span class="line"><span class="string">64除以8等于8</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>其中的，%s</p>
+<ul>
+<li>%表示：我要占位</li>
+<li>s表示：将变量变成字符串放入占位的地方</li>
+</ul>
+<p>所以，综合起来的意思就是：我先占个位置，等一会有个变量过来，我把它变成字符串放到占位的位置</p>
+<p>注意：多个变量占位，变量要用括号括起来，并且按照占位的顺序填入</p>
+<p>Python中最常用的三类占位，用法和上文%s用法类似</p>
+<table>
+<thead>
+<tr>
+<th align="center">格式符号</th>
+<th align="center">转化</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">%s</td>
+<td align="center">将内容转化为字符串，放入占位位置</td>
+</tr>
+<tr>
+<td align="center">%d</td>
+<td align="center">将内容转化成整数，放入占位位置</td>
+</tr>
+<tr>
+<td align="center">%f</td>
+<td align="center">将内容转化成浮点型，放入占位位置</td>
+</tr>
+</tbody></table>
+<h3 id="格式化的精度控制"><a href="#格式化的精度控制" class="headerlink" title="格式化的精度控制"></a>格式化的精度控制</h3><p><strong>字符串格式化-数字精度控制</strong></p>
+<p>我们可以使用辅助符号“m.n”来控制数据的宽度和精度</p>
+<ul>
+<li>m，控制宽度，要求是数字（很少使用），设置的宽度小于数字自身，不生效</li>
+<li>.n，控制小数点精度，要求是数字，会进行小数的四舍五入</li>
+</ul>
+<h3 id="字符串格式化方法2"><a href="#字符串格式化方法2" class="headerlink" title="字符串格式化方法2"></a>字符串格式化方法2</h3><p>语法：</p>
+<p>f”内容{变量}”</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">str1 = <span class="string">&quot;2023年&quot;</span></span><br><span class="line">str2 = <span class="number">23</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;今年是<span class="subst">&#123;str1&#125;</span>，二十一世纪的第<span class="subst">&#123;str2&#125;</span>年&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">输出结果：</span></span><br><span class="line"><span class="string">今年是2023年，二十一世纪的第23年</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>这种方式不理会类型，不做精度控制，适合对精度没有要求的时候快速使用</p>
+<h3 id="对表达式进行格式化"><a href="#对表达式进行格式化" class="headerlink" title="对表达式进行格式化"></a>对表达式进行格式化</h3><p>表达式：一条具有明确<strong>执行结果</strong>的<strong>代码语句</strong></p>
+<p>格式化表达式：</p>
+<ul>
+<li>f”{表达式}”</li>
+<li>“ %s \ %d \ %f “ % (表达式)</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;1 * 1 的结果是：%d&quot;</span> % (<span class="number">1</span> * <span class="number">1</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;1 * 2 的结果是：<span class="subst">&#123;<span class="number">1</span>*<span class="number">2</span>&#125;</span>&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;字符串在Python中的类型名是：%s&quot;</span> % <span class="built_in">type</span>(<span class="string">&quot;字符串&quot;</span>))</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">输出结果：</span></span><br><span class="line"><span class="string">1 * 1 的结果是：1</span></span><br><span class="line"><span class="string">1 * 2 的结果是：2</span></span><br><span class="line"><span class="string">字符串在Python中的类型名是：&lt;class &#x27;str&#x27;&gt;</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>在无需使用变量进行数据存储的时候，可以直接格式化表达式简化代码</p>
+<h2 id="数据输入"><a href="#数据输入" class="headerlink" title="数据输入"></a>数据输入</h2><p>前面使用print语句输出，在Python中，与之对应还有一个input语句，来获取键盘输入</p>
+<ul>
+<li>数据输出：print</li>
+<li>数据输入：input</li>
+</ul>
+<p>使用方法：</p>
+<ul>
+<li>使用input()语句可以从键盘上获取输入</li>
+<li>使用一个变量接收（存储）input语句获取的键盘输入数据即可</li>
+<li>获取的数据永远都是字符串类型</li>
+<li>可以使用：**input(“提示信息”)**，用以在使用输入内容之前显示提示信息</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Python基础(二)——判断、循环</title>
+    <url>/2023/07/14/Python%E5%9F%BA%E7%A1%80(%E4%BA%8C)%E2%80%94%E2%80%94%E5%88%A4%E6%96%AD%E3%80%81%E5%BE%AA%E7%8E%AF/</url>
+    <content><![CDATA[<h1 id="判断语句"><a href="#判断语句" class="headerlink" title="判断语句"></a>判断语句</h1><p>进行逻辑判断是生活中常见的行为，同样，在程序中，进行逻辑判断也是最为基础的功能</p>
+<h2 id="布尔类型和比较运算符"><a href="#布尔类型和比较运算符" class="headerlink" title="布尔类型和比较运算符"></a>布尔类型和比较运算符</h2><h3 id="布尔类型的定义"><a href="#布尔类型的定义" class="headerlink" title="布尔类型的定义"></a>布尔类型的定义</h3><p>布尔类型的字面量：</p>
+<ul>
+<li>True 表示真（是、肯定）</li>
+<li>False 表示假（否、否定）</li>
+</ul>
+<p>定义变量存储布尔类型数据：</p>
+<p>变量名称 &#x3D; 布尔类型字面量</p>
+<p>布尔类型不仅可以自行定义，也可以使用比较运算符得到布尔类型的结果</p>
+<h3 id="比较运算符"><a href="#比较运算符" class="headerlink" title="比较运算符"></a>比较运算符</h3><table>
+<thead>
+<tr>
+<th align="center">运算符</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">&#x3D;&#x3D;</td>
+<td align="center">判断内容是否相等，满足为True，否则为False</td>
+</tr>
+<tr>
+<td align="center">!&#x3D;</td>
+<td align="center">判断内容是否不相等，满足为True，否则为False</td>
+</tr>
+<tr>
+<td align="center">&gt;</td>
+<td align="center">判断内容左侧内容是否大于右侧，满足为True，否则为False</td>
+</tr>
+<tr>
+<td align="center">&lt;</td>
+<td align="center">判断内容左侧内容是否小于右侧，满足为True，否则为False</td>
+</tr>
+<tr>
+<td align="center">&gt;&#x3D;</td>
+<td align="center">判断内容左侧内容是否大于等于右侧，满足为True，否则为False</td>
+</tr>
+<tr>
+<td align="center">&lt;&#x3D;</td>
+<td align="center">判断内容左侧内容是否小于等于右侧，满足为True，否则为False</td>
+</tr>
+</tbody></table>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">bool_1 = <span class="literal">True</span></span><br><span class="line">bool_2 = <span class="literal">False</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;bool_1变量内容：<span class="subst">&#123;bool_1&#125;</span>,类型是：<span class="subst">&#123;<span class="built_in">type</span>(bool_1)&#125;</span>&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;bool_1变量内容：<span class="subst">&#123;bool_2&#125;</span>,类型是：<span class="subst">&#123;<span class="built_in">type</span>(bool_2)&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line">num_1 = <span class="number">10</span></span><br><span class="line">num_2 = <span class="number">10</span></span><br><span class="line">num_3 = <span class="number">100</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;10 == 10 的结果：<span class="subst">&#123;num_1 == num_2&#125;</span>&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;10 == 100 的结果：<span class="subst">&#123;num_1 == num_3&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">输出结果：</span></span><br><span class="line"><span class="string">bool_1变量内容：True,类型是：&lt;class &#x27;bool&#x27;&gt;</span></span><br><span class="line"><span class="string">bool_1变量内容：False,类型是：&lt;class &#x27;bool&#x27;&gt;</span></span><br><span class="line"><span class="string">10 == 10 的结果：True</span></span><br><span class="line"><span class="string">10 == 100 的结果：False</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="if语句的基本格式"><a href="#if语句的基本格式" class="headerlink" title="if语句的基本格式"></a>if语句的基本格式</h2><h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><p>if  要判断的条件:</p>
+<p>​    条件成立是，要执行的语句</p>
+<p><strong>注意</strong>：条件结果一定是布尔类型，条件后面要加<strong>冒号</strong>，归属于if语句的代码块前方要有<strong>四个空格！！！</strong></p>
+<h3 id="实例-1"><a href="#实例-1" class="headerlink" title="实例"></a>实例</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">age = <span class="number">30</span></span><br><span class="line"><span class="keyword">if</span> age &gt;= <span class="number">18</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;我已经成年了&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;离我的18岁越来越远了&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;时间过得真快呀&quot;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">我已经成年了</span></span><br><span class="line"><span class="string">离我的18岁越来越远了</span></span><br><span class="line"><span class="string">时间过得真快呀</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="if-else语句"><a href="#if-else语句" class="headerlink" title="if-else语句"></a>if-else语句</h2><h3 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h3><p>if  条件:</p>
+<p>​    满足条件时执行语句1</p>
+<p>​	满足条件时执行语句2</p>
+<p>else:</p>
+<p>​	不满足条件时执行语句1</p>
+<p>​    不满足条件时执行语句2</p>
+<h3 id="实例-2"><a href="#实例-2" class="headerlink" title="实例"></a>实例</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">age = <span class="built_in">input</span>(<span class="string">&quot;欢迎来到黑马儿童游乐园，儿童免费，成人收费。\n请输入你的年龄：&quot;</span>)</span><br><span class="line">age = <span class="built_in">int</span>(age)</span><br><span class="line"><span class="keyword">if</span> age &gt;= <span class="number">18</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;您已成年，游玩需要补票10元&quot;</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;您未成年，可以免费游玩&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;祝您游玩愉快&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="if-elif-else"><a href="#if-elif-else" class="headerlink" title="if-elif-else"></a>if-elif-else</h2><h3 id="语法-2"><a href="#语法-2" class="headerlink" title="语法"></a>语法</h3><p>if  条件1:</p>
+<p>​    满足条件1时执行语句1</p>
+<p>​	满足条件1时执行语句2</p>
+<p>elif 条件2:</p>
+<p>​	满足条件2时执行语句1</p>
+<p>​    满足条件2时执行语句2</p>
+<p>elif 条件N:</p>
+<p>​	满足条件N时执行语句1</p>
+<p>​    满足条件N时执行语句2</p>
+<p>else:</p>
+<p>​	不满足所有条件时执行语句1</p>
+<p>​    不满足所有条件时执行语句2</p>
+<p><strong>注意</strong>：判断是互斥且有顺序的，else可以省略不写，效果等同3个独立的if判断，可以在判断语句中直接写input语句，节省代码量</p>
+<h3 id="实例-3"><a href="#实例-3" class="headerlink" title="实例"></a>实例</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&quot;请输入第一次猜想的数字：&quot;</span>)) == <span class="number">10</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;恭喜第一次就猜对啦&quot;</span>)</span><br><span class="line"><span class="keyword">elif</span> <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&quot;不对，再猜一次：&quot;</span>)) == <span class="number">10</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;猜对啦&quot;</span>)</span><br><span class="line"><span class="keyword">elif</span> <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&quot;不对，再猜最后一次：&quot;</span>)) == <span class="number">10</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;猜对啦&quot;</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Sorry,全部猜错啦，我想的是：10&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="判断语句的嵌套"><a href="#判断语句的嵌套" class="headerlink" title="判断语句的嵌套"></a>判断语句的嵌套</h2><p>有很多场景，不仅仅是多个并置条件，还会有满足前置条件才会二次判断的多层判断需求，对于这种需求，可以通过判断语句的嵌套</p>
+<p><strong>注意：</strong></p>
+<ul>
+<li>判断语句可以用于多条件，多层次的逻辑判断</li>
+<li>嵌套判断语句可以根据需求，自由组合if-elif-else来构建多层次判断</li>
+<li>嵌套判断语句，一定要注意空格缩进，Python通过空格缩进来决定层次关系</li>
+</ul>
+<h1 id="循环语句"><a href="#循环语句" class="headerlink" title="循环语句"></a>循环语句</h1><p>循环在程序中同判断一样，也是广泛存在的，是非常多功能实现的基础</p>
+<h2 id="while循环"><a href="#while循环" class="headerlink" title="while循环"></a>while循环</h2><h3 id="语法-3"><a href="#语法-3" class="headerlink" title="语法"></a>语法</h3><p>while 条件:</p>
+<p>​    条件满足时，执行语句1</p>
+<p>​	条件满足时，执行语句2</p>
+<p>​	……</p>
+<p><strong>注意：</strong></p>
+<ul>
+<li>while的条件时布尔类型，True表示继续循环，False结束循环</li>
+<li><strong>空格缩进同if</strong></li>
+</ul>
+<h3 id="实例-4"><a href="#实例-4" class="headerlink" title="实例"></a>实例</h3><p>九九乘法表</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">i = <span class="number">1</span></span><br><span class="line"><span class="keyword">while</span> i &lt;= <span class="number">9</span>:</span><br><span class="line">    j = <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> j &lt;= i:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;%d * %d = %d\t&quot;</span> % (j,i,i*j),end = <span class="string">&#x27;&#x27;</span>)</span><br><span class="line">        j += <span class="number">1</span></span><br><span class="line">    <span class="built_in">print</span>()</span><br><span class="line">    i += <span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="for循环"><a href="#for循环" class="headerlink" title="for循环"></a>for循环</h2><h3 id="语法-4"><a href="#语法-4" class="headerlink" title="语法"></a>语法</h3><p>for 临时变量 in 待处理数据集:</p>
+<p>​    循环满足条件时执行语句</p>
+<p><strong>注意：</strong></p>
+<ul>
+<li>同while循环不同，python中for循环是无法定义循环条件的，只能从处理的数据集中依次取出内容进行处理，所有理论上for循环无法构建无限循环（被处理的数据集不可能无限大）</li>
+<li>语法中，待处理数据集严格来说称之为：序列类型，其内容可以一个个依次取出的一种类型，包括字符串，列表，元组等</li>
+<li>注意空格缩进</li>
+</ul>
+<h3 id="实例-5"><a href="#实例-5" class="headerlink" title="实例"></a>实例</h3><p>遍历字符串</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">name = <span class="string">&quot;hello&quot;</span></span><br><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> name:</span><br><span class="line">    <span class="built_in">print</span>(x)</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">h</span></span><br><span class="line"><span class="string">e</span></span><br><span class="line"><span class="string">l</span></span><br><span class="line"><span class="string">l</span></span><br><span class="line"><span class="string">o</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>可以看出，for循环是将字符串的内容<strong>依次取出</strong>，所有for循环也被称为“遍历循环”</p>
+<h2 id="循环中断：break和continue"><a href="#循环中断：break和continue" class="headerlink" title="循环中断：break和continue"></a>循环中断：break和continue</h2><ul>
+<li>continue：中断本次循环，直接进入下一次循环</li>
+<li>break：直接结束所在循环</li>
+</ul>
+<h2 id="while循环和for循环的一些区别"><a href="#while循环和for循环的一些区别" class="headerlink" title="while循环和for循环的一些区别"></a>while循环和for循环的一些区别</h2><ul>
+<li>while循环的循环条件时自定义的，自行控制循环条件</li>
+<li>for循环是一种“轮询”机制，是对一批内容进行“逐个处理”</li>
+</ul>
+<h1 id="拓展"><a href="#拓展" class="headerlink" title="拓展"></a>拓展</h1><h2 id="随机数"><a href="#随机数" class="headerlink" title="随机数"></a>随机数</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> random</span><br><span class="line">num = random.randint(<span class="number">1</span>,<span class="number">10</span>)</span><br><span class="line"><span class="comment"># 随机生成一个1到10的整数</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="end-x3D-‘’"><a href="#end-x3D-‘’" class="headerlink" title="end &#x3D; ‘’"></a>end &#x3D; ‘’</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;hello&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;world&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;hello&quot;</span>,end=<span class="string">&#x27;&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;world&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">输出结果：</span></span><br><span class="line"><span class="string">hello</span></span><br><span class="line"><span class="string">world</span></span><br><span class="line"><span class="string">helloworld</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="制表符-t"><a href="#制表符-t" class="headerlink" title="制表符\t"></a>制表符\t</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;hello world&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;hihi Shenyang&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;hello\tworld&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;hihi\tShenyang&quot;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">hello world</span></span><br><span class="line"><span class="string">hihi Shenyang</span></span><br><span class="line"><span class="string">hello	world</span></span><br><span class="line"><span class="string">hihi	Shenyang</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="range语句"><a href="#range语句" class="headerlink" title="range语句"></a>range语句</h2><p>语法1：</p>
+<p><strong>range(num)</strong></p>
+<p>获取一个从0开始，到num结束的数字序列（不含num本身）</p>
+<p>如，range(5)取得的数据是：[0,1,2,3,4]</p>
+<p>语法2：</p>
+<p><strong>range(num1,num2)</strong></p>
+<p>获取一个从num1开始，到num2结束的数字序列（不含num2本身）</p>
+<p>如，range(5，10)取得的数据是：[5,6,7,8,9]</p>
+<p>语法3：</p>
+<p><strong>range(num1,num2,step)</strong></p>
+<p>获取一个从num1开始，到num2结束的数字序列（不含num2本身）</p>
+<p>数字之间的步长，以step为准（step默认为1）</p>
+<p>如，range(5,10,2)取得的数据是：[5,7,9]</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">num = <span class="number">100</span></span><br><span class="line">count = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,num):</span><br><span class="line">    <span class="keyword">if</span> x%<span class="number">2</span> == <span class="number">0</span>:</span><br><span class="line">        count += <span class="number">1</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;从1到<span class="subst">&#123;num&#125;</span>(不含<span class="subst">&#123;num&#125;</span>本身)共有<span class="subst">&#123;count&#125;</span>个偶数&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">运行结果：</span></span><br><span class="line"><span class="string">从1到100(不含100本身)共有49个偶数</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2023/04/12/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+      <categories>
+        <category>others</category>
+      </categories>
+  </entry>
+</search>

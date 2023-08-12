@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>小稳</title>
+  
+  <subtitle>欢迎访问我的个人博客</subtitle>
+  <link href="http://littlewin8.github.io/atom.xml" rel="self"/>
+  
+  <link href="http://littlewin8.github.io/"/>
+  <updated>2023-07-14T01:10:31.926Z</updated>
+  <id>http://littlewin8.github.io/</id>
+  
+  <author>
+    <name>LittleWin</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Python基础(二)——判断、循环</title>
+    <link href="http://littlewin8.github.io/2023/07/14/Python%E5%9F%BA%E7%A1%80(%E4%BA%8C)%E2%80%94%E2%80%94%E5%88%A4%E6%96%AD%E3%80%81%E5%BE%AA%E7%8E%AF/"/>
+    <id>http://littlewin8.github.io/2023/07/14/Python%E5%9F%BA%E7%A1%80(%E4%BA%8C)%E2%80%94%E2%80%94%E5%88%A4%E6%96%AD%E3%80%81%E5%BE%AA%E7%8E%AF/</id>
+    <published>2023-07-14T01:03:56.000Z</published>
+    <updated>2023-07-14T01:10:31.926Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;判断语句&quot;&gt;&lt;a href=&quot;#判断语句&quot; class=&quot;headerlink&quot; title=&quot;判断语句&quot;&gt;&lt;/a&gt;判断语句&lt;/h1&gt;&lt;p&gt;进行逻辑判断是生活中常见的行为，同样，在程序中，进行逻辑判断也是最为基础的功能&lt;/p&gt;
+&lt;h2</summary>
+        
+      
+    
+    
+    
+    <category term="Python" scheme="http://littlewin8.github.io/categories/Python/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Python基础(一)——基本数据类型</title>
+    <link href="http://littlewin8.github.io/2023/07/13/Python%E5%9F%BA%E7%A1%80(%E4%B8%80)%E2%80%94%E2%80%94%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/"/>
+    <id>http://littlewin8.github.io/2023/07/13/Python%E5%9F%BA%E7%A1%80(%E4%B8%80)%E2%80%94%E2%80%94%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</id>
+    <published>2023-07-13T13:36:08.000Z</published>
+    <updated>2023-07-13T13:42:54.499Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;初识Python&quot;&gt;&lt;a href=&quot;#初识Python&quot; class=&quot;headerlink&quot; title=&quot;初识Python&quot;&gt;&lt;/a&gt;初识Python&lt;/h1&gt;&lt;h2 id=&quot;起源&quot;&gt;&lt;a href=&quot;#起源&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Python" scheme="http://littlewin8.github.io/categories/Python/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Java_StringBuffer类</title>
+    <link href="http://littlewin8.github.io/2023/06/04/Java-StringBuffer%E7%B1%BB/"/>
+    <id>http://littlewin8.github.io/2023/06/04/Java-StringBuffer%E7%B1%BB/</id>
+    <published>2023-06-04T09:55:40.000Z</published>
+    <updated>2023-06-04T09:56:58.254Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Java常用实用类学习——StringBuffer类&quot;&gt;&lt;a href=&quot;#Java常用实用类学习——StringBuffer类&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Java" scheme="http://littlewin8.github.io/categories/Java/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Java_String类</title>
+    <link href="http://littlewin8.github.io/2023/06/02/Java-String%E7%B1%BB/"/>
+    <id>http://littlewin8.github.io/2023/06/02/Java-String%E7%B1%BB/</id>
+    <published>2023-06-02T02:59:03.000Z</published>
+    <updated>2023-06-02T03:01:33.227Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Java常用实用类学习——String类&quot;&gt;&lt;a href=&quot;#Java常用实用类学习——String类&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Java" scheme="http://littlewin8.github.io/categories/Java/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Markdown语法学习</title>
+    <link href="http://littlewin8.github.io/2023/04/22/Markdown%E8%AF%AD%E6%B3%95%E5%AD%A6%E4%B9%A0/"/>
+    <id>http://littlewin8.github.io/2023/04/22/Markdown%E8%AF%AD%E6%B3%95%E5%AD%A6%E4%B9%A0/</id>
+    <published>2023-04-22T11:03:18.000Z</published>
+    <updated>2023-04-22T11:04:37.372Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Markdown语法学习&quot;&gt;&lt;a href=&quot;#Markdown语法学习&quot; class=&quot;headerlink&quot; title=&quot;Markdown语法学习&quot;&gt;&lt;/a&gt;Markdown语法学习&lt;/h1&gt;&lt;h2 id=&quot;Markdown介绍&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="Markdown" scheme="http://littlewin8.github.io/categories/Markdown/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hello myblog</title>
+    <link href="http://littlewin8.github.io/2023/04/14/Hello-myblog/"/>
+    <id>http://littlewin8.github.io/2023/04/14/Hello-myblog/</id>
+    <published>2023-04-14T10:30:01.000Z</published>
+    <updated>2023-04-16T12:28:16.617Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Hello-myblog&quot;&gt;&lt;a href=&quot;#Hello-myblog&quot; class=&quot;headerlink&quot; title=&quot;Hello myblog&quot;&gt;&lt;/a&gt;Hello myblog&lt;/h1&gt;&lt;h2</summary>
+        
+      
+    
+    
+    
+    <category term="others" scheme="http://littlewin8.github.io/categories/others/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://littlewin8.github.io/2023/04/12/hello-world/"/>
+    <id>http://littlewin8.github.io/2023/04/12/hello-world/</id>
+    <published>2023-04-12T03:37:05.868Z</published>
+    <updated>2023-04-16T12:29:01.090Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
+        
+      
+    
+    
+    
+    <category term="others" scheme="http://littlewin8.github.io/categories/others/"/>
+    
+    
+  </entry>
+  
+</feed>

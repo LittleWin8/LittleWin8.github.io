@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+  
+
+    <head>
+      <meta charset="utf-8" />
+        
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1"
+      />
+      <title>Python基础(一)——基本数据类型 |  小稳</title>
+  <meta name="generator" content="hexo-theme-ayer">
+      
+      <link rel="shortcut icon" href="/littlewin.png" />
+       
+<link rel="stylesheet" href="/dist/main.css">
+
+      
+<link rel="stylesheet" href="/css/fonts/remixicon.css">
+
+      
+<link rel="stylesheet" href="/css/custom.css">
+ 
+      <script src="https://cdn.staticfile.org/pace/1.2.4/pace.min.js"></script>
+       
+ 
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-bulma@5.0.1/bulma.min.css"
+      />
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
+
+      <!-- mermaid -->
+      
+      <style>
+        .swal2-styled.swal2-confirm {
+          font-size: 1.6rem;
+        }
+      </style>
+    <link rel="alternate" href="/atom.xml" title="小稳" type="application/atom+xml">
+</head>
+  </html>
+</html>
+
+
+<body>
+  <div id="app">
+    
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-Python基础(一)——基本数据类型"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  Python基础(一)——基本数据类型
+</h1>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2023/07/13/Python%E5%9F%BA%E7%A1%80(%E4%B8%80)%E2%80%94%E2%80%94%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="article-date">
+  <time datetime="2023-07-13T13:36:08.000Z" itemprop="datePublished">2023-07-13</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Python/">Python</a>
+  </div>
+  
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> Word count:</span>
+            <span class="post-count">2.3k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> Reading time≈</span>
+            <span class="post-count">8 min</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="初识Python"><a href="#初识Python" class="headerlink" title="初识Python"></a>初识Python</h1><h2 id="起源"><a href="#起源" class="headerlink" title="起源"></a>起源</h2><p>1989年，Guidio van Rossum吉多·范罗苏姆决心开发一个新的解释程序（Python雏形）</p>
+<p>1991年，第一个Python解释器诞生，Pyhton名字来自于吉多·范罗苏姆喜欢的电视：<em>Monty Python‘s Flying Circus</em></p>
+<h2 id="适用面"><a href="#适用面" class="headerlink" title="适用面"></a>适用面</h2><table>
+<thead>
+<tr>
+<th>人群</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>IT从业者</td>
+<td>自动化脚本（运维开发、测试工具等）</td>
+</tr>
+<tr>
+<td>普通白领</td>
+<td>自动化办公</td>
+</tr>
+<tr>
+<td>后端开发</td>
+<td>WEB应用程序</td>
+</tr>
+<tr>
+<td>科学家基于</td>
+<td>基于Python完成数据计算（生物、化学、物理）</td>
+</tr>
+<tr>
+<td>人工智能&#x2F;机器学习</td>
+<td>基于Python开发AI程序</td>
+</tr>
+<tr>
+<td>大数据开发</td>
+<td>基于Python完成大数据任务开发（Spark、Flink）</td>
+</tr>
+</tbody></table>
+<h2 id="开发环境"><a href="#开发环境" class="headerlink" title="开发环境"></a>开发环境</h2><ul>
+<li>Python解释器环境内，执行单行代码</li>
+<li>使用Python解释器执行，执行Python代码文件</li>
+<li>使用第三方IDE(集成开发工具)，如PyCharm软件、开发Python程序</li>
+</ul>
+<h1 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h1><h2 id="字面量"><a href="#字面量" class="headerlink" title="字面量"></a>字面量</h2><p>字面量：在代码中，被写下来的固定值，成为字面量</p>
+<p>常用的值的类型：Python中常用的6种值（数据）的类型</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>描述</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>数字（Number）</td>
+<td>整数（int）、浮点数（float）、复数（complex）、布尔（bool）</td>
+<td></td>
+</tr>
+<tr>
+<td>字符串（Strng）</td>
+<td>描述文本的一种数据类型</td>
+<td>字符串由任意数量的字符组成</td>
+</tr>
+<tr>
+<td>列表（List）</td>
+<td>有序的可变序列</td>
+<td>Python中使用在频繁的数据类型，可有序记录一堆数据</td>
+</tr>
+<tr>
+<td>元组（Tuple）</td>
+<td>有序的不可变序列</td>
+<td>可有序记录一堆不可变的Python数据集合</td>
+</tr>
+<tr>
+<td>集合（Set）</td>
+<td>无序不重合集合</td>
+<td>可无序记录一堆不重复的Python数据集合</td>
+</tr>
+<tr>
+<td>字典（Dictionary）</td>
+<td>无序Key-Value集合</td>
+<td>可无序纪律一堆Key-Value型的Python数据集合</td>
+</tr>
+</tbody></table>
+<h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 这是注释1，只能单行</span></span><br><span class="line"><span class="string">&quot;&quot;&quot; 这是注释2，可以多行注释 &quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><p>变量就是在程序运行时，记录数据的，变量的值可以改变</p>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><p>目前入门阶段，主要接触三类数据类型</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>描述</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>string</td>
+<td>字符串类型</td>
+<td>用引号引起来的数据都是字符串</td>
+</tr>
+<tr>
+<td>int</td>
+<td>整形（有符号）</td>
+<td>数字类型，存放整数</td>
+</tr>
+<tr>
+<td>float</td>
+<td>浮点型（有符号）</td>
+<td>数字类型，存放小数</td>
+</tr>
+</tbody></table>
+<p>可以使用type()语句查看数据类型：<em><strong>type(被查看类型的数据)</strong></em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 使用print直接输出类型信息</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(<span class="string">&quot;hello&quot;</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(<span class="number">666</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(<span class="number">3.1415926</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用变量储存type()语句的结果</span></span><br><span class="line">string_type = <span class="built_in">type</span>(<span class="string">&quot;hello&quot;</span>)</span><br><span class="line">int_type = <span class="built_in">type</span>(<span class="number">666</span>)</span><br><span class="line">float_type = <span class="built_in">type</span>(<span class="number">3.1415926</span>)</span><br><span class="line"><span class="built_in">print</span>(string_type)</span><br><span class="line"><span class="built_in">print</span>(int_type)</span><br><span class="line"><span class="built_in">print</span>(float_type)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用type()语句，查看存储的数据类型信息</span></span><br><span class="line">name = <span class="number">2.71828</span></span><br><span class="line">name_type = <span class="built_in">type</span>(name)</span><br><span class="line"><span class="built_in">print</span>(name_type)</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">输出结果：</span></span><br><span class="line"><span class="string">&lt;class &#x27;str&#x27;&gt;</span></span><br><span class="line"><span class="string">&lt;class &#x27;int&#x27;&gt;</span></span><br><span class="line"><span class="string">&lt;class &#x27;float&#x27;&gt;</span></span><br><span class="line"><span class="string">&lt;class &#x27;str&#x27;&gt;</span></span><br><span class="line"><span class="string">&lt;class &#x27;int&#x27;&gt;</span></span><br><span class="line"><span class="string">&lt;class &#x27;float&#x27;&gt;</span></span><br><span class="line"><span class="string">&lt;class &#x27;float&#x27;&gt;</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>python中变量是没有类型的，而变量储存的数据是有类型的</strong></p>
+<h2 id="数据类型转化"><a href="#数据类型转化" class="headerlink" title="数据类型转化"></a>数据类型转化</h2><p>数据类型转化使用场景：</p>
+<ul>
+<li>从文件中读取数字，默认是字符串，我们需要转换成数字类型</li>
+<li>input()语句，默认结果是字符串，若需要数字也需要转化</li>
+</ul>
+<p>………</p>
+<p>常见转换语句</p>
+<table>
+<thead>
+<tr>
+<th>语句(函数)</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>int(x)</td>
+<td>将x转换成一个整数</td>
+</tr>
+<tr>
+<td>float(x)</td>
+<td>将x转换成一个浮点数</td>
+</tr>
+<tr>
+<td>str(x)</td>
+<td>将x转换成字符串</td>
+</tr>
+</tbody></table>
+<p>PS：同前面的type()语句一样，这三个语句都是带有结果的（返回值），我们可以直接用print输出，或用变量存储返回值</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 将数字类型转换成字符串类型</span></span><br><span class="line">num_str = <span class="built_in">str</span>(<span class="number">11</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(num_str),num_str)</span><br><span class="line"></span><br><span class="line">float_str = <span class="built_in">str</span>(<span class="number">3.14</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(float_str),float_str)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将字符串转换成数字</span></span><br><span class="line">num1 = <span class="built_in">int</span>(<span class="string">&quot;1234&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(num1),num1)</span><br><span class="line"></span><br><span class="line">num2 = <span class="built_in">float</span>(<span class="string">&quot;11&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(num2),num2)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 整数转浮点</span></span><br><span class="line">float_num = <span class="built_in">float</span>(<span class="number">11</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(float_num),float_num)</span><br></pre></td></tr></table></figure>
+
+<p>注意：</p>
+<ul>
+<li>任意类型都可以转换成字符串，但字符串中有数字才可以转换成数字类型</li>
+<li>浮点型可以转换成整型，但会精度损失（小数部分丢失）</li>
+</ul>
+<h2 id="标识符"><a href="#标识符" class="headerlink" title="标识符"></a>标识符</h2><p>在python中，我们可以给许多东西起名字，如</p>
+<ul>
+<li>变量名字</li>
+<li>方法名字</li>
+<li>类的名字</li>
+</ul>
+<p>……</p>
+<p>这些名字，我们把它统一的称之为标识符，用来做内容的标识</p>
+<p><strong>标识符命名规则</strong></p>
+<ul>
+<li>只允许使用<strong>英文</strong>，中文（不推荐），<strong>数字</strong>，<strong>下划线</strong>这四种内容</li>
+<li>数字不可以开头</li>
+<li>区分大小写</li>
+<li>不可以使用关键字</li>
+</ul>
+<h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><h3 id="算数运算符（数学运算符）"><a href="#算数运算符（数学运算符）" class="headerlink" title="算数运算符（数学运算符）"></a>算数运算符（数学运算符）</h3><table>
+<thead>
+<tr>
+<th align="center">运算符</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">+</td>
+<td align="center">加</td>
+</tr>
+<tr>
+<td align="center">-</td>
+<td align="center">减</td>
+</tr>
+<tr>
+<td align="center">*</td>
+<td align="center">乘</td>
+</tr>
+<tr>
+<td align="center">&#x2F;</td>
+<td align="center">除</td>
+</tr>
+<tr>
+<td align="center">&#x2F;&#x2F;</td>
+<td align="center">取整除</td>
+</tr>
+<tr>
+<td align="center">%</td>
+<td align="center">取余</td>
+</tr>
+<tr>
+<td align="center">**</td>
+<td align="center">指数</td>
+</tr>
+</tbody></table>
+<h3 id="赋值运算符"><a href="#赋值运算符" class="headerlink" title="赋值运算符"></a>赋值运算符</h3><table>
+<thead>
+<tr>
+<th align="center">运算符</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">&#x3D;</td>
+<td align="center">赋值运算符</td>
+</tr>
+</tbody></table>
+<h3 id="复合赋值运算符"><a href="#复合赋值运算符" class="headerlink" title="复合赋值运算符"></a>复合赋值运算符</h3><table>
+<thead>
+<tr>
+<th align="center">运算符</th>
+<th align="center">描述</th>
+<th align="center">实例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">+&#x3D;</td>
+<td align="center">加法赋值运算符</td>
+<td align="center">c +&#x3D; a等效于c &#x3D; c + a</td>
+</tr>
+<tr>
+<td align="center">-&#x3D;</td>
+<td align="center">减法赋值运算符</td>
+<td align="center">c -&#x3D; a等效于c &#x3D; c - a</td>
+</tr>
+<tr>
+<td align="center">*&#x3D;</td>
+<td align="center">乘法赋值运算符</td>
+<td align="center">c *&#x3D; a等效于c &#x3D; c * a</td>
+</tr>
+<tr>
+<td align="center">&#x2F;&#x3D;</td>
+<td align="center">除法赋值运算符</td>
+<td align="center">c &#x2F;&#x3D; a等效于c &#x3D; c &#x2F; a</td>
+</tr>
+<tr>
+<td align="center">%&#x3D;</td>
+<td align="center">取模赋值运算符</td>
+<td align="center">c %&#x3D; a等效于c &#x3D; c % a</td>
+</tr>
+<tr>
+<td align="center">**&#x3D;</td>
+<td align="center">幂赋值运算符</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">&#x2F;&#x2F;&#x3D;</td>
+<td align="center">取整除赋值运算符</td>
+<td align="center">c &#x2F;&#x2F;&#x3D; a等效于c &#x3D; c &#x2F;&#x2F; a</td>
+</tr>
+</tbody></table>
+<h2 id="字符串扩展"><a href="#字符串扩展" class="headerlink" title="字符串扩展"></a>字符串扩展</h2><h3 id="三种定义方法"><a href="#三种定义方法" class="headerlink" title="三种定义方法"></a>三种定义方法</h3><p>字符串在python中有多种定义形式</p>
+<ol>
+<li>单引号定义法：name &#x3D; ‘hello’</li>
+<li>双引号定义法：name &#x3D; “hello”</li>
+<li>三引号定义法：name &#x3D; “”” hello “””</li>
+</ol>
+<p>PS：三引号定义法，和多行注释的写法一样，同样支持换行操作。</p>
+<p>使用变量接收它，他就是字符串，否则是多行注释</p>
+<p>如果想在字符串中使用单引号或双引号：</p>
+<ul>
+<li>单引号定义法，可以内含双引号</li>
+<li>双引号定义法，可以内含单引号</li>
+<li>使用转义字符（\）</li>
+</ul>
+<h3 id="字符串拼接"><a href="#字符串拼接" class="headerlink" title="字符串拼接"></a>字符串拼接</h3><p>如果我们有多个字符串，可以通过“**+**”将其拼接成一个字符串</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;hello &quot;</span>+<span class="string">&quot;world&quot;</span>)</span><br><span class="line">str1 = <span class="string">&quot;大家好&quot;</span></span><br><span class="line">str2 = <span class="string">&quot;我用Python&quot;</span></span><br><span class="line"><span class="built_in">print</span>(str1 + <span class="string">&quot;，人生苦短，&quot;</span> + str2)</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">输出结果：</span></span><br><span class="line"><span class="string">hello world</span></span><br><span class="line"><span class="string">大家好，人生苦短，我用Python</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>注意：</p>
+<p>”+“无法将非字符串类型的数据拼接</p>
+<h3 id="字符串格式化"><a href="#字符串格式化" class="headerlink" title="字符串格式化"></a>字符串格式化</h3><p>由于拼接字符串变量过多时拼接太麻烦，且字符串无法和数字或其他类型完成拼接，因而引入字符串的格式化</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">str1 = <span class="number">64</span></span><br><span class="line">str2 = <span class="number">8</span></span><br><span class="line">message = <span class="string">&quot;%s除以%s等于%s&quot;</span> % (str1,str2,str2)</span><br><span class="line"><span class="built_in">print</span>(message)</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">输出结果：</span></span><br><span class="line"><span class="string">64除以8等于8</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>其中的，%s</p>
+<ul>
+<li>%表示：我要占位</li>
+<li>s表示：将变量变成字符串放入占位的地方</li>
+</ul>
+<p>所以，综合起来的意思就是：我先占个位置，等一会有个变量过来，我把它变成字符串放到占位的位置</p>
+<p>注意：多个变量占位，变量要用括号括起来，并且按照占位的顺序填入</p>
+<p>Python中最常用的三类占位，用法和上文%s用法类似</p>
+<table>
+<thead>
+<tr>
+<th align="center">格式符号</th>
+<th align="center">转化</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">%s</td>
+<td align="center">将内容转化为字符串，放入占位位置</td>
+</tr>
+<tr>
+<td align="center">%d</td>
+<td align="center">将内容转化成整数，放入占位位置</td>
+</tr>
+<tr>
+<td align="center">%f</td>
+<td align="center">将内容转化成浮点型，放入占位位置</td>
+</tr>
+</tbody></table>
+<h3 id="格式化的精度控制"><a href="#格式化的精度控制" class="headerlink" title="格式化的精度控制"></a>格式化的精度控制</h3><p><strong>字符串格式化-数字精度控制</strong></p>
+<p>我们可以使用辅助符号“m.n”来控制数据的宽度和精度</p>
+<ul>
+<li>m，控制宽度，要求是数字（很少使用），设置的宽度小于数字自身，不生效</li>
+<li>.n，控制小数点精度，要求是数字，会进行小数的四舍五入</li>
+</ul>
+<h3 id="字符串格式化方法2"><a href="#字符串格式化方法2" class="headerlink" title="字符串格式化方法2"></a>字符串格式化方法2</h3><p>语法：</p>
+<p>f”内容{变量}”</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">str1 = <span class="string">&quot;2023年&quot;</span></span><br><span class="line">str2 = <span class="number">23</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;今年是<span class="subst">&#123;str1&#125;</span>，二十一世纪的第<span class="subst">&#123;str2&#125;</span>年&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">输出结果：</span></span><br><span class="line"><span class="string">今年是2023年，二十一世纪的第23年</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>这种方式不理会类型，不做精度控制，适合对精度没有要求的时候快速使用</p>
+<h3 id="对表达式进行格式化"><a href="#对表达式进行格式化" class="headerlink" title="对表达式进行格式化"></a>对表达式进行格式化</h3><p>表达式：一条具有明确<strong>执行结果</strong>的<strong>代码语句</strong></p>
+<p>格式化表达式：</p>
+<ul>
+<li>f”{表达式}”</li>
+<li>“ %s \ %d \ %f “ % (表达式)</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;1 * 1 的结果是：%d&quot;</span> % (<span class="number">1</span> * <span class="number">1</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;1 * 2 的结果是：<span class="subst">&#123;<span class="number">1</span>*<span class="number">2</span>&#125;</span>&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;字符串在Python中的类型名是：%s&quot;</span> % <span class="built_in">type</span>(<span class="string">&quot;字符串&quot;</span>))</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">输出结果：</span></span><br><span class="line"><span class="string">1 * 1 的结果是：1</span></span><br><span class="line"><span class="string">1 * 2 的结果是：2</span></span><br><span class="line"><span class="string">字符串在Python中的类型名是：&lt;class &#x27;str&#x27;&gt;</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>在无需使用变量进行数据存储的时候，可以直接格式化表达式简化代码</p>
+<h2 id="数据输入"><a href="#数据输入" class="headerlink" title="数据输入"></a>数据输入</h2><p>前面使用print语句输出，在Python中，与之对应还有一个input语句，来获取键盘输入</p>
+<ul>
+<li>数据输出：print</li>
+<li>数据输入：input</li>
+</ul>
+<p>使用方法：</p>
+<ul>
+<li>使用input()语句可以从键盘上获取输入</li>
+<li>使用一个变量接收（存储）input语句获取的键盘输入数据即可</li>
+<li>获取的数据永远都是字符串类型</li>
+<li>可以使用：**input(“提示信息”)**，用以在使用输入内容之前显示提示信息</li>
+</ul>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>Copyright： </strong>
+          
+          Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source.
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://littlewin8.github.io/2023/07/13/Python%E5%9F%BA%E7%A1%80(%E4%B8%80)%E2%80%94%E2%80%94%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+      <a href="/2023/07/14/Python%E5%9F%BA%E7%A1%80(%E4%BA%8C)%E2%80%94%E2%80%94%E5%88%A4%E6%96%AD%E3%80%81%E5%BE%AA%E7%8E%AF/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            Python基础(二)——判断、循环
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2023/06/04/Java-StringBuffer%E7%B1%BB/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">Java_StringBuffer类</div>
+      </a>
+    
+  </nav>
+
+  
+   
+  
+   
+    <script src="https://cdn.staticfile.org/twikoo/1.4.18/twikoo.all.min.js"></script>
+    <div id="twikoo" class="twikoo"></div>
+    <script>
+        twikoo.init({
+            envId: ""
+        })
+    </script>
+ 
+</article>
+
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2023
+        <i class="ri-heart-fill heart_icon"></i> LittleWin
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>Visitors:<span id="busuanzi_value_site_uv"></span></span>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>Views:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914'></script>
+        
+      </li>
+    </ul>
+  </div>
+</footer>    
+    </main>
+    <div class="float_btns">
+      <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+    </div>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/littlewin.png" alt="小稳"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/friends">友链</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/2023/about">关于我</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="Search">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-3.6.0.min.js"></script>
+ 
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+ 
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: ".tocbot",
+    contentSelector: ".article-entry",
+    headingSelector: "h1, h2, h3, h4, h5, h6",
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: "main",
+    positionFixedSelector: ".tocbot",
+    positionFixedClass: "is-position-fixed",
+    fixedSidebarOffset: "auto",
+  });
+</script>
+
+<script src="https://cdn.staticfile.org/jquery-modal/0.9.2/jquery.modal.min.js"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.staticfile.org/jquery-modal/0.9.2/jquery.modal.min.css"
+/>
+<script src="https://cdn.staticfile.org/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+ <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.staticfile.org/photoswipe/4.1.3/default-skin/default-skin.min.css">
+<script src="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe.min.js"></script>
+<script src="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script> 
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+ 
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+ 
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+ 
+<link rel="stylesheet" href="/css/clipboard.css">
+ <script src="https://cdn.staticfile.org/clipboard.js/2.0.10/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+ 
+<!-- CanvasBackground -->
+
+<script>
+  if (window.mermaid) {
+    mermaid.initialize({ theme: "forest" });
+  }
+</script>
+
+
+    
+    
+
+  </div>
+</body>
+
+</html>
