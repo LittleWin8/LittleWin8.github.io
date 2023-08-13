@@ -1,66 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Java_StringBuffer类</title>
-    <url>/2023/06/04/Java-StringBuffer%E7%B1%BB/</url>
-    <content><![CDATA[<h1 id="Java常用实用类学习——StringBuffer类"><a href="#Java常用实用类学习——StringBuffer类" class="headerlink" title="Java常用实用类学习——StringBuffer类"></a>Java常用实用类学习——StringBuffer类</h1><p>StringBuffer类与String类不同，StringBuffer类的对象的的实体的内存空间可以自动改变大小，便于存放一个可变的字符序列。尽管String类是Java.lang包中的final类，但该类提供了修改字符序列的方法。</p>
-<h2 id="StringBuffer类的对象"><a href="#StringBuffer类的对象" class="headerlink" title="StringBuffer类的对象"></a>StringBuffer类的对象</h2><p>StringBuffer类有3个构造方法</p>
-<h3 id="StringBuffer-；"><a href="#StringBuffer-；" class="headerlink" title="StringBuffer()；"></a>StringBuffer()；</h3><p>使用无参的构造方法创建一个StringBuffer对象，那么分配给该对象的实体初始容量可以容纳16个字符，实体容量大于16时，容量自动增加。StringBuffer对象可以通过***length()<em><strong>方法获取实体中存放的字符序列的长度，通过</strong></em>capacity()***方法获取当前实体的实际容量。</p>
-<h3 id="StringBuffer-int-size"><a href="#StringBuffer-int-size" class="headerlink" title="StringBuffer(int size);"></a>StringBuffer(int size);</h3><p>使用本构造方法创建一个StringBuffer对象，那么可以分配给该对象的实体初始容量为参数size指定的字符个数，实体容量大于size时，容量自动增加。</p>
-<h3 id="StringBuffer-String-s"><a href="#StringBuffer-String-s" class="headerlink" title="StringBuffer(String s);"></a>StringBuffer(String s);</h3><p>使用本构造方法创建一个StringBuffer对象，那么可以分配给该对象的实体初始容量为参数s的字符序列的长度再加16。</p>
-<h2 id="StringBuffer类的常用方法"><a href="#StringBuffer类的常用方法" class="headerlink" title="StringBuffer类的常用方法"></a>StringBuffer类的常用方法</h2><h3 id="append"><a href="#append" class="headerlink" title="append();"></a>append();</h3><ul>
-<li>StringBuffer append(String s)：</li>
-</ul>
-<p>将字符串s的字符序列追加到当前StringBuffer对象的字符序列中，并返回当前对象的引用</p>
-<ul>
-<li>StringBuffer append(int n)：</li>
-</ul>
-<p>将int型数组n转换为String对象，再将其加入当前StringBuffer对象的字符序列中，并返回当前对象的引用</p>
-<ul>
-<li>StringBuffer append(Object o)：</li>
-</ul>
-<p>将一个对象o的字符序列表示追加到当前StringBuffer对象的字符序列中，并返回当前对象的引用</p>
-<p>类似的方法还有**StringBuffer append(long n)<strong>、</strong>StringBuffer append(boolean n)<strong>、</strong>StringBuffer append(float n)<strong>、</strong>StringBuffer append(double n)<strong>和</strong>StringBuffer append(char n)**。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">StringBuffer</span> <span class="variable">s</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuffer</span>(<span class="string">&quot;我喜欢&quot;</span>);</span><br><span class="line">s.append(<span class="string">&quot;篮球&quot;</span>);</span><br><span class="line"><span class="comment">//当前s的实体为：我喜欢篮球</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="public-char-charAt-int-n"><a href="#public-char-charAt-int-n" class="headerlink" title="public char charAt(int n);"></a>public char charAt(int n);</h3><p>得到对象的字符序列位置n上的字符</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">StringBuffer</span> <span class="variable">s</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuffer</span>(<span class="string">&quot;我喜欢篮球&quot;</span>);</span><br><span class="line"><span class="type">char</span> <span class="variable">c</span> <span class="operator">=</span> s.charAt(<span class="number">2</span>);</span><br><span class="line"><span class="comment">//c为：欢</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="public-void-setCharAt-int-n-char-ch"><a href="#public-void-setCharAt-int-n-char-ch" class="headerlink" title="public void setCharAt(int n,char ch);"></a>public void setCharAt(int n,char ch);</h3><p>将对象的字符序列位置n上的字符用参数ch代替</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">StringBuffer</span> <span class="variable">s</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuffer</span>(<span class="string">&quot;我喜欢篮球&quot;</span>);</span><br><span class="line">s.charAt(<span class="number">3</span>，<span class="string">&#x27;足&#x27;</span>);</span><br><span class="line"><span class="comment">//此时s的实体为：我喜欢足球</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="StringBuffer-insert-int-index-String-str"><a href="#StringBuffer-insert-int-index-String-str" class="headerlink" title="StringBuffer insert(int index,String str);"></a>StringBuffer insert(int index,String str);</h3><p>将str插入到index位置，并返回当前对象的引用</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">StringBuffer</span> <span class="variable">s</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuffer</span>(<span class="string">&quot;我喜欢篮球&quot;</span>);</span><br><span class="line">s.charAt(<span class="number">3</span>,<span class="string">&quot;唱、跳、rap和&quot;</span>);</span><br><span class="line"><span class="comment">//此时s为：我喜欢唱、跳、rap和篮球</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="public-StringBuffer-reverse"><a href="#public-StringBuffer-reverse" class="headerlink" title="public StringBuffer reverse();"></a>public StringBuffer reverse();</h3><p>将当前对象实体中的字符序列翻转</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">StringBuffer</span> <span class="variable">s</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuffer</span>(<span class="string">&quot;我喜欢篮球&quot;</span>);</span><br><span class="line">s.reverse();</span><br><span class="line"><span class="comment">//此时s为：球蓝欢喜我</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="StringBuffer-delete-int-startIndex-int-endIndex"><a href="#StringBuffer-delete-int-startIndex-int-endIndex" class="headerlink" title="StringBuffer delete(int startIndex,int endIndex);"></a>StringBuffer delete(int startIndex,int endIndex);</h3><p>将当前对象的字符序列中删除一个子字符序列，删除的子字符序列从下标<em><strong>startIndex</strong></em>到<em><strong>endIndex-1</strong></em></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">StringBuffer</span> <span class="variable">s</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuffer</span>(<span class="string">&quot;我喜欢篮球&quot;</span>);</span><br><span class="line">s.delete(<span class="number">3</span>,<span class="number">5</span>);</span><br><span class="line"><span class="comment">//此时s为：我喜欢</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="StringBuffer-replace-int-startIndex-int-endIndex-String-str"><a href="#StringBuffer-replace-int-startIndex-int-endIndex-String-str" class="headerlink" title="StringBuffer replace(int startIndex,int endIndex,String str);"></a>StringBuffer replace(int startIndex,int endIndex,String str);</h3><p>将当前对象的字符序列从下标<em><strong>startIndex</strong></em>到<em><strong>endIndex-1</strong></em>替换为参数str</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">StringBuffer</span> <span class="variable">s</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuffer</span>(<span class="string">&quot;我喜欢篮球&quot;</span>);</span><br><span class="line">s.replace(<span class="number">3</span>,<span class="number">5</span>,<span class="string">&quot;足球&quot;</span>);</span><br><span class="line"><span class="comment">//此时s为：我喜欢足球</span></span><br></pre></td></tr></table></figure>
-
-
-
-]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Hello myblog</title>
     <url>/2023/04/14/Hello-myblog/</url>
     <content><![CDATA[<h1 id="Hello-myblog"><a href="#Hello-myblog" class="headerlink" title="Hello myblog"></a>Hello myblog</h1><h2 id="这是我的发布-水-的第一篇博客，简单纪念一下！！！"><a href="#这是我的发布-水-的第一篇博客，简单纪念一下！！！" class="headerlink" title="这是我的发布(水)的第一篇博客，简单纪念一下！！！"></a>这是我的发布(水)的第一篇博客，简单纪念一下！！！</h2><h2 id="大概花了五天时间搭建并美化了博客，前三天搭建，后两天美化"><a href="#大概花了五天时间搭建并美化了博客，前三天搭建，后两天美化" class="headerlink" title="大概花了五天时间搭建并美化了博客，前三天搭建，后两天美化"></a>大概花了五天时间搭建并美化了博客，前三天搭建，后两天美化</h2><h2 id="下面简单介绍一下-GitHub-Hexo-搭建个人博客的准备吧"><a href="#下面简单介绍一下-GitHub-Hexo-搭建个人博客的准备吧" class="headerlink" title="下面简单介绍一下 GitHub + Hexo 搭建个人博客的准备吧"></a>下面简单介绍一下 GitHub + Hexo 搭建个人博客的准备吧</h2><h3 id="搭建准备"><a href="#搭建准备" class="headerlink" title="搭建准备"></a>搭建准备</h3><ul>
@@ -182,6 +122,66 @@
 <h3 id="关于main-方法的参数化"><a href="#关于main-方法的参数化" class="headerlink" title="关于main()方法的参数化"></a>关于main()方法的参数化</h3><p>使用解释器java.exe执行程序来执行主类时，从键盘输入若干字符序列 ，用空格分开，它们分别对应args[0]、args[1]、args[2]……</p>
 <h2 id="对象的String表示"><a href="#对象的String表示" class="headerlink" title="对象的String表示"></a>对象的String表示</h2><p>所有的类都默认是java.lang包中Object类的子类或间接子类。Object类有一个public String toString()方法，一个对象调用该方法返回String对象的字符序列的一般形式为</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">创建对象的类的名字@对象的引用</span><br><span class="line"></span><br><span class="line">System.out.println(object);</span><br><span class="line">//等价于</span><br><span class="line">System.out,println(object.toString)</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Java_StringBuffer类</title>
+    <url>/2023/06/04/Java-StringBuffer%E7%B1%BB/</url>
+    <content><![CDATA[<h1 id="Java常用实用类学习——StringBuffer类"><a href="#Java常用实用类学习——StringBuffer类" class="headerlink" title="Java常用实用类学习——StringBuffer类"></a>Java常用实用类学习——StringBuffer类</h1><p>StringBuffer类与String类不同，StringBuffer类的对象的的实体的内存空间可以自动改变大小，便于存放一个可变的字符序列。尽管String类是Java.lang包中的final类，但该类提供了修改字符序列的方法。</p>
+<h2 id="StringBuffer类的对象"><a href="#StringBuffer类的对象" class="headerlink" title="StringBuffer类的对象"></a>StringBuffer类的对象</h2><p>StringBuffer类有3个构造方法</p>
+<h3 id="StringBuffer-；"><a href="#StringBuffer-；" class="headerlink" title="StringBuffer()；"></a>StringBuffer()；</h3><p>使用无参的构造方法创建一个StringBuffer对象，那么分配给该对象的实体初始容量可以容纳16个字符，实体容量大于16时，容量自动增加。StringBuffer对象可以通过***length()<em><strong>方法获取实体中存放的字符序列的长度，通过</strong></em>capacity()***方法获取当前实体的实际容量。</p>
+<h3 id="StringBuffer-int-size"><a href="#StringBuffer-int-size" class="headerlink" title="StringBuffer(int size);"></a>StringBuffer(int size);</h3><p>使用本构造方法创建一个StringBuffer对象，那么可以分配给该对象的实体初始容量为参数size指定的字符个数，实体容量大于size时，容量自动增加。</p>
+<h3 id="StringBuffer-String-s"><a href="#StringBuffer-String-s" class="headerlink" title="StringBuffer(String s);"></a>StringBuffer(String s);</h3><p>使用本构造方法创建一个StringBuffer对象，那么可以分配给该对象的实体初始容量为参数s的字符序列的长度再加16。</p>
+<h2 id="StringBuffer类的常用方法"><a href="#StringBuffer类的常用方法" class="headerlink" title="StringBuffer类的常用方法"></a>StringBuffer类的常用方法</h2><h3 id="append"><a href="#append" class="headerlink" title="append();"></a>append();</h3><ul>
+<li>StringBuffer append(String s)：</li>
+</ul>
+<p>将字符串s的字符序列追加到当前StringBuffer对象的字符序列中，并返回当前对象的引用</p>
+<ul>
+<li>StringBuffer append(int n)：</li>
+</ul>
+<p>将int型数组n转换为String对象，再将其加入当前StringBuffer对象的字符序列中，并返回当前对象的引用</p>
+<ul>
+<li>StringBuffer append(Object o)：</li>
+</ul>
+<p>将一个对象o的字符序列表示追加到当前StringBuffer对象的字符序列中，并返回当前对象的引用</p>
+<p>类似的方法还有**StringBuffer append(long n)<strong>、</strong>StringBuffer append(boolean n)<strong>、</strong>StringBuffer append(float n)<strong>、</strong>StringBuffer append(double n)<strong>和</strong>StringBuffer append(char n)**。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">StringBuffer</span> <span class="variable">s</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuffer</span>(<span class="string">&quot;我喜欢&quot;</span>);</span><br><span class="line">s.append(<span class="string">&quot;篮球&quot;</span>);</span><br><span class="line"><span class="comment">//当前s的实体为：我喜欢篮球</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="public-char-charAt-int-n"><a href="#public-char-charAt-int-n" class="headerlink" title="public char charAt(int n);"></a>public char charAt(int n);</h3><p>得到对象的字符序列位置n上的字符</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">StringBuffer</span> <span class="variable">s</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuffer</span>(<span class="string">&quot;我喜欢篮球&quot;</span>);</span><br><span class="line"><span class="type">char</span> <span class="variable">c</span> <span class="operator">=</span> s.charAt(<span class="number">2</span>);</span><br><span class="line"><span class="comment">//c为：欢</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="public-void-setCharAt-int-n-char-ch"><a href="#public-void-setCharAt-int-n-char-ch" class="headerlink" title="public void setCharAt(int n,char ch);"></a>public void setCharAt(int n,char ch);</h3><p>将对象的字符序列位置n上的字符用参数ch代替</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">StringBuffer</span> <span class="variable">s</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuffer</span>(<span class="string">&quot;我喜欢篮球&quot;</span>);</span><br><span class="line">s.charAt(<span class="number">3</span>，<span class="string">&#x27;足&#x27;</span>);</span><br><span class="line"><span class="comment">//此时s的实体为：我喜欢足球</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="StringBuffer-insert-int-index-String-str"><a href="#StringBuffer-insert-int-index-String-str" class="headerlink" title="StringBuffer insert(int index,String str);"></a>StringBuffer insert(int index,String str);</h3><p>将str插入到index位置，并返回当前对象的引用</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">StringBuffer</span> <span class="variable">s</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuffer</span>(<span class="string">&quot;我喜欢篮球&quot;</span>);</span><br><span class="line">s.charAt(<span class="number">3</span>,<span class="string">&quot;唱、跳、rap和&quot;</span>);</span><br><span class="line"><span class="comment">//此时s为：我喜欢唱、跳、rap和篮球</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="public-StringBuffer-reverse"><a href="#public-StringBuffer-reverse" class="headerlink" title="public StringBuffer reverse();"></a>public StringBuffer reverse();</h3><p>将当前对象实体中的字符序列翻转</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">StringBuffer</span> <span class="variable">s</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuffer</span>(<span class="string">&quot;我喜欢篮球&quot;</span>);</span><br><span class="line">s.reverse();</span><br><span class="line"><span class="comment">//此时s为：球蓝欢喜我</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="StringBuffer-delete-int-startIndex-int-endIndex"><a href="#StringBuffer-delete-int-startIndex-int-endIndex" class="headerlink" title="StringBuffer delete(int startIndex,int endIndex);"></a>StringBuffer delete(int startIndex,int endIndex);</h3><p>将当前对象的字符序列中删除一个子字符序列，删除的子字符序列从下标<em><strong>startIndex</strong></em>到<em><strong>endIndex-1</strong></em></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">StringBuffer</span> <span class="variable">s</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuffer</span>(<span class="string">&quot;我喜欢篮球&quot;</span>);</span><br><span class="line">s.delete(<span class="number">3</span>,<span class="number">5</span>);</span><br><span class="line"><span class="comment">//此时s为：我喜欢</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="StringBuffer-replace-int-startIndex-int-endIndex-String-str"><a href="#StringBuffer-replace-int-startIndex-int-endIndex-String-str" class="headerlink" title="StringBuffer replace(int startIndex,int endIndex,String str);"></a>StringBuffer replace(int startIndex,int endIndex,String str);</h3><p>将当前对象的字符序列从下标<em><strong>startIndex</strong></em>到<em><strong>endIndex-1</strong></em>替换为参数str</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">StringBuffer</span> <span class="variable">s</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuffer</span>(<span class="string">&quot;我喜欢篮球&quot;</span>);</span><br><span class="line">s.replace(<span class="number">3</span>,<span class="number">5</span>,<span class="string">&quot;足球&quot;</span>);</span><br><span class="line"><span class="comment">//此时s为：我喜欢足球</span></span><br></pre></td></tr></table></figure>
+
+
+
 ]]></content>
       <categories>
         <category>Java</category>
@@ -349,6 +349,68 @@
 ]]></content>
       <categories>
         <category>Markdown</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Python基础(三)——函数</title>
+    <url>/2023/08/12/Python%E5%9F%BA%E7%A1%80(%E4%B8%89)%E2%80%94%E2%80%94%E5%87%BD%E6%95%B0/</url>
+    <content><![CDATA[<h1 id="函数介绍"><a href="#函数介绍" class="headerlink" title="函数介绍"></a>函数介绍</h1><ul>
+<li>函数是组织好的，可重复使用的，用来实现特定功能的代码段，如前面的type()、input()等都是Python的内置函数。</li>
+<li>函数可以提高程序的复用性，减少重复性代码，提高开发效率</li>
+</ul>
+<h1 id="函数的定义和调用"><a href="#函数的定义和调用" class="headerlink" title="函数的定义和调用"></a>函数的定义和调用</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 定义函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">函数名</span>(<span class="params">传入参数</span>):</span><br><span class="line">    函数体</span><br><span class="line">    <span class="keyword">return</span> 返回值</span><br><span class="line"></span><br><span class="line"><span class="comment"># 调用函数</span></span><br><span class="line">函数名(参数)</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>注意：</strong></p>
+<ul>
+<li>参数如果不需要，可以省略</li>
+<li>返回值如果不需要，可以省略</li>
+<li>函数必须先定义后使用</li>
+</ul>
+<h1 id="函数的参数"><a href="#函数的参数" class="headerlink" title="函数的参数"></a>函数的参数</h1><p>传入参数的功能是：在函数进行计算的时候，接受外部（调用时）提供的数据</p>
+<p><strong>语法解析：</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 定义函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">add</span>(<span class="params">x,y</span>):</span><br><span class="line">    result =  x + y</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;<span class="subst">&#123;x&#125;</span> + <span class="subst">&#123;y&#125;</span>的结果是：<span class="subst">&#123;result&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 调用函数</span></span><br><span class="line">add(<span class="number">5</span>,<span class="number">6</span>)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>函数定义中，提供的x和y，称之为：形式参数（形参），表示函数声明将要使用2个参数，参数直接使用逗号进行分隔</li>
+<li>函数调用中，提供的5和6，称之为：实际参数（实参），表示函数执行时真正使用的参数值，传入的时候，按照顺序传入数据，使用逗号分隔</li>
+<li>传入参数的数量是不受限制的，可以没有，也可以有多个</li>
+</ul>
+<h1 id="函数的返回值"><a href="#函数的返回值" class="headerlink" title="函数的返回值"></a>函数的返回值</h1><h2 id="返回值的定义"><a href="#返回值的定义" class="headerlink" title="返回值的定义"></a>返回值的定义</h2><p>所谓返回值，就是程序中函数完成事情后，最后给调用者的结果</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">函数</span>(<span class="params">参数...</span>):</span><br><span class="line">    函数体</span><br><span class="line">    <span class="keyword">return</span> 返回值</span><br><span class="line"></span><br><span class="line">变量 = 函数(参数)</span><br></pre></td></tr></table></figure>
+
+<p>如上述代码，变量就能接收到函数的返回值</p>
+<p>语法就是：通过return关键字，就能向调用者返回数据</p>
+<p><strong>注意：</strong>函数体在遇到return后就结束了，所以写在return后的代码不会执行</p>
+<h2 id="None类型"><a href="#None类型" class="headerlink" title="None类型"></a>None类型</h2><p>Python中有一个特殊的字面量：None，其类型是：&lt;class ‘NoneType’&gt;，无返回值的函数，实际上就是返回了：None这个字面量</p>
+<p>应用场景：</p>
+<ul>
+<li>用在函数<strong>无返回值</strong>上</li>
+<li>用在<strong>if判断</strong>上，在if判断中，None等同于False，一般用在函数中主动返回None，配合if判断做出相关处理</li>
+<li>在声明无内容的变量上，<strong>定义变量</strong>时，但暂时不需要变量有具体值，可以用None来代替</li>
+</ul>
+<p>None在if中的应用</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">check_age</span>(<span class="params">age</span>):</span><br><span class="line">    <span class="keyword">if</span> age &gt; <span class="number">18</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;SUCCESS&quot;</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">result = check_age(<span class="number">10</span>)</span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> result:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;未成年&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="函数说明文档"><a href="#函数说明文档" class="headerlink" title="函数说明文档"></a>函数说明文档</h1><p>顾名思义，就是在函数中写注释函数进行说明解释，帮助更好理解函数的功能</p>
+<h1 id="函数的嵌套调用"><a href="#函数的嵌套调用" class="headerlink" title="函数的嵌套调用"></a>函数的嵌套调用</h1><p>所谓函数嵌套调用就是指在一个函数里面调用了另外一个函数，如下所示</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">fun_b</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;---2---&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">fun_a</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;---1---&quot;</span>)</span><br><span class="line"></span><br><span class="line">    fun_b()</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;---3---&quot;</span>)</span><br><span class="line"></span><br><span class="line">fun_a()</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">本段代码在fun_a中调用了fun_b</span></span><br><span class="line"><span class="string">运行结果：</span></span><br><span class="line"><span class="string">---1---</span></span><br><span class="line"><span class="string">---2---</span></span><br><span class="line"><span class="string">---3---</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="变量作用域"><a href="#变量作用域" class="headerlink" title="变量作用域"></a>变量作用域</h1><ol>
+<li>变量主要分为局部变量和全局变量</li>
+<li>局部变量：定义在函数体内的局部变量，即只在函数体内部生效</li>
+<li>全局变量：在函数体内、外都能生效的变量</li>
+<li>在函数内部定义一个与全局变量同名的变量，并对其运算，对全局变量无影响</li>
+<li>在函数内部声明全局变量，需要使用global关键字</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Python</category>
       </categories>
   </entry>
   <entry>
