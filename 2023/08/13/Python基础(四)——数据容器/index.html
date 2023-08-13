@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+  
+
+    <head>
+      <meta charset="utf-8" />
+        
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1"
+      />
+      <title>Python基础(四)——数据容器 |  小稳</title>
+  <meta name="generator" content="hexo-theme-ayer">
+      
+      <link rel="shortcut icon" href="/littlewin.png" />
+       
+<link rel="stylesheet" href="/dist/main.css">
+
+      
+<link rel="stylesheet" href="/css/fonts/remixicon.css">
+
+      
+<link rel="stylesheet" href="/css/custom.css">
+ 
+      <script src="https://cdn.staticfile.org/pace/1.2.4/pace.min.js"></script>
+       
+ 
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-bulma@5.0.1/bulma.min.css"
+      />
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
+
+      <!-- mermaid -->
+      
+      <style>
+        .swal2-styled.swal2-confirm {
+          font-size: 1.6rem;
+        }
+      </style>
+    <link rel="alternate" href="/atom.xml" title="小稳" type="application/atom+xml">
+</head>
+  </html>
+</html>
+
+
+<body>
+  <div id="app">
+    
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-Python基础(四)——数据容器"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  Python基础(四)——数据容器
+</h1>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2023/08/13/Python%E5%9F%BA%E7%A1%80(%E5%9B%9B)%E2%80%94%E2%80%94%E6%95%B0%E6%8D%AE%E5%AE%B9%E5%99%A8/" class="article-date">
+  <time datetime="2023-08-13T04:01:36.000Z" itemprop="datePublished">2023-08-13</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Python/">Python</a>
+  </div>
+  
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> Word count:</span>
+            <span class="post-count">3.7k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> Reading time≈</span>
+            <span class="post-count">14 min</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="数据容器入门"><a href="#数据容器入门" class="headerlink" title="数据容器入门"></a>数据容器入门</h1><p>Python中的数据容器：</p>
+<p>一个可以容纳多份数据的数据类型，容纳的每一份元素称之为1个元素，每个元素可以是任意类型的数据，如字符串、数字、布尔等。</p>
+<p>数据容器根据特点的不同，如：</p>
+<ul>
+<li>是否支持重复元素</li>
+<li>是否可以修改</li>
+<li>是否有序，等</li>
+</ul>
+<p>分为5类，分别是：列表（list）、元组（tuple）、字符串（str）、集合（set）、字典（dict）</p>
+<h1 id="数据容器：list（列表）"><a href="#数据容器：list（列表）" class="headerlink" title="数据容器：list（列表）"></a>数据容器：list（列表）</h1><h2 id="列表的定义"><a href="#列表的定义" class="headerlink" title="列表的定义"></a>列表的定义</h2><p>基本语法</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 字面量</span></span><br><span class="line">[元素<span class="number">1</span>,元素<span class="number">2</span>,元素<span class="number">3</span>,……]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义变量</span></span><br><span class="line">变量名称 = [元素<span class="number">1</span>,元素<span class="number">2</span>,元素<span class="number">3</span>,……]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义空列表</span></span><br><span class="line">变量名称 = []</span><br><span class="line">变量名称 = <span class="built_in">list</span>()</span><br></pre></td></tr></table></figure>
+
+
+
+<p>注意：</p>
+<ul>
+<li><p>列表的每一个元素，称之为元素</p>
+</li>
+<li><p>以 [] 作为标识</p>
+</li>
+<li><p>列表内每个元素之间用逗号隔开</p>
+</li>
+<li><p>列表可以一次存储多个数据，且可以为不同的数据类型，支持嵌套</p>
+</li>
+</ul>
+<h2 id="列表的下标索引"><a href="#列表的下标索引" class="headerlink" title="列表的下标索引"></a>列表的下标索引</h2><p>列表的每个元素都有其位置下标索引，从前向后的方向，从0开始，依次递增，如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 语法：列表[下标索引]</span></span><br><span class="line"></span><br><span class="line">name_list = [<span class="string">&#x27;Sam&#x27;</span>,<span class="string">&#x27;Jack&#x27;</span>,<span class="string">&#x27;Mark&#x27;</span>]</span><br><span class="line"><span class="built_in">print</span>(name_list[<span class="number">0</span>])		<span class="comment">#结果：Sam</span></span><br><span class="line"><span class="built_in">print</span>(name_list[<span class="number">1</span>])		<span class="comment">#结果：Jack</span></span><br><span class="line"><span class="built_in">print</span>(name_list[<span class="number">2</span>])		<span class="comment">#结果：Mark</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>反向索引，从后往前的方向，从-1开始递减，如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 语法：列表[下标索引]</span></span><br><span class="line"></span><br><span class="line">name_list = [<span class="string">&#x27;Sam&#x27;</span>,<span class="string">&#x27;Jack&#x27;</span>,<span class="string">&#x27;Mark&#x27;</span>]</span><br><span class="line"><span class="built_in">print</span>(name_list[-<span class="number">1</span>])		<span class="comment">#结果：Mark</span></span><br><span class="line"><span class="built_in">print</span>(name_list[-<span class="number">2</span>])		<span class="comment">#结果：Jack</span></span><br><span class="line"><span class="built_in">print</span>(name_list[-<span class="number">3</span>])		<span class="comment">#结果：Sam</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>嵌套列表的下标索引，同上，写两层即可</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 语法 列表[下标][下标]</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="列表的常用操作"><a href="#列表的常用操作" class="headerlink" title="列表的常用操作"></a>列表的常用操作</h2><p>方法：在Python中，如果将函数定义为class（类）的成员，那么函数会称之为方法<strong>（写在类里的函数成为方法）</strong>，使用“.”访问</p>
+<h3 id="列表的查询功能——index"><a href="#列表的查询功能——index" class="headerlink" title="列表的查询功能——index()"></a>列表的查询功能——index()</h3><ul>
+<li><p>查询某元素下标</p>
+<p>功能：查找指定元素在列表的下标，如果找不到，报错ValueError</p>
+<p>语法：<strong>列表.index(元素)</strong></p>
+</li>
+</ul>
+<h3 id="修改元素"><a href="#修改元素" class="headerlink" title="修改元素"></a>修改元素</h3><ul>
+<li><p>修改特定位置（索引）的元素值</p>
+<p>语法：<strong>列表[下标] &#x3D; 值</strong></p>
+<p>通过如上语法即可直接对指定位置的值进行重新赋值</p>
+</li>
+<li><p>插入元素</p>
+<p>语法：<strong>列表.insert(下标,元素)</strong></p>
+<p>在指定的下标位置，插入指定元素，该位置原来的元素和后续元素，依次向后移</p>
+</li>
+<li><p>追加元素1</p>
+<p>语法：<strong>列表.append(元素)</strong></p>
+<p>将元素追加到列表的尾部</p>
+</li>
+<li><p>追加元素2</p>
+<p>语法：<strong>列表.extend(其他数据容器)</strong></p>
+<p>将其他数据容器的内容取出，依次追加到列表尾部</p>
+</li>
+<li><p>删除元素</p>
+<p>语法1：<strong>del 列表[下标]</strong></p>
+<p>语法2：<strong>列表.pop(下标)</strong></p>
+<p>语法3：<strong>列表.remove(元素)</strong></p>
+<p>方法pop()不仅可以删除元素，还会返回被删除的元素，remove()是删除某元素在列表的第一个匹配项</p>
+</li>
+<li><p>清空列表</p>
+<p>语法：<strong>列表.clear()</strong></p>
+<p>清空列表内容</p>
+</li>
+<li><p>统计某元素在列表内的数量</p>
+<p>语法：<strong>列表.count(元素)</strong></p>
+</li>
+<li><p>统计列表中有多少元素</p>
+<p>语法：<strong>len(列表)</strong></p>
+<p>可以得到一个int型的数字，表示列表内的元素数量</p>
+</li>
+</ul>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><table>
+<thead>
+<tr>
+<th align="center">功能</th>
+<th align="center">语法</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">查询某元素下标</td>
+<td align="center">列表.index(元素)</td>
+<td align="center">查找指定元素在列表的下标，如果找不到，报错ValueError</td>
+</tr>
+<tr>
+<td align="center">修改元素值</td>
+<td align="center">列表[下标] &#x3D; 值</td>
+<td align="center">直接对指定位置的值进行重新赋值</td>
+</tr>
+<tr>
+<td align="center">插入元素</td>
+<td align="center">列表.insert(下标,元素)</td>
+<td align="center">在指定的下标位置，插入指定元素，该位置原来的元素和后续元素，依次向后移</td>
+</tr>
+<tr>
+<td align="center">追加元素</td>
+<td align="center">列表.append(元素)</td>
+<td align="center">将元素追加到列表的尾部</td>
+</tr>
+<tr>
+<td align="center">追加元素</td>
+<td align="center">列表.extend(其他数据容器)</td>
+<td align="center">将其他数据容器的内容取出，依次追加到列表尾部</td>
+</tr>
+<tr>
+<td align="center">删除元素</td>
+<td align="center">del 列表[下标]</td>
+<td align="center">删除下标位置上的元素</td>
+</tr>
+<tr>
+<td align="center">删除元素</td>
+<td align="center">列表.pop(下标)</td>
+<td align="center">方法pop()不仅可以删除元素，还会返回被删除的元素</td>
+</tr>
+<tr>
+<td align="center">删除元素</td>
+<td align="center">列表.remove(元素)</td>
+<td align="center">remove()是删除某元素在列表的第一个匹配项</td>
+</tr>
+<tr>
+<td align="center">清空列表</td>
+<td align="center">列表.clear()</td>
+<td align="center">清空列表内容</td>
+</tr>
+<tr>
+<td align="center">统计某元素数量</td>
+<td align="center">列表.count(元素)</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">统计列表元素</td>
+<td align="center">len(列表)</td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 语法：列表[下标索引]</span></span><br><span class="line"></span><br><span class="line">name_list = [<span class="string">&#x27;Sam&#x27;</span>,<span class="string">&#x27;Jack&#x27;</span>,<span class="string">&#x27;Mark&#x27;</span>]</span><br><span class="line"><span class="built_in">print</span>(name_list[<span class="number">0</span>])		<span class="comment">#结果：Sam</span></span><br><span class="line"><span class="built_in">print</span>(name_list[<span class="number">1</span>])		<span class="comment">#结果：Jack</span></span><br><span class="line"><span class="built_in">print</span>(name_list[<span class="number">2</span>])		<span class="comment">#结果：Mark</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 语法：列表[下标索引]</span></span><br><span class="line"></span><br><span class="line">name_list = [<span class="string">&#x27;Sam&#x27;</span>,<span class="string">&#x27;Jack&#x27;</span>,<span class="string">&#x27;Mark&#x27;</span>]</span><br><span class="line"><span class="built_in">print</span>(name_list[-<span class="number">1</span>])		<span class="comment">#结果：Mark</span></span><br><span class="line"><span class="built_in">print</span>(name_list[-<span class="number">2</span>])		<span class="comment">#结果：Jack</span></span><br><span class="line"><span class="built_in">print</span>(name_list[-<span class="number">3</span>])		<span class="comment">#结果：Sam</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 1.索引元素 index()</span></span><br><span class="line">index = name_list.index(<span class="string">&quot;Jack&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;“Jack”在列表中的位置是<span class="subst">&#123;index&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2.修改元素</span></span><br><span class="line">name_list[<span class="number">2</span>] = <span class="string">&quot;Tom&quot;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;列表修改元素后，结果是：\t\t<span class="subst">&#123;name_list&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3.插入元素 insert()</span></span><br><span class="line">name_list.insert(<span class="number">2</span>,<span class="string">&quot;Mark&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;列表插入元素后，结果是：\t\t<span class="subst">&#123;name_list&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 4.追加元素 append()</span></span><br><span class="line">name_list.append(<span class="string">&quot;Peter&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;列表追加元素后，结果是：\t\t<span class="subst">&#123;name_list&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 5.追加元素 extend()</span></span><br><span class="line">name_list2 = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">name_list.extend(name_list2)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;列表追加一个新列表后，结果是：\t<span class="subst">&#123;name_list&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 6.删除元素</span></span><br><span class="line"><span class="keyword">del</span> name_list[<span class="number">5</span>]</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;列表删除元素后，结果是：\t\t<span class="subst">&#123;name_list&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line">getWord = name_list.pop(<span class="number">5</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;列表取出元素后，结果是：\t\t<span class="subst">&#123;name_list&#125;</span>,取出的元素是：<span class="subst">&#123;getWord&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line">name_list.remove(<span class="number">3</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;列表删除元素后，结果是：\t\t<span class="subst">&#123;name_list&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 7.清空列表</span></span><br><span class="line">name_list.clear()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;清空列表后，结果是：\t\t\t<span class="subst">&#123;name_list&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 8.统计列表内某元素的数量</span></span><br><span class="line">name_list = [<span class="string">&#x27;Sam&#x27;</span>,<span class="string">&#x27;Jack&#x27;</span>,<span class="string">&#x27;Mark&#x27;</span>,<span class="string">&#x27;Sam&#x27;</span>,<span class="string">&#x27;Sam&#x27;</span>,<span class="string">&#x27;Sam&#x27;</span>]</span><br><span class="line">count = name_list.count(<span class="string">&quot;Sam&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;列表中Sam的数量是：\t\t\t<span class="subst">&#123;count&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 9.统计列表中有多少元素</span></span><br><span class="line">count = <span class="built_in">len</span>(name_list)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;列表中元素的数量是：\t\t\t<span class="subst">&#123;count&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">运行结果：</span></span><br><span class="line"><span class="string">Sam</span></span><br><span class="line"><span class="string">Jack</span></span><br><span class="line"><span class="string">Mark</span></span><br><span class="line"><span class="string">Mark</span></span><br><span class="line"><span class="string">Jack</span></span><br><span class="line"><span class="string">Sam</span></span><br><span class="line"><span class="string">“Jack”在列表中的位置是1</span></span><br><span class="line"><span class="string">列表修改元素后，结果是：		[&#x27;Sam&#x27;, &#x27;Jack&#x27;, &#x27;Tom&#x27;]</span></span><br><span class="line"><span class="string">列表插入元素后，结果是：		[&#x27;Sam&#x27;, &#x27;Jack&#x27;, &#x27;Mark&#x27;, &#x27;Tom&#x27;]</span></span><br><span class="line"><span class="string">列表追加元素后，结果是：		[&#x27;Sam&#x27;, &#x27;Jack&#x27;, &#x27;Mark&#x27;, &#x27;Tom&#x27;, &#x27;Peter&#x27;]</span></span><br><span class="line"><span class="string">列表追加一个新列表后，结果是：	  [&#x27;Sam&#x27;, &#x27;Jack&#x27;, &#x27;Mark&#x27;, &#x27;Tom&#x27;, &#x27;Peter&#x27;, 1, 2, 3]</span></span><br><span class="line"><span class="string">列表删除元素后，结果是：		[&#x27;Sam&#x27;, &#x27;Jack&#x27;, &#x27;Mark&#x27;, &#x27;Tom&#x27;, &#x27;Peter&#x27;, 2, 3]</span></span><br><span class="line"><span class="string">列表取出元素后，结果是：		[&#x27;Sam&#x27;, &#x27;Jack&#x27;, &#x27;Mark&#x27;, &#x27;Tom&#x27;, &#x27;Peter&#x27;, 3],取出的元素是：2</span></span><br><span class="line"><span class="string">列表删除元素后，结果是：		[&#x27;Sam&#x27;, &#x27;Jack&#x27;, &#x27;Mark&#x27;, &#x27;Tom&#x27;, &#x27;Peter&#x27;]</span></span><br><span class="line"><span class="string">清空列表后，结果是：			 []</span></span><br><span class="line"><span class="string">列表中Sam的数量是：			  4</span></span><br><span class="line"><span class="string">列表中元素的数量是：			 6</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><ul>
+<li>可以容纳多个元素</li>
+<li>可以容纳不同类型的元素</li>
+<li>数据是有序储存（有下标序号）</li>
+<li>允许重复数据存在</li>
+<li>可以修改（增加或删除元素等）</li>
+</ul>
+<h2 id="列表的遍历"><a href="#列表的遍历" class="headerlink" title="列表的遍历"></a>列表的遍历</h2><ol>
+<li>遍历：将容器的内容依次取出，并处理，称之为遍历</li>
+<li>for和while对比<ul>
+<li>for循环更简洁，while更灵活</li>
+<li>for用于从容器内依次取出元素并处理，while可以用以任何需要循环的场景</li>
+</ul>
+</li>
+</ol>
+<h1 id="数据容器：tuple（元组）"><a href="#数据容器：tuple（元组）" class="headerlink" title="数据容器：tuple（元组）"></a>数据容器：tuple（元组）</h1><h2 id="元组的定义"><a href="#元组的定义" class="headerlink" title="元组的定义"></a>元组的定义</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 字面量</span></span><br><span class="line">(元素<span class="number">1</span>,元素<span class="number">2</span>,元素<span class="number">3</span>,……)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义变量</span></span><br><span class="line">变量名称 = (元素<span class="number">1</span>,元素<span class="number">2</span>,元素<span class="number">3</span>,……)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义空列表</span></span><br><span class="line">变量名称 = ()</span><br><span class="line">变量名称 = <span class="built_in">tuple</span>()</span><br></pre></td></tr></table></figure>
+
+
+
+<p>注意：</p>
+<ul>
+<li>元组只有一个数据时，这个数后面要添加<strong>逗号</strong></li>
+<li>元组也支持嵌套</li>
+<li>元组的下标索引与列表相同</li>
+<li>元组的内容时不可修改的，否则会报错，但如果在元组中嵌套列表，嵌套的列表是可以修改的</li>
+<li>多数特性和list一样，不同点在于不可修改</li>
+</ul>
+<h2 id="元组的相关操作"><a href="#元组的相关操作" class="headerlink" title="元组的相关操作"></a>元组的相关操作</h2><table>
+<thead>
+<tr>
+<th align="center">语法</th>
+<th align="center">作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">index()</td>
+<td align="center">查找某个数据，如果数据存在返回对于的下标，否则报错</td>
+</tr>
+<tr>
+<td align="center">count()</td>
+<td align="center">统计某个数据在当前元组出现的次数</td>
+</tr>
+<tr>
+<td align="center">len(元组)</td>
+<td align="center">统计元组内的元素个数</td>
+</tr>
+</tbody></table>
+<h2 id="实例："><a href="#实例：" class="headerlink" title="实例："></a>实例：</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 定义元组</span></span><br><span class="line">tup = (<span class="string">&quot;Sam&quot;</span>,<span class="string">&quot;Jack&quot;</span>,<span class="string">&quot;Mark&quot;</span>,<span class="string">&quot;Sam&quot;</span>,[<span class="string">&quot;唱歌&quot;</span>,<span class="string">&quot;篮球&quot;</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 统计元组长度</span></span><br><span class="line">num = <span class="built_in">len</span>(tup)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;元组的长度是：\t<span class="subst">&#123;num&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 统计元组中，&quot;Sam&quot;出现的次数</span></span><br><span class="line">num = tup.count(<span class="string">&quot;Sam&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;”Sam“出现的次数：\t<span class="subst">&#123;num&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 索引&quot;Mark&quot;在元组中的位置</span></span><br><span class="line">num = tup.index(<span class="string">&quot;Mark&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;”Mark“所在的位置：<span class="subst">&#123;num&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;原元组的元素：\t<span class="subst">&#123;tup&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除元组中嵌套的列表元素</span></span><br><span class="line">tup[<span class="number">4</span>].pop(<span class="number">0</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;删除元素后的元组：\t<span class="subst">&#123;tup&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在元组嵌套的列表中添加元素</span></span><br><span class="line">tup[<span class="number">4</span>].append(<span class="string">&quot;coding&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;添加元素后的元组：\t<span class="subst">&#123;tup&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">运行结果：</span></span><br><span class="line"><span class="string">元组的长度是：		 5</span></span><br><span class="line"><span class="string">”Sam“出现的次数：	  2</span></span><br><span class="line"><span class="string">”Mark“所在的位置：  2</span></span><br><span class="line"><span class="string">原元组的元素：	     (&#x27;Sam&#x27;, &#x27;Jack&#x27;, &#x27;Mark&#x27;, &#x27;Sam&#x27;, [&#x27;唱歌&#x27;, &#x27;篮球&#x27;])</span></span><br><span class="line"><span class="string">删除元素后的元组：	(&#x27;Sam&#x27;, &#x27;Jack&#x27;, &#x27;Mark&#x27;, &#x27;Sam&#x27;, [&#x27;篮球&#x27;])</span></span><br><span class="line"><span class="string">添加元素后的元组：	(&#x27;Sam&#x27;, &#x27;Jack&#x27;, &#x27;Mark&#x27;, &#x27;Sam&#x27;, [&#x27;篮球&#x27;, &#x27;coding&#x27;])</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="数据容器：str（字符串）"><a href="#数据容器：str（字符串）" class="headerlink" title="数据容器：str（字符串）"></a>数据容器：str（字符串）</h1><h2 id="字符串介绍"><a href="#字符串介绍" class="headerlink" title="字符串介绍"></a>字符串介绍</h2><ul>
+<li>字符串是字符的容器</li>
+<li>一个字符串可以存放任意数量的字符</li>
+<li>支持下标索引</li>
+<li>允许重复字符串存在</li>
+<li>不可以修改</li>
+<li>字符串定义和格式化在<a href="./Python%E5%9F%BA%E7%A1%80(%E4%B8%80)%E2%80%94%E2%80%94%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B">Python基础（一）</a>中有介绍</li>
+</ul>
+<h2 id="字符串的常用操作"><a href="#字符串的常用操作" class="headerlink" title="字符串的常用操作"></a>字符串的常用操作</h2><table>
+<thead>
+<tr>
+<th align="center">语法</th>
+<th align="center">功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">字符串[下标]</td>
+<td align="center">同列表、元组</td>
+</tr>
+<tr>
+<td align="center">字符串.index()</td>
+<td align="center">同列表、元组</td>
+</tr>
+<tr>
+<td align="center">字符串.replace(字符串1,字符串2)</td>
+<td align="center">将字符串1内容替换为字符串2的内容</td>
+</tr>
+<tr>
+<td align="center">字符串.split(分隔符字符串)</td>
+<td align="center">按照指定的分隔符字符串，将字符串划分为多个字符串，并存入列表对象中</td>
+</tr>
+<tr>
+<td align="center">字符串.strip()</td>
+<td align="center">去掉前后空格</td>
+</tr>
+<tr>
+<td align="center">字符串.strip(字符串)</td>
+<td align="center">去掉前后指定的字符串</td>
+</tr>
+<tr>
+<td align="center">字符串.count(字符串)</td>
+<td align="center">统计某个数据在当前元组出现的次数</td>
+</tr>
+<tr>
+<td align="center">len(字符串)</td>
+<td align="center">统计元组内的元素个数</td>
+</tr>
+</tbody></table>
+<h1 id="数据容器（序列）的切片"><a href="#数据容器（序列）的切片" class="headerlink" title="数据容器（序列）的切片"></a>数据容器（序列）的切片</h1><p><strong>序列：</strong>内容连续、有序，可使用下标索引的一类数据容器，列表、元组、字符串均可以视为序列</p>
+<p><strong>切片：</strong>从一个序列中，取出一个子序列</p>
+<p>语法：序列[起始下标:结束下标:步长]</p>
+<ul>
+<li>起始下标：从何处开始，可以留空，留空视作从头开始</li>
+<li>结束下标：何处结束（不含），可以留空，留空视作截到结尾</li>
+<li>步长：依次取元素的间隔<ul>
+<li>不写默认是1</li>
+<li>步长1表示，一个个取元素，步长N表示每次跳过N-1个元素取</li>
+<li>步长为负数表示反向取（起始下标和结束下标也要反向标记）</li>
+</ul>
+</li>
+</ul>
+<p>注意：切片操作不会影响序列本身，而是得到一个新的序列</p>
+<h1 id="数据容器：set（集合）"><a href="#数据容器：set（集合）" class="headerlink" title="数据容器：set（集合）"></a>数据容器：set（集合）</h1><h2 id="集合的定义"><a href="#集合的定义" class="headerlink" title="集合的定义"></a>集合的定义</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 定义集合字面量</span></span><br><span class="line">&#123;元素,元素,……,元素&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义集合变量</span></span><br><span class="line">变量名称 = &#123;元素,元素,……,元素&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义空集合</span></span><br><span class="line">变量名称 = <span class="built_in">set</span>()</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="集合的常用操作"><a href="#集合的常用操作" class="headerlink" title="集合的常用操作"></a>集合的常用操作</h2><table>
+<thead>
+<tr>
+<th align="center">方法</th>
+<th align="center">功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">集合.add(元素)</td>
+<td align="center">集合内添加一个元素</td>
+</tr>
+<tr>
+<td align="center">集合.remove(元素)</td>
+<td align="center">移除集合内指定的元素</td>
+</tr>
+<tr>
+<td align="center">集合.pop()</td>
+<td align="center">从集合中随机取出一个元素</td>
+</tr>
+<tr>
+<td align="center">集合.clear()</td>
+<td align="center">将集合清空</td>
+</tr>
+<tr>
+<td align="center">集合1.difference(集合2)</td>
+<td align="center">得到一个新集合，内含2个集合的差集，原有的2个集合内容不变</td>
+</tr>
+<tr>
+<td align="center">集合1.difference_uodate(集合2)</td>
+<td align="center">在集合1中，删除集合2中存在的元素集合1被修改，集合2不变</td>
+</tr>
+<tr>
+<td align="center">集合1.union(集合2)</td>
+<td align="center">得到1个新集合，内含2个集合的全部元素，原有的2个集合内容不变</td>
+</tr>
+<tr>
+<td align="center">len(集合)</td>
+<td align="center">得到一个整数。记录了集合的元素个数</td>
+</tr>
+</tbody></table>
+<h2 id="集合的特点"><a href="#集合的特点" class="headerlink" title="集合的特点"></a>集合的特点</h2><ul>
+<li>可以容纳多个元素</li>
+<li>可以容纳不同类型的数据（混装）</li>
+<li>数据时无序存储的（不支持下标索引）</li>
+<li>不允许重复数据存在</li>
+<li>可以修改</li>
+<li>支持for循环遍历，不可以使用while循环遍历（无法下标索引）</li>
+</ul>
+<h1 id="数据容器：dict（字典）"><a href="#数据容器：dict（字典）" class="headerlink" title="数据容器：dict（字典）"></a>数据容器：dict（字典）</h1><h2 id="字典的定义"><a href="#字典的定义" class="headerlink" title="字典的定义"></a>字典的定义</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 定义字典字面量</span></span><br><span class="line">&#123;key:value , key:value , key:value ,……, key:value&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义字典变量</span></span><br><span class="line">my_dict = &#123;key:value , key:value , key:value ,……, key:value&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义空字典</span></span><br><span class="line">my_dict = &#123;&#125;</span><br><span class="line">my_dict = <span class="built_in">dict</span>()</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="字典的常用操作"><a href="#字典的常用操作" class="headerlink" title="字典的常用操作"></a>字典的常用操作</h2><table>
+<thead>
+<tr>
+<th align="center">语法</th>
+<th align="center">功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">字典[Key]</td>
+<td align="center">获取指定Key对应的Value值</td>
+</tr>
+<tr>
+<td align="center">字典[Key] &#x3D; Value</td>
+<td align="center">添加或更新键值对</td>
+</tr>
+<tr>
+<td align="center">字典.pop(Key)</td>
+<td align="center">取出Key对应的Value并在字典内删除此Key的键值对</td>
+</tr>
+<tr>
+<td align="center">字典.clear()</td>
+<td align="center">请空字典</td>
+</tr>
+<tr>
+<td align="center">字典.keys()</td>
+<td align="center">获取字典的全部Key，可用for循环遍历字典</td>
+</tr>
+<tr>
+<td align="center">len(字典)</td>
+<td align="center">计算字典内的元素个数</td>
+</tr>
+</tbody></table>
+<h2 id="字典的特点"><a href="#字典的特点" class="headerlink" title="字典的特点"></a>字典的特点</h2><ul>
+<li>字典可以提供基于Key检索Value的场景实现，Key不可以重复（重复会覆盖）</li>
+<li>键值对的Key和Value可以是任意类型数据（Key不可以是字典）</li>
+<li>字典不可以下标索引，而是通过Key检索Value</li>
+<li>每一份数据都是KeyValue键值对</li>
+<li>支持for循环，不支持while循环</li>
+<li>可以修改</li>
+</ul>
+<h1 id="数据容器的总结对比"><a href="#数据容器的总结对比" class="headerlink" title="数据容器的总结对比"></a>数据容器的总结对比</h1><table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">列表</th>
+<th align="center">元素</th>
+<th align="center">字符串</th>
+<th align="center">集合</th>
+<th align="center">字典</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">元素数量</td>
+<td align="center">支持多个</td>
+<td align="center">支持多个</td>
+<td align="center">支持多个</td>
+<td align="center">支持多个</td>
+<td align="center">支持多个</td>
+</tr>
+<tr>
+<td align="center">元素类型</td>
+<td align="center">任意</td>
+<td align="center">任意</td>
+<td align="center">仅字符</td>
+<td align="center">任意</td>
+<td align="center">Key：除字典外任意类型，Value：任意类型</td>
+</tr>
+<tr>
+<td align="center">下标索引</td>
+<td align="center">支持</td>
+<td align="center">支持</td>
+<td align="center">支持</td>
+<td align="center">不支持</td>
+<td align="center">不支持</td>
+</tr>
+<tr>
+<td align="center">重复元素</td>
+<td align="center">支持</td>
+<td align="center">支持</td>
+<td align="center">支持</td>
+<td align="center">不支持</td>
+<td align="center">不支持</td>
+</tr>
+<tr>
+<td align="center">可修改性</td>
+<td align="center">支持</td>
+<td align="center">不支持</td>
+<td align="center">不支持</td>
+<td align="center">支持</td>
+<td align="center">支持</td>
+</tr>
+<tr>
+<td align="center">数据有序</td>
+<td align="center">是</td>
+<td align="center">是</td>
+<td align="center">是</td>
+<td align="center">否</td>
+<td align="center">否</td>
+</tr>
+<tr>
+<td align="center">使用场景</td>
+<td align="center">可修改，可重复的一批数据记录场景</td>
+<td align="center">不可修改，可重复的一批数据记录场景</td>
+<td align="center">一串字符的记录场景</td>
+<td align="center">不可重复的数据记录场景</td>
+<td align="center">以Key检索Value的数据记录场景</td>
+</tr>
+</tbody></table>
+<h1 id="数据容器的通用操作"><a href="#数据容器的通用操作" class="headerlink" title="数据容器的通用操作"></a>数据容器的通用操作</h1><table>
+<thead>
+<tr>
+<th align="center">功能</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">通过for循环</td>
+<td align="center">遍历容器（字典是遍历Key）</td>
+</tr>
+<tr>
+<td align="center">max()</td>
+<td align="center">容器内最大元素</td>
+</tr>
+<tr>
+<td align="center">min()</td>
+<td align="center">容器内最小元素</td>
+</tr>
+<tr>
+<td align="center">len()</td>
+<td align="center">容器元素个数</td>
+</tr>
+<tr>
+<td align="center">list()</td>
+<td align="center">转换为列表</td>
+</tr>
+<tr>
+<td align="center">tuple()</td>
+<td align="center">转换为元组</td>
+</tr>
+<tr>
+<td align="center">str()</td>
+<td align="center">转换为字符串</td>
+</tr>
+<tr>
+<td align="center">set()</td>
+<td align="center">转换为集合</td>
+</tr>
+<tr>
+<td align="center">sorted(序列,[reverse&#x3D;True])</td>
+<td align="center">排序，reverse&#x3D;True表示降序得到一个排好序的列表</td>
+</tr>
+</tbody></table>
+<h1 id="字符串大小比较方式"><a href="#字符串大小比较方式" class="headerlink" title="字符串大小比较方式"></a>字符串大小比较方式</h1><p>字符串比较：从头到尾，一位位比较，其中一位大，后面就无需比较了</p>
+<p>单个字符比较：通过ASCII码表，确定字符对应的码值数字来确定大小</p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>Copyright： </strong>
+          
+          Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source.
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://littlewin8.github.io/2023/08/13/Python%E5%9F%BA%E7%A1%80(%E5%9B%9B)%E2%80%94%E2%80%94%E6%95%B0%E6%8D%AE%E5%AE%B9%E5%99%A8/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+    
+      <a href="/2023/08/12/Python%E5%9F%BA%E7%A1%80(%E4%B8%89)%E2%80%94%E2%80%94%E5%87%BD%E6%95%B0/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">Python基础(三)——函数</div>
+      </a>
+    
+  </nav>
+
+  
+   
+  
+   
+    <script src="https://cdn.staticfile.org/twikoo/1.4.18/twikoo.all.min.js"></script>
+    <div id="twikoo" class="twikoo"></div>
+    <script>
+        twikoo.init({
+            envId: ""
+        })
+    </script>
+ 
+</article>
+
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2023
+        <i class="ri-heart-fill heart_icon"></i> LittleWin
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>Visitors:<span id="busuanzi_value_site_uv"></span></span>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>Views:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914'></script>
+        
+      </li>
+    </ul>
+  </div>
+</footer>    
+    </main>
+    <div class="float_btns">
+      <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+    </div>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/littlewin.png" alt="小稳"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/friends">友链</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/2023/about">关于我</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="Search">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-3.6.0.min.js"></script>
+ 
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+ 
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: ".tocbot",
+    contentSelector: ".article-entry",
+    headingSelector: "h1, h2, h3, h4, h5, h6",
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: "main",
+    positionFixedSelector: ".tocbot",
+    positionFixedClass: "is-position-fixed",
+    fixedSidebarOffset: "auto",
+  });
+</script>
+
+<script src="https://cdn.staticfile.org/jquery-modal/0.9.2/jquery.modal.min.js"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.staticfile.org/jquery-modal/0.9.2/jquery.modal.min.css"
+/>
+<script src="https://cdn.staticfile.org/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+ <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.staticfile.org/photoswipe/4.1.3/default-skin/default-skin.min.css">
+<script src="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe.min.js"></script>
+<script src="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script> 
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+ 
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+ 
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+ 
+<link rel="stylesheet" href="/css/clipboard.css">
+ <script src="https://cdn.staticfile.org/clipboard.js/2.0.10/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+ 
+<!-- CanvasBackground -->
+
+<script>
+  if (window.mermaid) {
+    mermaid.initialize({ theme: "forest" });
+  }
+</script>
+
+
+    
+    
+
+  </div>
+</body>
+
+</html>

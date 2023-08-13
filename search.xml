@@ -14,6 +14,66 @@
       </categories>
   </entry>
   <entry>
+    <title>Java_StringBuffer类</title>
+    <url>/2023/06/04/Java-StringBuffer%E7%B1%BB/</url>
+    <content><![CDATA[<h1 id="Java常用实用类学习——StringBuffer类"><a href="#Java常用实用类学习——StringBuffer类" class="headerlink" title="Java常用实用类学习——StringBuffer类"></a>Java常用实用类学习——StringBuffer类</h1><p>StringBuffer类与String类不同，StringBuffer类的对象的的实体的内存空间可以自动改变大小，便于存放一个可变的字符序列。尽管String类是Java.lang包中的final类，但该类提供了修改字符序列的方法。</p>
+<h2 id="StringBuffer类的对象"><a href="#StringBuffer类的对象" class="headerlink" title="StringBuffer类的对象"></a>StringBuffer类的对象</h2><p>StringBuffer类有3个构造方法</p>
+<h3 id="StringBuffer-；"><a href="#StringBuffer-；" class="headerlink" title="StringBuffer()；"></a>StringBuffer()；</h3><p>使用无参的构造方法创建一个StringBuffer对象，那么分配给该对象的实体初始容量可以容纳16个字符，实体容量大于16时，容量自动增加。StringBuffer对象可以通过***length()<em><strong>方法获取实体中存放的字符序列的长度，通过</strong></em>capacity()***方法获取当前实体的实际容量。</p>
+<h3 id="StringBuffer-int-size"><a href="#StringBuffer-int-size" class="headerlink" title="StringBuffer(int size);"></a>StringBuffer(int size);</h3><p>使用本构造方法创建一个StringBuffer对象，那么可以分配给该对象的实体初始容量为参数size指定的字符个数，实体容量大于size时，容量自动增加。</p>
+<h3 id="StringBuffer-String-s"><a href="#StringBuffer-String-s" class="headerlink" title="StringBuffer(String s);"></a>StringBuffer(String s);</h3><p>使用本构造方法创建一个StringBuffer对象，那么可以分配给该对象的实体初始容量为参数s的字符序列的长度再加16。</p>
+<h2 id="StringBuffer类的常用方法"><a href="#StringBuffer类的常用方法" class="headerlink" title="StringBuffer类的常用方法"></a>StringBuffer类的常用方法</h2><h3 id="append"><a href="#append" class="headerlink" title="append();"></a>append();</h3><ul>
+<li>StringBuffer append(String s)：</li>
+</ul>
+<p>将字符串s的字符序列追加到当前StringBuffer对象的字符序列中，并返回当前对象的引用</p>
+<ul>
+<li>StringBuffer append(int n)：</li>
+</ul>
+<p>将int型数组n转换为String对象，再将其加入当前StringBuffer对象的字符序列中，并返回当前对象的引用</p>
+<ul>
+<li>StringBuffer append(Object o)：</li>
+</ul>
+<p>将一个对象o的字符序列表示追加到当前StringBuffer对象的字符序列中，并返回当前对象的引用</p>
+<p>类似的方法还有**StringBuffer append(long n)<strong>、</strong>StringBuffer append(boolean n)<strong>、</strong>StringBuffer append(float n)<strong>、</strong>StringBuffer append(double n)<strong>和</strong>StringBuffer append(char n)**。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">StringBuffer</span> <span class="variable">s</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuffer</span>(<span class="string">&quot;我喜欢&quot;</span>);</span><br><span class="line">s.append(<span class="string">&quot;篮球&quot;</span>);</span><br><span class="line"><span class="comment">//当前s的实体为：我喜欢篮球</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="public-char-charAt-int-n"><a href="#public-char-charAt-int-n" class="headerlink" title="public char charAt(int n);"></a>public char charAt(int n);</h3><p>得到对象的字符序列位置n上的字符</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">StringBuffer</span> <span class="variable">s</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuffer</span>(<span class="string">&quot;我喜欢篮球&quot;</span>);</span><br><span class="line"><span class="type">char</span> <span class="variable">c</span> <span class="operator">=</span> s.charAt(<span class="number">2</span>);</span><br><span class="line"><span class="comment">//c为：欢</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="public-void-setCharAt-int-n-char-ch"><a href="#public-void-setCharAt-int-n-char-ch" class="headerlink" title="public void setCharAt(int n,char ch);"></a>public void setCharAt(int n,char ch);</h3><p>将对象的字符序列位置n上的字符用参数ch代替</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">StringBuffer</span> <span class="variable">s</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuffer</span>(<span class="string">&quot;我喜欢篮球&quot;</span>);</span><br><span class="line">s.charAt(<span class="number">3</span>，<span class="string">&#x27;足&#x27;</span>);</span><br><span class="line"><span class="comment">//此时s的实体为：我喜欢足球</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="StringBuffer-insert-int-index-String-str"><a href="#StringBuffer-insert-int-index-String-str" class="headerlink" title="StringBuffer insert(int index,String str);"></a>StringBuffer insert(int index,String str);</h3><p>将str插入到index位置，并返回当前对象的引用</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">StringBuffer</span> <span class="variable">s</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuffer</span>(<span class="string">&quot;我喜欢篮球&quot;</span>);</span><br><span class="line">s.charAt(<span class="number">3</span>,<span class="string">&quot;唱、跳、rap和&quot;</span>);</span><br><span class="line"><span class="comment">//此时s为：我喜欢唱、跳、rap和篮球</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="public-StringBuffer-reverse"><a href="#public-StringBuffer-reverse" class="headerlink" title="public StringBuffer reverse();"></a>public StringBuffer reverse();</h3><p>将当前对象实体中的字符序列翻转</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">StringBuffer</span> <span class="variable">s</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuffer</span>(<span class="string">&quot;我喜欢篮球&quot;</span>);</span><br><span class="line">s.reverse();</span><br><span class="line"><span class="comment">//此时s为：球蓝欢喜我</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="StringBuffer-delete-int-startIndex-int-endIndex"><a href="#StringBuffer-delete-int-startIndex-int-endIndex" class="headerlink" title="StringBuffer delete(int startIndex,int endIndex);"></a>StringBuffer delete(int startIndex,int endIndex);</h3><p>将当前对象的字符序列中删除一个子字符序列，删除的子字符序列从下标<em><strong>startIndex</strong></em>到<em><strong>endIndex-1</strong></em></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">StringBuffer</span> <span class="variable">s</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuffer</span>(<span class="string">&quot;我喜欢篮球&quot;</span>);</span><br><span class="line">s.delete(<span class="number">3</span>,<span class="number">5</span>);</span><br><span class="line"><span class="comment">//此时s为：我喜欢</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="StringBuffer-replace-int-startIndex-int-endIndex-String-str"><a href="#StringBuffer-replace-int-startIndex-int-endIndex-String-str" class="headerlink" title="StringBuffer replace(int startIndex,int endIndex,String str);"></a>StringBuffer replace(int startIndex,int endIndex,String str);</h3><p>将当前对象的字符序列从下标<em><strong>startIndex</strong></em>到<em><strong>endIndex-1</strong></em>替换为参数str</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">StringBuffer</span> <span class="variable">s</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuffer</span>(<span class="string">&quot;我喜欢篮球&quot;</span>);</span><br><span class="line">s.replace(<span class="number">3</span>,<span class="number">5</span>,<span class="string">&quot;足球&quot;</span>);</span><br><span class="line"><span class="comment">//此时s为：我喜欢足球</span></span><br></pre></td></tr></table></figure>
+
+
+
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Java_String类</title>
     <url>/2023/06/02/Java-String%E7%B1%BB/</url>
     <content><![CDATA[<h1 id="Java常用实用类学习——String类"><a href="#Java常用实用类学习——String类" class="headerlink" title="Java常用实用类学习——String类"></a>Java常用实用类学习——String类</h1><p>String类是java中用于处理字符序列的类。String类在java.lang包中，java把String类定义为final类，用户不能拓展String类，即String类不能有子类。</p>
@@ -122,66 +182,6 @@
 <h3 id="关于main-方法的参数化"><a href="#关于main-方法的参数化" class="headerlink" title="关于main()方法的参数化"></a>关于main()方法的参数化</h3><p>使用解释器java.exe执行程序来执行主类时，从键盘输入若干字符序列 ，用空格分开，它们分别对应args[0]、args[1]、args[2]……</p>
 <h2 id="对象的String表示"><a href="#对象的String表示" class="headerlink" title="对象的String表示"></a>对象的String表示</h2><p>所有的类都默认是java.lang包中Object类的子类或间接子类。Object类有一个public String toString()方法，一个对象调用该方法返回String对象的字符序列的一般形式为</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">创建对象的类的名字@对象的引用</span><br><span class="line"></span><br><span class="line">System.out.println(object);</span><br><span class="line">//等价于</span><br><span class="line">System.out,println(object.toString)</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Java_StringBuffer类</title>
-    <url>/2023/06/04/Java-StringBuffer%E7%B1%BB/</url>
-    <content><![CDATA[<h1 id="Java常用实用类学习——StringBuffer类"><a href="#Java常用实用类学习——StringBuffer类" class="headerlink" title="Java常用实用类学习——StringBuffer类"></a>Java常用实用类学习——StringBuffer类</h1><p>StringBuffer类与String类不同，StringBuffer类的对象的的实体的内存空间可以自动改变大小，便于存放一个可变的字符序列。尽管String类是Java.lang包中的final类，但该类提供了修改字符序列的方法。</p>
-<h2 id="StringBuffer类的对象"><a href="#StringBuffer类的对象" class="headerlink" title="StringBuffer类的对象"></a>StringBuffer类的对象</h2><p>StringBuffer类有3个构造方法</p>
-<h3 id="StringBuffer-；"><a href="#StringBuffer-；" class="headerlink" title="StringBuffer()；"></a>StringBuffer()；</h3><p>使用无参的构造方法创建一个StringBuffer对象，那么分配给该对象的实体初始容量可以容纳16个字符，实体容量大于16时，容量自动增加。StringBuffer对象可以通过***length()<em><strong>方法获取实体中存放的字符序列的长度，通过</strong></em>capacity()***方法获取当前实体的实际容量。</p>
-<h3 id="StringBuffer-int-size"><a href="#StringBuffer-int-size" class="headerlink" title="StringBuffer(int size);"></a>StringBuffer(int size);</h3><p>使用本构造方法创建一个StringBuffer对象，那么可以分配给该对象的实体初始容量为参数size指定的字符个数，实体容量大于size时，容量自动增加。</p>
-<h3 id="StringBuffer-String-s"><a href="#StringBuffer-String-s" class="headerlink" title="StringBuffer(String s);"></a>StringBuffer(String s);</h3><p>使用本构造方法创建一个StringBuffer对象，那么可以分配给该对象的实体初始容量为参数s的字符序列的长度再加16。</p>
-<h2 id="StringBuffer类的常用方法"><a href="#StringBuffer类的常用方法" class="headerlink" title="StringBuffer类的常用方法"></a>StringBuffer类的常用方法</h2><h3 id="append"><a href="#append" class="headerlink" title="append();"></a>append();</h3><ul>
-<li>StringBuffer append(String s)：</li>
-</ul>
-<p>将字符串s的字符序列追加到当前StringBuffer对象的字符序列中，并返回当前对象的引用</p>
-<ul>
-<li>StringBuffer append(int n)：</li>
-</ul>
-<p>将int型数组n转换为String对象，再将其加入当前StringBuffer对象的字符序列中，并返回当前对象的引用</p>
-<ul>
-<li>StringBuffer append(Object o)：</li>
-</ul>
-<p>将一个对象o的字符序列表示追加到当前StringBuffer对象的字符序列中，并返回当前对象的引用</p>
-<p>类似的方法还有**StringBuffer append(long n)<strong>、</strong>StringBuffer append(boolean n)<strong>、</strong>StringBuffer append(float n)<strong>、</strong>StringBuffer append(double n)<strong>和</strong>StringBuffer append(char n)**。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">StringBuffer</span> <span class="variable">s</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuffer</span>(<span class="string">&quot;我喜欢&quot;</span>);</span><br><span class="line">s.append(<span class="string">&quot;篮球&quot;</span>);</span><br><span class="line"><span class="comment">//当前s的实体为：我喜欢篮球</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="public-char-charAt-int-n"><a href="#public-char-charAt-int-n" class="headerlink" title="public char charAt(int n);"></a>public char charAt(int n);</h3><p>得到对象的字符序列位置n上的字符</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">StringBuffer</span> <span class="variable">s</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuffer</span>(<span class="string">&quot;我喜欢篮球&quot;</span>);</span><br><span class="line"><span class="type">char</span> <span class="variable">c</span> <span class="operator">=</span> s.charAt(<span class="number">2</span>);</span><br><span class="line"><span class="comment">//c为：欢</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="public-void-setCharAt-int-n-char-ch"><a href="#public-void-setCharAt-int-n-char-ch" class="headerlink" title="public void setCharAt(int n,char ch);"></a>public void setCharAt(int n,char ch);</h3><p>将对象的字符序列位置n上的字符用参数ch代替</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">StringBuffer</span> <span class="variable">s</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuffer</span>(<span class="string">&quot;我喜欢篮球&quot;</span>);</span><br><span class="line">s.charAt(<span class="number">3</span>，<span class="string">&#x27;足&#x27;</span>);</span><br><span class="line"><span class="comment">//此时s的实体为：我喜欢足球</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="StringBuffer-insert-int-index-String-str"><a href="#StringBuffer-insert-int-index-String-str" class="headerlink" title="StringBuffer insert(int index,String str);"></a>StringBuffer insert(int index,String str);</h3><p>将str插入到index位置，并返回当前对象的引用</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">StringBuffer</span> <span class="variable">s</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuffer</span>(<span class="string">&quot;我喜欢篮球&quot;</span>);</span><br><span class="line">s.charAt(<span class="number">3</span>,<span class="string">&quot;唱、跳、rap和&quot;</span>);</span><br><span class="line"><span class="comment">//此时s为：我喜欢唱、跳、rap和篮球</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="public-StringBuffer-reverse"><a href="#public-StringBuffer-reverse" class="headerlink" title="public StringBuffer reverse();"></a>public StringBuffer reverse();</h3><p>将当前对象实体中的字符序列翻转</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">StringBuffer</span> <span class="variable">s</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuffer</span>(<span class="string">&quot;我喜欢篮球&quot;</span>);</span><br><span class="line">s.reverse();</span><br><span class="line"><span class="comment">//此时s为：球蓝欢喜我</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="StringBuffer-delete-int-startIndex-int-endIndex"><a href="#StringBuffer-delete-int-startIndex-int-endIndex" class="headerlink" title="StringBuffer delete(int startIndex,int endIndex);"></a>StringBuffer delete(int startIndex,int endIndex);</h3><p>将当前对象的字符序列中删除一个子字符序列，删除的子字符序列从下标<em><strong>startIndex</strong></em>到<em><strong>endIndex-1</strong></em></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">StringBuffer</span> <span class="variable">s</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuffer</span>(<span class="string">&quot;我喜欢篮球&quot;</span>);</span><br><span class="line">s.delete(<span class="number">3</span>,<span class="number">5</span>);</span><br><span class="line"><span class="comment">//此时s为：我喜欢</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="StringBuffer-replace-int-startIndex-int-endIndex-String-str"><a href="#StringBuffer-replace-int-startIndex-int-endIndex-String-str" class="headerlink" title="StringBuffer replace(int startIndex,int endIndex,String str);"></a>StringBuffer replace(int startIndex,int endIndex,String str);</h3><p>将当前对象的字符序列从下标<em><strong>startIndex</strong></em>到<em><strong>endIndex-1</strong></em>替换为参数str</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">StringBuffer</span> <span class="variable">s</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuffer</span>(<span class="string">&quot;我喜欢篮球&quot;</span>);</span><br><span class="line">s.replace(<span class="number">3</span>,<span class="number">5</span>,<span class="string">&quot;足球&quot;</span>);</span><br><span class="line"><span class="comment">//此时s为：我喜欢足球</span></span><br></pre></td></tr></table></figure>
-
-
-
 ]]></content>
       <categories>
         <category>Java</category>
@@ -349,68 +349,6 @@
 ]]></content>
       <categories>
         <category>Markdown</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Python基础(三)——函数</title>
-    <url>/2023/08/12/Python%E5%9F%BA%E7%A1%80(%E4%B8%89)%E2%80%94%E2%80%94%E5%87%BD%E6%95%B0/</url>
-    <content><![CDATA[<h1 id="函数介绍"><a href="#函数介绍" class="headerlink" title="函数介绍"></a>函数介绍</h1><ul>
-<li>函数是组织好的，可重复使用的，用来实现特定功能的代码段，如前面的type()、input()等都是Python的内置函数。</li>
-<li>函数可以提高程序的复用性，减少重复性代码，提高开发效率</li>
-</ul>
-<h1 id="函数的定义和调用"><a href="#函数的定义和调用" class="headerlink" title="函数的定义和调用"></a>函数的定义和调用</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 定义函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">函数名</span>(<span class="params">传入参数</span>):</span><br><span class="line">    函数体</span><br><span class="line">    <span class="keyword">return</span> 返回值</span><br><span class="line"></span><br><span class="line"><span class="comment"># 调用函数</span></span><br><span class="line">函数名(参数)</span><br></pre></td></tr></table></figure>
-
-
-
-<p><strong>注意：</strong></p>
-<ul>
-<li>参数如果不需要，可以省略</li>
-<li>返回值如果不需要，可以省略</li>
-<li>函数必须先定义后使用</li>
-</ul>
-<h1 id="函数的参数"><a href="#函数的参数" class="headerlink" title="函数的参数"></a>函数的参数</h1><p>传入参数的功能是：在函数进行计算的时候，接受外部（调用时）提供的数据</p>
-<p><strong>语法解析：</strong></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 定义函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">add</span>(<span class="params">x,y</span>):</span><br><span class="line">    result =  x + y</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;<span class="subst">&#123;x&#125;</span> + <span class="subst">&#123;y&#125;</span>的结果是：<span class="subst">&#123;result&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 调用函数</span></span><br><span class="line">add(<span class="number">5</span>,<span class="number">6</span>)</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>函数定义中，提供的x和y，称之为：形式参数（形参），表示函数声明将要使用2个参数，参数直接使用逗号进行分隔</li>
-<li>函数调用中，提供的5和6，称之为：实际参数（实参），表示函数执行时真正使用的参数值，传入的时候，按照顺序传入数据，使用逗号分隔</li>
-<li>传入参数的数量是不受限制的，可以没有，也可以有多个</li>
-</ul>
-<h1 id="函数的返回值"><a href="#函数的返回值" class="headerlink" title="函数的返回值"></a>函数的返回值</h1><h2 id="返回值的定义"><a href="#返回值的定义" class="headerlink" title="返回值的定义"></a>返回值的定义</h2><p>所谓返回值，就是程序中函数完成事情后，最后给调用者的结果</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">函数</span>(<span class="params">参数...</span>):</span><br><span class="line">    函数体</span><br><span class="line">    <span class="keyword">return</span> 返回值</span><br><span class="line"></span><br><span class="line">变量 = 函数(参数)</span><br></pre></td></tr></table></figure>
-
-<p>如上述代码，变量就能接收到函数的返回值</p>
-<p>语法就是：通过return关键字，就能向调用者返回数据</p>
-<p><strong>注意：</strong>函数体在遇到return后就结束了，所以写在return后的代码不会执行</p>
-<h2 id="None类型"><a href="#None类型" class="headerlink" title="None类型"></a>None类型</h2><p>Python中有一个特殊的字面量：None，其类型是：&lt;class ‘NoneType’&gt;，无返回值的函数，实际上就是返回了：None这个字面量</p>
-<p>应用场景：</p>
-<ul>
-<li>用在函数<strong>无返回值</strong>上</li>
-<li>用在<strong>if判断</strong>上，在if判断中，None等同于False，一般用在函数中主动返回None，配合if判断做出相关处理</li>
-<li>在声明无内容的变量上，<strong>定义变量</strong>时，但暂时不需要变量有具体值，可以用None来代替</li>
-</ul>
-<p>None在if中的应用</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">check_age</span>(<span class="params">age</span>):</span><br><span class="line">    <span class="keyword">if</span> age &gt; <span class="number">18</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;SUCCESS&quot;</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">result = check_age(<span class="number">10</span>)</span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> result:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;未成年&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="函数说明文档"><a href="#函数说明文档" class="headerlink" title="函数说明文档"></a>函数说明文档</h1><p>顾名思义，就是在函数中写注释函数进行说明解释，帮助更好理解函数的功能</p>
-<h1 id="函数的嵌套调用"><a href="#函数的嵌套调用" class="headerlink" title="函数的嵌套调用"></a>函数的嵌套调用</h1><p>所谓函数嵌套调用就是指在一个函数里面调用了另外一个函数，如下所示</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">fun_b</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;---2---&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">fun_a</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;---1---&quot;</span>)</span><br><span class="line"></span><br><span class="line">    fun_b()</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;---3---&quot;</span>)</span><br><span class="line"></span><br><span class="line">fun_a()</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">本段代码在fun_a中调用了fun_b</span></span><br><span class="line"><span class="string">运行结果：</span></span><br><span class="line"><span class="string">---1---</span></span><br><span class="line"><span class="string">---2---</span></span><br><span class="line"><span class="string">---3---</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="变量作用域"><a href="#变量作用域" class="headerlink" title="变量作用域"></a>变量作用域</h1><ol>
-<li>变量主要分为局部变量和全局变量</li>
-<li>局部变量：定义在函数体内的局部变量，即只在函数体内部生效</li>
-<li>全局变量：在函数体内、外都能生效的变量</li>
-<li>在函数内部定义一个与全局变量同名的变量，并对其运算，对全局变量无影响</li>
-<li>在函数内部声明全局变量，需要使用global关键字</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Python</category>
       </categories>
   </entry>
   <entry>
@@ -760,6 +698,68 @@
       </categories>
   </entry>
   <entry>
+    <title>Python基础(三)——函数</title>
+    <url>/2023/08/12/Python%E5%9F%BA%E7%A1%80(%E4%B8%89)%E2%80%94%E2%80%94%E5%87%BD%E6%95%B0/</url>
+    <content><![CDATA[<h1 id="函数介绍"><a href="#函数介绍" class="headerlink" title="函数介绍"></a>函数介绍</h1><ul>
+<li>函数是组织好的，可重复使用的，用来实现特定功能的代码段，如前面的type()、input()等都是Python的内置函数。</li>
+<li>函数可以提高程序的复用性，减少重复性代码，提高开发效率</li>
+</ul>
+<h1 id="函数的定义和调用"><a href="#函数的定义和调用" class="headerlink" title="函数的定义和调用"></a>函数的定义和调用</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 定义函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">函数名</span>(<span class="params">传入参数</span>):</span><br><span class="line">    函数体</span><br><span class="line">    <span class="keyword">return</span> 返回值</span><br><span class="line"></span><br><span class="line"><span class="comment"># 调用函数</span></span><br><span class="line">函数名(参数)</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>注意：</strong></p>
+<ul>
+<li>参数如果不需要，可以省略</li>
+<li>返回值如果不需要，可以省略</li>
+<li>函数必须先定义后使用</li>
+</ul>
+<h1 id="函数的参数"><a href="#函数的参数" class="headerlink" title="函数的参数"></a>函数的参数</h1><p>传入参数的功能是：在函数进行计算的时候，接受外部（调用时）提供的数据</p>
+<p><strong>语法解析：</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 定义函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">add</span>(<span class="params">x,y</span>):</span><br><span class="line">    result =  x + y</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;<span class="subst">&#123;x&#125;</span> + <span class="subst">&#123;y&#125;</span>的结果是：<span class="subst">&#123;result&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 调用函数</span></span><br><span class="line">add(<span class="number">5</span>,<span class="number">6</span>)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>函数定义中，提供的x和y，称之为：形式参数（形参），表示函数声明将要使用2个参数，参数直接使用逗号进行分隔</li>
+<li>函数调用中，提供的5和6，称之为：实际参数（实参），表示函数执行时真正使用的参数值，传入的时候，按照顺序传入数据，使用逗号分隔</li>
+<li>传入参数的数量是不受限制的，可以没有，也可以有多个</li>
+</ul>
+<h1 id="函数的返回值"><a href="#函数的返回值" class="headerlink" title="函数的返回值"></a>函数的返回值</h1><h2 id="返回值的定义"><a href="#返回值的定义" class="headerlink" title="返回值的定义"></a>返回值的定义</h2><p>所谓返回值，就是程序中函数完成事情后，最后给调用者的结果</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">函数</span>(<span class="params">参数...</span>):</span><br><span class="line">    函数体</span><br><span class="line">    <span class="keyword">return</span> 返回值</span><br><span class="line"></span><br><span class="line">变量 = 函数(参数)</span><br></pre></td></tr></table></figure>
+
+<p>如上述代码，变量就能接收到函数的返回值</p>
+<p>语法就是：通过return关键字，就能向调用者返回数据</p>
+<p><strong>注意：</strong>函数体在遇到return后就结束了，所以写在return后的代码不会执行</p>
+<h2 id="None类型"><a href="#None类型" class="headerlink" title="None类型"></a>None类型</h2><p>Python中有一个特殊的字面量：None，其类型是：&lt;class ‘NoneType’&gt;，无返回值的函数，实际上就是返回了：None这个字面量</p>
+<p>应用场景：</p>
+<ul>
+<li>用在函数<strong>无返回值</strong>上</li>
+<li>用在<strong>if判断</strong>上，在if判断中，None等同于False，一般用在函数中主动返回None，配合if判断做出相关处理</li>
+<li>在声明无内容的变量上，<strong>定义变量</strong>时，但暂时不需要变量有具体值，可以用None来代替</li>
+</ul>
+<p>None在if中的应用</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">check_age</span>(<span class="params">age</span>):</span><br><span class="line">    <span class="keyword">if</span> age &gt; <span class="number">18</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;SUCCESS&quot;</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">result = check_age(<span class="number">10</span>)</span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> result:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;未成年&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="函数说明文档"><a href="#函数说明文档" class="headerlink" title="函数说明文档"></a>函数说明文档</h1><p>顾名思义，就是在函数中写注释函数进行说明解释，帮助更好理解函数的功能</p>
+<h1 id="函数的嵌套调用"><a href="#函数的嵌套调用" class="headerlink" title="函数的嵌套调用"></a>函数的嵌套调用</h1><p>所谓函数嵌套调用就是指在一个函数里面调用了另外一个函数，如下所示</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">fun_b</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;---2---&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">fun_a</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;---1---&quot;</span>)</span><br><span class="line"></span><br><span class="line">    fun_b()</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;---3---&quot;</span>)</span><br><span class="line"></span><br><span class="line">fun_a()</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">本段代码在fun_a中调用了fun_b</span></span><br><span class="line"><span class="string">运行结果：</span></span><br><span class="line"><span class="string">---1---</span></span><br><span class="line"><span class="string">---2---</span></span><br><span class="line"><span class="string">---3---</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="变量作用域"><a href="#变量作用域" class="headerlink" title="变量作用域"></a>变量作用域</h1><ol>
+<li>变量主要分为局部变量和全局变量</li>
+<li>局部变量：定义在函数体内的局部变量，即只在函数体内部生效</li>
+<li>全局变量：在函数体内、外都能生效的变量</li>
+<li>在函数内部定义一个与全局变量同名的变量，并对其运算，对全局变量无影响</li>
+<li>在函数内部声明全局变量，需要使用global关键字</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Python基础(二)——判断、循环</title>
     <url>/2023/07/14/Python%E5%9F%BA%E7%A1%80(%E4%BA%8C)%E2%80%94%E2%80%94%E5%88%A4%E6%96%AD%E3%80%81%E5%BE%AA%E7%8E%AF/</url>
     <content><![CDATA[<h1 id="判断语句"><a href="#判断语句" class="headerlink" title="判断语句"></a>判断语句</h1><p>进行逻辑判断是生活中常见的行为，同样，在程序中，进行逻辑判断也是最为基础的功能</p>
@@ -912,6 +912,487 @@
 <p>如，range(5,10,2)取得的数据是：[5,7,9]</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">num = <span class="number">100</span></span><br><span class="line">count = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,num):</span><br><span class="line">    <span class="keyword">if</span> x%<span class="number">2</span> == <span class="number">0</span>:</span><br><span class="line">        count += <span class="number">1</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;从1到<span class="subst">&#123;num&#125;</span>(不含<span class="subst">&#123;num&#125;</span>本身)共有<span class="subst">&#123;count&#125;</span>个偶数&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">运行结果：</span></span><br><span class="line"><span class="string">从1到100(不含100本身)共有49个偶数</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
 
+]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Python基础(四)——数据容器</title>
+    <url>/2023/08/13/Python%E5%9F%BA%E7%A1%80(%E5%9B%9B)%E2%80%94%E2%80%94%E6%95%B0%E6%8D%AE%E5%AE%B9%E5%99%A8/</url>
+    <content><![CDATA[<h1 id="数据容器入门"><a href="#数据容器入门" class="headerlink" title="数据容器入门"></a>数据容器入门</h1><p>Python中的数据容器：</p>
+<p>一个可以容纳多份数据的数据类型，容纳的每一份元素称之为1个元素，每个元素可以是任意类型的数据，如字符串、数字、布尔等。</p>
+<p>数据容器根据特点的不同，如：</p>
+<ul>
+<li>是否支持重复元素</li>
+<li>是否可以修改</li>
+<li>是否有序，等</li>
+</ul>
+<p>分为5类，分别是：列表（list）、元组（tuple）、字符串（str）、集合（set）、字典（dict）</p>
+<h1 id="数据容器：list（列表）"><a href="#数据容器：list（列表）" class="headerlink" title="数据容器：list（列表）"></a>数据容器：list（列表）</h1><h2 id="列表的定义"><a href="#列表的定义" class="headerlink" title="列表的定义"></a>列表的定义</h2><p>基本语法</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 字面量</span></span><br><span class="line">[元素<span class="number">1</span>,元素<span class="number">2</span>,元素<span class="number">3</span>,……]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义变量</span></span><br><span class="line">变量名称 = [元素<span class="number">1</span>,元素<span class="number">2</span>,元素<span class="number">3</span>,……]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义空列表</span></span><br><span class="line">变量名称 = []</span><br><span class="line">变量名称 = <span class="built_in">list</span>()</span><br></pre></td></tr></table></figure>
+
+
+
+<p>注意：</p>
+<ul>
+<li><p>列表的每一个元素，称之为元素</p>
+</li>
+<li><p>以 [] 作为标识</p>
+</li>
+<li><p>列表内每个元素之间用逗号隔开</p>
+</li>
+<li><p>列表可以一次存储多个数据，且可以为不同的数据类型，支持嵌套</p>
+</li>
+</ul>
+<h2 id="列表的下标索引"><a href="#列表的下标索引" class="headerlink" title="列表的下标索引"></a>列表的下标索引</h2><p>列表的每个元素都有其位置下标索引，从前向后的方向，从0开始，依次递增，如下：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 语法：列表[下标索引]</span></span><br><span class="line"></span><br><span class="line">name_list = [<span class="string">&#x27;Sam&#x27;</span>,<span class="string">&#x27;Jack&#x27;</span>,<span class="string">&#x27;Mark&#x27;</span>]</span><br><span class="line"><span class="built_in">print</span>(name_list[<span class="number">0</span>])		<span class="comment">#结果：Sam</span></span><br><span class="line"><span class="built_in">print</span>(name_list[<span class="number">1</span>])		<span class="comment">#结果：Jack</span></span><br><span class="line"><span class="built_in">print</span>(name_list[<span class="number">2</span>])		<span class="comment">#结果：Mark</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>反向索引，从后往前的方向，从-1开始递减，如下：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 语法：列表[下标索引]</span></span><br><span class="line"></span><br><span class="line">name_list = [<span class="string">&#x27;Sam&#x27;</span>,<span class="string">&#x27;Jack&#x27;</span>,<span class="string">&#x27;Mark&#x27;</span>]</span><br><span class="line"><span class="built_in">print</span>(name_list[-<span class="number">1</span>])		<span class="comment">#结果：Mark</span></span><br><span class="line"><span class="built_in">print</span>(name_list[-<span class="number">2</span>])		<span class="comment">#结果：Jack</span></span><br><span class="line"><span class="built_in">print</span>(name_list[-<span class="number">3</span>])		<span class="comment">#结果：Sam</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>嵌套列表的下标索引，同上，写两层即可</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 语法 列表[下标][下标]</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="列表的常用操作"><a href="#列表的常用操作" class="headerlink" title="列表的常用操作"></a>列表的常用操作</h2><p>方法：在Python中，如果将函数定义为class（类）的成员，那么函数会称之为方法<strong>（写在类里的函数成为方法）</strong>，使用“.”访问</p>
+<h3 id="列表的查询功能——index"><a href="#列表的查询功能——index" class="headerlink" title="列表的查询功能——index()"></a>列表的查询功能——index()</h3><ul>
+<li><p>查询某元素下标</p>
+<p>功能：查找指定元素在列表的下标，如果找不到，报错ValueError</p>
+<p>语法：<strong>列表.index(元素)</strong></p>
+</li>
+</ul>
+<h3 id="修改元素"><a href="#修改元素" class="headerlink" title="修改元素"></a>修改元素</h3><ul>
+<li><p>修改特定位置（索引）的元素值</p>
+<p>语法：<strong>列表[下标] &#x3D; 值</strong></p>
+<p>通过如上语法即可直接对指定位置的值进行重新赋值</p>
+</li>
+<li><p>插入元素</p>
+<p>语法：<strong>列表.insert(下标,元素)</strong></p>
+<p>在指定的下标位置，插入指定元素，该位置原来的元素和后续元素，依次向后移</p>
+</li>
+<li><p>追加元素1</p>
+<p>语法：<strong>列表.append(元素)</strong></p>
+<p>将元素追加到列表的尾部</p>
+</li>
+<li><p>追加元素2</p>
+<p>语法：<strong>列表.extend(其他数据容器)</strong></p>
+<p>将其他数据容器的内容取出，依次追加到列表尾部</p>
+</li>
+<li><p>删除元素</p>
+<p>语法1：<strong>del 列表[下标]</strong></p>
+<p>语法2：<strong>列表.pop(下标)</strong></p>
+<p>语法3：<strong>列表.remove(元素)</strong></p>
+<p>方法pop()不仅可以删除元素，还会返回被删除的元素，remove()是删除某元素在列表的第一个匹配项</p>
+</li>
+<li><p>清空列表</p>
+<p>语法：<strong>列表.clear()</strong></p>
+<p>清空列表内容</p>
+</li>
+<li><p>统计某元素在列表内的数量</p>
+<p>语法：<strong>列表.count(元素)</strong></p>
+</li>
+<li><p>统计列表中有多少元素</p>
+<p>语法：<strong>len(列表)</strong></p>
+<p>可以得到一个int型的数字，表示列表内的元素数量</p>
+</li>
+</ul>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><table>
+<thead>
+<tr>
+<th align="center">功能</th>
+<th align="center">语法</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">查询某元素下标</td>
+<td align="center">列表.index(元素)</td>
+<td align="center">查找指定元素在列表的下标，如果找不到，报错ValueError</td>
+</tr>
+<tr>
+<td align="center">修改元素值</td>
+<td align="center">列表[下标] &#x3D; 值</td>
+<td align="center">直接对指定位置的值进行重新赋值</td>
+</tr>
+<tr>
+<td align="center">插入元素</td>
+<td align="center">列表.insert(下标,元素)</td>
+<td align="center">在指定的下标位置，插入指定元素，该位置原来的元素和后续元素，依次向后移</td>
+</tr>
+<tr>
+<td align="center">追加元素</td>
+<td align="center">列表.append(元素)</td>
+<td align="center">将元素追加到列表的尾部</td>
+</tr>
+<tr>
+<td align="center">追加元素</td>
+<td align="center">列表.extend(其他数据容器)</td>
+<td align="center">将其他数据容器的内容取出，依次追加到列表尾部</td>
+</tr>
+<tr>
+<td align="center">删除元素</td>
+<td align="center">del 列表[下标]</td>
+<td align="center">删除下标位置上的元素</td>
+</tr>
+<tr>
+<td align="center">删除元素</td>
+<td align="center">列表.pop(下标)</td>
+<td align="center">方法pop()不仅可以删除元素，还会返回被删除的元素</td>
+</tr>
+<tr>
+<td align="center">删除元素</td>
+<td align="center">列表.remove(元素)</td>
+<td align="center">remove()是删除某元素在列表的第一个匹配项</td>
+</tr>
+<tr>
+<td align="center">清空列表</td>
+<td align="center">列表.clear()</td>
+<td align="center">清空列表内容</td>
+</tr>
+<tr>
+<td align="center">统计某元素数量</td>
+<td align="center">列表.count(元素)</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">统计列表元素</td>
+<td align="center">len(列表)</td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 语法：列表[下标索引]</span></span><br><span class="line"></span><br><span class="line">name_list = [<span class="string">&#x27;Sam&#x27;</span>,<span class="string">&#x27;Jack&#x27;</span>,<span class="string">&#x27;Mark&#x27;</span>]</span><br><span class="line"><span class="built_in">print</span>(name_list[<span class="number">0</span>])		<span class="comment">#结果：Sam</span></span><br><span class="line"><span class="built_in">print</span>(name_list[<span class="number">1</span>])		<span class="comment">#结果：Jack</span></span><br><span class="line"><span class="built_in">print</span>(name_list[<span class="number">2</span>])		<span class="comment">#结果：Mark</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 语法：列表[下标索引]</span></span><br><span class="line"></span><br><span class="line">name_list = [<span class="string">&#x27;Sam&#x27;</span>,<span class="string">&#x27;Jack&#x27;</span>,<span class="string">&#x27;Mark&#x27;</span>]</span><br><span class="line"><span class="built_in">print</span>(name_list[-<span class="number">1</span>])		<span class="comment">#结果：Mark</span></span><br><span class="line"><span class="built_in">print</span>(name_list[-<span class="number">2</span>])		<span class="comment">#结果：Jack</span></span><br><span class="line"><span class="built_in">print</span>(name_list[-<span class="number">3</span>])		<span class="comment">#结果：Sam</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 1.索引元素 index()</span></span><br><span class="line">index = name_list.index(<span class="string">&quot;Jack&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;“Jack”在列表中的位置是<span class="subst">&#123;index&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2.修改元素</span></span><br><span class="line">name_list[<span class="number">2</span>] = <span class="string">&quot;Tom&quot;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;列表修改元素后，结果是：\t\t<span class="subst">&#123;name_list&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3.插入元素 insert()</span></span><br><span class="line">name_list.insert(<span class="number">2</span>,<span class="string">&quot;Mark&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;列表插入元素后，结果是：\t\t<span class="subst">&#123;name_list&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 4.追加元素 append()</span></span><br><span class="line">name_list.append(<span class="string">&quot;Peter&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;列表追加元素后，结果是：\t\t<span class="subst">&#123;name_list&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 5.追加元素 extend()</span></span><br><span class="line">name_list2 = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">name_list.extend(name_list2)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;列表追加一个新列表后，结果是：\t<span class="subst">&#123;name_list&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 6.删除元素</span></span><br><span class="line"><span class="keyword">del</span> name_list[<span class="number">5</span>]</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;列表删除元素后，结果是：\t\t<span class="subst">&#123;name_list&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line">getWord = name_list.pop(<span class="number">5</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;列表取出元素后，结果是：\t\t<span class="subst">&#123;name_list&#125;</span>,取出的元素是：<span class="subst">&#123;getWord&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line">name_list.remove(<span class="number">3</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;列表删除元素后，结果是：\t\t<span class="subst">&#123;name_list&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 7.清空列表</span></span><br><span class="line">name_list.clear()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;清空列表后，结果是：\t\t\t<span class="subst">&#123;name_list&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 8.统计列表内某元素的数量</span></span><br><span class="line">name_list = [<span class="string">&#x27;Sam&#x27;</span>,<span class="string">&#x27;Jack&#x27;</span>,<span class="string">&#x27;Mark&#x27;</span>,<span class="string">&#x27;Sam&#x27;</span>,<span class="string">&#x27;Sam&#x27;</span>,<span class="string">&#x27;Sam&#x27;</span>]</span><br><span class="line">count = name_list.count(<span class="string">&quot;Sam&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;列表中Sam的数量是：\t\t\t<span class="subst">&#123;count&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 9.统计列表中有多少元素</span></span><br><span class="line">count = <span class="built_in">len</span>(name_list)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;列表中元素的数量是：\t\t\t<span class="subst">&#123;count&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">运行结果：</span></span><br><span class="line"><span class="string">Sam</span></span><br><span class="line"><span class="string">Jack</span></span><br><span class="line"><span class="string">Mark</span></span><br><span class="line"><span class="string">Mark</span></span><br><span class="line"><span class="string">Jack</span></span><br><span class="line"><span class="string">Sam</span></span><br><span class="line"><span class="string">“Jack”在列表中的位置是1</span></span><br><span class="line"><span class="string">列表修改元素后，结果是：		[&#x27;Sam&#x27;, &#x27;Jack&#x27;, &#x27;Tom&#x27;]</span></span><br><span class="line"><span class="string">列表插入元素后，结果是：		[&#x27;Sam&#x27;, &#x27;Jack&#x27;, &#x27;Mark&#x27;, &#x27;Tom&#x27;]</span></span><br><span class="line"><span class="string">列表追加元素后，结果是：		[&#x27;Sam&#x27;, &#x27;Jack&#x27;, &#x27;Mark&#x27;, &#x27;Tom&#x27;, &#x27;Peter&#x27;]</span></span><br><span class="line"><span class="string">列表追加一个新列表后，结果是：	  [&#x27;Sam&#x27;, &#x27;Jack&#x27;, &#x27;Mark&#x27;, &#x27;Tom&#x27;, &#x27;Peter&#x27;, 1, 2, 3]</span></span><br><span class="line"><span class="string">列表删除元素后，结果是：		[&#x27;Sam&#x27;, &#x27;Jack&#x27;, &#x27;Mark&#x27;, &#x27;Tom&#x27;, &#x27;Peter&#x27;, 2, 3]</span></span><br><span class="line"><span class="string">列表取出元素后，结果是：		[&#x27;Sam&#x27;, &#x27;Jack&#x27;, &#x27;Mark&#x27;, &#x27;Tom&#x27;, &#x27;Peter&#x27;, 3],取出的元素是：2</span></span><br><span class="line"><span class="string">列表删除元素后，结果是：		[&#x27;Sam&#x27;, &#x27;Jack&#x27;, &#x27;Mark&#x27;, &#x27;Tom&#x27;, &#x27;Peter&#x27;]</span></span><br><span class="line"><span class="string">清空列表后，结果是：			 []</span></span><br><span class="line"><span class="string">列表中Sam的数量是：			  4</span></span><br><span class="line"><span class="string">列表中元素的数量是：			 6</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><ul>
+<li>可以容纳多个元素</li>
+<li>可以容纳不同类型的元素</li>
+<li>数据是有序储存（有下标序号）</li>
+<li>允许重复数据存在</li>
+<li>可以修改（增加或删除元素等）</li>
+</ul>
+<h2 id="列表的遍历"><a href="#列表的遍历" class="headerlink" title="列表的遍历"></a>列表的遍历</h2><ol>
+<li>遍历：将容器的内容依次取出，并处理，称之为遍历</li>
+<li>for和while对比<ul>
+<li>for循环更简洁，while更灵活</li>
+<li>for用于从容器内依次取出元素并处理，while可以用以任何需要循环的场景</li>
+</ul>
+</li>
+</ol>
+<h1 id="数据容器：tuple（元组）"><a href="#数据容器：tuple（元组）" class="headerlink" title="数据容器：tuple（元组）"></a>数据容器：tuple（元组）</h1><h2 id="元组的定义"><a href="#元组的定义" class="headerlink" title="元组的定义"></a>元组的定义</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 字面量</span></span><br><span class="line">(元素<span class="number">1</span>,元素<span class="number">2</span>,元素<span class="number">3</span>,……)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义变量</span></span><br><span class="line">变量名称 = (元素<span class="number">1</span>,元素<span class="number">2</span>,元素<span class="number">3</span>,……)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义空列表</span></span><br><span class="line">变量名称 = ()</span><br><span class="line">变量名称 = <span class="built_in">tuple</span>()</span><br></pre></td></tr></table></figure>
+
+
+
+<p>注意：</p>
+<ul>
+<li>元组只有一个数据时，这个数后面要添加<strong>逗号</strong></li>
+<li>元组也支持嵌套</li>
+<li>元组的下标索引与列表相同</li>
+<li>元组的内容时不可修改的，否则会报错，但如果在元组中嵌套列表，嵌套的列表是可以修改的</li>
+<li>多数特性和list一样，不同点在于不可修改</li>
+</ul>
+<h2 id="元组的相关操作"><a href="#元组的相关操作" class="headerlink" title="元组的相关操作"></a>元组的相关操作</h2><table>
+<thead>
+<tr>
+<th align="center">语法</th>
+<th align="center">作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">index()</td>
+<td align="center">查找某个数据，如果数据存在返回对于的下标，否则报错</td>
+</tr>
+<tr>
+<td align="center">count()</td>
+<td align="center">统计某个数据在当前元组出现的次数</td>
+</tr>
+<tr>
+<td align="center">len(元组)</td>
+<td align="center">统计元组内的元素个数</td>
+</tr>
+</tbody></table>
+<h2 id="实例："><a href="#实例：" class="headerlink" title="实例："></a>实例：</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 定义元组</span></span><br><span class="line">tup = (<span class="string">&quot;Sam&quot;</span>,<span class="string">&quot;Jack&quot;</span>,<span class="string">&quot;Mark&quot;</span>,<span class="string">&quot;Sam&quot;</span>,[<span class="string">&quot;唱歌&quot;</span>,<span class="string">&quot;篮球&quot;</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 统计元组长度</span></span><br><span class="line">num = <span class="built_in">len</span>(tup)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;元组的长度是：\t<span class="subst">&#123;num&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 统计元组中，&quot;Sam&quot;出现的次数</span></span><br><span class="line">num = tup.count(<span class="string">&quot;Sam&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;”Sam“出现的次数：\t<span class="subst">&#123;num&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 索引&quot;Mark&quot;在元组中的位置</span></span><br><span class="line">num = tup.index(<span class="string">&quot;Mark&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;”Mark“所在的位置：<span class="subst">&#123;num&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;原元组的元素：\t<span class="subst">&#123;tup&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除元组中嵌套的列表元素</span></span><br><span class="line">tup[<span class="number">4</span>].pop(<span class="number">0</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;删除元素后的元组：\t<span class="subst">&#123;tup&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在元组嵌套的列表中添加元素</span></span><br><span class="line">tup[<span class="number">4</span>].append(<span class="string">&quot;coding&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;添加元素后的元组：\t<span class="subst">&#123;tup&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">运行结果：</span></span><br><span class="line"><span class="string">元组的长度是：		 5</span></span><br><span class="line"><span class="string">”Sam“出现的次数：	  2</span></span><br><span class="line"><span class="string">”Mark“所在的位置：  2</span></span><br><span class="line"><span class="string">原元组的元素：	     (&#x27;Sam&#x27;, &#x27;Jack&#x27;, &#x27;Mark&#x27;, &#x27;Sam&#x27;, [&#x27;唱歌&#x27;, &#x27;篮球&#x27;])</span></span><br><span class="line"><span class="string">删除元素后的元组：	(&#x27;Sam&#x27;, &#x27;Jack&#x27;, &#x27;Mark&#x27;, &#x27;Sam&#x27;, [&#x27;篮球&#x27;])</span></span><br><span class="line"><span class="string">添加元素后的元组：	(&#x27;Sam&#x27;, &#x27;Jack&#x27;, &#x27;Mark&#x27;, &#x27;Sam&#x27;, [&#x27;篮球&#x27;, &#x27;coding&#x27;])</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="数据容器：str（字符串）"><a href="#数据容器：str（字符串）" class="headerlink" title="数据容器：str（字符串）"></a>数据容器：str（字符串）</h1><h2 id="字符串介绍"><a href="#字符串介绍" class="headerlink" title="字符串介绍"></a>字符串介绍</h2><ul>
+<li>字符串是字符的容器</li>
+<li>一个字符串可以存放任意数量的字符</li>
+<li>支持下标索引</li>
+<li>允许重复字符串存在</li>
+<li>不可以修改</li>
+<li>字符串定义和格式化在<a href="./Python%E5%9F%BA%E7%A1%80(%E4%B8%80)%E2%80%94%E2%80%94%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B">Python基础（一）</a>中有介绍</li>
+</ul>
+<h2 id="字符串的常用操作"><a href="#字符串的常用操作" class="headerlink" title="字符串的常用操作"></a>字符串的常用操作</h2><table>
+<thead>
+<tr>
+<th align="center">语法</th>
+<th align="center">功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">字符串[下标]</td>
+<td align="center">同列表、元组</td>
+</tr>
+<tr>
+<td align="center">字符串.index()</td>
+<td align="center">同列表、元组</td>
+</tr>
+<tr>
+<td align="center">字符串.replace(字符串1,字符串2)</td>
+<td align="center">将字符串1内容替换为字符串2的内容</td>
+</tr>
+<tr>
+<td align="center">字符串.split(分隔符字符串)</td>
+<td align="center">按照指定的分隔符字符串，将字符串划分为多个字符串，并存入列表对象中</td>
+</tr>
+<tr>
+<td align="center">字符串.strip()</td>
+<td align="center">去掉前后空格</td>
+</tr>
+<tr>
+<td align="center">字符串.strip(字符串)</td>
+<td align="center">去掉前后指定的字符串</td>
+</tr>
+<tr>
+<td align="center">字符串.count(字符串)</td>
+<td align="center">统计某个数据在当前元组出现的次数</td>
+</tr>
+<tr>
+<td align="center">len(字符串)</td>
+<td align="center">统计元组内的元素个数</td>
+</tr>
+</tbody></table>
+<h1 id="数据容器（序列）的切片"><a href="#数据容器（序列）的切片" class="headerlink" title="数据容器（序列）的切片"></a>数据容器（序列）的切片</h1><p><strong>序列：</strong>内容连续、有序，可使用下标索引的一类数据容器，列表、元组、字符串均可以视为序列</p>
+<p><strong>切片：</strong>从一个序列中，取出一个子序列</p>
+<p>语法：序列[起始下标:结束下标:步长]</p>
+<ul>
+<li>起始下标：从何处开始，可以留空，留空视作从头开始</li>
+<li>结束下标：何处结束（不含），可以留空，留空视作截到结尾</li>
+<li>步长：依次取元素的间隔<ul>
+<li>不写默认是1</li>
+<li>步长1表示，一个个取元素，步长N表示每次跳过N-1个元素取</li>
+<li>步长为负数表示反向取（起始下标和结束下标也要反向标记）</li>
+</ul>
+</li>
+</ul>
+<p>注意：切片操作不会影响序列本身，而是得到一个新的序列</p>
+<h1 id="数据容器：set（集合）"><a href="#数据容器：set（集合）" class="headerlink" title="数据容器：set（集合）"></a>数据容器：set（集合）</h1><h2 id="集合的定义"><a href="#集合的定义" class="headerlink" title="集合的定义"></a>集合的定义</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 定义集合字面量</span></span><br><span class="line">&#123;元素,元素,……,元素&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义集合变量</span></span><br><span class="line">变量名称 = &#123;元素,元素,……,元素&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义空集合</span></span><br><span class="line">变量名称 = <span class="built_in">set</span>()</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="集合的常用操作"><a href="#集合的常用操作" class="headerlink" title="集合的常用操作"></a>集合的常用操作</h2><table>
+<thead>
+<tr>
+<th align="center">方法</th>
+<th align="center">功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">集合.add(元素)</td>
+<td align="center">集合内添加一个元素</td>
+</tr>
+<tr>
+<td align="center">集合.remove(元素)</td>
+<td align="center">移除集合内指定的元素</td>
+</tr>
+<tr>
+<td align="center">集合.pop()</td>
+<td align="center">从集合中随机取出一个元素</td>
+</tr>
+<tr>
+<td align="center">集合.clear()</td>
+<td align="center">将集合清空</td>
+</tr>
+<tr>
+<td align="center">集合1.difference(集合2)</td>
+<td align="center">得到一个新集合，内含2个集合的差集，原有的2个集合内容不变</td>
+</tr>
+<tr>
+<td align="center">集合1.difference_uodate(集合2)</td>
+<td align="center">在集合1中，删除集合2中存在的元素集合1被修改，集合2不变</td>
+</tr>
+<tr>
+<td align="center">集合1.union(集合2)</td>
+<td align="center">得到1个新集合，内含2个集合的全部元素，原有的2个集合内容不变</td>
+</tr>
+<tr>
+<td align="center">len(集合)</td>
+<td align="center">得到一个整数。记录了集合的元素个数</td>
+</tr>
+</tbody></table>
+<h2 id="集合的特点"><a href="#集合的特点" class="headerlink" title="集合的特点"></a>集合的特点</h2><ul>
+<li>可以容纳多个元素</li>
+<li>可以容纳不同类型的数据（混装）</li>
+<li>数据时无序存储的（不支持下标索引）</li>
+<li>不允许重复数据存在</li>
+<li>可以修改</li>
+<li>支持for循环遍历，不可以使用while循环遍历（无法下标索引）</li>
+</ul>
+<h1 id="数据容器：dict（字典）"><a href="#数据容器：dict（字典）" class="headerlink" title="数据容器：dict（字典）"></a>数据容器：dict（字典）</h1><h2 id="字典的定义"><a href="#字典的定义" class="headerlink" title="字典的定义"></a>字典的定义</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 定义字典字面量</span></span><br><span class="line">&#123;key:value , key:value , key:value ,……, key:value&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义字典变量</span></span><br><span class="line">my_dict = &#123;key:value , key:value , key:value ,……, key:value&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义空字典</span></span><br><span class="line">my_dict = &#123;&#125;</span><br><span class="line">my_dict = <span class="built_in">dict</span>()</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="字典的常用操作"><a href="#字典的常用操作" class="headerlink" title="字典的常用操作"></a>字典的常用操作</h2><table>
+<thead>
+<tr>
+<th align="center">语法</th>
+<th align="center">功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">字典[Key]</td>
+<td align="center">获取指定Key对应的Value值</td>
+</tr>
+<tr>
+<td align="center">字典[Key] &#x3D; Value</td>
+<td align="center">添加或更新键值对</td>
+</tr>
+<tr>
+<td align="center">字典.pop(Key)</td>
+<td align="center">取出Key对应的Value并在字典内删除此Key的键值对</td>
+</tr>
+<tr>
+<td align="center">字典.clear()</td>
+<td align="center">请空字典</td>
+</tr>
+<tr>
+<td align="center">字典.keys()</td>
+<td align="center">获取字典的全部Key，可用for循环遍历字典</td>
+</tr>
+<tr>
+<td align="center">len(字典)</td>
+<td align="center">计算字典内的元素个数</td>
+</tr>
+</tbody></table>
+<h2 id="字典的特点"><a href="#字典的特点" class="headerlink" title="字典的特点"></a>字典的特点</h2><ul>
+<li>字典可以提供基于Key检索Value的场景实现，Key不可以重复（重复会覆盖）</li>
+<li>键值对的Key和Value可以是任意类型数据（Key不可以是字典）</li>
+<li>字典不可以下标索引，而是通过Key检索Value</li>
+<li>每一份数据都是KeyValue键值对</li>
+<li>支持for循环，不支持while循环</li>
+<li>可以修改</li>
+</ul>
+<h1 id="数据容器的总结对比"><a href="#数据容器的总结对比" class="headerlink" title="数据容器的总结对比"></a>数据容器的总结对比</h1><table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">列表</th>
+<th align="center">元素</th>
+<th align="center">字符串</th>
+<th align="center">集合</th>
+<th align="center">字典</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">元素数量</td>
+<td align="center">支持多个</td>
+<td align="center">支持多个</td>
+<td align="center">支持多个</td>
+<td align="center">支持多个</td>
+<td align="center">支持多个</td>
+</tr>
+<tr>
+<td align="center">元素类型</td>
+<td align="center">任意</td>
+<td align="center">任意</td>
+<td align="center">仅字符</td>
+<td align="center">任意</td>
+<td align="center">Key：除字典外任意类型，Value：任意类型</td>
+</tr>
+<tr>
+<td align="center">下标索引</td>
+<td align="center">支持</td>
+<td align="center">支持</td>
+<td align="center">支持</td>
+<td align="center">不支持</td>
+<td align="center">不支持</td>
+</tr>
+<tr>
+<td align="center">重复元素</td>
+<td align="center">支持</td>
+<td align="center">支持</td>
+<td align="center">支持</td>
+<td align="center">不支持</td>
+<td align="center">不支持</td>
+</tr>
+<tr>
+<td align="center">可修改性</td>
+<td align="center">支持</td>
+<td align="center">不支持</td>
+<td align="center">不支持</td>
+<td align="center">支持</td>
+<td align="center">支持</td>
+</tr>
+<tr>
+<td align="center">数据有序</td>
+<td align="center">是</td>
+<td align="center">是</td>
+<td align="center">是</td>
+<td align="center">否</td>
+<td align="center">否</td>
+</tr>
+<tr>
+<td align="center">使用场景</td>
+<td align="center">可修改，可重复的一批数据记录场景</td>
+<td align="center">不可修改，可重复的一批数据记录场景</td>
+<td align="center">一串字符的记录场景</td>
+<td align="center">不可重复的数据记录场景</td>
+<td align="center">以Key检索Value的数据记录场景</td>
+</tr>
+</tbody></table>
+<h1 id="数据容器的通用操作"><a href="#数据容器的通用操作" class="headerlink" title="数据容器的通用操作"></a>数据容器的通用操作</h1><table>
+<thead>
+<tr>
+<th align="center">功能</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">通过for循环</td>
+<td align="center">遍历容器（字典是遍历Key）</td>
+</tr>
+<tr>
+<td align="center">max()</td>
+<td align="center">容器内最大元素</td>
+</tr>
+<tr>
+<td align="center">min()</td>
+<td align="center">容器内最小元素</td>
+</tr>
+<tr>
+<td align="center">len()</td>
+<td align="center">容器元素个数</td>
+</tr>
+<tr>
+<td align="center">list()</td>
+<td align="center">转换为列表</td>
+</tr>
+<tr>
+<td align="center">tuple()</td>
+<td align="center">转换为元组</td>
+</tr>
+<tr>
+<td align="center">str()</td>
+<td align="center">转换为字符串</td>
+</tr>
+<tr>
+<td align="center">set()</td>
+<td align="center">转换为集合</td>
+</tr>
+<tr>
+<td align="center">sorted(序列,[reverse&#x3D;True])</td>
+<td align="center">排序，reverse&#x3D;True表示降序得到一个排好序的列表</td>
+</tr>
+</tbody></table>
+<h1 id="字符串大小比较方式"><a href="#字符串大小比较方式" class="headerlink" title="字符串大小比较方式"></a>字符串大小比较方式</h1><p>字符串比较：从头到尾，一位位比较，其中一位大，后面就无需比较了</p>
+<p>单个字符比较：通过ASCII码表，确定字符对应的码值数字来确定大小</p>
 ]]></content>
       <categories>
         <category>Python</category>
