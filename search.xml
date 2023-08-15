@@ -918,6 +918,81 @@
       </categories>
   </entry>
   <entry>
+    <title>Python基础(五)——函数拓展</title>
+    <url>/2023/08/15/Python%E5%9F%BA%E7%A1%80(%E4%BA%94)%E2%80%94%E2%80%94%E5%87%BD%E6%95%B0%E6%8B%93%E5%B1%95/</url>
+    <content><![CDATA[<h1 id="函数的多返回值"><a href="#函数的多返回值" class="headerlink" title="函数的多返回值"></a>函数的多返回值</h1><p> 使用多个变量接收多个返回值</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">test</span>():</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>,<span class="string">&quot;hello&quot;</span>,<span class="literal">True</span></span><br><span class="line"></span><br><span class="line">x,y,z = test()    <span class="comment"># x为1，y为&quot;hello&quot;,z为True</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h1 id="函数多种传参方式"><a href="#函数多种传参方式" class="headerlink" title="函数多种传参方式"></a>函数多种传参方式</h1><h2 id="函数参数种类"><a href="#函数参数种类" class="headerlink" title="函数参数种类"></a>函数参数种类</h2><p>使用方式上的不同，函数有4钟常见参数使用方式：</p>
+<ul>
+<li>位置参数</li>
+<li>关键字参数</li>
+<li>缺省参数</li>
+<li>不定长参数</li>
+</ul>
+<h2 id="位置参数"><a href="#位置参数" class="headerlink" title="位置参数"></a>位置参数</h2><p>位置参数：调用函数时根据函数定义的参数位置来传递函数</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">user_info</span>(<span class="params">name,age,gender</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;您的名字是<span class="subst">&#123;name&#125;</span>,年龄是<span class="subst">&#123;age&#125;</span>,性别是<span class="subst">&#123;gender&#125;</span>)</span></span><br><span class="line"><span class="string">          </span></span><br><span class="line"><span class="string">user_info(&#x27;Tom&#x27;,20,&#x27;男&#x27;)</span></span><br></pre></td></tr></table></figure>
+
+<p>注意：传递的参数和定义的参数的顺序及个数必须一致</p>
+<h2 id="关键字参数"><a href="#关键字参数" class="headerlink" title="关键字参数"></a>关键字参数</h2><p>关键字参数：函数调用时通过”键&#x3D;值“形式传递参数</p>
+<p>作用：可以让函数更加清晰、容易使用，同时也清楚了参数的顺序需求</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">user_info</span>(<span class="params">name,age,gender</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;您的名字是<span class="subst">&#123;name&#125;</span>,年龄是<span class="subst">&#123;age&#125;</span>,性别是<span class="subst">&#123;gender&#125;</span>)</span></span><br><span class="line"><span class="string">          </span></span><br><span class="line"><span class="string"># 关键字传参</span></span><br><span class="line"><span class="string">user_info(name=&#x27;Tom&#x27;, age=20, gender=&#x27;男&#x27;) </span></span><br><span class="line"><span class="string">          </span></span><br><span class="line"><span class="string"># 可以不按照顺序</span></span><br><span class="line"><span class="string">user_info(age=20, name=&#x27;Tom&#x27;, agender=&#x27;男&#x27;) </span></span><br><span class="line"><span class="string">          </span></span><br><span class="line"><span class="string"># 可以和位置参数混用，位置参数必须在前，且匹配参数顺序</span></span><br><span class="line"><span class="string">user_info(&#x27;Tom&#x27;, age=20, gender=&#x27;男&#x27;)           </span></span><br></pre></td></tr></table></figure>
+
+<p>注意：函数调用时，如果有位置参数时，位置参数必须在关键字参数前面，但关键字参数之间不存在先后顺序</p>
+<h2 id="缺省参数"><a href="#缺省参数" class="headerlink" title="缺省参数"></a>缺省参数</h2><p>缺省参数：缺省参数也叫默认参数，用于定义函数，为参数提供默认值，调用函数时可不传该默认参数的值（注意：所有位置参数必须出现在默认参数前，包括函数定义和调用）</p>
+<p>作用：当调用函数时没有传递函数，就会使用默认使用缺省参数对应的值</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">user_info</span>(<span class="params">name,age,gender=<span class="string">&#x27;男&#x27;</span></span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;您的名字是<span class="subst">&#123;name&#125;</span>,年龄是<span class="subst">&#123;age&#125;</span>,性别是<span class="subst">&#123;gender&#125;</span>)</span></span><br><span class="line"><span class="string">          </span></span><br><span class="line"><span class="string">user_info(&#x27;Tom&#x27;, 20)</span></span><br><span class="line"><span class="string">user_info(&#x27;Rose&#x27;, 18, &#x27;女&#x27;)          </span></span><br></pre></td></tr></table></figure>
+
+<p>注意：函数调用时，如果为缺省参数传值则修改默认参数值，否则使用这个默认值</p>
+<h2 id="不定长参数"><a href="#不定长参数" class="headerlink" title="不定长参数"></a>不定长参数</h2><p>不定长参数：不定长参数也叫可变参数，用于不确定调用的时候会传递多少个参数（不传参也可以）的场景</p>
+<p>作用：当调用函数时不确定参数个数时，可以使用不定长参数</p>
+<p>不定长参数的类型：</p>
+<ul>
+<li><p>位置传递</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">user_info</span>(<span class="params">*args</span>):</span><br><span class="line">    <span class="built_in">print</span>(args)</span><br><span class="line">    </span><br><span class="line"><span class="comment"># (&#x27;Tom&#x27;)</span></span><br><span class="line">user_info(<span class="string">&#x27;Tom&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># (&#x27;Tom&#x27;,18)</span></span><br><span class="line">user_info(<span class="string">&#x27;Tom&#x27;</span>,<span class="number">18</span>)</span><br></pre></td></tr></table></figure>
+
+<p>注意：传进的所有参数都会被args变量收集，它会根据传进参数的位置合并为一个元组(tuple)，args是元组类型</p>
+</li>
+<li><p>关键字传递</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">user_info</span>(<span class="params">**kwargs</span>):</span><br><span class="line">    <span class="built_in">print</span>(kwargs)</span><br><span class="line">    </span><br><span class="line"><span class="comment"># &#123;&#x27;name&#x27;:&#x27;Tom&#x27;, &#x27;age&#x27;:18, &#x27;id&#x27;:110&#125;</span></span><br><span class="line">user_info(name=<span class="string">&#x27;Tom&#x27;</span>, age=<span class="number">18</span>, <span class="built_in">id</span>=<span class="number">110</span>)</span><br></pre></td></tr></table></figure>
+
+<p>注意：参数是”键&#x3D;值“形式的情况下，所有的”键&#x3D;值“都会被kwargs接受，同时会根据”键&#x3D;值“组成字典</p>
+</li>
+</ul>
+<h1 id="匿名函数"><a href="#匿名函数" class="headerlink" title="匿名函数"></a>匿名函数</h1><h2 id="函数作为参数传递"><a href="#函数作为参数传递" class="headerlink" title="函数作为参数传递"></a>函数作为参数传递</h2><ul>
+<li>函数本身可以作为参数，传入另一个函数中使用</li>
+<li>这是一种计算逻辑的传递，而非数据的传递</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">text</span>(<span class="params">computer</span>):</span><br><span class="line">    result = computer(<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;compute函数的类型是；<span class="subst">&#123;<span class="built_in">type</span>(computer)&#125;</span>&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;计算结果：<span class="subst">&#123;result&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">compter</span>(<span class="params">x,y</span>):</span><br><span class="line">    <span class="keyword">return</span> x+y</span><br><span class="line"></span><br><span class="line">text(computer)</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">运行结果</span></span><br><span class="line"><span class="string">compute函数的类型是；&lt;class &#x27;function&#x27;&gt;</span></span><br><span class="line"><span class="string">计算结果：3</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="lambda匿名函数"><a href="#lambda匿名函数" class="headerlink" title="lambda匿名函数"></a>lambda匿名函数</h2><p>函数的定义中</p>
+<ul>
+<li>def关键字，可以定义带有名称的函数，可以基于名称重复使用</li>
+<li>lambda关键字，可以定义匿名函数（无名称），只可以临时使用一次</li>
+</ul>
+<p>匿名函数定义语法</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">lambda</span> 传入参数:函数体(一行代码)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>lambda是关键字，表示定义匿名函数</li>
+<li>传入参数表示匿名函数的形式参数，如：x,y表示接受2个形式参数</li>
+<li>函数体，就是函数的执行逻辑，要注意：只能写一行，无法写多行代码</li>
+</ul>
+<p>例：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">text</span>(<span class="params">computer</span>):</span><br><span class="line">    result = computer(<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;compute函数的类型是；<span class="subst">&#123;<span class="built_in">type</span>(computer)&#125;</span>&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;计算结果：<span class="subst">&#123;result&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">compter</span>(<span class="params">x,y</span>):</span><br><span class="line">    <span class="keyword">return</span> x+y</span><br><span class="line"></span><br><span class="line">text(computer)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 可以使用lambda表达式将上述代码简化，如下</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">text</span>(<span class="params">computer</span>):</span><br><span class="line">    result = computer(<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;compute函数的类型是；<span class="subst">&#123;<span class="built_in">type</span>(computer)&#125;</span>&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;计算结果：<span class="subst">&#123;result&#125;</span>&quot;</span>)</span><br><span class="line">    </span><br><span class="line">text(<span class="keyword">lambda</span> x,y: x+y)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 两段代码作用和运行结果完全一致</span></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Python基础(四)——数据容器</title>
     <url>/2023/08/13/Python%E5%9F%BA%E7%A1%80(%E5%9B%9B)%E2%80%94%E2%80%94%E6%95%B0%E6%8D%AE%E5%AE%B9%E5%99%A8/</url>
     <content><![CDATA[<h1 id="数据容器入门"><a href="#数据容器入门" class="headerlink" title="数据容器入门"></a>数据容器入门</h1><p>Python中的数据容器：</p>

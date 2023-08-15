@@ -6,7 +6,7 @@
   <link href="http://littlewin8.github.io/atom.xml" rel="self"/>
   
   <link href="http://littlewin8.github.io/"/>
-  <updated>2023-08-13T04:02:42.361Z</updated>
+  <updated>2023-08-15T07:39:29.073Z</updated>
   <id>http://littlewin8.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Python基础(五)——函数拓展</title>
+    <link href="http://littlewin8.github.io/2023/08/15/Python%E5%9F%BA%E7%A1%80(%E4%BA%94)%E2%80%94%E2%80%94%E5%87%BD%E6%95%B0%E6%8B%93%E5%B1%95/"/>
+    <id>http://littlewin8.github.io/2023/08/15/Python%E5%9F%BA%E7%A1%80(%E4%BA%94)%E2%80%94%E2%80%94%E5%87%BD%E6%95%B0%E6%8B%93%E5%B1%95/</id>
+    <published>2023-08-15T07:36:51.000Z</published>
+    <updated>2023-08-15T07:39:29.073Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;函数的多返回值&quot;&gt;&lt;a href=&quot;#函数的多返回值&quot; class=&quot;headerlink&quot; title=&quot;函数的多返回值&quot;&gt;&lt;/a&gt;函数的多返回值&lt;/h1&gt;&lt;p&gt; 使用多个变量接收多个返回值&lt;/p&gt;
+&lt;figure class=&quot;highlight</summary>
+        
+      
+    
+    
+    
+    <category term="Python" scheme="http://littlewin8.github.io/categories/Python/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Python基础(四)——数据容器</title>
