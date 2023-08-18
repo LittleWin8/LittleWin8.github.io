@@ -6,7 +6,7 @@
   <link href="http://littlewin8.github.io/atom.xml" rel="self"/>
   
   <link href="http://littlewin8.github.io/"/>
-  <updated>2023-08-17T02:09:43.512Z</updated>
+  <updated>2023-08-18T04:00:44.202Z</updated>
   <id>http://littlewin8.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Python集合(七)——异常、模块与包</title>
+    <link href="http://littlewin8.github.io/2023/08/18/Python%E5%9F%BA%E7%A1%80(%E4%B8%83)%E2%80%94%E2%80%94%E5%BC%82%E5%B8%B8%E3%80%81%E6%A8%A1%E5%9D%97%E4%B8%8E%E5%8C%85/"/>
+    <id>http://littlewin8.github.io/2023/08/18/Python%E5%9F%BA%E7%A1%80(%E4%B8%83)%E2%80%94%E2%80%94%E5%BC%82%E5%B8%B8%E3%80%81%E6%A8%A1%E5%9D%97%E4%B8%8E%E5%8C%85/</id>
+    <published>2023-08-18T03:58:45.000Z</published>
+    <updated>2023-08-18T04:00:44.202Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;了解异常&quot;&gt;&lt;a href=&quot;#了解异常&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Python" scheme="http://littlewin8.github.io/categories/Python/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Python基础(六)——文件操作</title>

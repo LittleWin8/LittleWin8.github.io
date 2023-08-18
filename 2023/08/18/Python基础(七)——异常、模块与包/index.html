@@ -11,7 +11,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
-      <title>Python基础(六)——文件操作 |  小稳</title>
+      <title>Python集合(七)——异常、模块与包 |  小稳</title>
   <meta name="generator" content="hexo-theme-ayer">
       
       <link rel="shortcut icon" href="/littlewin.png" />
@@ -54,7 +54,7 @@
     <main class="content on">
       <section class="outer">
   <article
-  id="post-Python基础(六)——文件操作"
+  id="post-Python基础(七)——异常、模块与包"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
@@ -65,7 +65,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  Python基础(六)——文件操作
+  Python集合(七)——异常、模块与包
 </h1>
  
 
@@ -73,8 +73,8 @@
     </header>
      
     <div class="article-meta">
-      <a href="/2023/08/17/Python%E5%9F%BA%E7%A1%80(%E5%85%AD)%E2%80%94%E2%80%94%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/" class="article-date">
-  <time datetime="2023-08-17T02:08:25.000Z" itemprop="datePublished">2023-08-17</time>
+      <a href="/2023/08/18/Python%E5%9F%BA%E7%A1%80(%E4%B8%83)%E2%80%94%E2%80%94%E5%BC%82%E5%B8%B8%E3%80%81%E6%A8%A1%E5%9D%97%E4%B8%8E%E5%8C%85/" class="article-date">
+  <time datetime="2023-08-18T03:58:45.000Z" itemprop="datePublished">2023-08-18</time>
 </a> 
   <div class="article-category">
     <a class="article-category-link" href="/categories/Python/">Python</a>
@@ -85,7 +85,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">436</span>
+            <span class="post-count">872</span>
         </span>
     </span>
 
@@ -94,7 +94,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> Reading time≈</span>
-            <span class="post-count">1 min</span>
+            <span class="post-count">3 min</span>
         </span>
     </span>
 </div>
@@ -109,79 +109,90 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <h1 id="文件的编码"><a href="#文件的编码" class="headerlink" title="文件的编码"></a>文件的编码</h1><ol>
-<li><p>什么是编码？</p>
-<p>编码是一种规则集合，记录了内容和二进制间进行相互转换的逻辑</p>
-<p>编码有许多种，我们最常用的是UTF-8编码</p>
+  <h1 id="了解异常"><a href="#了解异常" class="headerlink" title="了解异常"></a>了解异常</h1><ol>
+<li><p>异常：</p>
+<p>异常就是程序运行的过程中出现了错误</p>
 </li>
-<li><p>为什么需要使用编码？</p>
-<p>计算机只认识0和1，所以需要将内容翻译成0和1才能保存在计算机中。</p>
-<p>同时也需要编码，将计算机保存的0和1，反向翻译回可以识别的内容。</p>
+<li><p>bug：</p>
+<p>bug就是异常的意思，因为历史因为小虫子导致计算机失灵，所以延续至今，bug就代表软件出现错误</p>
 </li>
 </ol>
-<h1 id="文件的读取"><a href="#文件的读取" class="headerlink" title="文件的读取"></a>文件的读取</h1><p>操作汇总</p>
-<table>
-<thead>
-<tr>
-<th align="center">操作</th>
-<th align="center">功能</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">文件对象 &#x3D; open(file,mode,encoding)</td>
-<td align="center">打开文件获得文件对象</td>
-</tr>
-<tr>
-<td align="center">文件对象.read(num)</td>
-<td align="center">读取指定长度字节，不指定num则读取文件全部</td>
-</tr>
-<tr>
-<td align="center">文件对象.readline()</td>
-<td align="center">读取一行</td>
-</tr>
-<tr>
-<td align="center">文件对象.readlines()</td>
-<td align="center">读取全部行，得到列表</td>
-</tr>
-<tr>
-<td align="center">for line in 文件对象</td>
-<td align="center">for循环文件行，一次循环得到一行数据</td>
-</tr>
-<tr>
-<td align="center">文件对象.close()</td>
-<td align="center">关闭文件对象</td>
-</tr>
-<tr>
-<td align="center">with open() as f</td>
-<td align="center">通过with open语法打开文件，可以自动关闭</td>
-</tr>
-</tbody></table>
-<h1 id="文件的写入"><a href="#文件的写入" class="headerlink" title="文件的写入"></a>文件的写入</h1><ol>
-<li>写入文件使用open函数的”w“模式写入</li>
-<li>写入的方法有：<ul>
-<li>write()，写入内容</li>
-<li>flush()，刷新内容到硬盘中</li>
-</ul>
+<h1 id="异常的捕获"><a href="#异常的捕获" class="headerlink" title="异常的捕获"></a>异常的捕获</h1><ol>
+<li><p>为什么要捕获异常？</p>
+<p>在可能发生异常的地方进行捕获。当发生异常的时候，提供解决方式，而不是任由其导致程序无法运行</p>
 </li>
-<li>注意事项：<ul>
-<li>w模式，文件不存在，会创建新文件</li>
-<li>w模式，文件存在，会清空原有内容</li>
-<li>close()方法，带有flush()方法的功能</li>
+<li><p>捕获异常的语法</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    可能要发生异常的语句</span><br><span class="line"><span class="keyword">except</span> [异常 <span class="keyword">as</span> 别名]:</span><br><span class="line">    出现异常的准备手段</span><br><span class="line">[<span class="keyword">else</span>:]</span><br><span class="line">	未出现异常时应做的事情</span><br><span class="line">[<span class="keyword">finally</span>]:</span><br><span class="line">    不管出不出现异常都会做的事情</span><br><span class="line">    </span><br><span class="line"><span class="comment"># 带有中括号的内容可以不写，基础写法就是try-except组合</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>捕获所有异常</p>
+<p>异常的种类多种多样，如果想要不管什么类型的异常都能捕获到，那么使用：</p>
+<ul>
+<li>except:</li>
+<li>except Exception:</li>
 </ul>
 </li>
 </ol>
-<h1 id="文件的追加"><a href="#文件的追加" class="headerlink" title="文件的追加"></a>文件的追加</h1><ol>
-<li>追加写入文件使用open函数的”a“模式写入</li>
-<li>追加写入的方法有（和w模式一样）<ul>
-<li>write()，写入内容</li>
-<li>flush()，刷新内容到硬盘中</li>
+<h1 id="异常的传递"><a href="#异常的传递" class="headerlink" title="异常的传递"></a>异常的传递</h1><p>异常时具有传递性的，当出现异常，且所有函数都没有捕获异常的时候，程序就会报错</p>
+<h1 id="Python模块"><a href="#Python模块" class="headerlink" title="Python模块"></a>Python模块</h1><h2 id="模块的导入"><a href="#模块的导入" class="headerlink" title="模块的导入"></a>模块的导入</h2><ol>
+<li><p>模块：</p>
+<p>模块就是一个Python代码文件，内含类、函数、变量等，我们可以导入进行使用。</p>
+</li>
+<li><p>导入模块：</p>
+<p>语法：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="keyword">from</span> 模块名] <span class="keyword">import</span> [模块 | 类 | 变量 | 函数 | *] [<span class="keyword">as</span> 别名]</span><br></pre></td></tr></table></figure>
+
+<p>演示：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">演示Python的模块导入</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用import导入time模块使用sleep功能（函数）</span></span><br><span class="line"><span class="keyword">import</span> time         <span class="comment"># 导入Python内置的time模块（time.py这个代码文件）</span></span><br><span class="line">time.sleep(<span class="number">5</span>)       <span class="comment"># 通过 . 就可以使用模块的功能</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;###########&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用from导入time的sleep功能（函数）</span></span><br><span class="line"><span class="keyword">from</span> time <span class="keyword">import</span> sleep</span><br><span class="line">sleep(<span class="number">5</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;###########&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用 * 导入time模块的全部功能</span></span><br><span class="line"><span class="keyword">from</span> time <span class="keyword">import</span> *</span><br><span class="line">sleep(<span class="number">5</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;###########&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用as给特定功能加上别名</span></span><br><span class="line"><span class="keyword">import</span> time <span class="keyword">as</span> t</span><br><span class="line">t.sleep(<span class="number">5</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> time <span class="keyword">import</span> sleep <span class="keyword">as</span> sl</span><br><span class="line">sl(<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>注意事项：</p>
+<ul>
+<li>from可以省略，直接import即可</li>
+<li>as别名可以省略</li>
+<li>通过“.”来确定层级关系</li>
+<li>模块的导入一般写在代码文件的开头位置</li>
 </ul>
 </li>
-<li>注意事项：<ul>
-<li>a模式，文件不存在，会创建新文件</li>
-<li>a模式，文件存在，会在原有内容后面继续写入</li>
-<li>可以使用”\n“来写出换行符</li>
+</ol>
+<h2 id="自定义模块"><a href="#自定义模块" class="headerlink" title="自定义模块"></a>自定义模块</h2><ol>
+<li><p>自定义模块并导入：</p>
+<p>在Python代码文件中正常写代码即可，通过import、from关键字和导入Python内置模块一样导入即可使用</p>
+</li>
+<li><p><code>__mian__</code>变量的功能：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># if __name__ == &#x27;__main__&#x27;:表示，只有当程序时直接执行的才会进入if内部，如果是被导入的，则if无法进入</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>注意事项：</p>
+<ul>
+<li><p>不同模块，同名功能，如果都被导入，那么后导入的会覆盖先导入的</p>
+</li>
+<li><p><code>__all__</code>变量可以控制 import* 的哪些功能可以被导入</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">a</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;hello&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">b</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;hi&#x27;</span>)</span><br><span class="line"></span><br><span class="line">__all__ = [<span class="string">&#x27;a&#x27;</span>]</span><br></pre></td></tr></table></figure></li>
 </ul>
+<h1 id="Python包"><a href="#Python包" class="headerlink" title="Python包"></a>Python包</h1><h2 id="自定义包"><a href="#自定义包" class="headerlink" title="自定义包"></a>自定义包</h2><ol>
+<li><p>Python包：</p>
+<p>包就是一个文件夹，里面可以存放许多Python模块（代码文件），通过包，在逻辑上将一批模块归为一类，方便使用</p>
+</li>
+<li><p><code>__init__.py</code>文件作用：</p>
+<p>创建包会默认自动创建的文件，通过这个文件表示一个文件夹是Python的包，而非普通的文件夹</p>
+</li>
+<li><p><code>__all__</code>变量的作用：</p>
+<p>同模块，控制import *能够导入的内容</p>
+</li>
+</ol>
+<h2 id="安装第三方包"><a href="#安装第三方包" class="headerlink" title="安装第三方包"></a>安装第三方包</h2><ol>
+<li><p>什么是第三方包？有什么作用？</p>
+<p>第三方包就是非Python官方内置的包，可以安装他们拓展功能，提高开发效率</p>
+</li>
+<li><p>如何安装？</p>
+<ul>
+<li>在命令提示符内：<ul>
+<li>pip install 包名称</li>
+<li>pip install -i <a target="_blank" rel="noopener" href="https://pypi.tuna.tsinghua.edu.cn/simple">https://pypi.tuna.tsinghua.edu.cn/simple</a> 包名称</li>
+</ul>
+</li>
+<li>在PyCharm中安装</li>
+</ul>
+</li>
+</ol>
 </li>
 </ol>
  
@@ -248,7 +259,7 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://littlewin8.github.io/2023/08/17/Python%E5%9F%BA%E7%A1%80(%E5%85%AD)%E2%80%94%E2%80%94%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://littlewin8.github.io/2023/08/18/Python%E5%9F%BA%E7%A1%80(%E4%B8%83)%E2%80%94%E2%80%94%E5%BC%82%E5%B8%B8%E3%80%81%E6%A8%A1%E5%9D%97%E4%B8%8E%E5%8C%85/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -259,19 +270,10 @@
    
   <nav class="article-nav">
     
-      <a href="/2023/08/18/Python%E5%9F%BA%E7%A1%80(%E4%B8%83)%E2%80%94%E2%80%94%E5%BC%82%E5%B8%B8%E3%80%81%E6%A8%A1%E5%9D%97%E4%B8%8E%E5%8C%85/" class="article-nav-link">
-        <strong class="article-nav-caption">上一篇</strong>
-        <div class="article-nav-title">
-          
-            Python集合(七)——异常、模块与包
-          
-        </div>
-      </a>
     
-    
-      <a href="/2023/08/15/Python%E5%9F%BA%E7%A1%80(%E4%BA%94)%E2%80%94%E2%80%94%E5%87%BD%E6%95%B0%E6%8B%93%E5%B1%95/" class="article-nav-link">
+      <a href="/2023/08/17/Python%E5%9F%BA%E7%A1%80(%E5%85%AD)%E2%80%94%E2%80%94%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">Python基础(五)——函数拓展</div>
+        <div class="article-nav-title">Python基础(六)——文件操作</div>
       </a>
     
   </nav>
