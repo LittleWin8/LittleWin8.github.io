@@ -11,7 +11,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
-      <title>Python集合(七)——异常、模块与包 |  小稳</title>
+      <title>Python基础(八)——面向对象 |  小稳</title>
   <meta name="generator" content="hexo-theme-ayer">
       
       <link rel="shortcut icon" href="/littlewin.png" />
@@ -54,7 +54,7 @@
     <main class="content on">
       <section class="outer">
   <article
-  id="post-Python基础(七)——异常、模块与包"
+  id="post-Python基础(八)——面向对象"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
@@ -65,7 +65,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  Python集合(七)——异常、模块与包
+  Python基础(八)——面向对象
 </h1>
  
 
@@ -73,8 +73,8 @@
     </header>
      
     <div class="article-meta">
-      <a href="/2023/08/18/Python%E5%9F%BA%E7%A1%80(%E4%B8%83)%E2%80%94%E2%80%94%E5%BC%82%E5%B8%B8%E3%80%81%E6%A8%A1%E5%9D%97%E4%B8%8E%E5%8C%85/" class="article-date">
-  <time datetime="2023-08-18T03:58:45.000Z" itemprop="datePublished">2023-08-18</time>
+      <a href="/2023/08/23/Python%E5%9F%BA%E7%A1%80(%E5%85%AB)%E2%80%94%E2%80%94%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" class="article-date">
+  <time datetime="2023-08-23T11:25:56.000Z" itemprop="datePublished">2023-08-23</time>
 </a> 
   <div class="article-category">
     <a class="article-category-link" href="/categories/Python/">Python</a>
@@ -85,7 +85,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">872</span>
+            <span class="post-count">1.4k</span>
         </span>
     </span>
 
@@ -94,7 +94,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> Reading time≈</span>
-            <span class="post-count">3 min</span>
+            <span class="post-count">4 min</span>
         </span>
     </span>
 </div>
@@ -109,92 +109,193 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <h1 id="了解异常"><a href="#了解异常" class="headerlink" title="了解异常"></a>了解异常</h1><ol>
-<li><p>异常：</p>
-<p>异常就是程序运行的过程中出现了错误</p>
-</li>
-<li><p>bug：</p>
-<p>bug就是异常的意思，因为历史因为小虫子导致计算机失灵，所以延续至今，bug就代表软件出现错误</p>
-</li>
-</ol>
-<h1 id="异常的捕获"><a href="#异常的捕获" class="headerlink" title="异常的捕获"></a>异常的捕获</h1><ol>
-<li><p>为什么要捕获异常？</p>
-<p>在可能发生异常的地方进行捕获。当发生异常的时候，提供解决方式，而不是任由其导致程序无法运行</p>
-</li>
-<li><p>捕获异常的语法</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    可能要发生异常的语句</span><br><span class="line"><span class="keyword">except</span> [异常 <span class="keyword">as</span> 别名]:</span><br><span class="line">    出现异常的准备手段</span><br><span class="line">[<span class="keyword">else</span>:]</span><br><span class="line">	未出现异常时应做的事情</span><br><span class="line">[<span class="keyword">finally</span>]:</span><br><span class="line">    不管出不出现异常都会做的事情</span><br><span class="line">    </span><br><span class="line"><span class="comment"># 带有中括号的内容可以不写，基础写法就是try-except组合</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>捕获所有异常</p>
-<p>异常的种类多种多样，如果想要不管什么类型的异常都能捕获到，那么使用：</p>
+  <h1 id="成员方法"><a href="#成员方法" class="headerlink" title="成员方法"></a>成员方法</h1><ol>
+<li><p>类的组成：</p>
 <ul>
-<li>except:</li>
-<li>except Exception:</li>
+<li>类的属性，称之为：成员变量</li>
+<li>类的行为，称之为：成员方法、</li>
+</ul>
+<p>注意：函数是写在类外的，定义在类内部，我们都称之为方法</p>
+</li>
+<li><p>类和成员方法的定义语法:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">类名称</span>:</span><br><span class="line">    成员变量</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">成员方法</span>(<span class="params">self,参数列表</span>):</span><br><span class="line">        成员方法体</span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">对象 = 类名称()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>self的作用</p>
+<ul>
+<li>表示类对象本身的意思</li>
+<li>只有通过self，成员方法才能访问类的成员变量</li>
+<li>self出现在形参列表中，但是不占用参数位置，无需理会</li>
 </ul>
 </li>
 </ol>
-<h1 id="异常的传递"><a href="#异常的传递" class="headerlink" title="异常的传递"></a>异常的传递</h1><p>异常时具有传递性的，当出现异常，且所有函数都没有捕获异常的时候，程序就会报错</p>
-<h1 id="Python模块"><a href="#Python模块" class="headerlink" title="Python模块"></a>Python模块</h1><h2 id="模块的导入"><a href="#模块的导入" class="headerlink" title="模块的导入"></a>模块的导入</h2><ol>
-<li><p>模块：</p>
-<p>模块就是一个Python代码文件，内含类、函数、变量等，我们可以导入进行使用。</p>
+<h1 id="类和对象"><a href="#类和对象" class="headerlink" title="类和对象"></a>类和对象</h1><ol>
+<li><p>类和对象的关系：</p>
+<p>类就是程序中的“设计图纸”，对象是基于图纸生产的具体实体</p>
 </li>
-<li><p>导入模块：</p>
+<li><p>什么是面向对象编程：</p>
+<p>面向对象编程就是使用对象编程。</p>
+<p>即设计类，基于类创建对象，并使用对象来完成具体的工作</p>
+</li>
+</ol>
+<h1 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h1><ol>
+<li>构造方法的名称：<code>__init__</code>，init前后是两个下划线</li>
+<li>构造方法的作用：<ul>
+<li>构建对象的时候会自动运行</li>
+<li>构建类对象的传参会传递给构造方法，借此特性可以给成员变量赋值</li>
+</ul>
+</li>
+<li>注意事项：<ul>
+<li>构造方法不要忘记self关键字</li>
+<li>在方法内使用成员需要使用self</li>
+</ul>
+</li>
+</ol>
+<h1 id="魔术方法"><a href="#魔术方法" class="headerlink" title="魔术方法"></a>魔术方法</h1><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>__init__</code></td>
+<td>构造方法，可用于创建类对象的时候设置初始化行为</td>
+</tr>
+<tr>
+<td><code>__str__</code></td>
+<td>用于实现类对象转字符串的行为</td>
+</tr>
+<tr>
+<td><code>__lt__</code></td>
+<td>用于2个类对象进行小于或大于比较</td>
+</tr>
+<tr>
+<td><code>__le__</code></td>
+<td>用于2个类对象进行小于等于或大于等于比较</td>
+</tr>
+<tr>
+<td><code>__eq__</code></td>
+<td>用于2个类对象进行相等比较</td>
+</tr>
+</tbody></table>
+<h1 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h1><ol>
+<li><p>封装的概念：将现实世界事物在类中描述为属性和方法，即为封装</p>
+</li>
+<li><p>什么是私有成员？为什么需要私有成员？</p>
+<p>现实事物有部分属性和行为是不公开对使用者开放的。同样在类中描述属性和方法的时候也需要达到这个要求，就需要私有成员了</p>
+</li>
+<li><p>如何定义私有成员：</p>
+<p>成员变量和成员方法的命名均以<code>__</code>作为开头（两个下划线）</p>
+</li>
+<li><p>私有成员的访问限制：</p>
+<ul>
+<li>类对象无法访问私有成员</li>
+<li>类中其他成员可以访问私有成员</li>
+</ul>
+</li>
+</ol>
+<h1 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h1><ol>
+<li><p>继承：继承就是一个类，继承了另一个类的成员变量和成员方法</p>
 <p>语法：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="keyword">from</span> 模块名] <span class="keyword">import</span> [模块 | 类 | 变量 | 函数 | *] [<span class="keyword">as</span> 别名]</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">类</span>(父类<span class="number">1</span>,父类<span class="number">2</span>,……)</span><br><span class="line">	类体内容</span><br></pre></td></tr></table></figure>
 
-<p>演示：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">演示Python的模块导入</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用import导入time模块使用sleep功能（函数）</span></span><br><span class="line"><span class="keyword">import</span> time         <span class="comment"># 导入Python内置的time模块（time.py这个代码文件）</span></span><br><span class="line">time.sleep(<span class="number">5</span>)       <span class="comment"># 通过 . 就可以使用模块的功能</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;###########&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用from导入time的sleep功能（函数）</span></span><br><span class="line"><span class="keyword">from</span> time <span class="keyword">import</span> sleep</span><br><span class="line">sleep(<span class="number">5</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;###########&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用 * 导入time模块的全部功能</span></span><br><span class="line"><span class="keyword">from</span> time <span class="keyword">import</span> *</span><br><span class="line">sleep(<span class="number">5</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;###########&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用as给特定功能加上别名</span></span><br><span class="line"><span class="keyword">import</span> time <span class="keyword">as</span> t</span><br><span class="line">t.sleep(<span class="number">5</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> time <span class="keyword">import</span> sleep <span class="keyword">as</span> sl</span><br><span class="line">sl(<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>注意事项：</p>
+<p>子类构建的类对象，可以</p>
 <ul>
-<li>from可以省略，直接import即可</li>
-<li>as别名可以省略</li>
-<li>通过“.”来确定层级关系</li>
-<li>模块的导入一般写在代码文件的开头位置</li>
+<li>有自己的成员变量和成员方法</li>
+<li>使用父类的成员变量和成员方法</li>
 </ul>
 </li>
-</ol>
-<h2 id="自定义模块"><a href="#自定义模块" class="headerlink" title="自定义模块"></a>自定义模块</h2><ol>
-<li><p>自定义模块并导入：</p>
-<p>在Python代码文件中正常写代码即可，通过import、from关键字和导入Python内置模块一样导入即可使用</p>
-</li>
-<li><p><code>__mian__</code>变量的功能：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># if __name__ == &#x27;__main__&#x27;:表示，只有当程序时直接执行的才会进入if内部，如果是被导入的，则if无法进入</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>注意事项：</p>
+<li><p>单继承和多继承</p>
 <ul>
-<li><p>不同模块，同名功能，如果都被导入，那么后导入的会覆盖先导入的</p>
-</li>
-<li><p><code>__all__</code>变量可以控制 import* 的哪些功能可以被导入</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">a</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;hello&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">b</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;hi&#x27;</span>)</span><br><span class="line"></span><br><span class="line">__all__ = [<span class="string">&#x27;a&#x27;</span>]</span><br></pre></td></tr></table></figure></li>
+<li>单继承：一个类继承另一个类</li>
+<li>多继承：一个类继承多个类，按照顺序从左向右依次继承</li>
+<li>多继承中，如果父类有同名方法或属性，先继承的优先级高于后继承</li>
 </ul>
-<h1 id="Python包"><a href="#Python包" class="headerlink" title="Python包"></a>Python包</h1><h2 id="自定义包"><a href="#自定义包" class="headerlink" title="自定义包"></a>自定义包</h2><ol>
-<li><p>Python包：</p>
-<p>包就是一个文件夹，里面可以存放许多Python模块（代码文件），通过包，在逻辑上将一批模块归为一类，方便使用</p>
 </li>
-<li><p><code>__init__.py</code>文件作用：</p>
-<p>创建包会默认自动创建的文件，通过这个文件表示一个文件夹是Python的包，而非普通的文件夹</p>
+<li><p><code>pass</code>关键字的作用：</p>
+<p>pass是占位语言，用来保证函数（方法）或类定义的完整性，表示无内容，空的意思</p>
 </li>
-<li><p><code>__all__</code>变量的作用：</p>
-<p>同模块，控制import *能够导入的内容</p>
+<li><p>复写：对父类的成员属性或成员方法进行重新定义</p>
+<p>语法：在子类中重新实现同名成员方法或成员属性即可</p>
 </li>
-</ol>
-<h2 id="安装第三方包"><a href="#安装第三方包" class="headerlink" title="安装第三方包"></a>安装第三方包</h2><ol>
-<li><p>什么是第三方包？有什么作用？</p>
-<p>第三方包就是非Python官方内置的包，可以安装他们拓展功能，提高开发效率</p>
-</li>
-<li><p>如何安装？</p>
+<li><p>在子类中调用父类成员：</p>
 <ul>
-<li>在命令提示符内：<ul>
-<li>pip install 包名称</li>
-<li>pip install -i <a target="_blank" rel="noopener" href="https://pypi.tuna.tsinghua.edu.cn/simple">https://pypi.tuna.tsinghua.edu.cn/simple</a> 包名称</li>
-</ul>
+<li><p>方法一：</p>
+<p>调用父类成员：</p>
+<p>调用父类成员变量：<code>父类名.成员变量</code></p>
+<p>调用父类成员方法：<code>父类名.成员方法(self)</code></p>
 </li>
-<li>在PyCharm中安装</li>
+<li><p>方法二</p>
+<p>使用super()调用父类成员</p>
+<p>调用成员变量：<code>super().成员变量</code></p>
+<p>调用成员方法：<code>super().成员方法()</code></p>
+</li>
+<li><p>注意：只可以在子类内部调用父类同名成员，子类的实体类调用默认是调用子类复写的</p>
+</li>
 </ul>
 </li>
 </ol>
+<h1 id="类型注解"><a href="#类型注解" class="headerlink" title="类型注解"></a>类型注解</h1><h2 id="变量的类型注解"><a href="#变量的类型注解" class="headerlink" title="变量的类型注解"></a>变量的类型注解</h2><ol>
+<li><p>什么是类型注解，有什么作用？</p>
+<p>在代码中涉及数据交互之时，对数据类型进行显式的说明，可以帮助：</p>
+<ul>
+<li>PyCharm等开发工具对代码做类型推断协助做代码提示</li>
+<li>开发者自身做类型类型的备注</li>
+</ul>
+</li>
+<li><p>类型注解支持：</p>
+<ul>
+<li>变量的类型注解</li>
+<li>函数（方法）的形参和返回值的类型注解</li>
+</ul>
+</li>
+<li><p>变量的类型注解语法</p>
+<ul>
+<li>语法1：<code>变量:类型</code></li>
+<li>语法2：在注释中，<code># type: 类型</code></li>
+</ul>
+</li>
+<li><p>注意事项</p>
+<p>类型注解只是提示性的，并非决定性的。数据类型和注解类型无法对应也不会导致错误</p>
 </li>
 </ol>
+<h2 id="函数（方法）的类型注解"><a href="#函数（方法）的类型注解" class="headerlink" title="函数（方法）的类型注解"></a>函数（方法）的类型注解</h2><ol>
+<li><p>函数（方法）可以为哪里添加注解？</p>
+<ul>
+<li>形参的类型注解</li>
+<li>返回值的类型注解</li>
+</ul>
+</li>
+<li><p>函数（方法）的类型注解语法：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">函数方法名</span>(<span class="params">形参: 类型,……,形参: 类型</span>) -&gt; 返回值类型:</span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+
+<p>注意，返回值类型注解的符号使用： <code>-&gt;</code></p>
+</li>
+</ol>
+<h2 id="Union类型"><a href="#Union类型" class="headerlink" title="Union类型"></a>Union类型</h2><ol>
+<li><p>什么是Union类型？</p>
+<p>使用Union可以定义联合类型注解</p>
+</li>
+<li><p>Union的使用方法</p>
+<ul>
+<li>导包：<code>from typing import Union</code></li>
+<li>使用：<code>Union[类型,……,类型]</code></li>
+</ul>
+</li>
+</ol>
+<h1 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h1><ol>
+<li><p>什么是多态？</p>
+<p>多态指的是，同一行为，使用不同对象获得不同的状态</p>
+<p>如，定义函数（方法），通过类型注解声明需要的父类对象，实际传入子类对象进行工作，从而获得不同的工作状态</p>
+</li>
+<li><p>什么是抽象类（接口）？</p>
+<p>包含抽象方法的类，称之为抽象类。抽象方法是指：没有具体实现的方法（pass）称之为抽象方法</p>
+</li>
+<li><p>抽象类的作用</p>
+<p>多用于顶层设计（设计标准），以便子类做具体实现。也是对子类的一种软性约束，要求子类必须复写（实现）父类的一些方法并配合多态使用，获得不同的工作状态</p>
+</li>
+</ol>
+<p>​     </p>
  
       <!-- reward -->
       
@@ -259,7 +360,7 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://littlewin8.github.io/2023/08/18/Python%E5%9F%BA%E7%A1%80(%E4%B8%83)%E2%80%94%E2%80%94%E5%BC%82%E5%B8%B8%E3%80%81%E6%A8%A1%E5%9D%97%E4%B8%8E%E5%8C%85/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://littlewin8.github.io/2023/08/23/Python%E5%9F%BA%E7%A1%80(%E5%85%AB)%E2%80%94%E2%80%94%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -270,19 +371,10 @@
    
   <nav class="article-nav">
     
-      <a href="/2023/08/23/Python%E5%9F%BA%E7%A1%80(%E5%85%AB)%E2%80%94%E2%80%94%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" class="article-nav-link">
-        <strong class="article-nav-caption">上一篇</strong>
-        <div class="article-nav-title">
-          
-            Python基础(八)——面向对象
-          
-        </div>
-      </a>
     
-    
-      <a href="/2023/08/17/Python%E5%9F%BA%E7%A1%80(%E5%85%AD)%E2%80%94%E2%80%94%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/" class="article-nav-link">
+      <a href="/2023/08/18/Python%E5%9F%BA%E7%A1%80(%E4%B8%83)%E2%80%94%E2%80%94%E5%BC%82%E5%B8%B8%E3%80%81%E6%A8%A1%E5%9D%97%E4%B8%8E%E5%8C%85/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">Python基础(六)——文件操作</div>
+        <div class="article-nav-title">Python集合(七)——异常、模块与包</div>
       </a>
     
   </nav>
