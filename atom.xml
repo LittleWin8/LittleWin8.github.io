@@ -6,7 +6,7 @@
   <link href="http://littlewin8.github.io/atom.xml" rel="self"/>
   
   <link href="http://littlewin8.github.io/"/>
-  <updated>2023-08-23T11:27:57.969Z</updated>
+  <updated>2023-09-08T12:02:45.343Z</updated>
   <id>http://littlewin8.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Java基础(一)——入门</title>
+    <link href="http://littlewin8.github.io/2023/09/08/Java%E5%9F%BA%E7%A1%80(%E4%B8%80)%E2%80%94%E2%80%94%E5%85%A5%E9%97%A8/"/>
+    <id>http://littlewin8.github.io/2023/09/08/Java%E5%9F%BA%E7%A1%80(%E4%B8%80)%E2%80%94%E2%80%94%E5%85%A5%E9%97%A8/</id>
+    <published>2023-09-08T11:59:21.000Z</published>
+    <updated>2023-09-08T12:02:45.343Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;初识Java&quot;&gt;&lt;a href=&quot;#初识Java&quot; class=&quot;headerlink&quot; title=&quot;初识Java&quot;&gt;&lt;/a&gt;初识Java&lt;/h1&gt;&lt;h2 id=&quot;背景知识&quot;&gt;&lt;a href=&quot;#背景知识&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Java" scheme="http://littlewin8.github.io/categories/Java/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Python基础(八)——面向对象</title>
