@@ -769,100 +769,6 @@
       </categories>
   </entry>
   <entry>
-    <title>Python集合(七)——异常、模块与包</title>
-    <url>/2023/08/18/Python%E5%9F%BA%E7%A1%80(%E4%B8%83)%E2%80%94%E2%80%94%E5%BC%82%E5%B8%B8%E3%80%81%E6%A8%A1%E5%9D%97%E4%B8%8E%E5%8C%85/</url>
-    <content><![CDATA[<h1 id="了解异常"><a href="#了解异常" class="headerlink" title="了解异常"></a>了解异常</h1><ol>
-<li><p>异常：</p>
-<p>异常就是程序运行的过程中出现了错误</p>
-</li>
-<li><p>bug：</p>
-<p>bug就是异常的意思，因为历史因为小虫子导致计算机失灵，所以延续至今，bug就代表软件出现错误</p>
-</li>
-</ol>
-<h1 id="异常的捕获"><a href="#异常的捕获" class="headerlink" title="异常的捕获"></a>异常的捕获</h1><ol>
-<li><p>为什么要捕获异常？</p>
-<p>在可能发生异常的地方进行捕获。当发生异常的时候，提供解决方式，而不是任由其导致程序无法运行</p>
-</li>
-<li><p>捕获异常的语法</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    可能要发生异常的语句</span><br><span class="line"><span class="keyword">except</span> [异常 <span class="keyword">as</span> 别名]:</span><br><span class="line">    出现异常的准备手段</span><br><span class="line">[<span class="keyword">else</span>:]</span><br><span class="line">	未出现异常时应做的事情</span><br><span class="line">[<span class="keyword">finally</span>]:</span><br><span class="line">    不管出不出现异常都会做的事情</span><br><span class="line">    </span><br><span class="line"><span class="comment"># 带有中括号的内容可以不写，基础写法就是try-except组合</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>捕获所有异常</p>
-<p>异常的种类多种多样，如果想要不管什么类型的异常都能捕获到，那么使用：</p>
-<ul>
-<li>except:</li>
-<li>except Exception:</li>
-</ul>
-</li>
-</ol>
-<h1 id="异常的传递"><a href="#异常的传递" class="headerlink" title="异常的传递"></a>异常的传递</h1><p>异常时具有传递性的，当出现异常，且所有函数都没有捕获异常的时候，程序就会报错</p>
-<h1 id="Python模块"><a href="#Python模块" class="headerlink" title="Python模块"></a>Python模块</h1><h2 id="模块的导入"><a href="#模块的导入" class="headerlink" title="模块的导入"></a>模块的导入</h2><ol>
-<li><p>模块：</p>
-<p>模块就是一个Python代码文件，内含类、函数、变量等，我们可以导入进行使用。</p>
-</li>
-<li><p>导入模块：</p>
-<p>语法：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">[<span class="keyword">from</span> 模块名] <span class="keyword">import</span> [模块 | 类 | 变量 | 函数 | *] [<span class="keyword">as</span> 别名]</span><br></pre></td></tr></table></figure>
-
-<p>演示：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">演示Python的模块导入</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用import导入time模块使用sleep功能（函数）</span></span><br><span class="line"><span class="keyword">import</span> time         <span class="comment"># 导入Python内置的time模块（time.py这个代码文件）</span></span><br><span class="line">time.sleep(<span class="number">5</span>)       <span class="comment"># 通过 . 就可以使用模块的功能</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;###########&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用from导入time的sleep功能（函数）</span></span><br><span class="line"><span class="keyword">from</span> time <span class="keyword">import</span> sleep</span><br><span class="line">sleep(<span class="number">5</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;###########&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用 * 导入time模块的全部功能</span></span><br><span class="line"><span class="keyword">from</span> time <span class="keyword">import</span> *</span><br><span class="line">sleep(<span class="number">5</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;###########&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用as给特定功能加上别名</span></span><br><span class="line"><span class="keyword">import</span> time <span class="keyword">as</span> t</span><br><span class="line">t.sleep(<span class="number">5</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> time <span class="keyword">import</span> sleep <span class="keyword">as</span> sl</span><br><span class="line">sl(<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>注意事项：</p>
-<ul>
-<li>from可以省略，直接import即可</li>
-<li>as别名可以省略</li>
-<li>通过“.”来确定层级关系</li>
-<li>模块的导入一般写在代码文件的开头位置</li>
-</ul>
-</li>
-</ol>
-<h2 id="自定义模块"><a href="#自定义模块" class="headerlink" title="自定义模块"></a>自定义模块</h2><ol>
-<li><p>自定义模块并导入：</p>
-<p>在Python代码文件中正常写代码即可，通过import、from关键字和导入Python内置模块一样导入即可使用</p>
-</li>
-<li><p><code>__mian__</code>变量的功能：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># if __name__ == &#x27;__main__&#x27;:表示，只有当程序时直接执行的才会进入if内部，如果是被导入的，则if无法进入</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>注意事项：</p>
-<ul>
-<li><p>不同模块，同名功能，如果都被导入，那么后导入的会覆盖先导入的</p>
-</li>
-<li><p><code>__all__</code>变量可以控制 import* 的哪些功能可以被导入</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">a</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;hello&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">b</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;hi&#x27;</span>)</span><br><span class="line"></span><br><span class="line">__all__ = [<span class="string">&#x27;a&#x27;</span>]</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h1 id="Python包"><a href="#Python包" class="headerlink" title="Python包"></a>Python包</h1><h2 id="自定义包"><a href="#自定义包" class="headerlink" title="自定义包"></a>自定义包</h2><ol>
-<li><p>Python包：</p>
-<p>包就是一个文件夹，里面可以存放许多Python模块（代码文件），通过包，在逻辑上将一批模块归为一类，方便使用</p>
-</li>
-<li><p><code>__init__.py</code>文件作用：</p>
-<p>创建包会默认自动创建的文件，通过这个文件表示一个文件夹是Python的包，而非普通的文件夹</p>
-</li>
-<li><p><code>__all__</code>变量的作用：</p>
-<p>同模块，控制import *能够导入的内容</p>
-</li>
-</ol>
-<h2 id="安装第三方包"><a href="#安装第三方包" class="headerlink" title="安装第三方包"></a>安装第三方包</h2><ol>
-<li><p>什么是第三方包？有什么作用？</p>
-<p>第三方包就是非Python官方内置的包，可以安装他们拓展功能，提高开发效率</p>
-</li>
-<li><p>如何安装？</p>
-<ul>
-<li>在命令提示符内：<ul>
-<li>pip install 包名称</li>
-<li>pip install -i <a href="https://pypi.tuna.tsinghua.edu.cn/simple">https://pypi.tuna.tsinghua.edu.cn/simple</a> 包名称</li>
-</ul>
-</li>
-<li>在PyCharm中安装</li>
-</ul>
-</li>
-</ol>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Python</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Python基础(一)——基本数据类型</title>
     <url>/2023/07/13/Python%E5%9F%BA%E7%A1%80(%E4%B8%80)%E2%80%94%E2%80%94%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</url>
     <content><![CDATA[<h1 id="初识Python"><a href="#初识Python" class="headerlink" title="初识Python"></a>初识Python</h1><h2 id="起源"><a href="#起源" class="headerlink" title="起源"></a>起源</h2><p>1989年，Guidio van Rossum吉多·范罗苏姆决心开发一个新的解释程序（Python雏形）</p>
@@ -1209,6 +1115,262 @@
       </categories>
   </entry>
   <entry>
+    <title>Java基础(二)——流程控制</title>
+    <url>/2023/09/09/Java%E5%9F%BA%E7%A1%80(%E4%BA%8C)%E2%80%94%E2%80%94%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/</url>
+    <content><![CDATA[<h1 id="分支结构"><a href="#分支结构" class="headerlink" title="分支结构"></a>分支结构</h1><h2 id="if语句"><a href="#if语句" class="headerlink" title="if语句"></a>if语句</h2><ol>
+<li><p>if分支：可以根据条件，选择执行某段程序</p>
+</li>
+<li><p>if分支的三种写法：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 第一种语法</span></span><br><span class="line"><span class="keyword">if</span>(条件表达式)&#123;</span><br><span class="line">    语句;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 第二种语法</span></span><br><span class="line"><span class="keyword">if</span>(条件表达式)&#123;</span><br><span class="line">    语句<span class="number">1</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    语句<span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 第三种写法</span></span><br><span class="line"><span class="keyword">if</span>(条件表达式)&#123;</span><br><span class="line">    语句<span class="number">1</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span>&#123;</span><br><span class="line">    语句<span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line">……</span><br><span class="line"><span class="keyword">else</span> &#123;</span><br><span class="line">    语句n;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>PS：如果if语句的{}中只有一行代码的情况下，{}可以不写</p>
+</li>
+</ol>
+<h2 id="switch语句"><a href="#switch语句" class="headerlink" title="switch语句"></a>switch语句</h2><ol>
+<li><p>使用switch时有哪些注意事项？</p>
+<ul>
+<li>表达式类型只能是byte、short、int、char，JDK5开始支持枚举，JDK7开始支持String、不支持double、float、long。</li>
+<li>case给出的值不允许重复，且只能是字面量，不能是变量。</li>
+<li>正常使用switch的时候，不要忘记写break，否则会出现穿透现象</li>
+</ul>
+</li>
+<li><p>switch穿透性能解决什么问题？</p>
+<p>存在多个case分支的代码时一样时，可以把代码写道一个case块，其他case块通过穿透性能，穿透到case块即可，这样可以简化代码。</p>
+</li>
+</ol>
+<h1 id="循环结构"><a href="#循环结构" class="headerlink" title="循环结构"></a>循环结构</h1><h2 id="for循环"><a href="#for循环" class="headerlink" title="for循环"></a>for循环</h2><ol>
+<li><p>for循环格式和执行流程是什么样的？</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(变量赋值; 循环条件; 变量增值)&#123;</span><br><span class="line">    循环体语句;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 例如</span></span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i&lt; <span class="number">3</span>; i++)&#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;Hello world&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>for循环的常见应用场景？</p>
+<p>减少代码的重复编写，灵活的控制程序的执行</p>
+</li>
+</ol>
+<h2 id="while循环"><a href="#while循环" class="headerlink" title="while循环"></a>while循环</h2><ol>
+<li><p>while循环的格式和执行流程是怎么样的？</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">初始化语句;</span><br><span class="line"><span class="keyword">while</span>(循环条件)&#123;</span><br><span class="line">    循环体语句;</span><br><span class="line">    迭代语句;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 例如</span></span><br><span class="line"><span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line"><span class="keyword">while</span>(i&lt;<span class="number">3</span>)&#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;Hello world&quot;</span>);</span><br><span class="line">    i++;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>while和for有什么区别？什么时候使用for，什么时候使用while？</p>
+<ul>
+<li>功能上是完全一样的，for能解决的while也能解决，反之亦然。</li>
+<li>使用规范：知道循环几次使用for；不知道循环几次建议使用while。</li>
+</ul>
+</li>
+</ol>
+<h2 id="do-while循环"><a href="#do-while循环" class="headerlink" title="do-while循环"></a>do-while循环</h2><ol>
+<li><p>do-while循环的格式和执行流程是怎么样的？</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">初始化语句;</span><br><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">    循环体语句;</span><br><span class="line">    迭代语句;</span><br><span class="line">&#125; <span class="keyword">while</span>(循环条件)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 例如</span></span><br><span class="line"><span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;Hello world&quot;</span>);</span><br><span class="line">    i++;</span><br><span class="line">&#125; w <span class="title function_">hile</span><span class="params">(循环条件)</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>do-while循环的特点：先执行后判断</p>
+</li>
+</ol>
+<h2 id="三种循环的区别小结"><a href="#三种循环的区别小结" class="headerlink" title="三种循环的区别小结"></a>三种循环的区别小结</h2><ul>
+<li>for循环和while循环（先判断后执行），do-while循环（先执行后判断）</li>
+<li>for循环和while循环的执行流程是一模一样的，功能上无区别，for能解决的while也能解决，反之亦然。</li>
+<li>使用规范：知道循环几次使用for；不知道循环几次建议使用while。</li>
+<li>其他区别：for循环中，控制循环的变量只在循环中使用。while循环中，控制循环的变量在循环后还可以继续使用。</li>
+</ul>
+<h2 id="死循环"><a href="#死循环" class="headerlink" title="死循环"></a>死循环</h2><ul>
+<li><p>可以一直执行下去的一种循环，如果没有干预不会停下来。</p>
+</li>
+<li><p>写法</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>( ; ; )&#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;Hello world&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;Hello world&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;Hello world&quot;</span>);</span><br><span class="line">&#125; w <span class="title function_">hile</span><span class="params">(<span class="literal">true</span>)</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>应用场景：服务器程序</p>
+</li>
+</ul>
+<h2 id="循环嵌套"><a href="#循环嵌套" class="headerlink" title="循环嵌套"></a>循环嵌套</h2><ul>
+<li>循环中又包含循环 </li>
+<li>外部循环每循环一次，内部循环会完全执行完一轮。</li>
+</ul>
+<h1 id="跳转关键字：break、continue"><a href="#跳转关键字：break、continue" class="headerlink" title="跳转关键字：break、continue"></a>跳转关键字：break、continue</h1><ul>
+<li>break：跳出并结束当前所在循环的执行。</li>
+<li>continue：用于跳出当前循环的当次执行，直接进入循环的下一次执行。</li>
+</ul>
+<h1 id="生成随机数：Random"><a href="#生成随机数：Random" class="headerlink" title="生成随机数：Random"></a>生成随机数：Random</h1><ul>
+<li>作用：生成随机数。</li>
+<li>得到0-9的随机数的实现步骤：<ol>
+<li>导包：告诉程序去JDK的哪个包中找Random，<code>import java.util.Random;</code></li>
+<li>创建随机数对象：<code>Random r = new Random();</code></li>
+<li>调用随机数的功能获取随机数：<code>int num = r,nextInt(10);</code></li>
+</ol>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Python集合(七)——异常、模块与包</title>
+    <url>/2023/08/18/Python%E5%9F%BA%E7%A1%80(%E4%B8%83)%E2%80%94%E2%80%94%E5%BC%82%E5%B8%B8%E3%80%81%E6%A8%A1%E5%9D%97%E4%B8%8E%E5%8C%85/</url>
+    <content><![CDATA[<h1 id="了解异常"><a href="#了解异常" class="headerlink" title="了解异常"></a>了解异常</h1><ol>
+<li><p>异常：</p>
+<p>异常就是程序运行的过程中出现了错误</p>
+</li>
+<li><p>bug：</p>
+<p>bug就是异常的意思，因为历史因为小虫子导致计算机失灵，所以延续至今，bug就代表软件出现错误</p>
+</li>
+</ol>
+<h1 id="异常的捕获"><a href="#异常的捕获" class="headerlink" title="异常的捕获"></a>异常的捕获</h1><ol>
+<li><p>为什么要捕获异常？</p>
+<p>在可能发生异常的地方进行捕获。当发生异常的时候，提供解决方式，而不是任由其导致程序无法运行</p>
+</li>
+<li><p>捕获异常的语法</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    可能要发生异常的语句</span><br><span class="line"><span class="keyword">except</span> [异常 <span class="keyword">as</span> 别名]:</span><br><span class="line">    出现异常的准备手段</span><br><span class="line">[<span class="keyword">else</span>:]</span><br><span class="line">	未出现异常时应做的事情</span><br><span class="line">[<span class="keyword">finally</span>]:</span><br><span class="line">    不管出不出现异常都会做的事情</span><br><span class="line">    </span><br><span class="line"><span class="comment"># 带有中括号的内容可以不写，基础写法就是try-except组合</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>捕获所有异常</p>
+<p>异常的种类多种多样，如果想要不管什么类型的异常都能捕获到，那么使用：</p>
+<ul>
+<li>except:</li>
+<li>except Exception:</li>
+</ul>
+</li>
+</ol>
+<h1 id="异常的传递"><a href="#异常的传递" class="headerlink" title="异常的传递"></a>异常的传递</h1><p>异常时具有传递性的，当出现异常，且所有函数都没有捕获异常的时候，程序就会报错</p>
+<h1 id="Python模块"><a href="#Python模块" class="headerlink" title="Python模块"></a>Python模块</h1><h2 id="模块的导入"><a href="#模块的导入" class="headerlink" title="模块的导入"></a>模块的导入</h2><ol>
+<li><p>模块：</p>
+<p>模块就是一个Python代码文件，内含类、函数、变量等，我们可以导入进行使用。</p>
+</li>
+<li><p>导入模块：</p>
+<p>语法：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">[<span class="keyword">from</span> 模块名] <span class="keyword">import</span> [模块 | 类 | 变量 | 函数 | *] [<span class="keyword">as</span> 别名]</span><br></pre></td></tr></table></figure>
+
+<p>演示：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">演示Python的模块导入</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用import导入time模块使用sleep功能（函数）</span></span><br><span class="line"><span class="keyword">import</span> time         <span class="comment"># 导入Python内置的time模块（time.py这个代码文件）</span></span><br><span class="line">time.sleep(<span class="number">5</span>)       <span class="comment"># 通过 . 就可以使用模块的功能</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;###########&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用from导入time的sleep功能（函数）</span></span><br><span class="line"><span class="keyword">from</span> time <span class="keyword">import</span> sleep</span><br><span class="line">sleep(<span class="number">5</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;###########&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用 * 导入time模块的全部功能</span></span><br><span class="line"><span class="keyword">from</span> time <span class="keyword">import</span> *</span><br><span class="line">sleep(<span class="number">5</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;###########&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用as给特定功能加上别名</span></span><br><span class="line"><span class="keyword">import</span> time <span class="keyword">as</span> t</span><br><span class="line">t.sleep(<span class="number">5</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> time <span class="keyword">import</span> sleep <span class="keyword">as</span> sl</span><br><span class="line">sl(<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>注意事项：</p>
+<ul>
+<li>from可以省略，直接import即可</li>
+<li>as别名可以省略</li>
+<li>通过“.”来确定层级关系</li>
+<li>模块的导入一般写在代码文件的开头位置</li>
+</ul>
+</li>
+</ol>
+<h2 id="自定义模块"><a href="#自定义模块" class="headerlink" title="自定义模块"></a>自定义模块</h2><ol>
+<li><p>自定义模块并导入：</p>
+<p>在Python代码文件中正常写代码即可，通过import、from关键字和导入Python内置模块一样导入即可使用</p>
+</li>
+<li><p><code>__mian__</code>变量的功能：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># if __name__ == &#x27;__main__&#x27;:表示，只有当程序时直接执行的才会进入if内部，如果是被导入的，则if无法进入</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>注意事项：</p>
+<ul>
+<li><p>不同模块，同名功能，如果都被导入，那么后导入的会覆盖先导入的</p>
+</li>
+<li><p><code>__all__</code>变量可以控制 import* 的哪些功能可以被导入</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">a</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;hello&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">b</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;hi&#x27;</span>)</span><br><span class="line"></span><br><span class="line">__all__ = [<span class="string">&#x27;a&#x27;</span>]</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h1 id="Python包"><a href="#Python包" class="headerlink" title="Python包"></a>Python包</h1><h2 id="自定义包"><a href="#自定义包" class="headerlink" title="自定义包"></a>自定义包</h2><ol>
+<li><p>Python包：</p>
+<p>包就是一个文件夹，里面可以存放许多Python模块（代码文件），通过包，在逻辑上将一批模块归为一类，方便使用</p>
+</li>
+<li><p><code>__init__.py</code>文件作用：</p>
+<p>创建包会默认自动创建的文件，通过这个文件表示一个文件夹是Python的包，而非普通的文件夹</p>
+</li>
+<li><p><code>__all__</code>变量的作用：</p>
+<p>同模块，控制import *能够导入的内容</p>
+</li>
+</ol>
+<h2 id="安装第三方包"><a href="#安装第三方包" class="headerlink" title="安装第三方包"></a>安装第三方包</h2><ol>
+<li><p>什么是第三方包？有什么作用？</p>
+<p>第三方包就是非Python官方内置的包，可以安装他们拓展功能，提高开发效率</p>
+</li>
+<li><p>如何安装？</p>
+<ul>
+<li>在命令提示符内：<ul>
+<li>pip install 包名称</li>
+<li>pip install -i <a href="https://pypi.tuna.tsinghua.edu.cn/simple">https://pypi.tuna.tsinghua.edu.cn/simple</a> 包名称</li>
+</ul>
+</li>
+<li>在PyCharm中安装</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Python基础(五)——函数拓展</title>
+    <url>/2023/08/15/Python%E5%9F%BA%E7%A1%80(%E4%BA%94)%E2%80%94%E2%80%94%E5%87%BD%E6%95%B0%E6%8B%93%E5%B1%95/</url>
+    <content><![CDATA[<h1 id="函数的多返回值"><a href="#函数的多返回值" class="headerlink" title="函数的多返回值"></a>函数的多返回值</h1><p> 使用多个变量接收多个返回值</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">test</span>():</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>,<span class="string">&quot;hello&quot;</span>,<span class="literal">True</span></span><br><span class="line"></span><br><span class="line">x,y,z = test()    <span class="comment"># x为1，y为&quot;hello&quot;,z为True</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h1 id="函数多种传参方式"><a href="#函数多种传参方式" class="headerlink" title="函数多种传参方式"></a>函数多种传参方式</h1><h2 id="函数参数种类"><a href="#函数参数种类" class="headerlink" title="函数参数种类"></a>函数参数种类</h2><p>使用方式上的不同，函数有4钟常见参数使用方式：</p>
+<ul>
+<li>位置参数</li>
+<li>关键字参数</li>
+<li>缺省参数</li>
+<li>不定长参数</li>
+</ul>
+<h2 id="位置参数"><a href="#位置参数" class="headerlink" title="位置参数"></a>位置参数</h2><p>位置参数：调用函数时根据函数定义的参数位置来传递函数</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">user_info</span>(<span class="params">name,age,gender</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;您的名字是<span class="subst">&#123;name&#125;</span>,年龄是<span class="subst">&#123;age&#125;</span>,性别是<span class="subst">&#123;gender&#125;</span>)</span></span><br><span class="line"><span class="string">          </span></span><br><span class="line"><span class="string">user_info(&#x27;Tom&#x27;,20,&#x27;男&#x27;)</span></span><br></pre></td></tr></table></figure>
+
+<p>注意：传递的参数和定义的参数的顺序及个数必须一致</p>
+<h2 id="关键字参数"><a href="#关键字参数" class="headerlink" title="关键字参数"></a>关键字参数</h2><p>关键字参数：函数调用时通过”键&#x3D;值“形式传递参数</p>
+<p>作用：可以让函数更加清晰、容易使用，同时也清楚了参数的顺序需求</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">user_info</span>(<span class="params">name,age,gender</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;您的名字是<span class="subst">&#123;name&#125;</span>,年龄是<span class="subst">&#123;age&#125;</span>,性别是<span class="subst">&#123;gender&#125;</span>)</span></span><br><span class="line"><span class="string">          </span></span><br><span class="line"><span class="string"># 关键字传参</span></span><br><span class="line"><span class="string">user_info(name=&#x27;Tom&#x27;, age=20, gender=&#x27;男&#x27;) </span></span><br><span class="line"><span class="string">          </span></span><br><span class="line"><span class="string"># 可以不按照顺序</span></span><br><span class="line"><span class="string">user_info(age=20, name=&#x27;Tom&#x27;, agender=&#x27;男&#x27;) </span></span><br><span class="line"><span class="string">          </span></span><br><span class="line"><span class="string"># 可以和位置参数混用，位置参数必须在前，且匹配参数顺序</span></span><br><span class="line"><span class="string">user_info(&#x27;Tom&#x27;, age=20, gender=&#x27;男&#x27;)           </span></span><br></pre></td></tr></table></figure>
+
+<p>注意：函数调用时，如果有位置参数时，位置参数必须在关键字参数前面，但关键字参数之间不存在先后顺序</p>
+<h2 id="缺省参数"><a href="#缺省参数" class="headerlink" title="缺省参数"></a>缺省参数</h2><p>缺省参数：缺省参数也叫默认参数，用于定义函数，为参数提供默认值，调用函数时可不传该默认参数的值（注意：所有位置参数必须出现在默认参数前，包括函数定义和调用）</p>
+<p>作用：当调用函数时没有传递函数，就会使用默认使用缺省参数对应的值</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">user_info</span>(<span class="params">name,age,gender=<span class="string">&#x27;男&#x27;</span></span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;您的名字是<span class="subst">&#123;name&#125;</span>,年龄是<span class="subst">&#123;age&#125;</span>,性别是<span class="subst">&#123;gender&#125;</span>)</span></span><br><span class="line"><span class="string">          </span></span><br><span class="line"><span class="string">user_info(&#x27;Tom&#x27;, 20)</span></span><br><span class="line"><span class="string">user_info(&#x27;Rose&#x27;, 18, &#x27;女&#x27;)          </span></span><br></pre></td></tr></table></figure>
+
+<p>注意：函数调用时，如果为缺省参数传值则修改默认参数值，否则使用这个默认值</p>
+<h2 id="不定长参数"><a href="#不定长参数" class="headerlink" title="不定长参数"></a>不定长参数</h2><p>不定长参数：不定长参数也叫可变参数，用于不确定调用的时候会传递多少个参数（不传参也可以）的场景</p>
+<p>作用：当调用函数时不确定参数个数时，可以使用不定长参数</p>
+<p>不定长参数的类型：</p>
+<ul>
+<li><p>位置传递</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">user_info</span>(<span class="params">*args</span>):</span><br><span class="line">    <span class="built_in">print</span>(args)</span><br><span class="line">    </span><br><span class="line"><span class="comment"># (&#x27;Tom&#x27;)</span></span><br><span class="line">user_info(<span class="string">&#x27;Tom&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># (&#x27;Tom&#x27;,18)</span></span><br><span class="line">user_info(<span class="string">&#x27;Tom&#x27;</span>,<span class="number">18</span>)</span><br></pre></td></tr></table></figure>
+
+<p>注意：传进的所有参数都会被args变量收集，它会根据传进参数的位置合并为一个元组(tuple)，args是元组类型</p>
+</li>
+<li><p>关键字传递</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">user_info</span>(<span class="params">**kwargs</span>):</span><br><span class="line">    <span class="built_in">print</span>(kwargs)</span><br><span class="line">    </span><br><span class="line"><span class="comment"># &#123;&#x27;name&#x27;:&#x27;Tom&#x27;, &#x27;age&#x27;:18, &#x27;id&#x27;:110&#125;</span></span><br><span class="line">user_info(name=<span class="string">&#x27;Tom&#x27;</span>, age=<span class="number">18</span>, <span class="built_in">id</span>=<span class="number">110</span>)</span><br></pre></td></tr></table></figure>
+
+<p>注意：参数是”键&#x3D;值“形式的情况下，所有的”键&#x3D;值“都会被kwargs接受，同时会根据”键&#x3D;值“组成字典</p>
+</li>
+</ul>
+<h1 id="匿名函数"><a href="#匿名函数" class="headerlink" title="匿名函数"></a>匿名函数</h1><h2 id="函数作为参数传递"><a href="#函数作为参数传递" class="headerlink" title="函数作为参数传递"></a>函数作为参数传递</h2><ul>
+<li>函数本身可以作为参数，传入另一个函数中使用</li>
+<li>这是一种计算逻辑的传递，而非数据的传递</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">text</span>(<span class="params">computer</span>):</span><br><span class="line">    result = computer(<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;compute函数的类型是；<span class="subst">&#123;<span class="built_in">type</span>(computer)&#125;</span>&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;计算结果：<span class="subst">&#123;result&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">compter</span>(<span class="params">x,y</span>):</span><br><span class="line">    <span class="keyword">return</span> x+y</span><br><span class="line"></span><br><span class="line">text(computer)</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">运行结果</span></span><br><span class="line"><span class="string">compute函数的类型是；&lt;class &#x27;function&#x27;&gt;</span></span><br><span class="line"><span class="string">计算结果：3</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="lambda匿名函数"><a href="#lambda匿名函数" class="headerlink" title="lambda匿名函数"></a>lambda匿名函数</h2><p>函数的定义中</p>
+<ul>
+<li>def关键字，可以定义带有名称的函数，可以基于名称重复使用</li>
+<li>lambda关键字，可以定义匿名函数（无名称），只可以临时使用一次</li>
+</ul>
+<p>匿名函数定义语法</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">lambda</span> 传入参数:函数体(一行代码)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>lambda是关键字，表示定义匿名函数</li>
+<li>传入参数表示匿名函数的形式参数，如：x,y表示接受2个形式参数</li>
+<li>函数体，就是函数的执行逻辑，要注意：只能写一行，无法写多行代码</li>
+</ul>
+<p>例：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">text</span>(<span class="params">computer</span>):</span><br><span class="line">    result = computer(<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;compute函数的类型是；<span class="subst">&#123;<span class="built_in">type</span>(computer)&#125;</span>&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;计算结果：<span class="subst">&#123;result&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">compter</span>(<span class="params">x,y</span>):</span><br><span class="line">    <span class="keyword">return</span> x+y</span><br><span class="line"></span><br><span class="line">text(computer)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 可以使用lambda表达式将上述代码简化，如下</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">text</span>(<span class="params">computer</span>):</span><br><span class="line">    result = computer(<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;compute函数的类型是；<span class="subst">&#123;<span class="built_in">type</span>(computer)&#125;</span>&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;计算结果：<span class="subst">&#123;result&#125;</span>&quot;</span>)</span><br><span class="line">    </span><br><span class="line">text(<span class="keyword">lambda</span> x,y: x+y)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 两段代码作用和运行结果完全一致</span></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Python基础(三)——函数</title>
     <url>/2023/08/12/Python%E5%9F%BA%E7%A1%80(%E4%B8%89)%E2%80%94%E2%80%94%E5%87%BD%E6%95%B0/</url>
     <content><![CDATA[<h1 id="函数介绍"><a href="#函数介绍" class="headerlink" title="函数介绍"></a>函数介绍</h1><ul>
@@ -1429,81 +1591,6 @@
       </categories>
   </entry>
   <entry>
-    <title>Python基础(五)——函数拓展</title>
-    <url>/2023/08/15/Python%E5%9F%BA%E7%A1%80(%E4%BA%94)%E2%80%94%E2%80%94%E5%87%BD%E6%95%B0%E6%8B%93%E5%B1%95/</url>
-    <content><![CDATA[<h1 id="函数的多返回值"><a href="#函数的多返回值" class="headerlink" title="函数的多返回值"></a>函数的多返回值</h1><p> 使用多个变量接收多个返回值</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">test</span>():</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>,<span class="string">&quot;hello&quot;</span>,<span class="literal">True</span></span><br><span class="line"></span><br><span class="line">x,y,z = test()    <span class="comment"># x为1，y为&quot;hello&quot;,z为True</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h1 id="函数多种传参方式"><a href="#函数多种传参方式" class="headerlink" title="函数多种传参方式"></a>函数多种传参方式</h1><h2 id="函数参数种类"><a href="#函数参数种类" class="headerlink" title="函数参数种类"></a>函数参数种类</h2><p>使用方式上的不同，函数有4钟常见参数使用方式：</p>
-<ul>
-<li>位置参数</li>
-<li>关键字参数</li>
-<li>缺省参数</li>
-<li>不定长参数</li>
-</ul>
-<h2 id="位置参数"><a href="#位置参数" class="headerlink" title="位置参数"></a>位置参数</h2><p>位置参数：调用函数时根据函数定义的参数位置来传递函数</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">user_info</span>(<span class="params">name,age,gender</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;您的名字是<span class="subst">&#123;name&#125;</span>,年龄是<span class="subst">&#123;age&#125;</span>,性别是<span class="subst">&#123;gender&#125;</span>)</span></span><br><span class="line"><span class="string">          </span></span><br><span class="line"><span class="string">user_info(&#x27;Tom&#x27;,20,&#x27;男&#x27;)</span></span><br></pre></td></tr></table></figure>
-
-<p>注意：传递的参数和定义的参数的顺序及个数必须一致</p>
-<h2 id="关键字参数"><a href="#关键字参数" class="headerlink" title="关键字参数"></a>关键字参数</h2><p>关键字参数：函数调用时通过”键&#x3D;值“形式传递参数</p>
-<p>作用：可以让函数更加清晰、容易使用，同时也清楚了参数的顺序需求</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">user_info</span>(<span class="params">name,age,gender</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;您的名字是<span class="subst">&#123;name&#125;</span>,年龄是<span class="subst">&#123;age&#125;</span>,性别是<span class="subst">&#123;gender&#125;</span>)</span></span><br><span class="line"><span class="string">          </span></span><br><span class="line"><span class="string"># 关键字传参</span></span><br><span class="line"><span class="string">user_info(name=&#x27;Tom&#x27;, age=20, gender=&#x27;男&#x27;) </span></span><br><span class="line"><span class="string">          </span></span><br><span class="line"><span class="string"># 可以不按照顺序</span></span><br><span class="line"><span class="string">user_info(age=20, name=&#x27;Tom&#x27;, agender=&#x27;男&#x27;) </span></span><br><span class="line"><span class="string">          </span></span><br><span class="line"><span class="string"># 可以和位置参数混用，位置参数必须在前，且匹配参数顺序</span></span><br><span class="line"><span class="string">user_info(&#x27;Tom&#x27;, age=20, gender=&#x27;男&#x27;)           </span></span><br></pre></td></tr></table></figure>
-
-<p>注意：函数调用时，如果有位置参数时，位置参数必须在关键字参数前面，但关键字参数之间不存在先后顺序</p>
-<h2 id="缺省参数"><a href="#缺省参数" class="headerlink" title="缺省参数"></a>缺省参数</h2><p>缺省参数：缺省参数也叫默认参数，用于定义函数，为参数提供默认值，调用函数时可不传该默认参数的值（注意：所有位置参数必须出现在默认参数前，包括函数定义和调用）</p>
-<p>作用：当调用函数时没有传递函数，就会使用默认使用缺省参数对应的值</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">user_info</span>(<span class="params">name,age,gender=<span class="string">&#x27;男&#x27;</span></span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;您的名字是<span class="subst">&#123;name&#125;</span>,年龄是<span class="subst">&#123;age&#125;</span>,性别是<span class="subst">&#123;gender&#125;</span>)</span></span><br><span class="line"><span class="string">          </span></span><br><span class="line"><span class="string">user_info(&#x27;Tom&#x27;, 20)</span></span><br><span class="line"><span class="string">user_info(&#x27;Rose&#x27;, 18, &#x27;女&#x27;)          </span></span><br></pre></td></tr></table></figure>
-
-<p>注意：函数调用时，如果为缺省参数传值则修改默认参数值，否则使用这个默认值</p>
-<h2 id="不定长参数"><a href="#不定长参数" class="headerlink" title="不定长参数"></a>不定长参数</h2><p>不定长参数：不定长参数也叫可变参数，用于不确定调用的时候会传递多少个参数（不传参也可以）的场景</p>
-<p>作用：当调用函数时不确定参数个数时，可以使用不定长参数</p>
-<p>不定长参数的类型：</p>
-<ul>
-<li><p>位置传递</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">user_info</span>(<span class="params">*args</span>):</span><br><span class="line">    <span class="built_in">print</span>(args)</span><br><span class="line">    </span><br><span class="line"><span class="comment"># (&#x27;Tom&#x27;)</span></span><br><span class="line">user_info(<span class="string">&#x27;Tom&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># (&#x27;Tom&#x27;,18)</span></span><br><span class="line">user_info(<span class="string">&#x27;Tom&#x27;</span>,<span class="number">18</span>)</span><br></pre></td></tr></table></figure>
-
-<p>注意：传进的所有参数都会被args变量收集，它会根据传进参数的位置合并为一个元组(tuple)，args是元组类型</p>
-</li>
-<li><p>关键字传递</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">user_info</span>(<span class="params">**kwargs</span>):</span><br><span class="line">    <span class="built_in">print</span>(kwargs)</span><br><span class="line">    </span><br><span class="line"><span class="comment"># &#123;&#x27;name&#x27;:&#x27;Tom&#x27;, &#x27;age&#x27;:18, &#x27;id&#x27;:110&#125;</span></span><br><span class="line">user_info(name=<span class="string">&#x27;Tom&#x27;</span>, age=<span class="number">18</span>, <span class="built_in">id</span>=<span class="number">110</span>)</span><br></pre></td></tr></table></figure>
-
-<p>注意：参数是”键&#x3D;值“形式的情况下，所有的”键&#x3D;值“都会被kwargs接受，同时会根据”键&#x3D;值“组成字典</p>
-</li>
-</ul>
-<h1 id="匿名函数"><a href="#匿名函数" class="headerlink" title="匿名函数"></a>匿名函数</h1><h2 id="函数作为参数传递"><a href="#函数作为参数传递" class="headerlink" title="函数作为参数传递"></a>函数作为参数传递</h2><ul>
-<li>函数本身可以作为参数，传入另一个函数中使用</li>
-<li>这是一种计算逻辑的传递，而非数据的传递</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">text</span>(<span class="params">computer</span>):</span><br><span class="line">    result = computer(<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;compute函数的类型是；<span class="subst">&#123;<span class="built_in">type</span>(computer)&#125;</span>&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;计算结果：<span class="subst">&#123;result&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">compter</span>(<span class="params">x,y</span>):</span><br><span class="line">    <span class="keyword">return</span> x+y</span><br><span class="line"></span><br><span class="line">text(computer)</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">运行结果</span></span><br><span class="line"><span class="string">compute函数的类型是；&lt;class &#x27;function&#x27;&gt;</span></span><br><span class="line"><span class="string">计算结果：3</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="lambda匿名函数"><a href="#lambda匿名函数" class="headerlink" title="lambda匿名函数"></a>lambda匿名函数</h2><p>函数的定义中</p>
-<ul>
-<li>def关键字，可以定义带有名称的函数，可以基于名称重复使用</li>
-<li>lambda关键字，可以定义匿名函数（无名称），只可以临时使用一次</li>
-</ul>
-<p>匿名函数定义语法</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">lambda</span> 传入参数:函数体(一行代码)</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>lambda是关键字，表示定义匿名函数</li>
-<li>传入参数表示匿名函数的形式参数，如：x,y表示接受2个形式参数</li>
-<li>函数体，就是函数的执行逻辑，要注意：只能写一行，无法写多行代码</li>
-</ul>
-<p>例：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">text</span>(<span class="params">computer</span>):</span><br><span class="line">    result = computer(<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;compute函数的类型是；<span class="subst">&#123;<span class="built_in">type</span>(computer)&#125;</span>&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;计算结果：<span class="subst">&#123;result&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">compter</span>(<span class="params">x,y</span>):</span><br><span class="line">    <span class="keyword">return</span> x+y</span><br><span class="line"></span><br><span class="line">text(computer)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 可以使用lambda表达式将上述代码简化，如下</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">text</span>(<span class="params">computer</span>):</span><br><span class="line">    result = computer(<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;compute函数的类型是；<span class="subst">&#123;<span class="built_in">type</span>(computer)&#125;</span>&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;计算结果：<span class="subst">&#123;result&#125;</span>&quot;</span>)</span><br><span class="line">    </span><br><span class="line">text(<span class="keyword">lambda</span> x,y: x+y)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 两段代码作用和运行结果完全一致</span></span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>Python</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Python基础(八)——面向对象</title>
     <url>/2023/08/23/Python%E5%9F%BA%E7%A1%80(%E5%85%AB)%E2%80%94%E2%80%94%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</url>
     <content><![CDATA[<h1 id="成员方法"><a href="#成员方法" class="headerlink" title="成员方法"></a>成员方法</h1><ol>
@@ -1696,6 +1783,110 @@
 ]]></content>
       <categories>
         <category>Python</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Python基础(六)——文件操作</title>
+    <url>/2023/08/17/Python%E5%9F%BA%E7%A1%80(%E5%85%AD)%E2%80%94%E2%80%94%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/</url>
+    <content><![CDATA[<h1 id="文件的编码"><a href="#文件的编码" class="headerlink" title="文件的编码"></a>文件的编码</h1><ol>
+<li><p>什么是编码？</p>
+<p>编码是一种规则集合，记录了内容和二进制间进行相互转换的逻辑</p>
+<p>编码有许多种，我们最常用的是UTF-8编码</p>
+</li>
+<li><p>为什么需要使用编码？</p>
+<p>计算机只认识0和1，所以需要将内容翻译成0和1才能保存在计算机中。</p>
+<p>同时也需要编码，将计算机保存的0和1，反向翻译回可以识别的内容。</p>
+</li>
+</ol>
+<h1 id="文件的读取"><a href="#文件的读取" class="headerlink" title="文件的读取"></a>文件的读取</h1><p>操作汇总</p>
+<table>
+<thead>
+<tr>
+<th align="center">操作</th>
+<th align="center">功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">文件对象 &#x3D; open(file,mode,encoding)</td>
+<td align="center">打开文件获得文件对象</td>
+</tr>
+<tr>
+<td align="center">文件对象.read(num)</td>
+<td align="center">读取指定长度字节，不指定num则读取文件全部</td>
+</tr>
+<tr>
+<td align="center">文件对象.readline()</td>
+<td align="center">读取一行</td>
+</tr>
+<tr>
+<td align="center">文件对象.readlines()</td>
+<td align="center">读取全部行，得到列表</td>
+</tr>
+<tr>
+<td align="center">for line in 文件对象</td>
+<td align="center">for循环文件行，一次循环得到一行数据</td>
+</tr>
+<tr>
+<td align="center">文件对象.close()</td>
+<td align="center">关闭文件对象</td>
+</tr>
+<tr>
+<td align="center">with open() as f</td>
+<td align="center">通过with open语法打开文件，可以自动关闭</td>
+</tr>
+</tbody></table>
+<h1 id="文件的写入"><a href="#文件的写入" class="headerlink" title="文件的写入"></a>文件的写入</h1><ol>
+<li>写入文件使用open函数的”w“模式写入</li>
+<li>写入的方法有：<ul>
+<li>write()，写入内容</li>
+<li>flush()，刷新内容到硬盘中</li>
+</ul>
+</li>
+<li>注意事项：<ul>
+<li>w模式，文件不存在，会创建新文件</li>
+<li>w模式，文件存在，会清空原有内容</li>
+<li>close()方法，带有flush()方法的功能</li>
+</ul>
+</li>
+</ol>
+<h1 id="文件的追加"><a href="#文件的追加" class="headerlink" title="文件的追加"></a>文件的追加</h1><ol>
+<li>追加写入文件使用open函数的”a“模式写入</li>
+<li>追加写入的方法有（和w模式一样）<ul>
+<li>write()，写入内容</li>
+<li>flush()，刷新内容到硬盘中</li>
+</ul>
+</li>
+<li>注意事项：<ul>
+<li>a模式，文件不存在，会创建新文件</li>
+<li>a模式，文件存在，会在原有内容后面继续写入</li>
+<li>可以使用”\n“来写出换行符</li>
+</ul>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2023/04/12/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+      <categories>
+        <category>others</category>
       </categories>
   </entry>
   <entry>
@@ -2177,110 +2368,6 @@
 ]]></content>
       <categories>
         <category>Python</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Python基础(六)——文件操作</title>
-    <url>/2023/08/17/Python%E5%9F%BA%E7%A1%80(%E5%85%AD)%E2%80%94%E2%80%94%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/</url>
-    <content><![CDATA[<h1 id="文件的编码"><a href="#文件的编码" class="headerlink" title="文件的编码"></a>文件的编码</h1><ol>
-<li><p>什么是编码？</p>
-<p>编码是一种规则集合，记录了内容和二进制间进行相互转换的逻辑</p>
-<p>编码有许多种，我们最常用的是UTF-8编码</p>
-</li>
-<li><p>为什么需要使用编码？</p>
-<p>计算机只认识0和1，所以需要将内容翻译成0和1才能保存在计算机中。</p>
-<p>同时也需要编码，将计算机保存的0和1，反向翻译回可以识别的内容。</p>
-</li>
-</ol>
-<h1 id="文件的读取"><a href="#文件的读取" class="headerlink" title="文件的读取"></a>文件的读取</h1><p>操作汇总</p>
-<table>
-<thead>
-<tr>
-<th align="center">操作</th>
-<th align="center">功能</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">文件对象 &#x3D; open(file,mode,encoding)</td>
-<td align="center">打开文件获得文件对象</td>
-</tr>
-<tr>
-<td align="center">文件对象.read(num)</td>
-<td align="center">读取指定长度字节，不指定num则读取文件全部</td>
-</tr>
-<tr>
-<td align="center">文件对象.readline()</td>
-<td align="center">读取一行</td>
-</tr>
-<tr>
-<td align="center">文件对象.readlines()</td>
-<td align="center">读取全部行，得到列表</td>
-</tr>
-<tr>
-<td align="center">for line in 文件对象</td>
-<td align="center">for循环文件行，一次循环得到一行数据</td>
-</tr>
-<tr>
-<td align="center">文件对象.close()</td>
-<td align="center">关闭文件对象</td>
-</tr>
-<tr>
-<td align="center">with open() as f</td>
-<td align="center">通过with open语法打开文件，可以自动关闭</td>
-</tr>
-</tbody></table>
-<h1 id="文件的写入"><a href="#文件的写入" class="headerlink" title="文件的写入"></a>文件的写入</h1><ol>
-<li>写入文件使用open函数的”w“模式写入</li>
-<li>写入的方法有：<ul>
-<li>write()，写入内容</li>
-<li>flush()，刷新内容到硬盘中</li>
-</ul>
-</li>
-<li>注意事项：<ul>
-<li>w模式，文件不存在，会创建新文件</li>
-<li>w模式，文件存在，会清空原有内容</li>
-<li>close()方法，带有flush()方法的功能</li>
-</ul>
-</li>
-</ol>
-<h1 id="文件的追加"><a href="#文件的追加" class="headerlink" title="文件的追加"></a>文件的追加</h1><ol>
-<li>追加写入文件使用open函数的”a“模式写入</li>
-<li>追加写入的方法有（和w模式一样）<ul>
-<li>write()，写入内容</li>
-<li>flush()，刷新内容到硬盘中</li>
-</ul>
-</li>
-<li>注意事项：<ul>
-<li>a模式，文件不存在，会创建新文件</li>
-<li>a模式，文件存在，会在原有内容后面继续写入</li>
-<li>可以使用”\n“来写出换行符</li>
-</ul>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Python</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2023/04/12/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-      <categories>
-        <category>others</category>
       </categories>
   </entry>
 </search>
