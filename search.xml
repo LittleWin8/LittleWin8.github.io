@@ -74,6 +74,120 @@
       </categories>
   </entry>
   <entry>
+    <title>Java_String类</title>
+    <url>/2023/06/02/Java-String%E7%B1%BB/</url>
+    <content><![CDATA[<h1 id="Java常用实用类学习——String类"><a href="#Java常用实用类学习——String类" class="headerlink" title="Java常用实用类学习——String类"></a>Java常用实用类学习——String类</h1><p>String类是java中用于处理字符序列的类。String类在java.lang包中，java把String类定义为final类，用户不能拓展String类，即String类不能有子类。</p>
+<h2 id="构造String对象"><a href="#构造String对象" class="headerlink" title="构造String对象"></a>构造String对象</h2><p>String对象习惯地被翻译为字符串对象。</p>
+<h3 id="常量对象"><a href="#常量对象" class="headerlink" title="常量对象"></a>常量对象</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">hi</span> <span class="operator">=</span> <span class="string">&quot;你好&quot;</span>;</span><br><span class="line"><span class="type">String</span> <span class="variable">hello</span> <span class="operator">=</span> <span class="string">&quot;你好&quot;</span>;</span><br></pre></td></tr></table></figure>
+
+<p>Java把用户程序的String常量都放在常量池，所以hi和hello的引用和实体是相同的</p>
+<h3 id="String对象"><a href="#String对象" class="headerlink" title="String对象"></a>String对象</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">&quot;hello&quot;</span>);</span><br><span class="line"><span class="type">String</span> <span class="variable">t</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">&quot;hello&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>使用String类声明对象并创建对象，凡是new运算符构造构造出的对象都不放在常量池中，所以，尽管s和t的实体是相同（s.equals(t)的值是true），但二者引用不同（ s&#x3D;&#x3D;t 结果是false）。</p>
+<p>String类还有两个常见方法</p>
+<ol>
+<li>String(char a[]);</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">char</span> a[] = &#123;<span class="string">&#x27;h&#x27;</span>,<span class="string">&#x27;i&#x27;</span>&#125;;</span><br><span class="line"><span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(a);</span><br><span class="line"></span><br><span class="line"><span class="comment">//相当于</span></span><br><span class="line"></span><br><span class="line"><span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">&quot;hi&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+
+
+<ol start="2">
+<li>String(char a[],int startIndex,int count);</li>
+</ol>
+<p>提取字符数组a中的一部分字符创建对象，startIndex和count是截取的起始位置和截取长度</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">char</span> a[] = &#123;<span class="string">&#x27;你&#x27;</span>,<span class="string">&#x27;好&#x27;</span>,<span class="string">&#x27;呀&#x27;</span>&#125;;</span><br><span class="line"><span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(a,<span class="number">1</span>,<span class="number">2</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//相当于</span></span><br><span class="line"></span><br><span class="line"><span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">&quot;好呀&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="不可变对象"><a href="#不可变对象" class="headerlink" title="不可变对象"></a>不可变对象</h3><p>对象的变量中存储的值不能再发生变化，原因是String是final类，String类也没有给其对象提供修改实体的方法。</p>
+<h2 id="String对象的并置"><a href="#String对象的并置" class="headerlink" title="String对象的并置"></a>String对象的并置</h2><p>String对象可以使用”+“进行并置运算，即首尾相接得到一个新的String对象。</p>
+<ul>
+<li>参与并置运算的String对象中有一个是变量，那么就会得到新的引用和实体</li>
+<li>参与并置运算的对象都是常量，那么得到的仍然是常量</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">hello</span> <span class="operator">=</span> <span class="string">&quot;你好&quot;</span>;</span><br><span class="line"><span class="type">String</span> <span class="variable">testOne</span> <span class="operator">=</span> <span class="string">&quot;你&quot;</span> + <span class="string">&quot;好&quot;</span>;</span><br><span class="line"><span class="comment">//hello、testOne的引用相同，即hello == testOne的结果为true</span></span><br><span class="line"></span><br><span class="line"><span class="type">String</span> <span class="variable">you</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">&quot;你&quot;</span>);</span><br><span class="line"><span class="type">String</span> <span class="variable">hi</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">&quot;好&quot;</span>);</span><br><span class="line"><span class="type">String</span> <span class="variable">textTwo</span> <span class="operator">=</span> you + hi;</span><br><span class="line"><span class="comment">//textTwo、testOne的引用不同，即textTwo == testOne的结果为false</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="String类的常用方法"><a href="#String类的常用方法" class="headerlink" title="String类的常用方法"></a>String类的常用方法</h2><h3 id="public-int-length"><a href="#public-int-length" class="headerlink" title="public int length();"></a>public int length();</h3><p>String类中的length()方法来获取一个String对象的字符序列的长度。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="string">&quot;戈仑石人&quot;</span>;</span><br><span class="line"><span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> s.length();      <span class="comment">//n的值为4</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="public-boolean-equals-String-s"><a href="#public-boolean-equals-String-s" class="headerlink" title="public boolean equals(String s);"></a>public boolean equals(String s);</h3><p>调用该方法比较当前String对象的字符序列是否与参数s指定的String对象的字符序列相同（比较实体是否相同）</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">s1</span> <span class="operator">=</span> <span class="string">&quot;加农炮&quot;</span>;</span><br><span class="line"><span class="type">String</span> <span class="variable">s2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">&quot;加农炮&quot;</span>);</span><br><span class="line">s1.equals(s2);                    		<span class="comment">//true</span></span><br><span class="line">s1 == s2;						 	 	<span class="comment">//false</span></span><br><span class="line"><span class="comment">//注意“==”和equals(String s)用法的区别。前者比较引用是否相同，后者判断实体是否相同</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h3 id="public-boolean-startsWith-String-s"><a href="#public-boolean-startsWith-String-s" class="headerlink" title="public boolean startsWith(String s);"></a>public boolean startsWith(String s);</h3><p>判断当前对象的字符序列前缀是否为参数指定的s</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="string">&quot;每张卡牌生来平等，皇家巨人也不例外&quot;</span>;</span><br><span class="line">s.startsWith(<span class="string">&quot;每张&quot;</span>);                                 <span class="comment">//true</span></span><br><span class="line">s.startsWith(<span class="string">&quot;卡牌&quot;</span>);								 <span class="comment">//false</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="public-boolean-endWith-String-s"><a href="#public-boolean-endWith-String-s" class="headerlink" title="public boolean endWith(String s);"></a>public boolean endWith(String s);</h3><p>判断当前对象的字符序列后缀是否为参数指定的s</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="string">&quot;每张卡牌生来平等，皇家巨人也不例外&quot;</span>;</span><br><span class="line">s.endsWith(<span class="string">&quot;例外&quot;</span>);                                 <span class="comment">//true</span></span><br><span class="line">s.endsWith(<span class="string">&quot;卡牌&quot;</span>);								 <span class="comment">//false</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="public-int-compareTo-String-s"><a href="#public-int-compareTo-String-s" class="headerlink" title="public int compareTo(String s);"></a>public int compareTo(String s);</h3><p>对象调用该方法按字典序与参数s的字符序列比较大小。相同返回0，大于s返回正值，小于s返回负值。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="string">&quot;abcde&quot;</span>;</span><br><span class="line">s.compareTo(<span class="string">&quot;boy&quot;</span>);      <span class="comment">//负值</span></span><br><span class="line">s.compareTo(<span class="string">&quot;aba&quot;</span>);      <span class="comment">//正值</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="public-boolean-contains-String-s"><a href="#public-boolean-contains-String-s" class="headerlink" title="public boolean contains(String s);"></a>public boolean contains(String s);</h3><p>判断当前对象中是否包含参数s中的字符序列</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="string">&quot;瓦基丽武神&quot;</span>; </span><br><span class="line">s.contains(<span class="string">&quot;武神&quot;</span>);       <span class="comment">//true</span></span><br><span class="line">s.contains(<span class="string">&quot;丽丽&quot;</span>);		<span class="comment">//false</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="public-int-indexOf-String-s"><a href="#public-int-indexOf-String-s" class="headerlink" title="public int indexOf(String s);"></a>public int indexOf(String s);</h3><p>从0位置开始索引首次出现参数s出现位置，并返回该位置，如果没有检索到则返回-1</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="string">&quot;上海自来水来自海上&quot;</span>;</span><br><span class="line"><span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> s.indexOf(<span class="string">&quot;海&quot;</span>);          <span class="comment">//n等于1</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="public-int-lastIndexOf-String-s"><a href="#public-int-lastIndexOf-String-s" class="headerlink" title="public int lastIndexOf(String s);"></a>public int lastIndexOf(String s);</h3><p>从0位置开始索引最后一次出现参数s出现位置，并返回该位置，如果没有检索到则返回-1</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="string">&quot;上海自来水来自海上&quot;</span>;</span><br><span class="line"><span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> s.lastIndexOf(<span class="string">&quot;海&quot;</span>);       <span class="comment">//n等于7</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="public-String-substring-int-startpoint"><a href="#public-String-substring-int-startpoint" class="headerlink" title="public String substring(int startpoint);"></a>public String substring(int startpoint);</h3><p>复制从位置startpoint到最后位置上的字符到新的字符序列。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">s1</span> <span class="operator">=</span> <span class="string">&quot;我喜欢唱、跳、rap、篮球&quot;</span>;</span><br><span class="line"><span class="type">String</span> <span class="variable">s2</span> <span class="operator">=</span> s7.substring(<span class="number">3</span>);           <span class="comment">//s2的字符序列是：唱、跳、rap、篮球</span></span><br></pre></td></tr></table></figure>
+
+<p>PS：substring(int start，int end)为复制从start位置至end-1位置</p>
+<h3 id="public-String-trim"><a href="#public-String-trim" class="headerlink" title="public String trim();"></a>public String trim();</h3><p>调用该方法将得到一个新的对象，该对象是当前对象的字符序列<em><strong>去掉前后空格</strong></em>的字符序列</p>
+<h2 id="String对象与基本数据的相互转换"><a href="#String对象与基本数据的相互转换" class="headerlink" title="String对象与基本数据的相互转换"></a>String对象与基本数据的相互转换</h2><h3 id="将String转换为基本型"><a href="#将String转换为基本型" class="headerlink" title="将String转换为基本型"></a>将String转换为基本型</h3><p>使用Java.lang包中的<em><strong>Integer</strong></em>类调用其类方法***public static int parseInt(String s)***可以将由”数字“字符组成的字符序列转化为int型数据。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> x;</span><br><span class="line"><span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="string">&quot;1234&quot;</span>;</span><br><span class="line">x = Integer.parseInt(s);</span><br></pre></td></tr></table></figure>
+
+<p>类似，使用java.lang包中的Byte、Short、Long、Float、Double类调用相应的类方法</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Floatpublic <span class="keyword">static</span> <span class="type">byte</span> <span class="title function_">parseByte</span><span class="params">(String s)</span> <span class="keyword">throws</span> NumberFormatException</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">short</span> <span class="title function_">parseShort</span><span class="params">(String s)</span> <span class="keyword">throws</span> NumberFormatException</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">long</span> <span class="title function_">parseLong</span><span class="params">(String s)</span> <span class="keyword">throws</span> NumberFormatException</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">float</span> <span class="title function_">parseFloat</span><span class="params">(String s)</span> <span class="keyword">throws</span> NumberFormatException</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">double</span> <span class="title function_">parseDouble</span><span class="params">(String s)</span> <span class="keyword">throws</span> NumberFormatException    </span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="将基本型转换为String对象"><a href="#将基本型转换为String对象" class="headerlink" title="将基本型转换为String对象"></a>将基本型转换为String对象</h3><p>可以使用以下String类的类方法</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">valueOf</span><span class="params">(<span class="type">byte</span> n)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">valueOf</span><span class="params">(<span class="type">int</span> n)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">valueOf</span><span class="params">(<span class="type">long</span> n)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">valueOf</span><span class="params">(<span class="type">float</span> n)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">valueOf</span><span class="params">(<span class="type">double</span> n)</span>    </span><br></pre></td></tr></table></figure>
+
+<p>例：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">s1</span> <span class="operator">=</span> String.valueOf(<span class="number">1234</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//也可以用到上面介绍的并置运算，即使用一个空字符串与基本型数据进行并置运算</span></span><br><span class="line"><span class="type">String</span> <span class="variable">s2</span> <span class="operator">=</span> <span class="string">&quot;&quot;</span> + <span class="number">1234</span>;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="基本型数据的进制表示"><a href="#基本型数据的进制表示" class="headerlink" title="基本型数据的进制表示"></a>基本型数据的进制表示</h3><p>可以把整形数据（例如int、long型数据的二进制、八进制、或十六进制）转换成String对象，即让String对象封装的字符序列是int或long型数据的二进制、八进制或十六进制。</p>
+<p>Integer和long类的下列类方法返回整数的进制的String对象表示（负数返回补码），即返回的String对象封装的字符序列是<em><strong>参数的相应进制</strong></em></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">toBinaryString</span><span class="params">(<span class="type">int</span> i)</span>       <span class="comment">//二进制</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">toOctalString</span><span class="params">(<span class="type">int</span> i)</span>		 <span class="comment">//八进制</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">toHexString</span><span class="params">(<span class="type">int</span> i)</span>			 <span class="comment">//十六进制</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">toBinaryString</span><span class="params">(<span class="type">long</span> i)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">toOctalString</span><span class="params">(<span class="type">long</span> i)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">tohexString</span><span class="params">(<span class="type">long</span> i)</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="关于main-方法的参数化"><a href="#关于main-方法的参数化" class="headerlink" title="关于main()方法的参数化"></a>关于main()方法的参数化</h3><p>使用解释器java.exe执行程序来执行主类时，从键盘输入若干字符序列 ，用空格分开，它们分别对应args[0]、args[1]、args[2]……</p>
+<h2 id="对象的String表示"><a href="#对象的String表示" class="headerlink" title="对象的String表示"></a>对象的String表示</h2><p>所有的类都默认是java.lang包中Object类的子类或间接子类。Object类有一个public String toString()方法，一个对象调用该方法返回String对象的字符序列的一般形式为</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">创建对象的类的名字@对象的引用</span><br><span class="line"></span><br><span class="line">System.out.println(object);</span><br><span class="line">//等价于</span><br><span class="line">System.out,println(object.toString)</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Java基础(一)——入门</title>
     <url>/2023/09/08/Java%E5%9F%BA%E7%A1%80(%E4%B8%80)%E2%80%94%E2%80%94%E5%85%A5%E9%97%A8/</url>
     <content><![CDATA[<h1 id="初识Java"><a href="#初识Java" class="headerlink" title="初识Java"></a>初识Java</h1><h2 id="背景知识"><a href="#背景知识" class="headerlink" title="背景知识"></a>背景知识</h2><ul>
@@ -491,120 +605,6 @@
       </categories>
   </entry>
   <entry>
-    <title>Java_String类</title>
-    <url>/2023/06/02/Java-String%E7%B1%BB/</url>
-    <content><![CDATA[<h1 id="Java常用实用类学习——String类"><a href="#Java常用实用类学习——String类" class="headerlink" title="Java常用实用类学习——String类"></a>Java常用实用类学习——String类</h1><p>String类是java中用于处理字符序列的类。String类在java.lang包中，java把String类定义为final类，用户不能拓展String类，即String类不能有子类。</p>
-<h2 id="构造String对象"><a href="#构造String对象" class="headerlink" title="构造String对象"></a>构造String对象</h2><p>String对象习惯地被翻译为字符串对象。</p>
-<h3 id="常量对象"><a href="#常量对象" class="headerlink" title="常量对象"></a>常量对象</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">hi</span> <span class="operator">=</span> <span class="string">&quot;你好&quot;</span>;</span><br><span class="line"><span class="type">String</span> <span class="variable">hello</span> <span class="operator">=</span> <span class="string">&quot;你好&quot;</span>;</span><br></pre></td></tr></table></figure>
-
-<p>Java把用户程序的String常量都放在常量池，所以hi和hello的引用和实体是相同的</p>
-<h3 id="String对象"><a href="#String对象" class="headerlink" title="String对象"></a>String对象</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">&quot;hello&quot;</span>);</span><br><span class="line"><span class="type">String</span> <span class="variable">t</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">&quot;hello&quot;</span>);</span><br></pre></td></tr></table></figure>
-
-<p>使用String类声明对象并创建对象，凡是new运算符构造构造出的对象都不放在常量池中，所以，尽管s和t的实体是相同（s.equals(t)的值是true），但二者引用不同（ s&#x3D;&#x3D;t 结果是false）。</p>
-<p>String类还有两个常见方法</p>
-<ol>
-<li>String(char a[]);</li>
-</ol>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">char</span> a[] = &#123;<span class="string">&#x27;h&#x27;</span>,<span class="string">&#x27;i&#x27;</span>&#125;;</span><br><span class="line"><span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(a);</span><br><span class="line"></span><br><span class="line"><span class="comment">//相当于</span></span><br><span class="line"></span><br><span class="line"><span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">&quot;hi&quot;</span>);</span><br></pre></td></tr></table></figure>
-
-
-
-<ol start="2">
-<li>String(char a[],int startIndex,int count);</li>
-</ol>
-<p>提取字符数组a中的一部分字符创建对象，startIndex和count是截取的起始位置和截取长度</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">char</span> a[] = &#123;<span class="string">&#x27;你&#x27;</span>,<span class="string">&#x27;好&#x27;</span>,<span class="string">&#x27;呀&#x27;</span>&#125;;</span><br><span class="line"><span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(a,<span class="number">1</span>,<span class="number">2</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//相当于</span></span><br><span class="line"></span><br><span class="line"><span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">&quot;好呀&quot;</span>);</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="不可变对象"><a href="#不可变对象" class="headerlink" title="不可变对象"></a>不可变对象</h3><p>对象的变量中存储的值不能再发生变化，原因是String是final类，String类也没有给其对象提供修改实体的方法。</p>
-<h2 id="String对象的并置"><a href="#String对象的并置" class="headerlink" title="String对象的并置"></a>String对象的并置</h2><p>String对象可以使用”+“进行并置运算，即首尾相接得到一个新的String对象。</p>
-<ul>
-<li>参与并置运算的String对象中有一个是变量，那么就会得到新的引用和实体</li>
-<li>参与并置运算的对象都是常量，那么得到的仍然是常量</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">hello</span> <span class="operator">=</span> <span class="string">&quot;你好&quot;</span>;</span><br><span class="line"><span class="type">String</span> <span class="variable">testOne</span> <span class="operator">=</span> <span class="string">&quot;你&quot;</span> + <span class="string">&quot;好&quot;</span>;</span><br><span class="line"><span class="comment">//hello、testOne的引用相同，即hello == testOne的结果为true</span></span><br><span class="line"></span><br><span class="line"><span class="type">String</span> <span class="variable">you</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">&quot;你&quot;</span>);</span><br><span class="line"><span class="type">String</span> <span class="variable">hi</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">&quot;好&quot;</span>);</span><br><span class="line"><span class="type">String</span> <span class="variable">textTwo</span> <span class="operator">=</span> you + hi;</span><br><span class="line"><span class="comment">//textTwo、testOne的引用不同，即textTwo == testOne的结果为false</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="String类的常用方法"><a href="#String类的常用方法" class="headerlink" title="String类的常用方法"></a>String类的常用方法</h2><h3 id="public-int-length"><a href="#public-int-length" class="headerlink" title="public int length();"></a>public int length();</h3><p>String类中的length()方法来获取一个String对象的字符序列的长度。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="string">&quot;戈仑石人&quot;</span>;</span><br><span class="line"><span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> s.length();      <span class="comment">//n的值为4</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="public-boolean-equals-String-s"><a href="#public-boolean-equals-String-s" class="headerlink" title="public boolean equals(String s);"></a>public boolean equals(String s);</h3><p>调用该方法比较当前String对象的字符序列是否与参数s指定的String对象的字符序列相同（比较实体是否相同）</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">s1</span> <span class="operator">=</span> <span class="string">&quot;加农炮&quot;</span>;</span><br><span class="line"><span class="type">String</span> <span class="variable">s2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">&quot;加农炮&quot;</span>);</span><br><span class="line">s1.equals(s2);                    		<span class="comment">//true</span></span><br><span class="line">s1 == s2;						 	 	<span class="comment">//false</span></span><br><span class="line"><span class="comment">//注意“==”和equals(String s)用法的区别。前者比较引用是否相同，后者判断实体是否相同</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h3 id="public-boolean-startsWith-String-s"><a href="#public-boolean-startsWith-String-s" class="headerlink" title="public boolean startsWith(String s);"></a>public boolean startsWith(String s);</h3><p>判断当前对象的字符序列前缀是否为参数指定的s</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="string">&quot;每张卡牌生来平等，皇家巨人也不例外&quot;</span>;</span><br><span class="line">s.startsWith(<span class="string">&quot;每张&quot;</span>);                                 <span class="comment">//true</span></span><br><span class="line">s.startsWith(<span class="string">&quot;卡牌&quot;</span>);								 <span class="comment">//false</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="public-boolean-endWith-String-s"><a href="#public-boolean-endWith-String-s" class="headerlink" title="public boolean endWith(String s);"></a>public boolean endWith(String s);</h3><p>判断当前对象的字符序列后缀是否为参数指定的s</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="string">&quot;每张卡牌生来平等，皇家巨人也不例外&quot;</span>;</span><br><span class="line">s.endsWith(<span class="string">&quot;例外&quot;</span>);                                 <span class="comment">//true</span></span><br><span class="line">s.endsWith(<span class="string">&quot;卡牌&quot;</span>);								 <span class="comment">//false</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="public-int-compareTo-String-s"><a href="#public-int-compareTo-String-s" class="headerlink" title="public int compareTo(String s);"></a>public int compareTo(String s);</h3><p>对象调用该方法按字典序与参数s的字符序列比较大小。相同返回0，大于s返回正值，小于s返回负值。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="string">&quot;abcde&quot;</span>;</span><br><span class="line">s.compareTo(<span class="string">&quot;boy&quot;</span>);      <span class="comment">//负值</span></span><br><span class="line">s.compareTo(<span class="string">&quot;aba&quot;</span>);      <span class="comment">//正值</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="public-boolean-contains-String-s"><a href="#public-boolean-contains-String-s" class="headerlink" title="public boolean contains(String s);"></a>public boolean contains(String s);</h3><p>判断当前对象中是否包含参数s中的字符序列</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="string">&quot;瓦基丽武神&quot;</span>; </span><br><span class="line">s.contains(<span class="string">&quot;武神&quot;</span>);       <span class="comment">//true</span></span><br><span class="line">s.contains(<span class="string">&quot;丽丽&quot;</span>);		<span class="comment">//false</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="public-int-indexOf-String-s"><a href="#public-int-indexOf-String-s" class="headerlink" title="public int indexOf(String s);"></a>public int indexOf(String s);</h3><p>从0位置开始索引首次出现参数s出现位置，并返回该位置，如果没有检索到则返回-1</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="string">&quot;上海自来水来自海上&quot;</span>;</span><br><span class="line"><span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> s.indexOf(<span class="string">&quot;海&quot;</span>);          <span class="comment">//n等于1</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="public-int-lastIndexOf-String-s"><a href="#public-int-lastIndexOf-String-s" class="headerlink" title="public int lastIndexOf(String s);"></a>public int lastIndexOf(String s);</h3><p>从0位置开始索引最后一次出现参数s出现位置，并返回该位置，如果没有检索到则返回-1</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="string">&quot;上海自来水来自海上&quot;</span>;</span><br><span class="line"><span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> s.lastIndexOf(<span class="string">&quot;海&quot;</span>);       <span class="comment">//n等于7</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="public-String-substring-int-startpoint"><a href="#public-String-substring-int-startpoint" class="headerlink" title="public String substring(int startpoint);"></a>public String substring(int startpoint);</h3><p>复制从位置startpoint到最后位置上的字符到新的字符序列。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">s1</span> <span class="operator">=</span> <span class="string">&quot;我喜欢唱、跳、rap、篮球&quot;</span>;</span><br><span class="line"><span class="type">String</span> <span class="variable">s2</span> <span class="operator">=</span> s7.substring(<span class="number">3</span>);           <span class="comment">//s2的字符序列是：唱、跳、rap、篮球</span></span><br></pre></td></tr></table></figure>
-
-<p>PS：substring(int start，int end)为复制从start位置至end-1位置</p>
-<h3 id="public-String-trim"><a href="#public-String-trim" class="headerlink" title="public String trim();"></a>public String trim();</h3><p>调用该方法将得到一个新的对象，该对象是当前对象的字符序列<em><strong>去掉前后空格</strong></em>的字符序列</p>
-<h2 id="String对象与基本数据的相互转换"><a href="#String对象与基本数据的相互转换" class="headerlink" title="String对象与基本数据的相互转换"></a>String对象与基本数据的相互转换</h2><h3 id="将String转换为基本型"><a href="#将String转换为基本型" class="headerlink" title="将String转换为基本型"></a>将String转换为基本型</h3><p>使用Java.lang包中的<em><strong>Integer</strong></em>类调用其类方法***public static int parseInt(String s)***可以将由”数字“字符组成的字符序列转化为int型数据。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> x;</span><br><span class="line"><span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="string">&quot;1234&quot;</span>;</span><br><span class="line">x = Integer.parseInt(s);</span><br></pre></td></tr></table></figure>
-
-<p>类似，使用java.lang包中的Byte、Short、Long、Float、Double类调用相应的类方法</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Floatpublic <span class="keyword">static</span> <span class="type">byte</span> <span class="title function_">parseByte</span><span class="params">(String s)</span> <span class="keyword">throws</span> NumberFormatException</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">short</span> <span class="title function_">parseShort</span><span class="params">(String s)</span> <span class="keyword">throws</span> NumberFormatException</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">long</span> <span class="title function_">parseLong</span><span class="params">(String s)</span> <span class="keyword">throws</span> NumberFormatException</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">float</span> <span class="title function_">parseFloat</span><span class="params">(String s)</span> <span class="keyword">throws</span> NumberFormatException</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">double</span> <span class="title function_">parseDouble</span><span class="params">(String s)</span> <span class="keyword">throws</span> NumberFormatException    </span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="将基本型转换为String对象"><a href="#将基本型转换为String对象" class="headerlink" title="将基本型转换为String对象"></a>将基本型转换为String对象</h3><p>可以使用以下String类的类方法</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">valueOf</span><span class="params">(<span class="type">byte</span> n)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">valueOf</span><span class="params">(<span class="type">int</span> n)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">valueOf</span><span class="params">(<span class="type">long</span> n)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">valueOf</span><span class="params">(<span class="type">float</span> n)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">valueOf</span><span class="params">(<span class="type">double</span> n)</span>    </span><br></pre></td></tr></table></figure>
-
-<p>例：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">s1</span> <span class="operator">=</span> String.valueOf(<span class="number">1234</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//也可以用到上面介绍的并置运算，即使用一个空字符串与基本型数据进行并置运算</span></span><br><span class="line"><span class="type">String</span> <span class="variable">s2</span> <span class="operator">=</span> <span class="string">&quot;&quot;</span> + <span class="number">1234</span>;</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="基本型数据的进制表示"><a href="#基本型数据的进制表示" class="headerlink" title="基本型数据的进制表示"></a>基本型数据的进制表示</h3><p>可以把整形数据（例如int、long型数据的二进制、八进制、或十六进制）转换成String对象，即让String对象封装的字符序列是int或long型数据的二进制、八进制或十六进制。</p>
-<p>Integer和long类的下列类方法返回整数的进制的String对象表示（负数返回补码），即返回的String对象封装的字符序列是<em><strong>参数的相应进制</strong></em></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">toBinaryString</span><span class="params">(<span class="type">int</span> i)</span>       <span class="comment">//二进制</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">toOctalString</span><span class="params">(<span class="type">int</span> i)</span>		 <span class="comment">//八进制</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">toHexString</span><span class="params">(<span class="type">int</span> i)</span>			 <span class="comment">//十六进制</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">toBinaryString</span><span class="params">(<span class="type">long</span> i)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">toOctalString</span><span class="params">(<span class="type">long</span> i)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">tohexString</span><span class="params">(<span class="type">long</span> i)</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="关于main-方法的参数化"><a href="#关于main-方法的参数化" class="headerlink" title="关于main()方法的参数化"></a>关于main()方法的参数化</h3><p>使用解释器java.exe执行程序来执行主类时，从键盘输入若干字符序列 ，用空格分开，它们分别对应args[0]、args[1]、args[2]……</p>
-<h2 id="对象的String表示"><a href="#对象的String表示" class="headerlink" title="对象的String表示"></a>对象的String表示</h2><p>所有的类都默认是java.lang包中Object类的子类或间接子类。Object类有一个public String toString()方法，一个对象调用该方法返回String对象的字符序列的一般形式为</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">创建对象的类的名字@对象的引用</span><br><span class="line"></span><br><span class="line">System.out.println(object);</span><br><span class="line">//等价于</span><br><span class="line">System.out,println(object.toString)</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-  </entry>
-  <entry>
     <title>a</title>
     <url>/2023/09/22/Java%E5%9F%BA%E7%A1%80(%E4%B8%89)%E2%80%94%E2%80%94%E6%95%B0%E7%BB%84%E3%80%81%E6%96%B9%E6%B3%95/</url>
     <content><![CDATA[<h1 id="数组概述"><a href="#数组概述" class="headerlink" title="数组概述"></a>数组概述</h1><ul>
@@ -777,6 +777,93 @@
       </categories>
   </entry>
   <entry>
+    <title>Java基础(二)——流程控制</title>
+    <url>/2023/09/09/Java%E5%9F%BA%E7%A1%80(%E4%BA%8C)%E2%80%94%E2%80%94%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/</url>
+    <content><![CDATA[<h1 id="分支结构"><a href="#分支结构" class="headerlink" title="分支结构"></a>分支结构</h1><h2 id="if语句"><a href="#if语句" class="headerlink" title="if语句"></a>if语句</h2><ol>
+<li><p>if分支：可以根据条件，选择执行某段程序</p>
+</li>
+<li><p>if分支的三种写法：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 第一种语法</span></span><br><span class="line"><span class="keyword">if</span>(条件表达式)&#123;</span><br><span class="line">    语句;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 第二种语法</span></span><br><span class="line"><span class="keyword">if</span>(条件表达式)&#123;</span><br><span class="line">    语句<span class="number">1</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    语句<span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 第三种写法</span></span><br><span class="line"><span class="keyword">if</span>(条件表达式)&#123;</span><br><span class="line">    语句<span class="number">1</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span>&#123;</span><br><span class="line">    语句<span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line">……</span><br><span class="line"><span class="keyword">else</span> &#123;</span><br><span class="line">    语句n;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>PS：如果if语句的{}中只有一行代码的情况下，{}可以不写</p>
+</li>
+</ol>
+<h2 id="switch语句"><a href="#switch语句" class="headerlink" title="switch语句"></a>switch语句</h2><ol>
+<li><p>使用switch时有哪些注意事项？</p>
+<ul>
+<li>表达式类型只能是byte、short、int、char，JDK5开始支持枚举，JDK7开始支持String、不支持double、float、long。</li>
+<li>case给出的值不允许重复，且只能是字面量，不能是变量。</li>
+<li>正常使用switch的时候，不要忘记写break，否则会出现穿透现象</li>
+</ul>
+</li>
+<li><p>switch穿透性能解决什么问题？</p>
+<p>存在多个case分支的代码时一样时，可以把代码写道一个case块，其他case块通过穿透性能，穿透到case块即可，这样可以简化代码。</p>
+</li>
+</ol>
+<h1 id="循环结构"><a href="#循环结构" class="headerlink" title="循环结构"></a>循环结构</h1><h2 id="for循环"><a href="#for循环" class="headerlink" title="for循环"></a>for循环</h2><ol>
+<li><p>for循环格式和执行流程是什么样的？</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(变量赋值; 循环条件; 变量增值)&#123;</span><br><span class="line">    循环体语句;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 例如</span></span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i&lt; <span class="number">3</span>; i++)&#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;Hello world&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>for循环的常见应用场景？</p>
+<p>减少代码的重复编写，灵活的控制程序的执行</p>
+</li>
+</ol>
+<h2 id="while循环"><a href="#while循环" class="headerlink" title="while循环"></a>while循环</h2><ol>
+<li><p>while循环的格式和执行流程是怎么样的？</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">初始化语句;</span><br><span class="line"><span class="keyword">while</span>(循环条件)&#123;</span><br><span class="line">    循环体语句;</span><br><span class="line">    迭代语句;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 例如</span></span><br><span class="line"><span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line"><span class="keyword">while</span>(i&lt;<span class="number">3</span>)&#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;Hello world&quot;</span>);</span><br><span class="line">    i++;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>while和for有什么区别？什么时候使用for，什么时候使用while？</p>
+<ul>
+<li>功能上是完全一样的，for能解决的while也能解决，反之亦然。</li>
+<li>使用规范：知道循环几次使用for；不知道循环几次建议使用while。</li>
+</ul>
+</li>
+</ol>
+<h2 id="do-while循环"><a href="#do-while循环" class="headerlink" title="do-while循环"></a>do-while循环</h2><ol>
+<li><p>do-while循环的格式和执行流程是怎么样的？</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">初始化语句;</span><br><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">    循环体语句;</span><br><span class="line">    迭代语句;</span><br><span class="line">&#125; <span class="keyword">while</span>(循环条件)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 例如</span></span><br><span class="line"><span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;Hello world&quot;</span>);</span><br><span class="line">    i++;</span><br><span class="line">&#125; w <span class="title function_">hile</span><span class="params">(循环条件)</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>do-while循环的特点：先执行后判断</p>
+</li>
+</ol>
+<h2 id="三种循环的区别小结"><a href="#三种循环的区别小结" class="headerlink" title="三种循环的区别小结"></a>三种循环的区别小结</h2><ul>
+<li>for循环和while循环（先判断后执行），do-while循环（先执行后判断）</li>
+<li>for循环和while循环的执行流程是一模一样的，功能上无区别，for能解决的while也能解决，反之亦然。</li>
+<li>使用规范：知道循环几次使用for；不知道循环几次建议使用while。</li>
+<li>其他区别：for循环中，控制循环的变量只在循环中使用。while循环中，控制循环的变量在循环后还可以继续使用。</li>
+</ul>
+<h2 id="死循环"><a href="#死循环" class="headerlink" title="死循环"></a>死循环</h2><ul>
+<li><p>可以一直执行下去的一种循环，如果没有干预不会停下来。</p>
+</li>
+<li><p>写法</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>( ; ; )&#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;Hello world&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;Hello world&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;Hello world&quot;</span>);</span><br><span class="line">&#125; <span class="keyword">while</span>(<span class="literal">true</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>应用场景：服务器程序</p>
+</li>
+</ul>
+<h2 id="循环嵌套"><a href="#循环嵌套" class="headerlink" title="循环嵌套"></a>循环嵌套</h2><ul>
+<li>循环中又包含循环 </li>
+<li>外部循环每循环一次，内部循环会完全执行完一轮。</li>
+</ul>
+<h1 id="跳转关键字：break、continue"><a href="#跳转关键字：break、continue" class="headerlink" title="跳转关键字：break、continue"></a>跳转关键字：break、continue</h1><ul>
+<li>break：跳出并结束当前所在循环的执行。</li>
+<li>continue：用于跳出当前循环的当次执行，直接进入循环的下一次执行。</li>
+</ul>
+<h1 id="生成随机数：Random"><a href="#生成随机数：Random" class="headerlink" title="生成随机数：Random"></a>生成随机数：Random</h1><ul>
+<li>作用：生成随机数。</li>
+<li>得到0-9的随机数的实现步骤：<ol>
+<li>导包：告诉程序去JDK的哪个包中找Random，<code>import java.util.Random;</code></li>
+<li>创建随机数对象：<code>Random r = new Random();</code></li>
+<li>调用随机数的功能获取随机数：<code>int num = r,nextInt(10);</code></li>
+</ol>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Markdown语法学习</title>
     <url>/2023/04/22/Markdown%E8%AF%AD%E6%B3%95%E5%AD%A6%E4%B9%A0/</url>
     <content><![CDATA[<h1 id="Markdown语法学习"><a href="#Markdown语法学习" class="headerlink" title="Markdown语法学习"></a>Markdown语法学习</h1><h2 id="Markdown介绍"><a href="#Markdown介绍" class="headerlink" title="Markdown介绍"></a>Markdown介绍</h2><p>Markdown是一种轻量级标记语言，它使用纯文本格式编写，可通过转换工具将其转换成 HTML、PDF 和其他格式，常用于撰写技术文档、博客、论坛帖子等。它语法简单、清晰易读，可以让写作者更加专注于内容的表达和组织，减少排版和格式化的时间，提高效率和创作体验。</p>
@@ -941,87 +1028,521 @@
       </categories>
   </entry>
   <entry>
-    <title>Java基础(二)——流程控制</title>
-    <url>/2023/09/09/Java%E5%9F%BA%E7%A1%80(%E4%BA%8C)%E2%80%94%E2%80%94%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/</url>
-    <content><![CDATA[<h1 id="分支结构"><a href="#分支结构" class="headerlink" title="分支结构"></a>分支结构</h1><h2 id="if语句"><a href="#if语句" class="headerlink" title="if语句"></a>if语句</h2><ol>
-<li><p>if分支：可以根据条件，选择执行某段程序</p>
+    <title>Java基础(四)——面向对象</title>
+    <url>/2023/09/24/Java%E5%9F%BA%E7%A1%80(%E5%9B%9B)%E2%80%94%E2%80%94%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</url>
+    <content><![CDATA[<h1 id="认识面向对象编程"><a href="#认识面向对象编程" class="headerlink" title="认识面向对象编程"></a>认识面向对象编程</h1><ol>
+<li><p>面向对象编程的优点： </p>
+<ul>
+<li>凡是找对象的编程套路，更加符合人类思维习惯，编程也会更直观</li>
+</ul>
 </li>
-<li><p>if分支的三种写法：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 第一种语法</span></span><br><span class="line"><span class="keyword">if</span>(条件表达式)&#123;</span><br><span class="line">    语句;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 第二种语法</span></span><br><span class="line"><span class="keyword">if</span>(条件表达式)&#123;</span><br><span class="line">    语句<span class="number">1</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    语句<span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 第三种写法</span></span><br><span class="line"><span class="keyword">if</span>(条件表达式)&#123;</span><br><span class="line">    语句<span class="number">1</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span>&#123;</span><br><span class="line">    语句<span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line">……</span><br><span class="line"><span class="keyword">else</span> &#123;</span><br><span class="line">    语句n;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<li><p>对象是啥？如何得到？</p>
+<ul>
+<li><p>对象就是一种特殊的数据结构。</p>
+</li>
+<li><p>对象是用类new出来的，有了类就可以创建出对象</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> class 类名&#123;</span><br><span class="line">    <span class="number">1.</span>变量，用来说明对象可以处理什么数据</span><br><span class="line">    <span class="number">2.</span>方法，描述对象有什么功能，也就是可以对数据进行什么样的处理</span><br><span class="line">    ……</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>PS：如果if语句的{}中只有一行代码的情况下，{}可以不写</p>
+<p><code>类名 对象名 = new 类名();</code></p>
 </li>
-</ol>
-<h2 id="switch语句"><a href="#switch语句" class="headerlink" title="switch语句"></a>switch语句</h2><ol>
-<li><p>使用switch时有哪些注意事项？</p>
+</ul>
+</li>
+<li><p>面向对象编程这种套路是咋回事？</p>
 <ul>
-<li>表达式类型只能是byte、short、int、char，JDK5开始支持枚举，JDK7开始支持String、不支持double、float、long。</li>
-<li>case给出的值不允许重复，且只能是字面量，不能是变量。</li>
-<li>正常使用switch的时候，不要忘记写break，否则会出现穿透现象</li>
+<li>祖师爷（詹姆斯·高斯林 ）认为万物皆对象，谁的数据谁处理</li>
 </ul>
 </li>
-<li><p>switch穿透性能解决什么问题？</p>
-<p>存在多个case分支的代码时一样时，可以把代码写道一个case块，其他case块通过穿透性能，穿透到case块即可，这样可以简化代码。</p>
+<li><p>面向对象编程的三大特性：继承、封装、多态</p>
 </li>
 </ol>
-<h1 id="循环结构"><a href="#循环结构" class="headerlink" title="循环结构"></a>循环结构</h1><h2 id="for循环"><a href="#for循环" class="headerlink" title="for循环"></a>for循环</h2><ol>
-<li><p>for循环格式和执行流程是什么样的？</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(变量赋值; 循环条件; 变量增值)&#123;</span><br><span class="line">    循环体语句;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 例如</span></span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i&lt; <span class="number">3</span>; i++)&#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;Hello world&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="对象在计算机中的执行原理"><a href="#对象在计算机中的执行原理" class="headerlink" title="对象在计算机中的执行原理"></a>对象在计算机中的执行原理</h1><ol>
+<li>对象在计算机中的执行原理是怎么回事？<ul>
+<li><code>Student s = new Student();</code></li>
+<li>每次创建对象，就是在堆内存中开辟一块内存区域代表一个学生对象。</li>
+<li>对象变量里面记住的是学生对象的地址。</li>
+</ul>
 </li>
-<li><p>for循环的常见应用场景？</p>
-<p>减少代码的重复编写，灵活的控制程序的执行</p>
+<li>如何识别引用类型的变量？<ul>
+<li>变量中存储的是地址就是引用类型的变量</li>
+</ul>
 </li>
 </ol>
-<h2 id="while循环"><a href="#while循环" class="headerlink" title="while循环"></a>while循环</h2><ol>
-<li><p>while循环的格式和执行流程是怎么样的？</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">初始化语句;</span><br><span class="line"><span class="keyword">while</span>(循环条件)&#123;</span><br><span class="line">    循环体语句;</span><br><span class="line">    迭代语句;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 例如</span></span><br><span class="line"><span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line"><span class="keyword">while</span>(i&lt;<span class="number">3</span>)&#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;Hello world&quot;</span>);</span><br><span class="line">    i++;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="类和对象的一些注意事项"><a href="#类和对象的一些注意事项" class="headerlink" title="类和对象的一些注意事项"></a>类和对象的一些注意事项</h1><ol>
+<li><p>类名建议用英文单词，首字母大写，满足驼峰模式，且要有意义，比如：Student、Car……</p>
 </li>
-<li><p>while和for有什么区别？什么时候使用for，什么时候使用while？</p>
+<li><p>类中定义的变量也称为成员变量（对象的属性），类中定义的方法也称为成员方法（对象的行为）。</p>
+</li>
+<li><p>成员变量本身存在默认值。</p>
+</li>
+<li><p>一个代码文件中，可以写多个class类，但只能一个用public修饰，且public修饰的类名必须称为代码文件名。</p>
+</li>
+<li><p>对象与对象之间的数据不会相互影响，但多个变量指向同一个对象时就会相互影响了。</p>
+</li>
+<li><p>如果某个对象没有变量引用它，则该对象无法被操作，该对象会变为所谓的垃圾对象。</p>
+<p>Java存在自动垃圾回收机制，会自动清除掉垃圾对象</p>
+</li>
+</ol>
+<h1 id="this、构造方法"><a href="#this、构造方法" class="headerlink" title="this、构造方法"></a>this、构造方法</h1><ol>
+<li><p>this关键字时什么？</p>
 <ul>
-<li>功能上是完全一样的，for能解决的while也能解决，反之亦然。</li>
-<li>使用规范：知道循环几次使用for；不知道循环几次建议使用while。</li>
+<li>this就是一个变量，可以用在方法里，用来拿到当前对象；哪个对象调用方法，this就指向哪个对象，也就是拿到哪个对象。</li>
+</ul>
+</li>
+<li><p>this关键字在实际开发中常用来干啥？</p>
+<ul>
+<li>用来解决对象的成员变量与方法内部变量的名称一样时，导致访问冲突问题。</li>
+</ul>
+</li>
+<li><p>构造方法语法：与类名相同，没有方法类型</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Student</span>()&#123;</span><br><span class="line">    <span class="comment">/*构造方法*/</span></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Student</span><span class="params">()</span>&#123;</span><br><span class="line">        ……</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>构造方法用途：</p>
+<ul>
+<li>对象创建时，我们可以指定对象去调用哪个构造方法执行。</li>
+<li>构造方法常用于完成对象初始化（给成员变量传值）</li>
+</ul>
+</li>
+<li><p>构造方法在使用时的注意事项：</p>
+<ul>
+<li>类在设计时，如果不写构造方法Java会为类自动生成一个无参构造方法</li>
+<li>一旦定义了有参构造方法，Java就不会自动生成无参构造方法了，此时建议自己手写一个无参构造方法</li>
 </ul>
 </li>
 </ol>
-<h2 id="do-while循环"><a href="#do-while循环" class="headerlink" title="do-while循环"></a>do-while循环</h2><ol>
-<li><p>do-while循环的格式和执行流程是怎么样的？</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">初始化语句;</span><br><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">    循环体语句;</span><br><span class="line">    迭代语句;</span><br><span class="line">&#125; <span class="keyword">while</span>(循环条件)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 例如</span></span><br><span class="line"><span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;Hello world&quot;</span>);</span><br><span class="line">    i++;</span><br><span class="line">&#125; w <span class="title function_">hile</span><span class="params">(循环条件)</span></span><br></pre></td></tr></table></figure>
+<h1 id="封装、实体JavaBean"><a href="#封装、实体JavaBean" class="headerlink" title="封装、实体JavaBean"></a>封装、实体JavaBean</h1><ol>
+<li>什么是封装？<ul>
+<li>封装就是用类设计对象处理某一个事物的数据时，应该把要处理的数据，以及处理这些数据的方法。设计到一个对象中去。</li>
+</ul>
 </li>
-<li><p>do-while循环的特点：先执行后判断</p>
+<li>封装的设计规范是什么样的？<ul>
+<li>合理隐藏，合理暴露</li>
+</ul>
+</li>
+<li>代码层如何控制对象的成员公开或隐藏？<ul>
+<li>公开成员，可以使用public(公开)进行修饰。</li>
+<li>隐藏成员，使用private(私有、隐藏)进行修饰。</li>
+</ul>
+</li>
+<li>什么是实体类？有什么特点？<ul>
+<li>成员变量必须私有，且要为他们提供get、set方法；必须有无参数构造方法</li>
+<li>仅仅是一个用来保存数据的Java类，可以用它创建对象，保存某个事物的数据</li>
+</ul>
+</li>
+<li>实体类的应用场景：<ul>
+<li>实体类对应的是软件开发里现在比较流行的开发方式，数据和数据业务处理相分离</li>
+</ul>
 </li>
 </ol>
-<h2 id="三种循环的区别小结"><a href="#三种循环的区别小结" class="headerlink" title="三种循环的区别小结"></a>三种循环的区别小结</h2><ul>
-<li>for循环和while循环（先判断后执行），do-while循环（先执行后判断）</li>
-<li>for循环和while循环的执行流程是一模一样的，功能上无区别，for能解决的while也能解决，反之亦然。</li>
-<li>使用规范：知道循环几次使用for；不知道循环几次建议使用while。</li>
-<li>其他区别：for循环中，控制循环的变量只在循环中使用。while循环中，控制循环的变量在循环后还可以继续使用。</li>
+<h1 id="成员变量和局部变量的区别"><a href="#成员变量和局部变量的区别" class="headerlink" title="成员变量和局部变量的区别"></a>成员变量和局部变量的区别</h1><table>
+<thead>
+<tr>
+<th align="center">区别</th>
+<th align="center">成员变量</th>
+<th align="center">局部变量</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">类中位置不同</td>
+<td align="center">类中，方法外</td>
+<td align="center">常见于方法中</td>
+</tr>
+<tr>
+<td align="center">初始化值不同</td>
+<td align="center">有默认值，不需要初始化赋值</td>
+<td align="center">没有默认值，使用之前必须完成赋值</td>
+</tr>
+<tr>
+<td align="center">内存位置不同</td>
+<td align="center">堆内存</td>
+<td align="center">栈内存</td>
+</tr>
+<tr>
+<td align="center">作用域不同</td>
+<td align="center">整个对象</td>
+<td align="center">在所属的大括号中</td>
+</tr>
+<tr>
+<td align="center">作用周期不同</td>
+<td align="center">与对象相同</td>
+<td align="center">随着方法调用而出现，随方法结束而结束</td>
+</tr>
+</tbody></table>
+<h1 id="static"><a href="#static" class="headerlink" title="static"></a>static</h1><ol>
+<li>static叫静态，可以修饰成员变量、成员方法。</li>
+<li>成员变量按照有无<code>static</code>修饰，分为两类：<ul>
+<li>类变量：<ul>
+<li>有<code>static</code>修饰，属于类，在计算机中只有一份，<strong>会被类的全部对象共享</strong></li>
+<li>应用场景：如果某一份数据只需要一份，且希望能够被共享（访问、修改），则建议使用类变量来记录</li>
 </ul>
-<h2 id="死循环"><a href="#死循环" class="headerlink" title="死循环"></a>死循环</h2><ul>
-<li><p>可以一直执行下去的一种循环，如果没有干预不会停下来。</p>
 </li>
-<li><p>写法</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>( ; ; )&#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;Hello world&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;Hello world&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;Hello world&quot;</span>);</span><br><span class="line">&#125; <span class="keyword">while</span>(<span class="literal">true</span>)</span><br></pre></td></tr></table></figure>
+<li>实例变量（对象的变量）：<ul>
+<li>无<code>static</code>修饰，<strong>每个对象都有一份</strong></li>
+<li>应用场景：每个对象都要有一份，数据各不同</li>
+</ul>
 </li>
-<li><p>应用场景：服务器程序</p>
+</ul>
+</li>
+<li>成员方法按照有无<code>static</code>修饰，分为两类：<ul>
+<li>类方法（静态方法）：<ul>
+<li>属于类，可以直接用类名访问，也可以对象访问</li>
+<li>应用场景：可以用来设计工具类</li>
+</ul>
+</li>
+<li>实例方法：<ul>
+<li>属于对象，只能使用对象访问</li>
+</ul>
+</li>
+<li>工具类<ul>
+<li>工具类中的方法都是类方法，每个类方法都是用来完成一个功能的</li>
+<li>工具类提高了代码的复用性；调用方法，提高了开发效率</li>
+<li>工具类之所以使用类方法实现，是因为这样可以不用创建对象而浪费内存</li>
+<li>工具类不需要创建对象，建议将工具类的构造方法私有化</li>
+</ul>
 </li>
 </ul>
-<h2 id="循环嵌套"><a href="#循环嵌套" class="headerlink" title="循环嵌套"></a>循环嵌套</h2><ul>
-<li>循环中又包含循环 </li>
-<li>外部循环每循环一次，内部循环会完全执行完一轮。</li>
+</li>
+<li>注意事项：<ul>
+<li>类方法可以直接访问类的成员，不可以直接访问实例成员</li>
+<li>实例方法既可以直接访问类成员，也可以直接访问实例成员</li>
+<li>实例方法中可以出现this关键字，类方法中不可以出现this关键字</li>
 </ul>
-<h1 id="跳转关键字：break、continue"><a href="#跳转关键字：break、continue" class="headerlink" title="跳转关键字：break、continue"></a>跳转关键字：break、continue</h1><ul>
-<li>break：跳出并结束当前所在循环的执行。</li>
-<li>continue：用于跳出当前循环的当次执行，直接进入循环的下一次执行。</li>
+</li>
+</ol>
+<h1 id="static应用知识"><a href="#static应用知识" class="headerlink" title="static应用知识"></a>static应用知识</h1><h2 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h2><ol>
+<li>代码块概述<ul>
+<li>代码块是类的5大成分之一（成员变量、构造方法、方法、代码块、内部类）</li>
 </ul>
-<h1 id="生成随机数：Random"><a href="#生成随机数：Random" class="headerlink" title="生成随机数：Random"></a>生成随机数：Random</h1><ul>
-<li>作用：生成随机数。</li>
-<li>得到0-9的随机数的实现步骤：<ol>
-<li>导包：告诉程序去JDK的哪个包中找Random，<code>import java.util.Random;</code></li>
-<li>创建随机数对象：<code>Random r = new Random();</code></li>
-<li>调用随机数的功能获取随机数：<code>int num = r,nextInt(10);</code></li>
+</li>
+<li>代码块分为两种：<ul>
+<li>静态代码块：<ul>
+<li>格式：<code>static&#123;&#125;</code></li>
+<li>特点：类加载时自动执行，由于类只会加载一次，所以静态代码块也只会执行一次</li>
+<li>作用：完成类的初始化，例如：对类变量的初始化赋值</li>
+</ul>
+</li>
+<li>实例代码块：<ul>
+<li>格式：<code>&#123;&#125;</code></li>
+<li>特点：每次创建对象时，执行实例代码块，并在构造方法前执行</li>
+<li>作用：和构造方法一样，都是用来完成对象的初始化，例如：对实例变量进行初始化赋值</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="单例设计模式"><a href="#单例设计模式" class="headerlink" title="单例设计模式"></a>单例设计模式</h2><ol>
+<li><p>什么是设计模式（Design pattern）？</p>
+<ul>
+<li>一个问题通常有很多种解法，其中肯定有一种解法是最优的，这个最优的解法被人总结出来了，称之为设计模式。</li>
+<li>设计模式有20多种，对应20多种软件开发中会遇到的问题。</li>
+</ul>
+</li>
+<li><p>单例设计模式：确保一个类只有一个对象。</p>
+</li>
+<li><p>写法：</p>
+<ul>
+<li>把类的构造方法私有</li>
+<li>定义一个类变量记住类的对象</li>
+<li>定义一个类方法，返回对象</li>
+</ul>
+</li>
+<li><p>单例的应用场景：任务管理器对象、获取运行时对象</p>
+</li>
+<li><p>单例设计模式的实现方式很多，如：饿汉式单例、懒汉式单例、……</p>
+</li>
+<li><p>饿汉式单例设计模式：拿对象时，对象早就创建好了</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">A</span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="type">A</span> <span class="variable">a</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">A</span>();</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> <span class="title function_">A</span><span class="params">()</span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> A <span class="title function_">getObject</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> a;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>懒汉式单例设计模式：拿对象时，才开始创建对象（延迟加载对象）</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">B</span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> B b;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> <span class="title function_">b</span><span class="params">()</span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> B <span class="title function_">getInstance</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(b == <span class="literal">null</span>)&#123;</span><br><span class="line">            b = <span class="keyword">new</span> <span class="title class_">B</span>();</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> b;</span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h1 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h1><h2 id="认识继承"><a href="#认识继承" class="headerlink" title="认识继承"></a>认识继承</h2><ol>
+<li><p>什么是继承？继承后有什么有啥特点？</p>
+<ul>
+<li><p>继承就是用<code>extends</code>关键字，让一个类和另一个类建立起一种父子关系</p>
+</li>
+<li><p>子类可以继承父类非私有成员</p>
+</li>
+</ul>
+</li>
+<li><p>带继承关系的类，Java会怎创建它的对象？对象创建出来后，可以直接访问哪些成员？</p>
+<ul>
+<li><p>带继承关系的类，Java会用类和其父类，这么多张设计图来一起创建类的对象。</p>
+</li>
+<li><p>对象能直接访问什么成员，是由子父类这么多张设计图共同决定，这么多张设计图对外暴露了什么成员，对象就可以访问什么成员。</p>
+</li>
+</ul>
+</li>
+<li><p>继承的好处：减少重复代码的编写，提高了代码的复用性。</p>
+</li>
+<li><p>权限修饰符：就是用来限制类中的成员（成员变量、成员方法、构造方法、代码块……）能够被访问的范围</p>
+<table>
+<thead>
+<tr>
+<th align="center">修饰符</th>
+<th align="center">同一个类</th>
+<th align="center">同一个包</th>
+<th align="center">子类</th>
+<th align="center">任意包</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">private</td>
+<td align="center">√</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">default</td>
+<td align="center">√</td>
+<td align="center">√</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">protected</td>
+<td align="center">√</td>
+<td align="center">√</td>
+<td align="center">√</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">public</td>
+<td align="center">√</td>
+<td align="center">√</td>
+<td align="center">√</td>
+<td align="center">√</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>继承相关的两个注意事项：</p>
+<ul>
+<li><p>Java是单继承：一个类只能继承一个直接父类；Java中的类不支持多继承，但是支持多层继承。</p>
+</li>
+<li><p>Object类是Java中的所有类的祖宗。</p>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="方法重写"><a href="#方法重写" class="headerlink" title="方法重写"></a>方法重写</h2><ol>
+<li><p>方法重写：子类写了一个方法名称、形参列表与父类某个方法一样的方法去覆盖父类的该方法。</p>
+</li>
+<li><p>重写方法的注意事项：</p>
+<ul>
+<li><p>建议加上：<code>@Override</code>注解，可以校验重写是否正确，同样可读性好。</p>
+</li>
+<li><p>子类重写父类方法时，访问权限必须大于或等于父类被重写的方法的权限。</p>
+</li>
+<li><p>重写的方法返回值类型，必须与被重写方法的返回值类型一样，或者范围更小。</p>
+</li>
+<li><p>私有方法、静态方法不能被重写。</p>
+</li>
+</ul>
+</li>
+<li><p>方法重写应用场景：当子类觉得父类的方法不好用，或者不满足自己需求时，就可以用方法重写</p>
+</li>
+</ol>
+<h2 id="子类访问其他成员的规则、子类构造方法的特点"><a href="#子类访问其他成员的规则、子类构造方法的特点" class="headerlink" title="子类访问其他成员的规则、子类构造方法的特点"></a>子类访问其他成员的规则、子类构造方法的特点</h2><ol>
+<li><p>在子类方法中访问其他成员（成员变量、成员方法），是依照就近原则的。</p>
+<ul>
+<li><p>先子类局部范围找</p>
+</li>
+<li><p>然后子类成员范围找</p>
+</li>
+<li><p>然后父类成员范围找，如果都没有找到就会报错</p>
+</li>
+</ul>
+</li>
+<li><p>如果子父类中，出现了重名的成员，会优先使用子类，那么该如何使用在子类中使用父类的成员呢？</p>
+<ul>
+<li>可以通过<code>super</code>关键字，指定访问父类的成员：<code>super.父类成员变量/父类成员方法;</code></li>
+</ul>
+</li>
+<li><p>子类构造方法的特点：子类的全部构造方法，都会先调用父类的构造方法，再执行自己。</p>
+</li>
+<li><p>子类构造方法是如何实现调用父类构造方法的：</p>
+<ul>
+<li><p>默认情况下，子类全部构造方法的第一行代码都是<code>super();</code>（写不写都存在），它会调用父类的无参构造方法。</p>
+</li>
+<li><p>如果父类没有无参构造方法，则我们必须在子类构造方法的第一行手写<code>super(……);</code>，指定去调用父类的有参构造方法</p>
+</li>
+</ul>
+</li>
+<li><p><code>this(……)</code>：在构造方法中调用本类的其他构造方法</p>
+</li>
+<li><p>注意：使用<code>this()</code>和<code>super()</code>时必须放在构造方法的第一行</p>
+</li>
+</ol>
+<h1 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h1><h2 id="认识多态"><a href="#认识多态" class="headerlink" title="认识多态"></a>认识多态</h2><ol>
+<li><p>多态：多态是在继承&#x2F;实现情况下的一种现象，表现为：对象多态、行为多态。</p>
+</li>
+<li><p>多态的具体代码实现：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//Student类和Teacher类均为People类的子类</span></span><br><span class="line"></span><br><span class="line"><span class="type">People</span> <span class="variable">p1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Student</span>();</span><br><span class="line">p1.run();</span><br><span class="line"></span><br><span class="line"><span class="type">People</span> <span class="variable">p2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Teacher</span>();</span><br><span class="line">p2.run();</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>多态的前提：有继承&#x2F;实现关系；存在父类引用子类对象；存在方法重写。</p>
+</li>
+<li><p>注意事项：多态是对象、行为多态，Java中的属性（成员变量）不谈多态。</p>
+</li>
+</ol>
+<h2 id="使用多态的好处"><a href="#使用多态的好处" class="headerlink" title="使用多态的好处"></a>使用多态的好处</h2><ol>
+<li>使用代码有什么好处？存在什么问题？<ul>
+<li>好处：可以解耦合，扩展性更强；使用父类类型的变量作为方法的形参时，可以接收一切子类对象。</li>
+<li>问题：多态下不能直接调用子类的独有方法</li>
+</ul>
+</li>
+</ol>
+<h2 id="多态下的类型转换问题"><a href="#多态下的类型转换问题" class="headerlink" title="多态下的类型转换问题"></a>多态下的类型转换问题</h2><ol>
+<li><p>类型转换有几种类型？能解决什么问题？</p>
+<ul>
+<li><p>自动类型转换、强制类型转换</p>
+</li>
+<li><p>可以把对象转换成其真正的类型，从而解决了多态下不能调用子类独有方法的问题</p>
+</li>
+</ul>
+</li>
+<li><p>强制类型转换需要注意什么？</p>
+<ul>
+<li><p>存在继承&#x2F;实现时，就可以进行强制类型转换，编译阶段不会报错。</p>
+</li>
+<li><p>但是，运行时，如果发现对象的真实类型与强转后的类型不同会报错（<em><strong>ClassCastException</strong></em>）</p>
+</li>
+</ul>
+</li>
+<li><p>强制转换类型前？Java建议我们做什么？</p>
+<ul>
+<li>使用<code>instanceof</code>判断当前对象的真实类型：<code>对象 instanceof 类型</code></li>
+</ul>
+</li>
+</ol>
+<h1 id="final"><a href="#final" class="headerlink" title="final"></a>final</h1><h2 id="认识final"><a href="#认识final" class="headerlink" title="认识final"></a>认识final</h2><ol>
+<li>final关键字是最终的意思，可以修饰（类、方法、变量）</li>
+<li>修饰类：该类被称为最终类，特点是不能被继承了。</li>
+<li>修饰方法：该方法被称为最终方法，特点是不能被重写了。</li>
+<li>修饰变量：该变量只能被赋值一次。</li>
+<li>final修饰变量的注意：<ul>
+<li>final修饰基本类型的变量，变量存储的数据不能被改变。</li>
+<li>final修饰引用类型的变量，变量存储的地址不能被改变，但地址所指向对象的内容是可以被改变的。</li>
+</ul>
+</li>
+</ol>
+<h2 id="补充知识：常量详解"><a href="#补充知识：常量详解" class="headerlink" title="补充知识：常量详解"></a>补充知识：常量详解</h2><ol>
+<li><p>使用了<code>static final</code>修饰的成员变量就被称为常量</p>
+</li>
+<li><p>作用：通常用于记录系统的配置信息。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Constant</span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">String</span> <span class="variable">SCHOOL_NAME</span> <span class="operator">=</span> <span class="string">&quot;伽里敦大学&quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>注意：常量名的命名规范：建议大家使用大写英文单词，多个单词使用下划线连接起来。</p>
+</li>
+<li><p>使用常量记录系统配置信息的优势、执行原理</p>
+<ul>
+<li>代码可读性更好，可维护性也更好。</li>
+<li>程序编译后，常量会被“宏替换”：出现常量的地方全部会被替换成其记住的字面量，这样可以保证使用常量和直接用字面量的性能是一样的。</li>
+</ul>
+</li>
+</ol>
+<h1 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h1><h2 id="认识抽象类"><a href="#认识抽象类" class="headerlink" title="认识抽象类"></a>认识抽象类</h2><ol>
+<li><p>抽象类、抽象方法是什么样的？</p>
+<ul>
+<li>都是用<code>abstract</code>修饰的；抽象方法只有方法签名，不能写方法体。</li>
+</ul>
+</li>
+<li><p>抽象类有哪些注意事项和特点？</p>
+<ul>
+<li><p>抽象类中可以不写抽象方法，但抽象方法的类一定是抽象类。</p>
+</li>
+<li><p>类有的成员（成员变量、方法、构造器）抽象类都具备。</p>
+</li>
+<li><p>抽象类不能创建对象，仅作为一种特殊的父类，让子类继承并实现。</p>
+</li>
+<li><p>一个类继承抽象类，必须重写完抽象类的全部抽象方法，否则这个类也必须定义成抽象方法。</p>
+</li>
+</ul>
+</li>
+<li><p>抽象类的应用场景和好处是什么？</p>
+<ul>
+<li>应用场景：父类知道每个子类都要做某个行为，但每个子类要做的情况不一样，父类就定义成抽象方法，交给子类去重写实现。</li>
+<li>好处：我们抽出这样的抽象类，就是为了更好的支持多态。</li>
+</ul>
+</li>
+</ol>
+<h2 id="模板方法设计模式"><a href="#模板方法设计模式" class="headerlink" title="模板方法设计模式"></a>模板方法设计模式</h2><ol>
+<li><p>模板方法设计模式解决了什么问题？</p>
+<ul>
+<li>解决方法中存在重复代码的问题</li>
+</ul>
+</li>
+<li><p>模板设计方法应该怎么写？</p>
+<ol>
+<li><p>定义一个抽象类。</p>
+</li>
+<li><p>在里面定义2个方法：</p>
+<ul>
+<li><p>一个是模板方法：把相同代码放里面去。</p>
+</li>
+<li><p>一个是抽象方法：具体实现交给子类。</p>
+</li>
+</ul>
+</li>
 </ol>
 </li>
+<li><p>建议使用<code>final</code>关键字修饰模板方法</p>
+<ul>
+<li>模板方法是给对象直接使用的，不能被子类重写。</li>
+<li>一旦子类重写了模板方法，模板方法就失效了</li>
 </ul>
+</li>
+</ol>
+<h1 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h1><h2 id="认识接口"><a href="#认识接口" class="headerlink" title="认识接口"></a>认识接口</h2><ol>
+<li><p>Java提供了一个关键字<code>interface</code>，用这个关键字我们可以定义出一个特殊的结构：<em>接口</em>。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> interface 接口名&#123;</span><br><span class="line">    <span class="comment">//成员变量（常量）</span></span><br><span class="line">    <span class="comment">//成员方法（抽象方法）</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>注意：接口不能创建对象</p>
+</li>
+<li><p>接口是用来被类实现的（<code>implements</code>）的，实现接口的类称为实现类。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">修饰符 class 类名 implements 接口<span class="number">1</span>, 接口<span class="number">2</span>，……&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>一个类可以实现多个接口，实现类实现多个接口，必须重写完全部接口的全部抽象方法，否则实现类需要定义成抽象类。</p>
+</li>
+</ol>
+<h2 id="使用接口的好处"><a href="#使用接口的好处" class="headerlink" title="使用接口的好处"></a>使用接口的好处</h2><ol>
+<li>弥补了类单继承的不足，一个类可以同时实现多个接口</li>
+<li>别人通过类实现的接口，就可以显性的知道类实现的功能</li>
+<li>让程序可以面向接口编程，这样程序员就可以灵活方便的切换各种业务实现</li>
+</ol>
+<h2 id="其他细节"><a href="#其他细节" class="headerlink" title="其他细节"></a>其他细节</h2><ol>
+<li><p>JDK8开始，在接口中新增了哪些方法？</p>
+<ul>
+<li><p>默认方法：使用<code>default</code>修饰，使用实现类的对象调用</p>
+</li>
+<li><p>静态方法：<code>static</code>修饰，必须使用当前接口名调用</p>
+</li>
+<li><p>私有方法：<code>private</code>修饰，jdk9开始才有的，只能在接口内部被调用</p>
+</li>
+<li><p>他们都会默认被<code>public</code>修饰</p>
+</li>
+</ul>
+</li>
+<li><p>JDK8开始，接口为什么要新增这些方法？</p>
+<ul>
+<li>增强了接口的能力，更便于项目的扩展和维护</li>
+</ul>
+</li>
+<li><p>接口的多继承：一个接口可以同时继承多个接口</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">interface</span> <span class="title class_">A</span>&#123;&#125;</span><br><span class="line"><span class="keyword">interface</span> <span class="title class_">B</span>&#123;&#125;</span><br><span class="line"><span class="keyword">interface</span> <span class="title class_">C</span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 接口是多继承的</span></span><br><span class="line"><span class="keyword">interface</span> <span class="title class_">D</span> <span class="keyword">extends</span> <span class="title class_">C</span>, B, A&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>接口多继承的作用：便于实现类去实现</p>
+</li>
+<li><p>接口其他注意事项：</p>
+<ul>
+<li>一个接口继承多个接口，如果多个接口中存在方法签名冲突，则此时不支持多继承</li>
+<li>一个类实现多个接口，如果多个继承中存在方法签名冲突，则此时不支持多实现</li>
+<li>一个类继承了父类，又同时实现了接口，父类中和接口中有同名的默认方法，实现类会优先用父类的</li>
+<li>一个类实现了多个接口，多个接口中存在同名的默认方法，可以不冲突，这个类重写方法即可</li>
+</ul>
+</li>
+</ol>
 ]]></content>
       <categories>
         <category>Java</category>
@@ -1468,68 +1989,6 @@
       </categories>
   </entry>
   <entry>
-    <title>Python基础(三)——函数</title>
-    <url>/2023/08/12/Python%E5%9F%BA%E7%A1%80(%E4%B8%89)%E2%80%94%E2%80%94%E5%87%BD%E6%95%B0/</url>
-    <content><![CDATA[<h1 id="函数介绍"><a href="#函数介绍" class="headerlink" title="函数介绍"></a>函数介绍</h1><ul>
-<li>函数是组织好的，可重复使用的，用来实现特定功能的代码段，如前面的type()、input()等都是Python的内置函数。</li>
-<li>函数可以提高程序的复用性，减少重复性代码，提高开发效率</li>
-</ul>
-<h1 id="函数的定义和调用"><a href="#函数的定义和调用" class="headerlink" title="函数的定义和调用"></a>函数的定义和调用</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 定义函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">函数名</span>(<span class="params">传入参数</span>):</span><br><span class="line">    函数体</span><br><span class="line">    <span class="keyword">return</span> 返回值</span><br><span class="line"></span><br><span class="line"><span class="comment"># 调用函数</span></span><br><span class="line">函数名(参数)</span><br></pre></td></tr></table></figure>
-
-
-
-<p><strong>注意：</strong></p>
-<ul>
-<li>参数如果不需要，可以省略</li>
-<li>返回值如果不需要，可以省略</li>
-<li>函数必须先定义后使用</li>
-</ul>
-<h1 id="函数的参数"><a href="#函数的参数" class="headerlink" title="函数的参数"></a>函数的参数</h1><p>传入参数的功能是：在函数进行计算的时候，接受外部（调用时）提供的数据</p>
-<p><strong>语法解析：</strong></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 定义函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">add</span>(<span class="params">x,y</span>):</span><br><span class="line">    result =  x + y</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;<span class="subst">&#123;x&#125;</span> + <span class="subst">&#123;y&#125;</span>的结果是：<span class="subst">&#123;result&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 调用函数</span></span><br><span class="line">add(<span class="number">5</span>,<span class="number">6</span>)</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>函数定义中，提供的x和y，称之为：形式参数（形参），表示函数声明将要使用2个参数，参数直接使用逗号进行分隔</li>
-<li>函数调用中，提供的5和6，称之为：实际参数（实参），表示函数执行时真正使用的参数值，传入的时候，按照顺序传入数据，使用逗号分隔</li>
-<li>传入参数的数量是不受限制的，可以没有，也可以有多个</li>
-</ul>
-<h1 id="函数的返回值"><a href="#函数的返回值" class="headerlink" title="函数的返回值"></a>函数的返回值</h1><h2 id="返回值的定义"><a href="#返回值的定义" class="headerlink" title="返回值的定义"></a>返回值的定义</h2><p>所谓返回值，就是程序中函数完成事情后，最后给调用者的结果</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">函数</span>(<span class="params">参数...</span>):</span><br><span class="line">    函数体</span><br><span class="line">    <span class="keyword">return</span> 返回值</span><br><span class="line"></span><br><span class="line">变量 = 函数(参数)</span><br></pre></td></tr></table></figure>
-
-<p>如上述代码，变量就能接收到函数的返回值</p>
-<p>语法就是：通过return关键字，就能向调用者返回数据</p>
-<p><strong>注意：</strong>函数体在遇到return后就结束了，所以写在return后的代码不会执行</p>
-<h2 id="None类型"><a href="#None类型" class="headerlink" title="None类型"></a>None类型</h2><p>Python中有一个特殊的字面量：None，其类型是：&lt;class ‘NoneType’&gt;，无返回值的函数，实际上就是返回了：None这个字面量</p>
-<p>应用场景：</p>
-<ul>
-<li>用在函数<strong>无返回值</strong>上</li>
-<li>用在<strong>if判断</strong>上，在if判断中，None等同于False，一般用在函数中主动返回None，配合if判断做出相关处理</li>
-<li>在声明无内容的变量上，<strong>定义变量</strong>时，但暂时不需要变量有具体值，可以用None来代替</li>
-</ul>
-<p>None在if中的应用</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">check_age</span>(<span class="params">age</span>):</span><br><span class="line">    <span class="keyword">if</span> age &gt; <span class="number">18</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;SUCCESS&quot;</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">result = check_age(<span class="number">10</span>)</span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> result:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;未成年&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="函数说明文档"><a href="#函数说明文档" class="headerlink" title="函数说明文档"></a>函数说明文档</h1><p>顾名思义，就是在函数中写注释函数进行说明解释，帮助更好理解函数的功能</p>
-<h1 id="函数的嵌套调用"><a href="#函数的嵌套调用" class="headerlink" title="函数的嵌套调用"></a>函数的嵌套调用</h1><p>所谓函数嵌套调用就是指在一个函数里面调用了另外一个函数，如下所示</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">fun_b</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;---2---&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">fun_a</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;---1---&quot;</span>)</span><br><span class="line"></span><br><span class="line">    fun_b()</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;---3---&quot;</span>)</span><br><span class="line"></span><br><span class="line">fun_a()</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">本段代码在fun_a中调用了fun_b</span></span><br><span class="line"><span class="string">运行结果：</span></span><br><span class="line"><span class="string">---1---</span></span><br><span class="line"><span class="string">---2---</span></span><br><span class="line"><span class="string">---3---</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="变量作用域"><a href="#变量作用域" class="headerlink" title="变量作用域"></a>变量作用域</h1><ol>
-<li>变量主要分为局部变量和全局变量</li>
-<li>局部变量：定义在函数体内的局部变量，即只在函数体内部生效</li>
-<li>全局变量：在函数体内、外都能生效的变量</li>
-<li>在函数内部定义一个与全局变量同名的变量，并对其运算，对全局变量无影响</li>
-<li>在函数内部声明全局变量，需要使用global关键字</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Python</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Python基础(二)——判断、循环</title>
     <url>/2023/07/14/Python%E5%9F%BA%E7%A1%80(%E4%BA%8C)%E2%80%94%E2%80%94%E5%88%A4%E6%96%AD%E3%80%81%E5%BE%AA%E7%8E%AF/</url>
     <content><![CDATA[<h1 id="判断语句"><a href="#判断语句" class="headerlink" title="判断语句"></a>判断语句</h1><p>进行逻辑判断是生活中常见的行为，同样，在程序中，进行逻辑判断也是最为基础的功能</p>
@@ -1682,6 +2141,68 @@
 <p>如，range(5,10,2)取得的数据是：[5,7,9]</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">num = <span class="number">100</span></span><br><span class="line">count = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,num):</span><br><span class="line">    <span class="keyword">if</span> x%<span class="number">2</span> == <span class="number">0</span>:</span><br><span class="line">        count += <span class="number">1</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;从1到<span class="subst">&#123;num&#125;</span>(不含<span class="subst">&#123;num&#125;</span>本身)共有<span class="subst">&#123;count&#125;</span>个偶数&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">运行结果：</span></span><br><span class="line"><span class="string">从1到100(不含100本身)共有49个偶数</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
 
+]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Python基础(三)——函数</title>
+    <url>/2023/08/12/Python%E5%9F%BA%E7%A1%80(%E4%B8%89)%E2%80%94%E2%80%94%E5%87%BD%E6%95%B0/</url>
+    <content><![CDATA[<h1 id="函数介绍"><a href="#函数介绍" class="headerlink" title="函数介绍"></a>函数介绍</h1><ul>
+<li>函数是组织好的，可重复使用的，用来实现特定功能的代码段，如前面的type()、input()等都是Python的内置函数。</li>
+<li>函数可以提高程序的复用性，减少重复性代码，提高开发效率</li>
+</ul>
+<h1 id="函数的定义和调用"><a href="#函数的定义和调用" class="headerlink" title="函数的定义和调用"></a>函数的定义和调用</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 定义函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">函数名</span>(<span class="params">传入参数</span>):</span><br><span class="line">    函数体</span><br><span class="line">    <span class="keyword">return</span> 返回值</span><br><span class="line"></span><br><span class="line"><span class="comment"># 调用函数</span></span><br><span class="line">函数名(参数)</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>注意：</strong></p>
+<ul>
+<li>参数如果不需要，可以省略</li>
+<li>返回值如果不需要，可以省略</li>
+<li>函数必须先定义后使用</li>
+</ul>
+<h1 id="函数的参数"><a href="#函数的参数" class="headerlink" title="函数的参数"></a>函数的参数</h1><p>传入参数的功能是：在函数进行计算的时候，接受外部（调用时）提供的数据</p>
+<p><strong>语法解析：</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 定义函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">add</span>(<span class="params">x,y</span>):</span><br><span class="line">    result =  x + y</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;<span class="subst">&#123;x&#125;</span> + <span class="subst">&#123;y&#125;</span>的结果是：<span class="subst">&#123;result&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 调用函数</span></span><br><span class="line">add(<span class="number">5</span>,<span class="number">6</span>)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>函数定义中，提供的x和y，称之为：形式参数（形参），表示函数声明将要使用2个参数，参数直接使用逗号进行分隔</li>
+<li>函数调用中，提供的5和6，称之为：实际参数（实参），表示函数执行时真正使用的参数值，传入的时候，按照顺序传入数据，使用逗号分隔</li>
+<li>传入参数的数量是不受限制的，可以没有，也可以有多个</li>
+</ul>
+<h1 id="函数的返回值"><a href="#函数的返回值" class="headerlink" title="函数的返回值"></a>函数的返回值</h1><h2 id="返回值的定义"><a href="#返回值的定义" class="headerlink" title="返回值的定义"></a>返回值的定义</h2><p>所谓返回值，就是程序中函数完成事情后，最后给调用者的结果</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">函数</span>(<span class="params">参数...</span>):</span><br><span class="line">    函数体</span><br><span class="line">    <span class="keyword">return</span> 返回值</span><br><span class="line"></span><br><span class="line">变量 = 函数(参数)</span><br></pre></td></tr></table></figure>
+
+<p>如上述代码，变量就能接收到函数的返回值</p>
+<p>语法就是：通过return关键字，就能向调用者返回数据</p>
+<p><strong>注意：</strong>函数体在遇到return后就结束了，所以写在return后的代码不会执行</p>
+<h2 id="None类型"><a href="#None类型" class="headerlink" title="None类型"></a>None类型</h2><p>Python中有一个特殊的字面量：None，其类型是：&lt;class ‘NoneType’&gt;，无返回值的函数，实际上就是返回了：None这个字面量</p>
+<p>应用场景：</p>
+<ul>
+<li>用在函数<strong>无返回值</strong>上</li>
+<li>用在<strong>if判断</strong>上，在if判断中，None等同于False，一般用在函数中主动返回None，配合if判断做出相关处理</li>
+<li>在声明无内容的变量上，<strong>定义变量</strong>时，但暂时不需要变量有具体值，可以用None来代替</li>
+</ul>
+<p>None在if中的应用</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">check_age</span>(<span class="params">age</span>):</span><br><span class="line">    <span class="keyword">if</span> age &gt; <span class="number">18</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;SUCCESS&quot;</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">result = check_age(<span class="number">10</span>)</span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> result:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;未成年&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="函数说明文档"><a href="#函数说明文档" class="headerlink" title="函数说明文档"></a>函数说明文档</h1><p>顾名思义，就是在函数中写注释函数进行说明解释，帮助更好理解函数的功能</p>
+<h1 id="函数的嵌套调用"><a href="#函数的嵌套调用" class="headerlink" title="函数的嵌套调用"></a>函数的嵌套调用</h1><p>所谓函数嵌套调用就是指在一个函数里面调用了另外一个函数，如下所示</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">fun_b</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;---2---&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">fun_a</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;---1---&quot;</span>)</span><br><span class="line"></span><br><span class="line">    fun_b()</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;---3---&quot;</span>)</span><br><span class="line"></span><br><span class="line">fun_a()</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">本段代码在fun_a中调用了fun_b</span></span><br><span class="line"><span class="string">运行结果：</span></span><br><span class="line"><span class="string">---1---</span></span><br><span class="line"><span class="string">---2---</span></span><br><span class="line"><span class="string">---3---</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="变量作用域"><a href="#变量作用域" class="headerlink" title="变量作用域"></a>变量作用域</h1><ol>
+<li>变量主要分为局部变量和全局变量</li>
+<li>局部变量：定义在函数体内的局部变量，即只在函数体内部生效</li>
+<li>全局变量：在函数体内、外都能生效的变量</li>
+<li>在函数内部定义一个与全局变量同名的变量，并对其运算，对全局变量无影响</li>
+<li>在函数内部声明全局变量，需要使用global关键字</li>
+</ol>
 ]]></content>
       <categories>
         <category>Python</category>
