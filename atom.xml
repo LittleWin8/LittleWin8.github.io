@@ -6,7 +6,7 @@
   <link href="http://littlewin8.github.io/atom.xml" rel="self"/>
   
   <link href="http://littlewin8.github.io/"/>
-  <updated>2023-09-24T10:36:54.167Z</updated>
+  <updated>2023-09-25T02:56:42.826Z</updated>
   <id>http://littlewin8.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Java基础(五)——内部类、枚举、泛型</title>
+    <link href="http://littlewin8.github.io/2023/09/25/Java%E5%9F%BA%E7%A1%80(%E4%BA%94)%E2%80%94%E2%80%94%E5%86%85%E9%83%A8%E7%B1%BB%E3%80%81%E6%9E%9A%E4%B8%BE%E3%80%81%E6%B3%9B%E5%9E%8B/"/>
+    <id>http://littlewin8.github.io/2023/09/25/Java%E5%9F%BA%E7%A1%80(%E4%BA%94)%E2%80%94%E2%80%94%E5%86%85%E9%83%A8%E7%B1%BB%E3%80%81%E6%9E%9A%E4%B8%BE%E3%80%81%E6%B3%9B%E5%9E%8B/</id>
+    <published>2023-09-25T02:54:49.000Z</published>
+    <updated>2023-09-25T02:56:42.826Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;内部类&quot;&gt;&lt;a href=&quot;#内部类&quot; class=&quot;headerlink&quot; title=&quot;内部类&quot;&gt;&lt;/a&gt;内部类&lt;/h1&gt;&lt;h2 id=&quot;内部类概述&quot;&gt;&lt;a href=&quot;#内部类概述&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Java" scheme="http://littlewin8.github.io/categories/Java/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Java基础(四)——面向对象</title>
