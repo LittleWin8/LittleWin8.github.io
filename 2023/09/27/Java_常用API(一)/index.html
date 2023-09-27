@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+  
+
+    <head>
+      <meta charset="utf-8" />
+        
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1"
+      />
+      <title>Java_常用API(一) |  小稳</title>
+  <meta name="generator" content="hexo-theme-ayer">
+      
+      <link rel="shortcut icon" href="/littlewin.png" />
+       
+<link rel="stylesheet" href="/dist/main.css">
+
+      
+<link rel="stylesheet" href="/css/fonts/remixicon.css">
+
+      
+<link rel="stylesheet" href="/css/custom.css">
+ 
+      <script src="https://cdn.staticfile.org/pace/1.2.4/pace.min.js"></script>
+       
+ 
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-bulma@5.0.1/bulma.min.css"
+      />
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
+
+      <!-- mermaid -->
+      
+      <style>
+        .swal2-styled.swal2-confirm {
+          font-size: 1.6rem;
+        }
+      </style>
+    <link rel="alternate" href="/atom.xml" title="小稳" type="application/atom+xml">
+</head>
+  </html>
+</html>
+
+
+<body>
+  <div id="app">
+    
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-Java_常用API(一)"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  Java_常用API(一)
+</h1>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2023/09/27/Java_%E5%B8%B8%E7%94%A8API(%E4%B8%80)/" class="article-date">
+  <time datetime="2023-09-27T03:08:30.000Z" itemprop="datePublished">2023-09-27</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Java/">Java</a>
+  </div>
+  
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> Word count:</span>
+            <span class="post-count">2.1k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> Reading time≈</span>
+            <span class="post-count">7 min</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="API"><a href="#API" class="headerlink" title="API"></a>API</h1><ol>
+<li>什么是API？<ul>
+<li>全称应用程序编程接口（Application Programming interface）</li>
+<li>就是Java自己写好的程序，给程序员调用，方便完成一些功能</li>
+</ul>
+</li>
+<li>API文档：程序使用说明书</li>
+</ol>
+<h1 id="包"><a href="#包" class="headerlink" title="包"></a>包</h1><ol>
+<li>什么是包？<ul>
+<li>包是用来分门别类的管理各种不同程序的，类似于文件夹，建包有利于程序的管理与维护。</li>
+<li>建包的语法格式：如：<code>package com.local.project;</code></li>
+</ul>
+</li>
+<li>在自己程序中调用其他包下的程序的注意事项<ul>
+<li>如果当前程序中，要调用自己所在包下的其他程序，可以直接调用。（同一个包下的类，互相可以直接调用）</li>
+<li>如果当前程序中，要调用其他包下的程序，则必须在当前程序中导包，才可以访问！导包格式：<code>import 包名.类名;</code></li>
+<li>如果当前程序中，要调用Java提供的程序，也需要先导包才可以使用；但<code>java.lang</code>包下的程序是不需要我们导包的，可以直接使用</li>
+<li>如果当前程序，要调用多个不同包下的程序，而这些程序名正好一样，此时默认只能导入一个程序，另一个程序必须带包名访问</li>
+</ul>
+</li>
+</ol>
+<h1 id="String"><a href="#String" class="headerlink" title="String"></a>String</h1><h2 id="String创建对象封装字符串数据的方式"><a href="#String创建对象封装字符串数据的方式" class="headerlink" title="String创建对象封装字符串数据的方式"></a>String创建对象封装字符串数据的方式</h2><ol>
+<li><p>方式一：Java程序中的所有字符串文字（例如：”abc”）都为此类对象</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">name</span> <span class="operator">=</span> <span class="string">&quot;张三&quot;</span>;</span><br><span class="line"><span class="type">String</span> <span class="variable">addr</span> <span class="operator">=</span> <span class="string">&quot;沈阳&quot;</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>方法二：调用String类的构造方法初始化字符串对象</p>
+<table>
+<thead>
+<tr>
+<th align="center">构造方法</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public String()</code></td>
+<td align="center">创建一个空白字符串对象，不含任何内容</td>
+</tr>
+<tr>
+<td align="center"><code>public String(String original)</code></td>
+<td align="center">根据传入的字符串内容，来创建字符串对象</td>
+</tr>
+<tr>
+<td align="center"><code>public String(char[] chars)</code></td>
+<td align="center">根据字符数组的内容，来创建字符串对象</td>
+</tr>
+<tr>
+<td align="center"><code>public String(byte[] byte)</code></td>
+<td align="center">根据字节数组的内容，来创建字符串对象</td>
+</tr>
+</tbody></table>
+</li>
+</ol>
+<h2 id="String的常用方法"><a href="#String的常用方法" class="headerlink" title="String的常用方法"></a>String的常用方法</h2><table>
+<thead>
+<tr>
+<th align="center">方法名</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public int length()</code></td>
+<td align="center">获取字符串的长度返回（就是字符个数）</td>
+</tr>
+<tr>
+<td align="center"><code>public char charAt(int index)</code></td>
+<td align="center">获取某个索引处的字符返回</td>
+</tr>
+<tr>
+<td align="center"><code>public char[] toCharArray()</code></td>
+<td align="center">将当前字符串转换成字符数组返回</td>
+</tr>
+<tr>
+<td align="center"><code>public boolean equals(Object anObject)</code></td>
+<td align="center">判断当前字符串与另一个字符串的内容是否一样，一样返回true</td>
+</tr>
+<tr>
+<td align="center"><code>public boolean equalsIgnoreCase(String anotherString)</code></td>
+<td align="center">判断当前字符串与另一个字符串的内容是否一样（忽略大小写）</td>
+</tr>
+<tr>
+<td align="center"><code>public String substring(int beginIndex, int endINdex)</code></td>
+<td align="center">根据开始和结束索引处截取，得到新的字符串返回</td>
+</tr>
+<tr>
+<td align="center"><code>public String substring(int beginIndex)</code></td>
+<td align="center">从传入的索引处截取，截取到末尾，得到新的字符串返回</td>
+</tr>
+<tr>
+<td align="center"><code>public String replace(CharSequence target, CharSequence replcaement)</code></td>
+<td align="center">使用新值，将字符串中的旧值替换，得到新的字符串</td>
+</tr>
+<tr>
+<td align="center"><code>public boolean contains(String s)</code></td>
+<td align="center">判断字符串中是否包含了某个字符串</td>
+</tr>
+<tr>
+<td align="center"><code>public boolean startsWith(String s)</code></td>
+<td align="center">判断字符串是否以某个字符串内容开头，开头则返回true，否则返回false</td>
+</tr>
+<tr>
+<td align="center"><code>public String[] split(String regex)</code></td>
+<td align="center">把字符串按照某个字符串内容分割，并返回字符串数组回来</td>
+</tr>
+</tbody></table>
+<h2 id="String使用时的注意事项"><a href="#String使用时的注意事项" class="headerlink" title="String使用时的注意事项"></a>String使用时的注意事项</h2><ol>
+<li>String是不可变字符串对象</li>
+<li>只要使用<code>&quot;……&quot;</code>方式写出的字符串对象，会存储到字符串常量池，且相同内容的字符串只存储一份。</li>
+<li>通过<code>new</code>方式创建的字符串对象，每<code>new</code>一次都会产生一个新的对象放在堆内存中</li>
+</ol>
+<h1 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h1><ul>
+<li>集合是一种容器，用来存储数据，且集合的大小可变</li>
+<li>ArrayList<E>是用的最多、最常见的一种集合，它是泛型类，可以约束存储的数据类型。</li>
+</ul>
+<h2 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h2><table>
+<thead>
+<tr>
+<th align="center">构造方法</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public ArrayList()</code></td>
+<td align="center">创建一个空的集合对象</td>
+</tr>
+</tbody></table>
+<h2 id="ArrayList的常用方法"><a href="#ArrayList的常用方法" class="headerlink" title="ArrayList的常用方法"></a>ArrayList的常用方法</h2><table>
+<thead>
+<tr>
+<th align="center">常用方法名</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public boolean add(E e)</code></td>
+<td align="center">将指定的元素添加到次集合的末尾</td>
+</tr>
+<tr>
+<td align="center"><code>public void add(int index, E element)</code></td>
+<td align="center">在此集合中的指定位置插入指定的元素</td>
+</tr>
+<tr>
+<td align="center"><code>public E get(int index)</code></td>
+<td align="center">返回指定索引处的元素</td>
+</tr>
+<tr>
+<td align="center"><code>public int size()</code></td>
+<td align="center">返回集合中的元素个数</td>
+</tr>
+<tr>
+<td align="center"><code>public E remove(int index)</code></td>
+<td align="center">删除指定索引处的元素，返回被删除的元素</td>
+</tr>
+<tr>
+<td align="center"><code>public boolean remove(Object o)</code></td>
+<td align="center">删除指定的元素，返回删除是否成功</td>
+</tr>
+<tr>
+<td align="center"><code>public E set(int index,E element)</code></td>
+<td align="center">修改指定索引处的元素，返回被修改的元素</td>
+</tr>
+</tbody></table>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ul>
+<li>从前往后遍历删除时可能存在漏掉元素删除元素后，执行<code>i--</code>即可或者从后往前遍历</li>
+</ul>
+<h1 id="Object"><a href="#Object" class="headerlink" title="Object"></a>Object</h1><h2 id="Object类的作用"><a href="#Object类的作用" class="headerlink" title="Object类的作用"></a>Object类的作用</h2><ul>
+<li>Object类是Java中所有类的祖宗类，因此，Java中所有类的对象都可以直接使用Object类中提供的一些方法。</li>
+</ul>
+<h2 id="Object类的常见方法"><a href="#Object类的常见方法" class="headerlink" title="Object类的常见方法"></a>Object类的常见方法</h2><table>
+<thead>
+<tr>
+<th align="center">方法名</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public String toString()</code></td>
+<td align="center">返回对象的字符串表示形式</td>
+</tr>
+<tr>
+<td align="center"><code>public boolean equals(Object o)</code></td>
+<td align="center">判断两个对象是否相等</td>
+</tr>
+<tr>
+<td align="center"><code>protected Object clone()</code></td>
+<td align="center">对象克隆</td>
+</tr>
+</tbody></table>
+<ol>
+<li><p><code>toString</code>方法的作用和意义</p>
+<ul>
+<li><p>基本作用：返回对象的字符串形式。</p>
+</li>
+<li><p>存在意义：让子类重写，一遍返回子类对象的内容。</p>
+</li>
+</ul>
+</li>
+<li><p><code>equals</code>方法的作用和意义</p>
+<ul>
+<li>基本作用：,默认是比较两个对象的地址是否相等。</li>
+<li>存在意义：让子类从写，以便于比较对象的内容是否相同。</li>
+</ul>
+</li>
+</ol>
+<h1 id="Objects"><a href="#Objects" class="headerlink" title="Objects"></a>Objects</h1><ul>
+<li>Objects是一个工具类，提供了很多操作对象的静态方法给我们使用</li>
+</ul>
+<h2 id="Objects类的常见方法"><a href="#Objects类的常见方法" class="headerlink" title="Objects类的常见方法"></a>Objects类的常见方法</h2><table>
+<thead>
+<tr>
+<th align="center">方法名</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public static boolean equals(Object a, Object b)</code></td>
+<td align="center">先做非空判断，再比较两个对象</td>
+</tr>
+<tr>
+<td align="center"><code>public static boolean isNull(Object obj)</code></td>
+<td align="center">判断对象是否为<code>null</code>，为<code>null</code>返回<code>true</code>，反之</td>
+</tr>
+<tr>
+<td align="center"><code>public static boolean nonNull(Object obj)</code></td>
+<td align="center">判断对象是否不为<code>null</code>，不为<code>null</code>返回<code>true</code>，反之</td>
+</tr>
+</tbody></table>
+<h1 id="包装类"><a href="#包装类" class="headerlink" title="包装类"></a>包装类</h1><ul>
+<li><p>包装类就是把基本数据类型包装成对象</p>
+<table>
+<thead>
+<tr>
+<th align="center">基本数据类型</th>
+<th align="center">对应的包装类（引用数据类型）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">byte</td>
+<td align="center">Byte</td>
+</tr>
+<tr>
+<td align="center">short</td>
+<td align="center">Short</td>
+</tr>
+<tr>
+<td align="center">int</td>
+<td align="center">Integer</td>
+</tr>
+<tr>
+<td align="center">long</td>
+<td align="center">Long</td>
+</tr>
+<tr>
+<td align="center">char</td>
+<td align="center">Charactor</td>
+</tr>
+<tr>
+<td align="center">float</td>
+<td align="center">Float</td>
+</tr>
+<tr>
+<td align="center">double</td>
+<td align="center">Double</td>
+</tr>
+<tr>
+<td align="center">boolean</td>
+<td align="center">Boolean</td>
+</tr>
+</tbody></table>
+<ul>
+<li>自动装箱：基本数据类型可以自动转换为包装类型</li>
+<li>自动拆箱：包装类型可以自动转换为基本数据类型</li>
+</ul>
+</li>
+</ul>
+<h2 id="包装类的其他常见操作"><a href="#包装类的其他常见操作" class="headerlink" title="包装类的其他常见操作"></a>包装类的其他常见操作</h2><ul>
+<li><p>可以把基本类型的数据转换成字符串类型</p>
+<table>
+<thead>
+<tr>
+<th>方法名</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>public static String toSpring(double d)</code></td>
+</tr>
+<tr>
+<td><code>public String toSpring()</code></td>
+</tr>
+</tbody></table>
+</li>
+<li><p>可以把字符串类型的数值转换成数值本身对应的数据类型</p>
+<table>
+<thead>
+<tr>
+<th>方法名</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>public static int parseInt(String s)</code></td>
+</tr>
+<tr>
+<td><code>public static Integer valueOf(String s)</code></td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<h1 id="StringBuilder"><a href="#StringBuilder" class="headerlink" title="StringBuilder"></a>StringBuilder</h1><ul>
+<li>StringBuilder代表可变字符串对象，相当于是一个容器，它里面装的字符串是可以改变的，就是用来操作字符串的。</li>
+<li>好处：StringBuilder比String更适合做字符串的修改操作，效率会更高，代码也会更简洁。</li>
+<li>对于字符串相关操作，如频繁的拼接、修改等，建议使用StringBuilder，效率更高</li>
+<li>注意：如果操作字符串较少，或者不需要操作，以及定义字符串变量，还是建议使用String</li>
+</ul>
+<h2 id="StringBuilder的构造方法"><a href="#StringBuilder的构造方法" class="headerlink" title="StringBuilder的构造方法"></a>StringBuilder的构造方法</h2><table>
+<thead>
+<tr>
+<th align="center">构造方法</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public StringBuilder()</code></td>
+<td align="center">创建一个空白的可变字符串对象，不包含任何内容</td>
+</tr>
+<tr>
+<td align="center"><code>public StringBuilder(String str)</code></td>
+<td align="center">创建一个指定字符串内容的可变字符串对象</td>
+</tr>
+</tbody></table>
+<h2 id="StringBuilder的常用方法"><a href="#StringBuilder的常用方法" class="headerlink" title="StringBuilder的常用方法"></a>StringBuilder的常用方法</h2><table>
+<thead>
+<tr>
+<th align="center">方法名称</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public StringBuilder append(任意类型)</code></td>
+<td align="center">添加数据并返回StringBuilder对象本身</td>
+</tr>
+<tr>
+<td align="center"><code>public StringBuilder reverse()</code></td>
+<td align="center">将对象的内容反转</td>
+</tr>
+<tr>
+<td align="center"><code>public int length()</code></td>
+<td align="center">返回对象的内容长度</td>
+</tr>
+<tr>
+<td align="center"><code>public String toString()</code></td>
+<td align="center">通过toString()就可以实现把StringBuilder转换为String</td>
+</tr>
+</tbody></table>
+<h1 id="StringBuffer"><a href="#StringBuffer" class="headerlink" title="StringBuffer"></a>StringBuffer</h1><ul>
+<li>StringBuffer的用法与StringBuilder是一模一样的</li>
+<li>但StringBuilder是线程不安全的，StringBuffer是线程安全</li>
+</ul>
+<h1 id="StringJoiner"><a href="#StringJoiner" class="headerlink" title="StringJoiner"></a>StringJoiner</h1><ul>
+<li>JDK8开始才有的，跟StringBuilder一样，也是用来操作字符串的，也可以看成是一个容器，创建后里面的内容是可变的。</li>
+<li>好处：不仅能提高字符串的操作效率，并且在有些场景下使用它操作字符串，代码会更简洁</li>
+</ul>
+<h2 id="StringJoiner的构造方法"><a href="#StringJoiner的构造方法" class="headerlink" title="StringJoiner的构造方法"></a>StringJoiner的构造方法</h2><table>
+<thead>
+<tr>
+<th align="center">构造方法</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public StringJoiner()</code></td>
+<td align="center">创建一个StringJoiner对象，指定拼接时的间隔符号</td>
+</tr>
+<tr>
+<td align="center"><code>public StringJoiner(间隔符号, 开始符号, 结束符号)</code></td>
+<td align="center">创建一个StringJoiner对象，指定拼接时的间隔符号、开始符号、结束符号</td>
+</tr>
+</tbody></table>
+<h2 id="StringJoiner的常用方法"><a href="#StringJoiner的常用方法" class="headerlink" title="StringJoiner的常用方法"></a>StringJoiner的常用方法</h2><table>
+<thead>
+<tr>
+<th align="center">方法名称</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public StringJoiner add(添加的内容)</code></td>
+<td align="center">添加数据，并返回对象本身</td>
+</tr>
+<tr>
+<td align="center"><code>public int length()</code></td>
+<td align="center">返回长度（字符出现的个数）</td>
+</tr>
+<tr>
+<td align="center"><code>public String toString()</code></td>
+<td align="center">返回一个字符串（该字符串就是拼接之后的结果）</td>
+</tr>
+</tbody></table>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>Copyright： </strong>
+          
+          Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source.
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://littlewin8.github.io/2023/09/27/Java_%E5%B8%B8%E7%94%A8API(%E4%B8%80)/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+    
+      <a href="/2023/09/25/Java%E5%9F%BA%E7%A1%80(%E4%BA%94)%E2%80%94%E2%80%94%E5%86%85%E9%83%A8%E7%B1%BB%E3%80%81%E6%9E%9A%E4%B8%BE%E3%80%81%E6%B3%9B%E5%9E%8B/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">Java基础(五)——内部类、枚举、泛型</div>
+      </a>
+    
+  </nav>
+
+  
+   
+  
+   
+    <script src="https://cdn.staticfile.org/twikoo/1.4.18/twikoo.all.min.js"></script>
+    <div id="twikoo" class="twikoo"></div>
+    <script>
+        twikoo.init({
+            envId: ""
+        })
+    </script>
+ 
+</article>
+
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2023
+        <i class="ri-heart-fill heart_icon"></i> LittleWin
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>Visitors:<span id="busuanzi_value_site_uv"></span></span>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>Views:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914'></script>
+        
+      </li>
+    </ul>
+  </div>
+</footer>    
+    </main>
+    <div class="float_btns">
+      <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+    </div>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/littlewin.png" alt="小稳"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/friends">友链</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/2023/about">关于我</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="Search">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-3.6.0.min.js"></script>
+ 
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+ 
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: ".tocbot",
+    contentSelector: ".article-entry",
+    headingSelector: "h1, h2, h3, h4, h5, h6",
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: "main",
+    positionFixedSelector: ".tocbot",
+    positionFixedClass: "is-position-fixed",
+    fixedSidebarOffset: "auto",
+  });
+</script>
+
+<script src="https://cdn.staticfile.org/jquery-modal/0.9.2/jquery.modal.min.js"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.staticfile.org/jquery-modal/0.9.2/jquery.modal.min.css"
+/>
+<script src="https://cdn.staticfile.org/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+ <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.staticfile.org/photoswipe/4.1.3/default-skin/default-skin.min.css">
+<script src="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe.min.js"></script>
+<script src="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script> 
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+ 
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+ 
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+ 
+<link rel="stylesheet" href="/css/clipboard.css">
+ <script src="https://cdn.staticfile.org/clipboard.js/2.0.10/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+ 
+<!-- CanvasBackground -->
+
+<script>
+  if (window.mermaid) {
+    mermaid.initialize({ theme: "forest" });
+  }
+</script>
+
+
+    
+    
+
+  </div>
+</body>
+
+</html>

@@ -6,7 +6,7 @@
   <link href="http://littlewin8.github.io/atom.xml" rel="self"/>
   
   <link href="http://littlewin8.github.io/"/>
-  <updated>2023-09-25T02:56:42.826Z</updated>
+  <updated>2023-09-27T03:10:10.073Z</updated>
   <id>http://littlewin8.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Java_常用API(一)</title>
+    <link href="http://littlewin8.github.io/2023/09/27/Java_%E5%B8%B8%E7%94%A8API(%E4%B8%80)/"/>
+    <id>http://littlewin8.github.io/2023/09/27/Java_%E5%B8%B8%E7%94%A8API(%E4%B8%80)/</id>
+    <published>2023-09-27T03:08:30.000Z</published>
+    <updated>2023-09-27T03:10:10.073Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;API&quot;&gt;&lt;a href=&quot;#API&quot; class=&quot;headerlink&quot; title=&quot;API&quot;&gt;&lt;/a&gt;API&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;什么是API？&lt;ul&gt;
+&lt;li&gt;全称应用程序编程接口（Application Programming</summary>
+        
+      
+    
+    
+    
+    <category term="Java" scheme="http://littlewin8.github.io/categories/Java/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Java基础(五)——内部类、枚举、泛型</title>
