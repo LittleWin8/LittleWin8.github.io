@@ -85,7 +85,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">1.4k</span>
+            <span class="post-count">2k</span>
         </span>
     </span>
 
@@ -94,7 +94,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> Reading time≈</span>
-            <span class="post-count">5 min</span>
+            <span class="post-count">7 min</span>
         </span>
     </span>
 </div>
@@ -255,6 +255,44 @@
 <li>泛型不支持基本数据类型，只能支持对象类型（引用数据类型）</li>
 </ul>
 </li>
+</ol>
+<h1 id="JDK8新特性：Lambda表达式"><a href="#JDK8新特性：Lambda表达式" class="headerlink" title="JDK8新特性：Lambda表达式"></a>JDK8新特性：Lambda表达式</h1><h2 id="认识Lambda表达式"><a href="#认识Lambda表达式" class="headerlink" title="认识Lambda表达式"></a>认识Lambda表达式</h2><ol>
+<li><p>Lambda表达式是JDK8开始新增的一种语法形式，作用是用于简化匿名内部类的代码写法。</p>
+</li>
+<li><p>格式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(被重写方法的形参列表)-&gt;&#123;</span><br><span class="line">    被重写方法的方法体代码;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>注意：Lambda表达式只能简化函数式接口的匿名内部类</p>
+</li>
+<li><p>函数式接口：</p>
+<ul>
+<li>有且仅有一个抽象方法的接口。</li>
+<li>将来我们见到的大部分函数式接口，上面都可能会有一个<code>@FunctionalInterface</code>的注解，有该注解的接口就必定是函数式接口名。</li>
+</ul>
+</li>
+</ol>
+<h2 id="Lambda表达式的省略规则"><a href="#Lambda表达式的省略规则" class="headerlink" title="Lambda表达式的省略规则"></a>Lambda表达式的省略规则</h2><ul>
+<li>参数类型可以不写。</li>
+<li>如果只有一个参数，参数类型可以省略，同时<code>()</code>也可以省略</li>
+<li>如果Lambda表达式中的方法体代码只有一行代码，可以省略大括号不写，同时要省略分号！此时，如果这行代码是return语句，也必须去掉return不写</li>
+</ul>
+<h1 id="JDK8新特性：方法引用"><a href="#JDK8新特性：方法引用" class="headerlink" title="JDK8新特性：方法引用"></a>JDK8新特性：方法引用</h1><h2 id="静态方法的引用"><a href="#静态方法的引用" class="headerlink" title="静态方法的引用"></a>静态方法的引用</h2><ol>
+<li>静态方法的引用：<code>类名::静态方法</code></li>
+<li>使用场景：如果某个Lambda表达式里只是调用一个静态方法，并且前后参数的形式一致，就可以使用静态方法引用。</li>
+</ol>
+<h2 id="实例方法的引用"><a href="#实例方法的引用" class="headerlink" title="实例方法的引用"></a>实例方法的引用</h2><ol>
+<li>实例方法的引用：<code>类名::实例方法</code></li>
+<li>使用场景：如果某个Lambda表达式里只是调用一个实例方法，并且前后参数的形式一致，就可以使用实例方法引用。</li>
+</ol>
+<h2 id="特定类型方法的引用"><a href="#特定类型方法的引用" class="headerlink" title="特定类型方法的引用"></a>特定类型方法的引用</h2><ol>
+<li>特定类型方法的引用：<code>类型::方法</code></li>
+<li>使用场景：如果某个Lambda表达式里只是调用一个实例方法，并且前面参数列表中的第一个参数是作为作为方法的主调，后面的所有参数都是作为该实例方法的入参的，则此时就可以使用指定类型的方法引用。</li>
+</ol>
+<h2 id="构造器引用"><a href="#构造器引用" class="headerlink" title="构造器引用"></a>构造器引用</h2><ol>
+<li>构造器引用：<code>类名::new</code></li>
+<li>使用场景：如果某个lambda表达式里只是在创建对象，并且前后参数情况一致，就可以使用构造器引用。</li>
 </ol>
  
       <!-- reward -->
