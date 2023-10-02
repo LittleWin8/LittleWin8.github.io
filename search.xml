@@ -593,6 +593,924 @@
       </categories>
   </entry>
   <entry>
+    <title>Java基础(三)——数组、方法</title>
+    <url>/2023/09/22/Java%E5%9F%BA%E7%A1%80(%E4%B8%89)%E2%80%94%E2%80%94%E6%95%B0%E7%BB%84%E3%80%81%E6%96%B9%E6%B3%95/</url>
+    <content><![CDATA[<h1 id="数组概述"><a href="#数组概述" class="headerlink" title="数组概述"></a>数组概述</h1><ul>
+<li>数组就是一个容器，用来存储一批同种类型的数据</li>
+</ul>
+<h1 id="数组的定义和访问"><a href="#数组的定义和访问" class="headerlink" title="数组的定义和访问"></a>数组的定义和访问</h1><h2 id="静态初始化数组"><a href="#静态初始化数组" class="headerlink" title="静态初始化数组"></a>静态初始化数组</h2><ol>
+<li><p>数组的静态初始化的写法和特点什么样的？</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">数据类型[] 数组名 = &#123;元素<span class="number">1</span>, 元素<span class="number">2</span>, 元素<span class="number">3</span>,……&#125;;</span><br><span class="line"><span class="type">int</span>[] ages = &#123;<span class="number">12</span>, <span class="number">24</span>, <span class="number">36</span>, <span class="number">68</span>&#125;;</span><br><span class="line"><span class="type">double</span>[] scores = &#123;<span class="number">89.9</span>, <span class="number">79.8</span>, <span class="number">69.1</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 完整格式</span></span><br><span class="line">数据类型[] 数组名 = <span class="keyword">new</span> 数据类型[]&#123;元素<span class="number">1</span>, 元素<span class="number">2</span>, 元素<span class="number">3</span>,……&#125;;</span><br><span class="line"><span class="type">int</span>[] ages = <span class="keyword">new</span> <span class="title class_">int</span>[]&#123;<span class="number">12</span>, <span class="number">24</span>, <span class="number">36</span>, <span class="number">68</span>&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>注意：</p>
+<ul>
+<li>什么类型的数组必须存放什么类型的数据。</li>
+<li>“数据类型[] 数组名”  也可以写成  “数据类型 数组名[]”</li>
+<li>数组是引用数据类型，数组变量名中存储的是数组在内存中的地址信息</li>
+</ul>
+</li>
+<li><p>数组的访问</p>
+<ul>
+<li>访问数组的元素：<code>数组名称[索引]</code></li>
+<li>访问数组的长度：<code>数组名称.length</code></li>
+<li>数组的最大索引：<code>数组名.length - 1</code></li>
+<li>如果访问数组时，使用的索引超过了数组长度执行程序时会出bug，出现一个索引越界的异常提示。</li>
+</ul>
+</li>
+<li><p>数组的遍历</p>
+<ul>
+<li><p>遍历：一个一个的访问一遍容器中的数据。</p>
+</li>
+<li><p>如何遍历数组：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span>[] ages = &#123;<span class="number">20</span>, <span class="number">30</span>, <span class="number">40</span>, <span class="number">50</span>&#125;;</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; ages.length; i++)&#123;</span><br><span class="line">    System.out.println(ages[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ol>
+<h2 id="动态初始化数组"><a href="#动态初始化数组" class="headerlink" title="动态初始化数组"></a>动态初始化数组</h2><ol>
+<li><p>动态初始化数组的写法时什么样的？有什么特点?</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">数据类型[] 数组名 = <span class="keyword">new</span> 数据类型[长度];</span><br><span class="line"><span class="type">int</span>[] ages = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">4</span>];</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>动态初始化数组后元素的默认值：</p>
+<table>
+<thead>
+<tr>
+<th align="center">数据类型</th>
+<th align="center">默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">byte、short、char、int、 long</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">float、double</td>
+<td align="center">0.0</td>
+</tr>
+<tr>
+<td align="center">boolean</td>
+<td align="center">false</td>
+</tr>
+<tr>
+<td align="center">类、接口、数组、String</td>
+<td align="center">null</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>两种数组定义的方法各自适合什么业务场景？</p>
+<ul>
+<li>动态初始化：适合开始不确定具体元素值，只知道元素个数的业务场景</li>
+<li>静态初始化：适合一开始就知道要存入那些元素值的业务场景</li>
+</ul>
+</li>
+</ol>
+<h1 id="数组在计算机中的执行原理"><a href="#数组在计算机中的执行原理" class="headerlink" title="数组在计算机中的执行原理"></a>数组在计算机中的执行原理</h1><ol>
+<li>运行一个Java程序，主要看JVM中包含的哪几部分内存区域？<ul>
+<li>方法区：字节码文件先加载到这里</li>
+<li>栈内存：方法运行时所进入的内存，变量也是在这里</li>
+<li>堆内存：new出来的东西会在这块内存中开辟空间并产生地址</li>
+</ul>
+</li>
+<li><code>int a=20;</code>和<code>int[] arr = new int[3];</code>这两行代码的执行原理？<ul>
+<li>a是变量，直接放在栈中，a变量中存储的数据就是20这个值。</li>
+<li><code>new int[3]</code>是创建一个数组对象，会在堆内存中开辟区域存储3个整数。</li>
+<li>arr是变量，在栈中，arr中存储的数组对象在堆内存中的地址值。</li>
+</ul>
+</li>
+<li>多个数组变量，指向同一个数组对象的原因是什么？需要注意什么？<ul>
+<li>多个数组变量中存储的是同一个数组对象的地址。</li>
+<li>多个变量修改的都是同一数组对象中的数据。</li>
+</ul>
+</li>
+<li>如果某个数组变量中存储的null，代表什么意思？需要注意什么？<ul>
+<li>代表这个数组变量没有指向数组对象。</li>
+<li>可以输出这个变量，但不能用这个数组变量去访问数据或者数组长度。会报空指针异常：NullPointerException。</li>
+</ul>
+</li>
+</ol>
+<h1 id="方法概述"><a href="#方法概述" class="headerlink" title="方法概述"></a>方法概述</h1><ol>
+<li><p>方法：方法是一种语法结构，它可以把一段代码封装成一个功能，以便重复调用，提高开发效率，使程序逻辑更清晰。</p>
+</li>
+<li><p>方法的完整结构：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">修饰符 返回值类型 方法名(形参列表)&#123;</span><br><span class="line">    方法体代码(需要执行的功能代码);</span><br><span class="line">    <span class="keyword">return</span> 返回值;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如果方法不需要接收数据处理，不需要返回数据，应该怎么办，要注意什么？</p>
+<ul>
+<li>方法不需要接收数据，则形参列表可以不写；方法不需要返回值，则申明返回值类型为void。</li>
+<li>方法没有申明返回值类型（void），内部不能使用return返回数据。</li>
+<li>方法如果没有形参列表，调用的时候则不能传入数值，否则报错。</li>
+</ul>
+</li>
+<li><p>方法使用时的常见问题</p>
+<ul>
+<li>方法在类中的位置放前放后无所谓，但一个方法不能定义在另一个方法里面。</li>
+<li>方法的返回值类型写void时，方法内不能使用return返回数据。如果方法的返回值类型写了具体类型，方法内部则必须使用return返回对应类型的数据。</li>
+<li>return语句的下面，不能编写代码，属于无效代码，执行不到这儿。</li>
+<li>方法不调用就不会执行，调用方法时，传给方法的数据，必须严格匹配方法的参数情况。</li>
+<li>调用有返回值的方法，有3种方法：<ol>
+<li>可以定义变量接收结果</li>
+<li>直接输出</li>
+<li>直接调用</li>
+</ol>
+</li>
+<li>调用无返回值的方法：直接调用</li>
+</ul>
+</li>
+</ol>
+<h1 id="方法在计算机中的执行原理"><a href="#方法在计算机中的执行原理" class="headerlink" title="方法在计算机中的执行原理"></a>方法在计算机中的执行原理</h1><ol>
+<li>方法的运行区域：栈内存</li>
+<li>栈有什么特点？方法为什么要在栈中运行自己？<ul>
+<li>先进后出</li>
+<li>保证一个方法调用完另一个方法后，可以回来</li>
+</ul>
+</li>
+</ol>
+<h1 id="Java的参数传递"><a href="#Java的参数传递" class="headerlink" title="Java的参数传递"></a>Java的参数传递</h1><ol>
+<li>Java的参数传递机制是什么样的？<ul>
+<li>值传递。传输的是实参存储的值的副本</li>
+<li>实参：在方法内部定义的变量</li>
+<li>形参：以方法为例，就是方法定义时的变量</li>
+</ul>
+</li>
+<li>基本类型和引用类型的参数在传递的时候有什么不同？<ul>
+<li>都是值传递</li>
+<li>基本数据类型的参数传输存储的数据值</li>
+<li>引用类型的参数传递存储的地址值</li>
+</ul>
+</li>
+</ol>
+<h1 id="方法重载-amp-return关键字"><a href="#方法重载-amp-return关键字" class="headerlink" title="方法重载 &amp; return关键字"></a>方法重载 &amp; return关键字</h1><ol>
+<li><p>什么是方法重载？</p>
+<p>一个类中，多个方法的名称相同，但他们形参列表不同</p>
+</li>
+<li><p>方法重载需要注意什么?</p>
+<ul>
+<li>一个类中，只要一些方法的名称相同、形参列表不同，那么它们就是方法的重载了，其他的都不管（如：修饰符，返回值类型是否一样都无所谓）。</li>
+<li>形式列表不同指的是：形参的个数、类型、顺序不同，不关心形参的名称。</li>
+</ul>
+</li>
+<li><p>方法重载有啥应用场景？</p>
+<p>开发中我们经常需要为处理一类业务，提供多种解决方案，此时用方法重载来设计是很专业的。</p>
+</li>
+<li><p>在无返回值的方法中。如果要直接跳出并结束当前方法的执行，怎么解决？</p>
+<ul>
+<li>return;跳出并立即结束所在方法的执行</li>
+<li>break;跳出并结束当前所在循环的执行</li>
+<li>continue;结束当前所在循环的当次继续，进入下一次执行</li>
+</ul>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>a</title>
+    <url>/2023/10/02/Java_%E5%B8%B8%E7%94%A8API(%E4%BA%8C)/</url>
+    <content><![CDATA[<h1 id="Math、System、Runtime"><a href="#Math、System、Runtime" class="headerlink" title="Math、System、Runtime"></a>Math、System、Runtime</h1><h2 id="Math"><a href="#Math" class="headerlink" title="Math"></a>Math</h2><ol>
+<li><p>Math：代表数学，是一个工具类，里面提供的都是对数据进行操作的一些静态方法。</p>
+</li>
+<li><p>Math类提供的常见方法：</p>
+<table>
+<thead>
+<tr>
+<th align="center">方法名</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public static int abs(int a)</code></td>
+<td align="center">获取参数的绝对值</td>
+</tr>
+<tr>
+<td align="center"><code>public static double ceil(double a)</code></td>
+<td align="center">向上取整</td>
+</tr>
+<tr>
+<td align="center"><code>public static double floor(double a)</code></td>
+<td align="center">向下取整</td>
+</tr>
+<tr>
+<td align="center"><code>public static int round(float a)</code></td>
+<td align="center">四舍五入</td>
+</tr>
+<tr>
+<td align="center"><code>public static int max(int a, int b)</code></td>
+<td align="center">获取两个int值中的较大值</td>
+</tr>
+<tr>
+<td align="center"><code>public static double pow(double a, double b)</code></td>
+<td align="center">返回a的b次幂的值</td>
+</tr>
+<tr>
+<td align="center"><code>public static double random()</code></td>
+<td align="center">返回值为double的随机值，范围[0.0,  1.0)</td>
+</tr>
+</tbody></table>
+</li>
+</ol>
+<h2 id="System"><a href="#System" class="headerlink" title="System"></a>System</h2><ol>
+<li><p>System：代表程序所在的系统，也是一个工具类。</p>
+</li>
+<li><p>System类提供的常见方法：</p>
+<table>
+<thead>
+<tr>
+<th align="center">方法名</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public static void exit(int status)</code></td>
+<td align="center">终止当前运行的Java虚拟机</td>
+</tr>
+<tr>
+<td align="center"><code>public static long currentTimeMillis()</code></td>
+<td align="center">返回当前系统的时间毫秒值形式</td>
+</tr>
+</tbody></table>
+<ul>
+<li>时间毫秒值：从1970-1-1 00:00:00 开始走到此刻的总毫秒值</li>
+</ul>
+</li>
+</ol>
+<h2 id="Runtime"><a href="#Runtime" class="headerlink" title="Runtime"></a>Runtime</h2><ol>
+<li><p>Runtime：代表程序所在的运行环境，Runtime是一个单例类</p>
+</li>
+<li><p>Runtime类提供的常见方法：</p>
+<table>
+<thead>
+<tr>
+<th align="center">方法名</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public static Runtime getRuntime()</code></td>
+<td align="center">返回与当前Java应用程序关联的运行时对象</td>
+</tr>
+<tr>
+<td align="center"><code>public void exit(int status)</code></td>
+<td align="center">终止当前运行的虚拟机</td>
+</tr>
+<tr>
+<td align="center"><code>public int availableProcessors()</code></td>
+<td align="center">返回Java虚拟机可用的处理器数</td>
+</tr>
+<tr>
+<td align="center"><code>public long totalMemory()</code></td>
+<td align="center">返回Java虚拟机中的内存总量</td>
+</tr>
+<tr>
+<td align="center"><code>public long freeMemory()</code></td>
+<td align="center">返回Java虚拟机中的可用内存</td>
+</tr>
+<tr>
+<td align="center"><code>public Process exec(String command)</code></td>
+<td align="center">启动某个程序，并返回代表该程序的对象</td>
+</tr>
+</tbody></table>
+</li>
+</ol>
+<h1 id="BigDecimal"><a href="#BigDecimal" class="headerlink" title="BigDecimal"></a>BigDecimal</h1><ul>
+<li>BigDecimal：用于解决浮点型运算时，出现结果失真的问题</li>
+</ul>
+<h2 id="BigDecimal的构造方法"><a href="#BigDecimal的构造方法" class="headerlink" title="BigDecimal的构造方法"></a>BigDecimal的构造方法</h2><table>
+<thead>
+<tr>
+<th align="center">构造方法</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public BigDecimal(double val)</code></td>
+<td align="center">将double转换为BigDecimal</td>
+</tr>
+<tr>
+<td align="center"><code>public BigDecimal(String val)</code></td>
+<td align="center">将String转成BigDecimal</td>
+</tr>
+</tbody></table>
+<p>注意：不推荐使用<code>public BigDecimal(double val)</code>创建对象，会导致精度损失</p>
+<h2 id="BigDecimal的常用方法"><a href="#BigDecimal的常用方法" class="headerlink" title="BigDecimal的常用方法"></a>BigDecimal的常用方法</h2><table>
+<thead>
+<tr>
+<th align="center">方法名</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public static BigDecimal valueOf(double val)</code></td>
+<td align="center">将double转换为BigDecimal</td>
+</tr>
+<tr>
+<td align="center"><code>public BigDecimal add(BigDecimal b)</code></td>
+<td align="center">加法</td>
+</tr>
+<tr>
+<td align="center"><code>public BigDecimal subtract(BigDecimal b)</code></td>
+<td align="center">减法</td>
+</tr>
+<tr>
+<td align="center"><code>public BigDecimal multiply(BigDecimal b)</code></td>
+<td align="center">乘法</td>
+</tr>
+<tr>
+<td align="center"><code>public BigDecimal divide(BigDecimal b)</code></td>
+<td align="center">除法</td>
+</tr>
+<tr>
+<td align="center"><code>public BigDecimal divide(另一个BigDecimal对象, 精确几位, 舍入模式)</code></td>
+<td align="center">除法、可以控制精确到小数几位</td>
+</tr>
+<tr>
+<td align="center"><code>public double doubleValue()</code></td>
+<td align="center">将BigDecimal转换成double</td>
+</tr>
+</tbody></table>
+<h1 id="JDK8之前传统的日期和时间"><a href="#JDK8之前传统的日期和时间" class="headerlink" title="JDK8之前传统的日期和时间"></a>JDK8之前传统的日期和时间</h1><h2 id="Date"><a href="#Date" class="headerlink" title="Date"></a>Date</h2><ol>
+<li><p>Date：代表的时日期和时间。</p>
+</li>
+<li><p>Date的构造方法：</p>
+<table>
+<thead>
+<tr>
+<th align="center">构造方法</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public Date()</code></td>
+<td align="center">创建一个Date对象，代表的是系统当前此刻日期时间</td>
+</tr>
+<tr>
+<td align="center"><code>public Date(long time)</code></td>
+<td align="center">把时间毫秒值转换成Date日期对象</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>Date常见方法：</p>
+<table>
+<thead>
+<tr>
+<th align="center">常见方法</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public void getTime(long time)</code></td>
+<td align="center">返回从1970年1月1日 00:00:00走到此刻的总毫秒数</td>
+</tr>
+<tr>
+<td align="center"><code>public void setTime(long time)</code></td>
+<td align="center">设置日期对象的时间为当前时间毫秒值对应的时间</td>
+</tr>
+</tbody></table>
+</li>
+</ol>
+<h2 id="SimpleDateFormat"><a href="#SimpleDateFormat" class="headerlink" title="SimpleDateFormat"></a>SimpleDateFormat</h2><ol>
+<li><p>SimpleDateFormat：代表简单日期格式化，可以用来把日期对象、时间毫秒值格式化成我们想要的形式。</p>
+</li>
+<li><p>SimpleDateFormat的常见构造方法：</p>
+<table>
+<thead>
+<tr>
+<th align="center">常见构造方法</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public SimpleDateFormat(String pattern)</code></td>
+<td align="center">创建简单日期格式化对象，并封装时间的格式</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>SimpleDateFormat的常见方法：</p>
+<table>
+<thead>
+<tr>
+<th align="center">格式化时间的方法</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public final String format(Date date)</code></td>
+<td align="center">将日期格式化成日期&#x2F;时间字符串</td>
+</tr>
+<tr>
+<td align="center"><code>public final String format(Object time)</code></td>
+<td align="center">将时间毫秒值式化成日期&#x2F;时间字符串</td>
+</tr>
+<tr>
+<td align="center"><code>public Date parse(String source)</code></td>
+<td align="center">把字符串时间解析成日期对象</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>时间格式的常见符号：</p>
+<table>
+<thead>
+<tr>
+<th align="center">符号</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">y</td>
+<td align="center">年</td>
+</tr>
+<tr>
+<td align="center">M</td>
+<td align="center">月</td>
+</tr>
+<tr>
+<td align="center">d</td>
+<td align="center">日</td>
+</tr>
+<tr>
+<td align="center">H</td>
+<td align="center">时</td>
+</tr>
+<tr>
+<td align="center">m</td>
+<td align="center">分</td>
+</tr>
+<tr>
+<td align="center">s</td>
+<td align="center">秒</td>
+</tr>
+<tr>
+<td align="center">EEE</td>
+<td align="center">星期</td>
+</tr>
+<tr>
+<td align="center">a</td>
+<td align="center">上午&#x2F;下午</td>
+</tr>
+</tbody></table>
+<ul>
+<li>yyyy-MM-dd HH:mm:ss  —————   2023-09-27 20:55:11</li>
+</ul>
+</li>
+</ol>
+<h2 id="Calender"><a href="#Calender" class="headerlink" title="Calender"></a>Calender</h2><ol>
+<li><p>Calender：代表的是系统此刻时间对应的日历。通过它可以单独获取，修改时间中的年、月、日、时、分、秒等。</p>
+</li>
+<li><p>Calender日历类的常见方法：</p>
+<table>
+<thead>
+<tr>
+<th align="center">方法名</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public static Calender getInstance()</code></td>
+<td align="center">获取当前日历对象</td>
+</tr>
+<tr>
+<td align="center"><code>public int get(int field)</code></td>
+<td align="center">获取日历中的某个信息</td>
+</tr>
+<tr>
+<td align="center"><code>public final Date getTime()</code></td>
+<td align="center">获取日期对象</td>
+</tr>
+<tr>
+<td align="center"><code>public long getTmeMillis()</code></td>
+<td align="center">获取时间毫秒值</td>
+</tr>
+<tr>
+<td align="center"><code>public void set(int field, int value)</code></td>
+<td align="center">修改日历的某个信息</td>
+</tr>
+<tr>
+<td align="center"><code>public void add(int field, int amount)</code></td>
+<td align="center">为某个信息增加&#x2F;减少指定的值</td>
+</tr>
+</tbody></table>
+<p>注意：calender是可变对象，一旦修改后其对象本身表示的时间将产生变化。</p>
+</li>
+</ol>
+<h1 id="JDK8开始新增的日期和时间"><a href="#JDK8开始新增的日期和时间" class="headerlink" title="JDK8开始新增的日期和时间"></a>JDK8开始新增的日期和时间</h1><h2 id="为什么要学新增的时间？"><a href="#为什么要学新增的时间？" class="headerlink" title="为什么要学新增的时间？"></a>为什么要学新增的时间？</h2><ol>
+<li>JDK8传统的时间API<ul>
+<li>设计不合理，使用不方便，很多都被淘汰了。</li>
+<li>都是可变对象，修改后会丢失最开始的时间。</li>
+<li>线程不安全</li>
+<li>只能精确到毫秒</li>
+</ul>
+</li>
+<li>JDK8开始后新增的API<ul>
+<li>设计更合理，功能丰富，使用方便</li>
+<li>都是不可变对象，修改后会返回新的时间对象，不会丢失最开始的时间</li>
+<li>线程安全</li>
+<li>能精确到毫秒、纳秒</li>
+</ul>
+</li>
+</ol>
+<h2 id="LocalDate、LocalTime、LocalDateTime"><a href="#LocalDate、LocalTime、LocalDateTime" class="headerlink" title="LocalDate、LocalTime、LocalDateTime"></a>LocalDate、LocalTime、LocalDateTime</h2><ul>
+<li><p>LocalDate：代表本地日期（年、月、日、星期）</p>
+</li>
+<li><p>LocalTime：代表本地时间（时、分、秒、纳秒）</p>
+</li>
+<li><p>LocalDateTime：代表本地日期、时间（年、月、日、星期、时、分、秒、纳秒）</p>
+</li>
+<li><p>他们获取对象的方法：</p>
+<ul>
+<li><code>public statie Xxxx now() 获取系统当前时间对应的该对象</code></li>
+<li><code>public statie Xxxx of() 获取指定时间对应的该对象</code></li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">LocalDate</span> <span class="variable">ld</span> <span class="operator">=</span> LocalDate.now();</span><br><span class="line"><span class="type">LocalTime</span> <span class="variable">lt</span> <span class="operator">=</span> LocalTime.now();</span><br><span class="line"><span class="type">LocalDateTime</span> <span class="variable">ldt</span> <span class="operator">=</span> LocalDateTime.now();</span><br><span class="line"></span><br><span class="line"><span class="type">LocalDate</span> <span class="variable">ld</span> <span class="operator">=</span> LocalDate.of(<span class="number">2035</span>, <span class="number">10</span>, <span class="number">1</span>);</span><br><span class="line"><span class="type">LocalTime</span> <span class="variable">lt</span> <span class="operator">=</span> LocalTime.of(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line"><span class="type">LocalDateTime</span> <span class="variable">ldt</span> <span class="operator">=</span> LocalDateTime.of(<span class="number">2035</span>, <span class="number">10</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>);</span><br></pre></td></tr></table></figure></li>
+</ul>
+<ol>
+<li><p>LocalDate的常用API：</p>
+<ul>
+<li><p>获取日期</p>
+<table>
+<thead>
+<tr>
+<th align="center">方法名</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public int getYear()</code></td>
+<td align="center">获取年</td>
+</tr>
+<tr>
+<td align="center"><code>public int getMonthValue()</code></td>
+<td align="center">获取月份（1-12）</td>
+</tr>
+<tr>
+<td align="center"><code>public int getDayOfMonth()</code></td>
+<td align="center">获取日</td>
+</tr>
+<tr>
+<td align="center"><code>public int getDayOfYear()</code></td>
+<td align="center">获取当前是一年中的第几天</td>
+</tr>
+<tr>
+<td align="center"><code>public DayOfWeek getDayOfWeek()</code></td>
+<td align="center">获取星期几：·ld.getDayOfWeek().getValue()·</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>修改日期</p>
+<table>
+<thead>
+<tr>
+<th align="center">方法名</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">withYear、withMonth 、withDayOfMonth、withDayOfYear</td>
+<td align="center">直接修改某个信息，返回新的日期对象</td>
+</tr>
+<tr>
+<td align="center">plusYears、plusMonths、plusDays、plusWeeks</td>
+<td align="center">把某个信息加多少，返回新的日期对象</td>
+</tr>
+<tr>
+<td align="center">minusYears、minusMonths、minusDays、minusWeeks</td>
+<td align="center">把某个信息减多少，返回新的日期对象</td>
+</tr>
+<tr>
+<td align="center">equals、isBefore、isAfter</td>
+<td align="center">判断两个日期对象，是否相等、在前还是在后</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+</li>
+<li><p>LocalTime的常用API：</p>
+<ul>
+<li><p>获取时间</p>
+<table>
+<thead>
+<tr>
+<th align="center">方法名</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public int getHour()</code></td>
+<td align="center">获取小时</td>
+</tr>
+<tr>
+<td align="center"><code>public int getMinute()</code></td>
+<td align="center">获取分</td>
+</tr>
+<tr>
+<td align="center"><code>public int getSecond()</code></td>
+<td align="center">获取秒</td>
+</tr>
+<tr>
+<td align="center"><code>public int getNano()</code></td>
+<td align="center">获取纳秒</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>修改时间</p>
+<table>
+<thead>
+<tr>
+<th align="center">方法名</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">withHour、withMinute、withSecond、withNano</td>
+<td align="center">直接修改某个信息，返回新的时间对象</td>
+</tr>
+<tr>
+<td align="center">plusHours、plusMinutes、plusSeconds、plusNanos</td>
+<td align="center">把某个信息加多少，返回新的时间对象</td>
+</tr>
+<tr>
+<td align="center">minusHours、minusMinutes、minusSeconds、minusNanos</td>
+<td align="center">把某个信息减多少，返回新的时间对象</td>
+</tr>
+<tr>
+<td align="center">equals、isBefore、isAfter</td>
+<td align="center">判断两个时间对象，是否相等、在前还是在后</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+</li>
+<li><p>LocalDateTime的常用API：</p>
+<ul>
+<li><p>包含<em>LocalDate</em>和<em>LocalTime</em>的所有方法！</p>
+</li>
+<li><p>LocalDateTime提供的格式化、解析时间的方法</p>
+<table>
+<thead>
+<tr>
+<th align="center">方法名</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public String format(DateTimeFormatter formatter)</code></td>
+<td align="center">格式化时间</td>
+</tr>
+<tr>
+<td align="center"><code>public static LocalDateTime parse(CharSequence text, DateTimeFormatter formatter)</code></td>
+<td align="center">解析时间</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="ZoneId、ZoneDateTime"><a href="#ZoneId、ZoneDateTime" class="headerlink" title="ZoneId、ZoneDateTime"></a>ZoneId、ZoneDateTime</h2><ul>
+<li>ZoneId：代表时区Id</li>
+<li>ZoneDateTime：带时区的时间</li>
+</ul>
+<ol>
+<li><p>ZoneId时区的常见方法</p>
+<table>
+<thead>
+<tr>
+<th align="center">方法名</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public static Set&lt;String&gt; getAvailableZoneIds()</code></td>
+<td align="center">获取Java中支持的所有时区</td>
+</tr>
+<tr>
+<td align="center"><code>public static systemDefault()</code></td>
+<td align="center">获取系统默认时区</td>
+</tr>
+<tr>
+<td align="center"><code>public static ZoneId of(String zoneId)</code></td>
+<td align="center">获取一个指定时区</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>ZonedDateTime带时区时间的常见方法</p>
+<table>
+<thead>
+<tr>
+<th align="center">方法名</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public static ZonedDateTime now()</code></td>
+<td align="center">获取当前时区的ZoneDateTime对象</td>
+</tr>
+<tr>
+<td align="center"><code>public static ZoneDateTime now(ZoneId zone)</code></td>
+<td align="center">获取指定时区的ZoneDateTime对象</td>
+</tr>
+<tr>
+<td align="center">getYear、getMonthValue、getDayOfMonth、getDayOfYear、getDayOfWeek、getHour、getMinute、getSecond、getNano</td>
+<td align="center">获取年、月、日、时、分、秒、纳秒</td>
+</tr>
+<tr>
+<td align="center"><code>public ZonedDateTime withXxx</code></td>
+<td align="center">修改时间系列的方法</td>
+</tr>
+<tr>
+<td align="center"><code>public ZonedDateTime plusXxx</code></td>
+<td align="center">增加时间系列的方法</td>
+</tr>
+<tr>
+<td align="center"><code>public ZonedDateTime plusXxx</code></td>
+<td align="center">减少时间系列的方法</td>
+</tr>
+</tbody></table>
+</li>
+</ol>
+<h2 id="Instant"><a href="#Instant" class="headerlink" title="Instant"></a>Instant</h2><ol>
+<li><p>Instant：代表时间线上的某个时刻&#x2F;时间戳</p>
+</li>
+<li><p>通过获取Instant的对象可以拿到此刻的时间，该事件由两部分组成：从1970-01-01 00:00:00 开始走到此刻的总秒数 + 不够1秒的纳秒数</p>
+</li>
+<li><p>作用：做代码的性能分析，或者记录用户的操作时间点</p>
+</li>
+<li><p>Instant的常见方法：</p>
+<table>
+<thead>
+<tr>
+<th align="center">方法名</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public static Instant now()</code></td>
+<td align="center">获取当前时间的Instant对象（标准时间）</td>
+</tr>
+<tr>
+<td align="center"><code>public long getrEpochSecond()</code></td>
+<td align="center">获取1970-01-01 00:00:00 开始记录的秒数</td>
+</tr>
+<tr>
+<td align="center"><code>public int getNano()</code></td>
+<td align="center">从时间线开始，获取从第二个开始的纳秒数</td>
+</tr>
+<tr>
+<td align="center">plusMillis、plusSeconds、plusNanos</td>
+<td align="center">增加时间系列的方法</td>
+</tr>
+<tr>
+<td align="center">minusMillis、minusSeconds、minusNanos</td>
+<td align="center">减少时间系列的方法</td>
+</tr>
+<tr>
+<td align="center">equals、isBefore、isAfter</td>
+<td align="center">判断两个时间对象，是否相等、在前还是在后</td>
+</tr>
+</tbody></table>
+</li>
+</ol>
+<h2 id="DateTimeFormatter"><a href="#DateTimeFormatter" class="headerlink" title="DateTimeFormatter"></a>DateTimeFormatter</h2><ol>
+<li><p>DateTimeFormatter：格式化器，用于时间的格式化、解析，线程安全</p>
+</li>
+<li><p>DateTimeFormatter的常用方法：</p>
+<table>
+<thead>
+<tr>
+<th align="center">方法名</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public static DateTimeFormatter ofPattern(时间格式)</code></td>
+<td align="center">获取格式化时间对象</td>
+</tr>
+<tr>
+<td align="center"><code>public String format(时间对象)</code></td>
+<td align="center">格式化时间</td>
+</tr>
+</tbody></table>
+</li>
+</ol>
+<h2 id="Period"><a href="#Period" class="headerlink" title="Period"></a>Period</h2><ol>
+<li><p>Period：计算时期间隔（年、月、日），用于计算两个LocalDate对象 相差的年数、月数、天数。</p>
+</li>
+<li><p>Period常用方法：</p>
+<table>
+<thead>
+<tr>
+<th align="center">方法名</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public static Period between(LocalDate start, LocalDate end)</code></td>
+<td align="center">传入2个日期对象，得到Period对象</td>
+</tr>
+<tr>
+<td align="center"><code>public int getYears()</code></td>
+<td align="center">计算隔几年，并返回</td>
+</tr>
+<tr>
+<td align="center"><code>public int getMonths()</code></td>
+<td align="center">计算隔几个月，并返回</td>
+</tr>
+<tr>
+<td align="center"><code>public int getDays()</code></td>
+<td align="center">计算隔几天，并返回</td>
+</tr>
+</tbody></table>
+</li>
+</ol>
+<h2 id="Duration"><a href="#Duration" class="headerlink" title="Duration"></a>Duration</h2><ol>
+<li><p>Duration：可以用于计算两个时间对象相差的天数、小时数、分数、秒数、纳秒数；支持LocalTime、LocalDateTime、Instant等时间。</p>
+</li>
+<li><p>Duration常用方法：</p>
+<table>
+<thead>
+<tr>
+<th align="center">方法名</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public static Duration between(start, end)</code></td>
+<td align="center">传入2个日期对象，得到Duration对象</td>
+</tr>
+<tr>
+<td align="center"><code>public long toDays()</code></td>
+<td align="center">计算隔多少天，并返回</td>
+</tr>
+<tr>
+<td align="center"><code>public long toHours()</code></td>
+<td align="center">计算隔多少小时，并返回</td>
+</tr>
+<tr>
+<td align="center"><code>public long toMinutes()</code></td>
+<td align="center">计算隔多少分，并返回</td>
+</tr>
+<tr>
+<td align="center"><code>public long toSeconds()</code></td>
+<td align="center">计算隔多少秒，并返回</td>
+</tr>
+<tr>
+<td align="center"><code>public long toMillis()</code></td>
+<td align="center">计算隔多少毫秒，并返回</td>
+</tr>
+<tr>
+<td align="center"><code>public long toNaos()</code></td>
+<td align="center">计算隔多少纳秒，并返回</td>
+</tr>
+</tbody></table>
+</li>
+</ol>
+<h1 id="Arrays"><a href="#Arrays" class="headerlink" title="Arrays"></a>Arrays</h1><ol>
+<li><p>Arrays：用来操作数组的一个工具类。</p>
+</li>
+<li><p>Arrays类类提供的常见方法：</p>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th align="center">方法名</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public static String toString(类型[] arr)</code></td>
+<td align="center">返回数组的内容</td>
+</tr>
+<tr>
+<td align="center"><code>public static int[] copyOfRange(类型[], 起始索引, 结束索引)</code></td>
+<td align="center">拷贝数组（指定范围）</td>
+</tr>
+<tr>
+<td align="center"><code>public static copyOf(类型[] arr, int newLength)</code></td>
+<td align="center">拷贝数组</td>
+</tr>
+<tr>
+<td align="center"><code>public static setAll(double[] array, IntToDoubleFunction gererator)</code></td>
+<td align="center">把数组中的原数据改为新数据</td>
+</tr>
+<tr>
+<td align="center"><code>public static void sort(类型[] arr)</code></td>
+<td align="center">对数组进行排序（默认是升序排序）</td>
+</tr>
+</tbody></table>
+<ol start="3">
+<li>如果数组中存储的是对象，如何排序？</li>
+</ol>
+<ul>
+<li><p>方法一：让该对象的类实现<code>comparable</code>(比较规则)接口，然后重写<code>compareTo</code>方法，自己制定比较规则</p>
+</li>
+<li><p>方法二：使用下面这个<code>sort</code>方法，创建<code>Comparator</code>比较器接口的匿名内部类对象，然后自己制定比较规则</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; <span class="keyword">void</span> <span class="title function_">sort</span><span class="params">(T[] arr, Comparator&lt;? <span class="built_in">super</span> T&gt; c)</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Java基础(一)——入门</title>
     <url>/2023/09/08/Java%E5%9F%BA%E7%A1%80(%E4%B8%80)%E2%80%94%E2%80%94%E5%85%A5%E9%97%A8/</url>
     <content><![CDATA[<h1 id="初识Java"><a href="#初识Java" class="headerlink" title="初识Java"></a>初识Java</h1><h2 id="背景知识"><a href="#背景知识" class="headerlink" title="背景知识"></a>背景知识</h2><ul>
@@ -1010,178 +1928,6 @@
       </categories>
   </entry>
   <entry>
-    <title>Java基础(三)——数组、方法</title>
-    <url>/2023/09/22/Java%E5%9F%BA%E7%A1%80(%E4%B8%89)%E2%80%94%E2%80%94%E6%95%B0%E7%BB%84%E3%80%81%E6%96%B9%E6%B3%95/</url>
-    <content><![CDATA[<h1 id="数组概述"><a href="#数组概述" class="headerlink" title="数组概述"></a>数组概述</h1><ul>
-<li>数组就是一个容器，用来存储一批同种类型的数据</li>
-</ul>
-<h1 id="数组的定义和访问"><a href="#数组的定义和访问" class="headerlink" title="数组的定义和访问"></a>数组的定义和访问</h1><h2 id="静态初始化数组"><a href="#静态初始化数组" class="headerlink" title="静态初始化数组"></a>静态初始化数组</h2><ol>
-<li><p>数组的静态初始化的写法和特点什么样的？</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">数据类型[] 数组名 = &#123;元素<span class="number">1</span>, 元素<span class="number">2</span>, 元素<span class="number">3</span>,……&#125;;</span><br><span class="line"><span class="type">int</span>[] ages = &#123;<span class="number">12</span>, <span class="number">24</span>, <span class="number">36</span>, <span class="number">68</span>&#125;;</span><br><span class="line"><span class="type">double</span>[] scores = &#123;<span class="number">89.9</span>, <span class="number">79.8</span>, <span class="number">69.1</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 完整格式</span></span><br><span class="line">数据类型[] 数组名 = <span class="keyword">new</span> 数据类型[]&#123;元素<span class="number">1</span>, 元素<span class="number">2</span>, 元素<span class="number">3</span>,……&#125;;</span><br><span class="line"><span class="type">int</span>[] ages = <span class="keyword">new</span> <span class="title class_">int</span>[]&#123;<span class="number">12</span>, <span class="number">24</span>, <span class="number">36</span>, <span class="number">68</span>&#125;;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>注意：</p>
-<ul>
-<li>什么类型的数组必须存放什么类型的数据。</li>
-<li>“数据类型[] 数组名”  也可以写成  “数据类型 数组名[]”</li>
-<li>数组是引用数据类型，数组变量名中存储的是数组在内存中的地址信息</li>
-</ul>
-</li>
-<li><p>数组的访问</p>
-<ul>
-<li>访问数组的元素：<code>数组名称[索引]</code></li>
-<li>访问数组的长度：<code>数组名称.length</code></li>
-<li>数组的最大索引：<code>数组名.length - 1</code></li>
-<li>如果访问数组时，使用的索引超过了数组长度执行程序时会出bug，出现一个索引越界的异常提示。</li>
-</ul>
-</li>
-<li><p>数组的遍历</p>
-<ul>
-<li><p>遍历：一个一个的访问一遍容器中的数据。</p>
-</li>
-<li><p>如何遍历数组：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span>[] ages = &#123;<span class="number">20</span>, <span class="number">30</span>, <span class="number">40</span>, <span class="number">50</span>&#125;;</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; ages.length; i++)&#123;</span><br><span class="line">    System.out.println(ages[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-</ol>
-<h2 id="动态初始化数组"><a href="#动态初始化数组" class="headerlink" title="动态初始化数组"></a>动态初始化数组</h2><ol>
-<li><p>动态初始化数组的写法时什么样的？有什么特点?</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">数据类型[] 数组名 = <span class="keyword">new</span> 数据类型[长度];</span><br><span class="line"><span class="type">int</span>[] ages = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">4</span>];</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>动态初始化数组后元素的默认值：</p>
-<table>
-<thead>
-<tr>
-<th align="center">数据类型</th>
-<th align="center">默认值</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">byte、short、char、int、 long</td>
-<td align="center">0</td>
-</tr>
-<tr>
-<td align="center">float、double</td>
-<td align="center">0.0</td>
-</tr>
-<tr>
-<td align="center">boolean</td>
-<td align="center">false</td>
-</tr>
-<tr>
-<td align="center">类、接口、数组、String</td>
-<td align="center">null</td>
-</tr>
-</tbody></table>
-</li>
-<li><p>两种数组定义的方法各自适合什么业务场景？</p>
-<ul>
-<li>动态初始化：适合开始不确定具体元素值，只知道元素个数的业务场景</li>
-<li>静态初始化：适合一开始就知道要存入那些元素值的业务场景</li>
-</ul>
-</li>
-</ol>
-<h1 id="数组在计算机中的执行原理"><a href="#数组在计算机中的执行原理" class="headerlink" title="数组在计算机中的执行原理"></a>数组在计算机中的执行原理</h1><ol>
-<li>运行一个Java程序，主要看JVM中包含的哪几部分内存区域？<ul>
-<li>方法区：字节码文件先加载到这里</li>
-<li>栈内存：方法运行时所进入的内存，变量也是在这里</li>
-<li>堆内存：new出来的东西会在这块内存中开辟空间并产生地址</li>
-</ul>
-</li>
-<li><code>int a=20;</code>和<code>int[] arr = new int[3];</code>这两行代码的执行原理？<ul>
-<li>a是变量，直接放在栈中，a变量中存储的数据就是20这个值。</li>
-<li><code>new int[3]</code>是创建一个数组对象，会在堆内存中开辟区域存储3个整数。</li>
-<li>arr是变量，在栈中，arr中存储的数组对象在堆内存中的地址值。</li>
-</ul>
-</li>
-<li>多个数组变量，指向同一个数组对象的原因是什么？需要注意什么？<ul>
-<li>多个数组变量中存储的是同一个数组对象的地址。</li>
-<li>多个变量修改的都是同一数组对象中的数据。</li>
-</ul>
-</li>
-<li>如果某个数组变量中存储的null，代表什么意思？需要注意什么？<ul>
-<li>代表这个数组变量没有指向数组对象。</li>
-<li>可以输出这个变量，但不能用这个数组变量去访问数据或者数组长度。会报空指针异常：NullPointerException。</li>
-</ul>
-</li>
-</ol>
-<h1 id="方法概述"><a href="#方法概述" class="headerlink" title="方法概述"></a>方法概述</h1><ol>
-<li><p>方法：方法是一种语法结构，它可以把一段代码封装成一个功能，以便重复调用，提高开发效率，使程序逻辑更清晰。</p>
-</li>
-<li><p>方法的完整结构：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">修饰符 返回值类型 方法名(形参列表)&#123;</span><br><span class="line">    方法体代码(需要执行的功能代码);</span><br><span class="line">    <span class="keyword">return</span> 返回值;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>如果方法不需要接收数据处理，不需要返回数据，应该怎么办，要注意什么？</p>
-<ul>
-<li>方法不需要接收数据，则形参列表可以不写；方法不需要返回值，则申明返回值类型为void。</li>
-<li>方法没有申明返回值类型（void），内部不能使用return返回数据。</li>
-<li>方法如果没有形参列表，调用的时候则不能传入数值，否则报错。</li>
-</ul>
-</li>
-<li><p>方法使用时的常见问题</p>
-<ul>
-<li>方法在类中的位置放前放后无所谓，但一个方法不能定义在另一个方法里面。</li>
-<li>方法的返回值类型写void时，方法内不能使用return返回数据。如果方法的返回值类型写了具体类型，方法内部则必须使用return返回对应类型的数据。</li>
-<li>return语句的下面，不能编写代码，属于无效代码，执行不到这儿。</li>
-<li>方法不调用就不会执行，调用方法时，传给方法的数据，必须严格匹配方法的参数情况。</li>
-<li>调用有返回值的方法，有3种方法：<ol>
-<li>可以定义变量接收结果</li>
-<li>直接输出</li>
-<li>直接调用</li>
-</ol>
-</li>
-<li>调用无返回值的方法：直接调用</li>
-</ul>
-</li>
-</ol>
-<h1 id="方法在计算机中的执行原理"><a href="#方法在计算机中的执行原理" class="headerlink" title="方法在计算机中的执行原理"></a>方法在计算机中的执行原理</h1><ol>
-<li>方法的运行区域：栈内存</li>
-<li>栈有什么特点？方法为什么要在栈中运行自己？<ul>
-<li>先进后出</li>
-<li>保证一个方法调用完另一个方法后，可以回来</li>
-</ul>
-</li>
-</ol>
-<h1 id="Java的参数传递"><a href="#Java的参数传递" class="headerlink" title="Java的参数传递"></a>Java的参数传递</h1><ol>
-<li>Java的参数传递机制是什么样的？<ul>
-<li>值传递。传输的是实参存储的值的副本</li>
-<li>实参：在方法内部定义的变量</li>
-<li>形参：以方法为例，就是方法定义时的变量</li>
-</ul>
-</li>
-<li>基本类型和引用类型的参数在传递的时候有什么不同？<ul>
-<li>都是值传递</li>
-<li>基本数据类型的参数传输存储的数据值</li>
-<li>引用类型的参数传递存储的地址值</li>
-</ul>
-</li>
-</ol>
-<h1 id="方法重载-amp-return关键字"><a href="#方法重载-amp-return关键字" class="headerlink" title="方法重载 &amp; return关键字"></a>方法重载 &amp; return关键字</h1><ol>
-<li><p>什么是方法重载？</p>
-<p>一个类中，多个方法的名称相同，但他们形参列表不同</p>
-</li>
-<li><p>方法重载需要注意什么?</p>
-<ul>
-<li>一个类中，只要一些方法的名称相同、形参列表不同，那么它们就是方法的重载了，其他的都不管（如：修饰符，返回值类型是否一样都无所谓）。</li>
-<li>形式列表不同指的是：形参的个数、类型、顺序不同，不关心形参的名称。</li>
-</ul>
-</li>
-<li><p>方法重载有啥应用场景？</p>
-<p>开发中我们经常需要为处理一类业务，提供多种解决方案，此时用方法重载来设计是很专业的。</p>
-</li>
-<li><p>在无返回值的方法中。如果要直接跳出并结束当前方法的执行，怎么解决？</p>
-<ul>
-<li>return;跳出并立即结束所在方法的执行</li>
-<li>break;跳出并结束当前所在循环的执行</li>
-<li>continue;结束当前所在循环的当次继续，进入下一次执行</li>
-</ul>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Java基础(二)——流程控制</title>
     <url>/2023/09/09/Java%E5%9F%BA%E7%A1%80(%E4%BA%8C)%E2%80%94%E2%80%94%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/</url>
     <content><![CDATA[<h1 id="分支结构"><a href="#分支结构" class="headerlink" title="分支结构"></a>分支结构</h1><h2 id="if语句"><a href="#if语句" class="headerlink" title="if语句"></a>if语句</h2><ol>
@@ -1459,516 +2205,6 @@
 ]]></content>
       <categories>
         <category>Java</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Python基础(一)——基本数据类型</title>
-    <url>/2023/07/13/Python%E5%9F%BA%E7%A1%80(%E4%B8%80)%E2%80%94%E2%80%94%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</url>
-    <content><![CDATA[<h1 id="初识Python"><a href="#初识Python" class="headerlink" title="初识Python"></a>初识Python</h1><h2 id="起源"><a href="#起源" class="headerlink" title="起源"></a>起源</h2><p>1989年，Guidio van Rossum吉多·范罗苏姆决心开发一个新的解释程序（Python雏形）</p>
-<p>1991年，第一个Python解释器诞生，Pyhton名字来自于吉多·范罗苏姆喜欢的电视：<em>Monty Python‘s Flying Circus</em></p>
-<h2 id="适用面"><a href="#适用面" class="headerlink" title="适用面"></a>适用面</h2><table>
-<thead>
-<tr>
-<th>人群</th>
-<th>用途</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>IT从业者</td>
-<td>自动化脚本（运维开发、测试工具等）</td>
-</tr>
-<tr>
-<td>普通白领</td>
-<td>自动化办公</td>
-</tr>
-<tr>
-<td>后端开发</td>
-<td>WEB应用程序</td>
-</tr>
-<tr>
-<td>科学家基于</td>
-<td>基于Python完成数据计算（生物、化学、物理）</td>
-</tr>
-<tr>
-<td>人工智能&#x2F;机器学习</td>
-<td>基于Python开发AI程序</td>
-</tr>
-<tr>
-<td>大数据开发</td>
-<td>基于Python完成大数据任务开发（Spark、Flink）</td>
-</tr>
-</tbody></table>
-<h2 id="开发环境"><a href="#开发环境" class="headerlink" title="开发环境"></a>开发环境</h2><ul>
-<li>Python解释器环境内，执行单行代码</li>
-<li>使用Python解释器执行，执行Python代码文件</li>
-<li>使用第三方IDE(集成开发工具)，如PyCharm软件、开发Python程序</li>
-</ul>
-<h1 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h1><h2 id="字面量"><a href="#字面量" class="headerlink" title="字面量"></a>字面量</h2><p>字面量：在代码中，被写下来的固定值，成为字面量</p>
-<p>常用的值的类型：Python中常用的6种值（数据）的类型</p>
-<table>
-<thead>
-<tr>
-<th>类型</th>
-<th>描述</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>数字（Number）</td>
-<td>整数（int）、浮点数（float）、复数（complex）、布尔（bool）</td>
-<td></td>
-</tr>
-<tr>
-<td>字符串（Strng）</td>
-<td>描述文本的一种数据类型</td>
-<td>字符串由任意数量的字符组成</td>
-</tr>
-<tr>
-<td>列表（List）</td>
-<td>有序的可变序列</td>
-<td>Python中使用在频繁的数据类型，可有序记录一堆数据</td>
-</tr>
-<tr>
-<td>元组（Tuple）</td>
-<td>有序的不可变序列</td>
-<td>可有序记录一堆不可变的Python数据集合</td>
-</tr>
-<tr>
-<td>集合（Set）</td>
-<td>无序不重合集合</td>
-<td>可无序记录一堆不重复的Python数据集合</td>
-</tr>
-<tr>
-<td>字典（Dictionary）</td>
-<td>无序Key-Value集合</td>
-<td>可无序纪律一堆Key-Value型的Python数据集合</td>
-</tr>
-</tbody></table>
-<h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 这是注释1，只能单行</span></span><br><span class="line"><span class="string">&quot;&quot;&quot; 这是注释2，可以多行注释 &quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><p>变量就是在程序运行时，记录数据的，变量的值可以改变</p>
-<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><p>目前入门阶段，主要接触三类数据类型</p>
-<table>
-<thead>
-<tr>
-<th>类型</th>
-<th>描述</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>string</td>
-<td>字符串类型</td>
-<td>用引号引起来的数据都是字符串</td>
-</tr>
-<tr>
-<td>int</td>
-<td>整形（有符号）</td>
-<td>数字类型，存放整数</td>
-</tr>
-<tr>
-<td>float</td>
-<td>浮点型（有符号）</td>
-<td>数字类型，存放小数</td>
-</tr>
-</tbody></table>
-<p>可以使用type()语句查看数据类型：<em><strong>type(被查看类型的数据)</strong></em></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 使用print直接输出类型信息</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(<span class="string">&quot;hello&quot;</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(<span class="number">666</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(<span class="number">3.1415926</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用变量储存type()语句的结果</span></span><br><span class="line">string_type = <span class="built_in">type</span>(<span class="string">&quot;hello&quot;</span>)</span><br><span class="line">int_type = <span class="built_in">type</span>(<span class="number">666</span>)</span><br><span class="line">float_type = <span class="built_in">type</span>(<span class="number">3.1415926</span>)</span><br><span class="line"><span class="built_in">print</span>(string_type)</span><br><span class="line"><span class="built_in">print</span>(int_type)</span><br><span class="line"><span class="built_in">print</span>(float_type)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用type()语句，查看存储的数据类型信息</span></span><br><span class="line">name = <span class="number">2.71828</span></span><br><span class="line">name_type = <span class="built_in">type</span>(name)</span><br><span class="line"><span class="built_in">print</span>(name_type)</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">输出结果：</span></span><br><span class="line"><span class="string">&lt;class &#x27;str&#x27;&gt;</span></span><br><span class="line"><span class="string">&lt;class &#x27;int&#x27;&gt;</span></span><br><span class="line"><span class="string">&lt;class &#x27;float&#x27;&gt;</span></span><br><span class="line"><span class="string">&lt;class &#x27;str&#x27;&gt;</span></span><br><span class="line"><span class="string">&lt;class &#x27;int&#x27;&gt;</span></span><br><span class="line"><span class="string">&lt;class &#x27;float&#x27;&gt;</span></span><br><span class="line"><span class="string">&lt;class &#x27;float&#x27;&gt;</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>python中变量是没有类型的，而变量储存的数据是有类型的</strong></p>
-<h2 id="数据类型转化"><a href="#数据类型转化" class="headerlink" title="数据类型转化"></a>数据类型转化</h2><p>数据类型转化使用场景：</p>
-<ul>
-<li>从文件中读取数字，默认是字符串，我们需要转换成数字类型</li>
-<li>input()语句，默认结果是字符串，若需要数字也需要转化</li>
-</ul>
-<p>………</p>
-<p>常见转换语句</p>
-<table>
-<thead>
-<tr>
-<th>语句(函数)</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>int(x)</td>
-<td>将x转换成一个整数</td>
-</tr>
-<tr>
-<td>float(x)</td>
-<td>将x转换成一个浮点数</td>
-</tr>
-<tr>
-<td>str(x)</td>
-<td>将x转换成字符串</td>
-</tr>
-</tbody></table>
-<p>PS：同前面的type()语句一样，这三个语句都是带有结果的（返回值），我们可以直接用print输出，或用变量存储返回值</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 将数字类型转换成字符串类型</span></span><br><span class="line">num_str = <span class="built_in">str</span>(<span class="number">11</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(num_str),num_str)</span><br><span class="line"></span><br><span class="line">float_str = <span class="built_in">str</span>(<span class="number">3.14</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(float_str),float_str)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将字符串转换成数字</span></span><br><span class="line">num1 = <span class="built_in">int</span>(<span class="string">&quot;1234&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(num1),num1)</span><br><span class="line"></span><br><span class="line">num2 = <span class="built_in">float</span>(<span class="string">&quot;11&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(num2),num2)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 整数转浮点</span></span><br><span class="line">float_num = <span class="built_in">float</span>(<span class="number">11</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(float_num),float_num)</span><br></pre></td></tr></table></figure>
-
-<p>注意：</p>
-<ul>
-<li>任意类型都可以转换成字符串，但字符串中有数字才可以转换成数字类型</li>
-<li>浮点型可以转换成整型，但会精度损失（小数部分丢失）</li>
-</ul>
-<h2 id="标识符"><a href="#标识符" class="headerlink" title="标识符"></a>标识符</h2><p>在python中，我们可以给许多东西起名字，如</p>
-<ul>
-<li>变量名字</li>
-<li>方法名字</li>
-<li>类的名字</li>
-</ul>
-<p>……</p>
-<p>这些名字，我们把它统一的称之为标识符，用来做内容的标识</p>
-<p><strong>标识符命名规则</strong></p>
-<ul>
-<li>只允许使用<strong>英文</strong>，中文（不推荐），<strong>数字</strong>，<strong>下划线</strong>这四种内容</li>
-<li>数字不可以开头</li>
-<li>区分大小写</li>
-<li>不可以使用关键字</li>
-</ul>
-<h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><h3 id="算数运算符（数学运算符）"><a href="#算数运算符（数学运算符）" class="headerlink" title="算数运算符（数学运算符）"></a>算数运算符（数学运算符）</h3><table>
-<thead>
-<tr>
-<th align="center">运算符</th>
-<th align="center">描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">+</td>
-<td align="center">加</td>
-</tr>
-<tr>
-<td align="center">-</td>
-<td align="center">减</td>
-</tr>
-<tr>
-<td align="center">*</td>
-<td align="center">乘</td>
-</tr>
-<tr>
-<td align="center">&#x2F;</td>
-<td align="center">除</td>
-</tr>
-<tr>
-<td align="center">&#x2F;&#x2F;</td>
-<td align="center">取整除</td>
-</tr>
-<tr>
-<td align="center">%</td>
-<td align="center">取余</td>
-</tr>
-<tr>
-<td align="center">**</td>
-<td align="center">指数</td>
-</tr>
-</tbody></table>
-<h3 id="赋值运算符"><a href="#赋值运算符" class="headerlink" title="赋值运算符"></a>赋值运算符</h3><table>
-<thead>
-<tr>
-<th align="center">运算符</th>
-<th align="center">描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">&#x3D;</td>
-<td align="center">赋值运算符</td>
-</tr>
-</tbody></table>
-<h3 id="复合赋值运算符"><a href="#复合赋值运算符" class="headerlink" title="复合赋值运算符"></a>复合赋值运算符</h3><table>
-<thead>
-<tr>
-<th align="center">运算符</th>
-<th align="center">描述</th>
-<th align="center">实例</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">+&#x3D;</td>
-<td align="center">加法赋值运算符</td>
-<td align="center">c +&#x3D; a等效于c &#x3D; c + a</td>
-</tr>
-<tr>
-<td align="center">-&#x3D;</td>
-<td align="center">减法赋值运算符</td>
-<td align="center">c -&#x3D; a等效于c &#x3D; c - a</td>
-</tr>
-<tr>
-<td align="center">*&#x3D;</td>
-<td align="center">乘法赋值运算符</td>
-<td align="center">c *&#x3D; a等效于c &#x3D; c * a</td>
-</tr>
-<tr>
-<td align="center">&#x2F;&#x3D;</td>
-<td align="center">除法赋值运算符</td>
-<td align="center">c &#x2F;&#x3D; a等效于c &#x3D; c &#x2F; a</td>
-</tr>
-<tr>
-<td align="center">%&#x3D;</td>
-<td align="center">取模赋值运算符</td>
-<td align="center">c %&#x3D; a等效于c &#x3D; c % a</td>
-</tr>
-<tr>
-<td align="center">**&#x3D;</td>
-<td align="center">幂赋值运算符</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">&#x2F;&#x2F;&#x3D;</td>
-<td align="center">取整除赋值运算符</td>
-<td align="center">c &#x2F;&#x2F;&#x3D; a等效于c &#x3D; c &#x2F;&#x2F; a</td>
-</tr>
-</tbody></table>
-<h2 id="字符串扩展"><a href="#字符串扩展" class="headerlink" title="字符串扩展"></a>字符串扩展</h2><h3 id="三种定义方法"><a href="#三种定义方法" class="headerlink" title="三种定义方法"></a>三种定义方法</h3><p>字符串在python中有多种定义形式</p>
-<ol>
-<li>单引号定义法：name &#x3D; ‘hello’</li>
-<li>双引号定义法：name &#x3D; “hello”</li>
-<li>三引号定义法：name &#x3D; “”” hello “””</li>
-</ol>
-<p>PS：三引号定义法，和多行注释的写法一样，同样支持换行操作。</p>
-<p>使用变量接收它，他就是字符串，否则是多行注释</p>
-<p>如果想在字符串中使用单引号或双引号：</p>
-<ul>
-<li>单引号定义法，可以内含双引号</li>
-<li>双引号定义法，可以内含单引号</li>
-<li>使用转义字符（\）</li>
-</ul>
-<h3 id="字符串拼接"><a href="#字符串拼接" class="headerlink" title="字符串拼接"></a>字符串拼接</h3><p>如果我们有多个字符串，可以通过“**+**”将其拼接成一个字符串</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;hello &quot;</span>+<span class="string">&quot;world&quot;</span>)</span><br><span class="line">str1 = <span class="string">&quot;大家好&quot;</span></span><br><span class="line">str2 = <span class="string">&quot;我用Python&quot;</span></span><br><span class="line"><span class="built_in">print</span>(str1 + <span class="string">&quot;，人生苦短，&quot;</span> + str2)</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">输出结果：</span></span><br><span class="line"><span class="string">hello world</span></span><br><span class="line"><span class="string">大家好，人生苦短，我用Python</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>注意：</p>
-<p>”+“无法将非字符串类型的数据拼接</p>
-<h3 id="字符串格式化"><a href="#字符串格式化" class="headerlink" title="字符串格式化"></a>字符串格式化</h3><p>由于拼接字符串变量过多时拼接太麻烦，且字符串无法和数字或其他类型完成拼接，因而引入字符串的格式化</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">str1 = <span class="number">64</span></span><br><span class="line">str2 = <span class="number">8</span></span><br><span class="line">message = <span class="string">&quot;%s除以%s等于%s&quot;</span> % (str1,str2,str2)</span><br><span class="line"><span class="built_in">print</span>(message)</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">输出结果：</span></span><br><span class="line"><span class="string">64除以8等于8</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>其中的，%s</p>
-<ul>
-<li>%表示：我要占位</li>
-<li>s表示：将变量变成字符串放入占位的地方</li>
-</ul>
-<p>所以，综合起来的意思就是：我先占个位置，等一会有个变量过来，我把它变成字符串放到占位的位置</p>
-<p>注意：多个变量占位，变量要用括号括起来，并且按照占位的顺序填入</p>
-<p>Python中最常用的三类占位，用法和上文%s用法类似</p>
-<table>
-<thead>
-<tr>
-<th align="center">格式符号</th>
-<th align="center">转化</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">%s</td>
-<td align="center">将内容转化为字符串，放入占位位置</td>
-</tr>
-<tr>
-<td align="center">%d</td>
-<td align="center">将内容转化成整数，放入占位位置</td>
-</tr>
-<tr>
-<td align="center">%f</td>
-<td align="center">将内容转化成浮点型，放入占位位置</td>
-</tr>
-</tbody></table>
-<h3 id="格式化的精度控制"><a href="#格式化的精度控制" class="headerlink" title="格式化的精度控制"></a>格式化的精度控制</h3><p><strong>字符串格式化-数字精度控制</strong></p>
-<p>我们可以使用辅助符号“m.n”来控制数据的宽度和精度</p>
-<ul>
-<li>m，控制宽度，要求是数字（很少使用），设置的宽度小于数字自身，不生效</li>
-<li>.n，控制小数点精度，要求是数字，会进行小数的四舍五入</li>
-</ul>
-<h3 id="字符串格式化方法2"><a href="#字符串格式化方法2" class="headerlink" title="字符串格式化方法2"></a>字符串格式化方法2</h3><p>语法：</p>
-<p>f”内容{变量}”</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">str1 = <span class="string">&quot;2023年&quot;</span></span><br><span class="line">str2 = <span class="number">23</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;今年是<span class="subst">&#123;str1&#125;</span>，二十一世纪的第<span class="subst">&#123;str2&#125;</span>年&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">输出结果：</span></span><br><span class="line"><span class="string">今年是2023年，二十一世纪的第23年</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>这种方式不理会类型，不做精度控制，适合对精度没有要求的时候快速使用</p>
-<h3 id="对表达式进行格式化"><a href="#对表达式进行格式化" class="headerlink" title="对表达式进行格式化"></a>对表达式进行格式化</h3><p>表达式：一条具有明确<strong>执行结果</strong>的<strong>代码语句</strong></p>
-<p>格式化表达式：</p>
-<ul>
-<li>f”{表达式}”</li>
-<li>“ %s \ %d \ %f “ % (表达式)</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;1 * 1 的结果是：%d&quot;</span> % (<span class="number">1</span> * <span class="number">1</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;1 * 2 的结果是：<span class="subst">&#123;<span class="number">1</span>*<span class="number">2</span>&#125;</span>&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;字符串在Python中的类型名是：%s&quot;</span> % <span class="built_in">type</span>(<span class="string">&quot;字符串&quot;</span>))</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">输出结果：</span></span><br><span class="line"><span class="string">1 * 1 的结果是：1</span></span><br><span class="line"><span class="string">1 * 2 的结果是：2</span></span><br><span class="line"><span class="string">字符串在Python中的类型名是：&lt;class &#x27;str&#x27;&gt;</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>在无需使用变量进行数据存储的时候，可以直接格式化表达式简化代码</p>
-<h2 id="数据输入"><a href="#数据输入" class="headerlink" title="数据输入"></a>数据输入</h2><p>前面使用print语句输出，在Python中，与之对应还有一个input语句，来获取键盘输入</p>
-<ul>
-<li>数据输出：print</li>
-<li>数据输入：input</li>
-</ul>
-<p>使用方法：</p>
-<ul>
-<li>使用input()语句可以从键盘上获取输入</li>
-<li>使用一个变量接收（存储）input语句获取的键盘输入数据即可</li>
-<li>获取的数据永远都是字符串类型</li>
-<li>可以使用：**input(“提示信息”)**，用以在使用输入内容之前显示提示信息</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Python</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Markdown语法学习</title>
-    <url>/2023/04/22/Markdown%E8%AF%AD%E6%B3%95%E5%AD%A6%E4%B9%A0/</url>
-    <content><![CDATA[<h1 id="Markdown语法学习"><a href="#Markdown语法学习" class="headerlink" title="Markdown语法学习"></a>Markdown语法学习</h1><h2 id="Markdown介绍"><a href="#Markdown介绍" class="headerlink" title="Markdown介绍"></a>Markdown介绍</h2><p>Markdown是一种轻量级标记语言，它使用纯文本格式编写，可通过转换工具将其转换成 HTML、PDF 和其他格式，常用于撰写技术文档、博客、论坛帖子等。它语法简单、清晰易读，可以让写作者更加专注于内容的表达和组织，减少排版和格式化的时间，提高效率和创作体验。</p>
-<h2 id="使用工具"><a href="#使用工具" class="headerlink" title="使用工具"></a>使用工具</h2><ul>
-<li>VS Code： 轻量级文本编辑器，插件丰富，可拓展性强</li>
-<li>Typora：UI简洁，所见即所得</li>
-</ul>
-<h2 id="标题标签"><a href="#标题标签" class="headerlink" title="标题标签"></a>标题标签</h2><p>几个”#”即表示几级标签，共六级标题，字体大小依次减小</p>
-<p>代码：</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section"># 一级标题</span></span><br><span class="line"><span class="section">## 二级标题</span></span><br><span class="line"><span class="section">### 三级标题</span></span><br><span class="line"><span class="section">#### 四级标题</span></span><br><span class="line"><span class="section">##### 五级标题</span></span><br><span class="line"><span class="section">###### 六级标题</span></span><br></pre></td></tr></table></figure>
-
-<p>效果展示：</p>
-<h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4><h5 id="五级标题"><a href="#五级标题" class="headerlink" title="五级标题"></a>五级标题</h5><h6 id="六级标题"><a href="#六级标题" class="headerlink" title="六级标题"></a>六级标题</h6><h2 id="文本标签"><a href="#文本标签" class="headerlink" title="文本标签"></a>文本标签</h2><h3 id="加粗"><a href="#加粗" class="headerlink" title="加粗"></a>加粗</h3><p>代码：</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="strong">**加粗内容**</span></span><br></pre></td></tr></table></figure>
-
-<p>效果展示：</p>
-<p><strong>加粗内容</strong></p>
-<h3 id="倾斜"><a href="#倾斜" class="headerlink" title="倾斜"></a>倾斜</h3><p>代码：</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="emphasis">*倾斜内容1*</span></span><br><span class="line"><span class="emphasis">_倾斜内容2_</span></span><br></pre></td></tr></table></figure>
-
-<p>效果展示：</p>
-<p><em>倾斜内容1</em></p>
-<p><em>倾斜内容2</em></p>
-<h3 id="下划线"><a href="#下划线" class="headerlink" title="下划线"></a>下划线</h3><p>代码：</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">u</span>&gt;</span></span>下划线<span class="language-xml"><span class="tag">&lt;/<span class="name">u</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
-
-<p>效果展示：</p>
-<p><u>下划线</u></p>
-<h3 id="删除线"><a href="#删除线" class="headerlink" title="删除线"></a>删除线</h3><p>代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">~~删除~~</span><br></pre></td></tr></table></figure>
-
-<p>效果展示：</p>
-<p><del>删除</del></p>
-<h3 id="标记（高亮）"><a href="#标记（高亮）" class="headerlink" title="标记（高亮）"></a>标记（高亮）</h3><p>代码：</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">==标记==</span><br></pre></td></tr></table></figure>
-
-<p>效果展示：</p>
-<p>&#x3D;&#x3D;标记&#x3D;&#x3D;</p>
-<h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><p>代码：</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="quote">&gt; 引用</span></span><br></pre></td></tr></table></figure>
-
-<p>效果展示</p>
-<blockquote>
-<p>引用</p>
-</blockquote>
-<h3 id="上下标"><a href="#上下标" class="headerlink" title="上下标"></a>上下标</h3><p>代码（注意都是双标签，中间夹的为上(下)标内容）：</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">m^2^</span><br><span class="line">H~2~O</span><br></pre></td></tr></table></figure>
-
-<p>效果展示：</p>
-<p>m^2^</p>
-<p>H<del>2</del>O</p>
-<h2 id="列表标签"><a href="#列表标签" class="headerlink" title="列表标签"></a>列表标签</h2><h3 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h3><p>代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">- 中国</span><br><span class="line">+ 辽宁</span><br><span class="line">* 沈阳</span><br></pre></td></tr></table></figure>
-
-<p>效果展示：</p>
-<ul>
-<li>中国<ul>
-<li>辽宁<ul>
-<li>沈阳</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h3><p>代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">1. 尤塞恩·博尔特</span><br><span class="line">2. 约翰·布雷克</span><br><span class="line">3. 泰森·盖伊</span><br></pre></td></tr></table></figure>
-
-<p>效果展示：</p>
-<ol>
-<li>尤塞恩·博尔特</li>
-<li>约翰·布雷克</li>
-<li>泰森·盖伊</li>
-</ol>
-<h3 id="任务列表"><a href="#任务列表" class="headerlink" title="任务列表"></a>任务列表</h3><p>代码（”-“和”[ ]”之间有三个空格）：</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="bullet">-</span>   [x] 早饭</span><br><span class="line"><span class="bullet">-</span>   [ ] 午饭</span><br><span class="line"><span class="bullet">-</span>   [ ] 晚饭</span><br></pre></td></tr></table></figure>
-
-<p>效果展示：</p>
-<ul>
-<li><p><input checked="" disabled="" type="checkbox"> 
-早饭</p>
-</li>
-<li><p><input disabled="" type="checkbox"> 
-午饭</p>
-</li>
-<li><p><input disabled="" type="checkbox"> 
-晚饭</p>
-</li>
-</ul>
-<h2 id="公式代码"><a href="#公式代码" class="headerlink" title="公式代码"></a>公式代码</h2><h3 id="行内代码"><a href="#行内代码" class="headerlink" title="行内代码"></a>行内代码</h3><p>代码（在”1”左边，注意要使用英文输入）：</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="code">`int`</span> 整形</span><br></pre></td></tr></table></figure>
-
-<p>效果展示：</p>
-<p><code>int</code> 整形</p>
-<h3 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h3><p>代码（第一行”&#96;”后面的为语言类型，建议直接使用快捷键）：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">````c</span><br><span class="line">void main()&#123;</span><br><span class="line">	……</span><br><span class="line">&#125;</span><br><span class="line">````</span><br></pre></td></tr></table></figure>
-
-<p>效果展示：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">	……</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="行内公式"><a href="#行内公式" class="headerlink" title="行内公式"></a>行内公式</h3><p>代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">二倍角公式：$sin2x = 2sinxcosx$ </span><br></pre></td></tr></table></figure>
-
-<p>效果展示：</p>
-<p> 二倍角公式：$sin2x &#x3D; 2sinxcosx$ </p>
-<h3 id="公式块"><a href="#公式块" class="headerlink" title="公式块"></a>公式块</h3><p>代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$$</span><br><span class="line">E_&#123;\rm k&#125; = \frac 1 2 m v^2</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
-
-<p>效果展示：<br>$$<br>E_{\rm k} &#x3D; \frac 1 2 m v^2<br>$$</p>
-<h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><p>代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">|      |   小米   |   vivo   |</span><br><span class="line">| ---- | ---- | ---- |</span><br><span class="line">|   手机   |      |      |</span><br><span class="line">|   平板   |      |      |</span><br></pre></td></tr></table></figure>
-
-<p>效果展示：</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>小米</th>
-<th>vivo</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>手机</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>平板</td>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-<h2 id="超链接"><a href="#超链接" class="headerlink" title="超链接"></a>超链接</h2><p>代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[哔哩哔哩](https://www.bilibili.com/)</span><br></pre></td></tr></table></figure>
-
-<p>效果展示：</p>
-<p><a href="https://www.bilibili.com/">哔哩哔哩</a></p>
-<h2 id="插入图片"><a href="#插入图片" class="headerlink" title="插入图片"></a>插入图片</h2><p>代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">![](图片路径)</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><p>代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[^1]</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h2><p>代码（三个以上减号即可）：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">----</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><p>代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[TOC]</span><br></pre></td></tr></table></figure>
-
-
-
-]]></content>
-      <categories>
-        <category>Markdown</category>
       </categories>
   </entry>
   <entry>
@@ -2493,6 +2729,516 @@
       </categories>
   </entry>
   <entry>
+    <title>Markdown语法学习</title>
+    <url>/2023/04/22/Markdown%E8%AF%AD%E6%B3%95%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[<h1 id="Markdown语法学习"><a href="#Markdown语法学习" class="headerlink" title="Markdown语法学习"></a>Markdown语法学习</h1><h2 id="Markdown介绍"><a href="#Markdown介绍" class="headerlink" title="Markdown介绍"></a>Markdown介绍</h2><p>Markdown是一种轻量级标记语言，它使用纯文本格式编写，可通过转换工具将其转换成 HTML、PDF 和其他格式，常用于撰写技术文档、博客、论坛帖子等。它语法简单、清晰易读，可以让写作者更加专注于内容的表达和组织，减少排版和格式化的时间，提高效率和创作体验。</p>
+<h2 id="使用工具"><a href="#使用工具" class="headerlink" title="使用工具"></a>使用工具</h2><ul>
+<li>VS Code： 轻量级文本编辑器，插件丰富，可拓展性强</li>
+<li>Typora：UI简洁，所见即所得</li>
+</ul>
+<h2 id="标题标签"><a href="#标题标签" class="headerlink" title="标题标签"></a>标题标签</h2><p>几个”#”即表示几级标签，共六级标题，字体大小依次减小</p>
+<p>代码：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section"># 一级标题</span></span><br><span class="line"><span class="section">## 二级标题</span></span><br><span class="line"><span class="section">### 三级标题</span></span><br><span class="line"><span class="section">#### 四级标题</span></span><br><span class="line"><span class="section">##### 五级标题</span></span><br><span class="line"><span class="section">###### 六级标题</span></span><br></pre></td></tr></table></figure>
+
+<p>效果展示：</p>
+<h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4><h5 id="五级标题"><a href="#五级标题" class="headerlink" title="五级标题"></a>五级标题</h5><h6 id="六级标题"><a href="#六级标题" class="headerlink" title="六级标题"></a>六级标题</h6><h2 id="文本标签"><a href="#文本标签" class="headerlink" title="文本标签"></a>文本标签</h2><h3 id="加粗"><a href="#加粗" class="headerlink" title="加粗"></a>加粗</h3><p>代码：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="strong">**加粗内容**</span></span><br></pre></td></tr></table></figure>
+
+<p>效果展示：</p>
+<p><strong>加粗内容</strong></p>
+<h3 id="倾斜"><a href="#倾斜" class="headerlink" title="倾斜"></a>倾斜</h3><p>代码：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="emphasis">*倾斜内容1*</span></span><br><span class="line"><span class="emphasis">_倾斜内容2_</span></span><br></pre></td></tr></table></figure>
+
+<p>效果展示：</p>
+<p><em>倾斜内容1</em></p>
+<p><em>倾斜内容2</em></p>
+<h3 id="下划线"><a href="#下划线" class="headerlink" title="下划线"></a>下划线</h3><p>代码：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">u</span>&gt;</span></span>下划线<span class="language-xml"><span class="tag">&lt;/<span class="name">u</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<p>效果展示：</p>
+<p><u>下划线</u></p>
+<h3 id="删除线"><a href="#删除线" class="headerlink" title="删除线"></a>删除线</h3><p>代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">~~删除~~</span><br></pre></td></tr></table></figure>
+
+<p>效果展示：</p>
+<p><del>删除</del></p>
+<h3 id="标记（高亮）"><a href="#标记（高亮）" class="headerlink" title="标记（高亮）"></a>标记（高亮）</h3><p>代码：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">==标记==</span><br></pre></td></tr></table></figure>
+
+<p>效果展示：</p>
+<p>&#x3D;&#x3D;标记&#x3D;&#x3D;</p>
+<h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><p>代码：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="quote">&gt; 引用</span></span><br></pre></td></tr></table></figure>
+
+<p>效果展示</p>
+<blockquote>
+<p>引用</p>
+</blockquote>
+<h3 id="上下标"><a href="#上下标" class="headerlink" title="上下标"></a>上下标</h3><p>代码（注意都是双标签，中间夹的为上(下)标内容）：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">m^2^</span><br><span class="line">H~2~O</span><br></pre></td></tr></table></figure>
+
+<p>效果展示：</p>
+<p>m^2^</p>
+<p>H<del>2</del>O</p>
+<h2 id="列表标签"><a href="#列表标签" class="headerlink" title="列表标签"></a>列表标签</h2><h3 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h3><p>代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">- 中国</span><br><span class="line">+ 辽宁</span><br><span class="line">* 沈阳</span><br></pre></td></tr></table></figure>
+
+<p>效果展示：</p>
+<ul>
+<li>中国<ul>
+<li>辽宁<ul>
+<li>沈阳</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h3><p>代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">1. 尤塞恩·博尔特</span><br><span class="line">2. 约翰·布雷克</span><br><span class="line">3. 泰森·盖伊</span><br></pre></td></tr></table></figure>
+
+<p>效果展示：</p>
+<ol>
+<li>尤塞恩·博尔特</li>
+<li>约翰·布雷克</li>
+<li>泰森·盖伊</li>
+</ol>
+<h3 id="任务列表"><a href="#任务列表" class="headerlink" title="任务列表"></a>任务列表</h3><p>代码（”-“和”[ ]”之间有三个空格）：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="bullet">-</span>   [x] 早饭</span><br><span class="line"><span class="bullet">-</span>   [ ] 午饭</span><br><span class="line"><span class="bullet">-</span>   [ ] 晚饭</span><br></pre></td></tr></table></figure>
+
+<p>效果展示：</p>
+<ul>
+<li><p><input checked="" disabled="" type="checkbox"> 
+早饭</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+午饭</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+晚饭</p>
+</li>
+</ul>
+<h2 id="公式代码"><a href="#公式代码" class="headerlink" title="公式代码"></a>公式代码</h2><h3 id="行内代码"><a href="#行内代码" class="headerlink" title="行内代码"></a>行内代码</h3><p>代码（在”1”左边，注意要使用英文输入）：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="code">`int`</span> 整形</span><br></pre></td></tr></table></figure>
+
+<p>效果展示：</p>
+<p><code>int</code> 整形</p>
+<h3 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h3><p>代码（第一行”&#96;”后面的为语言类型，建议直接使用快捷键）：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">````c</span><br><span class="line">void main()&#123;</span><br><span class="line">	……</span><br><span class="line">&#125;</span><br><span class="line">````</span><br></pre></td></tr></table></figure>
+
+<p>效果展示：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">	……</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="行内公式"><a href="#行内公式" class="headerlink" title="行内公式"></a>行内公式</h3><p>代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">二倍角公式：$sin2x = 2sinxcosx$ </span><br></pre></td></tr></table></figure>
+
+<p>效果展示：</p>
+<p> 二倍角公式：$sin2x &#x3D; 2sinxcosx$ </p>
+<h3 id="公式块"><a href="#公式块" class="headerlink" title="公式块"></a>公式块</h3><p>代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$$</span><br><span class="line">E_&#123;\rm k&#125; = \frac 1 2 m v^2</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
+
+<p>效果展示：<br>$$<br>E_{\rm k} &#x3D; \frac 1 2 m v^2<br>$$</p>
+<h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><p>代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">|      |   小米   |   vivo   |</span><br><span class="line">| ---- | ---- | ---- |</span><br><span class="line">|   手机   |      |      |</span><br><span class="line">|   平板   |      |      |</span><br></pre></td></tr></table></figure>
+
+<p>效果展示：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>小米</th>
+<th>vivo</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>手机</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>平板</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="超链接"><a href="#超链接" class="headerlink" title="超链接"></a>超链接</h2><p>代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[哔哩哔哩](https://www.bilibili.com/)</span><br></pre></td></tr></table></figure>
+
+<p>效果展示：</p>
+<p><a href="https://www.bilibili.com/">哔哩哔哩</a></p>
+<h2 id="插入图片"><a href="#插入图片" class="headerlink" title="插入图片"></a>插入图片</h2><p>代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">![](图片路径)</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><p>代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[^1]</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h2><p>代码（三个以上减号即可）：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">----</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><p>代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[TOC]</span><br></pre></td></tr></table></figure>
+
+
+
+]]></content>
+      <categories>
+        <category>Markdown</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Python基础(一)——基本数据类型</title>
+    <url>/2023/07/13/Python%E5%9F%BA%E7%A1%80(%E4%B8%80)%E2%80%94%E2%80%94%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</url>
+    <content><![CDATA[<h1 id="初识Python"><a href="#初识Python" class="headerlink" title="初识Python"></a>初识Python</h1><h2 id="起源"><a href="#起源" class="headerlink" title="起源"></a>起源</h2><p>1989年，Guidio van Rossum吉多·范罗苏姆决心开发一个新的解释程序（Python雏形）</p>
+<p>1991年，第一个Python解释器诞生，Pyhton名字来自于吉多·范罗苏姆喜欢的电视：<em>Monty Python‘s Flying Circus</em></p>
+<h2 id="适用面"><a href="#适用面" class="headerlink" title="适用面"></a>适用面</h2><table>
+<thead>
+<tr>
+<th>人群</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>IT从业者</td>
+<td>自动化脚本（运维开发、测试工具等）</td>
+</tr>
+<tr>
+<td>普通白领</td>
+<td>自动化办公</td>
+</tr>
+<tr>
+<td>后端开发</td>
+<td>WEB应用程序</td>
+</tr>
+<tr>
+<td>科学家基于</td>
+<td>基于Python完成数据计算（生物、化学、物理）</td>
+</tr>
+<tr>
+<td>人工智能&#x2F;机器学习</td>
+<td>基于Python开发AI程序</td>
+</tr>
+<tr>
+<td>大数据开发</td>
+<td>基于Python完成大数据任务开发（Spark、Flink）</td>
+</tr>
+</tbody></table>
+<h2 id="开发环境"><a href="#开发环境" class="headerlink" title="开发环境"></a>开发环境</h2><ul>
+<li>Python解释器环境内，执行单行代码</li>
+<li>使用Python解释器执行，执行Python代码文件</li>
+<li>使用第三方IDE(集成开发工具)，如PyCharm软件、开发Python程序</li>
+</ul>
+<h1 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h1><h2 id="字面量"><a href="#字面量" class="headerlink" title="字面量"></a>字面量</h2><p>字面量：在代码中，被写下来的固定值，成为字面量</p>
+<p>常用的值的类型：Python中常用的6种值（数据）的类型</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>描述</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>数字（Number）</td>
+<td>整数（int）、浮点数（float）、复数（complex）、布尔（bool）</td>
+<td></td>
+</tr>
+<tr>
+<td>字符串（Strng）</td>
+<td>描述文本的一种数据类型</td>
+<td>字符串由任意数量的字符组成</td>
+</tr>
+<tr>
+<td>列表（List）</td>
+<td>有序的可变序列</td>
+<td>Python中使用在频繁的数据类型，可有序记录一堆数据</td>
+</tr>
+<tr>
+<td>元组（Tuple）</td>
+<td>有序的不可变序列</td>
+<td>可有序记录一堆不可变的Python数据集合</td>
+</tr>
+<tr>
+<td>集合（Set）</td>
+<td>无序不重合集合</td>
+<td>可无序记录一堆不重复的Python数据集合</td>
+</tr>
+<tr>
+<td>字典（Dictionary）</td>
+<td>无序Key-Value集合</td>
+<td>可无序纪律一堆Key-Value型的Python数据集合</td>
+</tr>
+</tbody></table>
+<h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 这是注释1，只能单行</span></span><br><span class="line"><span class="string">&quot;&quot;&quot; 这是注释2，可以多行注释 &quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><p>变量就是在程序运行时，记录数据的，变量的值可以改变</p>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><p>目前入门阶段，主要接触三类数据类型</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>描述</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>string</td>
+<td>字符串类型</td>
+<td>用引号引起来的数据都是字符串</td>
+</tr>
+<tr>
+<td>int</td>
+<td>整形（有符号）</td>
+<td>数字类型，存放整数</td>
+</tr>
+<tr>
+<td>float</td>
+<td>浮点型（有符号）</td>
+<td>数字类型，存放小数</td>
+</tr>
+</tbody></table>
+<p>可以使用type()语句查看数据类型：<em><strong>type(被查看类型的数据)</strong></em></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 使用print直接输出类型信息</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(<span class="string">&quot;hello&quot;</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(<span class="number">666</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(<span class="number">3.1415926</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用变量储存type()语句的结果</span></span><br><span class="line">string_type = <span class="built_in">type</span>(<span class="string">&quot;hello&quot;</span>)</span><br><span class="line">int_type = <span class="built_in">type</span>(<span class="number">666</span>)</span><br><span class="line">float_type = <span class="built_in">type</span>(<span class="number">3.1415926</span>)</span><br><span class="line"><span class="built_in">print</span>(string_type)</span><br><span class="line"><span class="built_in">print</span>(int_type)</span><br><span class="line"><span class="built_in">print</span>(float_type)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用type()语句，查看存储的数据类型信息</span></span><br><span class="line">name = <span class="number">2.71828</span></span><br><span class="line">name_type = <span class="built_in">type</span>(name)</span><br><span class="line"><span class="built_in">print</span>(name_type)</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">输出结果：</span></span><br><span class="line"><span class="string">&lt;class &#x27;str&#x27;&gt;</span></span><br><span class="line"><span class="string">&lt;class &#x27;int&#x27;&gt;</span></span><br><span class="line"><span class="string">&lt;class &#x27;float&#x27;&gt;</span></span><br><span class="line"><span class="string">&lt;class &#x27;str&#x27;&gt;</span></span><br><span class="line"><span class="string">&lt;class &#x27;int&#x27;&gt;</span></span><br><span class="line"><span class="string">&lt;class &#x27;float&#x27;&gt;</span></span><br><span class="line"><span class="string">&lt;class &#x27;float&#x27;&gt;</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>python中变量是没有类型的，而变量储存的数据是有类型的</strong></p>
+<h2 id="数据类型转化"><a href="#数据类型转化" class="headerlink" title="数据类型转化"></a>数据类型转化</h2><p>数据类型转化使用场景：</p>
+<ul>
+<li>从文件中读取数字，默认是字符串，我们需要转换成数字类型</li>
+<li>input()语句，默认结果是字符串，若需要数字也需要转化</li>
+</ul>
+<p>………</p>
+<p>常见转换语句</p>
+<table>
+<thead>
+<tr>
+<th>语句(函数)</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>int(x)</td>
+<td>将x转换成一个整数</td>
+</tr>
+<tr>
+<td>float(x)</td>
+<td>将x转换成一个浮点数</td>
+</tr>
+<tr>
+<td>str(x)</td>
+<td>将x转换成字符串</td>
+</tr>
+</tbody></table>
+<p>PS：同前面的type()语句一样，这三个语句都是带有结果的（返回值），我们可以直接用print输出，或用变量存储返回值</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 将数字类型转换成字符串类型</span></span><br><span class="line">num_str = <span class="built_in">str</span>(<span class="number">11</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(num_str),num_str)</span><br><span class="line"></span><br><span class="line">float_str = <span class="built_in">str</span>(<span class="number">3.14</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(float_str),float_str)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将字符串转换成数字</span></span><br><span class="line">num1 = <span class="built_in">int</span>(<span class="string">&quot;1234&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(num1),num1)</span><br><span class="line"></span><br><span class="line">num2 = <span class="built_in">float</span>(<span class="string">&quot;11&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(num2),num2)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 整数转浮点</span></span><br><span class="line">float_num = <span class="built_in">float</span>(<span class="number">11</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(float_num),float_num)</span><br></pre></td></tr></table></figure>
+
+<p>注意：</p>
+<ul>
+<li>任意类型都可以转换成字符串，但字符串中有数字才可以转换成数字类型</li>
+<li>浮点型可以转换成整型，但会精度损失（小数部分丢失）</li>
+</ul>
+<h2 id="标识符"><a href="#标识符" class="headerlink" title="标识符"></a>标识符</h2><p>在python中，我们可以给许多东西起名字，如</p>
+<ul>
+<li>变量名字</li>
+<li>方法名字</li>
+<li>类的名字</li>
+</ul>
+<p>……</p>
+<p>这些名字，我们把它统一的称之为标识符，用来做内容的标识</p>
+<p><strong>标识符命名规则</strong></p>
+<ul>
+<li>只允许使用<strong>英文</strong>，中文（不推荐），<strong>数字</strong>，<strong>下划线</strong>这四种内容</li>
+<li>数字不可以开头</li>
+<li>区分大小写</li>
+<li>不可以使用关键字</li>
+</ul>
+<h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><h3 id="算数运算符（数学运算符）"><a href="#算数运算符（数学运算符）" class="headerlink" title="算数运算符（数学运算符）"></a>算数运算符（数学运算符）</h3><table>
+<thead>
+<tr>
+<th align="center">运算符</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">+</td>
+<td align="center">加</td>
+</tr>
+<tr>
+<td align="center">-</td>
+<td align="center">减</td>
+</tr>
+<tr>
+<td align="center">*</td>
+<td align="center">乘</td>
+</tr>
+<tr>
+<td align="center">&#x2F;</td>
+<td align="center">除</td>
+</tr>
+<tr>
+<td align="center">&#x2F;&#x2F;</td>
+<td align="center">取整除</td>
+</tr>
+<tr>
+<td align="center">%</td>
+<td align="center">取余</td>
+</tr>
+<tr>
+<td align="center">**</td>
+<td align="center">指数</td>
+</tr>
+</tbody></table>
+<h3 id="赋值运算符"><a href="#赋值运算符" class="headerlink" title="赋值运算符"></a>赋值运算符</h3><table>
+<thead>
+<tr>
+<th align="center">运算符</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">&#x3D;</td>
+<td align="center">赋值运算符</td>
+</tr>
+</tbody></table>
+<h3 id="复合赋值运算符"><a href="#复合赋值运算符" class="headerlink" title="复合赋值运算符"></a>复合赋值运算符</h3><table>
+<thead>
+<tr>
+<th align="center">运算符</th>
+<th align="center">描述</th>
+<th align="center">实例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">+&#x3D;</td>
+<td align="center">加法赋值运算符</td>
+<td align="center">c +&#x3D; a等效于c &#x3D; c + a</td>
+</tr>
+<tr>
+<td align="center">-&#x3D;</td>
+<td align="center">减法赋值运算符</td>
+<td align="center">c -&#x3D; a等效于c &#x3D; c - a</td>
+</tr>
+<tr>
+<td align="center">*&#x3D;</td>
+<td align="center">乘法赋值运算符</td>
+<td align="center">c *&#x3D; a等效于c &#x3D; c * a</td>
+</tr>
+<tr>
+<td align="center">&#x2F;&#x3D;</td>
+<td align="center">除法赋值运算符</td>
+<td align="center">c &#x2F;&#x3D; a等效于c &#x3D; c &#x2F; a</td>
+</tr>
+<tr>
+<td align="center">%&#x3D;</td>
+<td align="center">取模赋值运算符</td>
+<td align="center">c %&#x3D; a等效于c &#x3D; c % a</td>
+</tr>
+<tr>
+<td align="center">**&#x3D;</td>
+<td align="center">幂赋值运算符</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">&#x2F;&#x2F;&#x3D;</td>
+<td align="center">取整除赋值运算符</td>
+<td align="center">c &#x2F;&#x2F;&#x3D; a等效于c &#x3D; c &#x2F;&#x2F; a</td>
+</tr>
+</tbody></table>
+<h2 id="字符串扩展"><a href="#字符串扩展" class="headerlink" title="字符串扩展"></a>字符串扩展</h2><h3 id="三种定义方法"><a href="#三种定义方法" class="headerlink" title="三种定义方法"></a>三种定义方法</h3><p>字符串在python中有多种定义形式</p>
+<ol>
+<li>单引号定义法：name &#x3D; ‘hello’</li>
+<li>双引号定义法：name &#x3D; “hello”</li>
+<li>三引号定义法：name &#x3D; “”” hello “””</li>
+</ol>
+<p>PS：三引号定义法，和多行注释的写法一样，同样支持换行操作。</p>
+<p>使用变量接收它，他就是字符串，否则是多行注释</p>
+<p>如果想在字符串中使用单引号或双引号：</p>
+<ul>
+<li>单引号定义法，可以内含双引号</li>
+<li>双引号定义法，可以内含单引号</li>
+<li>使用转义字符（\）</li>
+</ul>
+<h3 id="字符串拼接"><a href="#字符串拼接" class="headerlink" title="字符串拼接"></a>字符串拼接</h3><p>如果我们有多个字符串，可以通过“**+**”将其拼接成一个字符串</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;hello &quot;</span>+<span class="string">&quot;world&quot;</span>)</span><br><span class="line">str1 = <span class="string">&quot;大家好&quot;</span></span><br><span class="line">str2 = <span class="string">&quot;我用Python&quot;</span></span><br><span class="line"><span class="built_in">print</span>(str1 + <span class="string">&quot;，人生苦短，&quot;</span> + str2)</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">输出结果：</span></span><br><span class="line"><span class="string">hello world</span></span><br><span class="line"><span class="string">大家好，人生苦短，我用Python</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>注意：</p>
+<p>”+“无法将非字符串类型的数据拼接</p>
+<h3 id="字符串格式化"><a href="#字符串格式化" class="headerlink" title="字符串格式化"></a>字符串格式化</h3><p>由于拼接字符串变量过多时拼接太麻烦，且字符串无法和数字或其他类型完成拼接，因而引入字符串的格式化</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">str1 = <span class="number">64</span></span><br><span class="line">str2 = <span class="number">8</span></span><br><span class="line">message = <span class="string">&quot;%s除以%s等于%s&quot;</span> % (str1,str2,str2)</span><br><span class="line"><span class="built_in">print</span>(message)</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">输出结果：</span></span><br><span class="line"><span class="string">64除以8等于8</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>其中的，%s</p>
+<ul>
+<li>%表示：我要占位</li>
+<li>s表示：将变量变成字符串放入占位的地方</li>
+</ul>
+<p>所以，综合起来的意思就是：我先占个位置，等一会有个变量过来，我把它变成字符串放到占位的位置</p>
+<p>注意：多个变量占位，变量要用括号括起来，并且按照占位的顺序填入</p>
+<p>Python中最常用的三类占位，用法和上文%s用法类似</p>
+<table>
+<thead>
+<tr>
+<th align="center">格式符号</th>
+<th align="center">转化</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">%s</td>
+<td align="center">将内容转化为字符串，放入占位位置</td>
+</tr>
+<tr>
+<td align="center">%d</td>
+<td align="center">将内容转化成整数，放入占位位置</td>
+</tr>
+<tr>
+<td align="center">%f</td>
+<td align="center">将内容转化成浮点型，放入占位位置</td>
+</tr>
+</tbody></table>
+<h3 id="格式化的精度控制"><a href="#格式化的精度控制" class="headerlink" title="格式化的精度控制"></a>格式化的精度控制</h3><p><strong>字符串格式化-数字精度控制</strong></p>
+<p>我们可以使用辅助符号“m.n”来控制数据的宽度和精度</p>
+<ul>
+<li>m，控制宽度，要求是数字（很少使用），设置的宽度小于数字自身，不生效</li>
+<li>.n，控制小数点精度，要求是数字，会进行小数的四舍五入</li>
+</ul>
+<h3 id="字符串格式化方法2"><a href="#字符串格式化方法2" class="headerlink" title="字符串格式化方法2"></a>字符串格式化方法2</h3><p>语法：</p>
+<p>f”内容{变量}”</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">str1 = <span class="string">&quot;2023年&quot;</span></span><br><span class="line">str2 = <span class="number">23</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;今年是<span class="subst">&#123;str1&#125;</span>，二十一世纪的第<span class="subst">&#123;str2&#125;</span>年&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">输出结果：</span></span><br><span class="line"><span class="string">今年是2023年，二十一世纪的第23年</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>这种方式不理会类型，不做精度控制，适合对精度没有要求的时候快速使用</p>
+<h3 id="对表达式进行格式化"><a href="#对表达式进行格式化" class="headerlink" title="对表达式进行格式化"></a>对表达式进行格式化</h3><p>表达式：一条具有明确<strong>执行结果</strong>的<strong>代码语句</strong></p>
+<p>格式化表达式：</p>
+<ul>
+<li>f”{表达式}”</li>
+<li>“ %s \ %d \ %f “ % (表达式)</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;1 * 1 的结果是：%d&quot;</span> % (<span class="number">1</span> * <span class="number">1</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;1 * 2 的结果是：<span class="subst">&#123;<span class="number">1</span>*<span class="number">2</span>&#125;</span>&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;字符串在Python中的类型名是：%s&quot;</span> % <span class="built_in">type</span>(<span class="string">&quot;字符串&quot;</span>))</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">输出结果：</span></span><br><span class="line"><span class="string">1 * 1 的结果是：1</span></span><br><span class="line"><span class="string">1 * 2 的结果是：2</span></span><br><span class="line"><span class="string">字符串在Python中的类型名是：&lt;class &#x27;str&#x27;&gt;</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>在无需使用变量进行数据存储的时候，可以直接格式化表达式简化代码</p>
+<h2 id="数据输入"><a href="#数据输入" class="headerlink" title="数据输入"></a>数据输入</h2><p>前面使用print语句输出，在Python中，与之对应还有一个input语句，来获取键盘输入</p>
+<ul>
+<li>数据输出：print</li>
+<li>数据输入：input</li>
+</ul>
+<p>使用方法：</p>
+<ul>
+<li>使用input()语句可以从键盘上获取输入</li>
+<li>使用一个变量接收（存储）input语句获取的键盘输入数据即可</li>
+<li>获取的数据永远都是字符串类型</li>
+<li>可以使用：**input(“提示信息”)**，用以在使用输入内容之前显示提示信息</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Python集合(七)——异常、模块与包</title>
     <url>/2023/08/18/Python%E5%9F%BA%E7%A1%80(%E4%B8%83)%E2%80%94%E2%80%94%E5%BC%82%E5%B8%B8%E3%80%81%E6%A8%A1%E5%9D%97%E4%B8%8E%E5%8C%85/</url>
     <content><![CDATA[<h1 id="了解异常"><a href="#了解异常" class="headerlink" title="了解异常"></a>了解异常</h1><ol>
@@ -2807,81 +3553,6 @@
       </categories>
   </entry>
   <entry>
-    <title>Python基础(五)——函数拓展</title>
-    <url>/2023/08/15/Python%E5%9F%BA%E7%A1%80(%E4%BA%94)%E2%80%94%E2%80%94%E5%87%BD%E6%95%B0%E6%8B%93%E5%B1%95/</url>
-    <content><![CDATA[<h1 id="函数的多返回值"><a href="#函数的多返回值" class="headerlink" title="函数的多返回值"></a>函数的多返回值</h1><p> 使用多个变量接收多个返回值</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">test</span>():</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>,<span class="string">&quot;hello&quot;</span>,<span class="literal">True</span></span><br><span class="line"></span><br><span class="line">x,y,z = test()    <span class="comment"># x为1，y为&quot;hello&quot;,z为True</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h1 id="函数多种传参方式"><a href="#函数多种传参方式" class="headerlink" title="函数多种传参方式"></a>函数多种传参方式</h1><h2 id="函数参数种类"><a href="#函数参数种类" class="headerlink" title="函数参数种类"></a>函数参数种类</h2><p>使用方式上的不同，函数有4钟常见参数使用方式：</p>
-<ul>
-<li>位置参数</li>
-<li>关键字参数</li>
-<li>缺省参数</li>
-<li>不定长参数</li>
-</ul>
-<h2 id="位置参数"><a href="#位置参数" class="headerlink" title="位置参数"></a>位置参数</h2><p>位置参数：调用函数时根据函数定义的参数位置来传递函数</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">user_info</span>(<span class="params">name,age,gender</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;您的名字是<span class="subst">&#123;name&#125;</span>,年龄是<span class="subst">&#123;age&#125;</span>,性别是<span class="subst">&#123;gender&#125;</span>)</span></span><br><span class="line"><span class="string">          </span></span><br><span class="line"><span class="string">user_info(&#x27;Tom&#x27;,20,&#x27;男&#x27;)</span></span><br></pre></td></tr></table></figure>
-
-<p>注意：传递的参数和定义的参数的顺序及个数必须一致</p>
-<h2 id="关键字参数"><a href="#关键字参数" class="headerlink" title="关键字参数"></a>关键字参数</h2><p>关键字参数：函数调用时通过”键&#x3D;值“形式传递参数</p>
-<p>作用：可以让函数更加清晰、容易使用，同时也清楚了参数的顺序需求</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">user_info</span>(<span class="params">name,age,gender</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;您的名字是<span class="subst">&#123;name&#125;</span>,年龄是<span class="subst">&#123;age&#125;</span>,性别是<span class="subst">&#123;gender&#125;</span>)</span></span><br><span class="line"><span class="string">          </span></span><br><span class="line"><span class="string"># 关键字传参</span></span><br><span class="line"><span class="string">user_info(name=&#x27;Tom&#x27;, age=20, gender=&#x27;男&#x27;) </span></span><br><span class="line"><span class="string">          </span></span><br><span class="line"><span class="string"># 可以不按照顺序</span></span><br><span class="line"><span class="string">user_info(age=20, name=&#x27;Tom&#x27;, agender=&#x27;男&#x27;) </span></span><br><span class="line"><span class="string">          </span></span><br><span class="line"><span class="string"># 可以和位置参数混用，位置参数必须在前，且匹配参数顺序</span></span><br><span class="line"><span class="string">user_info(&#x27;Tom&#x27;, age=20, gender=&#x27;男&#x27;)           </span></span><br></pre></td></tr></table></figure>
-
-<p>注意：函数调用时，如果有位置参数时，位置参数必须在关键字参数前面，但关键字参数之间不存在先后顺序</p>
-<h2 id="缺省参数"><a href="#缺省参数" class="headerlink" title="缺省参数"></a>缺省参数</h2><p>缺省参数：缺省参数也叫默认参数，用于定义函数，为参数提供默认值，调用函数时可不传该默认参数的值（注意：所有位置参数必须出现在默认参数前，包括函数定义和调用）</p>
-<p>作用：当调用函数时没有传递函数，就会使用默认使用缺省参数对应的值</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">user_info</span>(<span class="params">name,age,gender=<span class="string">&#x27;男&#x27;</span></span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;您的名字是<span class="subst">&#123;name&#125;</span>,年龄是<span class="subst">&#123;age&#125;</span>,性别是<span class="subst">&#123;gender&#125;</span>)</span></span><br><span class="line"><span class="string">          </span></span><br><span class="line"><span class="string">user_info(&#x27;Tom&#x27;, 20)</span></span><br><span class="line"><span class="string">user_info(&#x27;Rose&#x27;, 18, &#x27;女&#x27;)          </span></span><br></pre></td></tr></table></figure>
-
-<p>注意：函数调用时，如果为缺省参数传值则修改默认参数值，否则使用这个默认值</p>
-<h2 id="不定长参数"><a href="#不定长参数" class="headerlink" title="不定长参数"></a>不定长参数</h2><p>不定长参数：不定长参数也叫可变参数，用于不确定调用的时候会传递多少个参数（不传参也可以）的场景</p>
-<p>作用：当调用函数时不确定参数个数时，可以使用不定长参数</p>
-<p>不定长参数的类型：</p>
-<ul>
-<li><p>位置传递</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">user_info</span>(<span class="params">*args</span>):</span><br><span class="line">    <span class="built_in">print</span>(args)</span><br><span class="line">    </span><br><span class="line"><span class="comment"># (&#x27;Tom&#x27;)</span></span><br><span class="line">user_info(<span class="string">&#x27;Tom&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># (&#x27;Tom&#x27;,18)</span></span><br><span class="line">user_info(<span class="string">&#x27;Tom&#x27;</span>,<span class="number">18</span>)</span><br></pre></td></tr></table></figure>
-
-<p>注意：传进的所有参数都会被args变量收集，它会根据传进参数的位置合并为一个元组(tuple)，args是元组类型</p>
-</li>
-<li><p>关键字传递</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">user_info</span>(<span class="params">**kwargs</span>):</span><br><span class="line">    <span class="built_in">print</span>(kwargs)</span><br><span class="line">    </span><br><span class="line"><span class="comment"># &#123;&#x27;name&#x27;:&#x27;Tom&#x27;, &#x27;age&#x27;:18, &#x27;id&#x27;:110&#125;</span></span><br><span class="line">user_info(name=<span class="string">&#x27;Tom&#x27;</span>, age=<span class="number">18</span>, <span class="built_in">id</span>=<span class="number">110</span>)</span><br></pre></td></tr></table></figure>
-
-<p>注意：参数是”键&#x3D;值“形式的情况下，所有的”键&#x3D;值“都会被kwargs接受，同时会根据”键&#x3D;值“组成字典</p>
-</li>
-</ul>
-<h1 id="匿名函数"><a href="#匿名函数" class="headerlink" title="匿名函数"></a>匿名函数</h1><h2 id="函数作为参数传递"><a href="#函数作为参数传递" class="headerlink" title="函数作为参数传递"></a>函数作为参数传递</h2><ul>
-<li>函数本身可以作为参数，传入另一个函数中使用</li>
-<li>这是一种计算逻辑的传递，而非数据的传递</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">text</span>(<span class="params">computer</span>):</span><br><span class="line">    result = computer(<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;compute函数的类型是；<span class="subst">&#123;<span class="built_in">type</span>(computer)&#125;</span>&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;计算结果：<span class="subst">&#123;result&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">compter</span>(<span class="params">x,y</span>):</span><br><span class="line">    <span class="keyword">return</span> x+y</span><br><span class="line"></span><br><span class="line">text(computer)</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">运行结果</span></span><br><span class="line"><span class="string">compute函数的类型是；&lt;class &#x27;function&#x27;&gt;</span></span><br><span class="line"><span class="string">计算结果：3</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="lambda匿名函数"><a href="#lambda匿名函数" class="headerlink" title="lambda匿名函数"></a>lambda匿名函数</h2><p>函数的定义中</p>
-<ul>
-<li>def关键字，可以定义带有名称的函数，可以基于名称重复使用</li>
-<li>lambda关键字，可以定义匿名函数（无名称），只可以临时使用一次</li>
-</ul>
-<p>匿名函数定义语法</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">lambda</span> 传入参数:函数体(一行代码)</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>lambda是关键字，表示定义匿名函数</li>
-<li>传入参数表示匿名函数的形式参数，如：x,y表示接受2个形式参数</li>
-<li>函数体，就是函数的执行逻辑，要注意：只能写一行，无法写多行代码</li>
-</ul>
-<p>例：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">text</span>(<span class="params">computer</span>):</span><br><span class="line">    result = computer(<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;compute函数的类型是；<span class="subst">&#123;<span class="built_in">type</span>(computer)&#125;</span>&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;计算结果：<span class="subst">&#123;result&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">compter</span>(<span class="params">x,y</span>):</span><br><span class="line">    <span class="keyword">return</span> x+y</span><br><span class="line"></span><br><span class="line">text(computer)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 可以使用lambda表达式将上述代码简化，如下</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">text</span>(<span class="params">computer</span>):</span><br><span class="line">    result = computer(<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;compute函数的类型是；<span class="subst">&#123;<span class="built_in">type</span>(computer)&#125;</span>&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;计算结果：<span class="subst">&#123;result&#125;</span>&quot;</span>)</span><br><span class="line">    </span><br><span class="line">text(<span class="keyword">lambda</span> x,y: x+y)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 两段代码作用和运行结果完全一致</span></span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>Python</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Python基础(八)——面向对象</title>
     <url>/2023/08/23/Python%E5%9F%BA%E7%A1%80(%E5%85%AB)%E2%80%94%E2%80%94%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</url>
     <content><![CDATA[<h1 id="成员方法"><a href="#成员方法" class="headerlink" title="成员方法"></a>成员方法</h1><ol>
@@ -3154,6 +3825,81 @@
 </ul>
 </li>
 </ol>
+]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Python基础(五)——函数拓展</title>
+    <url>/2023/08/15/Python%E5%9F%BA%E7%A1%80(%E4%BA%94)%E2%80%94%E2%80%94%E5%87%BD%E6%95%B0%E6%8B%93%E5%B1%95/</url>
+    <content><![CDATA[<h1 id="函数的多返回值"><a href="#函数的多返回值" class="headerlink" title="函数的多返回值"></a>函数的多返回值</h1><p> 使用多个变量接收多个返回值</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">test</span>():</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>,<span class="string">&quot;hello&quot;</span>,<span class="literal">True</span></span><br><span class="line"></span><br><span class="line">x,y,z = test()    <span class="comment"># x为1，y为&quot;hello&quot;,z为True</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h1 id="函数多种传参方式"><a href="#函数多种传参方式" class="headerlink" title="函数多种传参方式"></a>函数多种传参方式</h1><h2 id="函数参数种类"><a href="#函数参数种类" class="headerlink" title="函数参数种类"></a>函数参数种类</h2><p>使用方式上的不同，函数有4钟常见参数使用方式：</p>
+<ul>
+<li>位置参数</li>
+<li>关键字参数</li>
+<li>缺省参数</li>
+<li>不定长参数</li>
+</ul>
+<h2 id="位置参数"><a href="#位置参数" class="headerlink" title="位置参数"></a>位置参数</h2><p>位置参数：调用函数时根据函数定义的参数位置来传递函数</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">user_info</span>(<span class="params">name,age,gender</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;您的名字是<span class="subst">&#123;name&#125;</span>,年龄是<span class="subst">&#123;age&#125;</span>,性别是<span class="subst">&#123;gender&#125;</span>)</span></span><br><span class="line"><span class="string">          </span></span><br><span class="line"><span class="string">user_info(&#x27;Tom&#x27;,20,&#x27;男&#x27;)</span></span><br></pre></td></tr></table></figure>
+
+<p>注意：传递的参数和定义的参数的顺序及个数必须一致</p>
+<h2 id="关键字参数"><a href="#关键字参数" class="headerlink" title="关键字参数"></a>关键字参数</h2><p>关键字参数：函数调用时通过”键&#x3D;值“形式传递参数</p>
+<p>作用：可以让函数更加清晰、容易使用，同时也清楚了参数的顺序需求</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">user_info</span>(<span class="params">name,age,gender</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;您的名字是<span class="subst">&#123;name&#125;</span>,年龄是<span class="subst">&#123;age&#125;</span>,性别是<span class="subst">&#123;gender&#125;</span>)</span></span><br><span class="line"><span class="string">          </span></span><br><span class="line"><span class="string"># 关键字传参</span></span><br><span class="line"><span class="string">user_info(name=&#x27;Tom&#x27;, age=20, gender=&#x27;男&#x27;) </span></span><br><span class="line"><span class="string">          </span></span><br><span class="line"><span class="string"># 可以不按照顺序</span></span><br><span class="line"><span class="string">user_info(age=20, name=&#x27;Tom&#x27;, agender=&#x27;男&#x27;) </span></span><br><span class="line"><span class="string">          </span></span><br><span class="line"><span class="string"># 可以和位置参数混用，位置参数必须在前，且匹配参数顺序</span></span><br><span class="line"><span class="string">user_info(&#x27;Tom&#x27;, age=20, gender=&#x27;男&#x27;)           </span></span><br></pre></td></tr></table></figure>
+
+<p>注意：函数调用时，如果有位置参数时，位置参数必须在关键字参数前面，但关键字参数之间不存在先后顺序</p>
+<h2 id="缺省参数"><a href="#缺省参数" class="headerlink" title="缺省参数"></a>缺省参数</h2><p>缺省参数：缺省参数也叫默认参数，用于定义函数，为参数提供默认值，调用函数时可不传该默认参数的值（注意：所有位置参数必须出现在默认参数前，包括函数定义和调用）</p>
+<p>作用：当调用函数时没有传递函数，就会使用默认使用缺省参数对应的值</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">user_info</span>(<span class="params">name,age,gender=<span class="string">&#x27;男&#x27;</span></span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;您的名字是<span class="subst">&#123;name&#125;</span>,年龄是<span class="subst">&#123;age&#125;</span>,性别是<span class="subst">&#123;gender&#125;</span>)</span></span><br><span class="line"><span class="string">          </span></span><br><span class="line"><span class="string">user_info(&#x27;Tom&#x27;, 20)</span></span><br><span class="line"><span class="string">user_info(&#x27;Rose&#x27;, 18, &#x27;女&#x27;)          </span></span><br></pre></td></tr></table></figure>
+
+<p>注意：函数调用时，如果为缺省参数传值则修改默认参数值，否则使用这个默认值</p>
+<h2 id="不定长参数"><a href="#不定长参数" class="headerlink" title="不定长参数"></a>不定长参数</h2><p>不定长参数：不定长参数也叫可变参数，用于不确定调用的时候会传递多少个参数（不传参也可以）的场景</p>
+<p>作用：当调用函数时不确定参数个数时，可以使用不定长参数</p>
+<p>不定长参数的类型：</p>
+<ul>
+<li><p>位置传递</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">user_info</span>(<span class="params">*args</span>):</span><br><span class="line">    <span class="built_in">print</span>(args)</span><br><span class="line">    </span><br><span class="line"><span class="comment"># (&#x27;Tom&#x27;)</span></span><br><span class="line">user_info(<span class="string">&#x27;Tom&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># (&#x27;Tom&#x27;,18)</span></span><br><span class="line">user_info(<span class="string">&#x27;Tom&#x27;</span>,<span class="number">18</span>)</span><br></pre></td></tr></table></figure>
+
+<p>注意：传进的所有参数都会被args变量收集，它会根据传进参数的位置合并为一个元组(tuple)，args是元组类型</p>
+</li>
+<li><p>关键字传递</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">user_info</span>(<span class="params">**kwargs</span>):</span><br><span class="line">    <span class="built_in">print</span>(kwargs)</span><br><span class="line">    </span><br><span class="line"><span class="comment"># &#123;&#x27;name&#x27;:&#x27;Tom&#x27;, &#x27;age&#x27;:18, &#x27;id&#x27;:110&#125;</span></span><br><span class="line">user_info(name=<span class="string">&#x27;Tom&#x27;</span>, age=<span class="number">18</span>, <span class="built_in">id</span>=<span class="number">110</span>)</span><br></pre></td></tr></table></figure>
+
+<p>注意：参数是”键&#x3D;值“形式的情况下，所有的”键&#x3D;值“都会被kwargs接受，同时会根据”键&#x3D;值“组成字典</p>
+</li>
+</ul>
+<h1 id="匿名函数"><a href="#匿名函数" class="headerlink" title="匿名函数"></a>匿名函数</h1><h2 id="函数作为参数传递"><a href="#函数作为参数传递" class="headerlink" title="函数作为参数传递"></a>函数作为参数传递</h2><ul>
+<li>函数本身可以作为参数，传入另一个函数中使用</li>
+<li>这是一种计算逻辑的传递，而非数据的传递</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">text</span>(<span class="params">computer</span>):</span><br><span class="line">    result = computer(<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;compute函数的类型是；<span class="subst">&#123;<span class="built_in">type</span>(computer)&#125;</span>&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;计算结果：<span class="subst">&#123;result&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">compter</span>(<span class="params">x,y</span>):</span><br><span class="line">    <span class="keyword">return</span> x+y</span><br><span class="line"></span><br><span class="line">text(computer)</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">运行结果</span></span><br><span class="line"><span class="string">compute函数的类型是；&lt;class &#x27;function&#x27;&gt;</span></span><br><span class="line"><span class="string">计算结果：3</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="lambda匿名函数"><a href="#lambda匿名函数" class="headerlink" title="lambda匿名函数"></a>lambda匿名函数</h2><p>函数的定义中</p>
+<ul>
+<li>def关键字，可以定义带有名称的函数，可以基于名称重复使用</li>
+<li>lambda关键字，可以定义匿名函数（无名称），只可以临时使用一次</li>
+</ul>
+<p>匿名函数定义语法</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">lambda</span> 传入参数:函数体(一行代码)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>lambda是关键字，表示定义匿名函数</li>
+<li>传入参数表示匿名函数的形式参数，如：x,y表示接受2个形式参数</li>
+<li>函数体，就是函数的执行逻辑，要注意：只能写一行，无法写多行代码</li>
+</ul>
+<p>例：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">text</span>(<span class="params">computer</span>):</span><br><span class="line">    result = computer(<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;compute函数的类型是；<span class="subst">&#123;<span class="built_in">type</span>(computer)&#125;</span>&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;计算结果：<span class="subst">&#123;result&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">compter</span>(<span class="params">x,y</span>):</span><br><span class="line">    <span class="keyword">return</span> x+y</span><br><span class="line"></span><br><span class="line">text(computer)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 可以使用lambda表达式将上述代码简化，如下</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">text</span>(<span class="params">computer</span>):</span><br><span class="line">    result = computer(<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;compute函数的类型是；<span class="subst">&#123;<span class="built_in">type</span>(computer)&#125;</span>&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;计算结果：<span class="subst">&#123;result&#125;</span>&quot;</span>)</span><br><span class="line">    </span><br><span class="line">text(<span class="keyword">lambda</span> x,y: x+y)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 两段代码作用和运行结果完全一致</span></span><br></pre></td></tr></table></figure>
+
 ]]></content>
       <categories>
         <category>Python</category>

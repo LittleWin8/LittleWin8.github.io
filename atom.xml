@@ -6,7 +6,7 @@
   <link href="http://littlewin8.github.io/atom.xml" rel="self"/>
   
   <link href="http://littlewin8.github.io/"/>
-  <updated>2023-09-27T03:10:10.073Z</updated>
+  <updated>2023-10-02T10:46:00.469Z</updated>
   <id>http://littlewin8.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>a</title>
+    <link href="http://littlewin8.github.io/2023/10/02/Java_%E5%B8%B8%E7%94%A8API(%E4%BA%8C)/"/>
+    <id>http://littlewin8.github.io/2023/10/02/Java_%E5%B8%B8%E7%94%A8API(%E4%BA%8C)/</id>
+    <published>2023-10-02T10:42:58.000Z</published>
+    <updated>2023-10-02T10:46:00.469Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Math、System、Runtime&quot;&gt;&lt;a href=&quot;#Math、System、Runtime&quot; class=&quot;headerlink&quot; title=&quot;Math、System、Runtime&quot;&gt;&lt;/a&gt;Math、System、Runtime&lt;/h1&gt;&lt;h2</summary>
+        
+      
+    
+    
+    
+    <category term="Java" scheme="http://littlewin8.github.io/categories/Java/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Java_常用API(一)</title>
