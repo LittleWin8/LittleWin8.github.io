@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Hello myblog</title>
+    <url>/2023/04/14/Hello-myblog/</url>
+    <content><![CDATA[<h1 id="Hello-myblog"><a href="#Hello-myblog" class="headerlink" title="Hello myblog"></a>Hello myblog</h1><h2 id="这是我的发布-水-的第一篇博客，简单纪念一下！！！"><a href="#这是我的发布-水-的第一篇博客，简单纪念一下！！！" class="headerlink" title="这是我的发布(水)的第一篇博客，简单纪念一下！！！"></a>这是我的发布(水)的第一篇博客，简单纪念一下！！！</h2><h2 id="大概花了五天时间搭建并美化了博客，前三天搭建，后两天美化"><a href="#大概花了五天时间搭建并美化了博客，前三天搭建，后两天美化" class="headerlink" title="大概花了五天时间搭建并美化了博客，前三天搭建，后两天美化"></a>大概花了五天时间搭建并美化了博客，前三天搭建，后两天美化</h2><h2 id="下面简单介绍一下-GitHub-Hexo-搭建个人博客的准备吧"><a href="#下面简单介绍一下-GitHub-Hexo-搭建个人博客的准备吧" class="headerlink" title="下面简单介绍一下 GitHub + Hexo 搭建个人博客的准备吧"></a>下面简单介绍一下 GitHub + Hexo 搭建个人博客的准备吧</h2><h3 id="搭建准备"><a href="#搭建准备" class="headerlink" title="搭建准备"></a>搭建准备</h3><ul>
+<li>注册Github账号，并搭建仓库（文件托管平台，我们博客目录文件存放的地方）<br><a href="https://github.com/">github地址，点击即可传送</a></li>
+<li>下载安装并配置Node.js<br><a href="https://nodejs.org/en/download">Node.js下载地址</a> </li>
+<li>下载Git（访问和修改博客的接口）<br><a href="https://git-scm.com/download/win">Git下载地址</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>others</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Java_StringBuffer类</title>
     <url>/2023/06/04/Java-StringBuffer%E7%B1%BB/</url>
     <content><![CDATA[<h1 id="Java常用实用类学习——StringBuffer类"><a href="#Java常用实用类学习——StringBuffer类" class="headerlink" title="Java常用实用类学习——StringBuffer类"></a>Java常用实用类学习——StringBuffer类</h1><p>StringBuffer类与String类不同，StringBuffer类的对象的的实体的内存空间可以自动改变大小，便于存放一个可变的字符序列。尽管String类是Java.lang包中的final类，但该类提供了修改字符序列的方法。</p>
@@ -172,19 +185,6 @@
 ]]></content>
       <categories>
         <category>Java</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Hello myblog</title>
-    <url>/2023/04/14/Hello-myblog/</url>
-    <content><![CDATA[<h1 id="Hello-myblog"><a href="#Hello-myblog" class="headerlink" title="Hello myblog"></a>Hello myblog</h1><h2 id="这是我的发布-水-的第一篇博客，简单纪念一下！！！"><a href="#这是我的发布-水-的第一篇博客，简单纪念一下！！！" class="headerlink" title="这是我的发布(水)的第一篇博客，简单纪念一下！！！"></a>这是我的发布(水)的第一篇博客，简单纪念一下！！！</h2><h2 id="大概花了五天时间搭建并美化了博客，前三天搭建，后两天美化"><a href="#大概花了五天时间搭建并美化了博客，前三天搭建，后两天美化" class="headerlink" title="大概花了五天时间搭建并美化了博客，前三天搭建，后两天美化"></a>大概花了五天时间搭建并美化了博客，前三天搭建，后两天美化</h2><h2 id="下面简单介绍一下-GitHub-Hexo-搭建个人博客的准备吧"><a href="#下面简单介绍一下-GitHub-Hexo-搭建个人博客的准备吧" class="headerlink" title="下面简单介绍一下 GitHub + Hexo 搭建个人博客的准备吧"></a>下面简单介绍一下 GitHub + Hexo 搭建个人博客的准备吧</h2><h3 id="搭建准备"><a href="#搭建准备" class="headerlink" title="搭建准备"></a>搭建准备</h3><ul>
-<li>注册Github账号，并搭建仓库（文件托管平台，我们博客目录文件存放的地方）<br><a href="https://github.com/">github地址，点击即可传送</a></li>
-<li>下载安装并配置Node.js<br><a href="https://nodejs.org/en/download">Node.js下载地址</a> </li>
-<li>下载Git（访问和修改博客的接口）<br><a href="https://git-scm.com/download/win">Git下载地址</a></li>
-</ul>
-]]></content>
-      <categories>
-        <category>others</category>
       </categories>
   </entry>
   <entry>
@@ -593,179 +593,7 @@
       </categories>
   </entry>
   <entry>
-    <title>Java基础(三)——数组、方法</title>
-    <url>/2023/09/22/Java%E5%9F%BA%E7%A1%80(%E4%B8%89)%E2%80%94%E2%80%94%E6%95%B0%E7%BB%84%E3%80%81%E6%96%B9%E6%B3%95/</url>
-    <content><![CDATA[<h1 id="数组概述"><a href="#数组概述" class="headerlink" title="数组概述"></a>数组概述</h1><ul>
-<li>数组就是一个容器，用来存储一批同种类型的数据</li>
-</ul>
-<h1 id="数组的定义和访问"><a href="#数组的定义和访问" class="headerlink" title="数组的定义和访问"></a>数组的定义和访问</h1><h2 id="静态初始化数组"><a href="#静态初始化数组" class="headerlink" title="静态初始化数组"></a>静态初始化数组</h2><ol>
-<li><p>数组的静态初始化的写法和特点什么样的？</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">数据类型[] 数组名 = &#123;元素<span class="number">1</span>, 元素<span class="number">2</span>, 元素<span class="number">3</span>,……&#125;;</span><br><span class="line"><span class="type">int</span>[] ages = &#123;<span class="number">12</span>, <span class="number">24</span>, <span class="number">36</span>, <span class="number">68</span>&#125;;</span><br><span class="line"><span class="type">double</span>[] scores = &#123;<span class="number">89.9</span>, <span class="number">79.8</span>, <span class="number">69.1</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 完整格式</span></span><br><span class="line">数据类型[] 数组名 = <span class="keyword">new</span> 数据类型[]&#123;元素<span class="number">1</span>, 元素<span class="number">2</span>, 元素<span class="number">3</span>,……&#125;;</span><br><span class="line"><span class="type">int</span>[] ages = <span class="keyword">new</span> <span class="title class_">int</span>[]&#123;<span class="number">12</span>, <span class="number">24</span>, <span class="number">36</span>, <span class="number">68</span>&#125;;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>注意：</p>
-<ul>
-<li>什么类型的数组必须存放什么类型的数据。</li>
-<li>“数据类型[] 数组名”  也可以写成  “数据类型 数组名[]”</li>
-<li>数组是引用数据类型，数组变量名中存储的是数组在内存中的地址信息</li>
-</ul>
-</li>
-<li><p>数组的访问</p>
-<ul>
-<li>访问数组的元素：<code>数组名称[索引]</code></li>
-<li>访问数组的长度：<code>数组名称.length</code></li>
-<li>数组的最大索引：<code>数组名.length - 1</code></li>
-<li>如果访问数组时，使用的索引超过了数组长度执行程序时会出bug，出现一个索引越界的异常提示。</li>
-</ul>
-</li>
-<li><p>数组的遍历</p>
-<ul>
-<li><p>遍历：一个一个的访问一遍容器中的数据。</p>
-</li>
-<li><p>如何遍历数组：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span>[] ages = &#123;<span class="number">20</span>, <span class="number">30</span>, <span class="number">40</span>, <span class="number">50</span>&#125;;</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; ages.length; i++)&#123;</span><br><span class="line">    System.out.println(ages[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-</ol>
-<h2 id="动态初始化数组"><a href="#动态初始化数组" class="headerlink" title="动态初始化数组"></a>动态初始化数组</h2><ol>
-<li><p>动态初始化数组的写法时什么样的？有什么特点?</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">数据类型[] 数组名 = <span class="keyword">new</span> 数据类型[长度];</span><br><span class="line"><span class="type">int</span>[] ages = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">4</span>];</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>动态初始化数组后元素的默认值：</p>
-<table>
-<thead>
-<tr>
-<th align="center">数据类型</th>
-<th align="center">默认值</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">byte、short、char、int、 long</td>
-<td align="center">0</td>
-</tr>
-<tr>
-<td align="center">float、double</td>
-<td align="center">0.0</td>
-</tr>
-<tr>
-<td align="center">boolean</td>
-<td align="center">false</td>
-</tr>
-<tr>
-<td align="center">类、接口、数组、String</td>
-<td align="center">null</td>
-</tr>
-</tbody></table>
-</li>
-<li><p>两种数组定义的方法各自适合什么业务场景？</p>
-<ul>
-<li>动态初始化：适合开始不确定具体元素值，只知道元素个数的业务场景</li>
-<li>静态初始化：适合一开始就知道要存入那些元素值的业务场景</li>
-</ul>
-</li>
-</ol>
-<h1 id="数组在计算机中的执行原理"><a href="#数组在计算机中的执行原理" class="headerlink" title="数组在计算机中的执行原理"></a>数组在计算机中的执行原理</h1><ol>
-<li>运行一个Java程序，主要看JVM中包含的哪几部分内存区域？<ul>
-<li>方法区：字节码文件先加载到这里</li>
-<li>栈内存：方法运行时所进入的内存，变量也是在这里</li>
-<li>堆内存：new出来的东西会在这块内存中开辟空间并产生地址</li>
-</ul>
-</li>
-<li><code>int a=20;</code>和<code>int[] arr = new int[3];</code>这两行代码的执行原理？<ul>
-<li>a是变量，直接放在栈中，a变量中存储的数据就是20这个值。</li>
-<li><code>new int[3]</code>是创建一个数组对象，会在堆内存中开辟区域存储3个整数。</li>
-<li>arr是变量，在栈中，arr中存储的数组对象在堆内存中的地址值。</li>
-</ul>
-</li>
-<li>多个数组变量，指向同一个数组对象的原因是什么？需要注意什么？<ul>
-<li>多个数组变量中存储的是同一个数组对象的地址。</li>
-<li>多个变量修改的都是同一数组对象中的数据。</li>
-</ul>
-</li>
-<li>如果某个数组变量中存储的null，代表什么意思？需要注意什么？<ul>
-<li>代表这个数组变量没有指向数组对象。</li>
-<li>可以输出这个变量，但不能用这个数组变量去访问数据或者数组长度。会报空指针异常：NullPointerException。</li>
-</ul>
-</li>
-</ol>
-<h1 id="方法概述"><a href="#方法概述" class="headerlink" title="方法概述"></a>方法概述</h1><ol>
-<li><p>方法：方法是一种语法结构，它可以把一段代码封装成一个功能，以便重复调用，提高开发效率，使程序逻辑更清晰。</p>
-</li>
-<li><p>方法的完整结构：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">修饰符 返回值类型 方法名(形参列表)&#123;</span><br><span class="line">    方法体代码(需要执行的功能代码);</span><br><span class="line">    <span class="keyword">return</span> 返回值;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>如果方法不需要接收数据处理，不需要返回数据，应该怎么办，要注意什么？</p>
-<ul>
-<li>方法不需要接收数据，则形参列表可以不写；方法不需要返回值，则申明返回值类型为void。</li>
-<li>方法没有申明返回值类型（void），内部不能使用return返回数据。</li>
-<li>方法如果没有形参列表，调用的时候则不能传入数值，否则报错。</li>
-</ul>
-</li>
-<li><p>方法使用时的常见问题</p>
-<ul>
-<li>方法在类中的位置放前放后无所谓，但一个方法不能定义在另一个方法里面。</li>
-<li>方法的返回值类型写void时，方法内不能使用return返回数据。如果方法的返回值类型写了具体类型，方法内部则必须使用return返回对应类型的数据。</li>
-<li>return语句的下面，不能编写代码，属于无效代码，执行不到这儿。</li>
-<li>方法不调用就不会执行，调用方法时，传给方法的数据，必须严格匹配方法的参数情况。</li>
-<li>调用有返回值的方法，有3种方法：<ol>
-<li>可以定义变量接收结果</li>
-<li>直接输出</li>
-<li>直接调用</li>
-</ol>
-</li>
-<li>调用无返回值的方法：直接调用</li>
-</ul>
-</li>
-</ol>
-<h1 id="方法在计算机中的执行原理"><a href="#方法在计算机中的执行原理" class="headerlink" title="方法在计算机中的执行原理"></a>方法在计算机中的执行原理</h1><ol>
-<li>方法的运行区域：栈内存</li>
-<li>栈有什么特点？方法为什么要在栈中运行自己？<ul>
-<li>先进后出</li>
-<li>保证一个方法调用完另一个方法后，可以回来</li>
-</ul>
-</li>
-</ol>
-<h1 id="Java的参数传递"><a href="#Java的参数传递" class="headerlink" title="Java的参数传递"></a>Java的参数传递</h1><ol>
-<li>Java的参数传递机制是什么样的？<ul>
-<li>值传递。传输的是实参存储的值的副本</li>
-<li>实参：在方法内部定义的变量</li>
-<li>形参：以方法为例，就是方法定义时的变量</li>
-</ul>
-</li>
-<li>基本类型和引用类型的参数在传递的时候有什么不同？<ul>
-<li>都是值传递</li>
-<li>基本数据类型的参数传输存储的数据值</li>
-<li>引用类型的参数传递存储的地址值</li>
-</ul>
-</li>
-</ol>
-<h1 id="方法重载-amp-return关键字"><a href="#方法重载-amp-return关键字" class="headerlink" title="方法重载 &amp; return关键字"></a>方法重载 &amp; return关键字</h1><ol>
-<li><p>什么是方法重载？</p>
-<p>一个类中，多个方法的名称相同，但他们形参列表不同</p>
-</li>
-<li><p>方法重载需要注意什么?</p>
-<ul>
-<li>一个类中，只要一些方法的名称相同、形参列表不同，那么它们就是方法的重载了，其他的都不管（如：修饰符，返回值类型是否一样都无所谓）。</li>
-<li>形式列表不同指的是：形参的个数、类型、顺序不同，不关心形参的名称。</li>
-</ul>
-</li>
-<li><p>方法重载有啥应用场景？</p>
-<p>开发中我们经常需要为处理一类业务，提供多种解决方案，此时用方法重载来设计是很专业的。</p>
-</li>
-<li><p>在无返回值的方法中。如果要直接跳出并结束当前方法的执行，怎么解决？</p>
-<ul>
-<li>return;跳出并立即结束所在方法的执行</li>
-<li>break;跳出并结束当前所在循环的执行</li>
-<li>continue;结束当前所在循环的当次继续，进入下一次执行</li>
-</ul>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>a</title>
+    <title>Java_常用API(二)</title>
     <url>/2023/10/02/Java_%E5%B8%B8%E7%94%A8API(%E4%BA%8C)/</url>
     <content><![CDATA[<h1 id="Math、System、Runtime"><a href="#Math、System、Runtime" class="headerlink" title="Math、System、Runtime"></a>Math、System、Runtime</h1><h2 id="Math"><a href="#Math" class="headerlink" title="Math"></a>Math</h2><ol>
 <li><p>Math：代表数学，是一个工具类，里面提供的都是对数据进行操作的一些静态方法。</p>
@@ -1919,6 +1747,178 @@
 <li>定义变量接收用户输入的数据：<code>int age = sc.nextInt();</code>、<code>String name = sc.next();</code></li>
 </ol>
 </li>
+</ul>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Java基础(三)——数组、方法</title>
+    <url>/2023/09/22/Java%E5%9F%BA%E7%A1%80(%E4%B8%89)%E2%80%94%E2%80%94%E6%95%B0%E7%BB%84%E3%80%81%E6%96%B9%E6%B3%95/</url>
+    <content><![CDATA[<h1 id="数组概述"><a href="#数组概述" class="headerlink" title="数组概述"></a>数组概述</h1><ul>
+<li>数组就是一个容器，用来存储一批同种类型的数据</li>
+</ul>
+<h1 id="数组的定义和访问"><a href="#数组的定义和访问" class="headerlink" title="数组的定义和访问"></a>数组的定义和访问</h1><h2 id="静态初始化数组"><a href="#静态初始化数组" class="headerlink" title="静态初始化数组"></a>静态初始化数组</h2><ol>
+<li><p>数组的静态初始化的写法和特点什么样的？</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">数据类型[] 数组名 = &#123;元素<span class="number">1</span>, 元素<span class="number">2</span>, 元素<span class="number">3</span>,……&#125;;</span><br><span class="line"><span class="type">int</span>[] ages = &#123;<span class="number">12</span>, <span class="number">24</span>, <span class="number">36</span>, <span class="number">68</span>&#125;;</span><br><span class="line"><span class="type">double</span>[] scores = &#123;<span class="number">89.9</span>, <span class="number">79.8</span>, <span class="number">69.1</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 完整格式</span></span><br><span class="line">数据类型[] 数组名 = <span class="keyword">new</span> 数据类型[]&#123;元素<span class="number">1</span>, 元素<span class="number">2</span>, 元素<span class="number">3</span>,……&#125;;</span><br><span class="line"><span class="type">int</span>[] ages = <span class="keyword">new</span> <span class="title class_">int</span>[]&#123;<span class="number">12</span>, <span class="number">24</span>, <span class="number">36</span>, <span class="number">68</span>&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>注意：</p>
+<ul>
+<li>什么类型的数组必须存放什么类型的数据。</li>
+<li>“数据类型[] 数组名”  也可以写成  “数据类型 数组名[]”</li>
+<li>数组是引用数据类型，数组变量名中存储的是数组在内存中的地址信息</li>
+</ul>
+</li>
+<li><p>数组的访问</p>
+<ul>
+<li>访问数组的元素：<code>数组名称[索引]</code></li>
+<li>访问数组的长度：<code>数组名称.length</code></li>
+<li>数组的最大索引：<code>数组名.length - 1</code></li>
+<li>如果访问数组时，使用的索引超过了数组长度执行程序时会出bug，出现一个索引越界的异常提示。</li>
+</ul>
+</li>
+<li><p>数组的遍历</p>
+<ul>
+<li><p>遍历：一个一个的访问一遍容器中的数据。</p>
+</li>
+<li><p>如何遍历数组：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span>[] ages = &#123;<span class="number">20</span>, <span class="number">30</span>, <span class="number">40</span>, <span class="number">50</span>&#125;;</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; ages.length; i++)&#123;</span><br><span class="line">    System.out.println(ages[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ol>
+<h2 id="动态初始化数组"><a href="#动态初始化数组" class="headerlink" title="动态初始化数组"></a>动态初始化数组</h2><ol>
+<li><p>动态初始化数组的写法时什么样的？有什么特点?</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">数据类型[] 数组名 = <span class="keyword">new</span> 数据类型[长度];</span><br><span class="line"><span class="type">int</span>[] ages = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">4</span>];</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>动态初始化数组后元素的默认值：</p>
+<table>
+<thead>
+<tr>
+<th align="center">数据类型</th>
+<th align="center">默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">byte、short、char、int、 long</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">float、double</td>
+<td align="center">0.0</td>
+</tr>
+<tr>
+<td align="center">boolean</td>
+<td align="center">false</td>
+</tr>
+<tr>
+<td align="center">类、接口、数组、String</td>
+<td align="center">null</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>两种数组定义的方法各自适合什么业务场景？</p>
+<ul>
+<li>动态初始化：适合开始不确定具体元素值，只知道元素个数的业务场景</li>
+<li>静态初始化：适合一开始就知道要存入那些元素值的业务场景</li>
+</ul>
+</li>
+</ol>
+<h1 id="数组在计算机中的执行原理"><a href="#数组在计算机中的执行原理" class="headerlink" title="数组在计算机中的执行原理"></a>数组在计算机中的执行原理</h1><ol>
+<li>运行一个Java程序，主要看JVM中包含的哪几部分内存区域？<ul>
+<li>方法区：字节码文件先加载到这里</li>
+<li>栈内存：方法运行时所进入的内存，变量也是在这里</li>
+<li>堆内存：new出来的东西会在这块内存中开辟空间并产生地址</li>
+</ul>
+</li>
+<li><code>int a=20;</code>和<code>int[] arr = new int[3];</code>这两行代码的执行原理？<ul>
+<li>a是变量，直接放在栈中，a变量中存储的数据就是20这个值。</li>
+<li><code>new int[3]</code>是创建一个数组对象，会在堆内存中开辟区域存储3个整数。</li>
+<li>arr是变量，在栈中，arr中存储的数组对象在堆内存中的地址值。</li>
+</ul>
+</li>
+<li>多个数组变量，指向同一个数组对象的原因是什么？需要注意什么？<ul>
+<li>多个数组变量中存储的是同一个数组对象的地址。</li>
+<li>多个变量修改的都是同一数组对象中的数据。</li>
+</ul>
+</li>
+<li>如果某个数组变量中存储的null，代表什么意思？需要注意什么？<ul>
+<li>代表这个数组变量没有指向数组对象。</li>
+<li>可以输出这个变量，但不能用这个数组变量去访问数据或者数组长度。会报空指针异常：NullPointerException。</li>
+</ul>
+</li>
+</ol>
+<h1 id="方法概述"><a href="#方法概述" class="headerlink" title="方法概述"></a>方法概述</h1><ol>
+<li><p>方法：方法是一种语法结构，它可以把一段代码封装成一个功能，以便重复调用，提高开发效率，使程序逻辑更清晰。</p>
+</li>
+<li><p>方法的完整结构：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">修饰符 返回值类型 方法名(形参列表)&#123;</span><br><span class="line">    方法体代码(需要执行的功能代码);</span><br><span class="line">    <span class="keyword">return</span> 返回值;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如果方法不需要接收数据处理，不需要返回数据，应该怎么办，要注意什么？</p>
+<ul>
+<li>方法不需要接收数据，则形参列表可以不写；方法不需要返回值，则申明返回值类型为void。</li>
+<li>方法没有申明返回值类型（void），内部不能使用return返回数据。</li>
+<li>方法如果没有形参列表，调用的时候则不能传入数值，否则报错。</li>
+</ul>
+</li>
+<li><p>方法使用时的常见问题</p>
+<ul>
+<li>方法在类中的位置放前放后无所谓，但一个方法不能定义在另一个方法里面。</li>
+<li>方法的返回值类型写void时，方法内不能使用return返回数据。如果方法的返回值类型写了具体类型，方法内部则必须使用return返回对应类型的数据。</li>
+<li>return语句的下面，不能编写代码，属于无效代码，执行不到这儿。</li>
+<li>方法不调用就不会执行，调用方法时，传给方法的数据，必须严格匹配方法的参数情况。</li>
+<li>调用有返回值的方法，有3种方法：<ol>
+<li>可以定义变量接收结果</li>
+<li>直接输出</li>
+<li>直接调用</li>
+</ol>
+</li>
+<li>调用无返回值的方法：直接调用</li>
+</ul>
+</li>
+</ol>
+<h1 id="方法在计算机中的执行原理"><a href="#方法在计算机中的执行原理" class="headerlink" title="方法在计算机中的执行原理"></a>方法在计算机中的执行原理</h1><ol>
+<li>方法的运行区域：栈内存</li>
+<li>栈有什么特点？方法为什么要在栈中运行自己？<ul>
+<li>先进后出</li>
+<li>保证一个方法调用完另一个方法后，可以回来</li>
+</ul>
+</li>
+</ol>
+<h1 id="Java的参数传递"><a href="#Java的参数传递" class="headerlink" title="Java的参数传递"></a>Java的参数传递</h1><ol>
+<li>Java的参数传递机制是什么样的？<ul>
+<li>值传递。传输的是实参存储的值的副本</li>
+<li>实参：在方法内部定义的变量</li>
+<li>形参：以方法为例，就是方法定义时的变量</li>
+</ul>
+</li>
+<li>基本类型和引用类型的参数在传递的时候有什么不同？<ul>
+<li>都是值传递</li>
+<li>基本数据类型的参数传输存储的数据值</li>
+<li>引用类型的参数传递存储的地址值</li>
+</ul>
+</li>
+</ol>
+<h1 id="方法重载-amp-return关键字"><a href="#方法重载-amp-return关键字" class="headerlink" title="方法重载 &amp; return关键字"></a>方法重载 &amp; return关键字</h1><ol>
+<li><p>什么是方法重载？</p>
+<p>一个类中，多个方法的名称相同，但他们形参列表不同</p>
+</li>
+<li><p>方法重载需要注意什么?</p>
+<ul>
+<li>一个类中，只要一些方法的名称相同、形参列表不同，那么它们就是方法的重载了，其他的都不管（如：修饰符，返回值类型是否一样都无所谓）。</li>
+<li>形式列表不同指的是：形参的个数、类型、顺序不同，不关心形参的名称。</li>
+</ul>
+</li>
+<li><p>方法重载有啥应用场景？</p>
+<p>开发中我们经常需要为处理一类业务，提供多种解决方案，此时用方法重载来设计是很专业的。</p>
+</li>
+<li><p>在无返回值的方法中。如果要直接跳出并结束当前方法的执行，怎么解决？</p>
+<ul>
+<li>return;跳出并立即结束所在方法的执行</li>
+<li>break;跳出并结束当前所在循环的执行</li>
+<li>continue;结束当前所在循环的当次继续，进入下一次执行</li>
 </ul>
 </li>
 </ol>
@@ -3333,6 +3333,68 @@
       </categories>
   </entry>
   <entry>
+    <title>Python基础(三)——函数</title>
+    <url>/2023/08/12/Python%E5%9F%BA%E7%A1%80(%E4%B8%89)%E2%80%94%E2%80%94%E5%87%BD%E6%95%B0/</url>
+    <content><![CDATA[<h1 id="函数介绍"><a href="#函数介绍" class="headerlink" title="函数介绍"></a>函数介绍</h1><ul>
+<li>函数是组织好的，可重复使用的，用来实现特定功能的代码段，如前面的type()、input()等都是Python的内置函数。</li>
+<li>函数可以提高程序的复用性，减少重复性代码，提高开发效率</li>
+</ul>
+<h1 id="函数的定义和调用"><a href="#函数的定义和调用" class="headerlink" title="函数的定义和调用"></a>函数的定义和调用</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 定义函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">函数名</span>(<span class="params">传入参数</span>):</span><br><span class="line">    函数体</span><br><span class="line">    <span class="keyword">return</span> 返回值</span><br><span class="line"></span><br><span class="line"><span class="comment"># 调用函数</span></span><br><span class="line">函数名(参数)</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>注意：</strong></p>
+<ul>
+<li>参数如果不需要，可以省略</li>
+<li>返回值如果不需要，可以省略</li>
+<li>函数必须先定义后使用</li>
+</ul>
+<h1 id="函数的参数"><a href="#函数的参数" class="headerlink" title="函数的参数"></a>函数的参数</h1><p>传入参数的功能是：在函数进行计算的时候，接受外部（调用时）提供的数据</p>
+<p><strong>语法解析：</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 定义函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">add</span>(<span class="params">x,y</span>):</span><br><span class="line">    result =  x + y</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;<span class="subst">&#123;x&#125;</span> + <span class="subst">&#123;y&#125;</span>的结果是：<span class="subst">&#123;result&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 调用函数</span></span><br><span class="line">add(<span class="number">5</span>,<span class="number">6</span>)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>函数定义中，提供的x和y，称之为：形式参数（形参），表示函数声明将要使用2个参数，参数直接使用逗号进行分隔</li>
+<li>函数调用中，提供的5和6，称之为：实际参数（实参），表示函数执行时真正使用的参数值，传入的时候，按照顺序传入数据，使用逗号分隔</li>
+<li>传入参数的数量是不受限制的，可以没有，也可以有多个</li>
+</ul>
+<h1 id="函数的返回值"><a href="#函数的返回值" class="headerlink" title="函数的返回值"></a>函数的返回值</h1><h2 id="返回值的定义"><a href="#返回值的定义" class="headerlink" title="返回值的定义"></a>返回值的定义</h2><p>所谓返回值，就是程序中函数完成事情后，最后给调用者的结果</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">函数</span>(<span class="params">参数...</span>):</span><br><span class="line">    函数体</span><br><span class="line">    <span class="keyword">return</span> 返回值</span><br><span class="line"></span><br><span class="line">变量 = 函数(参数)</span><br></pre></td></tr></table></figure>
+
+<p>如上述代码，变量就能接收到函数的返回值</p>
+<p>语法就是：通过return关键字，就能向调用者返回数据</p>
+<p><strong>注意：</strong>函数体在遇到return后就结束了，所以写在return后的代码不会执行</p>
+<h2 id="None类型"><a href="#None类型" class="headerlink" title="None类型"></a>None类型</h2><p>Python中有一个特殊的字面量：None，其类型是：&lt;class ‘NoneType’&gt;，无返回值的函数，实际上就是返回了：None这个字面量</p>
+<p>应用场景：</p>
+<ul>
+<li>用在函数<strong>无返回值</strong>上</li>
+<li>用在<strong>if判断</strong>上，在if判断中，None等同于False，一般用在函数中主动返回None，配合if判断做出相关处理</li>
+<li>在声明无内容的变量上，<strong>定义变量</strong>时，但暂时不需要变量有具体值，可以用None来代替</li>
+</ul>
+<p>None在if中的应用</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">check_age</span>(<span class="params">age</span>):</span><br><span class="line">    <span class="keyword">if</span> age &gt; <span class="number">18</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;SUCCESS&quot;</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">result = check_age(<span class="number">10</span>)</span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> result:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;未成年&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="函数说明文档"><a href="#函数说明文档" class="headerlink" title="函数说明文档"></a>函数说明文档</h1><p>顾名思义，就是在函数中写注释函数进行说明解释，帮助更好理解函数的功能</p>
+<h1 id="函数的嵌套调用"><a href="#函数的嵌套调用" class="headerlink" title="函数的嵌套调用"></a>函数的嵌套调用</h1><p>所谓函数嵌套调用就是指在一个函数里面调用了另外一个函数，如下所示</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">fun_b</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;---2---&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">fun_a</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;---1---&quot;</span>)</span><br><span class="line"></span><br><span class="line">    fun_b()</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;---3---&quot;</span>)</span><br><span class="line"></span><br><span class="line">fun_a()</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">本段代码在fun_a中调用了fun_b</span></span><br><span class="line"><span class="string">运行结果：</span></span><br><span class="line"><span class="string">---1---</span></span><br><span class="line"><span class="string">---2---</span></span><br><span class="line"><span class="string">---3---</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="变量作用域"><a href="#变量作用域" class="headerlink" title="变量作用域"></a>变量作用域</h1><ol>
+<li>变量主要分为局部变量和全局变量</li>
+<li>局部变量：定义在函数体内的局部变量，即只在函数体内部生效</li>
+<li>全局变量：在函数体内、外都能生效的变量</li>
+<li>在函数内部定义一个与全局变量同名的变量，并对其运算，对全局变量无影响</li>
+<li>在函数内部声明全局变量，需要使用global关键字</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Python基础(二)——判断、循环</title>
     <url>/2023/07/14/Python%E5%9F%BA%E7%A1%80(%E4%BA%8C)%E2%80%94%E2%80%94%E5%88%A4%E6%96%AD%E3%80%81%E5%BE%AA%E7%8E%AF/</url>
     <content><![CDATA[<h1 id="判断语句"><a href="#判断语句" class="headerlink" title="判断语句"></a>判断语句</h1><p>进行逻辑判断是生活中常见的行为，同样，在程序中，进行逻辑判断也是最为基础的功能</p>
@@ -3491,62 +3553,75 @@
       </categories>
   </entry>
   <entry>
-    <title>Python基础(三)——函数</title>
-    <url>/2023/08/12/Python%E5%9F%BA%E7%A1%80(%E4%B8%89)%E2%80%94%E2%80%94%E5%87%BD%E6%95%B0/</url>
-    <content><![CDATA[<h1 id="函数介绍"><a href="#函数介绍" class="headerlink" title="函数介绍"></a>函数介绍</h1><ul>
-<li>函数是组织好的，可重复使用的，用来实现特定功能的代码段，如前面的type()、input()等都是Python的内置函数。</li>
-<li>函数可以提高程序的复用性，减少重复性代码，提高开发效率</li>
-</ul>
-<h1 id="函数的定义和调用"><a href="#函数的定义和调用" class="headerlink" title="函数的定义和调用"></a>函数的定义和调用</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 定义函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">函数名</span>(<span class="params">传入参数</span>):</span><br><span class="line">    函数体</span><br><span class="line">    <span class="keyword">return</span> 返回值</span><br><span class="line"></span><br><span class="line"><span class="comment"># 调用函数</span></span><br><span class="line">函数名(参数)</span><br></pre></td></tr></table></figure>
+    <title>Python基础(五)——函数拓展</title>
+    <url>/2023/08/15/Python%E5%9F%BA%E7%A1%80(%E4%BA%94)%E2%80%94%E2%80%94%E5%87%BD%E6%95%B0%E6%8B%93%E5%B1%95/</url>
+    <content><![CDATA[<h1 id="函数的多返回值"><a href="#函数的多返回值" class="headerlink" title="函数的多返回值"></a>函数的多返回值</h1><p> 使用多个变量接收多个返回值</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">test</span>():</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>,<span class="string">&quot;hello&quot;</span>,<span class="literal">True</span></span><br><span class="line"></span><br><span class="line">x,y,z = test()    <span class="comment"># x为1，y为&quot;hello&quot;,z为True</span></span><br></pre></td></tr></table></figure>
 
 
 
-<p><strong>注意：</strong></p>
+
+
+<h1 id="函数多种传参方式"><a href="#函数多种传参方式" class="headerlink" title="函数多种传参方式"></a>函数多种传参方式</h1><h2 id="函数参数种类"><a href="#函数参数种类" class="headerlink" title="函数参数种类"></a>函数参数种类</h2><p>使用方式上的不同，函数有4钟常见参数使用方式：</p>
 <ul>
-<li>参数如果不需要，可以省略</li>
-<li>返回值如果不需要，可以省略</li>
-<li>函数必须先定义后使用</li>
+<li>位置参数</li>
+<li>关键字参数</li>
+<li>缺省参数</li>
+<li>不定长参数</li>
 </ul>
-<h1 id="函数的参数"><a href="#函数的参数" class="headerlink" title="函数的参数"></a>函数的参数</h1><p>传入参数的功能是：在函数进行计算的时候，接受外部（调用时）提供的数据</p>
-<p><strong>语法解析：</strong></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 定义函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">add</span>(<span class="params">x,y</span>):</span><br><span class="line">    result =  x + y</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;<span class="subst">&#123;x&#125;</span> + <span class="subst">&#123;y&#125;</span>的结果是：<span class="subst">&#123;result&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 调用函数</span></span><br><span class="line">add(<span class="number">5</span>,<span class="number">6</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="位置参数"><a href="#位置参数" class="headerlink" title="位置参数"></a>位置参数</h2><p>位置参数：调用函数时根据函数定义的参数位置来传递函数</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">user_info</span>(<span class="params">name,age,gender</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;您的名字是<span class="subst">&#123;name&#125;</span>,年龄是<span class="subst">&#123;age&#125;</span>,性别是<span class="subst">&#123;gender&#125;</span>)</span></span><br><span class="line"><span class="string">          </span></span><br><span class="line"><span class="string">user_info(&#x27;Tom&#x27;,20,&#x27;男&#x27;)</span></span><br></pre></td></tr></table></figure>
+
+<p>注意：传递的参数和定义的参数的顺序及个数必须一致</p>
+<h2 id="关键字参数"><a href="#关键字参数" class="headerlink" title="关键字参数"></a>关键字参数</h2><p>关键字参数：函数调用时通过”键&#x3D;值“形式传递参数</p>
+<p>作用：可以让函数更加清晰、容易使用，同时也清楚了参数的顺序需求</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">user_info</span>(<span class="params">name,age,gender</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;您的名字是<span class="subst">&#123;name&#125;</span>,年龄是<span class="subst">&#123;age&#125;</span>,性别是<span class="subst">&#123;gender&#125;</span>)</span></span><br><span class="line"><span class="string">          </span></span><br><span class="line"><span class="string"># 关键字传参</span></span><br><span class="line"><span class="string">user_info(name=&#x27;Tom&#x27;, age=20, gender=&#x27;男&#x27;) </span></span><br><span class="line"><span class="string">          </span></span><br><span class="line"><span class="string"># 可以不按照顺序</span></span><br><span class="line"><span class="string">user_info(age=20, name=&#x27;Tom&#x27;, agender=&#x27;男&#x27;) </span></span><br><span class="line"><span class="string">          </span></span><br><span class="line"><span class="string"># 可以和位置参数混用，位置参数必须在前，且匹配参数顺序</span></span><br><span class="line"><span class="string">user_info(&#x27;Tom&#x27;, age=20, gender=&#x27;男&#x27;)           </span></span><br></pre></td></tr></table></figure>
+
+<p>注意：函数调用时，如果有位置参数时，位置参数必须在关键字参数前面，但关键字参数之间不存在先后顺序</p>
+<h2 id="缺省参数"><a href="#缺省参数" class="headerlink" title="缺省参数"></a>缺省参数</h2><p>缺省参数：缺省参数也叫默认参数，用于定义函数，为参数提供默认值，调用函数时可不传该默认参数的值（注意：所有位置参数必须出现在默认参数前，包括函数定义和调用）</p>
+<p>作用：当调用函数时没有传递函数，就会使用默认使用缺省参数对应的值</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">user_info</span>(<span class="params">name,age,gender=<span class="string">&#x27;男&#x27;</span></span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;您的名字是<span class="subst">&#123;name&#125;</span>,年龄是<span class="subst">&#123;age&#125;</span>,性别是<span class="subst">&#123;gender&#125;</span>)</span></span><br><span class="line"><span class="string">          </span></span><br><span class="line"><span class="string">user_info(&#x27;Tom&#x27;, 20)</span></span><br><span class="line"><span class="string">user_info(&#x27;Rose&#x27;, 18, &#x27;女&#x27;)          </span></span><br></pre></td></tr></table></figure>
+
+<p>注意：函数调用时，如果为缺省参数传值则修改默认参数值，否则使用这个默认值</p>
+<h2 id="不定长参数"><a href="#不定长参数" class="headerlink" title="不定长参数"></a>不定长参数</h2><p>不定长参数：不定长参数也叫可变参数，用于不确定调用的时候会传递多少个参数（不传参也可以）的场景</p>
+<p>作用：当调用函数时不确定参数个数时，可以使用不定长参数</p>
+<p>不定长参数的类型：</p>
+<ul>
+<li><p>位置传递</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">user_info</span>(<span class="params">*args</span>):</span><br><span class="line">    <span class="built_in">print</span>(args)</span><br><span class="line">    </span><br><span class="line"><span class="comment"># (&#x27;Tom&#x27;)</span></span><br><span class="line">user_info(<span class="string">&#x27;Tom&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># (&#x27;Tom&#x27;,18)</span></span><br><span class="line">user_info(<span class="string">&#x27;Tom&#x27;</span>,<span class="number">18</span>)</span><br></pre></td></tr></table></figure>
+
+<p>注意：传进的所有参数都会被args变量收集，它会根据传进参数的位置合并为一个元组(tuple)，args是元组类型</p>
+</li>
+<li><p>关键字传递</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">user_info</span>(<span class="params">**kwargs</span>):</span><br><span class="line">    <span class="built_in">print</span>(kwargs)</span><br><span class="line">    </span><br><span class="line"><span class="comment"># &#123;&#x27;name&#x27;:&#x27;Tom&#x27;, &#x27;age&#x27;:18, &#x27;id&#x27;:110&#125;</span></span><br><span class="line">user_info(name=<span class="string">&#x27;Tom&#x27;</span>, age=<span class="number">18</span>, <span class="built_in">id</span>=<span class="number">110</span>)</span><br></pre></td></tr></table></figure>
+
+<p>注意：参数是”键&#x3D;值“形式的情况下，所有的”键&#x3D;值“都会被kwargs接受，同时会根据”键&#x3D;值“组成字典</p>
+</li>
+</ul>
+<h1 id="匿名函数"><a href="#匿名函数" class="headerlink" title="匿名函数"></a>匿名函数</h1><h2 id="函数作为参数传递"><a href="#函数作为参数传递" class="headerlink" title="函数作为参数传递"></a>函数作为参数传递</h2><ul>
+<li>函数本身可以作为参数，传入另一个函数中使用</li>
+<li>这是一种计算逻辑的传递，而非数据的传递</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">text</span>(<span class="params">computer</span>):</span><br><span class="line">    result = computer(<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;compute函数的类型是；<span class="subst">&#123;<span class="built_in">type</span>(computer)&#125;</span>&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;计算结果：<span class="subst">&#123;result&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">compter</span>(<span class="params">x,y</span>):</span><br><span class="line">    <span class="keyword">return</span> x+y</span><br><span class="line"></span><br><span class="line">text(computer)</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">运行结果</span></span><br><span class="line"><span class="string">compute函数的类型是；&lt;class &#x27;function&#x27;&gt;</span></span><br><span class="line"><span class="string">计算结果：3</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="lambda匿名函数"><a href="#lambda匿名函数" class="headerlink" title="lambda匿名函数"></a>lambda匿名函数</h2><p>函数的定义中</p>
+<ul>
+<li>def关键字，可以定义带有名称的函数，可以基于名称重复使用</li>
+<li>lambda关键字，可以定义匿名函数（无名称），只可以临时使用一次</li>
+</ul>
+<p>匿名函数定义语法</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">lambda</span> 传入参数:函数体(一行代码)</span><br></pre></td></tr></table></figure>
 
 <ul>
-<li>函数定义中，提供的x和y，称之为：形式参数（形参），表示函数声明将要使用2个参数，参数直接使用逗号进行分隔</li>
-<li>函数调用中，提供的5和6，称之为：实际参数（实参），表示函数执行时真正使用的参数值，传入的时候，按照顺序传入数据，使用逗号分隔</li>
-<li>传入参数的数量是不受限制的，可以没有，也可以有多个</li>
+<li>lambda是关键字，表示定义匿名函数</li>
+<li>传入参数表示匿名函数的形式参数，如：x,y表示接受2个形式参数</li>
+<li>函数体，就是函数的执行逻辑，要注意：只能写一行，无法写多行代码</li>
 </ul>
-<h1 id="函数的返回值"><a href="#函数的返回值" class="headerlink" title="函数的返回值"></a>函数的返回值</h1><h2 id="返回值的定义"><a href="#返回值的定义" class="headerlink" title="返回值的定义"></a>返回值的定义</h2><p>所谓返回值，就是程序中函数完成事情后，最后给调用者的结果</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">函数</span>(<span class="params">参数...</span>):</span><br><span class="line">    函数体</span><br><span class="line">    <span class="keyword">return</span> 返回值</span><br><span class="line"></span><br><span class="line">变量 = 函数(参数)</span><br></pre></td></tr></table></figure>
+<p>例：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">text</span>(<span class="params">computer</span>):</span><br><span class="line">    result = computer(<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;compute函数的类型是；<span class="subst">&#123;<span class="built_in">type</span>(computer)&#125;</span>&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;计算结果：<span class="subst">&#123;result&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">compter</span>(<span class="params">x,y</span>):</span><br><span class="line">    <span class="keyword">return</span> x+y</span><br><span class="line"></span><br><span class="line">text(computer)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 可以使用lambda表达式将上述代码简化，如下</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">text</span>(<span class="params">computer</span>):</span><br><span class="line">    result = computer(<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;compute函数的类型是；<span class="subst">&#123;<span class="built_in">type</span>(computer)&#125;</span>&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;计算结果：<span class="subst">&#123;result&#125;</span>&quot;</span>)</span><br><span class="line">    </span><br><span class="line">text(<span class="keyword">lambda</span> x,y: x+y)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 两段代码作用和运行结果完全一致</span></span><br></pre></td></tr></table></figure>
 
-<p>如上述代码，变量就能接收到函数的返回值</p>
-<p>语法就是：通过return关键字，就能向调用者返回数据</p>
-<p><strong>注意：</strong>函数体在遇到return后就结束了，所以写在return后的代码不会执行</p>
-<h2 id="None类型"><a href="#None类型" class="headerlink" title="None类型"></a>None类型</h2><p>Python中有一个特殊的字面量：None，其类型是：&lt;class ‘NoneType’&gt;，无返回值的函数，实际上就是返回了：None这个字面量</p>
-<p>应用场景：</p>
-<ul>
-<li>用在函数<strong>无返回值</strong>上</li>
-<li>用在<strong>if判断</strong>上，在if判断中，None等同于False，一般用在函数中主动返回None，配合if判断做出相关处理</li>
-<li>在声明无内容的变量上，<strong>定义变量</strong>时，但暂时不需要变量有具体值，可以用None来代替</li>
-</ul>
-<p>None在if中的应用</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">check_age</span>(<span class="params">age</span>):</span><br><span class="line">    <span class="keyword">if</span> age &gt; <span class="number">18</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;SUCCESS&quot;</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">result = check_age(<span class="number">10</span>)</span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> result:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;未成年&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="函数说明文档"><a href="#函数说明文档" class="headerlink" title="函数说明文档"></a>函数说明文档</h1><p>顾名思义，就是在函数中写注释函数进行说明解释，帮助更好理解函数的功能</p>
-<h1 id="函数的嵌套调用"><a href="#函数的嵌套调用" class="headerlink" title="函数的嵌套调用"></a>函数的嵌套调用</h1><p>所谓函数嵌套调用就是指在一个函数里面调用了另外一个函数，如下所示</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">fun_b</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;---2---&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">fun_a</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;---1---&quot;</span>)</span><br><span class="line"></span><br><span class="line">    fun_b()</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;---3---&quot;</span>)</span><br><span class="line"></span><br><span class="line">fun_a()</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">本段代码在fun_a中调用了fun_b</span></span><br><span class="line"><span class="string">运行结果：</span></span><br><span class="line"><span class="string">---1---</span></span><br><span class="line"><span class="string">---2---</span></span><br><span class="line"><span class="string">---3---</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="变量作用域"><a href="#变量作用域" class="headerlink" title="变量作用域"></a>变量作用域</h1><ol>
-<li>变量主要分为局部变量和全局变量</li>
-<li>局部变量：定义在函数体内的局部变量，即只在函数体内部生效</li>
-<li>全局变量：在函数体内、外都能生效的变量</li>
-<li>在函数内部定义一个与全局变量同名的变量，并对其运算，对全局变量无影响</li>
-<li>在函数内部声明全局变量，需要使用global关键字</li>
-</ol>
 ]]></content>
       <categories>
         <category>Python</category>
@@ -3831,78 +3906,24 @@
       </categories>
   </entry>
   <entry>
-    <title>Python基础(五)——函数拓展</title>
-    <url>/2023/08/15/Python%E5%9F%BA%E7%A1%80(%E4%BA%94)%E2%80%94%E2%80%94%E5%87%BD%E6%95%B0%E6%8B%93%E5%B1%95/</url>
-    <content><![CDATA[<h1 id="函数的多返回值"><a href="#函数的多返回值" class="headerlink" title="函数的多返回值"></a>函数的多返回值</h1><p> 使用多个变量接收多个返回值</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">test</span>():</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>,<span class="string">&quot;hello&quot;</span>,<span class="literal">True</span></span><br><span class="line"></span><br><span class="line">x,y,z = test()    <span class="comment"># x为1，y为&quot;hello&quot;,z为True</span></span><br></pre></td></tr></table></figure>
+    <title>Hello World</title>
+    <url>/2023/04/12/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
 
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
 
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
 
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 
-
-<h1 id="函数多种传参方式"><a href="#函数多种传参方式" class="headerlink" title="函数多种传参方式"></a>函数多种传参方式</h1><h2 id="函数参数种类"><a href="#函数参数种类" class="headerlink" title="函数参数种类"></a>函数参数种类</h2><p>使用方式上的不同，函数有4钟常见参数使用方式：</p>
-<ul>
-<li>位置参数</li>
-<li>关键字参数</li>
-<li>缺省参数</li>
-<li>不定长参数</li>
-</ul>
-<h2 id="位置参数"><a href="#位置参数" class="headerlink" title="位置参数"></a>位置参数</h2><p>位置参数：调用函数时根据函数定义的参数位置来传递函数</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">user_info</span>(<span class="params">name,age,gender</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;您的名字是<span class="subst">&#123;name&#125;</span>,年龄是<span class="subst">&#123;age&#125;</span>,性别是<span class="subst">&#123;gender&#125;</span>)</span></span><br><span class="line"><span class="string">          </span></span><br><span class="line"><span class="string">user_info(&#x27;Tom&#x27;,20,&#x27;男&#x27;)</span></span><br></pre></td></tr></table></figure>
-
-<p>注意：传递的参数和定义的参数的顺序及个数必须一致</p>
-<h2 id="关键字参数"><a href="#关键字参数" class="headerlink" title="关键字参数"></a>关键字参数</h2><p>关键字参数：函数调用时通过”键&#x3D;值“形式传递参数</p>
-<p>作用：可以让函数更加清晰、容易使用，同时也清楚了参数的顺序需求</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">user_info</span>(<span class="params">name,age,gender</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;您的名字是<span class="subst">&#123;name&#125;</span>,年龄是<span class="subst">&#123;age&#125;</span>,性别是<span class="subst">&#123;gender&#125;</span>)</span></span><br><span class="line"><span class="string">          </span></span><br><span class="line"><span class="string"># 关键字传参</span></span><br><span class="line"><span class="string">user_info(name=&#x27;Tom&#x27;, age=20, gender=&#x27;男&#x27;) </span></span><br><span class="line"><span class="string">          </span></span><br><span class="line"><span class="string"># 可以不按照顺序</span></span><br><span class="line"><span class="string">user_info(age=20, name=&#x27;Tom&#x27;, agender=&#x27;男&#x27;) </span></span><br><span class="line"><span class="string">          </span></span><br><span class="line"><span class="string"># 可以和位置参数混用，位置参数必须在前，且匹配参数顺序</span></span><br><span class="line"><span class="string">user_info(&#x27;Tom&#x27;, age=20, gender=&#x27;男&#x27;)           </span></span><br></pre></td></tr></table></figure>
-
-<p>注意：函数调用时，如果有位置参数时，位置参数必须在关键字参数前面，但关键字参数之间不存在先后顺序</p>
-<h2 id="缺省参数"><a href="#缺省参数" class="headerlink" title="缺省参数"></a>缺省参数</h2><p>缺省参数：缺省参数也叫默认参数，用于定义函数，为参数提供默认值，调用函数时可不传该默认参数的值（注意：所有位置参数必须出现在默认参数前，包括函数定义和调用）</p>
-<p>作用：当调用函数时没有传递函数，就会使用默认使用缺省参数对应的值</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">user_info</span>(<span class="params">name,age,gender=<span class="string">&#x27;男&#x27;</span></span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;您的名字是<span class="subst">&#123;name&#125;</span>,年龄是<span class="subst">&#123;age&#125;</span>,性别是<span class="subst">&#123;gender&#125;</span>)</span></span><br><span class="line"><span class="string">          </span></span><br><span class="line"><span class="string">user_info(&#x27;Tom&#x27;, 20)</span></span><br><span class="line"><span class="string">user_info(&#x27;Rose&#x27;, 18, &#x27;女&#x27;)          </span></span><br></pre></td></tr></table></figure>
-
-<p>注意：函数调用时，如果为缺省参数传值则修改默认参数值，否则使用这个默认值</p>
-<h2 id="不定长参数"><a href="#不定长参数" class="headerlink" title="不定长参数"></a>不定长参数</h2><p>不定长参数：不定长参数也叫可变参数，用于不确定调用的时候会传递多少个参数（不传参也可以）的场景</p>
-<p>作用：当调用函数时不确定参数个数时，可以使用不定长参数</p>
-<p>不定长参数的类型：</p>
-<ul>
-<li><p>位置传递</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">user_info</span>(<span class="params">*args</span>):</span><br><span class="line">    <span class="built_in">print</span>(args)</span><br><span class="line">    </span><br><span class="line"><span class="comment"># (&#x27;Tom&#x27;)</span></span><br><span class="line">user_info(<span class="string">&#x27;Tom&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># (&#x27;Tom&#x27;,18)</span></span><br><span class="line">user_info(<span class="string">&#x27;Tom&#x27;</span>,<span class="number">18</span>)</span><br></pre></td></tr></table></figure>
-
-<p>注意：传进的所有参数都会被args变量收集，它会根据传进参数的位置合并为一个元组(tuple)，args是元组类型</p>
-</li>
-<li><p>关键字传递</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">user_info</span>(<span class="params">**kwargs</span>):</span><br><span class="line">    <span class="built_in">print</span>(kwargs)</span><br><span class="line">    </span><br><span class="line"><span class="comment"># &#123;&#x27;name&#x27;:&#x27;Tom&#x27;, &#x27;age&#x27;:18, &#x27;id&#x27;:110&#125;</span></span><br><span class="line">user_info(name=<span class="string">&#x27;Tom&#x27;</span>, age=<span class="number">18</span>, <span class="built_in">id</span>=<span class="number">110</span>)</span><br></pre></td></tr></table></figure>
-
-<p>注意：参数是”键&#x3D;值“形式的情况下，所有的”键&#x3D;值“都会被kwargs接受，同时会根据”键&#x3D;值“组成字典</p>
-</li>
-</ul>
-<h1 id="匿名函数"><a href="#匿名函数" class="headerlink" title="匿名函数"></a>匿名函数</h1><h2 id="函数作为参数传递"><a href="#函数作为参数传递" class="headerlink" title="函数作为参数传递"></a>函数作为参数传递</h2><ul>
-<li>函数本身可以作为参数，传入另一个函数中使用</li>
-<li>这是一种计算逻辑的传递，而非数据的传递</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">text</span>(<span class="params">computer</span>):</span><br><span class="line">    result = computer(<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;compute函数的类型是；<span class="subst">&#123;<span class="built_in">type</span>(computer)&#125;</span>&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;计算结果：<span class="subst">&#123;result&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">compter</span>(<span class="params">x,y</span>):</span><br><span class="line">    <span class="keyword">return</span> x+y</span><br><span class="line"></span><br><span class="line">text(computer)</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">运行结果</span></span><br><span class="line"><span class="string">compute函数的类型是；&lt;class &#x27;function&#x27;&gt;</span></span><br><span class="line"><span class="string">计算结果：3</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="lambda匿名函数"><a href="#lambda匿名函数" class="headerlink" title="lambda匿名函数"></a>lambda匿名函数</h2><p>函数的定义中</p>
-<ul>
-<li>def关键字，可以定义带有名称的函数，可以基于名称重复使用</li>
-<li>lambda关键字，可以定义匿名函数（无名称），只可以临时使用一次</li>
-</ul>
-<p>匿名函数定义语法</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">lambda</span> 传入参数:函数体(一行代码)</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>lambda是关键字，表示定义匿名函数</li>
-<li>传入参数表示匿名函数的形式参数，如：x,y表示接受2个形式参数</li>
-<li>函数体，就是函数的执行逻辑，要注意：只能写一行，无法写多行代码</li>
-</ul>
-<p>例：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">text</span>(<span class="params">computer</span>):</span><br><span class="line">    result = computer(<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;compute函数的类型是；<span class="subst">&#123;<span class="built_in">type</span>(computer)&#125;</span>&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;计算结果：<span class="subst">&#123;result&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">compter</span>(<span class="params">x,y</span>):</span><br><span class="line">    <span class="keyword">return</span> x+y</span><br><span class="line"></span><br><span class="line">text(computer)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 可以使用lambda表达式将上述代码简化，如下</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">text</span>(<span class="params">computer</span>):</span><br><span class="line">    result = computer(<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;compute函数的类型是；<span class="subst">&#123;<span class="built_in">type</span>(computer)&#125;</span>&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;计算结果：<span class="subst">&#123;result&#125;</span>&quot;</span>)</span><br><span class="line">    </span><br><span class="line">text(<span class="keyword">lambda</span> x,y: x+y)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 两段代码作用和运行结果完全一致</span></span><br></pre></td></tr></table></figure>
-
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
       <categories>
-        <category>Python</category>
+        <category>others</category>
       </categories>
   </entry>
   <entry>
@@ -4384,27 +4405,6 @@
 ]]></content>
       <categories>
         <category>Python</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2023/04/12/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-      <categories>
-        <category>others</category>
       </categories>
   </entry>
 </search>
