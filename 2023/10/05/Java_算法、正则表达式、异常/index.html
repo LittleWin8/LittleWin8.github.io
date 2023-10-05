@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+  
+
+    <head>
+      <meta charset="utf-8" />
+        
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1"
+      />
+      <title>Java_算法、正则表达式、异常 |  小稳</title>
+  <meta name="generator" content="hexo-theme-ayer">
+      
+      <link rel="shortcut icon" href="/littlewin.png" />
+       
+<link rel="stylesheet" href="/dist/main.css">
+
+      
+<link rel="stylesheet" href="/css/fonts/remixicon.css">
+
+      
+<link rel="stylesheet" href="/css/custom.css">
+ 
+      <script src="https://cdn.staticfile.org/pace/1.2.4/pace.min.js"></script>
+       
+ 
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-bulma@5.0.1/bulma.min.css"
+      />
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
+
+      <!-- mermaid -->
+      
+      <style>
+        .swal2-styled.swal2-confirm {
+          font-size: 1.6rem;
+        }
+      </style>
+    <link rel="alternate" href="/atom.xml" title="小稳" type="application/atom+xml">
+</head>
+  </html>
+</html>
+
+
+<body>
+  <div id="app">
+    
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-Java_算法、正则表达式、异常"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  Java_算法、正则表达式、异常
+</h1>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2023/10/05/Java_%E7%AE%97%E6%B3%95%E3%80%81%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E3%80%81%E5%BC%82%E5%B8%B8/" class="article-date">
+  <time datetime="2023-10-05T12:26:57.000Z" itemprop="datePublished">2023-10-05</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Java/">Java</a>
+  </div>
+  
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> Word count:</span>
+            <span class="post-count">1.1k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> Reading time≈</span>
+            <span class="post-count">4 min</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h1><h2 id="排序算法"><a href="#排序算法" class="headerlink" title="排序算法"></a>排序算法</h2><h3 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h3><ol>
+<li><p>每次从数组中找出最大值放在数组的后面去。</p>
+</li>
+<li><p>冒牌排序的步骤分析：</p>
+<ul>
+<li>确定总共需要做几轮：数组的长度 - 1</li>
+<li>每轮比较几次：数组长度 - 轮次 - 1</li>
+<li>当前位置数据大于后一位置则交换数据，否则不进行操作</li>
+</ul>
+</li>
+<li><p>代码实现：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span>[] arr = &#123;<span class="number">3</span>,<span class="number">5</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">7</span>,<span class="number">4</span>,<span class="number">10</span>,<span class="number">6</span>,<span class="number">8</span>,<span class="number">9</span>&#125;;</span><br><span class="line"><span class="type">int</span> temp;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; arr.length - <span class="number">1</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt; arr.length - <span class="number">1</span> - i; j++) &#123;</span><br><span class="line">     	<span class="keyword">if</span>(arr[j] &gt; arr[j+<span class="number">1</span>])&#123;</span><br><span class="line">			temp = arr[j];</span><br><span class="line">             arr[j] = arr[j+<span class="number">1</span>];</span><br><span class="line">             arr[j+<span class="number">1</span>] = temp;</span><br><span class="line">         &#125;</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h3><ol>
+<li><p>每轮选择当前位置，开始找出后面的较小值，与该位置交换</p>
+</li>
+<li><p>选择排序的步骤分析：</p>
+<ul>
+<li>确定总共需要选择几轮：数组长度 -1</li>
+<li>控制每轮从当前位置为基准，与后面元素选择几次</li>
+</ul>
+</li>
+<li><p>代码实现：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span>[] arr = &#123;<span class="number">3</span>,<span class="number">5</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">7</span>,<span class="number">4</span>,<span class="number">10</span>,<span class="number">6</span>,<span class="number">8</span>,<span class="number">9</span>&#125;;</span><br><span class="line"><span class="type">int</span> temp, p;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; arr.length - <span class="number">1</span>; i++) &#123;</span><br><span class="line">     p = i;</span><br><span class="line">     <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> i + <span class="number">1</span>; j &lt; arr.length ; j++) &#123;</span><br><span class="line">          <span class="keyword">if</span> (arr[p] &gt; arr[j])&#123;</span><br><span class="line">              p = j;</span><br><span class="line">          &#125;</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">     <span class="keyword">if</span> (i != p)&#123;</span><br><span class="line">            temp = arr[i];</span><br><span class="line">            arr[i] = arr[p];</span><br><span class="line">            arr[p] = temp;</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="查找算法"><a href="#查找算法" class="headerlink" title="查找算法"></a>查找算法</h2><h3 id="二分查找法（折半查找）"><a href="#二分查找法（折半查找）" class="headerlink" title="二分查找法（折半查找）"></a>二分查找法（折半查找）</h3><ol>
+<li><p>前提：数组中的数据必须是有序的</p>
+</li>
+<li><p>核心思想：每次排除一半的数据，查询数据的性能明显提高极多</p>
+</li>
+<li><p>代码实现：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">binarySearch</span><span class="params">(<span class="type">int</span>[] arr, <span class="type">int</span> data)</span>&#123;</span><br><span class="line">   <span class="type">int</span> <span class="variable">left</span> <span class="operator">=</span> <span class="number">0</span> ,right = arr.length;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">while</span> (left &lt;= right)&#123;</span><br><span class="line">       <span class="type">int</span> <span class="variable">mid</span> <span class="operator">=</span> (right + left)/<span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">       <span class="keyword">if</span> (data &lt; arr[mid])&#123;</span><br><span class="line">            right = mid -<span class="number">1</span>;</span><br><span class="line">       &#125;<span class="keyword">else</span> <span class="keyword">if</span> (data &gt; arr[mid])&#123;</span><br><span class="line">            left = mid + <span class="number">1</span>;</span><br><span class="line">       &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> mid;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h1 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><ol>
+<li>正则表达式：就是由一些指定的字符组成，代表的是一个规则</li>
+<li>作用：<ul>
+<li>用来校验数据格式是否合法</li>
+<li>在一段文本中查找满足要求的内容</li>
+</ul>
+</li>
+</ol>
+<h2 id="书写规则"><a href="#书写规则" class="headerlink" title="书写规则"></a>书写规则</h2><ol>
+<li><p>String类提供了<code>public boolean matches(String regex)</code>方法与正则表达式进行匹配。</p>
+</li>
+<li><p>正则表达式书写规则：</p>
+<table>
+<thead>
+<tr>
+<th align="center">符号</th>
+<th align="center">含义</th>
+<th align="center">举例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>[]</code></td>
+<td align="center">里面的内容出现一次</td>
+<td align="center"><code>[abc]</code></td>
+</tr>
+<tr>
+<td align="center"><code>^</code></td>
+<td align="center">取反</td>
+<td align="center"><code>[^abc]</code></td>
+</tr>
+<tr>
+<td align="center"><code>&amp;&amp;</code></td>
+<td align="center">交集，不能写单个的&amp;</td>
+<td align="center"><code>[a-z&amp;&amp;m-p]</code></td>
+</tr>
+<tr>
+<td align="center"><code>.</code></td>
+<td align="center">任意字符</td>
+<td align="center"><code>\n回车符号不匹配</code></td>
+</tr>
+<tr>
+<td align="center"><code>\</code></td>
+<td align="center">转义字符</td>
+<td align="center"><code>\\d</code></td>
+</tr>
+<tr>
+<td align="center"><code>\\d</code></td>
+<td align="center">0-9</td>
+<td align="center"><code>\\d+</code></td>
+</tr>
+<tr>
+<td align="center"><code>\\D</code></td>
+<td align="center">非0-9</td>
+<td align="center"><code>\\D+</code></td>
+</tr>
+<tr>
+<td align="center"><code>\\s</code></td>
+<td align="center">空白字符</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"><code>\\S</code></td>
+<td align="center">非空白字符</td>
+<td align="center"><code>^\S</code></td>
+</tr>
+<tr>
+<td align="center"><code>\\w</code></td>
+<td align="center">单词字符</td>
+<td align="center"><code>[a-zA-Z_0-9]</code></td>
+</tr>
+<tr>
+<td align="center"><code>\\W</code></td>
+<td align="center">非单词字符</td>
+<td align="center"><code>[^\w]</code></td>
+</tr>
+<tr>
+<td align="center"><code>()</code></td>
+<td align="center">分组</td>
+<td align="center"><code>a(bc)+</code></td>
+</tr>
+<tr>
+<td align="center">&#96;</td>
+<td align="center">&#96;</td>
+<td align="center">写在括号外表示并集</td>
+</tr>
+<tr>
+<td align="center"><code>?</code></td>
+<td align="center">0次或1次</td>
+<td align="center"><code>\\d?</code></td>
+</tr>
+<tr>
+<td align="center"><code>*</code></td>
+<td align="center">0次或多次</td>
+<td align="center"><code>\\d*</code></td>
+</tr>
+<tr>
+<td align="center"><code>+</code></td>
+<td align="center">1次或多次</td>
+<td align="center"><code>\\d+</code></td>
+</tr>
+<tr>
+<td align="center"><code>&#123;&#125;</code></td>
+<td align="center">具体次数</td>
+<td align="center"><code>a&#123;7&#125;</code></td>
+</tr>
+<tr>
+<td align="center"><code>(?i)</code></td>
+<td align="center">忽略后面字符的大小写</td>
+<td align="center"><code>(?i)abc</code></td>
+</tr>
+<tr>
+<td align="center"><code>a((?i)b)c</code></td>
+<td align="center">只忽略b的大小写</td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+</li>
+</ol>
+<h1 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h1><h2 id="认识异常"><a href="#认识异常" class="headerlink" title="认识异常"></a>认识异常</h2><ol>
+<li><p>Error：代表系统级别错误（属于严重问题）</p>
+</li>
+<li><p>Exception：叫异常，它代表的才是我们程序可能出现的问题，所以，<code>Exception</code>以及它的子类来封装程序出现的问题。</p>
+<ul>
+<li>运行时异常：<code>RuntimeException</code>及其子类，编译阶段不会出现错误提醒，运行时出现的异常（如：数组索引越界异常）</li>
+<li>编译时异常：编译阶段就会出现错误提醒的（如：日期解析异常）</li>
+</ul>
+</li>
+<li><p>异常处理方法：</p>
+<ul>
+<li><p>抛出异常（throws）：在方法上使用throws关键字，可以将方法内部出现的异常抛出去给调用者处理。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">方法 <span class="keyword">throws</span> 异常<span class="number">1</span>, 异常<span class="number">2</span>,……&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>捕获异常（try……catch）：直接捕获程序出现的异常。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">    <span class="comment">// 监视可能出现异常的代码</span></span><br><span class="line">&#125;<span class="keyword">catch</span>(异常类型<span class="number">1</span> 变量)&#123;</span><br><span class="line">    <span class="comment">// 处理异常</span></span><br><span class="line">&#125;<span class="keyword">catch</span>(异常类型<span class="number">2</span> 变量)&#123;</span><br><span class="line">    <span class="comment">// 处理异常</span></span><br><span class="line">&#125;……</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ol>
+<h2 id="自定义异常"><a href="#自定义异常" class="headerlink" title="自定义异常"></a>自定义异常</h2><ol>
+<li>自定义异常：Java无法将世界上全部问题都提供异常类来代表，如果企业遇到自己的某种问题，想通过异常来表示，以便用异常来管理该问题，那就需要自己来定义异常类了。</li>
+<li>自定义异常的种类：自定义运行时异常、自定义编译时异常</li>
+<li>自定义运行时异常：<ul>
+<li>定义一个异常类继承<code>RuntimeException</code></li>
+<li>重写构造方法</li>
+<li>通过<code>throw new 异常类(xxx)</code>来创建异常对象并抛出。编译阶段不报错，提醒不强烈，运行时才可能出现</li>
+</ul>
+</li>
+<li>自定义编译时异常：<ul>
+<li>定义一个异常类继承<code>Exception</code></li>
+<li>重写构造方法</li>
+<li>通过<code>throw new 异常类(xxx)</code>来创建异常对象并抛出。编译阶段就报错，提醒更强烈</li>
+</ul>
+</li>
+</ol>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>Copyright： </strong>
+          
+          Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source.
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://littlewin8.github.io/2023/10/05/Java_%E7%AE%97%E6%B3%95%E3%80%81%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E3%80%81%E5%BC%82%E5%B8%B8/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+    
+      <a href="/2023/10/02/Java_%E5%B8%B8%E7%94%A8API(%E4%BA%8C)/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">Java_常用API(二)</div>
+      </a>
+    
+  </nav>
+
+  
+   
+  
+   
+    <script src="https://cdn.staticfile.org/twikoo/1.4.18/twikoo.all.min.js"></script>
+    <div id="twikoo" class="twikoo"></div>
+    <script>
+        twikoo.init({
+            envId: ""
+        })
+    </script>
+ 
+</article>
+
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2023
+        <i class="ri-heart-fill heart_icon"></i> LittleWin
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>Visitors:<span id="busuanzi_value_site_uv"></span></span>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>Views:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914'></script>
+        
+      </li>
+    </ul>
+  </div>
+</footer>    
+    </main>
+    <div class="float_btns">
+      <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+    </div>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/littlewin.png" alt="小稳"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/friends">友链</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/2023/about">关于我</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="Search">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-3.6.0.min.js"></script>
+ 
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+ 
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: ".tocbot",
+    contentSelector: ".article-entry",
+    headingSelector: "h1, h2, h3, h4, h5, h6",
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: "main",
+    positionFixedSelector: ".tocbot",
+    positionFixedClass: "is-position-fixed",
+    fixedSidebarOffset: "auto",
+  });
+</script>
+
+<script src="https://cdn.staticfile.org/jquery-modal/0.9.2/jquery.modal.min.js"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.staticfile.org/jquery-modal/0.9.2/jquery.modal.min.css"
+/>
+<script src="https://cdn.staticfile.org/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+ <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.staticfile.org/photoswipe/4.1.3/default-skin/default-skin.min.css">
+<script src="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe.min.js"></script>
+<script src="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script> 
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+ 
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+ 
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+ 
+<link rel="stylesheet" href="/css/clipboard.css">
+ <script src="https://cdn.staticfile.org/clipboard.js/2.0.10/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+ 
+<!-- CanvasBackground -->
+
+<script>
+  if (window.mermaid) {
+    mermaid.initialize({ theme: "forest" });
+  }
+</script>
+
+
+    
+    
+
+  </div>
+</body>
+
+</html>

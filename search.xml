@@ -1339,6 +1339,200 @@
       </categories>
   </entry>
   <entry>
+    <title>Java_算法、正则表达式、异常</title>
+    <url>/2023/10/05/Java_%E7%AE%97%E6%B3%95%E3%80%81%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E3%80%81%E5%BC%82%E5%B8%B8/</url>
+    <content><![CDATA[<h1 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h1><h2 id="排序算法"><a href="#排序算法" class="headerlink" title="排序算法"></a>排序算法</h2><h3 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h3><ol>
+<li><p>每次从数组中找出最大值放在数组的后面去。</p>
+</li>
+<li><p>冒牌排序的步骤分析：</p>
+<ul>
+<li>确定总共需要做几轮：数组的长度 - 1</li>
+<li>每轮比较几次：数组长度 - 轮次 - 1</li>
+<li>当前位置数据大于后一位置则交换数据，否则不进行操作</li>
+</ul>
+</li>
+<li><p>代码实现：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span>[] arr = &#123;<span class="number">3</span>,<span class="number">5</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">7</span>,<span class="number">4</span>,<span class="number">10</span>,<span class="number">6</span>,<span class="number">8</span>,<span class="number">9</span>&#125;;</span><br><span class="line"><span class="type">int</span> temp;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; arr.length - <span class="number">1</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt; arr.length - <span class="number">1</span> - i; j++) &#123;</span><br><span class="line">     	<span class="keyword">if</span>(arr[j] &gt; arr[j+<span class="number">1</span>])&#123;</span><br><span class="line">			temp = arr[j];</span><br><span class="line">             arr[j] = arr[j+<span class="number">1</span>];</span><br><span class="line">             arr[j+<span class="number">1</span>] = temp;</span><br><span class="line">         &#125;</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h3><ol>
+<li><p>每轮选择当前位置，开始找出后面的较小值，与该位置交换</p>
+</li>
+<li><p>选择排序的步骤分析：</p>
+<ul>
+<li>确定总共需要选择几轮：数组长度 -1</li>
+<li>控制每轮从当前位置为基准，与后面元素选择几次</li>
+</ul>
+</li>
+<li><p>代码实现：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span>[] arr = &#123;<span class="number">3</span>,<span class="number">5</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">7</span>,<span class="number">4</span>,<span class="number">10</span>,<span class="number">6</span>,<span class="number">8</span>,<span class="number">9</span>&#125;;</span><br><span class="line"><span class="type">int</span> temp, p;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; arr.length - <span class="number">1</span>; i++) &#123;</span><br><span class="line">     p = i;</span><br><span class="line">     <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> i + <span class="number">1</span>; j &lt; arr.length ; j++) &#123;</span><br><span class="line">          <span class="keyword">if</span> (arr[p] &gt; arr[j])&#123;</span><br><span class="line">              p = j;</span><br><span class="line">          &#125;</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">     <span class="keyword">if</span> (i != p)&#123;</span><br><span class="line">            temp = arr[i];</span><br><span class="line">            arr[i] = arr[p];</span><br><span class="line">            arr[p] = temp;</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="查找算法"><a href="#查找算法" class="headerlink" title="查找算法"></a>查找算法</h2><h3 id="二分查找法（折半查找）"><a href="#二分查找法（折半查找）" class="headerlink" title="二分查找法（折半查找）"></a>二分查找法（折半查找）</h3><ol>
+<li><p>前提：数组中的数据必须是有序的</p>
+</li>
+<li><p>核心思想：每次排除一半的数据，查询数据的性能明显提高极多</p>
+</li>
+<li><p>代码实现：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">binarySearch</span><span class="params">(<span class="type">int</span>[] arr, <span class="type">int</span> data)</span>&#123;</span><br><span class="line">   <span class="type">int</span> <span class="variable">left</span> <span class="operator">=</span> <span class="number">0</span> ,right = arr.length;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">while</span> (left &lt;= right)&#123;</span><br><span class="line">       <span class="type">int</span> <span class="variable">mid</span> <span class="operator">=</span> (right + left)/<span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">       <span class="keyword">if</span> (data &lt; arr[mid])&#123;</span><br><span class="line">            right = mid -<span class="number">1</span>;</span><br><span class="line">       &#125;<span class="keyword">else</span> <span class="keyword">if</span> (data &gt; arr[mid])&#123;</span><br><span class="line">            left = mid + <span class="number">1</span>;</span><br><span class="line">       &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> mid;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h1 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><ol>
+<li>正则表达式：就是由一些指定的字符组成，代表的是一个规则</li>
+<li>作用：<ul>
+<li>用来校验数据格式是否合法</li>
+<li>在一段文本中查找满足要求的内容</li>
+</ul>
+</li>
+</ol>
+<h2 id="书写规则"><a href="#书写规则" class="headerlink" title="书写规则"></a>书写规则</h2><ol>
+<li><p>String类提供了<code>public boolean matches(String regex)</code>方法与正则表达式进行匹配。</p>
+</li>
+<li><p>正则表达式书写规则：</p>
+<table>
+<thead>
+<tr>
+<th align="center">符号</th>
+<th align="center">含义</th>
+<th align="center">举例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>[]</code></td>
+<td align="center">里面的内容出现一次</td>
+<td align="center"><code>[abc]</code></td>
+</tr>
+<tr>
+<td align="center"><code>^</code></td>
+<td align="center">取反</td>
+<td align="center"><code>[^abc]</code></td>
+</tr>
+<tr>
+<td align="center"><code>&amp;&amp;</code></td>
+<td align="center">交集，不能写单个的&amp;</td>
+<td align="center"><code>[a-z&amp;&amp;m-p]</code></td>
+</tr>
+<tr>
+<td align="center"><code>.</code></td>
+<td align="center">任意字符</td>
+<td align="center"><code>\n回车符号不匹配</code></td>
+</tr>
+<tr>
+<td align="center"><code>\</code></td>
+<td align="center">转义字符</td>
+<td align="center"><code>\\d</code></td>
+</tr>
+<tr>
+<td align="center"><code>\\d</code></td>
+<td align="center">0-9</td>
+<td align="center"><code>\\d+</code></td>
+</tr>
+<tr>
+<td align="center"><code>\\D</code></td>
+<td align="center">非0-9</td>
+<td align="center"><code>\\D+</code></td>
+</tr>
+<tr>
+<td align="center"><code>\\s</code></td>
+<td align="center">空白字符</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"><code>\\S</code></td>
+<td align="center">非空白字符</td>
+<td align="center"><code>^\S</code></td>
+</tr>
+<tr>
+<td align="center"><code>\\w</code></td>
+<td align="center">单词字符</td>
+<td align="center"><code>[a-zA-Z_0-9]</code></td>
+</tr>
+<tr>
+<td align="center"><code>\\W</code></td>
+<td align="center">非单词字符</td>
+<td align="center"><code>[^\w]</code></td>
+</tr>
+<tr>
+<td align="center"><code>()</code></td>
+<td align="center">分组</td>
+<td align="center"><code>a(bc)+</code></td>
+</tr>
+<tr>
+<td align="center">&#96;</td>
+<td align="center">&#96;</td>
+<td align="center">写在括号外表示并集</td>
+</tr>
+<tr>
+<td align="center"><code>?</code></td>
+<td align="center">0次或1次</td>
+<td align="center"><code>\\d?</code></td>
+</tr>
+<tr>
+<td align="center"><code>*</code></td>
+<td align="center">0次或多次</td>
+<td align="center"><code>\\d*</code></td>
+</tr>
+<tr>
+<td align="center"><code>+</code></td>
+<td align="center">1次或多次</td>
+<td align="center"><code>\\d+</code></td>
+</tr>
+<tr>
+<td align="center"><code>&#123;&#125;</code></td>
+<td align="center">具体次数</td>
+<td align="center"><code>a&#123;7&#125;</code></td>
+</tr>
+<tr>
+<td align="center"><code>(?i)</code></td>
+<td align="center">忽略后面字符的大小写</td>
+<td align="center"><code>(?i)abc</code></td>
+</tr>
+<tr>
+<td align="center"><code>a((?i)b)c</code></td>
+<td align="center">只忽略b的大小写</td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+</li>
+</ol>
+<h1 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h1><h2 id="认识异常"><a href="#认识异常" class="headerlink" title="认识异常"></a>认识异常</h2><ol>
+<li><p>Error：代表系统级别错误（属于严重问题）</p>
+</li>
+<li><p>Exception：叫异常，它代表的才是我们程序可能出现的问题，所以，<code>Exception</code>以及它的子类来封装程序出现的问题。</p>
+<ul>
+<li>运行时异常：<code>RuntimeException</code>及其子类，编译阶段不会出现错误提醒，运行时出现的异常（如：数组索引越界异常）</li>
+<li>编译时异常：编译阶段就会出现错误提醒的（如：日期解析异常）</li>
+</ul>
+</li>
+<li><p>异常处理方法：</p>
+<ul>
+<li><p>抛出异常（throws）：在方法上使用throws关键字，可以将方法内部出现的异常抛出去给调用者处理。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">方法 <span class="keyword">throws</span> 异常<span class="number">1</span>, 异常<span class="number">2</span>,……&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>捕获异常（try……catch）：直接捕获程序出现的异常。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">    <span class="comment">// 监视可能出现异常的代码</span></span><br><span class="line">&#125;<span class="keyword">catch</span>(异常类型<span class="number">1</span> 变量)&#123;</span><br><span class="line">    <span class="comment">// 处理异常</span></span><br><span class="line">&#125;<span class="keyword">catch</span>(异常类型<span class="number">2</span> 变量)&#123;</span><br><span class="line">    <span class="comment">// 处理异常</span></span><br><span class="line">&#125;……</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ol>
+<h2 id="自定义异常"><a href="#自定义异常" class="headerlink" title="自定义异常"></a>自定义异常</h2><ol>
+<li>自定义异常：Java无法将世界上全部问题都提供异常类来代表，如果企业遇到自己的某种问题，想通过异常来表示，以便用异常来管理该问题，那就需要自己来定义异常类了。</li>
+<li>自定义异常的种类：自定义运行时异常、自定义编译时异常</li>
+<li>自定义运行时异常：<ul>
+<li>定义一个异常类继承<code>RuntimeException</code></li>
+<li>重写构造方法</li>
+<li>通过<code>throw new 异常类(xxx)</code>来创建异常对象并抛出。编译阶段不报错，提醒不强烈，运行时才可能出现</li>
+</ul>
+</li>
+<li>自定义编译时异常：<ul>
+<li>定义一个异常类继承<code>Exception</code></li>
+<li>重写构造方法</li>
+<li>通过<code>throw new 异常类(xxx)</code>来创建异常对象并抛出。编译阶段就报错，提醒更强烈</li>
+</ul>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Java基础(一)——入门</title>
     <url>/2023/09/08/Java%E5%9F%BA%E7%A1%80(%E4%B8%80)%E2%80%94%E2%80%94%E5%85%A5%E9%97%A8/</url>
     <content><![CDATA[<h1 id="初识Java"><a href="#初识Java" class="headerlink" title="初识Java"></a>初识Java</h1><h2 id="背景知识"><a href="#背景知识" class="headerlink" title="背景知识"></a>背景知识</h2><ul>
@@ -3333,68 +3527,6 @@
       </categories>
   </entry>
   <entry>
-    <title>Python基础(三)——函数</title>
-    <url>/2023/08/12/Python%E5%9F%BA%E7%A1%80(%E4%B8%89)%E2%80%94%E2%80%94%E5%87%BD%E6%95%B0/</url>
-    <content><![CDATA[<h1 id="函数介绍"><a href="#函数介绍" class="headerlink" title="函数介绍"></a>函数介绍</h1><ul>
-<li>函数是组织好的，可重复使用的，用来实现特定功能的代码段，如前面的type()、input()等都是Python的内置函数。</li>
-<li>函数可以提高程序的复用性，减少重复性代码，提高开发效率</li>
-</ul>
-<h1 id="函数的定义和调用"><a href="#函数的定义和调用" class="headerlink" title="函数的定义和调用"></a>函数的定义和调用</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 定义函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">函数名</span>(<span class="params">传入参数</span>):</span><br><span class="line">    函数体</span><br><span class="line">    <span class="keyword">return</span> 返回值</span><br><span class="line"></span><br><span class="line"><span class="comment"># 调用函数</span></span><br><span class="line">函数名(参数)</span><br></pre></td></tr></table></figure>
-
-
-
-<p><strong>注意：</strong></p>
-<ul>
-<li>参数如果不需要，可以省略</li>
-<li>返回值如果不需要，可以省略</li>
-<li>函数必须先定义后使用</li>
-</ul>
-<h1 id="函数的参数"><a href="#函数的参数" class="headerlink" title="函数的参数"></a>函数的参数</h1><p>传入参数的功能是：在函数进行计算的时候，接受外部（调用时）提供的数据</p>
-<p><strong>语法解析：</strong></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 定义函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">add</span>(<span class="params">x,y</span>):</span><br><span class="line">    result =  x + y</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;<span class="subst">&#123;x&#125;</span> + <span class="subst">&#123;y&#125;</span>的结果是：<span class="subst">&#123;result&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 调用函数</span></span><br><span class="line">add(<span class="number">5</span>,<span class="number">6</span>)</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>函数定义中，提供的x和y，称之为：形式参数（形参），表示函数声明将要使用2个参数，参数直接使用逗号进行分隔</li>
-<li>函数调用中，提供的5和6，称之为：实际参数（实参），表示函数执行时真正使用的参数值，传入的时候，按照顺序传入数据，使用逗号分隔</li>
-<li>传入参数的数量是不受限制的，可以没有，也可以有多个</li>
-</ul>
-<h1 id="函数的返回值"><a href="#函数的返回值" class="headerlink" title="函数的返回值"></a>函数的返回值</h1><h2 id="返回值的定义"><a href="#返回值的定义" class="headerlink" title="返回值的定义"></a>返回值的定义</h2><p>所谓返回值，就是程序中函数完成事情后，最后给调用者的结果</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">函数</span>(<span class="params">参数...</span>):</span><br><span class="line">    函数体</span><br><span class="line">    <span class="keyword">return</span> 返回值</span><br><span class="line"></span><br><span class="line">变量 = 函数(参数)</span><br></pre></td></tr></table></figure>
-
-<p>如上述代码，变量就能接收到函数的返回值</p>
-<p>语法就是：通过return关键字，就能向调用者返回数据</p>
-<p><strong>注意：</strong>函数体在遇到return后就结束了，所以写在return后的代码不会执行</p>
-<h2 id="None类型"><a href="#None类型" class="headerlink" title="None类型"></a>None类型</h2><p>Python中有一个特殊的字面量：None，其类型是：&lt;class ‘NoneType’&gt;，无返回值的函数，实际上就是返回了：None这个字面量</p>
-<p>应用场景：</p>
-<ul>
-<li>用在函数<strong>无返回值</strong>上</li>
-<li>用在<strong>if判断</strong>上，在if判断中，None等同于False，一般用在函数中主动返回None，配合if判断做出相关处理</li>
-<li>在声明无内容的变量上，<strong>定义变量</strong>时，但暂时不需要变量有具体值，可以用None来代替</li>
-</ul>
-<p>None在if中的应用</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">check_age</span>(<span class="params">age</span>):</span><br><span class="line">    <span class="keyword">if</span> age &gt; <span class="number">18</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;SUCCESS&quot;</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">result = check_age(<span class="number">10</span>)</span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> result:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;未成年&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="函数说明文档"><a href="#函数说明文档" class="headerlink" title="函数说明文档"></a>函数说明文档</h1><p>顾名思义，就是在函数中写注释函数进行说明解释，帮助更好理解函数的功能</p>
-<h1 id="函数的嵌套调用"><a href="#函数的嵌套调用" class="headerlink" title="函数的嵌套调用"></a>函数的嵌套调用</h1><p>所谓函数嵌套调用就是指在一个函数里面调用了另外一个函数，如下所示</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">fun_b</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;---2---&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">fun_a</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;---1---&quot;</span>)</span><br><span class="line"></span><br><span class="line">    fun_b()</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;---3---&quot;</span>)</span><br><span class="line"></span><br><span class="line">fun_a()</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">本段代码在fun_a中调用了fun_b</span></span><br><span class="line"><span class="string">运行结果：</span></span><br><span class="line"><span class="string">---1---</span></span><br><span class="line"><span class="string">---2---</span></span><br><span class="line"><span class="string">---3---</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="变量作用域"><a href="#变量作用域" class="headerlink" title="变量作用域"></a>变量作用域</h1><ol>
-<li>变量主要分为局部变量和全局变量</li>
-<li>局部变量：定义在函数体内的局部变量，即只在函数体内部生效</li>
-<li>全局变量：在函数体内、外都能生效的变量</li>
-<li>在函数内部定义一个与全局变量同名的变量，并对其运算，对全局变量无影响</li>
-<li>在函数内部声明全局变量，需要使用global关键字</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Python</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Python基础(二)——判断、循环</title>
     <url>/2023/07/14/Python%E5%9F%BA%E7%A1%80(%E4%BA%8C)%E2%80%94%E2%80%94%E5%88%A4%E6%96%AD%E3%80%81%E5%BE%AA%E7%8E%AF/</url>
     <content><![CDATA[<h1 id="判断语句"><a href="#判断语句" class="headerlink" title="判断语句"></a>判断语句</h1><p>进行逻辑判断是生活中常见的行为，同样，在程序中，进行逻辑判断也是最为基础的功能</p>
@@ -3547,6 +3679,68 @@
 <p>如，range(5,10,2)取得的数据是：[5,7,9]</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">num = <span class="number">100</span></span><br><span class="line">count = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,num):</span><br><span class="line">    <span class="keyword">if</span> x%<span class="number">2</span> == <span class="number">0</span>:</span><br><span class="line">        count += <span class="number">1</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;从1到<span class="subst">&#123;num&#125;</span>(不含<span class="subst">&#123;num&#125;</span>本身)共有<span class="subst">&#123;count&#125;</span>个偶数&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">运行结果：</span></span><br><span class="line"><span class="string">从1到100(不含100本身)共有49个偶数</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
 
+]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Python基础(三)——函数</title>
+    <url>/2023/08/12/Python%E5%9F%BA%E7%A1%80(%E4%B8%89)%E2%80%94%E2%80%94%E5%87%BD%E6%95%B0/</url>
+    <content><![CDATA[<h1 id="函数介绍"><a href="#函数介绍" class="headerlink" title="函数介绍"></a>函数介绍</h1><ul>
+<li>函数是组织好的，可重复使用的，用来实现特定功能的代码段，如前面的type()、input()等都是Python的内置函数。</li>
+<li>函数可以提高程序的复用性，减少重复性代码，提高开发效率</li>
+</ul>
+<h1 id="函数的定义和调用"><a href="#函数的定义和调用" class="headerlink" title="函数的定义和调用"></a>函数的定义和调用</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 定义函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">函数名</span>(<span class="params">传入参数</span>):</span><br><span class="line">    函数体</span><br><span class="line">    <span class="keyword">return</span> 返回值</span><br><span class="line"></span><br><span class="line"><span class="comment"># 调用函数</span></span><br><span class="line">函数名(参数)</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>注意：</strong></p>
+<ul>
+<li>参数如果不需要，可以省略</li>
+<li>返回值如果不需要，可以省略</li>
+<li>函数必须先定义后使用</li>
+</ul>
+<h1 id="函数的参数"><a href="#函数的参数" class="headerlink" title="函数的参数"></a>函数的参数</h1><p>传入参数的功能是：在函数进行计算的时候，接受外部（调用时）提供的数据</p>
+<p><strong>语法解析：</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 定义函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">add</span>(<span class="params">x,y</span>):</span><br><span class="line">    result =  x + y</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;<span class="subst">&#123;x&#125;</span> + <span class="subst">&#123;y&#125;</span>的结果是：<span class="subst">&#123;result&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 调用函数</span></span><br><span class="line">add(<span class="number">5</span>,<span class="number">6</span>)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>函数定义中，提供的x和y，称之为：形式参数（形参），表示函数声明将要使用2个参数，参数直接使用逗号进行分隔</li>
+<li>函数调用中，提供的5和6，称之为：实际参数（实参），表示函数执行时真正使用的参数值，传入的时候，按照顺序传入数据，使用逗号分隔</li>
+<li>传入参数的数量是不受限制的，可以没有，也可以有多个</li>
+</ul>
+<h1 id="函数的返回值"><a href="#函数的返回值" class="headerlink" title="函数的返回值"></a>函数的返回值</h1><h2 id="返回值的定义"><a href="#返回值的定义" class="headerlink" title="返回值的定义"></a>返回值的定义</h2><p>所谓返回值，就是程序中函数完成事情后，最后给调用者的结果</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">函数</span>(<span class="params">参数...</span>):</span><br><span class="line">    函数体</span><br><span class="line">    <span class="keyword">return</span> 返回值</span><br><span class="line"></span><br><span class="line">变量 = 函数(参数)</span><br></pre></td></tr></table></figure>
+
+<p>如上述代码，变量就能接收到函数的返回值</p>
+<p>语法就是：通过return关键字，就能向调用者返回数据</p>
+<p><strong>注意：</strong>函数体在遇到return后就结束了，所以写在return后的代码不会执行</p>
+<h2 id="None类型"><a href="#None类型" class="headerlink" title="None类型"></a>None类型</h2><p>Python中有一个特殊的字面量：None，其类型是：&lt;class ‘NoneType’&gt;，无返回值的函数，实际上就是返回了：None这个字面量</p>
+<p>应用场景：</p>
+<ul>
+<li>用在函数<strong>无返回值</strong>上</li>
+<li>用在<strong>if判断</strong>上，在if判断中，None等同于False，一般用在函数中主动返回None，配合if判断做出相关处理</li>
+<li>在声明无内容的变量上，<strong>定义变量</strong>时，但暂时不需要变量有具体值，可以用None来代替</li>
+</ul>
+<p>None在if中的应用</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">check_age</span>(<span class="params">age</span>):</span><br><span class="line">    <span class="keyword">if</span> age &gt; <span class="number">18</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;SUCCESS&quot;</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">result = check_age(<span class="number">10</span>)</span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> result:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;未成年&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="函数说明文档"><a href="#函数说明文档" class="headerlink" title="函数说明文档"></a>函数说明文档</h1><p>顾名思义，就是在函数中写注释函数进行说明解释，帮助更好理解函数的功能</p>
+<h1 id="函数的嵌套调用"><a href="#函数的嵌套调用" class="headerlink" title="函数的嵌套调用"></a>函数的嵌套调用</h1><p>所谓函数嵌套调用就是指在一个函数里面调用了另外一个函数，如下所示</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">fun_b</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;---2---&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">fun_a</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;---1---&quot;</span>)</span><br><span class="line"></span><br><span class="line">    fun_b()</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;---3---&quot;</span>)</span><br><span class="line"></span><br><span class="line">fun_a()</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">本段代码在fun_a中调用了fun_b</span></span><br><span class="line"><span class="string">运行结果：</span></span><br><span class="line"><span class="string">---1---</span></span><br><span class="line"><span class="string">---2---</span></span><br><span class="line"><span class="string">---3---</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="变量作用域"><a href="#变量作用域" class="headerlink" title="变量作用域"></a>变量作用域</h1><ol>
+<li>变量主要分为局部变量和全局变量</li>
+<li>局部变量：定义在函数体内的局部变量，即只在函数体内部生效</li>
+<li>全局变量：在函数体内、外都能生效的变量</li>
+<li>在函数内部定义一个与全局变量同名的变量，并对其运算，对全局变量无影响</li>
+<li>在函数内部声明全局变量，需要使用global关键字</li>
+</ol>
 ]]></content>
       <categories>
         <category>Python</category>
@@ -3903,27 +4097,6 @@
 ]]></content>
       <categories>
         <category>Python</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2023/04/12/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-      <categories>
-        <category>others</category>
       </categories>
   </entry>
   <entry>
@@ -4405,6 +4578,27 @@
 ]]></content>
       <categories>
         <category>Python</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2023/04/12/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+      <categories>
+        <category>others</category>
       </categories>
   </entry>
 </search>
