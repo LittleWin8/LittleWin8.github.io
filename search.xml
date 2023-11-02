@@ -188,405 +188,194 @@
       </categories>
   </entry>
   <entry>
-    <title>Java_常用API(一)</title>
-    <url>/2023/09/27/Java_%E5%B8%B8%E7%94%A8API(%E4%B8%80)/</url>
-    <content><![CDATA[<h1 id="API"><a href="#API" class="headerlink" title="API"></a>API</h1><ol>
-<li>什么是API？<ul>
-<li>全称应用程序编程接口（Application Programming interface）</li>
-<li>就是Java自己写好的程序，给程序员调用，方便完成一些功能</li>
-</ul>
+    <title>Java_算法、正则表达式、异常</title>
+    <url>/2023/10/05/Java_%E7%AE%97%E6%B3%95%E3%80%81%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E3%80%81%E5%BC%82%E5%B8%B8/</url>
+    <content><![CDATA[<h1 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h1><h2 id="排序算法"><a href="#排序算法" class="headerlink" title="排序算法"></a>排序算法</h2><h3 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h3><ol>
+<li><p>每次从数组中找出最大值放在数组的后面去。</p>
 </li>
-<li>API文档：程序使用说明书</li>
-</ol>
-<h1 id="包"><a href="#包" class="headerlink" title="包"></a>包</h1><ol>
-<li>什么是包？<ul>
-<li>包是用来分门别类的管理各种不同程序的，类似于文件夹，建包有利于程序的管理与维护。</li>
-<li>建包的语法格式：如：<code>package com.local.project;</code></li>
-</ul>
-</li>
-<li>在自己程序中调用其他包下的程序的注意事项<ul>
-<li>如果当前程序中，要调用自己所在包下的其他程序，可以直接调用。（同一个包下的类，互相可以直接调用）</li>
-<li>如果当前程序中，要调用其他包下的程序，则必须在当前程序中导包，才可以访问！导包格式：<code>import 包名.类名;</code></li>
-<li>如果当前程序中，要调用Java提供的程序，也需要先导包才可以使用；但<code>java.lang</code>包下的程序是不需要我们导包的，可以直接使用</li>
-<li>如果当前程序，要调用多个不同包下的程序，而这些程序名正好一样，此时默认只能导入一个程序，另一个程序必须带包名访问</li>
-</ul>
-</li>
-</ol>
-<h1 id="String"><a href="#String" class="headerlink" title="String"></a>String</h1><h2 id="String创建对象封装字符串数据的方式"><a href="#String创建对象封装字符串数据的方式" class="headerlink" title="String创建对象封装字符串数据的方式"></a>String创建对象封装字符串数据的方式</h2><ol>
-<li><p>方式一：Java程序中的所有字符串文字（例如：”abc”）都为此类对象</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">name</span> <span class="operator">=</span> <span class="string">&quot;张三&quot;</span>;</span><br><span class="line"><span class="type">String</span> <span class="variable">addr</span> <span class="operator">=</span> <span class="string">&quot;沈阳&quot;</span>;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>方法二：调用String类的构造方法初始化字符串对象</p>
-<table>
-<thead>
-<tr>
-<th align="center">构造方法</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"><code>public String()</code></td>
-<td align="center">创建一个空白字符串对象，不含任何内容</td>
-</tr>
-<tr>
-<td align="center"><code>public String(String original)</code></td>
-<td align="center">根据传入的字符串内容，来创建字符串对象</td>
-</tr>
-<tr>
-<td align="center"><code>public String(char[] chars)</code></td>
-<td align="center">根据字符数组的内容，来创建字符串对象</td>
-</tr>
-<tr>
-<td align="center"><code>public String(byte[] byte)</code></td>
-<td align="center">根据字节数组的内容，来创建字符串对象</td>
-</tr>
-</tbody></table>
-</li>
-</ol>
-<h2 id="String的常用方法"><a href="#String的常用方法" class="headerlink" title="String的常用方法"></a>String的常用方法</h2><table>
-<thead>
-<tr>
-<th align="center">方法名</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"><code>public int length()</code></td>
-<td align="center">获取字符串的长度返回（就是字符个数）</td>
-</tr>
-<tr>
-<td align="center"><code>public char charAt(int index)</code></td>
-<td align="center">获取某个索引处的字符返回</td>
-</tr>
-<tr>
-<td align="center"><code>public char[] toCharArray()</code></td>
-<td align="center">将当前字符串转换成字符数组返回</td>
-</tr>
-<tr>
-<td align="center"><code>public boolean equals(Object anObject)</code></td>
-<td align="center">判断当前字符串与另一个字符串的内容是否一样，一样返回true</td>
-</tr>
-<tr>
-<td align="center"><code>public boolean equalsIgnoreCase(String anotherString)</code></td>
-<td align="center">判断当前字符串与另一个字符串的内容是否一样（忽略大小写）</td>
-</tr>
-<tr>
-<td align="center"><code>public String substring(int beginIndex, int endINdex)</code></td>
-<td align="center">根据开始和结束索引处截取，得到新的字符串返回</td>
-</tr>
-<tr>
-<td align="center"><code>public String substring(int beginIndex)</code></td>
-<td align="center">从传入的索引处截取，截取到末尾，得到新的字符串返回</td>
-</tr>
-<tr>
-<td align="center"><code>public String replace(CharSequence target, CharSequence replcaement)</code></td>
-<td align="center">使用新值，将字符串中的旧值替换，得到新的字符串</td>
-</tr>
-<tr>
-<td align="center"><code>public boolean contains(String s)</code></td>
-<td align="center">判断字符串中是否包含了某个字符串</td>
-</tr>
-<tr>
-<td align="center"><code>public boolean startsWith(String s)</code></td>
-<td align="center">判断字符串是否以某个字符串内容开头，开头则返回true，否则返回false</td>
-</tr>
-<tr>
-<td align="center"><code>public String[] split(String regex)</code></td>
-<td align="center">把字符串按照某个字符串内容分割，并返回字符串数组回来</td>
-</tr>
-</tbody></table>
-<h2 id="String使用时的注意事项"><a href="#String使用时的注意事项" class="headerlink" title="String使用时的注意事项"></a>String使用时的注意事项</h2><ol>
-<li>String是不可变字符串对象</li>
-<li>只要使用<code>&quot;……&quot;</code>方式写出的字符串对象，会存储到字符串常量池，且相同内容的字符串只存储一份。</li>
-<li>通过<code>new</code>方式创建的字符串对象，每<code>new</code>一次都会产生一个新的对象放在堆内存中</li>
-</ol>
-<h1 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h1><ul>
-<li>集合是一种容器，用来存储数据，且集合的大小可变</li>
-<li>ArrayList<E>是用的最多、最常见的一种集合，它是泛型类，可以约束存储的数据类型。</li>
-</ul>
-<h2 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h2><table>
-<thead>
-<tr>
-<th align="center">构造方法</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"><code>public ArrayList()</code></td>
-<td align="center">创建一个空的集合对象</td>
-</tr>
-</tbody></table>
-<h2 id="ArrayList的常用方法"><a href="#ArrayList的常用方法" class="headerlink" title="ArrayList的常用方法"></a>ArrayList的常用方法</h2><table>
-<thead>
-<tr>
-<th align="center">常用方法名</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"><code>public boolean add(E e)</code></td>
-<td align="center">将指定的元素添加到次集合的末尾</td>
-</tr>
-<tr>
-<td align="center"><code>public void add(int index, E element)</code></td>
-<td align="center">在此集合中的指定位置插入指定的元素</td>
-</tr>
-<tr>
-<td align="center"><code>public E get(int index)</code></td>
-<td align="center">返回指定索引处的元素</td>
-</tr>
-<tr>
-<td align="center"><code>public int size()</code></td>
-<td align="center">返回集合中的元素个数</td>
-</tr>
-<tr>
-<td align="center"><code>public E remove(int index)</code></td>
-<td align="center">删除指定索引处的元素，返回被删除的元素</td>
-</tr>
-<tr>
-<td align="center"><code>public boolean remove(Object o)</code></td>
-<td align="center">删除指定的元素，返回删除是否成功</td>
-</tr>
-<tr>
-<td align="center"><code>public E set(int index,E element)</code></td>
-<td align="center">修改指定索引处的元素，返回被修改的元素</td>
-</tr>
-</tbody></table>
-<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ul>
-<li>从前往后遍历删除时可能存在漏掉元素删除元素后，执行<code>i--</code>即可或者从后往前遍历</li>
-</ul>
-<h1 id="Object"><a href="#Object" class="headerlink" title="Object"></a>Object</h1><h2 id="Object类的作用"><a href="#Object类的作用" class="headerlink" title="Object类的作用"></a>Object类的作用</h2><ul>
-<li>Object类是Java中所有类的祖宗类，因此，Java中所有类的对象都可以直接使用Object类中提供的一些方法。</li>
-</ul>
-<h2 id="Object类的常见方法"><a href="#Object类的常见方法" class="headerlink" title="Object类的常见方法"></a>Object类的常见方法</h2><table>
-<thead>
-<tr>
-<th align="center">方法名</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"><code>public String toString()</code></td>
-<td align="center">返回对象的字符串表示形式</td>
-</tr>
-<tr>
-<td align="center"><code>public boolean equals(Object o)</code></td>
-<td align="center">判断两个对象是否相等</td>
-</tr>
-<tr>
-<td align="center"><code>protected Object clone()</code></td>
-<td align="center">对象克隆</td>
-</tr>
-</tbody></table>
-<ol>
-<li><p><code>toString</code>方法的作用和意义</p>
+<li><p>冒牌排序的步骤分析：</p>
 <ul>
-<li><p>基本作用：返回对象的字符串形式。</p>
-</li>
-<li><p>存在意义：让子类重写，一遍返回子类对象的内容。</p>
-</li>
+<li>确定总共需要做几轮：数组的长度 - 1</li>
+<li>每轮比较几次：数组长度 - 轮次 - 1</li>
+<li>当前位置数据大于后一位置则交换数据，否则不进行操作</li>
 </ul>
 </li>
-<li><p><code>equals</code>方法的作用和意义</p>
+<li><p>代码实现：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span>[] arr = &#123;<span class="number">3</span>,<span class="number">5</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">7</span>,<span class="number">4</span>,<span class="number">10</span>,<span class="number">6</span>,<span class="number">8</span>,<span class="number">9</span>&#125;;</span><br><span class="line"><span class="type">int</span> temp;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; arr.length - <span class="number">1</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt; arr.length - <span class="number">1</span> - i; j++) &#123;</span><br><span class="line">     	<span class="keyword">if</span>(arr[j] &gt; arr[j+<span class="number">1</span>])&#123;</span><br><span class="line">			temp = arr[j];</span><br><span class="line">             arr[j] = arr[j+<span class="number">1</span>];</span><br><span class="line">             arr[j+<span class="number">1</span>] = temp;</span><br><span class="line">         &#125;</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h3><ol>
+<li><p>每轮选择当前位置，开始找出后面的较小值，与该位置交换</p>
+</li>
+<li><p>选择排序的步骤分析：</p>
 <ul>
-<li>基本作用：,默认是比较两个对象的地址是否相等。</li>
-<li>存在意义：让子类从写，以便于比较对象的内容是否相同。</li>
+<li>确定总共需要选择几轮：数组长度 -1</li>
+<li>控制每轮从当前位置为基准，与后面元素选择几次</li>
+</ul>
+</li>
+<li><p>代码实现：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span>[] arr = &#123;<span class="number">3</span>,<span class="number">5</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">7</span>,<span class="number">4</span>,<span class="number">10</span>,<span class="number">6</span>,<span class="number">8</span>,<span class="number">9</span>&#125;;</span><br><span class="line"><span class="type">int</span> temp, p;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; arr.length - <span class="number">1</span>; i++) &#123;</span><br><span class="line">     p = i;</span><br><span class="line">     <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> i + <span class="number">1</span>; j &lt; arr.length ; j++) &#123;</span><br><span class="line">          <span class="keyword">if</span> (arr[p] &gt; arr[j])&#123;</span><br><span class="line">              p = j;</span><br><span class="line">          &#125;</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">     <span class="keyword">if</span> (i != p)&#123;</span><br><span class="line">            temp = arr[i];</span><br><span class="line">            arr[i] = arr[p];</span><br><span class="line">            arr[p] = temp;</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="查找算法"><a href="#查找算法" class="headerlink" title="查找算法"></a>查找算法</h2><h3 id="二分查找法（折半查找）"><a href="#二分查找法（折半查找）" class="headerlink" title="二分查找法（折半查找）"></a>二分查找法（折半查找）</h3><ol>
+<li><p>前提：数组中的数据必须是有序的</p>
+</li>
+<li><p>核心思想：每次排除一半的数据，查询数据的性能明显提高极多</p>
+</li>
+<li><p>代码实现：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">binarySearch</span><span class="params">(<span class="type">int</span>[] arr, <span class="type">int</span> data)</span>&#123;</span><br><span class="line">   <span class="type">int</span> <span class="variable">left</span> <span class="operator">=</span> <span class="number">0</span> ,right = arr.length;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">while</span> (left &lt;= right)&#123;</span><br><span class="line">       <span class="type">int</span> <span class="variable">mid</span> <span class="operator">=</span> (right + left)/<span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">       <span class="keyword">if</span> (data &lt; arr[mid])&#123;</span><br><span class="line">            right = mid -<span class="number">1</span>;</span><br><span class="line">       &#125;<span class="keyword">else</span> <span class="keyword">if</span> (data &gt; arr[mid])&#123;</span><br><span class="line">            left = mid + <span class="number">1</span>;</span><br><span class="line">       &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> mid;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h1 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><ol>
+<li>正则表达式：就是由一些指定的字符组成，代表的是一个规则</li>
+<li>作用：<ul>
+<li>用来校验数据格式是否合法</li>
+<li>在一段文本中查找满足要求的内容</li>
 </ul>
 </li>
 </ol>
-<h1 id="Objects"><a href="#Objects" class="headerlink" title="Objects"></a>Objects</h1><ul>
-<li>Objects是一个工具类，提供了很多操作对象的静态方法给我们使用</li>
-</ul>
-<h2 id="Objects类的常见方法"><a href="#Objects类的常见方法" class="headerlink" title="Objects类的常见方法"></a>Objects类的常见方法</h2><table>
-<thead>
-<tr>
-<th align="center">方法名</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"><code>public static boolean equals(Object a, Object b)</code></td>
-<td align="center">先做非空判断，再比较两个对象</td>
-</tr>
-<tr>
-<td align="center"><code>public static boolean isNull(Object obj)</code></td>
-<td align="center">判断对象是否为<code>null</code>，为<code>null</code>返回<code>true</code>，反之</td>
-</tr>
-<tr>
-<td align="center"><code>public static boolean nonNull(Object obj)</code></td>
-<td align="center">判断对象是否不为<code>null</code>，不为<code>null</code>返回<code>true</code>，反之</td>
-</tr>
-</tbody></table>
-<h1 id="包装类"><a href="#包装类" class="headerlink" title="包装类"></a>包装类</h1><ul>
-<li><p>包装类就是把基本数据类型包装成对象</p>
+<h2 id="书写规则"><a href="#书写规则" class="headerlink" title="书写规则"></a>书写规则</h2><ol>
+<li><p>String类提供了<code>public boolean matches(String regex)</code>方法与正则表达式进行匹配。</p>
+</li>
+<li><p>正则表达式书写规则：</p>
 <table>
 <thead>
 <tr>
-<th align="center">基本数据类型</th>
-<th align="center">对应的包装类（引用数据类型）</th>
+<th align="center">符号</th>
+<th align="center">含义</th>
+<th align="center">举例</th>
 </tr>
 </thead>
 <tbody><tr>
-<td align="center">byte</td>
-<td align="center">Byte</td>
+<td align="center"><code>[]</code></td>
+<td align="center">里面的内容出现一次</td>
+<td align="center"><code>[abc]</code></td>
 </tr>
 <tr>
-<td align="center">short</td>
-<td align="center">Short</td>
+<td align="center"><code>^</code></td>
+<td align="center">取反</td>
+<td align="center"><code>[^abc]</code></td>
 </tr>
 <tr>
-<td align="center">int</td>
-<td align="center">Integer</td>
+<td align="center"><code>&amp;&amp;</code></td>
+<td align="center">交集，不能写单个的&amp;</td>
+<td align="center"><code>[a-z&amp;&amp;m-p]</code></td>
 </tr>
 <tr>
-<td align="center">long</td>
-<td align="center">Long</td>
+<td align="center"><code>.</code></td>
+<td align="center">任意字符</td>
+<td align="center"><code>\n回车符号不匹配</code></td>
 </tr>
 <tr>
-<td align="center">char</td>
-<td align="center">Charactor</td>
+<td align="center"><code>\</code></td>
+<td align="center">转义字符</td>
+<td align="center"><code>\\d</code></td>
 </tr>
 <tr>
-<td align="center">float</td>
-<td align="center">Float</td>
+<td align="center"><code>\\d</code></td>
+<td align="center">0-9</td>
+<td align="center"><code>\\d+</code></td>
 </tr>
 <tr>
-<td align="center">double</td>
-<td align="center">Double</td>
+<td align="center"><code>\\D</code></td>
+<td align="center">非0-9</td>
+<td align="center"><code>\\D+</code></td>
 </tr>
 <tr>
-<td align="center">boolean</td>
-<td align="center">Boolean</td>
+<td align="center"><code>\\s</code></td>
+<td align="center">空白字符</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"><code>\\S</code></td>
+<td align="center">非空白字符</td>
+<td align="center"><code>^\S</code></td>
+</tr>
+<tr>
+<td align="center"><code>\\w</code></td>
+<td align="center">单词字符</td>
+<td align="center"><code>[a-zA-Z_0-9]</code></td>
+</tr>
+<tr>
+<td align="center"><code>\\W</code></td>
+<td align="center">非单词字符</td>
+<td align="center"><code>[^\w]</code></td>
+</tr>
+<tr>
+<td align="center"><code>()</code></td>
+<td align="center">分组</td>
+<td align="center"><code>a(bc)+</code></td>
+</tr>
+<tr>
+<td align="center">&#96;</td>
+<td align="center">&#96;</td>
+<td align="center">写在括号外表示并集</td>
+</tr>
+<tr>
+<td align="center"><code>?</code></td>
+<td align="center">0次或1次</td>
+<td align="center"><code>\\d?</code></td>
+</tr>
+<tr>
+<td align="center"><code>*</code></td>
+<td align="center">0次或多次</td>
+<td align="center"><code>\\d*</code></td>
+</tr>
+<tr>
+<td align="center"><code>+</code></td>
+<td align="center">1次或多次</td>
+<td align="center"><code>\\d+</code></td>
+</tr>
+<tr>
+<td align="center"><code>&#123;&#125;</code></td>
+<td align="center">具体次数</td>
+<td align="center"><code>a&#123;7&#125;</code></td>
+</tr>
+<tr>
+<td align="center"><code>(?i)</code></td>
+<td align="center">忽略后面字符的大小写</td>
+<td align="center"><code>(?i)abc</code></td>
+</tr>
+<tr>
+<td align="center"><code>a((?i)b)c</code></td>
+<td align="center">只忽略b的大小写</td>
+<td align="center"></td>
 </tr>
 </tbody></table>
+</li>
+</ol>
+<h1 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h1><h2 id="认识异常"><a href="#认识异常" class="headerlink" title="认识异常"></a>认识异常</h2><ol>
+<li><p>Error：代表系统级别错误（属于严重问题）</p>
+</li>
+<li><p>Exception：叫异常，它代表的才是我们程序可能出现的问题，所以，<code>Exception</code>以及它的子类来封装程序出现的问题。</p>
 <ul>
-<li>自动装箱：基本数据类型可以自动转换为包装类型</li>
-<li>自动拆箱：包装类型可以自动转换为基本数据类型</li>
+<li>运行时异常：<code>RuntimeException</code>及其子类，编译阶段不会出现错误提醒，运行时出现的异常（如：数组索引越界异常）</li>
+<li>编译时异常：编译阶段就会出现错误提醒的（如：日期解析异常）</li>
 </ul>
 </li>
-</ul>
-<h2 id="包装类的其他常见操作"><a href="#包装类的其他常见操作" class="headerlink" title="包装类的其他常见操作"></a>包装类的其他常见操作</h2><ul>
-<li><p>可以把基本类型的数据转换成字符串类型</p>
-<table>
-<thead>
-<tr>
-<th>方法名</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>public static String toSpring(double d)</code></td>
-</tr>
-<tr>
-<td><code>public String toSpring()</code></td>
-</tr>
-</tbody></table>
+<li><p>异常处理方法：</p>
+<ul>
+<li><p>抛出异常（throws）：在方法上使用throws关键字，可以将方法内部出现的异常抛出去给调用者处理。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">方法 <span class="keyword">throws</span> 异常<span class="number">1</span>, 异常<span class="number">2</span>,……&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>可以把字符串类型的数值转换成数值本身对应的数据类型</p>
-<table>
-<thead>
-<tr>
-<th>方法名</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>public static int parseInt(String s)</code></td>
-</tr>
-<tr>
-<td><code>public static Integer valueOf(String s)</code></td>
-</tr>
-</tbody></table>
+<li><p>捕获异常（try……catch）：直接捕获程序出现的异常。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">    <span class="comment">// 监视可能出现异常的代码</span></span><br><span class="line">&#125;<span class="keyword">catch</span>(异常类型<span class="number">1</span> 变量)&#123;</span><br><span class="line">    <span class="comment">// 处理异常</span></span><br><span class="line">&#125;<span class="keyword">catch</span>(异常类型<span class="number">2</span> 变量)&#123;</span><br><span class="line">    <span class="comment">// 处理异常</span></span><br><span class="line">&#125;……</span><br></pre></td></tr></table></figure></li>
+</ul>
 </li>
+</ol>
+<h2 id="自定义异常"><a href="#自定义异常" class="headerlink" title="自定义异常"></a>自定义异常</h2><ol>
+<li>自定义异常：Java无法将世界上全部问题都提供异常类来代表，如果企业遇到自己的某种问题，想通过异常来表示，以便用异常来管理该问题，那就需要自己来定义异常类了。</li>
+<li>自定义异常的种类：自定义运行时异常、自定义编译时异常</li>
+<li>自定义运行时异常：<ul>
+<li>定义一个异常类继承<code>RuntimeException</code></li>
+<li>重写构造方法</li>
+<li>通过<code>throw new 异常类(xxx)</code>来创建异常对象并抛出。编译阶段不报错，提醒不强烈，运行时才可能出现</li>
 </ul>
-<h1 id="StringBuilder"><a href="#StringBuilder" class="headerlink" title="StringBuilder"></a>StringBuilder</h1><ul>
-<li>StringBuilder代表可变字符串对象，相当于是一个容器，它里面装的字符串是可以改变的，就是用来操作字符串的。</li>
-<li>好处：StringBuilder比String更适合做字符串的修改操作，效率会更高，代码也会更简洁。</li>
-<li>对于字符串相关操作，如频繁的拼接、修改等，建议使用StringBuilder，效率更高</li>
-<li>注意：如果操作字符串较少，或者不需要操作，以及定义字符串变量，还是建议使用String</li>
+</li>
+<li>自定义编译时异常：<ul>
+<li>定义一个异常类继承<code>Exception</code></li>
+<li>重写构造方法</li>
+<li>通过<code>throw new 异常类(xxx)</code>来创建异常对象并抛出。编译阶段就报错，提醒更强烈</li>
 </ul>
-<h2 id="StringBuilder的构造方法"><a href="#StringBuilder的构造方法" class="headerlink" title="StringBuilder的构造方法"></a>StringBuilder的构造方法</h2><table>
-<thead>
-<tr>
-<th align="center">构造方法</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"><code>public StringBuilder()</code></td>
-<td align="center">创建一个空白的可变字符串对象，不包含任何内容</td>
-</tr>
-<tr>
-<td align="center"><code>public StringBuilder(String str)</code></td>
-<td align="center">创建一个指定字符串内容的可变字符串对象</td>
-</tr>
-</tbody></table>
-<h2 id="StringBuilder的常用方法"><a href="#StringBuilder的常用方法" class="headerlink" title="StringBuilder的常用方法"></a>StringBuilder的常用方法</h2><table>
-<thead>
-<tr>
-<th align="center">方法名称</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"><code>public StringBuilder append(任意类型)</code></td>
-<td align="center">添加数据并返回StringBuilder对象本身</td>
-</tr>
-<tr>
-<td align="center"><code>public StringBuilder reverse()</code></td>
-<td align="center">将对象的内容反转</td>
-</tr>
-<tr>
-<td align="center"><code>public int length()</code></td>
-<td align="center">返回对象的内容长度</td>
-</tr>
-<tr>
-<td align="center"><code>public String toString()</code></td>
-<td align="center">通过toString()就可以实现把StringBuilder转换为String</td>
-</tr>
-</tbody></table>
-<h1 id="StringBuffer"><a href="#StringBuffer" class="headerlink" title="StringBuffer"></a>StringBuffer</h1><ul>
-<li>StringBuffer的用法与StringBuilder是一模一样的</li>
-<li>但StringBuilder是线程不安全的，StringBuffer是线程安全</li>
-</ul>
-<h1 id="StringJoiner"><a href="#StringJoiner" class="headerlink" title="StringJoiner"></a>StringJoiner</h1><ul>
-<li>JDK8开始才有的，跟StringBuilder一样，也是用来操作字符串的，也可以看成是一个容器，创建后里面的内容是可变的。</li>
-<li>好处：不仅能提高字符串的操作效率，并且在有些场景下使用它操作字符串，代码会更简洁</li>
-</ul>
-<h2 id="StringJoiner的构造方法"><a href="#StringJoiner的构造方法" class="headerlink" title="StringJoiner的构造方法"></a>StringJoiner的构造方法</h2><table>
-<thead>
-<tr>
-<th align="center">构造方法</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"><code>public StringJoiner()</code></td>
-<td align="center">创建一个StringJoiner对象，指定拼接时的间隔符号</td>
-</tr>
-<tr>
-<td align="center"><code>public StringJoiner(间隔符号, 开始符号, 结束符号)</code></td>
-<td align="center">创建一个StringJoiner对象，指定拼接时的间隔符号、开始符号、结束符号</td>
-</tr>
-</tbody></table>
-<h2 id="StringJoiner的常用方法"><a href="#StringJoiner的常用方法" class="headerlink" title="StringJoiner的常用方法"></a>StringJoiner的常用方法</h2><table>
-<thead>
-<tr>
-<th align="center">方法名称</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"><code>public StringJoiner add(添加的内容)</code></td>
-<td align="center">添加数据，并返回对象本身</td>
-</tr>
-<tr>
-<td align="center"><code>public int length()</code></td>
-<td align="center">返回长度（字符出现的个数）</td>
-</tr>
-<tr>
-<td align="center"><code>public String toString()</code></td>
-<td align="center">返回一个字符串（该字符串就是拼接之后的结果）</td>
-</tr>
-</tbody></table>
+</li>
+</ol>
 ]]></content>
       <categories>
         <category>Java</category>
@@ -1339,191 +1128,475 @@
       </categories>
   </entry>
   <entry>
-    <title>Java_算法、正则表达式、异常</title>
-    <url>/2023/10/05/Java_%E7%AE%97%E6%B3%95%E3%80%81%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E3%80%81%E5%BC%82%E5%B8%B8/</url>
-    <content><![CDATA[<h1 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h1><h2 id="排序算法"><a href="#排序算法" class="headerlink" title="排序算法"></a>排序算法</h2><h3 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h3><ol>
-<li><p>每次从数组中找出最大值放在数组的后面去。</p>
+    <title>Java_集合框架(一)</title>
+    <url>/2023/11/02/Java_%E9%9B%86%E5%90%88%E6%A1%86%E6%9E%B6(%E4%B8%80)/</url>
+    <content><![CDATA[<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><ol>
+<li><p>集合：集合是一种容器，用来装数据的，类似于数组，但集合的大小可变，开发中也非常常用。为了满足不同的业务场景需求，Java还提供了很多不同特点的集合给我们选择。</p>
 </li>
-<li><p>冒牌排序的步骤分析：</p>
+<li><p>集合体系结构：</p>
 <ul>
-<li>确定总共需要做几轮：数组的长度 - 1</li>
-<li>每轮比较几次：数组长度 - 轮次 - 1</li>
-<li>当前位置数据大于后一位置则交换数据，否则不进行操作</li>
+<li><p>单列集合：每个元素（数据）只包含一个值</p>
+<p><code>Collection</code>，<code>List</code>，<code>ArrayList</code>，<code>LinkedList</code>，<code>Set</code>，<code>HashSet</code>，<code>LinkedHashSet</code>，<code>TreeSet</code></p>
+</li>
+<li><p>双列集合：每个元素包括两个值（键值对）</p>
+<p><code>Map</code>，<code>HashMap</code>，<code>TreeMap</code>，<code>LinedHashMap</code>。</p>
+</li>
 </ul>
 </li>
-<li><p>代码实现：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span>[] arr = &#123;<span class="number">3</span>,<span class="number">5</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">7</span>,<span class="number">4</span>,<span class="number">10</span>,<span class="number">6</span>,<span class="number">8</span>,<span class="number">9</span>&#125;;</span><br><span class="line"><span class="type">int</span> temp;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; arr.length - <span class="number">1</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt; arr.length - <span class="number">1</span> - i; j++) &#123;</span><br><span class="line">     	<span class="keyword">if</span>(arr[j] &gt; arr[j+<span class="number">1</span>])&#123;</span><br><span class="line">			temp = arr[j];</span><br><span class="line">             arr[j] = arr[j+<span class="number">1</span>];</span><br><span class="line">             arr[j+<span class="number">1</span>] = temp;</span><br><span class="line">         &#125;</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ol>
-<h3 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h3><ol>
-<li><p>每轮选择当前位置，开始找出后面的较小值，与该位置交换</p>
+<li><p>Collection集合体系：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">graph TB;</span><br><span class="line">    Collection--&gt;List</span><br><span class="line">    Collection--&gt;Set</span><br><span class="line">    List--&gt;ArrayList</span><br><span class="line">    List--&gt;LinkedList</span><br><span class="line">	Set--&gt;HashSet</span><br><span class="line">	HashSet--&gt;LinkedHashSet</span><br><span class="line">	Set--&gt;TreeSet</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>选择排序的步骤分析：</p>
+<li><p>Collection集合特点：</p>
 <ul>
-<li>确定总共需要选择几轮：数组长度 -1</li>
-<li>控制每轮从当前位置为基准，与后面元素选择几次</li>
+<li>List系列集合：添加的元素是有序的、可重复、有索引<ul>
+<li>ArrayList、LinkedList：有序、可重复、有索引</li>
 </ul>
 </li>
-<li><p>代码实现：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span>[] arr = &#123;<span class="number">3</span>,<span class="number">5</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">7</span>,<span class="number">4</span>,<span class="number">10</span>,<span class="number">6</span>,<span class="number">8</span>,<span class="number">9</span>&#125;;</span><br><span class="line"><span class="type">int</span> temp, p;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; arr.length - <span class="number">1</span>; i++) &#123;</span><br><span class="line">     p = i;</span><br><span class="line">     <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> i + <span class="number">1</span>; j &lt; arr.length ; j++) &#123;</span><br><span class="line">          <span class="keyword">if</span> (arr[p] &gt; arr[j])&#123;</span><br><span class="line">              p = j;</span><br><span class="line">          &#125;</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">     <span class="keyword">if</span> (i != p)&#123;</span><br><span class="line">            temp = arr[i];</span><br><span class="line">            arr[i] = arr[p];</span><br><span class="line">            arr[p] = temp;</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ol>
-<h2 id="查找算法"><a href="#查找算法" class="headerlink" title="查找算法"></a>查找算法</h2><h3 id="二分查找法（折半查找）"><a href="#二分查找法（折半查找）" class="headerlink" title="二分查找法（折半查找）"></a>二分查找法（折半查找）</h3><ol>
-<li><p>前提：数组中的数据必须是有序的</p>
+<li>Set系列集合：添加的元素是无序的，不重复、无索引<ul>
+<li>HashSet：无序、不重复、无索引</li>
+<li>LinkedHashSet：有序、不重复、无索引</li>
+<li>TreeSet：按照大小默认升序排序、不重复、无索引</li>
+</ul>
 </li>
-<li><p>核心思想：每次排除一半的数据，查询数据的性能明显提高极多</p>
-</li>
-<li><p>代码实现：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">binarySearch</span><span class="params">(<span class="type">int</span>[] arr, <span class="type">int</span> data)</span>&#123;</span><br><span class="line">   <span class="type">int</span> <span class="variable">left</span> <span class="operator">=</span> <span class="number">0</span> ,right = arr.length;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">while</span> (left &lt;= right)&#123;</span><br><span class="line">       <span class="type">int</span> <span class="variable">mid</span> <span class="operator">=</span> (right + left)/<span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">       <span class="keyword">if</span> (data &lt; arr[mid])&#123;</span><br><span class="line">            right = mid -<span class="number">1</span>;</span><br><span class="line">       &#125;<span class="keyword">else</span> <span class="keyword">if</span> (data &gt; arr[mid])&#123;</span><br><span class="line">            left = mid + <span class="number">1</span>;</span><br><span class="line">       &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> mid;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ol>
-<h1 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><ol>
-<li>正则表达式：就是由一些指定的字符组成，代表的是一个规则</li>
-<li>作用：<ul>
-<li>用来校验数据格式是否合法</li>
-<li>在一段文本中查找满足要求的内容</li>
 </ul>
 </li>
 </ol>
-<h2 id="书写规则"><a href="#书写规则" class="headerlink" title="书写规则"></a>书写规则</h2><ol>
-<li><p>String类提供了<code>public boolean matches(String regex)</code>方法与正则表达式进行匹配。</p>
+<h1 id="Collection"><a href="#Collection" class="headerlink" title="Collection"></a>Collection</h1><h2 id="Collection的常用方法"><a href="#Collection的常用方法" class="headerlink" title="Collection的常用方法"></a>Collection的常用方法</h2><ol>
+<li><p>为什么要先学Collection的常用方法？</p>
+<ul>
+<li>Collection是单列结合是祖宗，它规定的方法（功能）是全部单列集合都会继承的。</li>
+</ul>
 </li>
-<li><p>正则表达式书写规则：</p>
+<li><p>Collection的常见方法：</p>
 <table>
 <thead>
 <tr>
-<th align="center">符号</th>
-<th align="center">含义</th>
-<th align="center">举例</th>
+<th align="center">方法名</th>
+<th align="center">说明</th>
 </tr>
 </thead>
 <tbody><tr>
-<td align="center"><code>[]</code></td>
-<td align="center">里面的内容出现一次</td>
-<td align="center"><code>[abc]</code></td>
+<td align="center"><code>public boolean add(E e)</code></td>
+<td align="center">把给定的对象添加到当前集合中</td>
 </tr>
 <tr>
-<td align="center"><code>^</code></td>
-<td align="center">取反</td>
-<td align="center"><code>[^abc]</code></td>
+<td align="center"><code>public void clear()</code></td>
+<td align="center">清空集合中所有的元素</td>
 </tr>
 <tr>
-<td align="center"><code>&amp;&amp;</code></td>
-<td align="center">交集，不能写单个的&amp;</td>
-<td align="center"><code>[a-z&amp;&amp;m-p]</code></td>
+<td align="center"><code>public boolean remove(E e)</code></td>
+<td align="center">把给定的对象在当前集合中删除</td>
 </tr>
 <tr>
-<td align="center"><code>.</code></td>
-<td align="center">任意字符</td>
-<td align="center"><code>\n回车符号不匹配</code></td>
+<td align="center"><code>public boolean contains(Object obj)</code></td>
+<td align="center">判断当前集合中是否包含给定的对象</td>
 </tr>
 <tr>
-<td align="center"><code>\</code></td>
-<td align="center">转义字符</td>
-<td align="center"><code>\\d</code></td>
+<td align="center"><code>public boolean isEmpty()</code></td>
+<td align="center">判断当前集合是否为空</td>
 </tr>
 <tr>
-<td align="center"><code>\\d</code></td>
-<td align="center">0-9</td>
-<td align="center"><code>\\d+</code></td>
+<td align="center"><code>public int size()</code></td>
+<td align="center">返回集合中元素的个数</td>
 </tr>
 <tr>
-<td align="center"><code>\\D</code></td>
-<td align="center">非0-9</td>
-<td align="center"><code>\\D+</code></td>
-</tr>
-<tr>
-<td align="center"><code>\\s</code></td>
-<td align="center">空白字符</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center"><code>\\S</code></td>
-<td align="center">非空白字符</td>
-<td align="center"><code>^\S</code></td>
-</tr>
-<tr>
-<td align="center"><code>\\w</code></td>
-<td align="center">单词字符</td>
-<td align="center"><code>[a-zA-Z_0-9]</code></td>
-</tr>
-<tr>
-<td align="center"><code>\\W</code></td>
-<td align="center">非单词字符</td>
-<td align="center"><code>[^\w]</code></td>
-</tr>
-<tr>
-<td align="center"><code>()</code></td>
-<td align="center">分组</td>
-<td align="center"><code>a(bc)+</code></td>
-</tr>
-<tr>
-<td align="center">&#96;</td>
-<td align="center">&#96;</td>
-<td align="center">写在括号外表示并集</td>
-</tr>
-<tr>
-<td align="center"><code>?</code></td>
-<td align="center">0次或1次</td>
-<td align="center"><code>\\d?</code></td>
-</tr>
-<tr>
-<td align="center"><code>*</code></td>
-<td align="center">0次或多次</td>
-<td align="center"><code>\\d*</code></td>
-</tr>
-<tr>
-<td align="center"><code>+</code></td>
-<td align="center">1次或多次</td>
-<td align="center"><code>\\d+</code></td>
-</tr>
-<tr>
-<td align="center"><code>&#123;&#125;</code></td>
-<td align="center">具体次数</td>
-<td align="center"><code>a&#123;7&#125;</code></td>
-</tr>
-<tr>
-<td align="center"><code>(?i)</code></td>
-<td align="center">忽略后面字符的大小写</td>
-<td align="center"><code>(?i)abc</code></td>
-</tr>
-<tr>
-<td align="center"><code>a((?i)b)c</code></td>
-<td align="center">只忽略b的大小写</td>
-<td align="center"></td>
+<td align="center"><code>public Object[] toArray()</code></td>
+<td align="center">把集合中的元素，存储到数组中</td>
 </tr>
 </tbody></table>
 </li>
 </ol>
-<h1 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h1><h2 id="认识异常"><a href="#认识异常" class="headerlink" title="认识异常"></a>认识异常</h2><ol>
-<li><p>Error：代表系统级别错误（属于严重问题）</p>
-</li>
-<li><p>Exception：叫异常，它代表的才是我们程序可能出现的问题，所以，<code>Exception</code>以及它的子类来封装程序出现的问题。</p>
+<h2 id="Collection的遍历方式"><a href="#Collection的遍历方式" class="headerlink" title="Collection的遍历方式"></a>Collection的遍历方式</h2><h3 id="迭代器"><a href="#迭代器" class="headerlink" title="迭代器"></a>迭代器</h3><ol>
+<li><p>迭代器概述</p>
 <ul>
-<li>运行时异常：<code>RuntimeException</code>及其子类，编译阶段不会出现错误提醒，运行时出现的异常（如：数组索引越界异常）</li>
-<li>编译时异常：编译阶段就会出现错误提醒的（如：日期解析异常）</li>
+<li>迭代器是用来遍历集合的专用方式（数组没有迭代器），在Java中迭代器的代表是<code>Iterator</code>。</li>
 </ul>
 </li>
-<li><p>异常处理方法：</p>
-<ul>
-<li><p>抛出异常（throws）：在方法上使用throws关键字，可以将方法内部出现的异常抛出去给调用者处理。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">方法 <span class="keyword">throws</span> 异常<span class="number">1</span>, 异常<span class="number">2</span>,……&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<li><p>Collection集合获取迭代器的方法：</p>
+<table>
+<thead>
+<tr>
+<th align="center">方法名称</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>Iterator&lt;E&gt; iterator()</code></td>
+<td align="center">返回集合中的迭代器对象，该迭代器对象默认指向当前集合的第一个元素</td>
+</tr>
+</tbody></table>
 </li>
-<li><p>捕获异常（try……catch）：直接捕获程序出现的异常。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">    <span class="comment">// 监视可能出现异常的代码</span></span><br><span class="line">&#125;<span class="keyword">catch</span>(异常类型<span class="number">1</span> 变量)&#123;</span><br><span class="line">    <span class="comment">// 处理异常</span></span><br><span class="line">&#125;<span class="keyword">catch</span>(异常类型<span class="number">2</span> 变量)&#123;</span><br><span class="line">    <span class="comment">// 处理异常</span></span><br><span class="line">&#125;……</span><br></pre></td></tr></table></figure></li>
+<li><p>Iterator迭代器中的常用方法：</p>
+<table>
+<thead>
+<tr>
+<th align="center">方法名称</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>boolean hasNext</code></td>
+<td align="center">询问当前位置是否有元素存在，存在返回true，不存在返回false</td>
+</tr>
+<tr>
+<td align="center"><code>E next()</code></td>
+<td align="center">获取当前位置的元素，并同时将迭代器对象指向下一个元素处</td>
+</tr>
+</tbody></table>
+</li>
+</ol>
+<h3 id="增强for循环"><a href="#增强for循环" class="headerlink" title="增强for循环"></a>增强for循环</h3><ol>
+<li><p>增强for循环的格式：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(元素的数据类型 变量名: 数组或者集合)&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 示例</span></span><br><span class="line">Collection&lt;String&gt; c = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line"><span class="keyword">for</span> (String s :c)&#123;</span><br><span class="line">     System.out.println(s);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>增强for可以用来遍历集合或者数组</p>
+</li>
+<li><p>增强for遍历集合，本质就是迭代器遍历集合的简化写法</p>
+</li>
+</ol>
+<h3 id="Lambda表达式"><a href="#Lambda表达式" class="headerlink" title="Lambda表达式"></a>Lambda表达式</h3><ol>
+<li><p>Lambda表达式遍历集合</p>
+<ul>
+<li>得益于JDK 8开始的新技术，提供了一种更简单、更直接的方式来遍历集合</li>
+</ul>
+</li>
+<li><p>需要使用Collection的如下方法来完成</p>
+<table>
+<thead>
+<tr>
+<th align="center">方法名称</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>default void forEach(Consumer&lt;? super T&gt; action)</code></td>
+<td align="center">结合lambda遍历集合</td>
+</tr>
+</tbody></table>
+</li>
+</ol>
+<h1 id="List集合"><a href="#List集合" class="headerlink" title="List集合"></a>List集合</h1><h2 id="特点、特有方法"><a href="#特点、特有方法" class="headerlink" title="特点、特有方法"></a>特点、特有方法</h2><ol>
+<li><p>List系列集合特点：有序，可重复，有索引</p>
+<ul>
+<li>ArrayList：有序，可重复，有索引</li>
+<li>LinkedList：有序，可重复，有索引</li>
+<li>ArrayList和LinkedList底层采用的数据结构不同，应用场景不同</li>
+</ul>
+</li>
+<li><p>List集合的特有方法</p>
+<ul>
+<li>List集合因为支持索引，所以多了很多与索引相关的方法，当然，Collection的功能List也都继承了</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">方法名称</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>void add(int index, E element)</code></td>
+<td align="center">在此集合中的指定位置插入指定元素</td>
+</tr>
+<tr>
+<td align="center"><code>E remove(int index)</code></td>
+<td align="center">删除指定索引处的元素，返回被删除的元素</td>
+</tr>
+<tr>
+<td align="center"><code>E set(int index, E element)</code></td>
+<td align="center">修改指定索引处的元素，返回被修改的元素</td>
+</tr>
+<tr>
+<td align="center"><code>E get(int index)</code></td>
+<td align="center">返回指定索引处的元素</td>
+</tr>
+</tbody></table>
+</li>
+</ol>
+<h2 id="遍历方式"><a href="#遍历方式" class="headerlink" title="遍历方式"></a>遍历方式</h2><ol>
+<li>for循环（因为List集合有索引）</li>
+<li>迭代器</li>
+<li>增强for循环</li>
+<li>Lambda表达式</li>
+</ol>
+<h2 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h2><ol>
+<li>ArrayList基于数组实现的，数组的特点：查询快、增删慢<ul>
+<li>查询快：查询数据通过地址值和索引定位，查询任意数据耗时相同</li>
+<li>删除效率低：可能需要把后面很多的数据进行前移</li>
+<li>添加效率极低：可能需要把后面很多的数据后移，再添加元素；或者也可能需要进行数组的扩容</li>
+</ul>
+</li>
+<li>ArrayList实现：<ul>
+<li>利用无参构造器创建的集合，会在底层创建一个默认长度为0的数组</li>
+<li>添加第一个元素时，底层会创建一个新的长度为10的数组</li>
+<li>存满时，会扩容1.5倍</li>
+<li>如果一次添加多个元素，1.5倍还放不下，则新创建数组的长度以实际为准</li>
+</ul>
+</li>
+<li>ArrayList集合适合的应用场景<ul>
+<li>ArrayList适合：根据索引查询数据，比如根据随机索引取数组（高效）或者数据量不是很大时</li>
+<li>ArrayList不适合：数据量大的同时，又要频繁的进行增删操作</li>
 </ul>
 </li>
 </ol>
-<h2 id="自定义异常"><a href="#自定义异常" class="headerlink" title="自定义异常"></a>自定义异常</h2><ol>
-<li>自定义异常：Java无法将世界上全部问题都提供异常类来代表，如果企业遇到自己的某种问题，想通过异常来表示，以便用异常来管理该问题，那就需要自己来定义异常类了。</li>
-<li>自定义异常的种类：自定义运行时异常、自定义编译时异常</li>
-<li>自定义运行时异常：<ul>
-<li>定义一个异常类继承<code>RuntimeException</code></li>
-<li>重写构造方法</li>
-<li>通过<code>throw new 异常类(xxx)</code>来创建异常对象并抛出。编译阶段不报错，提醒不强烈，运行时才可能出现</li>
+<h2 id="LinkedList"><a href="#LinkedList" class="headerlink" title="LinkedList"></a>LinkedList</h2><ol>
+<li><p>链表：链表中的节点是独立的对象，在内存中是不连续的，每个节点包含数据值和下一个节点的地址</p>
+<p>特点：</p>
+<ul>
+<li>查询慢：无论查询哪个数据都要从头开始找</li>
+<li>增删相对快</li>
 </ul>
 </li>
-<li>自定义编译时异常：<ul>
-<li>定义一个异常类继承<code>Exception</code></li>
-<li>重写构造方法</li>
-<li>通过<code>throw new 异常类(xxx)</code>来创建异常对象并抛出。编译阶段就报错，提醒更强烈</li>
+<li><p>LinkedList底层原理</p>
+<ul>
+<li>基于双链表实现（每个节点包含数据、前一个结点地址和后一个结点地址）</li>
+<li>特点：查询慢，增删相对较快，但对首尾元素进行增删改查的速度是极快的</li>
+</ul>
+</li>
+<li><p>LinkedList新增了很多首尾操作的特有方法</p>
+<table>
+<thead>
+<tr>
+<th align="center">方法名称</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public void addFirst(E e)</code></td>
+<td align="center">在该列表开头插入指定的元素</td>
+</tr>
+<tr>
+<td align="center"><code>public void addLast(E e)</code></td>
+<td align="center">将指定的元素追加到此列表的末尾</td>
+</tr>
+<tr>
+<td align="center"><code>public E getFirst()</code></td>
+<td align="center">返回此列表中的第一个元素</td>
+</tr>
+<tr>
+<td align="center"><code>public E getLast()</code></td>
+<td align="center">返回此列表中的最后一个元素</td>
+</tr>
+<tr>
+<td align="center"><code>public E removeFirst()</code></td>
+<td align="center">在此列表中删除并返回第一个元素</td>
+</tr>
+<tr>
+<td align="center"><code>public E removeLast()</code></td>
+<td align="center">在此列表中删除并返回最后一个元素</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>LinkedList的应用场景：</p>
+<ul>
+<li><p>设计队列（先进先出，后进后出）</p>
+<p>数据进入队列的过程称为：入队</p>
+<p>数据离开队列的过程称为：出队</p>
+</li>
+<li><p>设计栈（后进先出，先进后出）</p>
+<p>数据进入栈模型的过程称为：压&#x2F;进站（push）</p>
+<p>数据离开栈模型的过程称为：弹&#x2F;出栈（pop）</p>
+</li>
+</ul>
+</li>
+</ol>
+<h1 id="Set集合"><a href="#Set集合" class="headerlink" title="Set集合"></a>Set集合</h1><h2 id="Set系列集合特点"><a href="#Set系列集合特点" class="headerlink" title="Set系列集合特点"></a>Set系列集合特点</h2><ol>
+<li>Set系集合特点：无序：添加数据的顺序和获取出的数据顺序不一致；不重复；无索引；</li>
+<li>HashSet：无序、不重复、无索引。</li>
+<li>LinkedHashSet：有序、不重复、无索引。</li>
+<li>TreeSet：排序、不重复、无索引。</li>
+<li>注意：Set要用到的常用方法，基本上就是Collection提供的！！！自己几乎没有额外新增的一些常用方法！</li>
+</ol>
+<h2 id="HashSet"><a href="#HashSet" class="headerlink" title="HashSet"></a>HashSet</h2><ol>
+<li>HashSet集合的底层原理：哈希表</li>
+<li>HashSet集合去重复的机制<ul>
+<li>HashSet集合默认不能对内容一样的两个不同对象去重复</li>
+<li>如何让HashSet集合实现对内容一样的两个不同对象进行去重：重写<code>hashCode()</code>和<code>equals()</code>方法</li>
+</ul>
+</li>
+</ol>
+<h2 id="LinkedHashSet"><a href="#LinkedHashSet" class="headerlink" title="LinkedHashSet"></a>LinkedHashSet</h2><ol>
+<li>LinkedHashSet集合底层原理：<ul>
+<li>哈希表（数组、链表、红黑树）</li>
+<li>但是，LinkedHashSet的每个元素都额外的多了一个双链表的机制记录它前后元素的位置</li>
+</ul>
+</li>
+</ol>
+<h2 id="TreeSet"><a href="#TreeSet" class="headerlink" title="TreeSet"></a>TreeSet</h2><ol>
+<li><p>TreeSet底层基于红黑树实现</p>
+</li>
+<li><p>排序规则：</p>
+<ul>
+<li>对于数值类型：Integer，Double，默认按照数值大小的本身进行升序排序</li>
+<li>对于字符串类型：默认按照首字母的编号升序排序</li>
+<li>对于自定义类型的对象，TreeSet默认是无法直接排序的</li>
+</ul>
+</li>
+<li><p>自定义排序规则</p>
+<ul>
+<li><p>方法一：让该对象的类实现<code>comparable</code>(比较规则)接口，然后重写<code>compareTo</code>方法，自己制定比较规则</p>
+</li>
+<li><p>方法二：通过调用TreeSet集合有参数构造器，可以设置Comparator（比较器对象，用于指定比较规则）</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="title function_">TreeSet</span><span class="params">(Comparator&lt;? <span class="built_in">super</span> E&gt; comparator)</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>注意：如果类本身有实现Comparable接口，TreeSet集合同时也自带比较器，默认使用集合自带的比较器排序。</p>
+</li>
+</ul>
+</li>
+</ol>
+<h1 id="Collection集合总结"><a href="#Collection集合总结" class="headerlink" title="Collection集合总结"></a>Collection集合总结</h1><h2 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h2><ol>
+<li>如果希望记住元素的添加顺序，需要存储重复的元素，又要频繁的根据索引查询数据？<ul>
+<li>用ArrayList集合（有序、可重复、有索引)，底层基于数组的。(常用)</li>
+</ul>
+</li>
+<li>如果希望记住元素的添加顺序，且增删首尾数据的情况较多?<ul>
+<li>用LinkedList集合（有序、可重复、有索引)，底层基于双链表实现的。</li>
+</ul>
+</li>
+<li>如果不在意元素顺序，也没有重复元素需要存储，只希望增删改查都快?<ul>
+<li>用HashSet集合（无序，不重复，无索引)，底层基于哈希表实现的。(常用)</li>
+</ul>
+</li>
+<li>如果希望记住元素的添加顺序，也没有重复元素需要存储，且希望增删改查都快?<ul>
+<li>用LinkedHashSet集合（有序，不重复，无索引)，底层基于哈希表和双链表。</li>
+</ul>
+</li>
+<li>如果要对元素进行排序，也没有重复元素需要存储?且希望增删改查都快?<ul>
+<li>用TreeSet集合，基于红黑树实现。</li>
+</ul>
+</li>
+</ol>
+<h2 id="集合的并发修改异常问题"><a href="#集合的并发修改异常问题" class="headerlink" title="集合的并发修改异常问题"></a>集合的并发修改异常问题</h2><ol>
+<li>集合的并发修改异常<ul>
+<li>使用迭代器遍历集合时，又同时在删除集合中的数据，程序就会出现并发修改异常的错误。</li>
+<li>由于增强for循环遍历集合就是迭代器遍历集合的简化写法，因此，使用增强for循环遍历集合，又在同时删除集合中的数据时，程序也会出现并发修改异常的错误</li>
+</ul>
+</li>
+<li>怎么保证遍历集合同时删除数据时不出bug<ul>
+<li>使用迭代器遍历集合，但用迭代器自己的删除方法删除数据即可。</li>
+<li>如果能用for循环遍历时:可以倒着遍历并删除;或者从前往后遍历，但删除元素后做<code>i--</code>操作。</li>
+</ul>
+</li>
+</ol>
+<h2 id="Collection的其他相关知识"><a href="#Collection的其他相关知识" class="headerlink" title="Collection的其他相关知识"></a>Collection的其他相关知识</h2><h3 id="前置知识：可变参数"><a href="#前置知识：可变参数" class="headerlink" title="前置知识：可变参数"></a>前置知识：可变参数</h3><ol>
+<li>可变参数：就是一种特殊形参，定义在方法、构造器的形参列表里，格式是：<code>数据类型...参数名称;</code></li>
+<li>可变参数的特点和好处<ul>
+<li>特点：可以不传数据给它;可以传一个或者同时传多个数据给它;也可以传一个数组给它。</li>
+<li>好处：常常用来灵活的接收数据。</li>
+</ul>
+</li>
+<li>注意实现：<ul>
+<li>可变参数在方法内部就是一个数组。</li>
+<li>一个形参列表中可变参数只能有一个。</li>
+<li>可变参数必须放在形参列表的最后面。</li>
+</ul>
+</li>
+</ol>
+<h3 id="Collections"><a href="#Collections" class="headerlink" title="Collections"></a>Collections</h3><ol>
+<li><p>Collections：是一个用来操作集合的工具类</p>
+</li>
+<li><p>Collections提供的常用静态方法</p>
+<table>
+<thead>
+<tr>
+<th align="center">方法名称</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public static &lt;T&gt; boolean addAll(Collection&lt;? super T&gt; c, T……elements)</code></td>
+<td align="center">给集合批量添加元素</td>
+</tr>
+<tr>
+<td align="center"><code>public static void shuffle(List&lt;?&gt; list)</code></td>
+<td align="center">打乱List集合的元素顺序</td>
+</tr>
+<tr>
+<td align="center"><code>public static &lt;T&gt; void sort(List&lt;?&gt; list)</code></td>
+<td align="center">对List集合中的元素进行升序排序</td>
+</tr>
+<tr>
+<td align="center"><code>public static &lt;T&gt; void sort(List&lt;?&gt; list, Comparator&lt;? super T&gt; c)</code></td>
+<td align="center">对List集合中的元素，按照比较器对象指定的规则进行排序</td>
+</tr>
+</tbody></table>
+</li>
+</ol>
+<h1 id="拓展："><a href="#拓展：" class="headerlink" title="拓展："></a>拓展：</h1><h2 id="哈希表"><a href="#哈希表" class="headerlink" title="哈希表"></a>哈希表</h2><ol>
+<li><p>哈希值</p>
+<ul>
+<li><p>就是一个int类型的数值，Java中每一个对象都有一个哈希值。</p>
+</li>
+<li><p>Java中的所有对象，都可以调用<code>Object</code>类提供的<code>hashCode</code>方法，返回该对象自己的哈希值。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">hashCode</span><span class="params">()</span>：返回对象的哈希码值。</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>对象哈希值的特点</p>
+<ul>
+<li>同一个对象多次调用<code>hashCode()</code>方法返回的哈希值是相同的。</li>
+<li>不同对象，他们的哈希值一般不相同，但也有可能会相同（哈希碰撞）。</li>
+</ul>
+</li>
+<li><p>哈希表</p>
+<ul>
+<li><p>哈希表是一种增删改查数据性能都较好的结构</p>
+</li>
+<li><p>JDK8之前，哈希表 &#x3D; 数组 + 链表</p>
+<ol>
+<li><p>创建一个默认长度16的数组，默认加载因子为0.75，数组名table</p>
+</li>
+<li><p>使用元素的哈希值对数组的长度求余计算出应存入的位置</p>
+</li>
+<li><p>判断当前位置是否为null，如果是null直接存入</p>
+</li>
+<li><p>如果不为null，表示有元素，则调用<code>equals</code>方法比较，相等，则不存；不相等，则存入数组</p>
+<ul>
+<li><p>JDK8之前，新元素存入数组，占老元素位置，老元素挂下面</p>
+</li>
+<li><p>JDK8之后，新元素直接挂在老元素下面</p>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>JDK8之后，哈希表 &#x3D; 数组 + 链表 + 红黑树</p>
+<ol>
+<li>当链表长度超过超过8，且数组长度&gt;&#x3D;64时，自动将链表转换成红黑树</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>如果数组快占满了，会出现什么问题？该怎么解决</p>
+<ul>
+<li>链表过长，导致查询性能降低</li>
+<li>扩容：当数组存放数据的长度达到数组长度与默认加载因子的乘积时，便会执行扩容操作</li>
+</ul>
+</li>
+</ol>
+<h2 id="树"><a href="#树" class="headerlink" title="树"></a>树</h2><ol>
+<li>二叉树：<ul>
+<li>二叉树中，任意结点的度 &lt;&#x3D; 2</li>
+<li>度：每个节点的子节点数量</li>
+<li>树高：树的总层数</li>
+<li>根节点：最高层的节点</li>
+<li>左子节点</li>
+<li>右子节点</li>
+<li>左子树</li>
+<li>右子树</li>
+</ul>
+</li>
+<li>二叉查找树（二叉排序树）<ul>
+<li>规则：小的存左边，大的存右边，一样的不存</li>
+<li>缺陷：当数据已经是排序好的，导致查询的性能与单链表一样，查询速度变慢</li>
+</ul>
+</li>
+<li>平衡二叉树：<ul>
+<li>在满足查找二叉树的大小规则下，让树尽可能矮小，以此提高查数据的性能</li>
+</ul>
+</li>
+<li>红黑树<ul>
+<li>红黑树就是平衡二叉树</li>
+<li>红黑树是一种增删改查数据性能都相对较好的结构</li>
 </ul>
 </li>
 </ol>
@@ -2122,6 +2195,411 @@
       </categories>
   </entry>
   <entry>
+    <title>Java_常用API(一)</title>
+    <url>/2023/09/27/Java_%E5%B8%B8%E7%94%A8API(%E4%B8%80)/</url>
+    <content><![CDATA[<h1 id="API"><a href="#API" class="headerlink" title="API"></a>API</h1><ol>
+<li>什么是API？<ul>
+<li>全称应用程序编程接口（Application Programming interface）</li>
+<li>就是Java自己写好的程序，给程序员调用，方便完成一些功能</li>
+</ul>
+</li>
+<li>API文档：程序使用说明书</li>
+</ol>
+<h1 id="包"><a href="#包" class="headerlink" title="包"></a>包</h1><ol>
+<li>什么是包？<ul>
+<li>包是用来分门别类的管理各种不同程序的，类似于文件夹，建包有利于程序的管理与维护。</li>
+<li>建包的语法格式：如：<code>package com.local.project;</code></li>
+</ul>
+</li>
+<li>在自己程序中调用其他包下的程序的注意事项<ul>
+<li>如果当前程序中，要调用自己所在包下的其他程序，可以直接调用。（同一个包下的类，互相可以直接调用）</li>
+<li>如果当前程序中，要调用其他包下的程序，则必须在当前程序中导包，才可以访问！导包格式：<code>import 包名.类名;</code></li>
+<li>如果当前程序中，要调用Java提供的程序，也需要先导包才可以使用；但<code>java.lang</code>包下的程序是不需要我们导包的，可以直接使用</li>
+<li>如果当前程序，要调用多个不同包下的程序，而这些程序名正好一样，此时默认只能导入一个程序，另一个程序必须带包名访问</li>
+</ul>
+</li>
+</ol>
+<h1 id="String"><a href="#String" class="headerlink" title="String"></a>String</h1><h2 id="String创建对象封装字符串数据的方式"><a href="#String创建对象封装字符串数据的方式" class="headerlink" title="String创建对象封装字符串数据的方式"></a>String创建对象封装字符串数据的方式</h2><ol>
+<li><p>方式一：Java程序中的所有字符串文字（例如：”abc”）都为此类对象</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">name</span> <span class="operator">=</span> <span class="string">&quot;张三&quot;</span>;</span><br><span class="line"><span class="type">String</span> <span class="variable">addr</span> <span class="operator">=</span> <span class="string">&quot;沈阳&quot;</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>方法二：调用String类的构造方法初始化字符串对象</p>
+<table>
+<thead>
+<tr>
+<th align="center">构造方法</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public String()</code></td>
+<td align="center">创建一个空白字符串对象，不含任何内容</td>
+</tr>
+<tr>
+<td align="center"><code>public String(String original)</code></td>
+<td align="center">根据传入的字符串内容，来创建字符串对象</td>
+</tr>
+<tr>
+<td align="center"><code>public String(char[] chars)</code></td>
+<td align="center">根据字符数组的内容，来创建字符串对象</td>
+</tr>
+<tr>
+<td align="center"><code>public String(byte[] byte)</code></td>
+<td align="center">根据字节数组的内容，来创建字符串对象</td>
+</tr>
+</tbody></table>
+</li>
+</ol>
+<h2 id="String的常用方法"><a href="#String的常用方法" class="headerlink" title="String的常用方法"></a>String的常用方法</h2><table>
+<thead>
+<tr>
+<th align="center">方法名</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public int length()</code></td>
+<td align="center">获取字符串的长度返回（就是字符个数）</td>
+</tr>
+<tr>
+<td align="center"><code>public char charAt(int index)</code></td>
+<td align="center">获取某个索引处的字符返回</td>
+</tr>
+<tr>
+<td align="center"><code>public char[] toCharArray()</code></td>
+<td align="center">将当前字符串转换成字符数组返回</td>
+</tr>
+<tr>
+<td align="center"><code>public boolean equals(Object anObject)</code></td>
+<td align="center">判断当前字符串与另一个字符串的内容是否一样，一样返回true</td>
+</tr>
+<tr>
+<td align="center"><code>public boolean equalsIgnoreCase(String anotherString)</code></td>
+<td align="center">判断当前字符串与另一个字符串的内容是否一样（忽略大小写）</td>
+</tr>
+<tr>
+<td align="center"><code>public String substring(int beginIndex, int endINdex)</code></td>
+<td align="center">根据开始和结束索引处截取，得到新的字符串返回</td>
+</tr>
+<tr>
+<td align="center"><code>public String substring(int beginIndex)</code></td>
+<td align="center">从传入的索引处截取，截取到末尾，得到新的字符串返回</td>
+</tr>
+<tr>
+<td align="center"><code>public String replace(CharSequence target, CharSequence replcaement)</code></td>
+<td align="center">使用新值，将字符串中的旧值替换，得到新的字符串</td>
+</tr>
+<tr>
+<td align="center"><code>public boolean contains(String s)</code></td>
+<td align="center">判断字符串中是否包含了某个字符串</td>
+</tr>
+<tr>
+<td align="center"><code>public boolean startsWith(String s)</code></td>
+<td align="center">判断字符串是否以某个字符串内容开头，开头则返回true，否则返回false</td>
+</tr>
+<tr>
+<td align="center"><code>public String[] split(String regex)</code></td>
+<td align="center">把字符串按照某个字符串内容分割，并返回字符串数组回来</td>
+</tr>
+</tbody></table>
+<h2 id="String使用时的注意事项"><a href="#String使用时的注意事项" class="headerlink" title="String使用时的注意事项"></a>String使用时的注意事项</h2><ol>
+<li>String是不可变字符串对象</li>
+<li>只要使用<code>&quot;……&quot;</code>方式写出的字符串对象，会存储到字符串常量池，且相同内容的字符串只存储一份。</li>
+<li>通过<code>new</code>方式创建的字符串对象，每<code>new</code>一次都会产生一个新的对象放在堆内存中</li>
+</ol>
+<h1 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h1><ul>
+<li>集合是一种容器，用来存储数据，且集合的大小可变</li>
+<li>ArrayList<E>是用的最多、最常见的一种集合，它是泛型类，可以约束存储的数据类型。</li>
+</ul>
+<h2 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h2><table>
+<thead>
+<tr>
+<th align="center">构造方法</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public ArrayList()</code></td>
+<td align="center">创建一个空的集合对象</td>
+</tr>
+</tbody></table>
+<h2 id="ArrayList的常用方法"><a href="#ArrayList的常用方法" class="headerlink" title="ArrayList的常用方法"></a>ArrayList的常用方法</h2><table>
+<thead>
+<tr>
+<th align="center">常用方法名</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public boolean add(E e)</code></td>
+<td align="center">将指定的元素添加到次集合的末尾</td>
+</tr>
+<tr>
+<td align="center"><code>public void add(int index, E element)</code></td>
+<td align="center">在此集合中的指定位置插入指定的元素</td>
+</tr>
+<tr>
+<td align="center"><code>public E get(int index)</code></td>
+<td align="center">返回指定索引处的元素</td>
+</tr>
+<tr>
+<td align="center"><code>public int size()</code></td>
+<td align="center">返回集合中的元素个数</td>
+</tr>
+<tr>
+<td align="center"><code>public E remove(int index)</code></td>
+<td align="center">删除指定索引处的元素，返回被删除的元素</td>
+</tr>
+<tr>
+<td align="center"><code>public boolean remove(Object o)</code></td>
+<td align="center">删除指定的元素，返回删除是否成功</td>
+</tr>
+<tr>
+<td align="center"><code>public E set(int index,E element)</code></td>
+<td align="center">修改指定索引处的元素，返回被修改的元素</td>
+</tr>
+</tbody></table>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ul>
+<li>从前往后遍历删除时可能存在漏掉元素删除元素后，执行<code>i--</code>即可或者从后往前遍历</li>
+</ul>
+<h1 id="Object"><a href="#Object" class="headerlink" title="Object"></a>Object</h1><h2 id="Object类的作用"><a href="#Object类的作用" class="headerlink" title="Object类的作用"></a>Object类的作用</h2><ul>
+<li>Object类是Java中所有类的祖宗类，因此，Java中所有类的对象都可以直接使用Object类中提供的一些方法。</li>
+</ul>
+<h2 id="Object类的常见方法"><a href="#Object类的常见方法" class="headerlink" title="Object类的常见方法"></a>Object类的常见方法</h2><table>
+<thead>
+<tr>
+<th align="center">方法名</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public String toString()</code></td>
+<td align="center">返回对象的字符串表示形式</td>
+</tr>
+<tr>
+<td align="center"><code>public boolean equals(Object o)</code></td>
+<td align="center">判断两个对象是否相等</td>
+</tr>
+<tr>
+<td align="center"><code>protected Object clone()</code></td>
+<td align="center">对象克隆</td>
+</tr>
+</tbody></table>
+<ol>
+<li><p><code>toString</code>方法的作用和意义</p>
+<ul>
+<li><p>基本作用：返回对象的字符串形式。</p>
+</li>
+<li><p>存在意义：让子类重写，一遍返回子类对象的内容。</p>
+</li>
+</ul>
+</li>
+<li><p><code>equals</code>方法的作用和意义</p>
+<ul>
+<li>基本作用：,默认是比较两个对象的地址是否相等。</li>
+<li>存在意义：让子类从写，以便于比较对象的内容是否相同。</li>
+</ul>
+</li>
+</ol>
+<h1 id="Objects"><a href="#Objects" class="headerlink" title="Objects"></a>Objects</h1><ul>
+<li>Objects是一个工具类，提供了很多操作对象的静态方法给我们使用</li>
+</ul>
+<h2 id="Objects类的常见方法"><a href="#Objects类的常见方法" class="headerlink" title="Objects类的常见方法"></a>Objects类的常见方法</h2><table>
+<thead>
+<tr>
+<th align="center">方法名</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public static boolean equals(Object a, Object b)</code></td>
+<td align="center">先做非空判断，再比较两个对象</td>
+</tr>
+<tr>
+<td align="center"><code>public static boolean isNull(Object obj)</code></td>
+<td align="center">判断对象是否为<code>null</code>，为<code>null</code>返回<code>true</code>，反之</td>
+</tr>
+<tr>
+<td align="center"><code>public static boolean nonNull(Object obj)</code></td>
+<td align="center">判断对象是否不为<code>null</code>，不为<code>null</code>返回<code>true</code>，反之</td>
+</tr>
+</tbody></table>
+<h1 id="包装类"><a href="#包装类" class="headerlink" title="包装类"></a>包装类</h1><ul>
+<li><p>包装类就是把基本数据类型包装成对象</p>
+<table>
+<thead>
+<tr>
+<th align="center">基本数据类型</th>
+<th align="center">对应的包装类（引用数据类型）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">byte</td>
+<td align="center">Byte</td>
+</tr>
+<tr>
+<td align="center">short</td>
+<td align="center">Short</td>
+</tr>
+<tr>
+<td align="center">int</td>
+<td align="center">Integer</td>
+</tr>
+<tr>
+<td align="center">long</td>
+<td align="center">Long</td>
+</tr>
+<tr>
+<td align="center">char</td>
+<td align="center">Charactor</td>
+</tr>
+<tr>
+<td align="center">float</td>
+<td align="center">Float</td>
+</tr>
+<tr>
+<td align="center">double</td>
+<td align="center">Double</td>
+</tr>
+<tr>
+<td align="center">boolean</td>
+<td align="center">Boolean</td>
+</tr>
+</tbody></table>
+<ul>
+<li>自动装箱：基本数据类型可以自动转换为包装类型</li>
+<li>自动拆箱：包装类型可以自动转换为基本数据类型</li>
+</ul>
+</li>
+</ul>
+<h2 id="包装类的其他常见操作"><a href="#包装类的其他常见操作" class="headerlink" title="包装类的其他常见操作"></a>包装类的其他常见操作</h2><ul>
+<li><p>可以把基本类型的数据转换成字符串类型</p>
+<table>
+<thead>
+<tr>
+<th>方法名</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>public static String toSpring(double d)</code></td>
+</tr>
+<tr>
+<td><code>public String toSpring()</code></td>
+</tr>
+</tbody></table>
+</li>
+<li><p>可以把字符串类型的数值转换成数值本身对应的数据类型</p>
+<table>
+<thead>
+<tr>
+<th>方法名</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>public static int parseInt(String s)</code></td>
+</tr>
+<tr>
+<td><code>public static Integer valueOf(String s)</code></td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<h1 id="StringBuilder"><a href="#StringBuilder" class="headerlink" title="StringBuilder"></a>StringBuilder</h1><ul>
+<li>StringBuilder代表可变字符串对象，相当于是一个容器，它里面装的字符串是可以改变的，就是用来操作字符串的。</li>
+<li>好处：StringBuilder比String更适合做字符串的修改操作，效率会更高，代码也会更简洁。</li>
+<li>对于字符串相关操作，如频繁的拼接、修改等，建议使用StringBuilder，效率更高</li>
+<li>注意：如果操作字符串较少，或者不需要操作，以及定义字符串变量，还是建议使用String</li>
+</ul>
+<h2 id="StringBuilder的构造方法"><a href="#StringBuilder的构造方法" class="headerlink" title="StringBuilder的构造方法"></a>StringBuilder的构造方法</h2><table>
+<thead>
+<tr>
+<th align="center">构造方法</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public StringBuilder()</code></td>
+<td align="center">创建一个空白的可变字符串对象，不包含任何内容</td>
+</tr>
+<tr>
+<td align="center"><code>public StringBuilder(String str)</code></td>
+<td align="center">创建一个指定字符串内容的可变字符串对象</td>
+</tr>
+</tbody></table>
+<h2 id="StringBuilder的常用方法"><a href="#StringBuilder的常用方法" class="headerlink" title="StringBuilder的常用方法"></a>StringBuilder的常用方法</h2><table>
+<thead>
+<tr>
+<th align="center">方法名称</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public StringBuilder append(任意类型)</code></td>
+<td align="center">添加数据并返回StringBuilder对象本身</td>
+</tr>
+<tr>
+<td align="center"><code>public StringBuilder reverse()</code></td>
+<td align="center">将对象的内容反转</td>
+</tr>
+<tr>
+<td align="center"><code>public int length()</code></td>
+<td align="center">返回对象的内容长度</td>
+</tr>
+<tr>
+<td align="center"><code>public String toString()</code></td>
+<td align="center">通过toString()就可以实现把StringBuilder转换为String</td>
+</tr>
+</tbody></table>
+<h1 id="StringBuffer"><a href="#StringBuffer" class="headerlink" title="StringBuffer"></a>StringBuffer</h1><ul>
+<li>StringBuffer的用法与StringBuilder是一模一样的</li>
+<li>但StringBuilder是线程不安全的，StringBuffer是线程安全</li>
+</ul>
+<h1 id="StringJoiner"><a href="#StringJoiner" class="headerlink" title="StringJoiner"></a>StringJoiner</h1><ul>
+<li>JDK8开始才有的，跟StringBuilder一样，也是用来操作字符串的，也可以看成是一个容器，创建后里面的内容是可变的。</li>
+<li>好处：不仅能提高字符串的操作效率，并且在有些场景下使用它操作字符串，代码会更简洁</li>
+</ul>
+<h2 id="StringJoiner的构造方法"><a href="#StringJoiner的构造方法" class="headerlink" title="StringJoiner的构造方法"></a>StringJoiner的构造方法</h2><table>
+<thead>
+<tr>
+<th align="center">构造方法</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public StringJoiner()</code></td>
+<td align="center">创建一个StringJoiner对象，指定拼接时的间隔符号</td>
+</tr>
+<tr>
+<td align="center"><code>public StringJoiner(间隔符号, 开始符号, 结束符号)</code></td>
+<td align="center">创建一个StringJoiner对象，指定拼接时的间隔符号、开始符号、结束符号</td>
+</tr>
+</tbody></table>
+<h2 id="StringJoiner的常用方法"><a href="#StringJoiner的常用方法" class="headerlink" title="StringJoiner的常用方法"></a>StringJoiner的常用方法</h2><table>
+<thead>
+<tr>
+<th align="center">方法名称</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public StringJoiner add(添加的内容)</code></td>
+<td align="center">添加数据，并返回对象本身</td>
+</tr>
+<tr>
+<td align="center"><code>public int length()</code></td>
+<td align="center">返回长度（字符出现的个数）</td>
+</tr>
+<tr>
+<td align="center"><code>public String toString()</code></td>
+<td align="center">返回一个字符串（该字符串就是拼接之后的结果）</td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Java基础(二)——流程控制</title>
     <url>/2023/09/09/Java%E5%9F%BA%E7%A1%80(%E4%BA%8C)%E2%80%94%E2%80%94%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/</url>
     <content><![CDATA[<h1 id="分支结构"><a href="#分支结构" class="headerlink" title="分支结构"></a>分支结构</h1><h2 id="if语句"><a href="#if语句" class="headerlink" title="if语句"></a>if语句</h2><ol>
@@ -2399,6 +2877,170 @@
 ]]></content>
       <categories>
         <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Markdown语法学习</title>
+    <url>/2023/04/22/Markdown%E8%AF%AD%E6%B3%95%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[<h1 id="Markdown语法学习"><a href="#Markdown语法学习" class="headerlink" title="Markdown语法学习"></a>Markdown语法学习</h1><h2 id="Markdown介绍"><a href="#Markdown介绍" class="headerlink" title="Markdown介绍"></a>Markdown介绍</h2><p>Markdown是一种轻量级标记语言，它使用纯文本格式编写，可通过转换工具将其转换成 HTML、PDF 和其他格式，常用于撰写技术文档、博客、论坛帖子等。它语法简单、清晰易读，可以让写作者更加专注于内容的表达和组织，减少排版和格式化的时间，提高效率和创作体验。</p>
+<h2 id="使用工具"><a href="#使用工具" class="headerlink" title="使用工具"></a>使用工具</h2><ul>
+<li>VS Code： 轻量级文本编辑器，插件丰富，可拓展性强</li>
+<li>Typora：UI简洁，所见即所得</li>
+</ul>
+<h2 id="标题标签"><a href="#标题标签" class="headerlink" title="标题标签"></a>标题标签</h2><p>几个”#”即表示几级标签，共六级标题，字体大小依次减小</p>
+<p>代码：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section"># 一级标题</span></span><br><span class="line"><span class="section">## 二级标题</span></span><br><span class="line"><span class="section">### 三级标题</span></span><br><span class="line"><span class="section">#### 四级标题</span></span><br><span class="line"><span class="section">##### 五级标题</span></span><br><span class="line"><span class="section">###### 六级标题</span></span><br></pre></td></tr></table></figure>
+
+<p>效果展示：</p>
+<h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4><h5 id="五级标题"><a href="#五级标题" class="headerlink" title="五级标题"></a>五级标题</h5><h6 id="六级标题"><a href="#六级标题" class="headerlink" title="六级标题"></a>六级标题</h6><h2 id="文本标签"><a href="#文本标签" class="headerlink" title="文本标签"></a>文本标签</h2><h3 id="加粗"><a href="#加粗" class="headerlink" title="加粗"></a>加粗</h3><p>代码：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="strong">**加粗内容**</span></span><br></pre></td></tr></table></figure>
+
+<p>效果展示：</p>
+<p><strong>加粗内容</strong></p>
+<h3 id="倾斜"><a href="#倾斜" class="headerlink" title="倾斜"></a>倾斜</h3><p>代码：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="emphasis">*倾斜内容1*</span></span><br><span class="line"><span class="emphasis">_倾斜内容2_</span></span><br></pre></td></tr></table></figure>
+
+<p>效果展示：</p>
+<p><em>倾斜内容1</em></p>
+<p><em>倾斜内容2</em></p>
+<h3 id="下划线"><a href="#下划线" class="headerlink" title="下划线"></a>下划线</h3><p>代码：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">u</span>&gt;</span></span>下划线<span class="language-xml"><span class="tag">&lt;/<span class="name">u</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<p>效果展示：</p>
+<p><u>下划线</u></p>
+<h3 id="删除线"><a href="#删除线" class="headerlink" title="删除线"></a>删除线</h3><p>代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">~~删除~~</span><br></pre></td></tr></table></figure>
+
+<p>效果展示：</p>
+<p><del>删除</del></p>
+<h3 id="标记（高亮）"><a href="#标记（高亮）" class="headerlink" title="标记（高亮）"></a>标记（高亮）</h3><p>代码：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">==标记==</span><br></pre></td></tr></table></figure>
+
+<p>效果展示：</p>
+<p>&#x3D;&#x3D;标记&#x3D;&#x3D;</p>
+<h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><p>代码：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="quote">&gt; 引用</span></span><br></pre></td></tr></table></figure>
+
+<p>效果展示</p>
+<blockquote>
+<p>引用</p>
+</blockquote>
+<h3 id="上下标"><a href="#上下标" class="headerlink" title="上下标"></a>上下标</h3><p>代码（注意都是双标签，中间夹的为上(下)标内容）：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">m^2^</span><br><span class="line">H~2~O</span><br></pre></td></tr></table></figure>
+
+<p>效果展示：</p>
+<p>m^2^</p>
+<p>H<del>2</del>O</p>
+<h2 id="列表标签"><a href="#列表标签" class="headerlink" title="列表标签"></a>列表标签</h2><h3 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h3><p>代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">- 中国</span><br><span class="line">+ 辽宁</span><br><span class="line">* 沈阳</span><br></pre></td></tr></table></figure>
+
+<p>效果展示：</p>
+<ul>
+<li>中国<ul>
+<li>辽宁<ul>
+<li>沈阳</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h3><p>代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">1. 尤塞恩·博尔特</span><br><span class="line">2. 约翰·布雷克</span><br><span class="line">3. 泰森·盖伊</span><br></pre></td></tr></table></figure>
+
+<p>效果展示：</p>
+<ol>
+<li>尤塞恩·博尔特</li>
+<li>约翰·布雷克</li>
+<li>泰森·盖伊</li>
+</ol>
+<h3 id="任务列表"><a href="#任务列表" class="headerlink" title="任务列表"></a>任务列表</h3><p>代码（”-“和”[ ]”之间有三个空格）：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="bullet">-</span>   [x] 早饭</span><br><span class="line"><span class="bullet">-</span>   [ ] 午饭</span><br><span class="line"><span class="bullet">-</span>   [ ] 晚饭</span><br></pre></td></tr></table></figure>
+
+<p>效果展示：</p>
+<ul>
+<li><p><input checked="" disabled="" type="checkbox"> 
+早饭</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+午饭</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+晚饭</p>
+</li>
+</ul>
+<h2 id="公式代码"><a href="#公式代码" class="headerlink" title="公式代码"></a>公式代码</h2><h3 id="行内代码"><a href="#行内代码" class="headerlink" title="行内代码"></a>行内代码</h3><p>代码（在”1”左边，注意要使用英文输入）：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="code">`int`</span> 整形</span><br></pre></td></tr></table></figure>
+
+<p>效果展示：</p>
+<p><code>int</code> 整形</p>
+<h3 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h3><p>代码（第一行”&#96;”后面的为语言类型，建议直接使用快捷键）：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">````c</span><br><span class="line">void main()&#123;</span><br><span class="line">	……</span><br><span class="line">&#125;</span><br><span class="line">````</span><br></pre></td></tr></table></figure>
+
+<p>效果展示：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">	……</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="行内公式"><a href="#行内公式" class="headerlink" title="行内公式"></a>行内公式</h3><p>代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">二倍角公式：$sin2x = 2sinxcosx$ </span><br></pre></td></tr></table></figure>
+
+<p>效果展示：</p>
+<p> 二倍角公式：$sin2x &#x3D; 2sinxcosx$ </p>
+<h3 id="公式块"><a href="#公式块" class="headerlink" title="公式块"></a>公式块</h3><p>代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$$</span><br><span class="line">E_&#123;\rm k&#125; = \frac 1 2 m v^2</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
+
+<p>效果展示：<br>$$<br>E_{\rm k} &#x3D; \frac 1 2 m v^2<br>$$</p>
+<h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><p>代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">|      |   小米   |   vivo   |</span><br><span class="line">| ---- | ---- | ---- |</span><br><span class="line">|   手机   |      |      |</span><br><span class="line">|   平板   |      |      |</span><br></pre></td></tr></table></figure>
+
+<p>效果展示：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>小米</th>
+<th>vivo</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>手机</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>平板</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="超链接"><a href="#超链接" class="headerlink" title="超链接"></a>超链接</h2><p>代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[哔哩哔哩](https://www.bilibili.com/)</span><br></pre></td></tr></table></figure>
+
+<p>效果展示：</p>
+<p><a href="https://www.bilibili.com/">哔哩哔哩</a></p>
+<h2 id="插入图片"><a href="#插入图片" class="headerlink" title="插入图片"></a>插入图片</h2><p>代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">![](图片路径)</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><p>代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[^1]</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h2><p>代码（三个以上减号即可）：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">----</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><p>代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[TOC]</span><br></pre></td></tr></table></figure>
+
+
+
+]]></content>
+      <categories>
+        <category>Markdown</category>
       </categories>
   </entry>
   <entry>
@@ -2923,170 +3565,6 @@
       </categories>
   </entry>
   <entry>
-    <title>Markdown语法学习</title>
-    <url>/2023/04/22/Markdown%E8%AF%AD%E6%B3%95%E5%AD%A6%E4%B9%A0/</url>
-    <content><![CDATA[<h1 id="Markdown语法学习"><a href="#Markdown语法学习" class="headerlink" title="Markdown语法学习"></a>Markdown语法学习</h1><h2 id="Markdown介绍"><a href="#Markdown介绍" class="headerlink" title="Markdown介绍"></a>Markdown介绍</h2><p>Markdown是一种轻量级标记语言，它使用纯文本格式编写，可通过转换工具将其转换成 HTML、PDF 和其他格式，常用于撰写技术文档、博客、论坛帖子等。它语法简单、清晰易读，可以让写作者更加专注于内容的表达和组织，减少排版和格式化的时间，提高效率和创作体验。</p>
-<h2 id="使用工具"><a href="#使用工具" class="headerlink" title="使用工具"></a>使用工具</h2><ul>
-<li>VS Code： 轻量级文本编辑器，插件丰富，可拓展性强</li>
-<li>Typora：UI简洁，所见即所得</li>
-</ul>
-<h2 id="标题标签"><a href="#标题标签" class="headerlink" title="标题标签"></a>标题标签</h2><p>几个”#”即表示几级标签，共六级标题，字体大小依次减小</p>
-<p>代码：</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section"># 一级标题</span></span><br><span class="line"><span class="section">## 二级标题</span></span><br><span class="line"><span class="section">### 三级标题</span></span><br><span class="line"><span class="section">#### 四级标题</span></span><br><span class="line"><span class="section">##### 五级标题</span></span><br><span class="line"><span class="section">###### 六级标题</span></span><br></pre></td></tr></table></figure>
-
-<p>效果展示：</p>
-<h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4><h5 id="五级标题"><a href="#五级标题" class="headerlink" title="五级标题"></a>五级标题</h5><h6 id="六级标题"><a href="#六级标题" class="headerlink" title="六级标题"></a>六级标题</h6><h2 id="文本标签"><a href="#文本标签" class="headerlink" title="文本标签"></a>文本标签</h2><h3 id="加粗"><a href="#加粗" class="headerlink" title="加粗"></a>加粗</h3><p>代码：</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="strong">**加粗内容**</span></span><br></pre></td></tr></table></figure>
-
-<p>效果展示：</p>
-<p><strong>加粗内容</strong></p>
-<h3 id="倾斜"><a href="#倾斜" class="headerlink" title="倾斜"></a>倾斜</h3><p>代码：</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="emphasis">*倾斜内容1*</span></span><br><span class="line"><span class="emphasis">_倾斜内容2_</span></span><br></pre></td></tr></table></figure>
-
-<p>效果展示：</p>
-<p><em>倾斜内容1</em></p>
-<p><em>倾斜内容2</em></p>
-<h3 id="下划线"><a href="#下划线" class="headerlink" title="下划线"></a>下划线</h3><p>代码：</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">u</span>&gt;</span></span>下划线<span class="language-xml"><span class="tag">&lt;/<span class="name">u</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
-
-<p>效果展示：</p>
-<p><u>下划线</u></p>
-<h3 id="删除线"><a href="#删除线" class="headerlink" title="删除线"></a>删除线</h3><p>代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">~~删除~~</span><br></pre></td></tr></table></figure>
-
-<p>效果展示：</p>
-<p><del>删除</del></p>
-<h3 id="标记（高亮）"><a href="#标记（高亮）" class="headerlink" title="标记（高亮）"></a>标记（高亮）</h3><p>代码：</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">==标记==</span><br></pre></td></tr></table></figure>
-
-<p>效果展示：</p>
-<p>&#x3D;&#x3D;标记&#x3D;&#x3D;</p>
-<h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><p>代码：</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="quote">&gt; 引用</span></span><br></pre></td></tr></table></figure>
-
-<p>效果展示</p>
-<blockquote>
-<p>引用</p>
-</blockquote>
-<h3 id="上下标"><a href="#上下标" class="headerlink" title="上下标"></a>上下标</h3><p>代码（注意都是双标签，中间夹的为上(下)标内容）：</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">m^2^</span><br><span class="line">H~2~O</span><br></pre></td></tr></table></figure>
-
-<p>效果展示：</p>
-<p>m^2^</p>
-<p>H<del>2</del>O</p>
-<h2 id="列表标签"><a href="#列表标签" class="headerlink" title="列表标签"></a>列表标签</h2><h3 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h3><p>代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">- 中国</span><br><span class="line">+ 辽宁</span><br><span class="line">* 沈阳</span><br></pre></td></tr></table></figure>
-
-<p>效果展示：</p>
-<ul>
-<li>中国<ul>
-<li>辽宁<ul>
-<li>沈阳</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h3><p>代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">1. 尤塞恩·博尔特</span><br><span class="line">2. 约翰·布雷克</span><br><span class="line">3. 泰森·盖伊</span><br></pre></td></tr></table></figure>
-
-<p>效果展示：</p>
-<ol>
-<li>尤塞恩·博尔特</li>
-<li>约翰·布雷克</li>
-<li>泰森·盖伊</li>
-</ol>
-<h3 id="任务列表"><a href="#任务列表" class="headerlink" title="任务列表"></a>任务列表</h3><p>代码（”-“和”[ ]”之间有三个空格）：</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="bullet">-</span>   [x] 早饭</span><br><span class="line"><span class="bullet">-</span>   [ ] 午饭</span><br><span class="line"><span class="bullet">-</span>   [ ] 晚饭</span><br></pre></td></tr></table></figure>
-
-<p>效果展示：</p>
-<ul>
-<li><p><input checked="" disabled="" type="checkbox"> 
-早饭</p>
-</li>
-<li><p><input disabled="" type="checkbox"> 
-午饭</p>
-</li>
-<li><p><input disabled="" type="checkbox"> 
-晚饭</p>
-</li>
-</ul>
-<h2 id="公式代码"><a href="#公式代码" class="headerlink" title="公式代码"></a>公式代码</h2><h3 id="行内代码"><a href="#行内代码" class="headerlink" title="行内代码"></a>行内代码</h3><p>代码（在”1”左边，注意要使用英文输入）：</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="code">`int`</span> 整形</span><br></pre></td></tr></table></figure>
-
-<p>效果展示：</p>
-<p><code>int</code> 整形</p>
-<h3 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h3><p>代码（第一行”&#96;”后面的为语言类型，建议直接使用快捷键）：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">````c</span><br><span class="line">void main()&#123;</span><br><span class="line">	……</span><br><span class="line">&#125;</span><br><span class="line">````</span><br></pre></td></tr></table></figure>
-
-<p>效果展示：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">	……</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="行内公式"><a href="#行内公式" class="headerlink" title="行内公式"></a>行内公式</h3><p>代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">二倍角公式：$sin2x = 2sinxcosx$ </span><br></pre></td></tr></table></figure>
-
-<p>效果展示：</p>
-<p> 二倍角公式：$sin2x &#x3D; 2sinxcosx$ </p>
-<h3 id="公式块"><a href="#公式块" class="headerlink" title="公式块"></a>公式块</h3><p>代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$$</span><br><span class="line">E_&#123;\rm k&#125; = \frac 1 2 m v^2</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
-
-<p>效果展示：<br>$$<br>E_{\rm k} &#x3D; \frac 1 2 m v^2<br>$$</p>
-<h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><p>代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">|      |   小米   |   vivo   |</span><br><span class="line">| ---- | ---- | ---- |</span><br><span class="line">|   手机   |      |      |</span><br><span class="line">|   平板   |      |      |</span><br></pre></td></tr></table></figure>
-
-<p>效果展示：</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>小米</th>
-<th>vivo</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>手机</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>平板</td>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-<h2 id="超链接"><a href="#超链接" class="headerlink" title="超链接"></a>超链接</h2><p>代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[哔哩哔哩](https://www.bilibili.com/)</span><br></pre></td></tr></table></figure>
-
-<p>效果展示：</p>
-<p><a href="https://www.bilibili.com/">哔哩哔哩</a></p>
-<h2 id="插入图片"><a href="#插入图片" class="headerlink" title="插入图片"></a>插入图片</h2><p>代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">![](图片路径)</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><p>代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[^1]</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h2><p>代码（三个以上减号即可）：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">----</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><p>代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[TOC]</span><br></pre></td></tr></table></figure>
-
-
-
-]]></content>
-      <categories>
-        <category>Markdown</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Python基础(一)——基本数据类型</title>
     <url>/2023/07/13/Python%E5%9F%BA%E7%A1%80(%E4%B8%80)%E2%80%94%E2%80%94%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</url>
     <content><![CDATA[<h1 id="初识Python"><a href="#初识Python" class="headerlink" title="初识Python"></a>初识Python</h1><h2 id="起源"><a href="#起源" class="headerlink" title="起源"></a>起源</h2><p>1989年，Guidio van Rossum吉多·范罗苏姆决心开发一个新的解释程序（Python雏形）</p>
@@ -3527,6 +4005,68 @@
       </categories>
   </entry>
   <entry>
+    <title>Python基础(三)——函数</title>
+    <url>/2023/08/12/Python%E5%9F%BA%E7%A1%80(%E4%B8%89)%E2%80%94%E2%80%94%E5%87%BD%E6%95%B0/</url>
+    <content><![CDATA[<h1 id="函数介绍"><a href="#函数介绍" class="headerlink" title="函数介绍"></a>函数介绍</h1><ul>
+<li>函数是组织好的，可重复使用的，用来实现特定功能的代码段，如前面的type()、input()等都是Python的内置函数。</li>
+<li>函数可以提高程序的复用性，减少重复性代码，提高开发效率</li>
+</ul>
+<h1 id="函数的定义和调用"><a href="#函数的定义和调用" class="headerlink" title="函数的定义和调用"></a>函数的定义和调用</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 定义函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">函数名</span>(<span class="params">传入参数</span>):</span><br><span class="line">    函数体</span><br><span class="line">    <span class="keyword">return</span> 返回值</span><br><span class="line"></span><br><span class="line"><span class="comment"># 调用函数</span></span><br><span class="line">函数名(参数)</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>注意：</strong></p>
+<ul>
+<li>参数如果不需要，可以省略</li>
+<li>返回值如果不需要，可以省略</li>
+<li>函数必须先定义后使用</li>
+</ul>
+<h1 id="函数的参数"><a href="#函数的参数" class="headerlink" title="函数的参数"></a>函数的参数</h1><p>传入参数的功能是：在函数进行计算的时候，接受外部（调用时）提供的数据</p>
+<p><strong>语法解析：</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 定义函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">add</span>(<span class="params">x,y</span>):</span><br><span class="line">    result =  x + y</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;<span class="subst">&#123;x&#125;</span> + <span class="subst">&#123;y&#125;</span>的结果是：<span class="subst">&#123;result&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 调用函数</span></span><br><span class="line">add(<span class="number">5</span>,<span class="number">6</span>)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>函数定义中，提供的x和y，称之为：形式参数（形参），表示函数声明将要使用2个参数，参数直接使用逗号进行分隔</li>
+<li>函数调用中，提供的5和6，称之为：实际参数（实参），表示函数执行时真正使用的参数值，传入的时候，按照顺序传入数据，使用逗号分隔</li>
+<li>传入参数的数量是不受限制的，可以没有，也可以有多个</li>
+</ul>
+<h1 id="函数的返回值"><a href="#函数的返回值" class="headerlink" title="函数的返回值"></a>函数的返回值</h1><h2 id="返回值的定义"><a href="#返回值的定义" class="headerlink" title="返回值的定义"></a>返回值的定义</h2><p>所谓返回值，就是程序中函数完成事情后，最后给调用者的结果</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">函数</span>(<span class="params">参数...</span>):</span><br><span class="line">    函数体</span><br><span class="line">    <span class="keyword">return</span> 返回值</span><br><span class="line"></span><br><span class="line">变量 = 函数(参数)</span><br></pre></td></tr></table></figure>
+
+<p>如上述代码，变量就能接收到函数的返回值</p>
+<p>语法就是：通过return关键字，就能向调用者返回数据</p>
+<p><strong>注意：</strong>函数体在遇到return后就结束了，所以写在return后的代码不会执行</p>
+<h2 id="None类型"><a href="#None类型" class="headerlink" title="None类型"></a>None类型</h2><p>Python中有一个特殊的字面量：None，其类型是：&lt;class ‘NoneType’&gt;，无返回值的函数，实际上就是返回了：None这个字面量</p>
+<p>应用场景：</p>
+<ul>
+<li>用在函数<strong>无返回值</strong>上</li>
+<li>用在<strong>if判断</strong>上，在if判断中，None等同于False，一般用在函数中主动返回None，配合if判断做出相关处理</li>
+<li>在声明无内容的变量上，<strong>定义变量</strong>时，但暂时不需要变量有具体值，可以用None来代替</li>
+</ul>
+<p>None在if中的应用</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">check_age</span>(<span class="params">age</span>):</span><br><span class="line">    <span class="keyword">if</span> age &gt; <span class="number">18</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;SUCCESS&quot;</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">result = check_age(<span class="number">10</span>)</span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> result:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;未成年&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="函数说明文档"><a href="#函数说明文档" class="headerlink" title="函数说明文档"></a>函数说明文档</h1><p>顾名思义，就是在函数中写注释函数进行说明解释，帮助更好理解函数的功能</p>
+<h1 id="函数的嵌套调用"><a href="#函数的嵌套调用" class="headerlink" title="函数的嵌套调用"></a>函数的嵌套调用</h1><p>所谓函数嵌套调用就是指在一个函数里面调用了另外一个函数，如下所示</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">fun_b</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;---2---&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">fun_a</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;---1---&quot;</span>)</span><br><span class="line"></span><br><span class="line">    fun_b()</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;---3---&quot;</span>)</span><br><span class="line"></span><br><span class="line">fun_a()</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">本段代码在fun_a中调用了fun_b</span></span><br><span class="line"><span class="string">运行结果：</span></span><br><span class="line"><span class="string">---1---</span></span><br><span class="line"><span class="string">---2---</span></span><br><span class="line"><span class="string">---3---</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="变量作用域"><a href="#变量作用域" class="headerlink" title="变量作用域"></a>变量作用域</h1><ol>
+<li>变量主要分为局部变量和全局变量</li>
+<li>局部变量：定义在函数体内的局部变量，即只在函数体内部生效</li>
+<li>全局变量：在函数体内、外都能生效的变量</li>
+<li>在函数内部定义一个与全局变量同名的变量，并对其运算，对全局变量无影响</li>
+<li>在函数内部声明全局变量，需要使用global关键字</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Python基础(二)——判断、循环</title>
     <url>/2023/07/14/Python%E5%9F%BA%E7%A1%80(%E4%BA%8C)%E2%80%94%E2%80%94%E5%88%A4%E6%96%AD%E3%80%81%E5%BE%AA%E7%8E%AF/</url>
     <content><![CDATA[<h1 id="判断语句"><a href="#判断语句" class="headerlink" title="判断语句"></a>判断语句</h1><p>进行逻辑判断是生活中常见的行为，同样，在程序中，进行逻辑判断也是最为基础的功能</p>
@@ -3685,68 +4225,6 @@
       </categories>
   </entry>
   <entry>
-    <title>Python基础(三)——函数</title>
-    <url>/2023/08/12/Python%E5%9F%BA%E7%A1%80(%E4%B8%89)%E2%80%94%E2%80%94%E5%87%BD%E6%95%B0/</url>
-    <content><![CDATA[<h1 id="函数介绍"><a href="#函数介绍" class="headerlink" title="函数介绍"></a>函数介绍</h1><ul>
-<li>函数是组织好的，可重复使用的，用来实现特定功能的代码段，如前面的type()、input()等都是Python的内置函数。</li>
-<li>函数可以提高程序的复用性，减少重复性代码，提高开发效率</li>
-</ul>
-<h1 id="函数的定义和调用"><a href="#函数的定义和调用" class="headerlink" title="函数的定义和调用"></a>函数的定义和调用</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 定义函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">函数名</span>(<span class="params">传入参数</span>):</span><br><span class="line">    函数体</span><br><span class="line">    <span class="keyword">return</span> 返回值</span><br><span class="line"></span><br><span class="line"><span class="comment"># 调用函数</span></span><br><span class="line">函数名(参数)</span><br></pre></td></tr></table></figure>
-
-
-
-<p><strong>注意：</strong></p>
-<ul>
-<li>参数如果不需要，可以省略</li>
-<li>返回值如果不需要，可以省略</li>
-<li>函数必须先定义后使用</li>
-</ul>
-<h1 id="函数的参数"><a href="#函数的参数" class="headerlink" title="函数的参数"></a>函数的参数</h1><p>传入参数的功能是：在函数进行计算的时候，接受外部（调用时）提供的数据</p>
-<p><strong>语法解析：</strong></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 定义函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">add</span>(<span class="params">x,y</span>):</span><br><span class="line">    result =  x + y</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;<span class="subst">&#123;x&#125;</span> + <span class="subst">&#123;y&#125;</span>的结果是：<span class="subst">&#123;result&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 调用函数</span></span><br><span class="line">add(<span class="number">5</span>,<span class="number">6</span>)</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>函数定义中，提供的x和y，称之为：形式参数（形参），表示函数声明将要使用2个参数，参数直接使用逗号进行分隔</li>
-<li>函数调用中，提供的5和6，称之为：实际参数（实参），表示函数执行时真正使用的参数值，传入的时候，按照顺序传入数据，使用逗号分隔</li>
-<li>传入参数的数量是不受限制的，可以没有，也可以有多个</li>
-</ul>
-<h1 id="函数的返回值"><a href="#函数的返回值" class="headerlink" title="函数的返回值"></a>函数的返回值</h1><h2 id="返回值的定义"><a href="#返回值的定义" class="headerlink" title="返回值的定义"></a>返回值的定义</h2><p>所谓返回值，就是程序中函数完成事情后，最后给调用者的结果</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">函数</span>(<span class="params">参数...</span>):</span><br><span class="line">    函数体</span><br><span class="line">    <span class="keyword">return</span> 返回值</span><br><span class="line"></span><br><span class="line">变量 = 函数(参数)</span><br></pre></td></tr></table></figure>
-
-<p>如上述代码，变量就能接收到函数的返回值</p>
-<p>语法就是：通过return关键字，就能向调用者返回数据</p>
-<p><strong>注意：</strong>函数体在遇到return后就结束了，所以写在return后的代码不会执行</p>
-<h2 id="None类型"><a href="#None类型" class="headerlink" title="None类型"></a>None类型</h2><p>Python中有一个特殊的字面量：None，其类型是：&lt;class ‘NoneType’&gt;，无返回值的函数，实际上就是返回了：None这个字面量</p>
-<p>应用场景：</p>
-<ul>
-<li>用在函数<strong>无返回值</strong>上</li>
-<li>用在<strong>if判断</strong>上，在if判断中，None等同于False，一般用在函数中主动返回None，配合if判断做出相关处理</li>
-<li>在声明无内容的变量上，<strong>定义变量</strong>时，但暂时不需要变量有具体值，可以用None来代替</li>
-</ul>
-<p>None在if中的应用</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">check_age</span>(<span class="params">age</span>):</span><br><span class="line">    <span class="keyword">if</span> age &gt; <span class="number">18</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;SUCCESS&quot;</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">result = check_age(<span class="number">10</span>)</span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> result:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;未成年&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="函数说明文档"><a href="#函数说明文档" class="headerlink" title="函数说明文档"></a>函数说明文档</h1><p>顾名思义，就是在函数中写注释函数进行说明解释，帮助更好理解函数的功能</p>
-<h1 id="函数的嵌套调用"><a href="#函数的嵌套调用" class="headerlink" title="函数的嵌套调用"></a>函数的嵌套调用</h1><p>所谓函数嵌套调用就是指在一个函数里面调用了另外一个函数，如下所示</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">fun_b</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;---2---&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">fun_a</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;---1---&quot;</span>)</span><br><span class="line"></span><br><span class="line">    fun_b()</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;---3---&quot;</span>)</span><br><span class="line"></span><br><span class="line">fun_a()</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">本段代码在fun_a中调用了fun_b</span></span><br><span class="line"><span class="string">运行结果：</span></span><br><span class="line"><span class="string">---1---</span></span><br><span class="line"><span class="string">---2---</span></span><br><span class="line"><span class="string">---3---</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="变量作用域"><a href="#变量作用域" class="headerlink" title="变量作用域"></a>变量作用域</h1><ol>
-<li>变量主要分为局部变量和全局变量</li>
-<li>局部变量：定义在函数体内的局部变量，即只在函数体内部生效</li>
-<li>全局变量：在函数体内、外都能生效的变量</li>
-<li>在函数内部定义一个与全局变量同名的变量，并对其运算，对全局变量无影响</li>
-<li>在函数内部声明全局变量，需要使用global关键字</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Python</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Python基础(五)——函数拓展</title>
     <url>/2023/08/15/Python%E5%9F%BA%E7%A1%80(%E4%BA%94)%E2%80%94%E2%80%94%E5%87%BD%E6%95%B0%E6%8B%93%E5%B1%95/</url>
     <content><![CDATA[<h1 id="函数的多返回值"><a href="#函数的多返回值" class="headerlink" title="函数的多返回值"></a>函数的多返回值</h1><p> 使用多个变量接收多个返回值</p>
@@ -3816,6 +4294,89 @@
 <p>例：</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">text</span>(<span class="params">computer</span>):</span><br><span class="line">    result = computer(<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;compute函数的类型是；<span class="subst">&#123;<span class="built_in">type</span>(computer)&#125;</span>&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;计算结果：<span class="subst">&#123;result&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">compter</span>(<span class="params">x,y</span>):</span><br><span class="line">    <span class="keyword">return</span> x+y</span><br><span class="line"></span><br><span class="line">text(computer)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 可以使用lambda表达式将上述代码简化，如下</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">text</span>(<span class="params">computer</span>):</span><br><span class="line">    result = computer(<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;compute函数的类型是；<span class="subst">&#123;<span class="built_in">type</span>(computer)&#125;</span>&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;计算结果：<span class="subst">&#123;result&#125;</span>&quot;</span>)</span><br><span class="line">    </span><br><span class="line">text(<span class="keyword">lambda</span> x,y: x+y)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 两段代码作用和运行结果完全一致</span></span><br></pre></td></tr></table></figure>
 
+]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Python基础(六)——文件操作</title>
+    <url>/2023/08/17/Python%E5%9F%BA%E7%A1%80(%E5%85%AD)%E2%80%94%E2%80%94%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/</url>
+    <content><![CDATA[<h1 id="文件的编码"><a href="#文件的编码" class="headerlink" title="文件的编码"></a>文件的编码</h1><ol>
+<li><p>什么是编码？</p>
+<p>编码是一种规则集合，记录了内容和二进制间进行相互转换的逻辑</p>
+<p>编码有许多种，我们最常用的是UTF-8编码</p>
+</li>
+<li><p>为什么需要使用编码？</p>
+<p>计算机只认识0和1，所以需要将内容翻译成0和1才能保存在计算机中。</p>
+<p>同时也需要编码，将计算机保存的0和1，反向翻译回可以识别的内容。</p>
+</li>
+</ol>
+<h1 id="文件的读取"><a href="#文件的读取" class="headerlink" title="文件的读取"></a>文件的读取</h1><p>操作汇总</p>
+<table>
+<thead>
+<tr>
+<th align="center">操作</th>
+<th align="center">功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">文件对象 &#x3D; open(file,mode,encoding)</td>
+<td align="center">打开文件获得文件对象</td>
+</tr>
+<tr>
+<td align="center">文件对象.read(num)</td>
+<td align="center">读取指定长度字节，不指定num则读取文件全部</td>
+</tr>
+<tr>
+<td align="center">文件对象.readline()</td>
+<td align="center">读取一行</td>
+</tr>
+<tr>
+<td align="center">文件对象.readlines()</td>
+<td align="center">读取全部行，得到列表</td>
+</tr>
+<tr>
+<td align="center">for line in 文件对象</td>
+<td align="center">for循环文件行，一次循环得到一行数据</td>
+</tr>
+<tr>
+<td align="center">文件对象.close()</td>
+<td align="center">关闭文件对象</td>
+</tr>
+<tr>
+<td align="center">with open() as f</td>
+<td align="center">通过with open语法打开文件，可以自动关闭</td>
+</tr>
+</tbody></table>
+<h1 id="文件的写入"><a href="#文件的写入" class="headerlink" title="文件的写入"></a>文件的写入</h1><ol>
+<li>写入文件使用open函数的”w“模式写入</li>
+<li>写入的方法有：<ul>
+<li>write()，写入内容</li>
+<li>flush()，刷新内容到硬盘中</li>
+</ul>
+</li>
+<li>注意事项：<ul>
+<li>w模式，文件不存在，会创建新文件</li>
+<li>w模式，文件存在，会清空原有内容</li>
+<li>close()方法，带有flush()方法的功能</li>
+</ul>
+</li>
+</ol>
+<h1 id="文件的追加"><a href="#文件的追加" class="headerlink" title="文件的追加"></a>文件的追加</h1><ol>
+<li>追加写入文件使用open函数的”a“模式写入</li>
+<li>追加写入的方法有（和w模式一样）<ul>
+<li>write()，写入内容</li>
+<li>flush()，刷新内容到硬盘中</li>
+</ul>
+</li>
+<li>注意事项：<ul>
+<li>a模式，文件不存在，会创建新文件</li>
+<li>a模式，文件存在，会在原有内容后面继续写入</li>
+<li>可以使用”\n“来写出换行符</li>
+</ul>
+</li>
+</ol>
 ]]></content>
       <categories>
         <category>Python</category>
@@ -4011,89 +4572,6 @@
 </li>
 </ol>
 <p>​     </p>
-]]></content>
-      <categories>
-        <category>Python</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Python基础(六)——文件操作</title>
-    <url>/2023/08/17/Python%E5%9F%BA%E7%A1%80(%E5%85%AD)%E2%80%94%E2%80%94%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/</url>
-    <content><![CDATA[<h1 id="文件的编码"><a href="#文件的编码" class="headerlink" title="文件的编码"></a>文件的编码</h1><ol>
-<li><p>什么是编码？</p>
-<p>编码是一种规则集合，记录了内容和二进制间进行相互转换的逻辑</p>
-<p>编码有许多种，我们最常用的是UTF-8编码</p>
-</li>
-<li><p>为什么需要使用编码？</p>
-<p>计算机只认识0和1，所以需要将内容翻译成0和1才能保存在计算机中。</p>
-<p>同时也需要编码，将计算机保存的0和1，反向翻译回可以识别的内容。</p>
-</li>
-</ol>
-<h1 id="文件的读取"><a href="#文件的读取" class="headerlink" title="文件的读取"></a>文件的读取</h1><p>操作汇总</p>
-<table>
-<thead>
-<tr>
-<th align="center">操作</th>
-<th align="center">功能</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">文件对象 &#x3D; open(file,mode,encoding)</td>
-<td align="center">打开文件获得文件对象</td>
-</tr>
-<tr>
-<td align="center">文件对象.read(num)</td>
-<td align="center">读取指定长度字节，不指定num则读取文件全部</td>
-</tr>
-<tr>
-<td align="center">文件对象.readline()</td>
-<td align="center">读取一行</td>
-</tr>
-<tr>
-<td align="center">文件对象.readlines()</td>
-<td align="center">读取全部行，得到列表</td>
-</tr>
-<tr>
-<td align="center">for line in 文件对象</td>
-<td align="center">for循环文件行，一次循环得到一行数据</td>
-</tr>
-<tr>
-<td align="center">文件对象.close()</td>
-<td align="center">关闭文件对象</td>
-</tr>
-<tr>
-<td align="center">with open() as f</td>
-<td align="center">通过with open语法打开文件，可以自动关闭</td>
-</tr>
-</tbody></table>
-<h1 id="文件的写入"><a href="#文件的写入" class="headerlink" title="文件的写入"></a>文件的写入</h1><ol>
-<li>写入文件使用open函数的”w“模式写入</li>
-<li>写入的方法有：<ul>
-<li>write()，写入内容</li>
-<li>flush()，刷新内容到硬盘中</li>
-</ul>
-</li>
-<li>注意事项：<ul>
-<li>w模式，文件不存在，会创建新文件</li>
-<li>w模式，文件存在，会清空原有内容</li>
-<li>close()方法，带有flush()方法的功能</li>
-</ul>
-</li>
-</ol>
-<h1 id="文件的追加"><a href="#文件的追加" class="headerlink" title="文件的追加"></a>文件的追加</h1><ol>
-<li>追加写入文件使用open函数的”a“模式写入</li>
-<li>追加写入的方法有（和w模式一样）<ul>
-<li>write()，写入内容</li>
-<li>flush()，刷新内容到硬盘中</li>
-</ul>
-</li>
-<li>注意事项：<ul>
-<li>a模式，文件不存在，会创建新文件</li>
-<li>a模式，文件存在，会在原有内容后面继续写入</li>
-<li>可以使用”\n“来写出换行符</li>
-</ul>
-</li>
-</ol>
 ]]></content>
       <categories>
         <category>Python</category>
