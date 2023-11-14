@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+  
+
+    <head>
+      <meta charset="utf-8" />
+        
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1"
+      />
+      <title>Java_IO流(一) |  小稳</title>
+  <meta name="generator" content="hexo-theme-ayer">
+      
+      <link rel="shortcut icon" href="/littlewin.png" />
+       
+<link rel="stylesheet" href="/dist/main.css">
+
+      
+<link rel="stylesheet" href="/css/fonts/remixicon.css">
+
+      
+<link rel="stylesheet" href="/css/custom.css">
+ 
+      <script src="https://cdn.staticfile.org/pace/1.2.4/pace.min.js"></script>
+       
+ 
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-bulma@5.0.1/bulma.min.css"
+      />
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
+
+      <!-- mermaid -->
+      
+      <style>
+        .swal2-styled.swal2-confirm {
+          font-size: 1.6rem;
+        }
+      </style>
+    <link rel="alternate" href="/atom.xml" title="小稳" type="application/atom+xml">
+</head>
+  </html>
+</html>
+
+
+<body>
+  <div id="app">
+    
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-Java_IO流(一)"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  Java_IO流(一)
+</h1>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2023/11/14/Java_IO%E6%B5%81(%E4%B8%80)/" class="article-date">
+  <time datetime="2023-11-14T11:23:26.000Z" itemprop="datePublished">2023-11-14</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Java/">Java</a>
+  </div>
+  
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> Word count:</span>
+            <span class="post-count">3.2k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> Reading time≈</span>
+            <span class="post-count">11 min</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="File、IO流概述"><a href="#File、IO流概述" class="headerlink" title="File、IO流概述"></a>File、IO流概述</h1><ol>
+<li><p>File：代表文件</p>
+<ul>
+<li><p>File是<code>java.io</code>包下的类，File类的对象，用于代表当前操作系统的文件（可以是文件、或文件夹）。</p>
+</li>
+<li><p>File类可以实现获取文件信息（大小、文件名、修改时间）、判断文件类型、创建文件&#x2F;文件夹、删除文件&#x2F;文件夹等操作</p>
+</li>
+<li><p>注意：File类只能对文件本身进行操作，不能读写文件里面存储的数据</p>
+</li>
+</ul>
+</li>
+<li><p>IO流：读取文件</p>
+<ul>
+<li>用于读写数据的（可以读写文件，或者网络中的数据…）</li>
+</ul>
+</li>
+</ol>
+<h1 id="File"><a href="#File" class="headerlink" title="File"></a>File</h1><h2 id="创建对象"><a href="#创建对象" class="headerlink" title="创建对象"></a>创建对象</h2><ol>
+<li><p>File类对象构造方法：</p>
+<table>
+<thead>
+<tr>
+<th align="center">构造方法</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public File(String pathname)</code></td>
+<td align="center">根据文件路径创建文件对象</td>
+</tr>
+<tr>
+<td align="center"><code>public File(String parent, String child)</code></td>
+<td align="center">根据父路径和子路径名字创建文件对象</td>
+</tr>
+<tr>
+<td align="center"><code>public File(File parent, String child)</code></td>
+<td align="center">根据父路径对应文件对象和子路径名字创建文件对象</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>注意：</p>
+<ul>
+<li>File对象既可以代表文件，也可以代表文件夹。</li>
+<li>File封装的对象仅仅是一个路径名，这个路径可以是存在的，也允许是不存在的。</li>
+</ul>
+</li>
+<li><p>绝对路径、相对路径</p>
+<ul>
+<li>绝对路径：从盘符开始。</li>
+<li>相对路径：不带盘符，默认直接到当前工程下的目录寻求文件。</li>
+</ul>
+</li>
+</ol>
+<h2 id="常用方法1：判断文件类型、获取文件信息"><a href="#常用方法1：判断文件类型、获取文件信息" class="headerlink" title="常用方法1：判断文件类型、获取文件信息"></a>常用方法1：判断文件类型、获取文件信息</h2><table>
+<thead>
+<tr>
+<th align="center">方法名称</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public boolean exists()</code></td>
+<td align="center">判断当前文件对象，对应的文件路径是否存在，存在返回true</td>
+</tr>
+<tr>
+<td align="center"><code>public boolean isFile()</code></td>
+<td align="center">判断当前文件对象指代的是否为文件，是则返回true，反之</td>
+</tr>
+<tr>
+<td align="center"><code>public boolean isDirectory()</code></td>
+<td align="center">判断当前文件对象指代的是否为文件夹，是则返回true，反之</td>
+</tr>
+<tr>
+<td align="center"><code>public String getName()</code></td>
+<td align="center">获取文件的名称（包含后缀）</td>
+</tr>
+<tr>
+<td align="center"><code>public long length()</code></td>
+<td align="center">获取文件的大小，返回字节个数</td>
+</tr>
+<tr>
+<td align="center"><code>public long lastModified()</code></td>
+<td align="center">获取文件的最后修改时间</td>
+</tr>
+<tr>
+<td align="center"><code>public String getPath()</code></td>
+<td align="center">获取创建文件对象时，使用的路径</td>
+</tr>
+<tr>
+<td align="center"><code>public String getAbsolutePath()</code></td>
+<td align="center">获取绝对路径</td>
+</tr>
+</tbody></table>
+<h2 id="常用方法2：创建文件、删除文件"><a href="#常用方法2：创建文件、删除文件" class="headerlink" title="常用方法2：创建文件、删除文件"></a>常用方法2：创建文件、删除文件</h2><ol>
+<li><p>File类创建文件的功能</p>
+<table>
+<thead>
+<tr>
+<th align="center">方法名称</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public boolean createNewFile() </code></td>
+<td align="center">创建一个新的空文件</td>
+</tr>
+<tr>
+<td align="center"><code>public boolean mkdir()</code></td>
+<td align="center">只能创建一级文件夹</td>
+</tr>
+<tr>
+<td align="center"><code>public boolean mkdirs()</code></td>
+<td align="center">可以创建多级文件夹</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>File类删除文件的功能</p>
+<table>
+<thead>
+<tr>
+<th align="center">方法名称</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public boolean delete()</code></td>
+<td align="center">删除文件、空文件夹</td>
+</tr>
+</tbody></table>
+<p>注意：<code>delete</code>方法默认只能删除文件和空文件夹，删除后的文件不会进入回收站。</p>
+</li>
+</ol>
+<h2 id="常用方法3：遍历文件夹"><a href="#常用方法3：遍历文件夹" class="headerlink" title="常用方法3：遍历文件夹"></a>常用方法3：遍历文件夹</h2><ol>
+<li><p>File类提供遍历文件夹的功能</p>
+<table>
+<thead>
+<tr>
+<th align="center">方法名称</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public String[] list()</code></td>
+<td align="center">获取当前目录下所有的“一级文件名称”到一个字符串数组中去返回</td>
+</tr>
+<tr>
+<td align="center"><code>public File[] listFiles()</code></td>
+<td align="center">获取当前目录下所有的“一级文件对象”到一个文件对象数组中去返回（重点）</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>使用<code>listFlies</code>方法时的注意事项：</p>
+<ul>
+<li>当主调时文件，或者路径不存在时，返回null</li>
+<li>当主调是空文件夹时，返回一个长度为0的数组</li>
+<li>当主调是一个有内容的文件夹时，将里面所有一级文件和文件夹的路径放在File数组中返回</li>
+<li>当主调是一个文件夹，且里面有隐藏文件时，将里面所有文件和文件夹的路径放在File数组中返回，包含隐藏文件</li>
+<li>当主调是一个文件夹，但是没有权限访问该文件夹时，返回null</li>
+</ul>
+</li>
+</ol>
+<h1 id="前置知识："><a href="#前置知识：" class="headerlink" title="前置知识："></a>前置知识：</h1><h2 id="方法递归"><a href="#方法递归" class="headerlink" title="方法递归"></a>方法递归</h2><ol>
+<li><p>什么是方法递归？</p>
+<ul>
+<li>递归是一种算法，在程序设计语言中广泛应用</li>
+<li>从形式上说：方法调用自身的形式称为方法递归（recursion）</li>
+</ul>
+</li>
+<li><p>递归的形式</p>
+<ul>
+<li>直接递归：方法自己调用自己</li>
+<li>间接递归：方法调用其他方法，其他方法又回调方法自己</li>
+</ul>
+</li>
+<li><p>使用方法递归时需要注意的问题：</p>
+<ul>
+<li>递归如果没有控制好终止，会出现递归死循环，导致栈内存溢出错误</li>
+</ul>
+</li>
+<li><p>递归算法三要素：</p>
+<ul>
+<li>递归公式</li>
+<li>递归的终结点</li>
+<li>递归的方向必须要走向终止点</li>
+</ul>
+</li>
+<li><p>其他应用：文件搜索</p>
+<ul>
+<li><p>分析：</p>
+<ol>
+<li>先找出该当前文件夹下的所有一级目录</li>
+<li>遍历全部一级对象，判断是否是文件</li>
+<li>如果是文件，判断是否是自己想要的</li>
+<li>如果是文件夹，需要继续进入到该文件夹，重复上述过程</li>
+</ol>
+</li>
+<li><p>代码实现：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.File;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">SearchFile</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">File</span> <span class="variable">f</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(<span class="string">&quot;D:&quot;</span>);</span><br><span class="line">        searchFile(f, <span class="string">&quot;QQ&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> dir 目录</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> fileName 要搜索的文件名称</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">searchFile</span><span class="params">(File dir, String fileName)</span>&#123;</span><br><span class="line">        <span class="comment">// 1.拦截非法情况</span></span><br><span class="line">        <span class="keyword">if</span> (!dir.exists() || dir.isFile() ||dir == <span class="literal">null</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 2.获取该当前目录下所有一级目录</span></span><br><span class="line">        File[] files = dir.listFiles();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 3.判断当前目录下是否存在文件对象</span></span><br><span class="line">        <span class="keyword">if</span> (files != <span class="literal">null</span> &amp;&amp; files.length&gt;<span class="number">0</span>)&#123;</span><br><span class="line">            </span><br><span class="line">            <span class="comment">// 4.遍历全部一级文件对象</span></span><br><span class="line">            <span class="keyword">for</span> (File f : files)&#123;</span><br><span class="line">                <span class="comment">// 5.判断是否为文件</span></span><br><span class="line">                <span class="keyword">if</span> (f.isFile())&#123;</span><br><span class="line">                    <span class="keyword">if</span> (f.getName().contains(fileName))&#123;</span><br><span class="line">                        System.out.println(f.getAbsoluteFile());</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                    searchFile(f, fileName);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ol>
+<h2 id="字符集"><a href="#字符集" class="headerlink" title="字符集"></a>字符集</h2><h3 id="常见字符集介绍"><a href="#常见字符集介绍" class="headerlink" title="常见字符集介绍"></a>常见字符集介绍</h3><ol>
+<li><p>标准ASCII字符集</p>
+<ul>
+<li>ASCII(American Standard Code for Information Interchange)：美国信息交换标准代码，包括英文、符号等。</li>
+<li>标准ASCIII使用1个字节存储一个字符，首尾是0总共可以表示128个字符。</li>
+</ul>
+</li>
+<li><p>GBK（汉字内码扩展规范，国标）</p>
+<ul>
+<li>汉字编码字符集，包含了2万多个汉字等字符，GBK中一个中文字符编码成两个字节的形式存储。</li>
+<li>注意：GBK兼容了ASCII字符集</li>
+<li>GBK规定：汉字的第一个字节的第一位必须是1</li>
+</ul>
+</li>
+<li><p>Unicode字符集(统一码，也叫万国码)</p>
+<ul>
+<li>Unicode是国际组织制定的，可以容纳世界上所有文字、符号的字符集</li>
+<li><code>UTF-32</code>：四个字节表示一个字符，但由于占存储空间大、通信效率变低等原因，并没有被完全采纳</li>
+</ul>
+</li>
+<li><p>UTF-8</p>
+<ul>
+<li><p><code>UTF-8</code>是Unicode字符集的一种编码方案，采取可变长编码方案，共分四个长度区：1个字节，2个字节，3个字节，4个字节</p>
+</li>
+<li><p>英文字符、数字等只占1个字节（兼容标准ASCII编码），汉字字符占用3个字节</p>
+</li>
+<li><p>UTF-8编码方式：</p>
+<table>
+<thead>
+<tr>
+<th>UTF-8编码方式（二进制）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>0xxxxxxx</code>：   (ASCII码)</td>
+</tr>
+<tr>
+<td><code>110xxxxx</code> <code>10xxxxxx</code></td>
+</tr>
+<tr>
+<td><code>1110xxxx</code> <code>10xxxxxx</code> <code>10xxxxxx</code></td>
+</tr>
+<tr>
+<td><code>11110xxx</code> <code>10xxxxxx</code> <code>10xxxxxx</code> <code>10xxxxxx</code></td>
+</tr>
+</tbody></table>
+</li>
+<li><p>注意：技术人员在开发时都应该使用UTF-8编码</p>
+</li>
+</ul>
+</li>
+<li><p>总结：</p>
+<ul>
+<li>ASCII字符集：只有英文、数字、符号等，占1个字节</li>
+<li>GBK字符集：汉字占2个字节，英文、数字占1个字节</li>
+<li>UTF-8字符集：汉字占3个字节，英文、数字占1个字节</li>
+<li>注意1：字符编码时使用的字符集，和解码时使用的字符集必须一致，否则会出现乱码</li>
+<li>注意2：英文、数字一般不会出现乱码，英文很多字符集都兼容ASCII编码</li>
+</ul>
+</li>
+</ol>
+<h3 id="字符集的编码、解码操作"><a href="#字符集的编码、解码操作" class="headerlink" title="字符集的编码、解码操作"></a>字符集的编码、解码操作</h3><ol>
+<li><p>Java代码完成对字符的编码</p>
+<table>
+<thead>
+<tr>
+<th align="center">String提供了如下方法</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>byte[] getBytes()</code></td>
+<td align="center">使用平台的默认字符集将该String编码为一系列字节，将结果存储到新的字节数组中</td>
+</tr>
+<tr>
+<td align="center"><code>byte[] getBytes(String charsetName)</code></td>
+<td align="center">使用指定的字符集将String编码为一系列字节，将结果存储到新的字节数组中</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>Java代码完成对字符的解码</p>
+<table>
+<thead>
+<tr>
+<th align="center">String提供了如下方法</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>String(byte[] bytes)</code></td>
+<td align="center">通过平台的默认字符集解码指定的字节数组来构造新的String</td>
+</tr>
+<tr>
+<td align="center"><code>String(byte[] bytes, String charsetName)</code></td>
+<td align="center">通过指定的字符集解码指定的字节数组来构造新的String</td>
+</tr>
+</tbody></table>
+</li>
+</ol>
+<h1 id="IO流"><a href="#IO流" class="headerlink" title="IO流"></a>IO流</h1><h2 id="IO流概述"><a href="#IO流概述" class="headerlink" title="IO流概述"></a>IO流概述</h2><ol>
+<li><p>IO流：输入输出流，读写数据的</p>
+<ul>
+<li><p><code>I</code>指Input，称为输入流：负责把数据读到内存中去</p>
+</li>
+<li><p><code>O</code>指Output，称为输出流：负责写数据出去</p>
+</li>
+</ul>
+</li>
+<li><p>怎么学IO流：</p>
+<ul>
+<li>先搞清楚IO流的分类、体系</li>
+<li>再挨个学习每个IO流的作用、用法</li>
+</ul>
+</li>
+<li><p>IO流的分类：</p>
+<ul>
+<li><p>按流的方向分为：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">graph TB;</span><br><span class="line">	IO流 --&gt; 输入流</span><br><span class="line">	IO流 --&gt; 输出流</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>按流中数据的最小单位，分为：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">graph TB;</span><br><span class="line">	IO流 --&gt; 字节流 --&gt; 适合操作所有类型文件</span><br><span class="line">	IO流 --&gt; 字符流 --&gt; 只适合操作纯文本文件</span><br><span class="line">	</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>IO流总体来看就有四大流：</p>
+<ul>
+<li>字节输入流：以内存为基准，来自磁盘文件&#x2F;网络中的数据以字节的形式读入到内存中去的流</li>
+<li>字节输出流：以内存为基准，把内存中的数据以字节写出到磁盘文件或者网络中去的流</li>
+<li>字符输入流：以内存为基准，来自磁盘文件&#x2F;网络中的数据以字符的形式读入到内存中去的流</li>
+<li>字符输出流：以内存为基准，把内存中的数据以字符写出到磁盘文件或者网络中去的流</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>IO流的体系：</p>
+<ul>
+<li><p><code>java.io</code>包下：四大类流都是抽象类</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">graph TB;</span><br><span class="line">	IO流体系 --&gt; 字节流</span><br><span class="line">	IO流体系 --&gt; 字符流</span><br><span class="line">	字节流 --&gt; 字节输入流\InpuStream --&gt; FileInpuStream</span><br><span class="line">	字节流 --&gt; 字节输出流\OutpuStream --&gt; FileOutpuStream</span><br><span class="line">	字符流 --&gt; 字符输入流\Reader --&gt; FileReader</span><br><span class="line">	字符流 --&gt; 字符输出流\Writer --&gt; FileWriter</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ol>
+<h2 id="字节流"><a href="#字节流" class="headerlink" title="字节流"></a>字节流</h2><ul>
+<li>字节流非常适合做一切文件的复制操作：任何文件的底层都是字节，字节流做复制，是一字不漏的转移完全部字节，只要复制后的文件格式一致就没有问问题</li>
+</ul>
+<h3 id="FileInputStream"><a href="#FileInputStream" class="headerlink" title="FileInputStream"></a>FileInputStream</h3><ol>
+<li><p>作用：以内存为基准，来自磁盘文件的数据以字节的形式读入到内存中去</p>
+</li>
+<li><p>构造方法：</p>
+<table>
+<thead>
+<tr>
+<th align="center">构造方法</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public FileInputStream(File file)</code></td>
+<td align="center">创建字节输入流管道与源文件接通</td>
+</tr>
+<tr>
+<td align="center"><code>public FileInputStream(String pathname)</code></td>
+<td align="center">创建字节输入流管道与源文件接通</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>常用方法：</p>
+<table>
+<thead>
+<tr>
+<th align="center">方法名称</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public int read()</code></td>
+<td align="center">每次读取一个字节返回，如果发现没有数据可读会返回-1</td>
+</tr>
+<tr>
+<td align="center"><code>public int read(byte[] bytes)</code></td>
+<td align="center">每次使用一个字节数组去读取数据，返回字节数组读取了多少个字节，如果发现没有数据可读会返回-1</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>注意事项：</p>
+<ul>
+<li>使用<code>FileInputStream</code>每次读取一个字节，读取性能较差，并且读取汉字输出会乱码</li>
+<li>使用<code>FileInputStream</code>每次读取多个字节，读取性能得到了提升，但读取汉字还是会输出会乱码</li>
+</ul>
+</li>
+<li><p>一次读完读取完全部字节</p>
+<ul>
+<li><p>方式一：定义一个与文件一样大的字节数组，一次性读取完文件的全部字节 </p>
+</li>
+<li><p>方式二：Java官方为<code>InputStream</code>提供了如下方法，可以直接把文件的全部字节读取到一个字节数组中返回。</p>
+<table>
+<thead>
+<tr>
+<th align="center">方法名称</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public byte[] readAllBytes() throws IOException</code></td>
+<td align="center">直接将当前字节输入流对应的文件对象的字节数据装到一个字节数组返回</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+</li>
+<li><p>读取文本内容更适合字符流，字节流适合做数据的转移，如：文件复印等</p>
+</li>
+</ol>
+<h3 id="FileOutputStream"><a href="#FileOutputStream" class="headerlink" title="FileOutputStream"></a>FileOutputStream</h3><ol>
+<li><p>作用：以内存为基准，把内存中的数据以字节的形式写出到文件中去</p>
+</li>
+<li><p>构造方法：</p>
+<table>
+<thead>
+<tr>
+<th align="center">构造方法</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public FileOutStream(File file)</code></td>
+<td align="center">创建字节输出流管道与源文件对象接通</td>
+</tr>
+<tr>
+<td align="center"><code>public FileOutStream(String filepath)</code></td>
+<td align="center">创建字节输出流管道与源文件对象接通</td>
+</tr>
+<tr>
+<td align="center"><code>public FileOutStream(File file, boolean append)</code></td>
+<td align="center">创建字节输出流管道与源文件对象接通，可追加数据</td>
+</tr>
+<tr>
+<td align="center"><code>public FileOutStream(String filepath, boolean append)</code></td>
+<td align="center">创建字节输出流管道与源文件对象接通，可追加数据</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>常用方法：</p>
+<table>
+<thead>
+<tr>
+<th align="center">方法名称</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public void write(int a)</code></td>
+<td align="center">写一个字节出去</td>
+</tr>
+<tr>
+<td align="center"><code>public void write(byte[] buffer)</code></td>
+<td align="center">写一个字节数组出去</td>
+</tr>
+<tr>
+<td align="center"><code>public void write(byte[] buffer, int pos, int len)</code></td>
+<td align="center">写一个字节数组的一部分出去</td>
+</tr>
+<tr>
+<td align="center"><code>public void close() throws IOException</code></td>
+<td align="center">关闭流</td>
+</tr>
+</tbody></table>
+</li>
+</ol>
+<h3 id="释放资源的方式"><a href="#释放资源的方式" class="headerlink" title="释放资源的方式"></a>释放资源的方式</h3><ul>
+<li><p><code>try-catch-finally</code></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">    ...</span><br><span class="line">    ...</span><br><span class="line">&#125; <span class="keyword">catch</span> (IOException e)&#123;</span><br><span class="line">    e.prntStackTrace();</span><br><span class="line">&#125; fianlly&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>finally代码区的特点：不论try中的程序是否正常执行，最后一定会执行finally区，除非JVM终止。</p>
+<p>作用：一般用于在程序执行完后进行资源的释放操作（专业级做法）。</p>
+</li>
+<li><p><code>try-with-resource</code>：JDK7开始提供了更简单的资源释放方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>(定义资源<span class="number">1</span>, 定义资源<span class="number">2</span>)&#123;</span><br><span class="line">    ...</span><br><span class="line">    ...</span><br><span class="line">&#125; <span class="keyword">catch</span> (IOException e)&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+
+<p>注意：</p>
+<ul>
+<li>该资源使用完毕后，会自动调用其<code>close()</code>方法，完成对资源的释放！</li>
+<li><code>()</code>中只能放置资源对象(流对象)。</li>
+<li>实现接口<code>AutoCloseable</code>的对象称之为资源对象，资源都会有一个<code>close()</code>方法</li>
+</ul>
+</li>
+</ul>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>Copyright： </strong>
+          
+          Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source.
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://littlewin8.github.io/2023/11/14/Java_IO%E6%B5%81(%E4%B8%80)/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+    
+      <a href="/2023/11/05/Java_%E9%9B%86%E5%90%88%E6%A1%86%E6%9E%B6(%E4%BA%8C)/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">Java_集合框架(二)</div>
+      </a>
+    
+  </nav>
+
+  
+   
+  
+   
+    <script src="https://cdn.staticfile.org/twikoo/1.4.18/twikoo.all.min.js"></script>
+    <div id="twikoo" class="twikoo"></div>
+    <script>
+        twikoo.init({
+            envId: ""
+        })
+    </script>
+ 
+</article>
+
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2023
+        <i class="ri-heart-fill heart_icon"></i> LittleWin
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>Visitors:<span id="busuanzi_value_site_uv"></span></span>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>Views:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914'></script>
+        
+      </li>
+    </ul>
+  </div>
+</footer>    
+    </main>
+    <div class="float_btns">
+      <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+    </div>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/littlewin.png" alt="小稳"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/friends">友链</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/2023/about">关于我</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="Search">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-3.6.0.min.js"></script>
+ 
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+ 
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: ".tocbot",
+    contentSelector: ".article-entry",
+    headingSelector: "h1, h2, h3, h4, h5, h6",
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: "main",
+    positionFixedSelector: ".tocbot",
+    positionFixedClass: "is-position-fixed",
+    fixedSidebarOffset: "auto",
+  });
+</script>
+
+<script src="https://cdn.staticfile.org/jquery-modal/0.9.2/jquery.modal.min.js"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.staticfile.org/jquery-modal/0.9.2/jquery.modal.min.css"
+/>
+<script src="https://cdn.staticfile.org/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+ <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.staticfile.org/photoswipe/4.1.3/default-skin/default-skin.min.css">
+<script src="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe.min.js"></script>
+<script src="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script> 
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+ 
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+ 
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+ 
+<link rel="stylesheet" href="/css/clipboard.css">
+ <script src="https://cdn.staticfile.org/clipboard.js/2.0.10/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+ 
+<!-- CanvasBackground -->
+
+<script>
+  if (window.mermaid) {
+    mermaid.initialize({ theme: "forest" });
+  }
+</script>
+
+
+    
+    
+
+  </div>
+</body>
+
+</html>
