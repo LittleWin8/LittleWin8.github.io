@@ -277,17 +277,18 @@
 </li>
 </ol>
 <h1 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h1><pre><code>  1. HashMap特点：无序、不重复、无索引（用的最多）
-  2. HashMap和跟HashSet的底层原理是一模一样的，都是基于哈希表实现的
-  3. 实际上：原来学的Set系列集合的底层就是基于Map实现的，只是Set集合中的元素只要键数据，不要值数据而已。
-  4. 哈希表：
-  - JDK8之前，哈希表 = 数组 + 链表
-  - JDK8之后，哈希表 = 数组 + 链表 + 红黑树
-  - 哈希表是一种增删改查数据，性能都较好的数据结构
-  5. HashMap底层原理是基于哈希表实现的
-  - HashMap集合是一种增删改查数据，性能都较好的集合
-  - 但是它是无序，不能重复，没有索引支持的（由键值决定特点）
-  - HashMap的键依赖`hashCode`和`equals`方法保证键的唯一
-  - 如果键存储的是自定义类型的对象，可以通过重写`hashCode`和`equals`方法，这样可以保证多个对象内容一样时，HashMap集合就能认为是重复的。
+ 2. HashMap和跟HashSet的底层原理是一模一样的，都是基于哈希表实现的
+ 3. 实际上：原来学的Set系列集合的底层就是基于Map实现的，只是Set集合中的元素只要键数据，不要值数据而已。
+ 4. 哈希表：
+    - JDK8之前，哈希表 = 数组 + 链表
+    - JDK8之后，哈希表 = 数组 + 链表 + 红黑树
+    - 哈希表是一种增删改查数据，性能都较好的数据结构
+
+5. HashMap底层原理是基于哈希表实现的
+   - HashMap集合是一种增删改查数据，性能都较好的集合
+   - 但是它是无序，不能重复，没有索引支持的（由键值决定特点）
+   - HashMap的键依赖`hashCode`和`equals`方法保证键的唯一
+   - 如果键存储的是自定义类型的对象，可以通过重写`hashCode`和`equals`方法，这样可以保证多个对象内容一样时，HashMap集合就能认为是重复的。
 </code></pre>
 <h1 id="LinkedHashMap"><a href="#LinkedHashMap" class="headerlink" title="LinkedHashMap"></a>LinkedHashMap</h1><ol>
 <li>LinkedHashMap特点：由键决定的特点：有序、不重复、无索引。</li>

@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+  
+
+    <head>
+      <meta charset="utf-8" />
+        
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1"
+      />
+      <title>Java_特殊文件、日志技术 |  小稳</title>
+  <meta name="generator" content="hexo-theme-ayer">
+      
+      <link rel="shortcut icon" href="/littlewin.png" />
+       
+<link rel="stylesheet" href="/dist/main.css">
+
+      
+<link rel="stylesheet" href="/css/fonts/remixicon.css">
+
+      
+<link rel="stylesheet" href="/css/custom.css">
+ 
+      <script src="https://cdn.staticfile.org/pace/1.2.4/pace.min.js"></script>
+       
+ 
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-bulma@5.0.1/bulma.min.css"
+      />
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
+
+      <!-- mermaid -->
+      
+      <style>
+        .swal2-styled.swal2-confirm {
+          font-size: 1.6rem;
+        }
+      </style>
+    <link rel="alternate" href="/atom.xml" title="小稳" type="application/atom+xml">
+</head>
+  </html>
+</html>
+
+
+<body>
+  <div id="app">
+    
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-Java_特殊文件、日志技术"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  Java_特殊文件、日志技术
+</h1>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2023/11/17/Java_%E7%89%B9%E6%AE%8A%E6%96%87%E4%BB%B6%E3%80%81%E6%97%A5%E5%BF%97%E6%8A%80%E6%9C%AF/" class="article-date">
+  <time datetime="2023-11-17T11:36:43.000Z" itemprop="datePublished">2023-11-17</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Java/">Java</a>
+  </div>
+  
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> Word count:</span>
+            <span class="post-count">2.4k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> Reading time≈</span>
+            <span class="post-count">9 min</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="特殊文件"><a href="#特殊文件" class="headerlink" title="特殊文件"></a>特殊文件</h1><ol>
+<li>普通文件：普通的属性文件，里面的内容可以随便写，格式随意，如：<code>.txt</code>文件</li>
+<li>特殊文件：对格式有特殊要求，如：<code>.xml</code>文件、<code>.properties</code>文件。</li>
+<li>为什么要用这些特殊文件？<ul>
+<li>存储有关系的数据，作为系统的配置文件</li>
+<li>作为信息进行传输</li>
+</ul>
+</li>
+<li>这些特殊文件，我们主要学什么？<ul>
+<li>了解他们的特点、作用</li>
+<li>学习使用程序读取它们里面的数据</li>
+<li>学习使用程序把数据存储到这些文件里</li>
+</ul>
+</li>
+</ol>
+<h2 id="Properties属性文件"><a href="#Properties属性文件" class="headerlink" title="Properties属性文件"></a>Properties属性文件</h2><ol>
+<li><p>Properties</p>
+<ul>
+<li>Properties是一个Map集合（键值对集合），但是我们一般不会当集合使用</li>
+<li>核心作用：Properties是用来代表属性文件的，通过Properties可以读写属性文件里的内容</li>
+</ul>
+</li>
+<li><p>使用Properties对属性文件里的键值对数据进行操作</p>
+<ul>
+<li><p>构造方法：</p>
+<table>
+<thead>
+<tr>
+<th align="center">构造方法</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public Properties()</code></td>
+<td align="center">由于构建Properties集合对象（空容器）</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>使用Properties读取属性文件里的键值对数据：</p>
+<table>
+<thead>
+<tr>
+<th align="center">方法名称</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public void load(InputStream is)</code></td>
+<td align="center">通过字节输入流，读取属性文件里的键值对数据</td>
+</tr>
+<tr>
+<td align="center"><code>public void load(Reader reader)</code></td>
+<td align="center">通过字符输入流，读取属性文件里的键值对数据</td>
+</tr>
+<tr>
+<td align="center"><code>public String getProperty(String key)</code></td>
+<td align="center">根据键获取值（其实就是get方法的效果）</td>
+</tr>
+<tr>
+<td align="center"><code>public Set&lt;String&gt; stringPropertyNames()</code></td>
+<td align="center">获取全部键的集合（其实就是keySet方法的效果）</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>使用使用Properties把键值对数据写出到属性文件里去：</p>
+<table>
+<thead>
+<tr>
+<th align="center">方法名称</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public Object setProperty(String key, String value)</code></td>
+<td align="center">保存键值对数据到Properties对象中去</td>
+</tr>
+<tr>
+<td align="center"><code>public void store(OutputStream os, String comments)</code></td>
+<td align="center">把键值对数据，通过字节输出流写出到属性文件里去</td>
+</tr>
+<tr>
+<td align="center"><code>public void store(Writer w, String comments)</code></td>
+<td align="center">把键值对数据，通过字符输出流写出到属性文件里去</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="XML文件"><a href="#XML文件" class="headerlink" title="XML文件"></a>XML文件</h2><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><ol>
+<li><p>XML</p>
+<ul>
+<li>全称<code>EXtensible Markup Language</code>，可扩展标记语言</li>
+<li>本质是一种数据的格式，可以用来存储复杂的数据结构，和数据关系</li>
+</ul>
+</li>
+<li><p>XML的特点</p>
+<ul>
+<li>XML中的“&lt;标签名&gt;”称为一个标签或一个元素，一般是成对出现的</li>
+<li>XML中的标签名可以自己定义（可扩展），但必须要正确的嵌套</li>
+<li>XML中的只能有一个根标签</li>
+<li>XML中标签可以有属性</li>
+<li>如果一个文件中放置的是XML格式的数据，这个文件就是XML文件，后缀一般要写成<code>.xml</code></li>
+</ul>
+</li>
+<li><p>XML的语法规则</p>
+<ul>
+<li><p>XML文件的后缀名为：<code>.xml</code>，文档声明必须是第一行</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;UTF-8&quot;</span> ?&gt;</span></span><br><span class="line">version：XML默认的版本号码、该属性是必须存在的</span><br><span class="line">encoding：本XML文件的编码</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>XML中可以定义注释信息：<code>&lt;!-- 注释内容 --&gt;</code></p>
+</li>
+<li><p>XML中书写”&lt;“、”&amp;”等可能会出现冲突，导致报错，此时可以用如下特殊字符替代</p>
+<table>
+<thead>
+<tr>
+<th align="center">字符</th>
+<th align="center">代替符号</th>
+<th align="center">含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>&lt;</code></td>
+<td align="center"><code>&amp;lt</code></td>
+<td align="center">小于</td>
+</tr>
+<tr>
+<td align="center"><code>&gt;</code></td>
+<td align="center"><code>&amp;gt</code></td>
+<td align="center">大于</td>
+</tr>
+<tr>
+<td align="center"><code>&amp;</code></td>
+<td align="center"><code>&amp;amp</code></td>
+<td align="center">和</td>
+</tr>
+<tr>
+<td align="center"><code>&#39;</code></td>
+<td align="center"><code>&amp;apos</code></td>
+<td align="center">单引号</td>
+</tr>
+<tr>
+<td align="center"><code>&quot;</code></td>
+<td align="center"><code>&amp;quot</code></td>
+<td align="center">双引号</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>XML中可以写一个叫CDATA的数据区：<code>&lt;![CDATA[ ...内容... ]]&gt;</code>，里面的内容可以随便写。</p>
+</li>
+</ul>
+</li>
+<li><p>XML的作用的应用场景：</p>
+<ul>
+<li>作用：本质是一种数据格式，可以存储复杂的数据结构，和数据关系</li>
+<li>应用场景：经常用来作为系统的配置文件，或者作为一种特殊的数据结构，在网络中进行操作</li>
+</ul>
+</li>
+</ol>
+<h3 id="读取XML文件中的数据"><a href="#读取XML文件中的数据" class="headerlink" title="读取XML文件中的数据"></a>读取XML文件中的数据</h3><ol>
+<li><p>解析XML文件</p>
+<ul>
+<li><p>使用程序读取XML文件中的数据</p>
+</li>
+<li><p>注意：程序员并不需要自己写原始的IO流代码来解析XML，难度较大！也相当繁琐！</p>
+</li>
+<li><p>其实，有很多开源的，好用的，解析XML的框架，最知名的是：<code>DOM4J</code>（第三方研发的）</p>
+</li>
+<li><p>DOM4J解析XML文件的思想：文档对象模型</p>
+<p><img src="F:\笔记\Java\基础\img\文档对象模型.png"></p>
+</li>
+</ul>
+</li>
+<li><p>DOM4J解析XML-得到Document对象</p>
+<ul>
+<li><p>SAXReader：Dom4j提供的解析器，可以认为是代表整个Dom4j框架</p>
+<table>
+<thead>
+<tr>
+<th align="center">构造器&#x2F;方法</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public SAXReader()</code></td>
+<td align="center">构建Dom4j的解析器对象</td>
+</tr>
+<tr>
+<td align="center"><code>public Document read(String url)</code></td>
+<td align="center">把XML文件读取成Document对象</td>
+</tr>
+<tr>
+<td align="center"><code>public Document read(InputStream is)</code></td>
+<td align="center">通过字节输入流读取XML文件</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>Document</p>
+<table>
+<thead>
+<tr>
+<th align="center">方法名</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>Element getRootElement()</code></td>
+<td align="center">获取根元素对象</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>Element提供的方法：</p>
+<table>
+<thead>
+<tr>
+<th align="center">方法名</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public String getName() </code></td>
+<td align="center">得到元素名字</td>
+</tr>
+<tr>
+<td align="center"><code>public List&lt;Element&gt; elements()</code></td>
+<td align="center">得到当前元素下的所有子元素</td>
+</tr>
+<tr>
+<td align="center"><code>public List&lt;Element&gt; elements(String name)</code></td>
+<td align="center">得到当前元素下指定名字的子元素返回集合</td>
+</tr>
+<tr>
+<td align="center"><code>public Element element(String name)</code></td>
+<td align="center">得到当前元素下指定名字的子元素，如果有很多名字相同的返回第一个</td>
+</tr>
+<tr>
+<td align="center"><code>public String attributeValue(String name)</code></td>
+<td align="center">通过属性名直接得到属性值</td>
+</tr>
+<tr>
+<td align="center"><code>public String elementText(String name)</code></td>
+<td align="center">得到指定名称的子元素的文本</td>
+</tr>
+<tr>
+<td align="center"><code>public String getText()</code></td>
+<td align="center">得到文本</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+</li>
+<li><p>使用程序把数据写出到XML文件中去</p>
+<ul>
+<li>不建议使用dom4j做</li>
+<li>推荐直接把程序里的数据拼接成XML格式，然后用IO流写出</li>
+</ul>
+</li>
+</ol>
+<h3 id="补充知识：约束XML文件的编写-了解"><a href="#补充知识：约束XML文件的编写-了解" class="headerlink" title="补充知识：约束XML文件的编写[了解]"></a>补充知识：约束XML文件的编写[了解]</h3><ol>
+<li><p>什么是约束XML文件的书写？</p>
+<ul>
+<li>就是限制XML文件只能按照某种格式进行书写</li>
+</ul>
+</li>
+<li><p>约束文档：</p>
+<ul>
+<li>专门用来限制xml书写格式的文档，比如限制标签、属性标签应该怎么写。</li>
+</ul>
+</li>
+<li><p>约束文档的分类：</p>
+<ul>
+<li>DTD文档</li>
+<li>Schema文档</li>
+</ul>
+</li>
+<li><p>XML文档约束-DTD的使用步骤：</p>
+<ul>
+<li><p>编写DTD约束文档，后缀必须是<code>.dtd</code>，如下</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;!ELEMENT 书架 (书+)&gt;</span><br><span class="line">&lt;!ELEMENT 书 (书名,作者,售价)&gt;</span><br><span class="line">&lt;!ELEMENT 书名 (#PCDATA)&gt;</span><br><span class="line">&lt;!ELEMENT 作者 (#PCDATA)&gt;</span><br><span class="line">&lt;!ELEMENT 售价 (#PCDATA)&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在需要编写的XML文件中导入该DTD约束文档，<code>&lt;!DOCTYPE 书架 SYSTEM &quot;文件路径&quot;&gt;</code></p>
+</li>
+<li><p>然后XML文件，就必须按照DTD约束文档指定的格式进行编写，否则报错！</p>
+</li>
+<li><p>注意：不能约束具体的数据类型</p>
+</li>
+</ul>
+</li>
+<li><p>XML文档约束-schema的使用步骤：</p>
+<ul>
+<li>编写schema约束文档，后缀名必须是<code>.xsd</code></li>
+<li>在需要编写的XML文件中导入该schema约束文档</li>
+<li>按照约束内容编写XML文件的标签</li>
+</ul>
+</li>
+</ol>
+<h1 id="日志技术"><a href="#日志技术" class="headerlink" title="日志技术"></a>日志技术</h1><h2 id="概述-1"><a href="#概述-1" class="headerlink" title="概述"></a>概述</h2><ol>
+<li>什么是日志？<ul>
+<li>好比生活中的日记，可以记录你生活中的点点滴滴</li>
+<li>程序中的日志，通常就是一个文件夹，里面记录的是程序运行过程中的各种信息</li>
+</ul>
+</li>
+<li>日志技术<ul>
+<li>可以将系统执行的信息，方便的记录到指定的位置（控制台、文件中、数据库中）</li>
+<li>可以随时以开关的形式控制日志的启停，无需侵入到源代码中去进行修改</li>
+</ul>
+</li>
+</ol>
+<h2 id="日志技术的体系"><a href="#日志技术的体系" class="headerlink" title="日志技术的体系"></a>日志技术的体系</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">	A(日志技术) --&gt; B[&quot;JUL(java.util.logging)&quot;] </span><br><span class="line">	A --&gt; Log4j</span><br><span class="line">	A --&gt; Logback </span><br><span class="line">	A --&gt; 其他实现</span><br><span class="line">	</span><br><span class="line">	C(日志接口) --&gt;D[&quot;Commons Logging(JCL)&quot;]</span><br><span class="line">	C --&gt; E[&quot;Simple Logging Facade for Java(SLF4J)&quot;]</span><br><span class="line">	</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>日志框架：牛人或者第三方公司以及准备好的实现代码，后来者直接可以拿去使用</li>
+<li>日志接口：设计日志框架的一套标准，日志框架需要实现这些接口</li>
+<li>注意1：因为对<code>JCL</code>接口不满意，有人就搞了<code>SLF4J</code>；因为对<code>Log4j</code>的性能不满意，有人就搞了<code>Logback</code></li>
+<li>注意2：Logback是基于<code>SLF4J</code>的日志规范实现的框架</li>
+</ol>
+<h2 id="Logback日志框架"><a href="#Logback日志框架" class="headerlink" title="Logback日志框架"></a>Logback日志框架</h2><h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><ol>
+<li>Logback日志框架官方网站：<code>https://logback.qos.ch/index.html</code></li>
+<li>Logback日志框架有以下几个模块<ul>
+<li><code>Logback-core</code>：基础模块，是其他两个模块依赖的基础（必须有）</li>
+<li><code>Logback-classic</code>：完整实现了 <code>slf4j</code> API的模块（必须有）</li>
+<li><code>Logback-access</code>：与<code>Tomcat</code>和<code>Jetty</code>等<code>Servlet</code>容器集成，以提供<code>HTTP</code>访问日志的功能（可选）</li>
+</ul>
+</li>
+<li>想使用Logback日志框架，至少需要在项目中整合如下三个模块：<ul>
+<li><code>slf4j-api</code>：日志接口</li>
+<li><code>logback-core</code></li>
+<li><code>logbcak-classic</code></li>
+</ul>
+</li>
+</ol>
+<h3 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h3><ol>
+<li><p>实现步骤：</p>
+<ul>
+<li><p>导入Logback框架到项目中去。</p>
+<p><code>slf4j-api：日志接口</code>、<code>logback-core</code>、<code>logbcak-classic</code></p>
+</li>
+<li><p>将Logback框架的核心配置文件<code>logback.xml</code>直接拷贝到<code>src</code>目录下（必须是<code>src</code>下）</p>
+</li>
+<li><p>创建Logback框架提供的<code>Logger</code>对象，然后用<code>Logger</code>对象调用其提供的方法就可以记录系统的日志信息</p>
+<p><code>public static final Logger LOGGER = LoggerFactory.getLogger(&quot;类名&quot;)</code></p>
+</li>
+<li><p>注意：对Logback日志框架的控制，都是通过其核心配置文件<code>logback.xml</code>来实现的</p>
+</li>
+</ul>
+</li>
+<li><p>核心配置文件<code>logback.xml</code></p>
+<ul>
+<li><p>对Logback日志框架进行控制的</p>
+</li>
+<li><p>日志的输出位置、输出格式的设置</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">	通常可以设置2个输出日志的位置：一个是控制台、一个是系统文件中</span></span><br><span class="line"><span class="comment">--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">appender</span> <span class="attr">name</span>=<span class="string">&quot;CONSOLE&quot;</span> <span class="attr">class</span>=<span class="string">&quot;ch.qos.logback.core.ConsoleAppender&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">appender</span> <span class="attr">name</span>=<span class="string">&quot;FILE&quot;</span> <span class="attr">class</span>=<span class="string">&quot;ch.qos.logback.core.rolling.RollingFileAppender&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>开启日志（ALL），取消日志（OFF）</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">root</span> <span class="attr">level</span>=<span class="string">&quot;ALL&quot;</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">appender-ref</span> <span class="attr">ref</span>=<span class="string">&quot;CONSOLE&quot;</span>/&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">appender-ref</span> <span class="attr">ref</span>=<span class="string">&quot;FILE&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">root</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ol>
+<h3 id="Logback设置日志级别"><a href="#Logback设置日志级别" class="headerlink" title="Logback设置日志级别"></a>Logback设置日志级别</h3><ol>
+<li><p>认识日志级别</p>
+<ul>
+<li><p>日志级别指的是日志信息的类型，日志都会分级别，常见的日志级别如下（优先级依次升高）：</p>
+<table>
+<thead>
+<tr>
+<th align="center">日志级别</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>trace</code></td>
+<td align="center">追踪，指明程序运行轨迹</td>
+</tr>
+<tr>
+<td align="center"><code>debug</code></td>
+<td align="center">调试，实际应用中一般将其作为最低级别，而trace则很少使用</td>
+</tr>
+<tr>
+<td align="center"><code>info</code></td>
+<td align="center">输出重要的运行信息，数据连接、网络连接、IO操作等等，使用较多</td>
+</tr>
+<tr>
+<td align="center"><code>warn</code></td>
+<td align="center">警告信息，可能发生发生问题，使用较多</td>
+</tr>
+<tr>
+<td align="center"><code>error</code></td>
+<td align="center">错误信息，使用较多</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>只有日志级别是大于或等于核心配置文件配置的日志级别，才会被记录，否则不记录</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">root</span> <span class="attr">level</span>=<span class="string">&quot;debug&quot;</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">appender-ref</span> <span class="attr">ref</span>=<span class="string">&quot;CONSOLE&quot;</span>/&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">appender-ref</span> <span class="attr">ref</span>=<span class="string">&quot;FILE&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">root</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ol>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>Copyright： </strong>
+          
+          Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source.
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://littlewin8.github.io/2023/11/17/Java_%E7%89%B9%E6%AE%8A%E6%96%87%E4%BB%B6%E3%80%81%E6%97%A5%E5%BF%97%E6%8A%80%E6%9C%AF/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+    
+      <a href="/2023/11/15/Java_IO%E6%B5%81(%E4%BA%8C)/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">Java_IO流(二)</div>
+      </a>
+    
+  </nav>
+
+  
+   
+  
+   
+    <script src="https://cdn.staticfile.org/twikoo/1.4.18/twikoo.all.min.js"></script>
+    <div id="twikoo" class="twikoo"></div>
+    <script>
+        twikoo.init({
+            envId: ""
+        })
+    </script>
+ 
+</article>
+
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2023
+        <i class="ri-heart-fill heart_icon"></i> LittleWin
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>Visitors:<span id="busuanzi_value_site_uv"></span></span>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>Views:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914'></script>
+        
+      </li>
+    </ul>
+  </div>
+</footer>    
+    </main>
+    <div class="float_btns">
+      <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+    </div>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/littlewin.png" alt="小稳"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/friends">友链</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/2023/about">关于我</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="Search">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-3.6.0.min.js"></script>
+ 
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+ 
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: ".tocbot",
+    contentSelector: ".article-entry",
+    headingSelector: "h1, h2, h3, h4, h5, h6",
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: "main",
+    positionFixedSelector: ".tocbot",
+    positionFixedClass: "is-position-fixed",
+    fixedSidebarOffset: "auto",
+  });
+</script>
+
+<script src="https://cdn.staticfile.org/jquery-modal/0.9.2/jquery.modal.min.js"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.staticfile.org/jquery-modal/0.9.2/jquery.modal.min.css"
+/>
+<script src="https://cdn.staticfile.org/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+ <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.staticfile.org/photoswipe/4.1.3/default-skin/default-skin.min.css">
+<script src="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe.min.js"></script>
+<script src="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script> 
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+ 
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+ 
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+ 
+<link rel="stylesheet" href="/css/clipboard.css">
+ <script src="https://cdn.staticfile.org/clipboard.js/2.0.10/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+ 
+<!-- CanvasBackground -->
+
+<script>
+  if (window.mermaid) {
+    mermaid.initialize({ theme: "forest" });
+  }
+</script>
+
+
+    
+    
+
+  </div>
+</body>
+
+</html>
