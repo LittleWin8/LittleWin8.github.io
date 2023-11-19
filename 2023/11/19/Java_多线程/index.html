@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+  
+
+    <head>
+      <meta charset="utf-8" />
+        
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1"
+      />
+      <title>Java_多线程 |  小稳</title>
+  <meta name="generator" content="hexo-theme-ayer">
+      
+      <link rel="shortcut icon" href="/littlewin.png" />
+       
+<link rel="stylesheet" href="/dist/main.css">
+
+      
+<link rel="stylesheet" href="/css/fonts/remixicon.css">
+
+      
+<link rel="stylesheet" href="/css/custom.css">
+ 
+      <script src="https://cdn.staticfile.org/pace/1.2.4/pace.min.js"></script>
+       
+ 
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-bulma@5.0.1/bulma.min.css"
+      />
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
+
+      <!-- mermaid -->
+      
+      <style>
+        .swal2-styled.swal2-confirm {
+          font-size: 1.6rem;
+        }
+      </style>
+    <link rel="alternate" href="/atom.xml" title="小稳" type="application/atom+xml">
+</head>
+  </html>
+</html>
+
+
+<body>
+  <div id="app">
+    
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-Java_多线程"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  Java_多线程
+</h1>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2023/11/19/Java_%E5%A4%9A%E7%BA%BF%E7%A8%8B/" class="article-date">
+  <time datetime="2023-11-19T09:08:35.000Z" itemprop="datePublished">2023-11-19</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Java/">Java</a>
+  </div>
+  
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> Word count:</span>
+            <span class="post-count">3.4k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> Reading time≈</span>
+            <span class="post-count">12 min</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><ol>
+<li>什么是线程？<ul>
+<li>线程（Thread）是一个程序内的一条执行流程</li>
+<li>程序中如果只有一条执行流程，那这个程序就是单线程的程序</li>
+</ul>
+</li>
+<li>多线程是什么？<ul>
+<li>多线程是指从软硬件上实现的多条执行流程的技术（多条线程由CPU负责调度执行）</li>
+</ul>
+</li>
+<li>如何在程序中创建多条线程？<ul>
+<li>Java是通过<code>java.lang.Thread</code>类的对象来代表线程的</li>
+</ul>
+</li>
+<li>多线程的注意事项：<ul>
+<li>启动线程必须是调用<code>start()</code>方法，不是调用<code>run()</code>方法</li>
+<li>不要把主线程任务放在启动子线程之前</li>
+</ul>
+</li>
+</ol>
+<h1 id="多线程的创建"><a href="#多线程的创建" class="headerlink" title="多线程的创建"></a>多线程的创建</h1><h2 id="方式一：继承Thread类"><a href="#方式一：继承Thread类" class="headerlink" title="方式一：继承Thread类"></a>方式一：继承<code>Thread类</code></h2><ol>
+<li>创建流程：<ul>
+<li>定义一个子类<code>MyThread</code>继承线程类<code>java.lang.Thread</code>，重写<code>run()</code>方法</li>
+<li>在主方法中创建<code>MyThread</code>类的对象</li>
+<li>调用线程对象的<code>start()</code>方法启动（启动后还是执行run方法）</li>
+</ul>
+</li>
+<li>方式一优缺点：<ul>
+<li>优点：代码简单</li>
+<li>缺点：线程已经继承<code>Thread</code>，无法继承其他类，不利于功能的扩展</li>
+</ul>
+</li>
+</ol>
+<h2 id="方式二：实现Runnable接口"><a href="#方式二：实现Runnable接口" class="headerlink" title="方式二：实现Runnable接口"></a>方式二：实现<code>Runnable</code>接口</h2><ol>
+<li><p>创建流程：</p>
+<ul>
+<li><p>定义一个线程任务类<code>MyRunnable</code>实现<code>Runnable</code>接口，重写<code>run()</code>方法</p>
+</li>
+<li><p>在主方法中创建<code>MyRunnable</code>任务对象</p>
+</li>
+<li><p>把<code>MyRunnable</code>任务对象交给<code>Thread</code>处理</p>
+<table>
+<thead>
+<tr>
+<th align="center">Thread类提供的构造方法</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public Thread(Runnable target)</code></td>
+<td align="center">封装<code>Runnable</code>对象成为线程对象</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>调用线程对象的<code>start()</code>方法启动线程</p>
+</li>
+</ul>
+</li>
+<li><p>方式二优缺点：</p>
+<ul>
+<li>优点：任务类只是实现接口，可以继续继承其他类、实现其他接口、扩展性强</li>
+<li>缺点：需要多一个Runnable对象</li>
+</ul>
+</li>
+<li><p>该方式可以采用匿名内部类写法</p>
+</li>
+</ol>
+<h2 id="方式三：实现Callable接口"><a href="#方式三：实现Callable接口" class="headerlink" title="方式三：实现Callable接口"></a>方式三：实现<code>Callable</code>接口</h2><ol>
+<li><p>前两种线程创建方式都存在的一个问题</p>
+<ul>
+<li>假如线程执行完毕后有一些数据需要返回，他们重写的<code>run()</code>方法均不能直接返回结果</li>
+</ul>
+</li>
+<li><p>创建流程：</p>
+<ol>
+<li>创建任务对象<ul>
+<li>定义一个类实现<code>Callable</code>接口，重写call方法，封装要做的事情，和要返回的数据</li>
+<li>把<code>Callable</code>类型的对象封装成<code>FutureTask</code>（线程任务对象）</li>
+</ul>
+</li>
+<li>把线程任务对象交给<code>Thread</code>对象</li>
+<li>调用<code>Thread</code>对象的<code>start()</code>方法</li>
+<li>线程执行完毕后，通过<code>FutureTask</code>对象的<code>get()</code>方法去获取线程任务执行的结果</li>
+</ol>
+</li>
+<li><p>FutureTask的API</p>
+<table>
+<thead>
+<tr>
+<th align="center">FutureTask提供的构造方法</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public FurureTask&lt;&gt;(Callable)</code></td>
+<td align="center">把<code>Callable</code>对象封装成<code>FutureTask</code>对象</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="center">FutureTask提供的方法</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public V get() throws Exception</code></td>
+<td align="center">获取线程执行<code>call()</code>方法返回的对象</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>方式三的优缺点：</p>
+<ul>
+<li>优点：线程任务只是实现类，可以继承类和实现接口，扩展性强；可以在线程执行完毕后去获取线程执行的结果</li>
+<li>缺点：编码相对复杂</li>
+</ul>
+</li>
+</ol>
+<h1 id="Thread的常用方法"><a href="#Thread的常用方法" class="headerlink" title="Thread的常用方法"></a>Thread的常用方法</h1><ol>
+<li><p>常用方法</p>
+<table>
+<thead>
+<tr>
+<th align="center">方法名称</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public void run()</code></td>
+<td align="center">线程的任务方法</td>
+</tr>
+<tr>
+<td align="center"><code>public void start()</code></td>
+<td align="center">启动线程</td>
+</tr>
+<tr>
+<td align="center"><code>public String getName()</code></td>
+<td align="center">获取当前线程的名称，线程名称默认是Thread-索引</td>
+</tr>
+<tr>
+<td align="center"><code>public void setName()</code></td>
+<td align="center">为线程设置名称</td>
+</tr>
+<tr>
+<td align="center"><code>public static Thread currentThread()</code></td>
+<td align="center">获取当前执行的线程对象</td>
+</tr>
+<tr>
+<td align="center"><code>public static void sleep(long time)</code></td>
+<td align="center">让当前执行的线程休眠多少毫秒后，再继续执行</td>
+</tr>
+<tr>
+<td align="center"><code>public final void join()</code></td>
+<td align="center">让调用当前这个方法的线程先执行完</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>构造方法</p>
+<table>
+<thead>
+<tr>
+<th align="center">构造方法</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public Thread(String name)</code></td>
+<td align="center">可以为当前线程指定名称</td>
+</tr>
+<tr>
+<td align="center"><code>public Thread(Runnable target)</code></td>
+<td align="center">封装Runnable对象成为线程对象</td>
+</tr>
+<tr>
+<td align="center"><code>public Thread(Runnable target, String name)</code></td>
+<td align="center">封装Runnable对象成为线程对象，并指定线程名称</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>Thread其他方法的说明：</p>
+<ul>
+<li><code>Thread</code>类还提供了诸如：yield、interrupt、守护线程、线程优先级等线程的控制方法，在开发中很少使用。</li>
+</ul>
+</li>
+</ol>
+<h1 id="线程安全"><a href="#线程安全" class="headerlink" title="线程安全"></a>线程安全</h1><ol>
+<li>线程安全问题：<ul>
+<li>多个线程，同时操作一个共享资源的时候，可能会出现业务安全问题</li>
+</ul>
+</li>
+<li>线程安全问题出现的原因：<ul>
+<li>存在多个线程在同时执行</li>
+<li>同时访问一个共享资源</li>
+<li>存在修改该共享资源</li>
+</ul>
+</li>
+</ol>
+<h1 id="线程同步"><a href="#线程同步" class="headerlink" title="线程同步"></a>线程同步</h1><h2 id="认识线程同步"><a href="#认识线程同步" class="headerlink" title="认识线程同步"></a>认识线程同步</h2><ol>
+<li>线程同步：<ul>
+<li>解决线程安全的方案</li>
+</ul>
+</li>
+<li>线程同步的思想<ul>
+<li>让多个线程实现先后依次访问共享资源，这样就解决了安全问题</li>
+</ul>
+</li>
+<li>线程同步的常见方案<ul>
+<li>加锁：每次只允许一个线程加锁，加锁后才能访问，访问完毕后自动解锁，然后其他线程才能再加锁进来</li>
+</ul>
+</li>
+</ol>
+<h2 id="方式一：同步代码块"><a href="#方式一：同步代码块" class="headerlink" title="方式一：同步代码块"></a>方式一：同步代码块</h2><ol>
+<li><p>作用：把访问共享资源的核心代码给上锁，以此保证线程安全</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">synchronized</span>(同步锁)&#123;</span><br><span class="line">    <span class="comment">// 访问共享资源的核心代码</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 同步锁：就是一个java对象代表一把锁，实例方法建议使用this作为锁对象，静态方法建议使用 类名.class 作为锁对象</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>原理：每次只允许一个线程加锁后进入，执行完毕后自动解锁，然后其他线程才可以进来执行</p>
+</li>
+<li><p>同步锁的注意实现：</p>
+<ul>
+<li>对于当前同时执行的线程来说，同步锁必须是同一把（同一个对象），否则会出bug</li>
+</ul>
+</li>
+</ol>
+<h2 id="方式二：同步方法"><a href="#方式二：同步方法" class="headerlink" title="方式二：同步方法"></a>方式二：同步方法</h2><ol>
+<li><p>作用：把访问共享资源的核心方法给上锁，以此保证线程安全</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">修饰符 <span class="keyword">synchronized</span> 返回值类型 方法名称()&#123;</span><br><span class="line">    <span class="comment">// 操作共享资源的代码</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>原理：每次只允许一个线程加锁后进入，执行完毕后自动解锁，然后其他线程才可以进来执行</p>
+</li>
+<li><p>同步方法底层原理</p>
+<ul>
+<li>同步方法其实底层也是有隐式锁对象的，只是锁的范围是整个方法代码</li>
+<li>如果方法是实例方法：同步方法默认用<code>this</code>作为的锁对象</li>
+<li>如果方法是静态方法：同步方法默认用<code>类名.class</code>作为的锁对象</li>
+</ul>
+</li>
+<li><p>同步代码块和同步方法比较：</p>
+<ul>
+<li>范围上：同步代码块锁的范围更小，同步方法锁的范围更大</li>
+<li>可读性：同步方法更好</li>
+</ul>
+</li>
+</ol>
+<h2 id="方式三：Lock锁"><a href="#方式三：Lock锁" class="headerlink" title="方式三：Lock锁"></a>方式三：Lock锁</h2><ol>
+<li><p>Lock锁：</p>
+<ul>
+<li>Lock锁是JDK5开始提供的一个新的锁定操作，通过它可以创建出锁对象进行加锁和解锁，更灵活、更方便、更强大</li>
+<li>Lock是接口，不能直接实例化，可以采用它的实现类<code>ReentrantLock</code>来构建<code>Lock</code>锁对象</li>
+</ul>
+</li>
+<li><p>Lock锁方法：</p>
+<table>
+<thead>
+<tr>
+<th align="center">构造方法</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public ReentrantLock()</code></td>
+<td align="center">获得Lock锁的实现类对象</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="center">方法名称</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>void lock()</code></td>
+<td align="center">获得锁</td>
+</tr>
+<tr>
+<td align="center"><code>void unlock()</code></td>
+<td align="center">释放锁</td>
+</tr>
+</tbody></table>
+</li>
+</ol>
+<h1 id="线程通信-了解"><a href="#线程通信-了解" class="headerlink" title="线程通信[了解]"></a>线程通信[了解]</h1><ol>
+<li><p>什么是线程通信？</p>
+<ul>
+<li>当多个线程共同操作共享的资源时，线程间通过某种方式互相告知自己的状态，以相互协调，并避免无效的资源争夺</li>
+</ul>
+</li>
+<li><p>线程通信的常见模型（生产者与消费者模型）</p>
+<ul>
+<li>生产者线程负责生产数据</li>
+<li>消费者线程负责消费生产者生产的数据</li>
+<li>注意：生产者生产完数据等待自己，通知消费者消费；消费者消费完数据也应该等待自己，再通知生产者生产</li>
+</ul>
+</li>
+<li><p>Object类的等待和唤醒方法：</p>
+<table>
+<thead>
+<tr>
+<th align="center">方法名称</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>void wait()</code></td>
+<td align="center">让当前线程等待并释放锁占锁，直到另一个线程调用<code>notify()</code>方法或者<code>notifyAll()</code>方法</td>
+</tr>
+<tr>
+<td align="center"><code>void notify()</code></td>
+<td align="center">唤醒正在等待的单个线程</td>
+</tr>
+<tr>
+<td align="center"><code>void notifyAll()</code></td>
+<td align="center">唤醒正在等待的所有线程</td>
+</tr>
+</tbody></table>
+<p>注意：上述方法应该使用当前同步锁对象进行调用</p>
+</li>
+</ol>
+<h1 id="线程池"><a href="#线程池" class="headerlink" title="线程池"></a>线程池</h1><h2 id="认识线程池"><a href="#认识线程池" class="headerlink" title="认识线程池"></a>认识线程池</h2><ol>
+<li>什么是线程池？<ul>
+<li>线程池就是一个可以复用线程的技术</li>
+</ul>
+</li>
+<li>不使用线程池的问题：<ul>
+<li>用户每发起一个请求，后台就需要创建一个新线程来处理，下次新任务来了肯定又要创建新线程来处理的，而创建新线程的开销是很大的，并且请求过多时，肯定会产生大量的线程出来，这样会严重影响系统的性能</li>
+</ul>
+</li>
+</ol>
+<h2 id="如何创建线程池"><a href="#如何创建线程池" class="headerlink" title="如何创建线程池"></a>如何创建线程池</h2><ol>
+<li><p>谁代表线程池？</p>
+<ul>
+<li>JDK5.0起提供了代表线程池的接口：<code>ExecutorService</code></li>
+</ul>
+</li>
+<li><p>如何得到线程池对象？</p>
+<ul>
+<li>方式一：使用<code>ExcutorService</code>的实现类<code>ThreadPoolExecutor</code>自建一个线程池对象</li>
+<li>方式二：使用<code>Executors</code>（线程池工具类）调用方法返回不同特点的线程池对象</li>
+</ul>
+</li>
+<li><p>ThreadPoolExcutor构造方法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="title function_">ThreadPoolExecutor</span><span class="params">(<span class="type">int</span> corePoolSize, <span class="type">int</span> maximumPoolSize, <span class="type">long</span> keepAliveTime, TimeUnit unit, 								BlockingQueue&lt;Runnable&gt; workQueue, ThreadFactory threadFactory, 										RejectedExecutionHandler handler)</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>参数一：corePoolSize：指定线程池的核心线程数量</li>
+<li>参数二：maximumPoolSize：指定线程池的最大线程数量</li>
+<li>参数三：keepAliveTime：指定临时线程的存活时间</li>
+<li>参数四：unit：指定临时线程存活的时间单位（秒、分、时、天）</li>
+<li>参数五：workQueue：指定线程池的任务队列</li>
+<li>参数六：threadFactory：指定线程池的线程工厂</li>
+<li>参数七：handler：指定线程池的任务拒绝策略（线程都在忙，任务队列也满了的时候，新任务来了该怎么处理）</li>
+</ul>
+</li>
+<li><p>线程池的注意事项：</p>
+<ul>
+<li>临时线程什么时候创建：<ul>
+<li>新任务提交时发现核心线程都在忙，任务队列也满了，并且还可以创建临时线程，此时才会创建临时的线程</li>
+</ul>
+</li>
+<li>什么时候会开始拒绝新任务？<ul>
+<li>核心线程和临时线程都在忙，任务队列也满了，新的任务过来的时候才会开始拒绝任务</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="线程池处理Runnable、Callable任务"><a href="#线程池处理Runnable、Callable任务" class="headerlink" title="线程池处理Runnable、Callable任务"></a>线程池处理Runnable、Callable任务</h2><ol>
+<li><p><code>ExecutorService</code>的常用方法：</p>
+<table>
+<thead>
+<tr>
+<th align="center">方法名称</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>void execute(Runnable command)</code></td>
+<td align="center">执行<code>Runnable</code>任务</td>
+</tr>
+<tr>
+<td align="center"><code>Future&lt;T&gt; submit(Callable&lt;T&gt; task)</code></td>
+<td align="center">执行<code>Callable</code>任务，返回未来任务对象，用于获取线程返回的结果</td>
+</tr>
+<tr>
+<td align="center"><code>void shutdown()</code></td>
+<td align="center">等全部任务执行完毕后，再关闭线程池</td>
+</tr>
+<tr>
+<td align="center"><code>List&lt;Runnable&gt; shutdownNow()</code></td>
+<td align="center">立刻关闭线程池，停止正在执行的任务，并返回队列中未执行的任务</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>新任务拒绝策略</p>
+<table>
+<thead>
+<tr>
+<th align="center">策略</th>
+<th align="center">详解</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>ThreadPoolExecutor.AbortPolicy</code></td>
+<td align="center">丢弃任务并抛出<code>RejectedExecutionException</code>异常，是默认策略</td>
+</tr>
+<tr>
+<td align="center"><code>ThreadPoolExecutor.DiscardPolicy</code></td>
+<td align="center">丢弃任务，但是不抛出异常，这是不推荐的做法</td>
+</tr>
+<tr>
+<td align="center"><code>ThreadPoolExecutor.DiscardOldestPolicy</code></td>
+<td align="center">丢弃队列中等待最久的任务，然后把当前任务加入队列中</td>
+</tr>
+<tr>
+<td align="center"><code>ThreadPoolExecutor.CallerRunPolicy</code></td>
+<td align="center">由主线程负责调用任务的<code>run()</code>方法从而绕过线程池直接执行</td>
+</tr>
+</tbody></table>
+</li>
+</ol>
+<h2 id="Executors工具类实现线程池"><a href="#Executors工具类实现线程池" class="headerlink" title="Executors工具类实现线程池"></a>Executors工具类实现线程池</h2><ol>
+<li><p>Executors：是一个工具类，提供了很多静态方法用于返回不同特点的线程池对象</p>
+</li>
+<li><p>Executors常用方法：</p>
+<table>
+<thead>
+<tr>
+<th align="center">方法名称</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public static ExecutorService newFixedThreadPool(int nThreads)</code></td>
+<td align="center">创建固定线程数量的线程池，如果某个线程因为异常而执行结束，那么线程池会补充一个新的线程代替它</td>
+</tr>
+<tr>
+<td align="center"><code>public static ExecutorService newSingleThreadExecutor()</code></td>
+<td align="center">创建只有一个线程的线程池对象，如果该线程出现异常而结束，那么线程池会补充一个新线程</td>
+</tr>
+<tr>
+<td align="center"><code>public static ExecutorService newCachedThreadPool()</code></td>
+<td align="center">线程数量随着任务增加而增加，如果线程任务执行完毕且空闲了60s则会被回收掉</td>
+</tr>
+<tr>
+<td align="center"><code>public static ScheduledExecutorService newScheduledThreadPool(int corePoolSize)</code></td>
+<td align="center">创建一个线程池，可以实现在给定的延迟后运行任务，或者定期执行任务</td>
+</tr>
+</tbody></table>
+<p>注意：这些方法的底层，都是通过线程池的实现类<code>ThreadPoolExecutor</code>创建的线程池对象</p>
+</li>
+<li><p>Executors使用可能存在的陷阱</p>
+<ul>
+<li>大型并发系统环境中使用Executors如果不注意可能会出现系统风险</li>
+</ul>
+</li>
+<li><p>核心线程数应该怎么配置</p>
+<ul>
+<li>计算密集型的任务：核心线程数量 &#x3D; CPU的核数 + 1</li>
+<li>IO密集型的任务：核心线程数量 &#x3D; CPU的核数 * 2</li>
+</ul>
+</li>
+</ol>
+<h1 id="其他细节知识"><a href="#其他细节知识" class="headerlink" title="其他细节知识"></a>其他细节知识</h1><h2 id="并发、并行"><a href="#并发、并行" class="headerlink" title="并发、并行"></a>并发、并行</h2><ol>
+<li>进程<ul>
+<li>正在进行的程序（软件）就是一个独立的进程</li>
+<li>线程是属于进程的，一个进程中可以同时运行很多个线程</li>
+<li>进程中的多个进程其实就是并发和并行执行的</li>
+</ul>
+</li>
+<li>并发的含义：<ul>
+<li>进程中的线程是由CPU负责调度执行的，但CPU能同时处理线程的数量有限，为了保证全部线程都能往前执行，CPU会轮询为系统的每个线程服务，由于CPU切换的速度很快，给我们的感觉这些线程在同时执行，这就是并发</li>
+</ul>
+</li>
+<li>并行的理解：<ul>
+<li>在同一时刻上，同时有多个进程在被CPU调度执行</li>
+</ul>
+</li>
+<li>多线程到底是怎么在执行的？<ul>
+<li>并发和并行同时进行的</li>
+</ul>
+</li>
+</ol>
+<h2 id="线程的生命周期"><a href="#线程的生命周期" class="headerlink" title="线程的生命周期"></a>线程的生命周期</h2><ol>
+<li><p>线程的生命周期</p>
+<ul>
+<li>也就是线程从生到死的过程中，经历的各种状态及状态转换</li>
+<li>理解线程这些状态有利于提升并发编程的理解能力</li>
+</ul>
+</li>
+<li><p>Java线程的状态：</p>
+<ul>
+<li><p>Java总共定义了6种状态</p>
+</li>
+<li><p>6种状态都定义在Thread类的内部枚举类中</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Thread</span>&#123;</span><br><span class="line">	...</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">enum</span> <span class="title class_">State</span> &#123;</span><br><span class="line">		NEW,</span><br><span class="line">		RUNNABLE,</span><br><span class="line">		BLOCKED,</span><br><span class="line">		WAITING,</span><br><span class="line">		TIMED_WAITING,</span><br><span class="line">		TERMINATED;</span><br><span class="line">    &#125;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>线程的6种状态相互转化</p>
+<p><img src="/../image/%E7%BA%BF%E7%A8%8B%E7%8A%B6%E6%80%81.png"></p>
+</li>
+</ul>
+</li>
+<li><p>线程6种状态的总结：</p>
+<table>
+<thead>
+<tr>
+<th align="center">线程状态</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>NEW</code>（新建）</td>
+<td align="center">线程刚被创建，但是未启动</td>
+</tr>
+<tr>
+<td align="center"><code>RUNNABLE</code>（可运行）</td>
+<td align="center">线程已经调用<code>start()</code>，等待CPU调度</td>
+</tr>
+<tr>
+<td align="center"><code>BLOCKED</code>（锁阻塞）</td>
+<td align="center">线程在执行的时候为竞争到锁对象，则该线程进入<code>blocked</code>状态</td>
+</tr>
+<tr>
+<td align="center"><code>WAITING</code>（无限等待）</td>
+<td align="center">一个线程进入<code>waiting</code>状态，另一个线程调用<code>notify</code>或者<code>notifyAll</code>方法才能被唤醒</td>
+</tr>
+<tr>
+<td align="center"><code>TIMED_WAITING</code>（计时等待）</td>
+<td align="center">同<code>waiting</code>状态，有几个方法（sleep、wait）有超时参数，调用他们将进入<code>Timed Waiting</code>状态</td>
+</tr>
+<tr>
+<td align="center"><code>TERMINATED</code>（被终止）</td>
+<td align="center">因为<code>run</code>方法正常退出而死亡，或者因为没有捕获的异常终止了<code>run</code>方法而死亡</td>
+</tr>
+</tbody></table>
+</li>
+</ol>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>Copyright： </strong>
+          
+          Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source.
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://littlewin8.github.io/2023/11/19/Java_%E5%A4%9A%E7%BA%BF%E7%A8%8B/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+    
+      <a href="/2023/11/17/Java_%E7%89%B9%E6%AE%8A%E6%96%87%E4%BB%B6%E3%80%81%E6%97%A5%E5%BF%97%E6%8A%80%E6%9C%AF/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">Java_特殊文件、日志技术</div>
+      </a>
+    
+  </nav>
+
+  
+   
+  
+   
+    <script src="https://cdn.staticfile.org/twikoo/1.4.18/twikoo.all.min.js"></script>
+    <div id="twikoo" class="twikoo"></div>
+    <script>
+        twikoo.init({
+            envId: ""
+        })
+    </script>
+ 
+</article>
+
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2023
+        <i class="ri-heart-fill heart_icon"></i> LittleWin
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>Visitors:<span id="busuanzi_value_site_uv"></span></span>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>Views:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914'></script>
+        
+      </li>
+    </ul>
+  </div>
+</footer>    
+    </main>
+    <div class="float_btns">
+      <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+    </div>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/littlewin.png" alt="小稳"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/friends">友链</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/2023/about">关于我</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="Search">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-3.6.0.min.js"></script>
+ 
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+ 
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: ".tocbot",
+    contentSelector: ".article-entry",
+    headingSelector: "h1, h2, h3, h4, h5, h6",
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: "main",
+    positionFixedSelector: ".tocbot",
+    positionFixedClass: "is-position-fixed",
+    fixedSidebarOffset: "auto",
+  });
+</script>
+
+<script src="https://cdn.staticfile.org/jquery-modal/0.9.2/jquery.modal.min.js"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.staticfile.org/jquery-modal/0.9.2/jquery.modal.min.css"
+/>
+<script src="https://cdn.staticfile.org/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+ <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.staticfile.org/photoswipe/4.1.3/default-skin/default-skin.min.css">
+<script src="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe.min.js"></script>
+<script src="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script> 
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+ 
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+ 
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+ 
+<link rel="stylesheet" href="/css/clipboard.css">
+ <script src="https://cdn.staticfile.org/clipboard.js/2.0.10/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+ 
+<!-- CanvasBackground -->
+
+<script>
+  if (window.mermaid) {
+    mermaid.initialize({ theme: "forest" });
+  }
+</script>
+
+
+    
+    
+
+  </div>
+</body>
+
+</html>
