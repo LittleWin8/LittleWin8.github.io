@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+  
+
+    <head>
+      <meta charset="utf-8" />
+        
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1"
+      />
+      <title>Java_网络通信 |  小稳</title>
+  <meta name="generator" content="hexo-theme-ayer">
+      
+      <link rel="shortcut icon" href="/littlewin.png" />
+       
+<link rel="stylesheet" href="/dist/main.css">
+
+      
+<link rel="stylesheet" href="/css/fonts/remixicon.css">
+
+      
+<link rel="stylesheet" href="/css/custom.css">
+ 
+      <script src="https://cdn.staticfile.org/pace/1.2.4/pace.min.js"></script>
+       
+ 
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-bulma@5.0.1/bulma.min.css"
+      />
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
+
+      <!-- mermaid -->
+      
+      <style>
+        .swal2-styled.swal2-confirm {
+          font-size: 1.6rem;
+        }
+      </style>
+    <link rel="alternate" href="/atom.xml" title="小稳" type="application/atom+xml">
+</head>
+  </html>
+</html>
+
+
+<body>
+  <div id="app">
+    
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-Java_网络通信"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  Java_网络通信
+</h1>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2023/11/21/Java_%E7%BD%91%E7%BB%9C%E9%80%9A%E4%BF%A1/" class="article-date">
+  <time datetime="2023-11-21T10:51:23.000Z" itemprop="datePublished">2023-11-21</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Java/">Java</a>
+  </div>
+  
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> Word count:</span>
+            <span class="post-count">1.7k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> Reading time≈</span>
+            <span class="post-count">6 min</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="网络编程"><a href="#网络编程" class="headerlink" title="网络编程"></a>网络编程</h1><ol>
+<li>什么是网络编程？<ul>
+<li>可以让设备中的程序与网络搜索其他设备中的程序进行数据交互（实现网络通信的）</li>
+</ul>
+</li>
+<li>Java提供了哪些网络编程的解决方法？<ul>
+<li><code>java.net.*</code>包下提供了网络编程的解决方法</li>
+</ul>
+</li>
+<li>基本的通信架构<ul>
+<li>基本的通信架构有2种形式：CS架构（Client客户端&#x2F;Server服务端）、BS架构（Browser浏览器&#x2F;Server服务端）</li>
+<li>无论是CS架构，还是BS架构的软件必须依赖网络编程</li>
+</ul>
+</li>
+</ol>
+<h1 id="网络通信三要素"><a href="#网络通信三要素" class="headerlink" title="网络通信三要素"></a>网络通信三要素</h1><h2 id="IP地址"><a href="#IP地址" class="headerlink" title="IP地址"></a>IP地址</h2><ol>
+<li><p>IP（Internet Protocol）：全称”互联网协议地址“，是分配给上网设备的唯一标识</p>
+</li>
+<li><p>IP地址有两种形式：</p>
+<ul>
+<li>IPv4：由32bit（4字节）组成，点分十进制表示法</li>
+<li>IPv6：共128位，号称可以为地球每一粒沙子编号</li>
+<li>IPv6分成8段表示，每段每四位编码成一个十六进制位表示，数之间用（:）分开</li>
+</ul>
+</li>
+<li><p>IP域名：</p>
+<ul>
+<li>电脑的<code>DNS服务器</code>会将域名解析成<code>IP地址</code>，然后再使用该<code>IP地址</code>访问对应的服务器</li>
+</ul>
+</li>
+<li><p>公网IP、内网IP</p>
+<ul>
+<li>公网IP：是可以连接互联网的IP地址</li>
+<li>内网IP：也叫局域网IP，只能组织机构内部使用</li>
+<li><code>192.168.</code>开头的就是常见的局域网地址，范围即为<code>192.168.00--192.168.255.255</code>，专门为组织机构内部使用</li>
+</ul>
+</li>
+<li><p>特殊IP地址：</p>
+<ul>
+<li><code>127.0.0.1</code>、<code>localhost</code>：代表本机IP，只会寻找当前所在的主机</li>
+</ul>
+</li>
+<li><p>IP常用命令：</p>
+<ul>
+<li><code>ipconfig</code> ：查看本机IP地址。</li>
+<li><code>ping IP地址</code>：查看网络是否连通</li>
+</ul>
+</li>
+<li><p>InetAddress</p>
+<ul>
+<li>代表IP地址</li>
+</ul>
+</li>
+<li><p>InetAddress的产用方法</p>
+<table>
+<thead>
+<tr>
+<th align="center">方法名称</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public static InetAddress getLocalhost()</code></td>
+<td align="center">获取本机IP，会以一个<code>InetAddress</code>的对象返回</td>
+</tr>
+<tr>
+<td align="center"><code>public static InetAddress getByName(String host)</code></td>
+<td align="center">根据ip地址域名，返回一个inetAddress对象</td>
+</tr>
+<tr>
+<td align="center"><code>public String getHostName()</code></td>
+<td align="center">获取该ip地址对象对应的主机名</td>
+</tr>
+<tr>
+<td align="center"><code>public String getHostAddress()</code></td>
+<td align="center">获取该ip地址对象中的ip地址信息</td>
+</tr>
+<tr>
+<td align="center"><code>public boolean isReachable(int timeout)</code></td>
+<td align="center">在指定毫秒内，判断主机与该ip对应的主机是否联通</td>
+</tr>
+</tbody></table>
+</li>
+</ol>
+<h2 id="端口号"><a href="#端口号" class="headerlink" title="端口号"></a>端口号</h2><ol>
+<li>端口：<ul>
+<li>标记正在计算机设备上运行的应用程序的，被规定为一个16位的二进制，范围是0~65535</li>
+</ul>
+</li>
+<li>分类：<ul>
+<li>周知端口：0~1023，被预先定义的知名应用占用（如：HTTP占用80，FIP占用21）</li>
+<li>注册端口：1024~49151，分配给用户进程或某些应用程序</li>
+<li>动态端口：49151~65535，之所以成为动态端口，是因为它一般不固定分配某种进程，而是动态分配</li>
+</ul>
+</li>
+<li>注意：我们自己开发发程序一般选择使用注册端口，且一个设备中不能出现两个程序的端口一样，否则出错</li>
+</ol>
+<h2 id="协议"><a href="#协议" class="headerlink" title="协议"></a>协议</h2><ol>
+<li><p>通信协议：</p>
+<ul>
+<li>网络上通信的设备，实现规定的连接规则，以及传输数据的规则被称为网络通信协议</li>
+</ul>
+</li>
+<li><p>开放式网络互联标准：OSI网络参考模型</p>
+<ul>
+<li><p>OSI网络参考模型：全球网络互联标准</p>
+</li>
+<li><p>TCP&#x2F;IP网络模型：事实上的国际标准</p>
+<p><img src="/..%5Cimage%5COSI.png"></p>
+</li>
+</ul>
+</li>
+<li><p>传输层的2个通信协议：</p>
+<ul>
+<li>UDP(User Datagram Protocol)：用户数据报协议</li>
+<li>TCP(Transmission Control Protocol)：传输控制协议</li>
+</ul>
+</li>
+<li><p>UDP协议</p>
+<ul>
+<li>特点：无连接、不可靠通信</li>
+<li>不事先建立连接，按照包发，一包数据包含：自己的IP、程序端口、目的地IP、程序端口和数据（限制在64KB内）等</li>
+<li>发送方不管对方是否在线，数据在中间丢失也不管，如果接收方收到的数据也不返回确认，故是不可靠的。</li>
+<li>通信效率搞，用于语音通话，视频直播</li>
+</ul>
+</li>
+<li><p>TCP协议</p>
+<ul>
+<li>特点：面向连接、可靠通信</li>
+<li>TCP的最终目的：要保证在不可靠的信道上实现可靠的传输</li>
+<li>TCP主要有三个步骤实现可靠传输：三次握手建立连接，传输数据进行确认，四次挥手断开连接</li>
+<li>通信效率相对不高，用于网页、文件下载、支付</li>
+</ul>
+</li>
+<li><p>TCP协议：三次握手建立可靠连接</p>
+<ul>
+<li>可靠连接：确定通信双方，收发消息都是正常无问题的！（全双工）</li>
+</ul>
+</li>
+<li><p>TCP协议：四次挥手断开连接</p>
+<ul>
+<li>目的：确保双方数据的收发都已完成</li>
+</ul>
+</li>
+</ol>
+<h1 id="UDP通信"><a href="#UDP通信" class="headerlink" title="UDP通信"></a>UDP通信</h1><ol>
+<li><p>特点：无连接、不可靠通信</p>
+</li>
+<li><p>不事先建立连接；发送端每次把要发送的数据（限制在64KB内）、接收端IP、等信息封装成一个数据包，发出去就不管了。</p>
+</li>
+<li><p>Java提供了一个<code>java.net.DatagramSocket</code>类来实现UDP通信</p>
+</li>
+<li><p>DatagramSocket：用于创建客户端、服务端</p>
+<table>
+<thead>
+<tr>
+<th align="center">构造方法</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public DatagramSocket()</code></td>
+<td align="center">创建客户端的Socket对象，系统会随机分配一个端口号</td>
+</tr>
+<tr>
+<td align="center"><code>public DatagramSocket(int port)</code></td>
+<td align="center">创建服务端的Socket对象，并指定端口号</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="center">方法名称</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public void send(DatagramPacket dp)</code></td>
+<td align="center">发送数据包</td>
+</tr>
+<tr>
+<td align="center"><code>public void receive(DatagramPacket p)</code></td>
+<td align="center">使用数据包接收数据</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>DatagramPacket：创建数据包</p>
+<table>
+<thead>
+<tr>
+<th align="center">构造方法</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public DatagramPacket(byte[] buf, int length, InetAddress addresss, int port)</code></td>
+<td align="center">创建发出去的数据包对象</td>
+</tr>
+<tr>
+<td align="center"><code>public DatagramPacket(byte[] buf, int length)</code></td>
+<td align="center">创建用来接收数据的数据包</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="center">方法名称</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public int getLength()</code></td>
+<td align="center">获取数据包，实际接收到的字节个数</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>客户端实现步骤：</p>
+<ul>
+<li>创建DatagramSocket对象（客户端对象）</li>
+<li>创建DatagramPacket对象封装需要发送的数据（数据包对象）</li>
+<li>使用DatagramSocket对象的send方法，传入DatagramPacket对象</li>
+<li>释放资源</li>
+</ul>
+</li>
+<li><p>服务端实现步骤：</p>
+<ul>
+<li>创建DatagramSocket对象并指定端口（服务端对象）</li>
+<li>创建DatagramPacket对象接收对象（数据包对象）</li>
+<li>使用DatagramSocket对象的receive方法，传入DatagramPacket对象</li>
+<li>释放资源</li>
+</ul>
+</li>
+</ol>
+<h1 id="TCP通信"><a href="#TCP通信" class="headerlink" title="TCP通信"></a>TCP通信</h1><ol>
+<li><p>特点：面向连接、可靠通信</p>
+</li>
+<li><p>通信双方事先会采用“三次握手”方式建立可靠联系，实现端到端通信，底层能保证数据成功成功传给服务段</p>
+</li>
+<li><p>Java提供了一个<code>java.net.Socket</code>类来实现TCP通信</p>
+</li>
+<li><p>TCP通信-客户端开发</p>
+<ul>
+<li><p>客户端程序就是通过<code>java.net</code>包下的Socket类来实现</p>
+<table>
+<thead>
+<tr>
+<th align="center">构造方法</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public Socket(String host, int port)</code></td>
+<td align="center">根据指定的服务端ip、端口号请求与服务端建立连接，连接通过，就获得客户端socket</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="center">方法名称</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public OutputStream getOutputStream()</code></td>
+<td align="center">获得字节输出流</td>
+</tr>
+<tr>
+<td align="center"><code>public InputStream getInputStream()</code></td>
+<td align="center">获得字节输入流</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+</li>
+<li><p>TCP通信-服务端开发</p>
+<ul>
+<li><p>服务端就是通过<code>java.net</code>包下的ServerSocket类来实现的</p>
+<table>
+<thead>
+<tr>
+<th align="center">构造方法</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public ServerSocket(int port)</code></td>
+<td align="center">为服务端程序注册端口</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="center">方法名称</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public Socket accept()</code></td>
+<td align="center">阻塞等待用户端的连接请求，一旦与某个客户端成功连接，则返回服务端这边的Socket对象</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+</li>
+</ol>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>Copyright： </strong>
+          
+          Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source.
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://littlewin8.github.io/2023/11/21/Java_%E7%BD%91%E7%BB%9C%E9%80%9A%E4%BF%A1/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+    
+      <a href="/2023/11/19/Java_%E5%A4%9A%E7%BA%BF%E7%A8%8B/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">Java_多线程</div>
+      </a>
+    
+  </nav>
+
+  
+   
+  
+   
+    <script src="https://cdn.staticfile.org/twikoo/1.4.18/twikoo.all.min.js"></script>
+    <div id="twikoo" class="twikoo"></div>
+    <script>
+        twikoo.init({
+            envId: ""
+        })
+    </script>
+ 
+</article>
+
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2023
+        <i class="ri-heart-fill heart_icon"></i> LittleWin
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>Visitors:<span id="busuanzi_value_site_uv"></span></span>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>Views:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914'></script>
+        
+      </li>
+    </ul>
+  </div>
+</footer>    
+    </main>
+    <div class="float_btns">
+      <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+    </div>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/littlewin.png" alt="小稳"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/friends">友链</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/2023/about">关于我</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="Search">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-3.6.0.min.js"></script>
+ 
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+ 
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: ".tocbot",
+    contentSelector: ".article-entry",
+    headingSelector: "h1, h2, h3, h4, h5, h6",
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: "main",
+    positionFixedSelector: ".tocbot",
+    positionFixedClass: "is-position-fixed",
+    fixedSidebarOffset: "auto",
+  });
+</script>
+
+<script src="https://cdn.staticfile.org/jquery-modal/0.9.2/jquery.modal.min.js"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.staticfile.org/jquery-modal/0.9.2/jquery.modal.min.css"
+/>
+<script src="https://cdn.staticfile.org/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+ <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.staticfile.org/photoswipe/4.1.3/default-skin/default-skin.min.css">
+<script src="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe.min.js"></script>
+<script src="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script> 
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+ 
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+ 
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+ 
+<link rel="stylesheet" href="/css/clipboard.css">
+ <script src="https://cdn.staticfile.org/clipboard.js/2.0.10/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+ 
+<!-- CanvasBackground -->
+
+<script>
+  if (window.mermaid) {
+    mermaid.initialize({ theme: "forest" });
+  }
+</script>
+
+
+    
+    
+
+  </div>
+</body>
+
+</html>

@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Hello myblog</title>
+    <url>/2023/04/14/Hello-myblog/</url>
+    <content><![CDATA[<h1 id="Hello-myblog"><a href="#Hello-myblog" class="headerlink" title="Hello myblog"></a>Hello myblog</h1><h2 id="这是我的发布-水-的第一篇博客，简单纪念一下！！！"><a href="#这是我的发布-水-的第一篇博客，简单纪念一下！！！" class="headerlink" title="这是我的发布(水)的第一篇博客，简单纪念一下！！！"></a>这是我的发布(水)的第一篇博客，简单纪念一下！！！</h2><h2 id="大概花了五天时间搭建并美化了博客，前三天搭建，后两天美化"><a href="#大概花了五天时间搭建并美化了博客，前三天搭建，后两天美化" class="headerlink" title="大概花了五天时间搭建并美化了博客，前三天搭建，后两天美化"></a>大概花了五天时间搭建并美化了博客，前三天搭建，后两天美化</h2><h2 id="下面简单介绍一下-GitHub-Hexo-搭建个人博客的准备吧"><a href="#下面简单介绍一下-GitHub-Hexo-搭建个人博客的准备吧" class="headerlink" title="下面简单介绍一下 GitHub + Hexo 搭建个人博客的准备吧"></a>下面简单介绍一下 GitHub + Hexo 搭建个人博客的准备吧</h2><h3 id="搭建准备"><a href="#搭建准备" class="headerlink" title="搭建准备"></a>搭建准备</h3><ul>
+<li>注册Github账号，并搭建仓库（文件托管平台，我们博客目录文件存放的地方）<br><a href="https://github.com/">github地址，点击即可传送</a></li>
+<li>下载安装并配置Node.js<br><a href="https://nodejs.org/en/download">Node.js下载地址</a> </li>
+<li>下载Git（访问和修改博客的接口）<br><a href="https://git-scm.com/download/win">Git下载地址</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>others</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Java_StringBuffer类</title>
     <url>/2023/06/04/Java-StringBuffer%E7%B1%BB/</url>
     <content><![CDATA[<h1 id="Java常用实用类学习——StringBuffer类"><a href="#Java常用实用类学习——StringBuffer类" class="headerlink" title="Java常用实用类学习——StringBuffer类"></a>Java常用实用类学习——StringBuffer类</h1><p>StringBuffer类与String类不同，StringBuffer类的对象的的实体的内存空间可以自动改变大小，便于存放一个可变的字符序列。尽管String类是Java.lang包中的final类，但该类提供了修改字符序列的方法。</p>
@@ -61,127 +74,493 @@
       </categories>
   </entry>
   <entry>
-    <title>Hello myblog</title>
-    <url>/2023/04/14/Hello-myblog/</url>
-    <content><![CDATA[<h1 id="Hello-myblog"><a href="#Hello-myblog" class="headerlink" title="Hello myblog"></a>Hello myblog</h1><h2 id="这是我的发布-水-的第一篇博客，简单纪念一下！！！"><a href="#这是我的发布-水-的第一篇博客，简单纪念一下！！！" class="headerlink" title="这是我的发布(水)的第一篇博客，简单纪念一下！！！"></a>这是我的发布(水)的第一篇博客，简单纪念一下！！！</h2><h2 id="大概花了五天时间搭建并美化了博客，前三天搭建，后两天美化"><a href="#大概花了五天时间搭建并美化了博客，前三天搭建，后两天美化" class="headerlink" title="大概花了五天时间搭建并美化了博客，前三天搭建，后两天美化"></a>大概花了五天时间搭建并美化了博客，前三天搭建，后两天美化</h2><h2 id="下面简单介绍一下-GitHub-Hexo-搭建个人博客的准备吧"><a href="#下面简单介绍一下-GitHub-Hexo-搭建个人博客的准备吧" class="headerlink" title="下面简单介绍一下 GitHub + Hexo 搭建个人博客的准备吧"></a>下面简单介绍一下 GitHub + Hexo 搭建个人博客的准备吧</h2><h3 id="搭建准备"><a href="#搭建准备" class="headerlink" title="搭建准备"></a>搭建准备</h3><ul>
-<li>注册Github账号，并搭建仓库（文件托管平台，我们博客目录文件存放的地方）<br><a href="https://github.com/">github地址，点击即可传送</a></li>
-<li>下载安装并配置Node.js<br><a href="https://nodejs.org/en/download">Node.js下载地址</a> </li>
-<li>下载Git（访问和修改博客的接口）<br><a href="https://git-scm.com/download/win">Git下载地址</a></li>
-</ul>
-]]></content>
-      <categories>
-        <category>others</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Java_String类</title>
-    <url>/2023/06/02/Java-String%E7%B1%BB/</url>
-    <content><![CDATA[<h1 id="Java常用实用类学习——String类"><a href="#Java常用实用类学习——String类" class="headerlink" title="Java常用实用类学习——String类"></a>Java常用实用类学习——String类</h1><p>String类是java中用于处理字符序列的类。String类在java.lang包中，java把String类定义为final类，用户不能拓展String类，即String类不能有子类。</p>
-<h2 id="构造String对象"><a href="#构造String对象" class="headerlink" title="构造String对象"></a>构造String对象</h2><p>String对象习惯地被翻译为字符串对象。</p>
-<h3 id="常量对象"><a href="#常量对象" class="headerlink" title="常量对象"></a>常量对象</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">hi</span> <span class="operator">=</span> <span class="string">&quot;你好&quot;</span>;</span><br><span class="line"><span class="type">String</span> <span class="variable">hello</span> <span class="operator">=</span> <span class="string">&quot;你好&quot;</span>;</span><br></pre></td></tr></table></figure>
-
-<p>Java把用户程序的String常量都放在常量池，所以hi和hello的引用和实体是相同的</p>
-<h3 id="String对象"><a href="#String对象" class="headerlink" title="String对象"></a>String对象</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">&quot;hello&quot;</span>);</span><br><span class="line"><span class="type">String</span> <span class="variable">t</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">&quot;hello&quot;</span>);</span><br></pre></td></tr></table></figure>
-
-<p>使用String类声明对象并创建对象，凡是new运算符构造构造出的对象都不放在常量池中，所以，尽管s和t的实体是相同（s.equals(t)的值是true），但二者引用不同（ s&#x3D;&#x3D;t 结果是false）。</p>
-<p>String类还有两个常见方法</p>
-<ol>
-<li>String(char a[]);</li>
-</ol>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">char</span> a[] = &#123;<span class="string">&#x27;h&#x27;</span>,<span class="string">&#x27;i&#x27;</span>&#125;;</span><br><span class="line"><span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(a);</span><br><span class="line"></span><br><span class="line"><span class="comment">//相当于</span></span><br><span class="line"></span><br><span class="line"><span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">&quot;hi&quot;</span>);</span><br></pre></td></tr></table></figure>
-
-
-
-<ol start="2">
-<li>String(char a[],int startIndex,int count);</li>
-</ol>
-<p>提取字符数组a中的一部分字符创建对象，startIndex和count是截取的起始位置和截取长度</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">char</span> a[] = &#123;<span class="string">&#x27;你&#x27;</span>,<span class="string">&#x27;好&#x27;</span>,<span class="string">&#x27;呀&#x27;</span>&#125;;</span><br><span class="line"><span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(a,<span class="number">1</span>,<span class="number">2</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//相当于</span></span><br><span class="line"></span><br><span class="line"><span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">&quot;好呀&quot;</span>);</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="不可变对象"><a href="#不可变对象" class="headerlink" title="不可变对象"></a>不可变对象</h3><p>对象的变量中存储的值不能再发生变化，原因是String是final类，String类也没有给其对象提供修改实体的方法。</p>
-<h2 id="String对象的并置"><a href="#String对象的并置" class="headerlink" title="String对象的并置"></a>String对象的并置</h2><p>String对象可以使用”+“进行并置运算，即首尾相接得到一个新的String对象。</p>
+    <title>Java_IO流(一)</title>
+    <url>/2023/11/14/Java_IO%E6%B5%81(%E4%B8%80)/</url>
+    <content><![CDATA[<h1 id="File、IO流概述"><a href="#File、IO流概述" class="headerlink" title="File、IO流概述"></a>File、IO流概述</h1><ol>
+<li><p>File：代表文件</p>
 <ul>
-<li>参与并置运算的String对象中有一个是变量，那么就会得到新的引用和实体</li>
-<li>参与并置运算的对象都是常量，那么得到的仍然是常量</li>
+<li><p>File是<code>java.io</code>包下的类，File类的对象，用于代表当前操作系统的文件（可以是文件、或文件夹）。</p>
+</li>
+<li><p>File类可以实现获取文件信息（大小、文件名、修改时间）、判断文件类型、创建文件&#x2F;文件夹、删除文件&#x2F;文件夹等操作</p>
+</li>
+<li><p>注意：File类只能对文件本身进行操作，不能读写文件里面存储的数据</p>
+</li>
 </ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">hello</span> <span class="operator">=</span> <span class="string">&quot;你好&quot;</span>;</span><br><span class="line"><span class="type">String</span> <span class="variable">testOne</span> <span class="operator">=</span> <span class="string">&quot;你&quot;</span> + <span class="string">&quot;好&quot;</span>;</span><br><span class="line"><span class="comment">//hello、testOne的引用相同，即hello == testOne的结果为true</span></span><br><span class="line"></span><br><span class="line"><span class="type">String</span> <span class="variable">you</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">&quot;你&quot;</span>);</span><br><span class="line"><span class="type">String</span> <span class="variable">hi</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">&quot;好&quot;</span>);</span><br><span class="line"><span class="type">String</span> <span class="variable">textTwo</span> <span class="operator">=</span> you + hi;</span><br><span class="line"><span class="comment">//textTwo、testOne的引用不同，即textTwo == testOne的结果为false</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>IO流：读取文件</p>
+<ul>
+<li>用于读写数据的（可以读写文件，或者网络中的数据…）</li>
+</ul>
+</li>
+</ol>
+<h1 id="File"><a href="#File" class="headerlink" title="File"></a>File</h1><h2 id="创建对象"><a href="#创建对象" class="headerlink" title="创建对象"></a>创建对象</h2><ol>
+<li><p>File类对象构造方法：</p>
+<table>
+<thead>
+<tr>
+<th align="center">构造方法</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public File(String pathname)</code></td>
+<td align="center">根据文件路径创建文件对象</td>
+</tr>
+<tr>
+<td align="center"><code>public File(String parent, String child)</code></td>
+<td align="center">根据父路径和子路径名字创建文件对象</td>
+</tr>
+<tr>
+<td align="center"><code>public File(File parent, String child)</code></td>
+<td align="center">根据父路径对应文件对象和子路径名字创建文件对象</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>注意：</p>
+<ul>
+<li>File对象既可以代表文件，也可以代表文件夹。</li>
+<li>File封装的对象仅仅是一个路径名，这个路径可以是存在的，也允许是不存在的。</li>
+</ul>
+</li>
+<li><p>绝对路径、相对路径</p>
+<ul>
+<li>绝对路径：从盘符开始。</li>
+<li>相对路径：不带盘符，默认直接到当前工程下的目录寻求文件。</li>
+</ul>
+</li>
+</ol>
+<h2 id="常用方法1：判断文件类型、获取文件信息"><a href="#常用方法1：判断文件类型、获取文件信息" class="headerlink" title="常用方法1：判断文件类型、获取文件信息"></a>常用方法1：判断文件类型、获取文件信息</h2><table>
+<thead>
+<tr>
+<th align="center">方法名称</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public boolean exists()</code></td>
+<td align="center">判断当前文件对象，对应的文件路径是否存在，存在返回true</td>
+</tr>
+<tr>
+<td align="center"><code>public boolean isFile()</code></td>
+<td align="center">判断当前文件对象指代的是否为文件，是则返回true，反之</td>
+</tr>
+<tr>
+<td align="center"><code>public boolean isDirectory()</code></td>
+<td align="center">判断当前文件对象指代的是否为文件夹，是则返回true，反之</td>
+</tr>
+<tr>
+<td align="center"><code>public String getName()</code></td>
+<td align="center">获取文件的名称（包含后缀）</td>
+</tr>
+<tr>
+<td align="center"><code>public long length()</code></td>
+<td align="center">获取文件的大小，返回字节个数</td>
+</tr>
+<tr>
+<td align="center"><code>public long lastModified()</code></td>
+<td align="center">获取文件的最后修改时间</td>
+</tr>
+<tr>
+<td align="center"><code>public String getPath()</code></td>
+<td align="center">获取创建文件对象时，使用的路径</td>
+</tr>
+<tr>
+<td align="center"><code>public String getAbsolutePath()</code></td>
+<td align="center">获取绝对路径</td>
+</tr>
+</tbody></table>
+<h2 id="常用方法2：创建文件、删除文件"><a href="#常用方法2：创建文件、删除文件" class="headerlink" title="常用方法2：创建文件、删除文件"></a>常用方法2：创建文件、删除文件</h2><ol>
+<li><p>File类创建文件的功能</p>
+<table>
+<thead>
+<tr>
+<th align="center">方法名称</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public boolean createNewFile() </code></td>
+<td align="center">创建一个新的空文件</td>
+</tr>
+<tr>
+<td align="center"><code>public boolean mkdir()</code></td>
+<td align="center">只能创建一级文件夹</td>
+</tr>
+<tr>
+<td align="center"><code>public boolean mkdirs()</code></td>
+<td align="center">可以创建多级文件夹</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>File类删除文件的功能</p>
+<table>
+<thead>
+<tr>
+<th align="center">方法名称</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public boolean delete()</code></td>
+<td align="center">删除文件、空文件夹</td>
+</tr>
+</tbody></table>
+<p>注意：<code>delete</code>方法默认只能删除文件和空文件夹，删除后的文件不会进入回收站。</p>
+</li>
+</ol>
+<h2 id="常用方法3：遍历文件夹"><a href="#常用方法3：遍历文件夹" class="headerlink" title="常用方法3：遍历文件夹"></a>常用方法3：遍历文件夹</h2><ol>
+<li><p>File类提供遍历文件夹的功能</p>
+<table>
+<thead>
+<tr>
+<th align="center">方法名称</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public String[] list()</code></td>
+<td align="center">获取当前目录下所有的“一级文件名称”到一个字符串数组中去返回</td>
+</tr>
+<tr>
+<td align="center"><code>public File[] listFiles()</code></td>
+<td align="center">获取当前目录下所有的“一级文件对象”到一个文件对象数组中去返回（重点）</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>使用<code>listFlies</code>方法时的注意事项：</p>
+<ul>
+<li>当主调时文件，或者路径不存在时，返回null</li>
+<li>当主调是空文件夹时，返回一个长度为0的数组</li>
+<li>当主调是一个有内容的文件夹时，将里面所有一级文件和文件夹的路径放在File数组中返回</li>
+<li>当主调是一个文件夹，且里面有隐藏文件时，将里面所有文件和文件夹的路径放在File数组中返回，包含隐藏文件</li>
+<li>当主调是一个文件夹，但是没有权限访问该文件夹时，返回null</li>
+</ul>
+</li>
+</ol>
+<h1 id="前置知识："><a href="#前置知识：" class="headerlink" title="前置知识："></a>前置知识：</h1><h2 id="方法递归"><a href="#方法递归" class="headerlink" title="方法递归"></a>方法递归</h2><ol>
+<li><p>什么是方法递归？</p>
+<ul>
+<li>递归是一种算法，在程序设计语言中广泛应用</li>
+<li>从形式上说：方法调用自身的形式称为方法递归（recursion）</li>
+</ul>
+</li>
+<li><p>递归的形式</p>
+<ul>
+<li>直接递归：方法自己调用自己</li>
+<li>间接递归：方法调用其他方法，其他方法又回调方法自己</li>
+</ul>
+</li>
+<li><p>使用方法递归时需要注意的问题：</p>
+<ul>
+<li>递归如果没有控制好终止，会出现递归死循环，导致栈内存溢出错误</li>
+</ul>
+</li>
+<li><p>递归算法三要素：</p>
+<ul>
+<li>递归公式</li>
+<li>递归的终结点</li>
+<li>递归的方向必须要走向终止点</li>
+</ul>
+</li>
+<li><p>其他应用：文件搜索</p>
+<ul>
+<li><p>分析：</p>
+<ol>
+<li>先找出该当前文件夹下的所有一级目录</li>
+<li>遍历全部一级对象，判断是否是文件</li>
+<li>如果是文件，判断是否是自己想要的</li>
+<li>如果是文件夹，需要继续进入到该文件夹，重复上述过程</li>
+</ol>
+</li>
+<li><p>代码实现：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.File;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">SearchFile</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">File</span> <span class="variable">f</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(<span class="string">&quot;D:&quot;</span>);</span><br><span class="line">        searchFile(f, <span class="string">&quot;QQ&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> dir 目录</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> fileName 要搜索的文件名称</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">searchFile</span><span class="params">(File dir, String fileName)</span>&#123;</span><br><span class="line">        <span class="comment">// 1.拦截非法情况</span></span><br><span class="line">        <span class="keyword">if</span> (!dir.exists() || dir.isFile() ||dir == <span class="literal">null</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 2.获取该当前目录下所有一级目录</span></span><br><span class="line">        File[] files = dir.listFiles();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 3.判断当前目录下是否存在文件对象</span></span><br><span class="line">        <span class="keyword">if</span> (files != <span class="literal">null</span> &amp;&amp; files.length&gt;<span class="number">0</span>)&#123;</span><br><span class="line">            </span><br><span class="line">            <span class="comment">// 4.遍历全部一级文件对象</span></span><br><span class="line">            <span class="keyword">for</span> (File f : files)&#123;</span><br><span class="line">                <span class="comment">// 5.判断是否为文件</span></span><br><span class="line">                <span class="keyword">if</span> (f.isFile())&#123;</span><br><span class="line">                    <span class="keyword">if</span> (f.getName().contains(fileName))&#123;</span><br><span class="line">                        System.out.println(f.getAbsoluteFile());</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                    searchFile(f, fileName);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ol>
+<h2 id="字符集"><a href="#字符集" class="headerlink" title="字符集"></a>字符集</h2><h3 id="常见字符集介绍"><a href="#常见字符集介绍" class="headerlink" title="常见字符集介绍"></a>常见字符集介绍</h3><ol>
+<li><p>标准ASCII字符集</p>
+<ul>
+<li>ASCII(American Standard Code for Information Interchange)：美国信息交换标准代码，包括英文、符号等。</li>
+<li>标准ASCIII使用1个字节存储一个字符，首尾是0总共可以表示128个字符。</li>
+</ul>
+</li>
+<li><p>GBK（汉字内码扩展规范，国标）</p>
+<ul>
+<li>汉字编码字符集，包含了2万多个汉字等字符，GBK中一个中文字符编码成两个字节的形式存储。</li>
+<li>注意：GBK兼容了ASCII字符集</li>
+<li>GBK规定：汉字的第一个字节的第一位必须是1</li>
+</ul>
+</li>
+<li><p>Unicode字符集(统一码，也叫万国码)</p>
+<ul>
+<li>Unicode是国际组织制定的，可以容纳世界上所有文字、符号的字符集</li>
+<li><code>UTF-32</code>：四个字节表示一个字符，但由于占存储空间大、通信效率变低等原因，并没有被完全采纳</li>
+</ul>
+</li>
+<li><p>UTF-8</p>
+<ul>
+<li><p><code>UTF-8</code>是Unicode字符集的一种编码方案，采取可变长编码方案，共分四个长度区：1个字节，2个字节，3个字节，4个字节</p>
+</li>
+<li><p>英文字符、数字等只占1个字节（兼容标准ASCII编码），汉字字符占用3个字节</p>
+</li>
+<li><p>UTF-8编码方式：</p>
+<table>
+<thead>
+<tr>
+<th>UTF-8编码方式（二进制）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>0xxxxxxx</code>：   (ASCII码)</td>
+</tr>
+<tr>
+<td><code>110xxxxx</code> <code>10xxxxxx</code></td>
+</tr>
+<tr>
+<td><code>1110xxxx</code> <code>10xxxxxx</code> <code>10xxxxxx</code></td>
+</tr>
+<tr>
+<td><code>11110xxx</code> <code>10xxxxxx</code> <code>10xxxxxx</code> <code>10xxxxxx</code></td>
+</tr>
+</tbody></table>
+</li>
+<li><p>注意：技术人员在开发时都应该使用UTF-8编码</p>
+</li>
+</ul>
+</li>
+<li><p>总结：</p>
+<ul>
+<li>ASCII字符集：只有英文、数字、符号等，占1个字节</li>
+<li>GBK字符集：汉字占2个字节，英文、数字占1个字节</li>
+<li>UTF-8字符集：汉字占3个字节，英文、数字占1个字节</li>
+<li>注意1：字符编码时使用的字符集，和解码时使用的字符集必须一致，否则会出现乱码</li>
+<li>注意2：英文、数字一般不会出现乱码，英文很多字符集都兼容ASCII编码</li>
+</ul>
+</li>
+</ol>
+<h3 id="字符集的编码、解码操作"><a href="#字符集的编码、解码操作" class="headerlink" title="字符集的编码、解码操作"></a>字符集的编码、解码操作</h3><ol>
+<li><p>Java代码完成对字符的编码</p>
+<table>
+<thead>
+<tr>
+<th align="center">String提供了如下方法</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>byte[] getBytes()</code></td>
+<td align="center">使用平台的默认字符集将该String编码为一系列字节，将结果存储到新的字节数组中</td>
+</tr>
+<tr>
+<td align="center"><code>byte[] getBytes(String charsetName)</code></td>
+<td align="center">使用指定的字符集将String编码为一系列字节，将结果存储到新的字节数组中</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>Java代码完成对字符的解码</p>
+<table>
+<thead>
+<tr>
+<th align="center">String提供了如下方法</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>String(byte[] bytes)</code></td>
+<td align="center">通过平台的默认字符集解码指定的字节数组来构造新的String</td>
+</tr>
+<tr>
+<td align="center"><code>String(byte[] bytes, String charsetName)</code></td>
+<td align="center">通过指定的字符集解码指定的字节数组来构造新的String</td>
+</tr>
+</tbody></table>
+</li>
+</ol>
+<h1 id="IO流"><a href="#IO流" class="headerlink" title="IO流"></a>IO流</h1><h2 id="IO流概述"><a href="#IO流概述" class="headerlink" title="IO流概述"></a>IO流概述</h2><ol>
+<li><p>IO流：输入输出流，读写数据的</p>
+<ul>
+<li><p><code>I</code>指Input，称为输入流：负责把数据读到内存中去</p>
+</li>
+<li><p><code>O</code>指Output，称为输出流：负责写数据出去</p>
+</li>
+</ul>
+</li>
+<li><p>怎么学IO流：</p>
+<ul>
+<li>先搞清楚IO流的分类、体系</li>
+<li>再挨个学习每个IO流的作用、用法</li>
+</ul>
+</li>
+<li><p>IO流的分类：</p>
+<ul>
+<li><p>按流的方向分为：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">graph TB;</span><br><span class="line">	IO流 --&gt; 输入流</span><br><span class="line">	IO流 --&gt; 输出流</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>按流中数据的最小单位，分为：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">graph TB;</span><br><span class="line">	IO流 --&gt; 字节流 --&gt; 适合操作所有类型文件</span><br><span class="line">	IO流 --&gt; 字符流 --&gt; 只适合操作纯文本文件</span><br><span class="line">	</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>IO流总体来看就有四大流：</p>
+<ul>
+<li>字节输入流：以内存为基准，来自磁盘文件&#x2F;网络中的数据以字节的形式读入到内存中去的流</li>
+<li>字节输出流：以内存为基准，把内存中的数据以字节写出到磁盘文件或者网络中去的流</li>
+<li>字符输入流：以内存为基准，来自磁盘文件&#x2F;网络中的数据以字符的形式读入到内存中去的流</li>
+<li>字符输出流：以内存为基准，把内存中的数据以字符写出到磁盘文件或者网络中去的流</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>IO流的体系：</p>
+<ul>
+<li><p><code>java.io</code>包下：四大类流都是抽象类</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">graph TB;</span><br><span class="line">	IO流体系 --&gt; 字节流</span><br><span class="line">	IO流体系 --&gt; 字符流</span><br><span class="line">	字节流 --&gt; 字节输入流\InpuStream --&gt; FileInpuStream</span><br><span class="line">	字节流 --&gt; 字节输出流\OutpuStream --&gt; FileOutpuStream</span><br><span class="line">	字符流 --&gt; 字符输入流\Reader --&gt; FileReader</span><br><span class="line">	字符流 --&gt; 字符输出流\Writer --&gt; FileWriter</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ol>
+<h2 id="字节流"><a href="#字节流" class="headerlink" title="字节流"></a>字节流</h2><ul>
+<li>字节流非常适合做一切文件的复制操作：任何文件的底层都是字节，字节流做复制，是一字不漏的转移完全部字节，只要复制后的文件格式一致就没有问问题</li>
+</ul>
+<h3 id="FileInputStream"><a href="#FileInputStream" class="headerlink" title="FileInputStream"></a>FileInputStream</h3><ol>
+<li><p>作用：以内存为基准，来自磁盘文件的数据以字节的形式读入到内存中去</p>
+</li>
+<li><p>构造方法：</p>
+<table>
+<thead>
+<tr>
+<th align="center">构造方法</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public FileInputStream(File file)</code></td>
+<td align="center">创建字节输入流管道与源文件接通</td>
+</tr>
+<tr>
+<td align="center"><code>public FileInputStream(String pathname)</code></td>
+<td align="center">创建字节输入流管道与源文件接通</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>常用方法：</p>
+<table>
+<thead>
+<tr>
+<th align="center">方法名称</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public int read()</code></td>
+<td align="center">每次读取一个字节返回，如果发现没有数据可读会返回-1</td>
+</tr>
+<tr>
+<td align="center"><code>public int read(byte[] bytes)</code></td>
+<td align="center">每次使用一个字节数组去读取数据，返回字节数组读取了多少个字节，如果发现没有数据可读会返回-1</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>注意事项：</p>
+<ul>
+<li>使用<code>FileInputStream</code>每次读取一个字节，读取性能较差，并且读取汉字输出会乱码</li>
+<li>使用<code>FileInputStream</code>每次读取多个字节，读取性能得到了提升，但读取汉字还是会输出会乱码</li>
+</ul>
+</li>
+<li><p>一次读完读取完全部字节</p>
+<ul>
+<li><p>方式一：定义一个与文件一样大的字节数组，一次性读取完文件的全部字节 </p>
+</li>
+<li><p>方式二：Java官方为<code>InputStream</code>提供了如下方法，可以直接把文件的全部字节读取到一个字节数组中返回。</p>
+<table>
+<thead>
+<tr>
+<th align="center">方法名称</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public byte[] readAllBytes() throws IOException</code></td>
+<td align="center">直接将当前字节输入流对应的文件对象的字节数据装到一个字节数组返回</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+</li>
+<li><p>读取文本内容更适合字符流，字节流适合做数据的转移，如：文件复印等</p>
+</li>
+</ol>
+<h3 id="FileOutputStream"><a href="#FileOutputStream" class="headerlink" title="FileOutputStream"></a>FileOutputStream</h3><ol>
+<li><p>作用：以内存为基准，把内存中的数据以字节的形式写出到文件中去</p>
+</li>
+<li><p>构造方法：</p>
+<table>
+<thead>
+<tr>
+<th align="center">构造方法</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public FileOutStream(File file)</code></td>
+<td align="center">创建字节输出流管道与源文件对象接通</td>
+</tr>
+<tr>
+<td align="center"><code>public FileOutStream(String filepath)</code></td>
+<td align="center">创建字节输出流管道与源文件对象接通</td>
+</tr>
+<tr>
+<td align="center"><code>public FileOutStream(File file, boolean append)</code></td>
+<td align="center">创建字节输出流管道与源文件对象接通，可追加数据</td>
+</tr>
+<tr>
+<td align="center"><code>public FileOutStream(String filepath, boolean append)</code></td>
+<td align="center">创建字节输出流管道与源文件对象接通，可追加数据</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>常用方法：</p>
+<table>
+<thead>
+<tr>
+<th align="center">方法名称</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public void write(int a)</code></td>
+<td align="center">写一个字节出去</td>
+</tr>
+<tr>
+<td align="center"><code>public void write(byte[] buffer)</code></td>
+<td align="center">写一个字节数组出去</td>
+</tr>
+<tr>
+<td align="center"><code>public void write(byte[] buffer, int pos, int len)</code></td>
+<td align="center">写一个字节数组的一部分出去</td>
+</tr>
+<tr>
+<td align="center"><code>public void close() throws IOException</code></td>
+<td align="center">关闭流</td>
+</tr>
+</tbody></table>
+</li>
+</ol>
+<h3 id="释放资源的方式"><a href="#释放资源的方式" class="headerlink" title="释放资源的方式"></a>释放资源的方式</h3><ul>
+<li><p><code>try-catch-finally</code></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">    ...</span><br><span class="line">    ...</span><br><span class="line">&#125; <span class="keyword">catch</span> (IOException e)&#123;</span><br><span class="line">    e.prntStackTrace();</span><br><span class="line">&#125; fianlly&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<p>finally代码区的特点：不论try中的程序是否正常执行，最后一定会执行finally区，除非JVM终止。</p>
+<p>作用：一般用于在程序执行完后进行资源的释放操作（专业级做法）。</p>
+</li>
+<li><p><code>try-with-resource</code>：JDK7开始提供了更简单的资源释放方法</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">try</span>(定义资源<span class="number">1</span>, 定义资源<span class="number">2</span>)&#123;</span><br><span class="line">    ...</span><br><span class="line">    ...</span><br><span class="line">&#125; <span class="keyword">catch</span> (IOException e)&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
 
-
-<h2 id="String类的常用方法"><a href="#String类的常用方法" class="headerlink" title="String类的常用方法"></a>String类的常用方法</h2><h3 id="public-int-length"><a href="#public-int-length" class="headerlink" title="public int length();"></a>public int length();</h3><p>String类中的length()方法来获取一个String对象的字符序列的长度。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="string">&quot;戈仑石人&quot;</span>;</span><br><span class="line"><span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> s.length();      <span class="comment">//n的值为4</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="public-boolean-equals-String-s"><a href="#public-boolean-equals-String-s" class="headerlink" title="public boolean equals(String s);"></a>public boolean equals(String s);</h3><p>调用该方法比较当前String对象的字符序列是否与参数s指定的String对象的字符序列相同（比较实体是否相同）</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">s1</span> <span class="operator">=</span> <span class="string">&quot;加农炮&quot;</span>;</span><br><span class="line"><span class="type">String</span> <span class="variable">s2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">&quot;加农炮&quot;</span>);</span><br><span class="line">s1.equals(s2);                    		<span class="comment">//true</span></span><br><span class="line">s1 == s2;						 	 	<span class="comment">//false</span></span><br><span class="line"><span class="comment">//注意“==”和equals(String s)用法的区别。前者比较引用是否相同，后者判断实体是否相同</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h3 id="public-boolean-startsWith-String-s"><a href="#public-boolean-startsWith-String-s" class="headerlink" title="public boolean startsWith(String s);"></a>public boolean startsWith(String s);</h3><p>判断当前对象的字符序列前缀是否为参数指定的s</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="string">&quot;每张卡牌生来平等，皇家巨人也不例外&quot;</span>;</span><br><span class="line">s.startsWith(<span class="string">&quot;每张&quot;</span>);                                 <span class="comment">//true</span></span><br><span class="line">s.startsWith(<span class="string">&quot;卡牌&quot;</span>);								 <span class="comment">//false</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="public-boolean-endWith-String-s"><a href="#public-boolean-endWith-String-s" class="headerlink" title="public boolean endWith(String s);"></a>public boolean endWith(String s);</h3><p>判断当前对象的字符序列后缀是否为参数指定的s</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="string">&quot;每张卡牌生来平等，皇家巨人也不例外&quot;</span>;</span><br><span class="line">s.endsWith(<span class="string">&quot;例外&quot;</span>);                                 <span class="comment">//true</span></span><br><span class="line">s.endsWith(<span class="string">&quot;卡牌&quot;</span>);								 <span class="comment">//false</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="public-int-compareTo-String-s"><a href="#public-int-compareTo-String-s" class="headerlink" title="public int compareTo(String s);"></a>public int compareTo(String s);</h3><p>对象调用该方法按字典序与参数s的字符序列比较大小。相同返回0，大于s返回正值，小于s返回负值。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="string">&quot;abcde&quot;</span>;</span><br><span class="line">s.compareTo(<span class="string">&quot;boy&quot;</span>);      <span class="comment">//负值</span></span><br><span class="line">s.compareTo(<span class="string">&quot;aba&quot;</span>);      <span class="comment">//正值</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="public-boolean-contains-String-s"><a href="#public-boolean-contains-String-s" class="headerlink" title="public boolean contains(String s);"></a>public boolean contains(String s);</h3><p>判断当前对象中是否包含参数s中的字符序列</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="string">&quot;瓦基丽武神&quot;</span>; </span><br><span class="line">s.contains(<span class="string">&quot;武神&quot;</span>);       <span class="comment">//true</span></span><br><span class="line">s.contains(<span class="string">&quot;丽丽&quot;</span>);		<span class="comment">//false</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="public-int-indexOf-String-s"><a href="#public-int-indexOf-String-s" class="headerlink" title="public int indexOf(String s);"></a>public int indexOf(String s);</h3><p>从0位置开始索引首次出现参数s出现位置，并返回该位置，如果没有检索到则返回-1</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="string">&quot;上海自来水来自海上&quot;</span>;</span><br><span class="line"><span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> s.indexOf(<span class="string">&quot;海&quot;</span>);          <span class="comment">//n等于1</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="public-int-lastIndexOf-String-s"><a href="#public-int-lastIndexOf-String-s" class="headerlink" title="public int lastIndexOf(String s);"></a>public int lastIndexOf(String s);</h3><p>从0位置开始索引最后一次出现参数s出现位置，并返回该位置，如果没有检索到则返回-1</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="string">&quot;上海自来水来自海上&quot;</span>;</span><br><span class="line"><span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> s.lastIndexOf(<span class="string">&quot;海&quot;</span>);       <span class="comment">//n等于7</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="public-String-substring-int-startpoint"><a href="#public-String-substring-int-startpoint" class="headerlink" title="public String substring(int startpoint);"></a>public String substring(int startpoint);</h3><p>复制从位置startpoint到最后位置上的字符到新的字符序列。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">s1</span> <span class="operator">=</span> <span class="string">&quot;我喜欢唱、跳、rap、篮球&quot;</span>;</span><br><span class="line"><span class="type">String</span> <span class="variable">s2</span> <span class="operator">=</span> s7.substring(<span class="number">3</span>);           <span class="comment">//s2的字符序列是：唱、跳、rap、篮球</span></span><br></pre></td></tr></table></figure>
-
-<p>PS：substring(int start，int end)为复制从start位置至end-1位置</p>
-<h3 id="public-String-trim"><a href="#public-String-trim" class="headerlink" title="public String trim();"></a>public String trim();</h3><p>调用该方法将得到一个新的对象，该对象是当前对象的字符序列<em><strong>去掉前后空格</strong></em>的字符序列</p>
-<h2 id="String对象与基本数据的相互转换"><a href="#String对象与基本数据的相互转换" class="headerlink" title="String对象与基本数据的相互转换"></a>String对象与基本数据的相互转换</h2><h3 id="将String转换为基本型"><a href="#将String转换为基本型" class="headerlink" title="将String转换为基本型"></a>将String转换为基本型</h3><p>使用Java.lang包中的<em><strong>Integer</strong></em>类调用其类方法***public static int parseInt(String s)***可以将由”数字“字符组成的字符序列转化为int型数据。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> x;</span><br><span class="line"><span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="string">&quot;1234&quot;</span>;</span><br><span class="line">x = Integer.parseInt(s);</span><br></pre></td></tr></table></figure>
-
-<p>类似，使用java.lang包中的Byte、Short、Long、Float、Double类调用相应的类方法</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Floatpublic <span class="keyword">static</span> <span class="type">byte</span> <span class="title function_">parseByte</span><span class="params">(String s)</span> <span class="keyword">throws</span> NumberFormatException</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">short</span> <span class="title function_">parseShort</span><span class="params">(String s)</span> <span class="keyword">throws</span> NumberFormatException</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">long</span> <span class="title function_">parseLong</span><span class="params">(String s)</span> <span class="keyword">throws</span> NumberFormatException</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">float</span> <span class="title function_">parseFloat</span><span class="params">(String s)</span> <span class="keyword">throws</span> NumberFormatException</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">double</span> <span class="title function_">parseDouble</span><span class="params">(String s)</span> <span class="keyword">throws</span> NumberFormatException    </span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="将基本型转换为String对象"><a href="#将基本型转换为String对象" class="headerlink" title="将基本型转换为String对象"></a>将基本型转换为String对象</h3><p>可以使用以下String类的类方法</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">valueOf</span><span class="params">(<span class="type">byte</span> n)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">valueOf</span><span class="params">(<span class="type">int</span> n)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">valueOf</span><span class="params">(<span class="type">long</span> n)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">valueOf</span><span class="params">(<span class="type">float</span> n)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">valueOf</span><span class="params">(<span class="type">double</span> n)</span>    </span><br></pre></td></tr></table></figure>
-
-<p>例：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">s1</span> <span class="operator">=</span> String.valueOf(<span class="number">1234</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//也可以用到上面介绍的并置运算，即使用一个空字符串与基本型数据进行并置运算</span></span><br><span class="line"><span class="type">String</span> <span class="variable">s2</span> <span class="operator">=</span> <span class="string">&quot;&quot;</span> + <span class="number">1234</span>;</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="基本型数据的进制表示"><a href="#基本型数据的进制表示" class="headerlink" title="基本型数据的进制表示"></a>基本型数据的进制表示</h3><p>可以把整形数据（例如int、long型数据的二进制、八进制、或十六进制）转换成String对象，即让String对象封装的字符序列是int或long型数据的二进制、八进制或十六进制。</p>
-<p>Integer和long类的下列类方法返回整数的进制的String对象表示（负数返回补码），即返回的String对象封装的字符序列是<em><strong>参数的相应进制</strong></em></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">toBinaryString</span><span class="params">(<span class="type">int</span> i)</span>       <span class="comment">//二进制</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">toOctalString</span><span class="params">(<span class="type">int</span> i)</span>		 <span class="comment">//八进制</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">toHexString</span><span class="params">(<span class="type">int</span> i)</span>			 <span class="comment">//十六进制</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">toBinaryString</span><span class="params">(<span class="type">long</span> i)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">toOctalString</span><span class="params">(<span class="type">long</span> i)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">tohexString</span><span class="params">(<span class="type">long</span> i)</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="关于main-方法的参数化"><a href="#关于main-方法的参数化" class="headerlink" title="关于main()方法的参数化"></a>关于main()方法的参数化</h3><p>使用解释器java.exe执行程序来执行主类时，从键盘输入若干字符序列 ，用空格分开，它们分别对应args[0]、args[1]、args[2]……</p>
-<h2 id="对象的String表示"><a href="#对象的String表示" class="headerlink" title="对象的String表示"></a>对象的String表示</h2><p>所有的类都默认是java.lang包中Object类的子类或间接子类。Object类有一个public String toString()方法，一个对象调用该方法返回String对象的字符序列的一般形式为</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">创建对象的类的名字@对象的引用</span><br><span class="line"></span><br><span class="line">System.out.println(object);</span><br><span class="line">//等价于</span><br><span class="line">System.out,println(object.toString)</span><br></pre></td></tr></table></figure>
+<p>注意：</p>
+<ul>
+<li>该资源使用完毕后，会自动调用其<code>close()</code>方法，完成对资源的释放！</li>
+<li><code>()</code>中只能放置资源对象(流对象)。</li>
+<li>实现接口<code>AutoCloseable</code>的对象称之为资源对象，资源都会有一个<code>close()</code>方法</li>
+</ul>
+</li>
+</ul>
 ]]></content>
       <categories>
         <category>Java</category>
@@ -726,499 +1105,6 @@
 </tbody></table>
 </li>
 </ol>
-]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Java_IO流(一)</title>
-    <url>/2023/11/14/Java_IO%E6%B5%81(%E4%B8%80)/</url>
-    <content><![CDATA[<h1 id="File、IO流概述"><a href="#File、IO流概述" class="headerlink" title="File、IO流概述"></a>File、IO流概述</h1><ol>
-<li><p>File：代表文件</p>
-<ul>
-<li><p>File是<code>java.io</code>包下的类，File类的对象，用于代表当前操作系统的文件（可以是文件、或文件夹）。</p>
-</li>
-<li><p>File类可以实现获取文件信息（大小、文件名、修改时间）、判断文件类型、创建文件&#x2F;文件夹、删除文件&#x2F;文件夹等操作</p>
-</li>
-<li><p>注意：File类只能对文件本身进行操作，不能读写文件里面存储的数据</p>
-</li>
-</ul>
-</li>
-<li><p>IO流：读取文件</p>
-<ul>
-<li>用于读写数据的（可以读写文件，或者网络中的数据…）</li>
-</ul>
-</li>
-</ol>
-<h1 id="File"><a href="#File" class="headerlink" title="File"></a>File</h1><h2 id="创建对象"><a href="#创建对象" class="headerlink" title="创建对象"></a>创建对象</h2><ol>
-<li><p>File类对象构造方法：</p>
-<table>
-<thead>
-<tr>
-<th align="center">构造方法</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"><code>public File(String pathname)</code></td>
-<td align="center">根据文件路径创建文件对象</td>
-</tr>
-<tr>
-<td align="center"><code>public File(String parent, String child)</code></td>
-<td align="center">根据父路径和子路径名字创建文件对象</td>
-</tr>
-<tr>
-<td align="center"><code>public File(File parent, String child)</code></td>
-<td align="center">根据父路径对应文件对象和子路径名字创建文件对象</td>
-</tr>
-</tbody></table>
-</li>
-<li><p>注意：</p>
-<ul>
-<li>File对象既可以代表文件，也可以代表文件夹。</li>
-<li>File封装的对象仅仅是一个路径名，这个路径可以是存在的，也允许是不存在的。</li>
-</ul>
-</li>
-<li><p>绝对路径、相对路径</p>
-<ul>
-<li>绝对路径：从盘符开始。</li>
-<li>相对路径：不带盘符，默认直接到当前工程下的目录寻求文件。</li>
-</ul>
-</li>
-</ol>
-<h2 id="常用方法1：判断文件类型、获取文件信息"><a href="#常用方法1：判断文件类型、获取文件信息" class="headerlink" title="常用方法1：判断文件类型、获取文件信息"></a>常用方法1：判断文件类型、获取文件信息</h2><table>
-<thead>
-<tr>
-<th align="center">方法名称</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"><code>public boolean exists()</code></td>
-<td align="center">判断当前文件对象，对应的文件路径是否存在，存在返回true</td>
-</tr>
-<tr>
-<td align="center"><code>public boolean isFile()</code></td>
-<td align="center">判断当前文件对象指代的是否为文件，是则返回true，反之</td>
-</tr>
-<tr>
-<td align="center"><code>public boolean isDirectory()</code></td>
-<td align="center">判断当前文件对象指代的是否为文件夹，是则返回true，反之</td>
-</tr>
-<tr>
-<td align="center"><code>public String getName()</code></td>
-<td align="center">获取文件的名称（包含后缀）</td>
-</tr>
-<tr>
-<td align="center"><code>public long length()</code></td>
-<td align="center">获取文件的大小，返回字节个数</td>
-</tr>
-<tr>
-<td align="center"><code>public long lastModified()</code></td>
-<td align="center">获取文件的最后修改时间</td>
-</tr>
-<tr>
-<td align="center"><code>public String getPath()</code></td>
-<td align="center">获取创建文件对象时，使用的路径</td>
-</tr>
-<tr>
-<td align="center"><code>public String getAbsolutePath()</code></td>
-<td align="center">获取绝对路径</td>
-</tr>
-</tbody></table>
-<h2 id="常用方法2：创建文件、删除文件"><a href="#常用方法2：创建文件、删除文件" class="headerlink" title="常用方法2：创建文件、删除文件"></a>常用方法2：创建文件、删除文件</h2><ol>
-<li><p>File类创建文件的功能</p>
-<table>
-<thead>
-<tr>
-<th align="center">方法名称</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"><code>public boolean createNewFile() </code></td>
-<td align="center">创建一个新的空文件</td>
-</tr>
-<tr>
-<td align="center"><code>public boolean mkdir()</code></td>
-<td align="center">只能创建一级文件夹</td>
-</tr>
-<tr>
-<td align="center"><code>public boolean mkdirs()</code></td>
-<td align="center">可以创建多级文件夹</td>
-</tr>
-</tbody></table>
-</li>
-<li><p>File类删除文件的功能</p>
-<table>
-<thead>
-<tr>
-<th align="center">方法名称</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"><code>public boolean delete()</code></td>
-<td align="center">删除文件、空文件夹</td>
-</tr>
-</tbody></table>
-<p>注意：<code>delete</code>方法默认只能删除文件和空文件夹，删除后的文件不会进入回收站。</p>
-</li>
-</ol>
-<h2 id="常用方法3：遍历文件夹"><a href="#常用方法3：遍历文件夹" class="headerlink" title="常用方法3：遍历文件夹"></a>常用方法3：遍历文件夹</h2><ol>
-<li><p>File类提供遍历文件夹的功能</p>
-<table>
-<thead>
-<tr>
-<th align="center">方法名称</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"><code>public String[] list()</code></td>
-<td align="center">获取当前目录下所有的“一级文件名称”到一个字符串数组中去返回</td>
-</tr>
-<tr>
-<td align="center"><code>public File[] listFiles()</code></td>
-<td align="center">获取当前目录下所有的“一级文件对象”到一个文件对象数组中去返回（重点）</td>
-</tr>
-</tbody></table>
-</li>
-<li><p>使用<code>listFlies</code>方法时的注意事项：</p>
-<ul>
-<li>当主调时文件，或者路径不存在时，返回null</li>
-<li>当主调是空文件夹时，返回一个长度为0的数组</li>
-<li>当主调是一个有内容的文件夹时，将里面所有一级文件和文件夹的路径放在File数组中返回</li>
-<li>当主调是一个文件夹，且里面有隐藏文件时，将里面所有文件和文件夹的路径放在File数组中返回，包含隐藏文件</li>
-<li>当主调是一个文件夹，但是没有权限访问该文件夹时，返回null</li>
-</ul>
-</li>
-</ol>
-<h1 id="前置知识："><a href="#前置知识：" class="headerlink" title="前置知识："></a>前置知识：</h1><h2 id="方法递归"><a href="#方法递归" class="headerlink" title="方法递归"></a>方法递归</h2><ol>
-<li><p>什么是方法递归？</p>
-<ul>
-<li>递归是一种算法，在程序设计语言中广泛应用</li>
-<li>从形式上说：方法调用自身的形式称为方法递归（recursion）</li>
-</ul>
-</li>
-<li><p>递归的形式</p>
-<ul>
-<li>直接递归：方法自己调用自己</li>
-<li>间接递归：方法调用其他方法，其他方法又回调方法自己</li>
-</ul>
-</li>
-<li><p>使用方法递归时需要注意的问题：</p>
-<ul>
-<li>递归如果没有控制好终止，会出现递归死循环，导致栈内存溢出错误</li>
-</ul>
-</li>
-<li><p>递归算法三要素：</p>
-<ul>
-<li>递归公式</li>
-<li>递归的终结点</li>
-<li>递归的方向必须要走向终止点</li>
-</ul>
-</li>
-<li><p>其他应用：文件搜索</p>
-<ul>
-<li><p>分析：</p>
-<ol>
-<li>先找出该当前文件夹下的所有一级目录</li>
-<li>遍历全部一级对象，判断是否是文件</li>
-<li>如果是文件，判断是否是自己想要的</li>
-<li>如果是文件夹，需要继续进入到该文件夹，重复上述过程</li>
-</ol>
-</li>
-<li><p>代码实现：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.File;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">SearchFile</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">File</span> <span class="variable">f</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(<span class="string">&quot;D:&quot;</span>);</span><br><span class="line">        searchFile(f, <span class="string">&quot;QQ&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> dir 目录</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> fileName 要搜索的文件名称</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">searchFile</span><span class="params">(File dir, String fileName)</span>&#123;</span><br><span class="line">        <span class="comment">// 1.拦截非法情况</span></span><br><span class="line">        <span class="keyword">if</span> (!dir.exists() || dir.isFile() ||dir == <span class="literal">null</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 2.获取该当前目录下所有一级目录</span></span><br><span class="line">        File[] files = dir.listFiles();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 3.判断当前目录下是否存在文件对象</span></span><br><span class="line">        <span class="keyword">if</span> (files != <span class="literal">null</span> &amp;&amp; files.length&gt;<span class="number">0</span>)&#123;</span><br><span class="line">            </span><br><span class="line">            <span class="comment">// 4.遍历全部一级文件对象</span></span><br><span class="line">            <span class="keyword">for</span> (File f : files)&#123;</span><br><span class="line">                <span class="comment">// 5.判断是否为文件</span></span><br><span class="line">                <span class="keyword">if</span> (f.isFile())&#123;</span><br><span class="line">                    <span class="keyword">if</span> (f.getName().contains(fileName))&#123;</span><br><span class="line">                        System.out.println(f.getAbsoluteFile());</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                    searchFile(f, fileName);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-</ol>
-<h2 id="字符集"><a href="#字符集" class="headerlink" title="字符集"></a>字符集</h2><h3 id="常见字符集介绍"><a href="#常见字符集介绍" class="headerlink" title="常见字符集介绍"></a>常见字符集介绍</h3><ol>
-<li><p>标准ASCII字符集</p>
-<ul>
-<li>ASCII(American Standard Code for Information Interchange)：美国信息交换标准代码，包括英文、符号等。</li>
-<li>标准ASCIII使用1个字节存储一个字符，首尾是0总共可以表示128个字符。</li>
-</ul>
-</li>
-<li><p>GBK（汉字内码扩展规范，国标）</p>
-<ul>
-<li>汉字编码字符集，包含了2万多个汉字等字符，GBK中一个中文字符编码成两个字节的形式存储。</li>
-<li>注意：GBK兼容了ASCII字符集</li>
-<li>GBK规定：汉字的第一个字节的第一位必须是1</li>
-</ul>
-</li>
-<li><p>Unicode字符集(统一码，也叫万国码)</p>
-<ul>
-<li>Unicode是国际组织制定的，可以容纳世界上所有文字、符号的字符集</li>
-<li><code>UTF-32</code>：四个字节表示一个字符，但由于占存储空间大、通信效率变低等原因，并没有被完全采纳</li>
-</ul>
-</li>
-<li><p>UTF-8</p>
-<ul>
-<li><p><code>UTF-8</code>是Unicode字符集的一种编码方案，采取可变长编码方案，共分四个长度区：1个字节，2个字节，3个字节，4个字节</p>
-</li>
-<li><p>英文字符、数字等只占1个字节（兼容标准ASCII编码），汉字字符占用3个字节</p>
-</li>
-<li><p>UTF-8编码方式：</p>
-<table>
-<thead>
-<tr>
-<th>UTF-8编码方式（二进制）</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>0xxxxxxx</code>：   (ASCII码)</td>
-</tr>
-<tr>
-<td><code>110xxxxx</code> <code>10xxxxxx</code></td>
-</tr>
-<tr>
-<td><code>1110xxxx</code> <code>10xxxxxx</code> <code>10xxxxxx</code></td>
-</tr>
-<tr>
-<td><code>11110xxx</code> <code>10xxxxxx</code> <code>10xxxxxx</code> <code>10xxxxxx</code></td>
-</tr>
-</tbody></table>
-</li>
-<li><p>注意：技术人员在开发时都应该使用UTF-8编码</p>
-</li>
-</ul>
-</li>
-<li><p>总结：</p>
-<ul>
-<li>ASCII字符集：只有英文、数字、符号等，占1个字节</li>
-<li>GBK字符集：汉字占2个字节，英文、数字占1个字节</li>
-<li>UTF-8字符集：汉字占3个字节，英文、数字占1个字节</li>
-<li>注意1：字符编码时使用的字符集，和解码时使用的字符集必须一致，否则会出现乱码</li>
-<li>注意2：英文、数字一般不会出现乱码，英文很多字符集都兼容ASCII编码</li>
-</ul>
-</li>
-</ol>
-<h3 id="字符集的编码、解码操作"><a href="#字符集的编码、解码操作" class="headerlink" title="字符集的编码、解码操作"></a>字符集的编码、解码操作</h3><ol>
-<li><p>Java代码完成对字符的编码</p>
-<table>
-<thead>
-<tr>
-<th align="center">String提供了如下方法</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"><code>byte[] getBytes()</code></td>
-<td align="center">使用平台的默认字符集将该String编码为一系列字节，将结果存储到新的字节数组中</td>
-</tr>
-<tr>
-<td align="center"><code>byte[] getBytes(String charsetName)</code></td>
-<td align="center">使用指定的字符集将String编码为一系列字节，将结果存储到新的字节数组中</td>
-</tr>
-</tbody></table>
-</li>
-<li><p>Java代码完成对字符的解码</p>
-<table>
-<thead>
-<tr>
-<th align="center">String提供了如下方法</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"><code>String(byte[] bytes)</code></td>
-<td align="center">通过平台的默认字符集解码指定的字节数组来构造新的String</td>
-</tr>
-<tr>
-<td align="center"><code>String(byte[] bytes, String charsetName)</code></td>
-<td align="center">通过指定的字符集解码指定的字节数组来构造新的String</td>
-</tr>
-</tbody></table>
-</li>
-</ol>
-<h1 id="IO流"><a href="#IO流" class="headerlink" title="IO流"></a>IO流</h1><h2 id="IO流概述"><a href="#IO流概述" class="headerlink" title="IO流概述"></a>IO流概述</h2><ol>
-<li><p>IO流：输入输出流，读写数据的</p>
-<ul>
-<li><p><code>I</code>指Input，称为输入流：负责把数据读到内存中去</p>
-</li>
-<li><p><code>O</code>指Output，称为输出流：负责写数据出去</p>
-</li>
-</ul>
-</li>
-<li><p>怎么学IO流：</p>
-<ul>
-<li>先搞清楚IO流的分类、体系</li>
-<li>再挨个学习每个IO流的作用、用法</li>
-</ul>
-</li>
-<li><p>IO流的分类：</p>
-<ul>
-<li><p>按流的方向分为：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">graph TB;</span><br><span class="line">	IO流 --&gt; 输入流</span><br><span class="line">	IO流 --&gt; 输出流</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>按流中数据的最小单位，分为：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">graph TB;</span><br><span class="line">	IO流 --&gt; 字节流 --&gt; 适合操作所有类型文件</span><br><span class="line">	IO流 --&gt; 字符流 --&gt; 只适合操作纯文本文件</span><br><span class="line">	</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>IO流总体来看就有四大流：</p>
-<ul>
-<li>字节输入流：以内存为基准，来自磁盘文件&#x2F;网络中的数据以字节的形式读入到内存中去的流</li>
-<li>字节输出流：以内存为基准，把内存中的数据以字节写出到磁盘文件或者网络中去的流</li>
-<li>字符输入流：以内存为基准，来自磁盘文件&#x2F;网络中的数据以字符的形式读入到内存中去的流</li>
-<li>字符输出流：以内存为基准，把内存中的数据以字符写出到磁盘文件或者网络中去的流</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>IO流的体系：</p>
-<ul>
-<li><p><code>java.io</code>包下：四大类流都是抽象类</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">graph TB;</span><br><span class="line">	IO流体系 --&gt; 字节流</span><br><span class="line">	IO流体系 --&gt; 字符流</span><br><span class="line">	字节流 --&gt; 字节输入流\InpuStream --&gt; FileInpuStream</span><br><span class="line">	字节流 --&gt; 字节输出流\OutpuStream --&gt; FileOutpuStream</span><br><span class="line">	字符流 --&gt; 字符输入流\Reader --&gt; FileReader</span><br><span class="line">	字符流 --&gt; 字符输出流\Writer --&gt; FileWriter</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-</ol>
-<h2 id="字节流"><a href="#字节流" class="headerlink" title="字节流"></a>字节流</h2><ul>
-<li>字节流非常适合做一切文件的复制操作：任何文件的底层都是字节，字节流做复制，是一字不漏的转移完全部字节，只要复制后的文件格式一致就没有问问题</li>
-</ul>
-<h3 id="FileInputStream"><a href="#FileInputStream" class="headerlink" title="FileInputStream"></a>FileInputStream</h3><ol>
-<li><p>作用：以内存为基准，来自磁盘文件的数据以字节的形式读入到内存中去</p>
-</li>
-<li><p>构造方法：</p>
-<table>
-<thead>
-<tr>
-<th align="center">构造方法</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"><code>public FileInputStream(File file)</code></td>
-<td align="center">创建字节输入流管道与源文件接通</td>
-</tr>
-<tr>
-<td align="center"><code>public FileInputStream(String pathname)</code></td>
-<td align="center">创建字节输入流管道与源文件接通</td>
-</tr>
-</tbody></table>
-</li>
-<li><p>常用方法：</p>
-<table>
-<thead>
-<tr>
-<th align="center">方法名称</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"><code>public int read()</code></td>
-<td align="center">每次读取一个字节返回，如果发现没有数据可读会返回-1</td>
-</tr>
-<tr>
-<td align="center"><code>public int read(byte[] bytes)</code></td>
-<td align="center">每次使用一个字节数组去读取数据，返回字节数组读取了多少个字节，如果发现没有数据可读会返回-1</td>
-</tr>
-</tbody></table>
-</li>
-<li><p>注意事项：</p>
-<ul>
-<li>使用<code>FileInputStream</code>每次读取一个字节，读取性能较差，并且读取汉字输出会乱码</li>
-<li>使用<code>FileInputStream</code>每次读取多个字节，读取性能得到了提升，但读取汉字还是会输出会乱码</li>
-</ul>
-</li>
-<li><p>一次读完读取完全部字节</p>
-<ul>
-<li><p>方式一：定义一个与文件一样大的字节数组，一次性读取完文件的全部字节 </p>
-</li>
-<li><p>方式二：Java官方为<code>InputStream</code>提供了如下方法，可以直接把文件的全部字节读取到一个字节数组中返回。</p>
-<table>
-<thead>
-<tr>
-<th align="center">方法名称</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"><code>public byte[] readAllBytes() throws IOException</code></td>
-<td align="center">直接将当前字节输入流对应的文件对象的字节数据装到一个字节数组返回</td>
-</tr>
-</tbody></table>
-</li>
-</ul>
-</li>
-<li><p>读取文本内容更适合字符流，字节流适合做数据的转移，如：文件复印等</p>
-</li>
-</ol>
-<h3 id="FileOutputStream"><a href="#FileOutputStream" class="headerlink" title="FileOutputStream"></a>FileOutputStream</h3><ol>
-<li><p>作用：以内存为基准，把内存中的数据以字节的形式写出到文件中去</p>
-</li>
-<li><p>构造方法：</p>
-<table>
-<thead>
-<tr>
-<th align="center">构造方法</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"><code>public FileOutStream(File file)</code></td>
-<td align="center">创建字节输出流管道与源文件对象接通</td>
-</tr>
-<tr>
-<td align="center"><code>public FileOutStream(String filepath)</code></td>
-<td align="center">创建字节输出流管道与源文件对象接通</td>
-</tr>
-<tr>
-<td align="center"><code>public FileOutStream(File file, boolean append)</code></td>
-<td align="center">创建字节输出流管道与源文件对象接通，可追加数据</td>
-</tr>
-<tr>
-<td align="center"><code>public FileOutStream(String filepath, boolean append)</code></td>
-<td align="center">创建字节输出流管道与源文件对象接通，可追加数据</td>
-</tr>
-</tbody></table>
-</li>
-<li><p>常用方法：</p>
-<table>
-<thead>
-<tr>
-<th align="center">方法名称</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"><code>public void write(int a)</code></td>
-<td align="center">写一个字节出去</td>
-</tr>
-<tr>
-<td align="center"><code>public void write(byte[] buffer)</code></td>
-<td align="center">写一个字节数组出去</td>
-</tr>
-<tr>
-<td align="center"><code>public void write(byte[] buffer, int pos, int len)</code></td>
-<td align="center">写一个字节数组的一部分出去</td>
-</tr>
-<tr>
-<td align="center"><code>public void close() throws IOException</code></td>
-<td align="center">关闭流</td>
-</tr>
-</tbody></table>
-</li>
-</ol>
-<h3 id="释放资源的方式"><a href="#释放资源的方式" class="headerlink" title="释放资源的方式"></a>释放资源的方式</h3><ul>
-<li><p><code>try-catch-finally</code></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">    ...</span><br><span class="line">    ...</span><br><span class="line">&#125; <span class="keyword">catch</span> (IOException e)&#123;</span><br><span class="line">    e.prntStackTrace();</span><br><span class="line">&#125; fianlly&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>finally代码区的特点：不论try中的程序是否正常执行，最后一定会执行finally区，除非JVM终止。</p>
-<p>作用：一般用于在程序执行完后进行资源的释放操作（专业级做法）。</p>
-</li>
-<li><p><code>try-with-resource</code>：JDK7开始提供了更简单的资源释放方法</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">try</span>(定义资源<span class="number">1</span>, 定义资源<span class="number">2</span>)&#123;</span><br><span class="line">    ...</span><br><span class="line">    ...</span><br><span class="line">&#125; <span class="keyword">catch</span> (IOException e)&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
-
-<p>注意：</p>
-<ul>
-<li>该资源使用完毕后，会自动调用其<code>close()</code>方法，完成对资源的释放！</li>
-<li><code>()</code>中只能放置资源对象(流对象)。</li>
-<li>实现接口<code>AutoCloseable</code>的对象称之为资源对象，资源都会有一个<code>close()</code>方法</li>
-</ul>
-</li>
-</ul>
 ]]></content>
       <categories>
         <category>Java</category>
@@ -1832,6 +1718,120 @@
 </ul>
 </li>
 </ol>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Java_String类</title>
+    <url>/2023/06/02/Java-String%E7%B1%BB/</url>
+    <content><![CDATA[<h1 id="Java常用实用类学习——String类"><a href="#Java常用实用类学习——String类" class="headerlink" title="Java常用实用类学习——String类"></a>Java常用实用类学习——String类</h1><p>String类是java中用于处理字符序列的类。String类在java.lang包中，java把String类定义为final类，用户不能拓展String类，即String类不能有子类。</p>
+<h2 id="构造String对象"><a href="#构造String对象" class="headerlink" title="构造String对象"></a>构造String对象</h2><p>String对象习惯地被翻译为字符串对象。</p>
+<h3 id="常量对象"><a href="#常量对象" class="headerlink" title="常量对象"></a>常量对象</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">hi</span> <span class="operator">=</span> <span class="string">&quot;你好&quot;</span>;</span><br><span class="line"><span class="type">String</span> <span class="variable">hello</span> <span class="operator">=</span> <span class="string">&quot;你好&quot;</span>;</span><br></pre></td></tr></table></figure>
+
+<p>Java把用户程序的String常量都放在常量池，所以hi和hello的引用和实体是相同的</p>
+<h3 id="String对象"><a href="#String对象" class="headerlink" title="String对象"></a>String对象</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">&quot;hello&quot;</span>);</span><br><span class="line"><span class="type">String</span> <span class="variable">t</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">&quot;hello&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>使用String类声明对象并创建对象，凡是new运算符构造构造出的对象都不放在常量池中，所以，尽管s和t的实体是相同（s.equals(t)的值是true），但二者引用不同（ s&#x3D;&#x3D;t 结果是false）。</p>
+<p>String类还有两个常见方法</p>
+<ol>
+<li>String(char a[]);</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">char</span> a[] = &#123;<span class="string">&#x27;h&#x27;</span>,<span class="string">&#x27;i&#x27;</span>&#125;;</span><br><span class="line"><span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(a);</span><br><span class="line"></span><br><span class="line"><span class="comment">//相当于</span></span><br><span class="line"></span><br><span class="line"><span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">&quot;hi&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+
+
+<ol start="2">
+<li>String(char a[],int startIndex,int count);</li>
+</ol>
+<p>提取字符数组a中的一部分字符创建对象，startIndex和count是截取的起始位置和截取长度</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">char</span> a[] = &#123;<span class="string">&#x27;你&#x27;</span>,<span class="string">&#x27;好&#x27;</span>,<span class="string">&#x27;呀&#x27;</span>&#125;;</span><br><span class="line"><span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(a,<span class="number">1</span>,<span class="number">2</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//相当于</span></span><br><span class="line"></span><br><span class="line"><span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">&quot;好呀&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="不可变对象"><a href="#不可变对象" class="headerlink" title="不可变对象"></a>不可变对象</h3><p>对象的变量中存储的值不能再发生变化，原因是String是final类，String类也没有给其对象提供修改实体的方法。</p>
+<h2 id="String对象的并置"><a href="#String对象的并置" class="headerlink" title="String对象的并置"></a>String对象的并置</h2><p>String对象可以使用”+“进行并置运算，即首尾相接得到一个新的String对象。</p>
+<ul>
+<li>参与并置运算的String对象中有一个是变量，那么就会得到新的引用和实体</li>
+<li>参与并置运算的对象都是常量，那么得到的仍然是常量</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">hello</span> <span class="operator">=</span> <span class="string">&quot;你好&quot;</span>;</span><br><span class="line"><span class="type">String</span> <span class="variable">testOne</span> <span class="operator">=</span> <span class="string">&quot;你&quot;</span> + <span class="string">&quot;好&quot;</span>;</span><br><span class="line"><span class="comment">//hello、testOne的引用相同，即hello == testOne的结果为true</span></span><br><span class="line"></span><br><span class="line"><span class="type">String</span> <span class="variable">you</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">&quot;你&quot;</span>);</span><br><span class="line"><span class="type">String</span> <span class="variable">hi</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">&quot;好&quot;</span>);</span><br><span class="line"><span class="type">String</span> <span class="variable">textTwo</span> <span class="operator">=</span> you + hi;</span><br><span class="line"><span class="comment">//textTwo、testOne的引用不同，即textTwo == testOne的结果为false</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="String类的常用方法"><a href="#String类的常用方法" class="headerlink" title="String类的常用方法"></a>String类的常用方法</h2><h3 id="public-int-length"><a href="#public-int-length" class="headerlink" title="public int length();"></a>public int length();</h3><p>String类中的length()方法来获取一个String对象的字符序列的长度。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="string">&quot;戈仑石人&quot;</span>;</span><br><span class="line"><span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> s.length();      <span class="comment">//n的值为4</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="public-boolean-equals-String-s"><a href="#public-boolean-equals-String-s" class="headerlink" title="public boolean equals(String s);"></a>public boolean equals(String s);</h3><p>调用该方法比较当前String对象的字符序列是否与参数s指定的String对象的字符序列相同（比较实体是否相同）</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">s1</span> <span class="operator">=</span> <span class="string">&quot;加农炮&quot;</span>;</span><br><span class="line"><span class="type">String</span> <span class="variable">s2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">&quot;加农炮&quot;</span>);</span><br><span class="line">s1.equals(s2);                    		<span class="comment">//true</span></span><br><span class="line">s1 == s2;						 	 	<span class="comment">//false</span></span><br><span class="line"><span class="comment">//注意“==”和equals(String s)用法的区别。前者比较引用是否相同，后者判断实体是否相同</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h3 id="public-boolean-startsWith-String-s"><a href="#public-boolean-startsWith-String-s" class="headerlink" title="public boolean startsWith(String s);"></a>public boolean startsWith(String s);</h3><p>判断当前对象的字符序列前缀是否为参数指定的s</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="string">&quot;每张卡牌生来平等，皇家巨人也不例外&quot;</span>;</span><br><span class="line">s.startsWith(<span class="string">&quot;每张&quot;</span>);                                 <span class="comment">//true</span></span><br><span class="line">s.startsWith(<span class="string">&quot;卡牌&quot;</span>);								 <span class="comment">//false</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="public-boolean-endWith-String-s"><a href="#public-boolean-endWith-String-s" class="headerlink" title="public boolean endWith(String s);"></a>public boolean endWith(String s);</h3><p>判断当前对象的字符序列后缀是否为参数指定的s</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="string">&quot;每张卡牌生来平等，皇家巨人也不例外&quot;</span>;</span><br><span class="line">s.endsWith(<span class="string">&quot;例外&quot;</span>);                                 <span class="comment">//true</span></span><br><span class="line">s.endsWith(<span class="string">&quot;卡牌&quot;</span>);								 <span class="comment">//false</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="public-int-compareTo-String-s"><a href="#public-int-compareTo-String-s" class="headerlink" title="public int compareTo(String s);"></a>public int compareTo(String s);</h3><p>对象调用该方法按字典序与参数s的字符序列比较大小。相同返回0，大于s返回正值，小于s返回负值。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="string">&quot;abcde&quot;</span>;</span><br><span class="line">s.compareTo(<span class="string">&quot;boy&quot;</span>);      <span class="comment">//负值</span></span><br><span class="line">s.compareTo(<span class="string">&quot;aba&quot;</span>);      <span class="comment">//正值</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="public-boolean-contains-String-s"><a href="#public-boolean-contains-String-s" class="headerlink" title="public boolean contains(String s);"></a>public boolean contains(String s);</h3><p>判断当前对象中是否包含参数s中的字符序列</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="string">&quot;瓦基丽武神&quot;</span>; </span><br><span class="line">s.contains(<span class="string">&quot;武神&quot;</span>);       <span class="comment">//true</span></span><br><span class="line">s.contains(<span class="string">&quot;丽丽&quot;</span>);		<span class="comment">//false</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="public-int-indexOf-String-s"><a href="#public-int-indexOf-String-s" class="headerlink" title="public int indexOf(String s);"></a>public int indexOf(String s);</h3><p>从0位置开始索引首次出现参数s出现位置，并返回该位置，如果没有检索到则返回-1</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="string">&quot;上海自来水来自海上&quot;</span>;</span><br><span class="line"><span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> s.indexOf(<span class="string">&quot;海&quot;</span>);          <span class="comment">//n等于1</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="public-int-lastIndexOf-String-s"><a href="#public-int-lastIndexOf-String-s" class="headerlink" title="public int lastIndexOf(String s);"></a>public int lastIndexOf(String s);</h3><p>从0位置开始索引最后一次出现参数s出现位置，并返回该位置，如果没有检索到则返回-1</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="string">&quot;上海自来水来自海上&quot;</span>;</span><br><span class="line"><span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> s.lastIndexOf(<span class="string">&quot;海&quot;</span>);       <span class="comment">//n等于7</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="public-String-substring-int-startpoint"><a href="#public-String-substring-int-startpoint" class="headerlink" title="public String substring(int startpoint);"></a>public String substring(int startpoint);</h3><p>复制从位置startpoint到最后位置上的字符到新的字符序列。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">s1</span> <span class="operator">=</span> <span class="string">&quot;我喜欢唱、跳、rap、篮球&quot;</span>;</span><br><span class="line"><span class="type">String</span> <span class="variable">s2</span> <span class="operator">=</span> s7.substring(<span class="number">3</span>);           <span class="comment">//s2的字符序列是：唱、跳、rap、篮球</span></span><br></pre></td></tr></table></figure>
+
+<p>PS：substring(int start，int end)为复制从start位置至end-1位置</p>
+<h3 id="public-String-trim"><a href="#public-String-trim" class="headerlink" title="public String trim();"></a>public String trim();</h3><p>调用该方法将得到一个新的对象，该对象是当前对象的字符序列<em><strong>去掉前后空格</strong></em>的字符序列</p>
+<h2 id="String对象与基本数据的相互转换"><a href="#String对象与基本数据的相互转换" class="headerlink" title="String对象与基本数据的相互转换"></a>String对象与基本数据的相互转换</h2><h3 id="将String转换为基本型"><a href="#将String转换为基本型" class="headerlink" title="将String转换为基本型"></a>将String转换为基本型</h3><p>使用Java.lang包中的<em><strong>Integer</strong></em>类调用其类方法***public static int parseInt(String s)***可以将由”数字“字符组成的字符序列转化为int型数据。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> x;</span><br><span class="line"><span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="string">&quot;1234&quot;</span>;</span><br><span class="line">x = Integer.parseInt(s);</span><br></pre></td></tr></table></figure>
+
+<p>类似，使用java.lang包中的Byte、Short、Long、Float、Double类调用相应的类方法</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Floatpublic <span class="keyword">static</span> <span class="type">byte</span> <span class="title function_">parseByte</span><span class="params">(String s)</span> <span class="keyword">throws</span> NumberFormatException</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">short</span> <span class="title function_">parseShort</span><span class="params">(String s)</span> <span class="keyword">throws</span> NumberFormatException</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">long</span> <span class="title function_">parseLong</span><span class="params">(String s)</span> <span class="keyword">throws</span> NumberFormatException</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">float</span> <span class="title function_">parseFloat</span><span class="params">(String s)</span> <span class="keyword">throws</span> NumberFormatException</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">double</span> <span class="title function_">parseDouble</span><span class="params">(String s)</span> <span class="keyword">throws</span> NumberFormatException    </span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="将基本型转换为String对象"><a href="#将基本型转换为String对象" class="headerlink" title="将基本型转换为String对象"></a>将基本型转换为String对象</h3><p>可以使用以下String类的类方法</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">valueOf</span><span class="params">(<span class="type">byte</span> n)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">valueOf</span><span class="params">(<span class="type">int</span> n)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">valueOf</span><span class="params">(<span class="type">long</span> n)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">valueOf</span><span class="params">(<span class="type">float</span> n)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">valueOf</span><span class="params">(<span class="type">double</span> n)</span>    </span><br></pre></td></tr></table></figure>
+
+<p>例：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">s1</span> <span class="operator">=</span> String.valueOf(<span class="number">1234</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//也可以用到上面介绍的并置运算，即使用一个空字符串与基本型数据进行并置运算</span></span><br><span class="line"><span class="type">String</span> <span class="variable">s2</span> <span class="operator">=</span> <span class="string">&quot;&quot;</span> + <span class="number">1234</span>;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="基本型数据的进制表示"><a href="#基本型数据的进制表示" class="headerlink" title="基本型数据的进制表示"></a>基本型数据的进制表示</h3><p>可以把整形数据（例如int、long型数据的二进制、八进制、或十六进制）转换成String对象，即让String对象封装的字符序列是int或long型数据的二进制、八进制或十六进制。</p>
+<p>Integer和long类的下列类方法返回整数的进制的String对象表示（负数返回补码），即返回的String对象封装的字符序列是<em><strong>参数的相应进制</strong></em></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">toBinaryString</span><span class="params">(<span class="type">int</span> i)</span>       <span class="comment">//二进制</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">toOctalString</span><span class="params">(<span class="type">int</span> i)</span>		 <span class="comment">//八进制</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">toHexString</span><span class="params">(<span class="type">int</span> i)</span>			 <span class="comment">//十六进制</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">toBinaryString</span><span class="params">(<span class="type">long</span> i)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">toOctalString</span><span class="params">(<span class="type">long</span> i)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">tohexString</span><span class="params">(<span class="type">long</span> i)</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="关于main-方法的参数化"><a href="#关于main-方法的参数化" class="headerlink" title="关于main()方法的参数化"></a>关于main()方法的参数化</h3><p>使用解释器java.exe执行程序来执行主类时，从键盘输入若干字符序列 ，用空格分开，它们分别对应args[0]、args[1]、args[2]……</p>
+<h2 id="对象的String表示"><a href="#对象的String表示" class="headerlink" title="对象的String表示"></a>对象的String表示</h2><p>所有的类都默认是java.lang包中Object类的子类或间接子类。Object类有一个public String toString()方法，一个对象调用该方法返回String对象的字符序列的一般形式为</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">创建对象的类的名字@对象的引用</span><br><span class="line"></span><br><span class="line">System.out.println(object);</span><br><span class="line">//等价于</span><br><span class="line">System.out,println(object.toString)</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>Java</category>
@@ -2584,6 +2584,1395 @@
       </categories>
   </entry>
   <entry>
+    <title>Java_特殊文件、日志技术</title>
+    <url>/2023/11/17/Java_%E7%89%B9%E6%AE%8A%E6%96%87%E4%BB%B6%E3%80%81%E6%97%A5%E5%BF%97%E6%8A%80%E6%9C%AF/</url>
+    <content><![CDATA[<h1 id="特殊文件"><a href="#特殊文件" class="headerlink" title="特殊文件"></a>特殊文件</h1><ol>
+<li>普通文件：普通的属性文件，里面的内容可以随便写，格式随意，如：<code>.txt</code>文件</li>
+<li>特殊文件：对格式有特殊要求，如：<code>.xml</code>文件、<code>.properties</code>文件。</li>
+<li>为什么要用这些特殊文件？<ul>
+<li>存储有关系的数据，作为系统的配置文件</li>
+<li>作为信息进行传输</li>
+</ul>
+</li>
+<li>这些特殊文件，我们主要学什么？<ul>
+<li>了解他们的特点、作用</li>
+<li>学习使用程序读取它们里面的数据</li>
+<li>学习使用程序把数据存储到这些文件里</li>
+</ul>
+</li>
+</ol>
+<h2 id="Properties属性文件"><a href="#Properties属性文件" class="headerlink" title="Properties属性文件"></a>Properties属性文件</h2><ol>
+<li><p>Properties</p>
+<ul>
+<li>Properties是一个Map集合（键值对集合），但是我们一般不会当集合使用</li>
+<li>核心作用：Properties是用来代表属性文件的，通过Properties可以读写属性文件里的内容</li>
+</ul>
+</li>
+<li><p>使用Properties对属性文件里的键值对数据进行操作</p>
+<ul>
+<li><p>构造方法：</p>
+<table>
+<thead>
+<tr>
+<th align="center">构造方法</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public Properties()</code></td>
+<td align="center">由于构建Properties集合对象（空容器）</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>使用Properties读取属性文件里的键值对数据：</p>
+<table>
+<thead>
+<tr>
+<th align="center">方法名称</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public void load(InputStream is)</code></td>
+<td align="center">通过字节输入流，读取属性文件里的键值对数据</td>
+</tr>
+<tr>
+<td align="center"><code>public void load(Reader reader)</code></td>
+<td align="center">通过字符输入流，读取属性文件里的键值对数据</td>
+</tr>
+<tr>
+<td align="center"><code>public String getProperty(String key)</code></td>
+<td align="center">根据键获取值（其实就是get方法的效果）</td>
+</tr>
+<tr>
+<td align="center"><code>public Set&lt;String&gt; stringPropertyNames()</code></td>
+<td align="center">获取全部键的集合（其实就是keySet方法的效果）</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>使用使用Properties把键值对数据写出到属性文件里去：</p>
+<table>
+<thead>
+<tr>
+<th align="center">方法名称</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public Object setProperty(String key, String value)</code></td>
+<td align="center">保存键值对数据到Properties对象中去</td>
+</tr>
+<tr>
+<td align="center"><code>public void store(OutputStream os, String comments)</code></td>
+<td align="center">把键值对数据，通过字节输出流写出到属性文件里去</td>
+</tr>
+<tr>
+<td align="center"><code>public void store(Writer w, String comments)</code></td>
+<td align="center">把键值对数据，通过字符输出流写出到属性文件里去</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="XML文件"><a href="#XML文件" class="headerlink" title="XML文件"></a>XML文件</h2><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><ol>
+<li><p>XML</p>
+<ul>
+<li>全称<code>EXtensible Markup Language</code>，可扩展标记语言</li>
+<li>本质是一种数据的格式，可以用来存储复杂的数据结构，和数据关系</li>
+</ul>
+</li>
+<li><p>XML的特点</p>
+<ul>
+<li>XML中的“&lt;标签名&gt;”称为一个标签或一个元素，一般是成对出现的</li>
+<li>XML中的标签名可以自己定义（可扩展），但必须要正确的嵌套</li>
+<li>XML中的只能有一个根标签</li>
+<li>XML中标签可以有属性</li>
+<li>如果一个文件中放置的是XML格式的数据，这个文件就是XML文件，后缀一般要写成<code>.xml</code></li>
+</ul>
+</li>
+<li><p>XML的语法规则</p>
+<ul>
+<li><p>XML文件的后缀名为：<code>.xml</code>，文档声明必须是第一行</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;UTF-8&quot;</span> ?&gt;</span></span><br><span class="line">version：XML默认的版本号码、该属性是必须存在的</span><br><span class="line">encoding：本XML文件的编码</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>XML中可以定义注释信息：<code>&lt;!-- 注释内容 --&gt;</code></p>
+</li>
+<li><p>XML中书写”&lt;“、”&amp;”等可能会出现冲突，导致报错，此时可以用如下特殊字符替代</p>
+<table>
+<thead>
+<tr>
+<th align="center">字符</th>
+<th align="center">代替符号</th>
+<th align="center">含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>&lt;</code></td>
+<td align="center"><code>&amp;lt</code></td>
+<td align="center">小于</td>
+</tr>
+<tr>
+<td align="center"><code>&gt;</code></td>
+<td align="center"><code>&amp;gt</code></td>
+<td align="center">大于</td>
+</tr>
+<tr>
+<td align="center"><code>&amp;</code></td>
+<td align="center"><code>&amp;amp</code></td>
+<td align="center">和</td>
+</tr>
+<tr>
+<td align="center"><code>&#39;</code></td>
+<td align="center"><code>&amp;apos</code></td>
+<td align="center">单引号</td>
+</tr>
+<tr>
+<td align="center"><code>&quot;</code></td>
+<td align="center"><code>&amp;quot</code></td>
+<td align="center">双引号</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>XML中可以写一个叫CDATA的数据区：<code>&lt;![CDATA[ ...内容... ]]&gt;</code>，里面的内容可以随便写。</p>
+</li>
+</ul>
+</li>
+<li><p>XML的作用的应用场景：</p>
+<ul>
+<li>作用：本质是一种数据格式，可以存储复杂的数据结构，和数据关系</li>
+<li>应用场景：经常用来作为系统的配置文件，或者作为一种特殊的数据结构，在网络中进行操作</li>
+</ul>
+</li>
+</ol>
+<h3 id="读取XML文件中的数据"><a href="#读取XML文件中的数据" class="headerlink" title="读取XML文件中的数据"></a>读取XML文件中的数据</h3><ol>
+<li><p>解析XML文件</p>
+<ul>
+<li><p>使用程序读取XML文件中的数据</p>
+</li>
+<li><p>注意：程序员并不需要自己写原始的IO流代码来解析XML，难度较大！也相当繁琐！</p>
+</li>
+<li><p>其实，有很多开源的，好用的，解析XML的框架，最知名的是：<code>DOM4J</code>（第三方研发的）</p>
+</li>
+<li><p>DOM4J解析XML文件的思想：文档对象模型</p>
+<p><img src="F:\笔记\Java\基础\img\文档对象模型.png"></p>
+</li>
+</ul>
+</li>
+<li><p>DOM4J解析XML-得到Document对象</p>
+<ul>
+<li><p>SAXReader：Dom4j提供的解析器，可以认为是代表整个Dom4j框架</p>
+<table>
+<thead>
+<tr>
+<th align="center">构造器&#x2F;方法</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public SAXReader()</code></td>
+<td align="center">构建Dom4j的解析器对象</td>
+</tr>
+<tr>
+<td align="center"><code>public Document read(String url)</code></td>
+<td align="center">把XML文件读取成Document对象</td>
+</tr>
+<tr>
+<td align="center"><code>public Document read(InputStream is)</code></td>
+<td align="center">通过字节输入流读取XML文件</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>Document</p>
+<table>
+<thead>
+<tr>
+<th align="center">方法名</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>Element getRootElement()</code></td>
+<td align="center">获取根元素对象</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>Element提供的方法：</p>
+<table>
+<thead>
+<tr>
+<th align="center">方法名</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public String getName() </code></td>
+<td align="center">得到元素名字</td>
+</tr>
+<tr>
+<td align="center"><code>public List&lt;Element&gt; elements()</code></td>
+<td align="center">得到当前元素下的所有子元素</td>
+</tr>
+<tr>
+<td align="center"><code>public List&lt;Element&gt; elements(String name)</code></td>
+<td align="center">得到当前元素下指定名字的子元素返回集合</td>
+</tr>
+<tr>
+<td align="center"><code>public Element element(String name)</code></td>
+<td align="center">得到当前元素下指定名字的子元素，如果有很多名字相同的返回第一个</td>
+</tr>
+<tr>
+<td align="center"><code>public String attributeValue(String name)</code></td>
+<td align="center">通过属性名直接得到属性值</td>
+</tr>
+<tr>
+<td align="center"><code>public String elementText(String name)</code></td>
+<td align="center">得到指定名称的子元素的文本</td>
+</tr>
+<tr>
+<td align="center"><code>public String getText()</code></td>
+<td align="center">得到文本</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+</li>
+<li><p>使用程序把数据写出到XML文件中去</p>
+<ul>
+<li>不建议使用dom4j做</li>
+<li>推荐直接把程序里的数据拼接成XML格式，然后用IO流写出</li>
+</ul>
+</li>
+</ol>
+<h3 id="补充知识：约束XML文件的编写-了解"><a href="#补充知识：约束XML文件的编写-了解" class="headerlink" title="补充知识：约束XML文件的编写[了解]"></a>补充知识：约束XML文件的编写[了解]</h3><ol>
+<li><p>什么是约束XML文件的书写？</p>
+<ul>
+<li>就是限制XML文件只能按照某种格式进行书写</li>
+</ul>
+</li>
+<li><p>约束文档：</p>
+<ul>
+<li>专门用来限制xml书写格式的文档，比如限制标签、属性标签应该怎么写。</li>
+</ul>
+</li>
+<li><p>约束文档的分类：</p>
+<ul>
+<li>DTD文档</li>
+<li>Schema文档</li>
+</ul>
+</li>
+<li><p>XML文档约束-DTD的使用步骤：</p>
+<ul>
+<li><p>编写DTD约束文档，后缀必须是<code>.dtd</code>，如下</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!ELEMENT 书架 (书+)&gt;</span><br><span class="line">&lt;!ELEMENT 书 (书名,作者,售价)&gt;</span><br><span class="line">&lt;!ELEMENT 书名 (#PCDATA)&gt;</span><br><span class="line">&lt;!ELEMENT 作者 (#PCDATA)&gt;</span><br><span class="line">&lt;!ELEMENT 售价 (#PCDATA)&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在需要编写的XML文件中导入该DTD约束文档，<code>&lt;!DOCTYPE 书架 SYSTEM &quot;文件路径&quot;&gt;</code></p>
+</li>
+<li><p>然后XML文件，就必须按照DTD约束文档指定的格式进行编写，否则报错！</p>
+</li>
+<li><p>注意：不能约束具体的数据类型</p>
+</li>
+</ul>
+</li>
+<li><p>XML文档约束-schema的使用步骤：</p>
+<ul>
+<li>编写schema约束文档，后缀名必须是<code>.xsd</code></li>
+<li>在需要编写的XML文件中导入该schema约束文档</li>
+<li>按照约束内容编写XML文件的标签</li>
+</ul>
+</li>
+</ol>
+<h1 id="日志技术"><a href="#日志技术" class="headerlink" title="日志技术"></a>日志技术</h1><h2 id="概述-1"><a href="#概述-1" class="headerlink" title="概述"></a>概述</h2><ol>
+<li>什么是日志？<ul>
+<li>好比生活中的日记，可以记录你生活中的点点滴滴</li>
+<li>程序中的日志，通常就是一个文件夹，里面记录的是程序运行过程中的各种信息</li>
+</ul>
+</li>
+<li>日志技术<ul>
+<li>可以将系统执行的信息，方便的记录到指定的位置（控制台、文件中、数据库中）</li>
+<li>可以随时以开关的形式控制日志的启停，无需侵入到源代码中去进行修改</li>
+</ul>
+</li>
+</ol>
+<h2 id="日志技术的体系"><a href="#日志技术的体系" class="headerlink" title="日志技术的体系"></a>日志技术的体系</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">graph LR</span><br><span class="line">	A(日志技术) --&gt; B[&quot;JUL(java.util.logging)&quot;] </span><br><span class="line">	A --&gt; Log4j</span><br><span class="line">	A --&gt; Logback </span><br><span class="line">	A --&gt; 其他实现</span><br><span class="line">	</span><br><span class="line">	C(日志接口) --&gt;D[&quot;Commons Logging(JCL)&quot;]</span><br><span class="line">	C --&gt; E[&quot;Simple Logging Facade for Java(SLF4J)&quot;]</span><br><span class="line">	</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>日志框架：牛人或者第三方公司以及准备好的实现代码，后来者直接可以拿去使用</li>
+<li>日志接口：设计日志框架的一套标准，日志框架需要实现这些接口</li>
+<li>注意1：因为对<code>JCL</code>接口不满意，有人就搞了<code>SLF4J</code>；因为对<code>Log4j</code>的性能不满意，有人就搞了<code>Logback</code></li>
+<li>注意2：Logback是基于<code>SLF4J</code>的日志规范实现的框架</li>
+</ol>
+<h2 id="Logback日志框架"><a href="#Logback日志框架" class="headerlink" title="Logback日志框架"></a>Logback日志框架</h2><h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><ol>
+<li>Logback日志框架官方网站：<code>https://logback.qos.ch/index.html</code></li>
+<li>Logback日志框架有以下几个模块<ul>
+<li><code>Logback-core</code>：基础模块，是其他两个模块依赖的基础（必须有）</li>
+<li><code>Logback-classic</code>：完整实现了 <code>slf4j</code> API的模块（必须有）</li>
+<li><code>Logback-access</code>：与<code>Tomcat</code>和<code>Jetty</code>等<code>Servlet</code>容器集成，以提供<code>HTTP</code>访问日志的功能（可选）</li>
+</ul>
+</li>
+<li>想使用Logback日志框架，至少需要在项目中整合如下三个模块：<ul>
+<li><code>slf4j-api</code>：日志接口</li>
+<li><code>logback-core</code></li>
+<li><code>logbcak-classic</code></li>
+</ul>
+</li>
+</ol>
+<h3 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h3><ol>
+<li><p>实现步骤：</p>
+<ul>
+<li><p>导入Logback框架到项目中去。</p>
+<p><code>slf4j-api：日志接口</code>、<code>logback-core</code>、<code>logbcak-classic</code></p>
+</li>
+<li><p>将Logback框架的核心配置文件<code>logback.xml</code>直接拷贝到<code>src</code>目录下（必须是<code>src</code>下）</p>
+</li>
+<li><p>创建Logback框架提供的<code>Logger</code>对象，然后用<code>Logger</code>对象调用其提供的方法就可以记录系统的日志信息</p>
+<p><code>public static final Logger LOGGER = LoggerFactory.getLogger(&quot;类名&quot;)</code></p>
+</li>
+<li><p>注意：对Logback日志框架的控制，都是通过其核心配置文件<code>logback.xml</code>来实现的</p>
+</li>
+</ul>
+</li>
+<li><p>核心配置文件<code>logback.xml</code></p>
+<ul>
+<li><p>对Logback日志框架进行控制的</p>
+</li>
+<li><p>日志的输出位置、输出格式的设置</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">	通常可以设置2个输出日志的位置：一个是控制台、一个是系统文件中</span></span><br><span class="line"><span class="comment">--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">appender</span> <span class="attr">name</span>=<span class="string">&quot;CONSOLE&quot;</span> <span class="attr">class</span>=<span class="string">&quot;ch.qos.logback.core.ConsoleAppender&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">appender</span> <span class="attr">name</span>=<span class="string">&quot;FILE&quot;</span> <span class="attr">class</span>=<span class="string">&quot;ch.qos.logback.core.rolling.RollingFileAppender&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>开启日志（ALL），取消日志（OFF）</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">root</span> <span class="attr">level</span>=<span class="string">&quot;ALL&quot;</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">appender-ref</span> <span class="attr">ref</span>=<span class="string">&quot;CONSOLE&quot;</span>/&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">appender-ref</span> <span class="attr">ref</span>=<span class="string">&quot;FILE&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">root</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ol>
+<h3 id="Logback设置日志级别"><a href="#Logback设置日志级别" class="headerlink" title="Logback设置日志级别"></a>Logback设置日志级别</h3><ol>
+<li><p>认识日志级别</p>
+<ul>
+<li><p>日志级别指的是日志信息的类型，日志都会分级别，常见的日志级别如下（优先级依次升高）：</p>
+<table>
+<thead>
+<tr>
+<th align="center">日志级别</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>trace</code></td>
+<td align="center">追踪，指明程序运行轨迹</td>
+</tr>
+<tr>
+<td align="center"><code>debug</code></td>
+<td align="center">调试，实际应用中一般将其作为最低级别，而trace则很少使用</td>
+</tr>
+<tr>
+<td align="center"><code>info</code></td>
+<td align="center">输出重要的运行信息，数据连接、网络连接、IO操作等等，使用较多</td>
+</tr>
+<tr>
+<td align="center"><code>warn</code></td>
+<td align="center">警告信息，可能发生发生问题，使用较多</td>
+</tr>
+<tr>
+<td align="center"><code>error</code></td>
+<td align="center">错误信息，使用较多</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>只有日志级别是大于或等于核心配置文件配置的日志级别，才会被记录，否则不记录</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">root</span> <span class="attr">level</span>=<span class="string">&quot;debug&quot;</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">appender-ref</span> <span class="attr">ref</span>=<span class="string">&quot;CONSOLE&quot;</span>/&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">appender-ref</span> <span class="attr">ref</span>=<span class="string">&quot;FILE&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">root</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Java_算法、正则表达式、异常</title>
+    <url>/2023/10/05/Java_%E7%AE%97%E6%B3%95%E3%80%81%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E3%80%81%E5%BC%82%E5%B8%B8/</url>
+    <content><![CDATA[<h1 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h1><h2 id="排序算法"><a href="#排序算法" class="headerlink" title="排序算法"></a>排序算法</h2><h3 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h3><ol>
+<li><p>每次从数组中找出最大值放在数组的后面去。</p>
+</li>
+<li><p>冒牌排序的步骤分析：</p>
+<ul>
+<li>确定总共需要做几轮：数组的长度 - 1</li>
+<li>每轮比较几次：数组长度 - 轮次 - 1</li>
+<li>当前位置数据大于后一位置则交换数据，否则不进行操作</li>
+</ul>
+</li>
+<li><p>代码实现：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span>[] arr = &#123;<span class="number">3</span>,<span class="number">5</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">7</span>,<span class="number">4</span>,<span class="number">10</span>,<span class="number">6</span>,<span class="number">8</span>,<span class="number">9</span>&#125;;</span><br><span class="line"><span class="type">int</span> temp;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; arr.length - <span class="number">1</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt; arr.length - <span class="number">1</span> - i; j++) &#123;</span><br><span class="line">     	<span class="keyword">if</span>(arr[j] &gt; arr[j+<span class="number">1</span>])&#123;</span><br><span class="line">			temp = arr[j];</span><br><span class="line">             arr[j] = arr[j+<span class="number">1</span>];</span><br><span class="line">             arr[j+<span class="number">1</span>] = temp;</span><br><span class="line">         &#125;</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h3><ol>
+<li><p>每轮选择当前位置，开始找出后面的较小值，与该位置交换</p>
+</li>
+<li><p>选择排序的步骤分析：</p>
+<ul>
+<li>确定总共需要选择几轮：数组长度 -1</li>
+<li>控制每轮从当前位置为基准，与后面元素选择几次</li>
+</ul>
+</li>
+<li><p>代码实现：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span>[] arr = &#123;<span class="number">3</span>,<span class="number">5</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">7</span>,<span class="number">4</span>,<span class="number">10</span>,<span class="number">6</span>,<span class="number">8</span>,<span class="number">9</span>&#125;;</span><br><span class="line"><span class="type">int</span> temp, p;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; arr.length - <span class="number">1</span>; i++) &#123;</span><br><span class="line">     p = i;</span><br><span class="line">     <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> i + <span class="number">1</span>; j &lt; arr.length ; j++) &#123;</span><br><span class="line">          <span class="keyword">if</span> (arr[p] &gt; arr[j])&#123;</span><br><span class="line">              p = j;</span><br><span class="line">          &#125;</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">     <span class="keyword">if</span> (i != p)&#123;</span><br><span class="line">            temp = arr[i];</span><br><span class="line">            arr[i] = arr[p];</span><br><span class="line">            arr[p] = temp;</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="查找算法"><a href="#查找算法" class="headerlink" title="查找算法"></a>查找算法</h2><h3 id="二分查找法（折半查找）"><a href="#二分查找法（折半查找）" class="headerlink" title="二分查找法（折半查找）"></a>二分查找法（折半查找）</h3><ol>
+<li><p>前提：数组中的数据必须是有序的</p>
+</li>
+<li><p>核心思想：每次排除一半的数据，查询数据的性能明显提高极多</p>
+</li>
+<li><p>代码实现：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">binarySearch</span><span class="params">(<span class="type">int</span>[] arr, <span class="type">int</span> data)</span>&#123;</span><br><span class="line">   <span class="type">int</span> <span class="variable">left</span> <span class="operator">=</span> <span class="number">0</span> ,right = arr.length;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">while</span> (left &lt;= right)&#123;</span><br><span class="line">       <span class="type">int</span> <span class="variable">mid</span> <span class="operator">=</span> (right + left)/<span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">       <span class="keyword">if</span> (data &lt; arr[mid])&#123;</span><br><span class="line">            right = mid -<span class="number">1</span>;</span><br><span class="line">       &#125;<span class="keyword">else</span> <span class="keyword">if</span> (data &gt; arr[mid])&#123;</span><br><span class="line">            left = mid + <span class="number">1</span>;</span><br><span class="line">       &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> mid;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h1 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><ol>
+<li>正则表达式：就是由一些指定的字符组成，代表的是一个规则</li>
+<li>作用：<ul>
+<li>用来校验数据格式是否合法</li>
+<li>在一段文本中查找满足要求的内容</li>
+</ul>
+</li>
+</ol>
+<h2 id="书写规则"><a href="#书写规则" class="headerlink" title="书写规则"></a>书写规则</h2><ol>
+<li><p>String类提供了<code>public boolean matches(String regex)</code>方法与正则表达式进行匹配。</p>
+</li>
+<li><p>正则表达式书写规则：</p>
+<table>
+<thead>
+<tr>
+<th align="center">符号</th>
+<th align="center">含义</th>
+<th align="center">举例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>[]</code></td>
+<td align="center">里面的内容出现一次</td>
+<td align="center"><code>[abc]</code></td>
+</tr>
+<tr>
+<td align="center"><code>^</code></td>
+<td align="center">取反</td>
+<td align="center"><code>[^abc]</code></td>
+</tr>
+<tr>
+<td align="center"><code>&amp;&amp;</code></td>
+<td align="center">交集，不能写单个的&amp;</td>
+<td align="center"><code>[a-z&amp;&amp;m-p]</code></td>
+</tr>
+<tr>
+<td align="center"><code>.</code></td>
+<td align="center">任意字符</td>
+<td align="center"><code>\n回车符号不匹配</code></td>
+</tr>
+<tr>
+<td align="center"><code>\</code></td>
+<td align="center">转义字符</td>
+<td align="center"><code>\\d</code></td>
+</tr>
+<tr>
+<td align="center"><code>\\d</code></td>
+<td align="center">0-9</td>
+<td align="center"><code>\\d+</code></td>
+</tr>
+<tr>
+<td align="center"><code>\\D</code></td>
+<td align="center">非0-9</td>
+<td align="center"><code>\\D+</code></td>
+</tr>
+<tr>
+<td align="center"><code>\\s</code></td>
+<td align="center">空白字符</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"><code>\\S</code></td>
+<td align="center">非空白字符</td>
+<td align="center"><code>^\S</code></td>
+</tr>
+<tr>
+<td align="center"><code>\\w</code></td>
+<td align="center">单词字符</td>
+<td align="center"><code>[a-zA-Z_0-9]</code></td>
+</tr>
+<tr>
+<td align="center"><code>\\W</code></td>
+<td align="center">非单词字符</td>
+<td align="center"><code>[^\w]</code></td>
+</tr>
+<tr>
+<td align="center"><code>()</code></td>
+<td align="center">分组</td>
+<td align="center"><code>a(bc)+</code></td>
+</tr>
+<tr>
+<td align="center">&#96;</td>
+<td align="center">&#96;</td>
+<td align="center">写在括号外表示并集</td>
+</tr>
+<tr>
+<td align="center"><code>?</code></td>
+<td align="center">0次或1次</td>
+<td align="center"><code>\\d?</code></td>
+</tr>
+<tr>
+<td align="center"><code>*</code></td>
+<td align="center">0次或多次</td>
+<td align="center"><code>\\d*</code></td>
+</tr>
+<tr>
+<td align="center"><code>+</code></td>
+<td align="center">1次或多次</td>
+<td align="center"><code>\\d+</code></td>
+</tr>
+<tr>
+<td align="center"><code>&#123;&#125;</code></td>
+<td align="center">具体次数</td>
+<td align="center"><code>a&#123;7&#125;</code></td>
+</tr>
+<tr>
+<td align="center"><code>(?i)</code></td>
+<td align="center">忽略后面字符的大小写</td>
+<td align="center"><code>(?i)abc</code></td>
+</tr>
+<tr>
+<td align="center"><code>a((?i)b)c</code></td>
+<td align="center">只忽略b的大小写</td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+</li>
+</ol>
+<h1 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h1><h2 id="认识异常"><a href="#认识异常" class="headerlink" title="认识异常"></a>认识异常</h2><ol>
+<li><p>Error：代表系统级别错误（属于严重问题）</p>
+</li>
+<li><p>Exception：叫异常，它代表的才是我们程序可能出现的问题，所以，<code>Exception</code>以及它的子类来封装程序出现的问题。</p>
+<ul>
+<li>运行时异常：<code>RuntimeException</code>及其子类，编译阶段不会出现错误提醒，运行时出现的异常（如：数组索引越界异常）</li>
+<li>编译时异常：编译阶段就会出现错误提醒的（如：日期解析异常）</li>
+</ul>
+</li>
+<li><p>异常处理方法：</p>
+<ul>
+<li><p>抛出异常（throws）：在方法上使用throws关键字，可以将方法内部出现的异常抛出去给调用者处理。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">方法 <span class="keyword">throws</span> 异常<span class="number">1</span>, 异常<span class="number">2</span>,……&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>捕获异常（try……catch）：直接捕获程序出现的异常。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">    <span class="comment">// 监视可能出现异常的代码</span></span><br><span class="line">&#125;<span class="keyword">catch</span>(异常类型<span class="number">1</span> 变量)&#123;</span><br><span class="line">    <span class="comment">// 处理异常</span></span><br><span class="line">&#125;<span class="keyword">catch</span>(异常类型<span class="number">2</span> 变量)&#123;</span><br><span class="line">    <span class="comment">// 处理异常</span></span><br><span class="line">&#125;……</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ol>
+<h2 id="自定义异常"><a href="#自定义异常" class="headerlink" title="自定义异常"></a>自定义异常</h2><ol>
+<li>自定义异常：Java无法将世界上全部问题都提供异常类来代表，如果企业遇到自己的某种问题，想通过异常来表示，以便用异常来管理该问题，那就需要自己来定义异常类了。</li>
+<li>自定义异常的种类：自定义运行时异常、自定义编译时异常</li>
+<li>自定义运行时异常：<ul>
+<li>定义一个异常类继承<code>RuntimeException</code></li>
+<li>重写构造方法</li>
+<li>通过<code>throw new 异常类(xxx)</code>来创建异常对象并抛出。编译阶段不报错，提醒不强烈，运行时才可能出现</li>
+</ul>
+</li>
+<li>自定义编译时异常：<ul>
+<li>定义一个异常类继承<code>Exception</code></li>
+<li>重写构造方法</li>
+<li>通过<code>throw new 异常类(xxx)</code>来创建异常对象并抛出。编译阶段就报错，提醒更强烈</li>
+</ul>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Java_网络通信</title>
+    <url>/2023/11/21/Java_%E7%BD%91%E7%BB%9C%E9%80%9A%E4%BF%A1/</url>
+    <content><![CDATA[<h1 id="网络编程"><a href="#网络编程" class="headerlink" title="网络编程"></a>网络编程</h1><ol>
+<li>什么是网络编程？<ul>
+<li>可以让设备中的程序与网络搜索其他设备中的程序进行数据交互（实现网络通信的）</li>
+</ul>
+</li>
+<li>Java提供了哪些网络编程的解决方法？<ul>
+<li><code>java.net.*</code>包下提供了网络编程的解决方法</li>
+</ul>
+</li>
+<li>基本的通信架构<ul>
+<li>基本的通信架构有2种形式：CS架构（Client客户端&#x2F;Server服务端）、BS架构（Browser浏览器&#x2F;Server服务端）</li>
+<li>无论是CS架构，还是BS架构的软件必须依赖网络编程</li>
+</ul>
+</li>
+</ol>
+<h1 id="网络通信三要素"><a href="#网络通信三要素" class="headerlink" title="网络通信三要素"></a>网络通信三要素</h1><h2 id="IP地址"><a href="#IP地址" class="headerlink" title="IP地址"></a>IP地址</h2><ol>
+<li><p>IP（Internet Protocol）：全称”互联网协议地址“，是分配给上网设备的唯一标识</p>
+</li>
+<li><p>IP地址有两种形式：</p>
+<ul>
+<li>IPv4：由32bit（4字节）组成，点分十进制表示法</li>
+<li>IPv6：共128位，号称可以为地球每一粒沙子编号</li>
+<li>IPv6分成8段表示，每段每四位编码成一个十六进制位表示，数之间用（:）分开</li>
+</ul>
+</li>
+<li><p>IP域名：</p>
+<ul>
+<li>电脑的<code>DNS服务器</code>会将域名解析成<code>IP地址</code>，然后再使用该<code>IP地址</code>访问对应的服务器</li>
+</ul>
+</li>
+<li><p>公网IP、内网IP</p>
+<ul>
+<li>公网IP：是可以连接互联网的IP地址</li>
+<li>内网IP：也叫局域网IP，只能组织机构内部使用</li>
+<li><code>192.168.</code>开头的就是常见的局域网地址，范围即为<code>192.168.00--192.168.255.255</code>，专门为组织机构内部使用</li>
+</ul>
+</li>
+<li><p>特殊IP地址：</p>
+<ul>
+<li><code>127.0.0.1</code>、<code>localhost</code>：代表本机IP，只会寻找当前所在的主机</li>
+</ul>
+</li>
+<li><p>IP常用命令：</p>
+<ul>
+<li><code>ipconfig</code> ：查看本机IP地址。</li>
+<li><code>ping IP地址</code>：查看网络是否连通</li>
+</ul>
+</li>
+<li><p>InetAddress</p>
+<ul>
+<li>代表IP地址</li>
+</ul>
+</li>
+<li><p>InetAddress的产用方法</p>
+<table>
+<thead>
+<tr>
+<th align="center">方法名称</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public static InetAddress getLocalhost()</code></td>
+<td align="center">获取本机IP，会以一个<code>InetAddress</code>的对象返回</td>
+</tr>
+<tr>
+<td align="center"><code>public static InetAddress getByName(String host)</code></td>
+<td align="center">根据ip地址域名，返回一个inetAddress对象</td>
+</tr>
+<tr>
+<td align="center"><code>public String getHostName()</code></td>
+<td align="center">获取该ip地址对象对应的主机名</td>
+</tr>
+<tr>
+<td align="center"><code>public String getHostAddress()</code></td>
+<td align="center">获取该ip地址对象中的ip地址信息</td>
+</tr>
+<tr>
+<td align="center"><code>public boolean isReachable(int timeout)</code></td>
+<td align="center">在指定毫秒内，判断主机与该ip对应的主机是否联通</td>
+</tr>
+</tbody></table>
+</li>
+</ol>
+<h2 id="端口号"><a href="#端口号" class="headerlink" title="端口号"></a>端口号</h2><ol>
+<li>端口：<ul>
+<li>标记正在计算机设备上运行的应用程序的，被规定为一个16位的二进制，范围是0~65535</li>
+</ul>
+</li>
+<li>分类：<ul>
+<li>周知端口：0~1023，被预先定义的知名应用占用（如：HTTP占用80，FIP占用21）</li>
+<li>注册端口：1024~49151，分配给用户进程或某些应用程序</li>
+<li>动态端口：49151~65535，之所以成为动态端口，是因为它一般不固定分配某种进程，而是动态分配</li>
+</ul>
+</li>
+<li>注意：我们自己开发发程序一般选择使用注册端口，且一个设备中不能出现两个程序的端口一样，否则出错</li>
+</ol>
+<h2 id="协议"><a href="#协议" class="headerlink" title="协议"></a>协议</h2><ol>
+<li><p>通信协议：</p>
+<ul>
+<li>网络上通信的设备，实现规定的连接规则，以及传输数据的规则被称为网络通信协议</li>
+</ul>
+</li>
+<li><p>开放式网络互联标准：OSI网络参考模型</p>
+<ul>
+<li><p>OSI网络参考模型：全球网络互联标准</p>
+</li>
+<li><p>TCP&#x2F;IP网络模型：事实上的国际标准</p>
+<p><img src="/..%5Cimage%5COSI.png"></p>
+</li>
+</ul>
+</li>
+<li><p>传输层的2个通信协议：</p>
+<ul>
+<li>UDP(User Datagram Protocol)：用户数据报协议</li>
+<li>TCP(Transmission Control Protocol)：传输控制协议</li>
+</ul>
+</li>
+<li><p>UDP协议</p>
+<ul>
+<li>特点：无连接、不可靠通信</li>
+<li>不事先建立连接，按照包发，一包数据包含：自己的IP、程序端口、目的地IP、程序端口和数据（限制在64KB内）等</li>
+<li>发送方不管对方是否在线，数据在中间丢失也不管，如果接收方收到的数据也不返回确认，故是不可靠的。</li>
+<li>通信效率搞，用于语音通话，视频直播</li>
+</ul>
+</li>
+<li><p>TCP协议</p>
+<ul>
+<li>特点：面向连接、可靠通信</li>
+<li>TCP的最终目的：要保证在不可靠的信道上实现可靠的传输</li>
+<li>TCP主要有三个步骤实现可靠传输：三次握手建立连接，传输数据进行确认，四次挥手断开连接</li>
+<li>通信效率相对不高，用于网页、文件下载、支付</li>
+</ul>
+</li>
+<li><p>TCP协议：三次握手建立可靠连接</p>
+<ul>
+<li>可靠连接：确定通信双方，收发消息都是正常无问题的！（全双工）</li>
+</ul>
+</li>
+<li><p>TCP协议：四次挥手断开连接</p>
+<ul>
+<li>目的：确保双方数据的收发都已完成</li>
+</ul>
+</li>
+</ol>
+<h1 id="UDP通信"><a href="#UDP通信" class="headerlink" title="UDP通信"></a>UDP通信</h1><ol>
+<li><p>特点：无连接、不可靠通信</p>
+</li>
+<li><p>不事先建立连接；发送端每次把要发送的数据（限制在64KB内）、接收端IP、等信息封装成一个数据包，发出去就不管了。</p>
+</li>
+<li><p>Java提供了一个<code>java.net.DatagramSocket</code>类来实现UDP通信</p>
+</li>
+<li><p>DatagramSocket：用于创建客户端、服务端</p>
+<table>
+<thead>
+<tr>
+<th align="center">构造方法</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public DatagramSocket()</code></td>
+<td align="center">创建客户端的Socket对象，系统会随机分配一个端口号</td>
+</tr>
+<tr>
+<td align="center"><code>public DatagramSocket(int port)</code></td>
+<td align="center">创建服务端的Socket对象，并指定端口号</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="center">方法名称</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public void send(DatagramPacket dp)</code></td>
+<td align="center">发送数据包</td>
+</tr>
+<tr>
+<td align="center"><code>public void receive(DatagramPacket p)</code></td>
+<td align="center">使用数据包接收数据</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>DatagramPacket：创建数据包</p>
+<table>
+<thead>
+<tr>
+<th align="center">构造方法</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public DatagramPacket(byte[] buf, int length, InetAddress addresss, int port)</code></td>
+<td align="center">创建发出去的数据包对象</td>
+</tr>
+<tr>
+<td align="center"><code>public DatagramPacket(byte[] buf, int length)</code></td>
+<td align="center">创建用来接收数据的数据包</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="center">方法名称</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public int getLength()</code></td>
+<td align="center">获取数据包，实际接收到的字节个数</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>客户端实现步骤：</p>
+<ul>
+<li>创建DatagramSocket对象（客户端对象）</li>
+<li>创建DatagramPacket对象封装需要发送的数据（数据包对象）</li>
+<li>使用DatagramSocket对象的send方法，传入DatagramPacket对象</li>
+<li>释放资源</li>
+</ul>
+</li>
+<li><p>服务端实现步骤：</p>
+<ul>
+<li>创建DatagramSocket对象并指定端口（服务端对象）</li>
+<li>创建DatagramPacket对象接收对象（数据包对象）</li>
+<li>使用DatagramSocket对象的receive方法，传入DatagramPacket对象</li>
+<li>释放资源</li>
+</ul>
+</li>
+</ol>
+<h1 id="TCP通信"><a href="#TCP通信" class="headerlink" title="TCP通信"></a>TCP通信</h1><ol>
+<li><p>特点：面向连接、可靠通信</p>
+</li>
+<li><p>通信双方事先会采用“三次握手”方式建立可靠联系，实现端到端通信，底层能保证数据成功成功传给服务段</p>
+</li>
+<li><p>Java提供了一个<code>java.net.Socket</code>类来实现TCP通信</p>
+</li>
+<li><p>TCP通信-客户端开发</p>
+<ul>
+<li><p>客户端程序就是通过<code>java.net</code>包下的Socket类来实现</p>
+<table>
+<thead>
+<tr>
+<th align="center">构造方法</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public Socket(String host, int port)</code></td>
+<td align="center">根据指定的服务端ip、端口号请求与服务端建立连接，连接通过，就获得客户端socket</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="center">方法名称</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public OutputStream getOutputStream()</code></td>
+<td align="center">获得字节输出流</td>
+</tr>
+<tr>
+<td align="center"><code>public InputStream getInputStream()</code></td>
+<td align="center">获得字节输入流</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+</li>
+<li><p>TCP通信-服务端开发</p>
+<ul>
+<li><p>服务端就是通过<code>java.net</code>包下的ServerSocket类来实现的</p>
+<table>
+<thead>
+<tr>
+<th align="center">构造方法</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public ServerSocket(int port)</code></td>
+<td align="center">为服务端程序注册端口</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="center">方法名称</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public Socket accept()</code></td>
+<td align="center">阻塞等待用户端的连接请求，一旦与某个客户端成功连接，则返回服务端这边的Socket对象</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Java_集合框架(一)</title>
+    <url>/2023/11/02/Java_%E9%9B%86%E5%90%88%E6%A1%86%E6%9E%B6(%E4%B8%80)/</url>
+    <content><![CDATA[<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><ol>
+<li><p>集合：集合是一种容器，用来装数据的，类似于数组，但集合的大小可变，开发中也非常常用。为了满足不同的业务场景需求，Java还提供了很多不同特点的集合给我们选择。</p>
+</li>
+<li><p>集合体系结构：</p>
+<ul>
+<li><p>单列集合：每个元素（数据）只包含一个值</p>
+<p><code>Collection</code>，<code>List</code>，<code>ArrayList</code>，<code>LinkedList</code>，<code>Set</code>，<code>HashSet</code>，<code>LinkedHashSet</code>，<code>TreeSet</code></p>
+</li>
+<li><p>双列集合：每个元素包括两个值（键值对）</p>
+<p><code>Map</code>，<code>HashMap</code>，<code>TreeMap</code>，<code>LinedHashMap</code>。</p>
+</li>
+</ul>
+</li>
+<li><p>Collection集合体系：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">graph TB;</span><br><span class="line">    Collection--&gt;List</span><br><span class="line">    Collection--&gt;Set</span><br><span class="line">    List--&gt;ArrayList</span><br><span class="line">    List--&gt;LinkedList</span><br><span class="line">	Set--&gt;HashSet</span><br><span class="line">	HashSet--&gt;LinkedHashSet</span><br><span class="line">	Set--&gt;TreeSet</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Collection集合特点：</p>
+<ul>
+<li>List系列集合：添加的元素是有序的、可重复、有索引<ul>
+<li>ArrayList、LinkedList：有序、可重复、有索引</li>
+</ul>
+</li>
+<li>Set系列集合：添加的元素是无序的，不重复、无索引<ul>
+<li>HashSet：无序、不重复、无索引</li>
+<li>LinkedHashSet：有序、不重复、无索引</li>
+<li>TreeSet：按照大小默认升序排序、不重复、无索引</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h1 id="Collection"><a href="#Collection" class="headerlink" title="Collection"></a>Collection</h1><h2 id="Collection的常用方法"><a href="#Collection的常用方法" class="headerlink" title="Collection的常用方法"></a>Collection的常用方法</h2><ol>
+<li><p>为什么要先学Collection的常用方法？</p>
+<ul>
+<li>Collection是单列结合是祖宗，它规定的方法（功能）是全部单列集合都会继承的。</li>
+</ul>
+</li>
+<li><p>Collection的常见方法：</p>
+<table>
+<thead>
+<tr>
+<th align="center">方法名</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public boolean add(E e)</code></td>
+<td align="center">把给定的对象添加到当前集合中</td>
+</tr>
+<tr>
+<td align="center"><code>public void clear()</code></td>
+<td align="center">清空集合中所有的元素</td>
+</tr>
+<tr>
+<td align="center"><code>public boolean remove(E e)</code></td>
+<td align="center">把给定的对象在当前集合中删除</td>
+</tr>
+<tr>
+<td align="center"><code>public boolean contains(Object obj)</code></td>
+<td align="center">判断当前集合中是否包含给定的对象</td>
+</tr>
+<tr>
+<td align="center"><code>public boolean isEmpty()</code></td>
+<td align="center">判断当前集合是否为空</td>
+</tr>
+<tr>
+<td align="center"><code>public int size()</code></td>
+<td align="center">返回集合中元素的个数</td>
+</tr>
+<tr>
+<td align="center"><code>public Object[] toArray()</code></td>
+<td align="center">把集合中的元素，存储到数组中</td>
+</tr>
+</tbody></table>
+</li>
+</ol>
+<h2 id="Collection的遍历方式"><a href="#Collection的遍历方式" class="headerlink" title="Collection的遍历方式"></a>Collection的遍历方式</h2><h3 id="迭代器"><a href="#迭代器" class="headerlink" title="迭代器"></a>迭代器</h3><ol>
+<li><p>迭代器概述</p>
+<ul>
+<li>迭代器是用来遍历集合的专用方式（数组没有迭代器），在Java中迭代器的代表是<code>Iterator</code>。</li>
+</ul>
+</li>
+<li><p>Collection集合获取迭代器的方法：</p>
+<table>
+<thead>
+<tr>
+<th align="center">方法名称</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>Iterator&lt;E&gt; iterator()</code></td>
+<td align="center">返回集合中的迭代器对象，该迭代器对象默认指向当前集合的第一个元素</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>Iterator迭代器中的常用方法：</p>
+<table>
+<thead>
+<tr>
+<th align="center">方法名称</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>boolean hasNext</code></td>
+<td align="center">询问当前位置是否有元素存在，存在返回true，不存在返回false</td>
+</tr>
+<tr>
+<td align="center"><code>E next()</code></td>
+<td align="center">获取当前位置的元素，并同时将迭代器对象指向下一个元素处</td>
+</tr>
+</tbody></table>
+</li>
+</ol>
+<h3 id="增强for循环"><a href="#增强for循环" class="headerlink" title="增强for循环"></a>增强for循环</h3><ol>
+<li><p>增强for循环的格式：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(元素的数据类型 变量名: 数组或者集合)&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 示例</span></span><br><span class="line">Collection&lt;String&gt; c = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line"><span class="keyword">for</span> (String s :c)&#123;</span><br><span class="line">     System.out.println(s);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>增强for可以用来遍历集合或者数组</p>
+</li>
+<li><p>增强for遍历集合，本质就是迭代器遍历集合的简化写法</p>
+</li>
+</ol>
+<h3 id="Lambda表达式"><a href="#Lambda表达式" class="headerlink" title="Lambda表达式"></a>Lambda表达式</h3><ol>
+<li><p>Lambda表达式遍历集合</p>
+<ul>
+<li>得益于JDK 8开始的新技术，提供了一种更简单、更直接的方式来遍历集合</li>
+</ul>
+</li>
+<li><p>需要使用Collection的如下方法来完成</p>
+<table>
+<thead>
+<tr>
+<th align="center">方法名称</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>default void forEach(Consumer&lt;? super T&gt; action)</code></td>
+<td align="center">结合lambda遍历集合</td>
+</tr>
+</tbody></table>
+</li>
+</ol>
+<h1 id="List集合"><a href="#List集合" class="headerlink" title="List集合"></a>List集合</h1><h2 id="特点、特有方法"><a href="#特点、特有方法" class="headerlink" title="特点、特有方法"></a>特点、特有方法</h2><ol>
+<li><p>List系列集合特点：有序，可重复，有索引</p>
+<ul>
+<li>ArrayList：有序，可重复，有索引</li>
+<li>LinkedList：有序，可重复，有索引</li>
+<li>ArrayList和LinkedList底层采用的数据结构不同，应用场景不同</li>
+</ul>
+</li>
+<li><p>List集合的特有方法</p>
+<ul>
+<li>List集合因为支持索引，所以多了很多与索引相关的方法，当然，Collection的功能List也都继承了</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">方法名称</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>void add(int index, E element)</code></td>
+<td align="center">在此集合中的指定位置插入指定元素</td>
+</tr>
+<tr>
+<td align="center"><code>E remove(int index)</code></td>
+<td align="center">删除指定索引处的元素，返回被删除的元素</td>
+</tr>
+<tr>
+<td align="center"><code>E set(int index, E element)</code></td>
+<td align="center">修改指定索引处的元素，返回被修改的元素</td>
+</tr>
+<tr>
+<td align="center"><code>E get(int index)</code></td>
+<td align="center">返回指定索引处的元素</td>
+</tr>
+</tbody></table>
+</li>
+</ol>
+<h2 id="遍历方式"><a href="#遍历方式" class="headerlink" title="遍历方式"></a>遍历方式</h2><ol>
+<li>for循环（因为List集合有索引）</li>
+<li>迭代器</li>
+<li>增强for循环</li>
+<li>Lambda表达式</li>
+</ol>
+<h2 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h2><ol>
+<li>ArrayList基于数组实现的，数组的特点：查询快、增删慢<ul>
+<li>查询快：查询数据通过地址值和索引定位，查询任意数据耗时相同</li>
+<li>删除效率低：可能需要把后面很多的数据进行前移</li>
+<li>添加效率极低：可能需要把后面很多的数据后移，再添加元素；或者也可能需要进行数组的扩容</li>
+</ul>
+</li>
+<li>ArrayList实现：<ul>
+<li>利用无参构造器创建的集合，会在底层创建一个默认长度为0的数组</li>
+<li>添加第一个元素时，底层会创建一个新的长度为10的数组</li>
+<li>存满时，会扩容1.5倍</li>
+<li>如果一次添加多个元素，1.5倍还放不下，则新创建数组的长度以实际为准</li>
+</ul>
+</li>
+<li>ArrayList集合适合的应用场景<ul>
+<li>ArrayList适合：根据索引查询数据，比如根据随机索引取数组（高效）或者数据量不是很大时</li>
+<li>ArrayList不适合：数据量大的同时，又要频繁的进行增删操作</li>
+</ul>
+</li>
+</ol>
+<h2 id="LinkedList"><a href="#LinkedList" class="headerlink" title="LinkedList"></a>LinkedList</h2><ol>
+<li><p>链表：链表中的节点是独立的对象，在内存中是不连续的，每个节点包含数据值和下一个节点的地址</p>
+<p>特点：</p>
+<ul>
+<li>查询慢：无论查询哪个数据都要从头开始找</li>
+<li>增删相对快</li>
+</ul>
+</li>
+<li><p>LinkedList底层原理</p>
+<ul>
+<li>基于双链表实现（每个节点包含数据、前一个结点地址和后一个结点地址）</li>
+<li>特点：查询慢，增删相对较快，但对首尾元素进行增删改查的速度是极快的</li>
+</ul>
+</li>
+<li><p>LinkedList新增了很多首尾操作的特有方法</p>
+<table>
+<thead>
+<tr>
+<th align="center">方法名称</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public void addFirst(E e)</code></td>
+<td align="center">在该列表开头插入指定的元素</td>
+</tr>
+<tr>
+<td align="center"><code>public void addLast(E e)</code></td>
+<td align="center">将指定的元素追加到此列表的末尾</td>
+</tr>
+<tr>
+<td align="center"><code>public E getFirst()</code></td>
+<td align="center">返回此列表中的第一个元素</td>
+</tr>
+<tr>
+<td align="center"><code>public E getLast()</code></td>
+<td align="center">返回此列表中的最后一个元素</td>
+</tr>
+<tr>
+<td align="center"><code>public E removeFirst()</code></td>
+<td align="center">在此列表中删除并返回第一个元素</td>
+</tr>
+<tr>
+<td align="center"><code>public E removeLast()</code></td>
+<td align="center">在此列表中删除并返回最后一个元素</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>LinkedList的应用场景：</p>
+<ul>
+<li><p>设计队列（先进先出，后进后出）</p>
+<p>数据进入队列的过程称为：入队</p>
+<p>数据离开队列的过程称为：出队</p>
+</li>
+<li><p>设计栈（后进先出，先进后出）</p>
+<p>数据进入栈模型的过程称为：压&#x2F;进站（push）</p>
+<p>数据离开栈模型的过程称为：弹&#x2F;出栈（pop）</p>
+</li>
+</ul>
+</li>
+</ol>
+<h1 id="Set集合"><a href="#Set集合" class="headerlink" title="Set集合"></a>Set集合</h1><h2 id="Set系列集合特点"><a href="#Set系列集合特点" class="headerlink" title="Set系列集合特点"></a>Set系列集合特点</h2><ol>
+<li>Set系集合特点：无序：添加数据的顺序和获取出的数据顺序不一致；不重复；无索引；</li>
+<li>HashSet：无序、不重复、无索引。</li>
+<li>LinkedHashSet：有序、不重复、无索引。</li>
+<li>TreeSet：排序、不重复、无索引。</li>
+<li>注意：Set要用到的常用方法，基本上就是Collection提供的！！！自己几乎没有额外新增的一些常用方法！</li>
+</ol>
+<h2 id="HashSet"><a href="#HashSet" class="headerlink" title="HashSet"></a>HashSet</h2><ol>
+<li>HashSet集合的底层原理：哈希表</li>
+<li>HashSet集合去重复的机制<ul>
+<li>HashSet集合默认不能对内容一样的两个不同对象去重复</li>
+<li>如何让HashSet集合实现对内容一样的两个不同对象进行去重：重写<code>hashCode()</code>和<code>equals()</code>方法</li>
+</ul>
+</li>
+</ol>
+<h2 id="LinkedHashSet"><a href="#LinkedHashSet" class="headerlink" title="LinkedHashSet"></a>LinkedHashSet</h2><ol>
+<li>LinkedHashSet集合底层原理：<ul>
+<li>哈希表（数组、链表、红黑树）</li>
+<li>但是，LinkedHashSet的每个元素都额外的多了一个双链表的机制记录它前后元素的位置</li>
+</ul>
+</li>
+</ol>
+<h2 id="TreeSet"><a href="#TreeSet" class="headerlink" title="TreeSet"></a>TreeSet</h2><ol>
+<li><p>TreeSet底层基于红黑树实现</p>
+</li>
+<li><p>排序规则：</p>
+<ul>
+<li>对于数值类型：Integer，Double，默认按照数值大小的本身进行升序排序</li>
+<li>对于字符串类型：默认按照首字母的编号升序排序</li>
+<li>对于自定义类型的对象，TreeSet默认是无法直接排序的</li>
+</ul>
+</li>
+<li><p>自定义排序规则</p>
+<ul>
+<li><p>方法一：让该对象的类实现<code>comparable</code>(比较规则)接口，然后重写<code>compareTo</code>方法，自己制定比较规则</p>
+</li>
+<li><p>方法二：通过调用TreeSet集合有参数构造器，可以设置Comparator（比较器对象，用于指定比较规则）</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="title function_">TreeSet</span><span class="params">(Comparator&lt;? <span class="built_in">super</span> E&gt; comparator)</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>注意：如果类本身有实现Comparable接口，TreeSet集合同时也自带比较器，默认使用集合自带的比较器排序。</p>
+</li>
+</ul>
+</li>
+</ol>
+<h1 id="Collection集合总结"><a href="#Collection集合总结" class="headerlink" title="Collection集合总结"></a>Collection集合总结</h1><h2 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h2><ol>
+<li>如果希望记住元素的添加顺序，需要存储重复的元素，又要频繁的根据索引查询数据？<ul>
+<li>用ArrayList集合（有序、可重复、有索引)，底层基于数组的。(常用)</li>
+</ul>
+</li>
+<li>如果希望记住元素的添加顺序，且增删首尾数据的情况较多?<ul>
+<li>用LinkedList集合（有序、可重复、有索引)，底层基于双链表实现的。</li>
+</ul>
+</li>
+<li>如果不在意元素顺序，也没有重复元素需要存储，只希望增删改查都快?<ul>
+<li>用HashSet集合（无序，不重复，无索引)，底层基于哈希表实现的。(常用)</li>
+</ul>
+</li>
+<li>如果希望记住元素的添加顺序，也没有重复元素需要存储，且希望增删改查都快?<ul>
+<li>用LinkedHashSet集合（有序，不重复，无索引)，底层基于哈希表和双链表。</li>
+</ul>
+</li>
+<li>如果要对元素进行排序，也没有重复元素需要存储?且希望增删改查都快?<ul>
+<li>用TreeSet集合，基于红黑树实现。</li>
+</ul>
+</li>
+</ol>
+<h2 id="集合的并发修改异常问题"><a href="#集合的并发修改异常问题" class="headerlink" title="集合的并发修改异常问题"></a>集合的并发修改异常问题</h2><ol>
+<li>集合的并发修改异常<ul>
+<li>使用迭代器遍历集合时，又同时在删除集合中的数据，程序就会出现并发修改异常的错误。</li>
+<li>由于增强for循环遍历集合就是迭代器遍历集合的简化写法，因此，使用增强for循环遍历集合，又在同时删除集合中的数据时，程序也会出现并发修改异常的错误</li>
+</ul>
+</li>
+<li>怎么保证遍历集合同时删除数据时不出bug<ul>
+<li>使用迭代器遍历集合，但用迭代器自己的删除方法删除数据即可。</li>
+<li>如果能用for循环遍历时:可以倒着遍历并删除;或者从前往后遍历，但删除元素后做<code>i--</code>操作。</li>
+</ul>
+</li>
+</ol>
+<h2 id="Collection的其他相关知识"><a href="#Collection的其他相关知识" class="headerlink" title="Collection的其他相关知识"></a>Collection的其他相关知识</h2><h3 id="前置知识：可变参数"><a href="#前置知识：可变参数" class="headerlink" title="前置知识：可变参数"></a>前置知识：可变参数</h3><ol>
+<li>可变参数：就是一种特殊形参，定义在方法、构造器的形参列表里，格式是：<code>数据类型...参数名称;</code></li>
+<li>可变参数的特点和好处<ul>
+<li>特点：可以不传数据给它;可以传一个或者同时传多个数据给它;也可以传一个数组给它。</li>
+<li>好处：常常用来灵活的接收数据。</li>
+</ul>
+</li>
+<li>注意实现：<ul>
+<li>可变参数在方法内部就是一个数组。</li>
+<li>一个形参列表中可变参数只能有一个。</li>
+<li>可变参数必须放在形参列表的最后面。</li>
+</ul>
+</li>
+</ol>
+<h3 id="Collections"><a href="#Collections" class="headerlink" title="Collections"></a>Collections</h3><ol>
+<li><p>Collections：是一个用来操作集合的工具类</p>
+</li>
+<li><p>Collections提供的常用静态方法</p>
+<table>
+<thead>
+<tr>
+<th align="center">方法名称</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public static &lt;T&gt; boolean addAll(Collection&lt;? super T&gt; c, T……elements)</code></td>
+<td align="center">给集合批量添加元素</td>
+</tr>
+<tr>
+<td align="center"><code>public static void shuffle(List&lt;?&gt; list)</code></td>
+<td align="center">打乱List集合的元素顺序</td>
+</tr>
+<tr>
+<td align="center"><code>public static &lt;T&gt; void sort(List&lt;?&gt; list)</code></td>
+<td align="center">对List集合中的元素进行升序排序</td>
+</tr>
+<tr>
+<td align="center"><code>public static &lt;T&gt; void sort(List&lt;?&gt; list, Comparator&lt;? super T&gt; c)</code></td>
+<td align="center">对List集合中的元素，按照比较器对象指定的规则进行排序</td>
+</tr>
+</tbody></table>
+</li>
+</ol>
+<h1 id="拓展："><a href="#拓展：" class="headerlink" title="拓展："></a>拓展：</h1><h2 id="哈希表"><a href="#哈希表" class="headerlink" title="哈希表"></a>哈希表</h2><ol>
+<li><p>哈希值</p>
+<ul>
+<li><p>就是一个int类型的数值，Java中每一个对象都有一个哈希值。</p>
+</li>
+<li><p>Java中的所有对象，都可以调用<code>Object</code>类提供的<code>hashCode</code>方法，返回该对象自己的哈希值。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">hashCode</span><span class="params">()</span>：返回对象的哈希码值。</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>对象哈希值的特点</p>
+<ul>
+<li>同一个对象多次调用<code>hashCode()</code>方法返回的哈希值是相同的。</li>
+<li>不同对象，他们的哈希值一般不相同，但也有可能会相同（哈希碰撞）。</li>
+</ul>
+</li>
+<li><p>哈希表</p>
+<ul>
+<li><p>哈希表是一种增删改查数据性能都较好的结构</p>
+</li>
+<li><p>JDK8之前，哈希表 &#x3D; 数组 + 链表</p>
+<ol>
+<li><p>创建一个默认长度16的数组，默认加载因子为0.75，数组名table</p>
+</li>
+<li><p>使用元素的哈希值对数组的长度求余计算出应存入的位置</p>
+</li>
+<li><p>判断当前位置是否为null，如果是null直接存入</p>
+</li>
+<li><p>如果不为null，表示有元素，则调用<code>equals</code>方法比较，相等，则不存；不相等，则存入数组</p>
+<ul>
+<li><p>JDK8之前，新元素存入数组，占老元素位置，老元素挂下面</p>
+</li>
+<li><p>JDK8之后，新元素直接挂在老元素下面</p>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>JDK8之后，哈希表 &#x3D; 数组 + 链表 + 红黑树</p>
+<ol>
+<li>当链表长度超过超过8，且数组长度&gt;&#x3D;64时，自动将链表转换成红黑树</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>如果数组快占满了，会出现什么问题？该怎么解决</p>
+<ul>
+<li>链表过长，导致查询性能降低</li>
+<li>扩容：当数组存放数据的长度达到数组长度与默认加载因子的乘积时，便会执行扩容操作</li>
+</ul>
+</li>
+</ol>
+<h2 id="树"><a href="#树" class="headerlink" title="树"></a>树</h2><ol>
+<li>二叉树：<ul>
+<li>二叉树中，任意结点的度 &lt;&#x3D; 2</li>
+<li>度：每个节点的子节点数量</li>
+<li>树高：树的总层数</li>
+<li>根节点：最高层的节点</li>
+<li>左子节点</li>
+<li>右子节点</li>
+<li>左子树</li>
+<li>右子树</li>
+</ul>
+</li>
+<li>二叉查找树（二叉排序树）<ul>
+<li>规则：小的存左边，大的存右边，一样的不存</li>
+<li>缺陷：当数据已经是排序好的，导致查询的性能与单链表一样，查询速度变慢</li>
+</ul>
+</li>
+<li>平衡二叉树：<ul>
+<li>在满足查找二叉树的大小规则下，让树尽可能矮小，以此提高查数据的性能</li>
+</ul>
+</li>
+<li>红黑树<ul>
+<li>红黑树就是平衡二叉树</li>
+<li>红黑树是一种增删改查数据性能都相对较好的结构</li>
+</ul>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Java_常用API(一)</title>
     <url>/2023/09/27/Java_%E5%B8%B8%E7%94%A8API(%E4%B8%80)/</url>
     <content><![CDATA[<h1 id="API"><a href="#API" class="headerlink" title="API"></a>API</h1><ol>
@@ -2983,200 +4372,6 @@
 <td align="center">返回一个字符串（该字符串就是拼接之后的结果）</td>
 </tr>
 </tbody></table>
-]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Java_算法、正则表达式、异常</title>
-    <url>/2023/10/05/Java_%E7%AE%97%E6%B3%95%E3%80%81%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E3%80%81%E5%BC%82%E5%B8%B8/</url>
-    <content><![CDATA[<h1 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h1><h2 id="排序算法"><a href="#排序算法" class="headerlink" title="排序算法"></a>排序算法</h2><h3 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h3><ol>
-<li><p>每次从数组中找出最大值放在数组的后面去。</p>
-</li>
-<li><p>冒牌排序的步骤分析：</p>
-<ul>
-<li>确定总共需要做几轮：数组的长度 - 1</li>
-<li>每轮比较几次：数组长度 - 轮次 - 1</li>
-<li>当前位置数据大于后一位置则交换数据，否则不进行操作</li>
-</ul>
-</li>
-<li><p>代码实现：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span>[] arr = &#123;<span class="number">3</span>,<span class="number">5</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">7</span>,<span class="number">4</span>,<span class="number">10</span>,<span class="number">6</span>,<span class="number">8</span>,<span class="number">9</span>&#125;;</span><br><span class="line"><span class="type">int</span> temp;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; arr.length - <span class="number">1</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt; arr.length - <span class="number">1</span> - i; j++) &#123;</span><br><span class="line">     	<span class="keyword">if</span>(arr[j] &gt; arr[j+<span class="number">1</span>])&#123;</span><br><span class="line">			temp = arr[j];</span><br><span class="line">             arr[j] = arr[j+<span class="number">1</span>];</span><br><span class="line">             arr[j+<span class="number">1</span>] = temp;</span><br><span class="line">         &#125;</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ol>
-<h3 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h3><ol>
-<li><p>每轮选择当前位置，开始找出后面的较小值，与该位置交换</p>
-</li>
-<li><p>选择排序的步骤分析：</p>
-<ul>
-<li>确定总共需要选择几轮：数组长度 -1</li>
-<li>控制每轮从当前位置为基准，与后面元素选择几次</li>
-</ul>
-</li>
-<li><p>代码实现：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span>[] arr = &#123;<span class="number">3</span>,<span class="number">5</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">7</span>,<span class="number">4</span>,<span class="number">10</span>,<span class="number">6</span>,<span class="number">8</span>,<span class="number">9</span>&#125;;</span><br><span class="line"><span class="type">int</span> temp, p;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; arr.length - <span class="number">1</span>; i++) &#123;</span><br><span class="line">     p = i;</span><br><span class="line">     <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> i + <span class="number">1</span>; j &lt; arr.length ; j++) &#123;</span><br><span class="line">          <span class="keyword">if</span> (arr[p] &gt; arr[j])&#123;</span><br><span class="line">              p = j;</span><br><span class="line">          &#125;</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">     <span class="keyword">if</span> (i != p)&#123;</span><br><span class="line">            temp = arr[i];</span><br><span class="line">            arr[i] = arr[p];</span><br><span class="line">            arr[p] = temp;</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ol>
-<h2 id="查找算法"><a href="#查找算法" class="headerlink" title="查找算法"></a>查找算法</h2><h3 id="二分查找法（折半查找）"><a href="#二分查找法（折半查找）" class="headerlink" title="二分查找法（折半查找）"></a>二分查找法（折半查找）</h3><ol>
-<li><p>前提：数组中的数据必须是有序的</p>
-</li>
-<li><p>核心思想：每次排除一半的数据，查询数据的性能明显提高极多</p>
-</li>
-<li><p>代码实现：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">binarySearch</span><span class="params">(<span class="type">int</span>[] arr, <span class="type">int</span> data)</span>&#123;</span><br><span class="line">   <span class="type">int</span> <span class="variable">left</span> <span class="operator">=</span> <span class="number">0</span> ,right = arr.length;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">while</span> (left &lt;= right)&#123;</span><br><span class="line">       <span class="type">int</span> <span class="variable">mid</span> <span class="operator">=</span> (right + left)/<span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">       <span class="keyword">if</span> (data &lt; arr[mid])&#123;</span><br><span class="line">            right = mid -<span class="number">1</span>;</span><br><span class="line">       &#125;<span class="keyword">else</span> <span class="keyword">if</span> (data &gt; arr[mid])&#123;</span><br><span class="line">            left = mid + <span class="number">1</span>;</span><br><span class="line">       &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> mid;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ol>
-<h1 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><ol>
-<li>正则表达式：就是由一些指定的字符组成，代表的是一个规则</li>
-<li>作用：<ul>
-<li>用来校验数据格式是否合法</li>
-<li>在一段文本中查找满足要求的内容</li>
-</ul>
-</li>
-</ol>
-<h2 id="书写规则"><a href="#书写规则" class="headerlink" title="书写规则"></a>书写规则</h2><ol>
-<li><p>String类提供了<code>public boolean matches(String regex)</code>方法与正则表达式进行匹配。</p>
-</li>
-<li><p>正则表达式书写规则：</p>
-<table>
-<thead>
-<tr>
-<th align="center">符号</th>
-<th align="center">含义</th>
-<th align="center">举例</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"><code>[]</code></td>
-<td align="center">里面的内容出现一次</td>
-<td align="center"><code>[abc]</code></td>
-</tr>
-<tr>
-<td align="center"><code>^</code></td>
-<td align="center">取反</td>
-<td align="center"><code>[^abc]</code></td>
-</tr>
-<tr>
-<td align="center"><code>&amp;&amp;</code></td>
-<td align="center">交集，不能写单个的&amp;</td>
-<td align="center"><code>[a-z&amp;&amp;m-p]</code></td>
-</tr>
-<tr>
-<td align="center"><code>.</code></td>
-<td align="center">任意字符</td>
-<td align="center"><code>\n回车符号不匹配</code></td>
-</tr>
-<tr>
-<td align="center"><code>\</code></td>
-<td align="center">转义字符</td>
-<td align="center"><code>\\d</code></td>
-</tr>
-<tr>
-<td align="center"><code>\\d</code></td>
-<td align="center">0-9</td>
-<td align="center"><code>\\d+</code></td>
-</tr>
-<tr>
-<td align="center"><code>\\D</code></td>
-<td align="center">非0-9</td>
-<td align="center"><code>\\D+</code></td>
-</tr>
-<tr>
-<td align="center"><code>\\s</code></td>
-<td align="center">空白字符</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center"><code>\\S</code></td>
-<td align="center">非空白字符</td>
-<td align="center"><code>^\S</code></td>
-</tr>
-<tr>
-<td align="center"><code>\\w</code></td>
-<td align="center">单词字符</td>
-<td align="center"><code>[a-zA-Z_0-9]</code></td>
-</tr>
-<tr>
-<td align="center"><code>\\W</code></td>
-<td align="center">非单词字符</td>
-<td align="center"><code>[^\w]</code></td>
-</tr>
-<tr>
-<td align="center"><code>()</code></td>
-<td align="center">分组</td>
-<td align="center"><code>a(bc)+</code></td>
-</tr>
-<tr>
-<td align="center">&#96;</td>
-<td align="center">&#96;</td>
-<td align="center">写在括号外表示并集</td>
-</tr>
-<tr>
-<td align="center"><code>?</code></td>
-<td align="center">0次或1次</td>
-<td align="center"><code>\\d?</code></td>
-</tr>
-<tr>
-<td align="center"><code>*</code></td>
-<td align="center">0次或多次</td>
-<td align="center"><code>\\d*</code></td>
-</tr>
-<tr>
-<td align="center"><code>+</code></td>
-<td align="center">1次或多次</td>
-<td align="center"><code>\\d+</code></td>
-</tr>
-<tr>
-<td align="center"><code>&#123;&#125;</code></td>
-<td align="center">具体次数</td>
-<td align="center"><code>a&#123;7&#125;</code></td>
-</tr>
-<tr>
-<td align="center"><code>(?i)</code></td>
-<td align="center">忽略后面字符的大小写</td>
-<td align="center"><code>(?i)abc</code></td>
-</tr>
-<tr>
-<td align="center"><code>a((?i)b)c</code></td>
-<td align="center">只忽略b的大小写</td>
-<td align="center"></td>
-</tr>
-</tbody></table>
-</li>
-</ol>
-<h1 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h1><h2 id="认识异常"><a href="#认识异常" class="headerlink" title="认识异常"></a>认识异常</h2><ol>
-<li><p>Error：代表系统级别错误（属于严重问题）</p>
-</li>
-<li><p>Exception：叫异常，它代表的才是我们程序可能出现的问题，所以，<code>Exception</code>以及它的子类来封装程序出现的问题。</p>
-<ul>
-<li>运行时异常：<code>RuntimeException</code>及其子类，编译阶段不会出现错误提醒，运行时出现的异常（如：数组索引越界异常）</li>
-<li>编译时异常：编译阶段就会出现错误提醒的（如：日期解析异常）</li>
-</ul>
-</li>
-<li><p>异常处理方法：</p>
-<ul>
-<li><p>抛出异常（throws）：在方法上使用throws关键字，可以将方法内部出现的异常抛出去给调用者处理。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">方法 <span class="keyword">throws</span> 异常<span class="number">1</span>, 异常<span class="number">2</span>,……&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>捕获异常（try……catch）：直接捕获程序出现的异常。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">    <span class="comment">// 监视可能出现异常的代码</span></span><br><span class="line">&#125;<span class="keyword">catch</span>(异常类型<span class="number">1</span> 变量)&#123;</span><br><span class="line">    <span class="comment">// 处理异常</span></span><br><span class="line">&#125;<span class="keyword">catch</span>(异常类型<span class="number">2</span> 变量)&#123;</span><br><span class="line">    <span class="comment">// 处理异常</span></span><br><span class="line">&#125;……</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-</ol>
-<h2 id="自定义异常"><a href="#自定义异常" class="headerlink" title="自定义异常"></a>自定义异常</h2><ol>
-<li>自定义异常：Java无法将世界上全部问题都提供异常类来代表，如果企业遇到自己的某种问题，想通过异常来表示，以便用异常来管理该问题，那就需要自己来定义异常类了。</li>
-<li>自定义异常的种类：自定义运行时异常、自定义编译时异常</li>
-<li>自定义运行时异常：<ul>
-<li>定义一个异常类继承<code>RuntimeException</code></li>
-<li>重写构造方法</li>
-<li>通过<code>throw new 异常类(xxx)</code>来创建异常对象并抛出。编译阶段不报错，提醒不强烈，运行时才可能出现</li>
-</ul>
-</li>
-<li>自定义编译时异常：<ul>
-<li>定义一个异常类继承<code>Exception</code></li>
-<li>重写构造方法</li>
-<li>通过<code>throw new 异常类(xxx)</code>来创建异常对象并抛出。编译阶段就报错，提醒更强烈</li>
-</ul>
-</li>
-</ol>
 ]]></content>
       <categories>
         <category>Java</category>
@@ -3974,888 +5169,6 @@
 <li>定义变量接收用户输入的数据：<code>int age = sc.nextInt();</code>、<code>String name = sc.next();</code></li>
 </ol>
 </li>
-</ul>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Java_特殊文件、日志技术</title>
-    <url>/2023/11/17/Java_%E7%89%B9%E6%AE%8A%E6%96%87%E4%BB%B6%E3%80%81%E6%97%A5%E5%BF%97%E6%8A%80%E6%9C%AF/</url>
-    <content><![CDATA[<h1 id="特殊文件"><a href="#特殊文件" class="headerlink" title="特殊文件"></a>特殊文件</h1><ol>
-<li>普通文件：普通的属性文件，里面的内容可以随便写，格式随意，如：<code>.txt</code>文件</li>
-<li>特殊文件：对格式有特殊要求，如：<code>.xml</code>文件、<code>.properties</code>文件。</li>
-<li>为什么要用这些特殊文件？<ul>
-<li>存储有关系的数据，作为系统的配置文件</li>
-<li>作为信息进行传输</li>
-</ul>
-</li>
-<li>这些特殊文件，我们主要学什么？<ul>
-<li>了解他们的特点、作用</li>
-<li>学习使用程序读取它们里面的数据</li>
-<li>学习使用程序把数据存储到这些文件里</li>
-</ul>
-</li>
-</ol>
-<h2 id="Properties属性文件"><a href="#Properties属性文件" class="headerlink" title="Properties属性文件"></a>Properties属性文件</h2><ol>
-<li><p>Properties</p>
-<ul>
-<li>Properties是一个Map集合（键值对集合），但是我们一般不会当集合使用</li>
-<li>核心作用：Properties是用来代表属性文件的，通过Properties可以读写属性文件里的内容</li>
-</ul>
-</li>
-<li><p>使用Properties对属性文件里的键值对数据进行操作</p>
-<ul>
-<li><p>构造方法：</p>
-<table>
-<thead>
-<tr>
-<th align="center">构造方法</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"><code>public Properties()</code></td>
-<td align="center">由于构建Properties集合对象（空容器）</td>
-</tr>
-</tbody></table>
-</li>
-<li><p>使用Properties读取属性文件里的键值对数据：</p>
-<table>
-<thead>
-<tr>
-<th align="center">方法名称</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"><code>public void load(InputStream is)</code></td>
-<td align="center">通过字节输入流，读取属性文件里的键值对数据</td>
-</tr>
-<tr>
-<td align="center"><code>public void load(Reader reader)</code></td>
-<td align="center">通过字符输入流，读取属性文件里的键值对数据</td>
-</tr>
-<tr>
-<td align="center"><code>public String getProperty(String key)</code></td>
-<td align="center">根据键获取值（其实就是get方法的效果）</td>
-</tr>
-<tr>
-<td align="center"><code>public Set&lt;String&gt; stringPropertyNames()</code></td>
-<td align="center">获取全部键的集合（其实就是keySet方法的效果）</td>
-</tr>
-</tbody></table>
-</li>
-<li><p>使用使用Properties把键值对数据写出到属性文件里去：</p>
-<table>
-<thead>
-<tr>
-<th align="center">方法名称</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"><code>public Object setProperty(String key, String value)</code></td>
-<td align="center">保存键值对数据到Properties对象中去</td>
-</tr>
-<tr>
-<td align="center"><code>public void store(OutputStream os, String comments)</code></td>
-<td align="center">把键值对数据，通过字节输出流写出到属性文件里去</td>
-</tr>
-<tr>
-<td align="center"><code>public void store(Writer w, String comments)</code></td>
-<td align="center">把键值对数据，通过字符输出流写出到属性文件里去</td>
-</tr>
-</tbody></table>
-</li>
-</ul>
-</li>
-</ol>
-<h2 id="XML文件"><a href="#XML文件" class="headerlink" title="XML文件"></a>XML文件</h2><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><ol>
-<li><p>XML</p>
-<ul>
-<li>全称<code>EXtensible Markup Language</code>，可扩展标记语言</li>
-<li>本质是一种数据的格式，可以用来存储复杂的数据结构，和数据关系</li>
-</ul>
-</li>
-<li><p>XML的特点</p>
-<ul>
-<li>XML中的“&lt;标签名&gt;”称为一个标签或一个元素，一般是成对出现的</li>
-<li>XML中的标签名可以自己定义（可扩展），但必须要正确的嵌套</li>
-<li>XML中的只能有一个根标签</li>
-<li>XML中标签可以有属性</li>
-<li>如果一个文件中放置的是XML格式的数据，这个文件就是XML文件，后缀一般要写成<code>.xml</code></li>
-</ul>
-</li>
-<li><p>XML的语法规则</p>
-<ul>
-<li><p>XML文件的后缀名为：<code>.xml</code>，文档声明必须是第一行</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;UTF-8&quot;</span> ?&gt;</span></span><br><span class="line">version：XML默认的版本号码、该属性是必须存在的</span><br><span class="line">encoding：本XML文件的编码</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>XML中可以定义注释信息：<code>&lt;!-- 注释内容 --&gt;</code></p>
-</li>
-<li><p>XML中书写”&lt;“、”&amp;”等可能会出现冲突，导致报错，此时可以用如下特殊字符替代</p>
-<table>
-<thead>
-<tr>
-<th align="center">字符</th>
-<th align="center">代替符号</th>
-<th align="center">含义</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"><code>&lt;</code></td>
-<td align="center"><code>&amp;lt</code></td>
-<td align="center">小于</td>
-</tr>
-<tr>
-<td align="center"><code>&gt;</code></td>
-<td align="center"><code>&amp;gt</code></td>
-<td align="center">大于</td>
-</tr>
-<tr>
-<td align="center"><code>&amp;</code></td>
-<td align="center"><code>&amp;amp</code></td>
-<td align="center">和</td>
-</tr>
-<tr>
-<td align="center"><code>&#39;</code></td>
-<td align="center"><code>&amp;apos</code></td>
-<td align="center">单引号</td>
-</tr>
-<tr>
-<td align="center"><code>&quot;</code></td>
-<td align="center"><code>&amp;quot</code></td>
-<td align="center">双引号</td>
-</tr>
-</tbody></table>
-</li>
-<li><p>XML中可以写一个叫CDATA的数据区：<code>&lt;![CDATA[ ...内容... ]]&gt;</code>，里面的内容可以随便写。</p>
-</li>
-</ul>
-</li>
-<li><p>XML的作用的应用场景：</p>
-<ul>
-<li>作用：本质是一种数据格式，可以存储复杂的数据结构，和数据关系</li>
-<li>应用场景：经常用来作为系统的配置文件，或者作为一种特殊的数据结构，在网络中进行操作</li>
-</ul>
-</li>
-</ol>
-<h3 id="读取XML文件中的数据"><a href="#读取XML文件中的数据" class="headerlink" title="读取XML文件中的数据"></a>读取XML文件中的数据</h3><ol>
-<li><p>解析XML文件</p>
-<ul>
-<li><p>使用程序读取XML文件中的数据</p>
-</li>
-<li><p>注意：程序员并不需要自己写原始的IO流代码来解析XML，难度较大！也相当繁琐！</p>
-</li>
-<li><p>其实，有很多开源的，好用的，解析XML的框架，最知名的是：<code>DOM4J</code>（第三方研发的）</p>
-</li>
-<li><p>DOM4J解析XML文件的思想：文档对象模型</p>
-<p><img src="F:\笔记\Java\基础\img\文档对象模型.png"></p>
-</li>
-</ul>
-</li>
-<li><p>DOM4J解析XML-得到Document对象</p>
-<ul>
-<li><p>SAXReader：Dom4j提供的解析器，可以认为是代表整个Dom4j框架</p>
-<table>
-<thead>
-<tr>
-<th align="center">构造器&#x2F;方法</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"><code>public SAXReader()</code></td>
-<td align="center">构建Dom4j的解析器对象</td>
-</tr>
-<tr>
-<td align="center"><code>public Document read(String url)</code></td>
-<td align="center">把XML文件读取成Document对象</td>
-</tr>
-<tr>
-<td align="center"><code>public Document read(InputStream is)</code></td>
-<td align="center">通过字节输入流读取XML文件</td>
-</tr>
-</tbody></table>
-</li>
-<li><p>Document</p>
-<table>
-<thead>
-<tr>
-<th align="center">方法名</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"><code>Element getRootElement()</code></td>
-<td align="center">获取根元素对象</td>
-</tr>
-</tbody></table>
-</li>
-<li><p>Element提供的方法：</p>
-<table>
-<thead>
-<tr>
-<th align="center">方法名</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"><code>public String getName() </code></td>
-<td align="center">得到元素名字</td>
-</tr>
-<tr>
-<td align="center"><code>public List&lt;Element&gt; elements()</code></td>
-<td align="center">得到当前元素下的所有子元素</td>
-</tr>
-<tr>
-<td align="center"><code>public List&lt;Element&gt; elements(String name)</code></td>
-<td align="center">得到当前元素下指定名字的子元素返回集合</td>
-</tr>
-<tr>
-<td align="center"><code>public Element element(String name)</code></td>
-<td align="center">得到当前元素下指定名字的子元素，如果有很多名字相同的返回第一个</td>
-</tr>
-<tr>
-<td align="center"><code>public String attributeValue(String name)</code></td>
-<td align="center">通过属性名直接得到属性值</td>
-</tr>
-<tr>
-<td align="center"><code>public String elementText(String name)</code></td>
-<td align="center">得到指定名称的子元素的文本</td>
-</tr>
-<tr>
-<td align="center"><code>public String getText()</code></td>
-<td align="center">得到文本</td>
-</tr>
-</tbody></table>
-</li>
-</ul>
-</li>
-<li><p>使用程序把数据写出到XML文件中去</p>
-<ul>
-<li>不建议使用dom4j做</li>
-<li>推荐直接把程序里的数据拼接成XML格式，然后用IO流写出</li>
-</ul>
-</li>
-</ol>
-<h3 id="补充知识：约束XML文件的编写-了解"><a href="#补充知识：约束XML文件的编写-了解" class="headerlink" title="补充知识：约束XML文件的编写[了解]"></a>补充知识：约束XML文件的编写[了解]</h3><ol>
-<li><p>什么是约束XML文件的书写？</p>
-<ul>
-<li>就是限制XML文件只能按照某种格式进行书写</li>
-</ul>
-</li>
-<li><p>约束文档：</p>
-<ul>
-<li>专门用来限制xml书写格式的文档，比如限制标签、属性标签应该怎么写。</li>
-</ul>
-</li>
-<li><p>约束文档的分类：</p>
-<ul>
-<li>DTD文档</li>
-<li>Schema文档</li>
-</ul>
-</li>
-<li><p>XML文档约束-DTD的使用步骤：</p>
-<ul>
-<li><p>编写DTD约束文档，后缀必须是<code>.dtd</code>，如下</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!ELEMENT 书架 (书+)&gt;</span><br><span class="line">&lt;!ELEMENT 书 (书名,作者,售价)&gt;</span><br><span class="line">&lt;!ELEMENT 书名 (#PCDATA)&gt;</span><br><span class="line">&lt;!ELEMENT 作者 (#PCDATA)&gt;</span><br><span class="line">&lt;!ELEMENT 售价 (#PCDATA)&gt;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>在需要编写的XML文件中导入该DTD约束文档，<code>&lt;!DOCTYPE 书架 SYSTEM &quot;文件路径&quot;&gt;</code></p>
-</li>
-<li><p>然后XML文件，就必须按照DTD约束文档指定的格式进行编写，否则报错！</p>
-</li>
-<li><p>注意：不能约束具体的数据类型</p>
-</li>
-</ul>
-</li>
-<li><p>XML文档约束-schema的使用步骤：</p>
-<ul>
-<li>编写schema约束文档，后缀名必须是<code>.xsd</code></li>
-<li>在需要编写的XML文件中导入该schema约束文档</li>
-<li>按照约束内容编写XML文件的标签</li>
-</ul>
-</li>
-</ol>
-<h1 id="日志技术"><a href="#日志技术" class="headerlink" title="日志技术"></a>日志技术</h1><h2 id="概述-1"><a href="#概述-1" class="headerlink" title="概述"></a>概述</h2><ol>
-<li>什么是日志？<ul>
-<li>好比生活中的日记，可以记录你生活中的点点滴滴</li>
-<li>程序中的日志，通常就是一个文件夹，里面记录的是程序运行过程中的各种信息</li>
-</ul>
-</li>
-<li>日志技术<ul>
-<li>可以将系统执行的信息，方便的记录到指定的位置（控制台、文件中、数据库中）</li>
-<li>可以随时以开关的形式控制日志的启停，无需侵入到源代码中去进行修改</li>
-</ul>
-</li>
-</ol>
-<h2 id="日志技术的体系"><a href="#日志技术的体系" class="headerlink" title="日志技术的体系"></a>日志技术的体系</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">graph LR</span><br><span class="line">	A(日志技术) --&gt; B[&quot;JUL(java.util.logging)&quot;] </span><br><span class="line">	A --&gt; Log4j</span><br><span class="line">	A --&gt; Logback </span><br><span class="line">	A --&gt; 其他实现</span><br><span class="line">	</span><br><span class="line">	C(日志接口) --&gt;D[&quot;Commons Logging(JCL)&quot;]</span><br><span class="line">	C --&gt; E[&quot;Simple Logging Facade for Java(SLF4J)&quot;]</span><br><span class="line">	</span><br></pre></td></tr></table></figure>
-
-<ol>
-<li>日志框架：牛人或者第三方公司以及准备好的实现代码，后来者直接可以拿去使用</li>
-<li>日志接口：设计日志框架的一套标准，日志框架需要实现这些接口</li>
-<li>注意1：因为对<code>JCL</code>接口不满意，有人就搞了<code>SLF4J</code>；因为对<code>Log4j</code>的性能不满意，有人就搞了<code>Logback</code></li>
-<li>注意2：Logback是基于<code>SLF4J</code>的日志规范实现的框架</li>
-</ol>
-<h2 id="Logback日志框架"><a href="#Logback日志框架" class="headerlink" title="Logback日志框架"></a>Logback日志框架</h2><h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><ol>
-<li>Logback日志框架官方网站：<code>https://logback.qos.ch/index.html</code></li>
-<li>Logback日志框架有以下几个模块<ul>
-<li><code>Logback-core</code>：基础模块，是其他两个模块依赖的基础（必须有）</li>
-<li><code>Logback-classic</code>：完整实现了 <code>slf4j</code> API的模块（必须有）</li>
-<li><code>Logback-access</code>：与<code>Tomcat</code>和<code>Jetty</code>等<code>Servlet</code>容器集成，以提供<code>HTTP</code>访问日志的功能（可选）</li>
-</ul>
-</li>
-<li>想使用Logback日志框架，至少需要在项目中整合如下三个模块：<ul>
-<li><code>slf4j-api</code>：日志接口</li>
-<li><code>logback-core</code></li>
-<li><code>logbcak-classic</code></li>
-</ul>
-</li>
-</ol>
-<h3 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h3><ol>
-<li><p>实现步骤：</p>
-<ul>
-<li><p>导入Logback框架到项目中去。</p>
-<p><code>slf4j-api：日志接口</code>、<code>logback-core</code>、<code>logbcak-classic</code></p>
-</li>
-<li><p>将Logback框架的核心配置文件<code>logback.xml</code>直接拷贝到<code>src</code>目录下（必须是<code>src</code>下）</p>
-</li>
-<li><p>创建Logback框架提供的<code>Logger</code>对象，然后用<code>Logger</code>对象调用其提供的方法就可以记录系统的日志信息</p>
-<p><code>public static final Logger LOGGER = LoggerFactory.getLogger(&quot;类名&quot;)</code></p>
-</li>
-<li><p>注意：对Logback日志框架的控制，都是通过其核心配置文件<code>logback.xml</code>来实现的</p>
-</li>
-</ul>
-</li>
-<li><p>核心配置文件<code>logback.xml</code></p>
-<ul>
-<li><p>对Logback日志框架进行控制的</p>
-</li>
-<li><p>日志的输出位置、输出格式的设置</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">	通常可以设置2个输出日志的位置：一个是控制台、一个是系统文件中</span></span><br><span class="line"><span class="comment">--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">appender</span> <span class="attr">name</span>=<span class="string">&quot;CONSOLE&quot;</span> <span class="attr">class</span>=<span class="string">&quot;ch.qos.logback.core.ConsoleAppender&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">appender</span> <span class="attr">name</span>=<span class="string">&quot;FILE&quot;</span> <span class="attr">class</span>=<span class="string">&quot;ch.qos.logback.core.rolling.RollingFileAppender&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>开启日志（ALL），取消日志（OFF）</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">root</span> <span class="attr">level</span>=<span class="string">&quot;ALL&quot;</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">appender-ref</span> <span class="attr">ref</span>=<span class="string">&quot;CONSOLE&quot;</span>/&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">appender-ref</span> <span class="attr">ref</span>=<span class="string">&quot;FILE&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">root</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-</ol>
-<h3 id="Logback设置日志级别"><a href="#Logback设置日志级别" class="headerlink" title="Logback设置日志级别"></a>Logback设置日志级别</h3><ol>
-<li><p>认识日志级别</p>
-<ul>
-<li><p>日志级别指的是日志信息的类型，日志都会分级别，常见的日志级别如下（优先级依次升高）：</p>
-<table>
-<thead>
-<tr>
-<th align="center">日志级别</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"><code>trace</code></td>
-<td align="center">追踪，指明程序运行轨迹</td>
-</tr>
-<tr>
-<td align="center"><code>debug</code></td>
-<td align="center">调试，实际应用中一般将其作为最低级别，而trace则很少使用</td>
-</tr>
-<tr>
-<td align="center"><code>info</code></td>
-<td align="center">输出重要的运行信息，数据连接、网络连接、IO操作等等，使用较多</td>
-</tr>
-<tr>
-<td align="center"><code>warn</code></td>
-<td align="center">警告信息，可能发生发生问题，使用较多</td>
-</tr>
-<tr>
-<td align="center"><code>error</code></td>
-<td align="center">错误信息，使用较多</td>
-</tr>
-</tbody></table>
-</li>
-<li><p>只有日志级别是大于或等于核心配置文件配置的日志级别，才会被记录，否则不记录</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">root</span> <span class="attr">level</span>=<span class="string">&quot;debug&quot;</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">appender-ref</span> <span class="attr">ref</span>=<span class="string">&quot;CONSOLE&quot;</span>/&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">appender-ref</span> <span class="attr">ref</span>=<span class="string">&quot;FILE&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">root</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Java_集合框架(一)</title>
-    <url>/2023/11/02/Java_%E9%9B%86%E5%90%88%E6%A1%86%E6%9E%B6(%E4%B8%80)/</url>
-    <content><![CDATA[<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><ol>
-<li><p>集合：集合是一种容器，用来装数据的，类似于数组，但集合的大小可变，开发中也非常常用。为了满足不同的业务场景需求，Java还提供了很多不同特点的集合给我们选择。</p>
-</li>
-<li><p>集合体系结构：</p>
-<ul>
-<li><p>单列集合：每个元素（数据）只包含一个值</p>
-<p><code>Collection</code>，<code>List</code>，<code>ArrayList</code>，<code>LinkedList</code>，<code>Set</code>，<code>HashSet</code>，<code>LinkedHashSet</code>，<code>TreeSet</code></p>
-</li>
-<li><p>双列集合：每个元素包括两个值（键值对）</p>
-<p><code>Map</code>，<code>HashMap</code>，<code>TreeMap</code>，<code>LinedHashMap</code>。</p>
-</li>
-</ul>
-</li>
-<li><p>Collection集合体系：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">graph TB;</span><br><span class="line">    Collection--&gt;List</span><br><span class="line">    Collection--&gt;Set</span><br><span class="line">    List--&gt;ArrayList</span><br><span class="line">    List--&gt;LinkedList</span><br><span class="line">	Set--&gt;HashSet</span><br><span class="line">	HashSet--&gt;LinkedHashSet</span><br><span class="line">	Set--&gt;TreeSet</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Collection集合特点：</p>
-<ul>
-<li>List系列集合：添加的元素是有序的、可重复、有索引<ul>
-<li>ArrayList、LinkedList：有序、可重复、有索引</li>
-</ul>
-</li>
-<li>Set系列集合：添加的元素是无序的，不重复、无索引<ul>
-<li>HashSet：无序、不重复、无索引</li>
-<li>LinkedHashSet：有序、不重复、无索引</li>
-<li>TreeSet：按照大小默认升序排序、不重复、无索引</li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-<h1 id="Collection"><a href="#Collection" class="headerlink" title="Collection"></a>Collection</h1><h2 id="Collection的常用方法"><a href="#Collection的常用方法" class="headerlink" title="Collection的常用方法"></a>Collection的常用方法</h2><ol>
-<li><p>为什么要先学Collection的常用方法？</p>
-<ul>
-<li>Collection是单列结合是祖宗，它规定的方法（功能）是全部单列集合都会继承的。</li>
-</ul>
-</li>
-<li><p>Collection的常见方法：</p>
-<table>
-<thead>
-<tr>
-<th align="center">方法名</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"><code>public boolean add(E e)</code></td>
-<td align="center">把给定的对象添加到当前集合中</td>
-</tr>
-<tr>
-<td align="center"><code>public void clear()</code></td>
-<td align="center">清空集合中所有的元素</td>
-</tr>
-<tr>
-<td align="center"><code>public boolean remove(E e)</code></td>
-<td align="center">把给定的对象在当前集合中删除</td>
-</tr>
-<tr>
-<td align="center"><code>public boolean contains(Object obj)</code></td>
-<td align="center">判断当前集合中是否包含给定的对象</td>
-</tr>
-<tr>
-<td align="center"><code>public boolean isEmpty()</code></td>
-<td align="center">判断当前集合是否为空</td>
-</tr>
-<tr>
-<td align="center"><code>public int size()</code></td>
-<td align="center">返回集合中元素的个数</td>
-</tr>
-<tr>
-<td align="center"><code>public Object[] toArray()</code></td>
-<td align="center">把集合中的元素，存储到数组中</td>
-</tr>
-</tbody></table>
-</li>
-</ol>
-<h2 id="Collection的遍历方式"><a href="#Collection的遍历方式" class="headerlink" title="Collection的遍历方式"></a>Collection的遍历方式</h2><h3 id="迭代器"><a href="#迭代器" class="headerlink" title="迭代器"></a>迭代器</h3><ol>
-<li><p>迭代器概述</p>
-<ul>
-<li>迭代器是用来遍历集合的专用方式（数组没有迭代器），在Java中迭代器的代表是<code>Iterator</code>。</li>
-</ul>
-</li>
-<li><p>Collection集合获取迭代器的方法：</p>
-<table>
-<thead>
-<tr>
-<th align="center">方法名称</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"><code>Iterator&lt;E&gt; iterator()</code></td>
-<td align="center">返回集合中的迭代器对象，该迭代器对象默认指向当前集合的第一个元素</td>
-</tr>
-</tbody></table>
-</li>
-<li><p>Iterator迭代器中的常用方法：</p>
-<table>
-<thead>
-<tr>
-<th align="center">方法名称</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"><code>boolean hasNext</code></td>
-<td align="center">询问当前位置是否有元素存在，存在返回true，不存在返回false</td>
-</tr>
-<tr>
-<td align="center"><code>E next()</code></td>
-<td align="center">获取当前位置的元素，并同时将迭代器对象指向下一个元素处</td>
-</tr>
-</tbody></table>
-</li>
-</ol>
-<h3 id="增强for循环"><a href="#增强for循环" class="headerlink" title="增强for循环"></a>增强for循环</h3><ol>
-<li><p>增强for循环的格式：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(元素的数据类型 变量名: 数组或者集合)&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 示例</span></span><br><span class="line">Collection&lt;String&gt; c = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line"><span class="keyword">for</span> (String s :c)&#123;</span><br><span class="line">     System.out.println(s);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>增强for可以用来遍历集合或者数组</p>
-</li>
-<li><p>增强for遍历集合，本质就是迭代器遍历集合的简化写法</p>
-</li>
-</ol>
-<h3 id="Lambda表达式"><a href="#Lambda表达式" class="headerlink" title="Lambda表达式"></a>Lambda表达式</h3><ol>
-<li><p>Lambda表达式遍历集合</p>
-<ul>
-<li>得益于JDK 8开始的新技术，提供了一种更简单、更直接的方式来遍历集合</li>
-</ul>
-</li>
-<li><p>需要使用Collection的如下方法来完成</p>
-<table>
-<thead>
-<tr>
-<th align="center">方法名称</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"><code>default void forEach(Consumer&lt;? super T&gt; action)</code></td>
-<td align="center">结合lambda遍历集合</td>
-</tr>
-</tbody></table>
-</li>
-</ol>
-<h1 id="List集合"><a href="#List集合" class="headerlink" title="List集合"></a>List集合</h1><h2 id="特点、特有方法"><a href="#特点、特有方法" class="headerlink" title="特点、特有方法"></a>特点、特有方法</h2><ol>
-<li><p>List系列集合特点：有序，可重复，有索引</p>
-<ul>
-<li>ArrayList：有序，可重复，有索引</li>
-<li>LinkedList：有序，可重复，有索引</li>
-<li>ArrayList和LinkedList底层采用的数据结构不同，应用场景不同</li>
-</ul>
-</li>
-<li><p>List集合的特有方法</p>
-<ul>
-<li>List集合因为支持索引，所以多了很多与索引相关的方法，当然，Collection的功能List也都继承了</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th align="center">方法名称</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"><code>void add(int index, E element)</code></td>
-<td align="center">在此集合中的指定位置插入指定元素</td>
-</tr>
-<tr>
-<td align="center"><code>E remove(int index)</code></td>
-<td align="center">删除指定索引处的元素，返回被删除的元素</td>
-</tr>
-<tr>
-<td align="center"><code>E set(int index, E element)</code></td>
-<td align="center">修改指定索引处的元素，返回被修改的元素</td>
-</tr>
-<tr>
-<td align="center"><code>E get(int index)</code></td>
-<td align="center">返回指定索引处的元素</td>
-</tr>
-</tbody></table>
-</li>
-</ol>
-<h2 id="遍历方式"><a href="#遍历方式" class="headerlink" title="遍历方式"></a>遍历方式</h2><ol>
-<li>for循环（因为List集合有索引）</li>
-<li>迭代器</li>
-<li>增强for循环</li>
-<li>Lambda表达式</li>
-</ol>
-<h2 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h2><ol>
-<li>ArrayList基于数组实现的，数组的特点：查询快、增删慢<ul>
-<li>查询快：查询数据通过地址值和索引定位，查询任意数据耗时相同</li>
-<li>删除效率低：可能需要把后面很多的数据进行前移</li>
-<li>添加效率极低：可能需要把后面很多的数据后移，再添加元素；或者也可能需要进行数组的扩容</li>
-</ul>
-</li>
-<li>ArrayList实现：<ul>
-<li>利用无参构造器创建的集合，会在底层创建一个默认长度为0的数组</li>
-<li>添加第一个元素时，底层会创建一个新的长度为10的数组</li>
-<li>存满时，会扩容1.5倍</li>
-<li>如果一次添加多个元素，1.5倍还放不下，则新创建数组的长度以实际为准</li>
-</ul>
-</li>
-<li>ArrayList集合适合的应用场景<ul>
-<li>ArrayList适合：根据索引查询数据，比如根据随机索引取数组（高效）或者数据量不是很大时</li>
-<li>ArrayList不适合：数据量大的同时，又要频繁的进行增删操作</li>
-</ul>
-</li>
-</ol>
-<h2 id="LinkedList"><a href="#LinkedList" class="headerlink" title="LinkedList"></a>LinkedList</h2><ol>
-<li><p>链表：链表中的节点是独立的对象，在内存中是不连续的，每个节点包含数据值和下一个节点的地址</p>
-<p>特点：</p>
-<ul>
-<li>查询慢：无论查询哪个数据都要从头开始找</li>
-<li>增删相对快</li>
-</ul>
-</li>
-<li><p>LinkedList底层原理</p>
-<ul>
-<li>基于双链表实现（每个节点包含数据、前一个结点地址和后一个结点地址）</li>
-<li>特点：查询慢，增删相对较快，但对首尾元素进行增删改查的速度是极快的</li>
-</ul>
-</li>
-<li><p>LinkedList新增了很多首尾操作的特有方法</p>
-<table>
-<thead>
-<tr>
-<th align="center">方法名称</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"><code>public void addFirst(E e)</code></td>
-<td align="center">在该列表开头插入指定的元素</td>
-</tr>
-<tr>
-<td align="center"><code>public void addLast(E e)</code></td>
-<td align="center">将指定的元素追加到此列表的末尾</td>
-</tr>
-<tr>
-<td align="center"><code>public E getFirst()</code></td>
-<td align="center">返回此列表中的第一个元素</td>
-</tr>
-<tr>
-<td align="center"><code>public E getLast()</code></td>
-<td align="center">返回此列表中的最后一个元素</td>
-</tr>
-<tr>
-<td align="center"><code>public E removeFirst()</code></td>
-<td align="center">在此列表中删除并返回第一个元素</td>
-</tr>
-<tr>
-<td align="center"><code>public E removeLast()</code></td>
-<td align="center">在此列表中删除并返回最后一个元素</td>
-</tr>
-</tbody></table>
-</li>
-<li><p>LinkedList的应用场景：</p>
-<ul>
-<li><p>设计队列（先进先出，后进后出）</p>
-<p>数据进入队列的过程称为：入队</p>
-<p>数据离开队列的过程称为：出队</p>
-</li>
-<li><p>设计栈（后进先出，先进后出）</p>
-<p>数据进入栈模型的过程称为：压&#x2F;进站（push）</p>
-<p>数据离开栈模型的过程称为：弹&#x2F;出栈（pop）</p>
-</li>
-</ul>
-</li>
-</ol>
-<h1 id="Set集合"><a href="#Set集合" class="headerlink" title="Set集合"></a>Set集合</h1><h2 id="Set系列集合特点"><a href="#Set系列集合特点" class="headerlink" title="Set系列集合特点"></a>Set系列集合特点</h2><ol>
-<li>Set系集合特点：无序：添加数据的顺序和获取出的数据顺序不一致；不重复；无索引；</li>
-<li>HashSet：无序、不重复、无索引。</li>
-<li>LinkedHashSet：有序、不重复、无索引。</li>
-<li>TreeSet：排序、不重复、无索引。</li>
-<li>注意：Set要用到的常用方法，基本上就是Collection提供的！！！自己几乎没有额外新增的一些常用方法！</li>
-</ol>
-<h2 id="HashSet"><a href="#HashSet" class="headerlink" title="HashSet"></a>HashSet</h2><ol>
-<li>HashSet集合的底层原理：哈希表</li>
-<li>HashSet集合去重复的机制<ul>
-<li>HashSet集合默认不能对内容一样的两个不同对象去重复</li>
-<li>如何让HashSet集合实现对内容一样的两个不同对象进行去重：重写<code>hashCode()</code>和<code>equals()</code>方法</li>
-</ul>
-</li>
-</ol>
-<h2 id="LinkedHashSet"><a href="#LinkedHashSet" class="headerlink" title="LinkedHashSet"></a>LinkedHashSet</h2><ol>
-<li>LinkedHashSet集合底层原理：<ul>
-<li>哈希表（数组、链表、红黑树）</li>
-<li>但是，LinkedHashSet的每个元素都额外的多了一个双链表的机制记录它前后元素的位置</li>
-</ul>
-</li>
-</ol>
-<h2 id="TreeSet"><a href="#TreeSet" class="headerlink" title="TreeSet"></a>TreeSet</h2><ol>
-<li><p>TreeSet底层基于红黑树实现</p>
-</li>
-<li><p>排序规则：</p>
-<ul>
-<li>对于数值类型：Integer，Double，默认按照数值大小的本身进行升序排序</li>
-<li>对于字符串类型：默认按照首字母的编号升序排序</li>
-<li>对于自定义类型的对象，TreeSet默认是无法直接排序的</li>
-</ul>
-</li>
-<li><p>自定义排序规则</p>
-<ul>
-<li><p>方法一：让该对象的类实现<code>comparable</code>(比较规则)接口，然后重写<code>compareTo</code>方法，自己制定比较规则</p>
-</li>
-<li><p>方法二：通过调用TreeSet集合有参数构造器，可以设置Comparator（比较器对象，用于指定比较规则）</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="title function_">TreeSet</span><span class="params">(Comparator&lt;? <span class="built_in">super</span> E&gt; comparator)</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>注意：如果类本身有实现Comparable接口，TreeSet集合同时也自带比较器，默认使用集合自带的比较器排序。</p>
-</li>
-</ul>
-</li>
-</ol>
-<h1 id="Collection集合总结"><a href="#Collection集合总结" class="headerlink" title="Collection集合总结"></a>Collection集合总结</h1><h2 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h2><ol>
-<li>如果希望记住元素的添加顺序，需要存储重复的元素，又要频繁的根据索引查询数据？<ul>
-<li>用ArrayList集合（有序、可重复、有索引)，底层基于数组的。(常用)</li>
-</ul>
-</li>
-<li>如果希望记住元素的添加顺序，且增删首尾数据的情况较多?<ul>
-<li>用LinkedList集合（有序、可重复、有索引)，底层基于双链表实现的。</li>
-</ul>
-</li>
-<li>如果不在意元素顺序，也没有重复元素需要存储，只希望增删改查都快?<ul>
-<li>用HashSet集合（无序，不重复，无索引)，底层基于哈希表实现的。(常用)</li>
-</ul>
-</li>
-<li>如果希望记住元素的添加顺序，也没有重复元素需要存储，且希望增删改查都快?<ul>
-<li>用LinkedHashSet集合（有序，不重复，无索引)，底层基于哈希表和双链表。</li>
-</ul>
-</li>
-<li>如果要对元素进行排序，也没有重复元素需要存储?且希望增删改查都快?<ul>
-<li>用TreeSet集合，基于红黑树实现。</li>
-</ul>
-</li>
-</ol>
-<h2 id="集合的并发修改异常问题"><a href="#集合的并发修改异常问题" class="headerlink" title="集合的并发修改异常问题"></a>集合的并发修改异常问题</h2><ol>
-<li>集合的并发修改异常<ul>
-<li>使用迭代器遍历集合时，又同时在删除集合中的数据，程序就会出现并发修改异常的错误。</li>
-<li>由于增强for循环遍历集合就是迭代器遍历集合的简化写法，因此，使用增强for循环遍历集合，又在同时删除集合中的数据时，程序也会出现并发修改异常的错误</li>
-</ul>
-</li>
-<li>怎么保证遍历集合同时删除数据时不出bug<ul>
-<li>使用迭代器遍历集合，但用迭代器自己的删除方法删除数据即可。</li>
-<li>如果能用for循环遍历时:可以倒着遍历并删除;或者从前往后遍历，但删除元素后做<code>i--</code>操作。</li>
-</ul>
-</li>
-</ol>
-<h2 id="Collection的其他相关知识"><a href="#Collection的其他相关知识" class="headerlink" title="Collection的其他相关知识"></a>Collection的其他相关知识</h2><h3 id="前置知识：可变参数"><a href="#前置知识：可变参数" class="headerlink" title="前置知识：可变参数"></a>前置知识：可变参数</h3><ol>
-<li>可变参数：就是一种特殊形参，定义在方法、构造器的形参列表里，格式是：<code>数据类型...参数名称;</code></li>
-<li>可变参数的特点和好处<ul>
-<li>特点：可以不传数据给它;可以传一个或者同时传多个数据给它;也可以传一个数组给它。</li>
-<li>好处：常常用来灵活的接收数据。</li>
-</ul>
-</li>
-<li>注意实现：<ul>
-<li>可变参数在方法内部就是一个数组。</li>
-<li>一个形参列表中可变参数只能有一个。</li>
-<li>可变参数必须放在形参列表的最后面。</li>
-</ul>
-</li>
-</ol>
-<h3 id="Collections"><a href="#Collections" class="headerlink" title="Collections"></a>Collections</h3><ol>
-<li><p>Collections：是一个用来操作集合的工具类</p>
-</li>
-<li><p>Collections提供的常用静态方法</p>
-<table>
-<thead>
-<tr>
-<th align="center">方法名称</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"><code>public static &lt;T&gt; boolean addAll(Collection&lt;? super T&gt; c, T……elements)</code></td>
-<td align="center">给集合批量添加元素</td>
-</tr>
-<tr>
-<td align="center"><code>public static void shuffle(List&lt;?&gt; list)</code></td>
-<td align="center">打乱List集合的元素顺序</td>
-</tr>
-<tr>
-<td align="center"><code>public static &lt;T&gt; void sort(List&lt;?&gt; list)</code></td>
-<td align="center">对List集合中的元素进行升序排序</td>
-</tr>
-<tr>
-<td align="center"><code>public static &lt;T&gt; void sort(List&lt;?&gt; list, Comparator&lt;? super T&gt; c)</code></td>
-<td align="center">对List集合中的元素，按照比较器对象指定的规则进行排序</td>
-</tr>
-</tbody></table>
-</li>
-</ol>
-<h1 id="拓展："><a href="#拓展：" class="headerlink" title="拓展："></a>拓展：</h1><h2 id="哈希表"><a href="#哈希表" class="headerlink" title="哈希表"></a>哈希表</h2><ol>
-<li><p>哈希值</p>
-<ul>
-<li><p>就是一个int类型的数值，Java中每一个对象都有一个哈希值。</p>
-</li>
-<li><p>Java中的所有对象，都可以调用<code>Object</code>类提供的<code>hashCode</code>方法，返回该对象自己的哈希值。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">hashCode</span><span class="params">()</span>：返回对象的哈希码值。</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li><p>对象哈希值的特点</p>
-<ul>
-<li>同一个对象多次调用<code>hashCode()</code>方法返回的哈希值是相同的。</li>
-<li>不同对象，他们的哈希值一般不相同，但也有可能会相同（哈希碰撞）。</li>
-</ul>
-</li>
-<li><p>哈希表</p>
-<ul>
-<li><p>哈希表是一种增删改查数据性能都较好的结构</p>
-</li>
-<li><p>JDK8之前，哈希表 &#x3D; 数组 + 链表</p>
-<ol>
-<li><p>创建一个默认长度16的数组，默认加载因子为0.75，数组名table</p>
-</li>
-<li><p>使用元素的哈希值对数组的长度求余计算出应存入的位置</p>
-</li>
-<li><p>判断当前位置是否为null，如果是null直接存入</p>
-</li>
-<li><p>如果不为null，表示有元素，则调用<code>equals</code>方法比较，相等，则不存；不相等，则存入数组</p>
-<ul>
-<li><p>JDK8之前，新元素存入数组，占老元素位置，老元素挂下面</p>
-</li>
-<li><p>JDK8之后，新元素直接挂在老元素下面</p>
-</li>
-</ul>
-</li>
-</ol>
-</li>
-<li><p>JDK8之后，哈希表 &#x3D; 数组 + 链表 + 红黑树</p>
-<ol>
-<li>当链表长度超过超过8，且数组长度&gt;&#x3D;64时，自动将链表转换成红黑树</li>
-</ol>
-</li>
-</ul>
-</li>
-<li><p>如果数组快占满了，会出现什么问题？该怎么解决</p>
-<ul>
-<li>链表过长，导致查询性能降低</li>
-<li>扩容：当数组存放数据的长度达到数组长度与默认加载因子的乘积时，便会执行扩容操作</li>
-</ul>
-</li>
-</ol>
-<h2 id="树"><a href="#树" class="headerlink" title="树"></a>树</h2><ol>
-<li>二叉树：<ul>
-<li>二叉树中，任意结点的度 &lt;&#x3D; 2</li>
-<li>度：每个节点的子节点数量</li>
-<li>树高：树的总层数</li>
-<li>根节点：最高层的节点</li>
-<li>左子节点</li>
-<li>右子节点</li>
-<li>左子树</li>
-<li>右子树</li>
-</ul>
-</li>
-<li>二叉查找树（二叉排序树）<ul>
-<li>规则：小的存左边，大的存右边，一样的不存</li>
-<li>缺陷：当数据已经是排序好的，导致查询的性能与单链表一样，查询速度变慢</li>
-</ul>
-</li>
-<li>平衡二叉树：<ul>
-<li>在满足查找二叉树的大小规则下，让树尽可能矮小，以此提高查数据的性能</li>
-</ul>
-</li>
-<li>红黑树<ul>
-<li>红黑树就是平衡二叉树</li>
-<li>红黑树是一种增删改查数据性能都相对较好的结构</li>
 </ul>
 </li>
 </ol>
@@ -6440,6 +6753,68 @@
       </categories>
   </entry>
   <entry>
+    <title>Python基础(三)——函数</title>
+    <url>/2023/08/12/Python%E5%9F%BA%E7%A1%80(%E4%B8%89)%E2%80%94%E2%80%94%E5%87%BD%E6%95%B0/</url>
+    <content><![CDATA[<h1 id="函数介绍"><a href="#函数介绍" class="headerlink" title="函数介绍"></a>函数介绍</h1><ul>
+<li>函数是组织好的，可重复使用的，用来实现特定功能的代码段，如前面的type()、input()等都是Python的内置函数。</li>
+<li>函数可以提高程序的复用性，减少重复性代码，提高开发效率</li>
+</ul>
+<h1 id="函数的定义和调用"><a href="#函数的定义和调用" class="headerlink" title="函数的定义和调用"></a>函数的定义和调用</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 定义函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">函数名</span>(<span class="params">传入参数</span>):</span><br><span class="line">    函数体</span><br><span class="line">    <span class="keyword">return</span> 返回值</span><br><span class="line"></span><br><span class="line"><span class="comment"># 调用函数</span></span><br><span class="line">函数名(参数)</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>注意：</strong></p>
+<ul>
+<li>参数如果不需要，可以省略</li>
+<li>返回值如果不需要，可以省略</li>
+<li>函数必须先定义后使用</li>
+</ul>
+<h1 id="函数的参数"><a href="#函数的参数" class="headerlink" title="函数的参数"></a>函数的参数</h1><p>传入参数的功能是：在函数进行计算的时候，接受外部（调用时）提供的数据</p>
+<p><strong>语法解析：</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 定义函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">add</span>(<span class="params">x,y</span>):</span><br><span class="line">    result =  x + y</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;<span class="subst">&#123;x&#125;</span> + <span class="subst">&#123;y&#125;</span>的结果是：<span class="subst">&#123;result&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 调用函数</span></span><br><span class="line">add(<span class="number">5</span>,<span class="number">6</span>)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>函数定义中，提供的x和y，称之为：形式参数（形参），表示函数声明将要使用2个参数，参数直接使用逗号进行分隔</li>
+<li>函数调用中，提供的5和6，称之为：实际参数（实参），表示函数执行时真正使用的参数值，传入的时候，按照顺序传入数据，使用逗号分隔</li>
+<li>传入参数的数量是不受限制的，可以没有，也可以有多个</li>
+</ul>
+<h1 id="函数的返回值"><a href="#函数的返回值" class="headerlink" title="函数的返回值"></a>函数的返回值</h1><h2 id="返回值的定义"><a href="#返回值的定义" class="headerlink" title="返回值的定义"></a>返回值的定义</h2><p>所谓返回值，就是程序中函数完成事情后，最后给调用者的结果</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">函数</span>(<span class="params">参数...</span>):</span><br><span class="line">    函数体</span><br><span class="line">    <span class="keyword">return</span> 返回值</span><br><span class="line"></span><br><span class="line">变量 = 函数(参数)</span><br></pre></td></tr></table></figure>
+
+<p>如上述代码，变量就能接收到函数的返回值</p>
+<p>语法就是：通过return关键字，就能向调用者返回数据</p>
+<p><strong>注意：</strong>函数体在遇到return后就结束了，所以写在return后的代码不会执行</p>
+<h2 id="None类型"><a href="#None类型" class="headerlink" title="None类型"></a>None类型</h2><p>Python中有一个特殊的字面量：None，其类型是：&lt;class ‘NoneType’&gt;，无返回值的函数，实际上就是返回了：None这个字面量</p>
+<p>应用场景：</p>
+<ul>
+<li>用在函数<strong>无返回值</strong>上</li>
+<li>用在<strong>if判断</strong>上，在if判断中，None等同于False，一般用在函数中主动返回None，配合if判断做出相关处理</li>
+<li>在声明无内容的变量上，<strong>定义变量</strong>时，但暂时不需要变量有具体值，可以用None来代替</li>
+</ul>
+<p>None在if中的应用</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">check_age</span>(<span class="params">age</span>):</span><br><span class="line">    <span class="keyword">if</span> age &gt; <span class="number">18</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;SUCCESS&quot;</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">result = check_age(<span class="number">10</span>)</span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> result:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;未成年&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="函数说明文档"><a href="#函数说明文档" class="headerlink" title="函数说明文档"></a>函数说明文档</h1><p>顾名思义，就是在函数中写注释函数进行说明解释，帮助更好理解函数的功能</p>
+<h1 id="函数的嵌套调用"><a href="#函数的嵌套调用" class="headerlink" title="函数的嵌套调用"></a>函数的嵌套调用</h1><p>所谓函数嵌套调用就是指在一个函数里面调用了另外一个函数，如下所示</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">fun_b</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;---2---&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">fun_a</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;---1---&quot;</span>)</span><br><span class="line"></span><br><span class="line">    fun_b()</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;---3---&quot;</span>)</span><br><span class="line"></span><br><span class="line">fun_a()</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">本段代码在fun_a中调用了fun_b</span></span><br><span class="line"><span class="string">运行结果：</span></span><br><span class="line"><span class="string">---1---</span></span><br><span class="line"><span class="string">---2---</span></span><br><span class="line"><span class="string">---3---</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="变量作用域"><a href="#变量作用域" class="headerlink" title="变量作用域"></a>变量作用域</h1><ol>
+<li>变量主要分为局部变量和全局变量</li>
+<li>局部变量：定义在函数体内的局部变量，即只在函数体内部生效</li>
+<li>全局变量：在函数体内、外都能生效的变量</li>
+<li>在函数内部定义一个与全局变量同名的变量，并对其运算，对全局变量无影响</li>
+<li>在函数内部声明全局变量，需要使用global关键字</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Python基础(二)——判断、循环</title>
     <url>/2023/07/14/Python%E5%9F%BA%E7%A1%80(%E4%BA%8C)%E2%80%94%E2%80%94%E5%88%A4%E6%96%AD%E3%80%81%E5%BE%AA%E7%8E%AF/</url>
     <content><![CDATA[<h1 id="判断语句"><a href="#判断语句" class="headerlink" title="判断语句"></a>判断语句</h1><p>进行逻辑判断是生活中常见的行为，同样，在程序中，进行逻辑判断也是最为基础的功能</p>
@@ -6592,68 +6967,6 @@
 <p>如，range(5,10,2)取得的数据是：[5,7,9]</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">num = <span class="number">100</span></span><br><span class="line">count = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,num):</span><br><span class="line">    <span class="keyword">if</span> x%<span class="number">2</span> == <span class="number">0</span>:</span><br><span class="line">        count += <span class="number">1</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;从1到<span class="subst">&#123;num&#125;</span>(不含<span class="subst">&#123;num&#125;</span>本身)共有<span class="subst">&#123;count&#125;</span>个偶数&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">运行结果：</span></span><br><span class="line"><span class="string">从1到100(不含100本身)共有49个偶数</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
 
-]]></content>
-      <categories>
-        <category>Python</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Python基础(三)——函数</title>
-    <url>/2023/08/12/Python%E5%9F%BA%E7%A1%80(%E4%B8%89)%E2%80%94%E2%80%94%E5%87%BD%E6%95%B0/</url>
-    <content><![CDATA[<h1 id="函数介绍"><a href="#函数介绍" class="headerlink" title="函数介绍"></a>函数介绍</h1><ul>
-<li>函数是组织好的，可重复使用的，用来实现特定功能的代码段，如前面的type()、input()等都是Python的内置函数。</li>
-<li>函数可以提高程序的复用性，减少重复性代码，提高开发效率</li>
-</ul>
-<h1 id="函数的定义和调用"><a href="#函数的定义和调用" class="headerlink" title="函数的定义和调用"></a>函数的定义和调用</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 定义函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">函数名</span>(<span class="params">传入参数</span>):</span><br><span class="line">    函数体</span><br><span class="line">    <span class="keyword">return</span> 返回值</span><br><span class="line"></span><br><span class="line"><span class="comment"># 调用函数</span></span><br><span class="line">函数名(参数)</span><br></pre></td></tr></table></figure>
-
-
-
-<p><strong>注意：</strong></p>
-<ul>
-<li>参数如果不需要，可以省略</li>
-<li>返回值如果不需要，可以省略</li>
-<li>函数必须先定义后使用</li>
-</ul>
-<h1 id="函数的参数"><a href="#函数的参数" class="headerlink" title="函数的参数"></a>函数的参数</h1><p>传入参数的功能是：在函数进行计算的时候，接受外部（调用时）提供的数据</p>
-<p><strong>语法解析：</strong></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 定义函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">add</span>(<span class="params">x,y</span>):</span><br><span class="line">    result =  x + y</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;<span class="subst">&#123;x&#125;</span> + <span class="subst">&#123;y&#125;</span>的结果是：<span class="subst">&#123;result&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 调用函数</span></span><br><span class="line">add(<span class="number">5</span>,<span class="number">6</span>)</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>函数定义中，提供的x和y，称之为：形式参数（形参），表示函数声明将要使用2个参数，参数直接使用逗号进行分隔</li>
-<li>函数调用中，提供的5和6，称之为：实际参数（实参），表示函数执行时真正使用的参数值，传入的时候，按照顺序传入数据，使用逗号分隔</li>
-<li>传入参数的数量是不受限制的，可以没有，也可以有多个</li>
-</ul>
-<h1 id="函数的返回值"><a href="#函数的返回值" class="headerlink" title="函数的返回值"></a>函数的返回值</h1><h2 id="返回值的定义"><a href="#返回值的定义" class="headerlink" title="返回值的定义"></a>返回值的定义</h2><p>所谓返回值，就是程序中函数完成事情后，最后给调用者的结果</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">函数</span>(<span class="params">参数...</span>):</span><br><span class="line">    函数体</span><br><span class="line">    <span class="keyword">return</span> 返回值</span><br><span class="line"></span><br><span class="line">变量 = 函数(参数)</span><br></pre></td></tr></table></figure>
-
-<p>如上述代码，变量就能接收到函数的返回值</p>
-<p>语法就是：通过return关键字，就能向调用者返回数据</p>
-<p><strong>注意：</strong>函数体在遇到return后就结束了，所以写在return后的代码不会执行</p>
-<h2 id="None类型"><a href="#None类型" class="headerlink" title="None类型"></a>None类型</h2><p>Python中有一个特殊的字面量：None，其类型是：&lt;class ‘NoneType’&gt;，无返回值的函数，实际上就是返回了：None这个字面量</p>
-<p>应用场景：</p>
-<ul>
-<li>用在函数<strong>无返回值</strong>上</li>
-<li>用在<strong>if判断</strong>上，在if判断中，None等同于False，一般用在函数中主动返回None，配合if判断做出相关处理</li>
-<li>在声明无内容的变量上，<strong>定义变量</strong>时，但暂时不需要变量有具体值，可以用None来代替</li>
-</ul>
-<p>None在if中的应用</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">check_age</span>(<span class="params">age</span>):</span><br><span class="line">    <span class="keyword">if</span> age &gt; <span class="number">18</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;SUCCESS&quot;</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">result = check_age(<span class="number">10</span>)</span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> result:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;未成年&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="函数说明文档"><a href="#函数说明文档" class="headerlink" title="函数说明文档"></a>函数说明文档</h1><p>顾名思义，就是在函数中写注释函数进行说明解释，帮助更好理解函数的功能</p>
-<h1 id="函数的嵌套调用"><a href="#函数的嵌套调用" class="headerlink" title="函数的嵌套调用"></a>函数的嵌套调用</h1><p>所谓函数嵌套调用就是指在一个函数里面调用了另外一个函数，如下所示</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">fun_b</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;---2---&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">fun_a</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;---1---&quot;</span>)</span><br><span class="line"></span><br><span class="line">    fun_b()</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;---3---&quot;</span>)</span><br><span class="line"></span><br><span class="line">fun_a()</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">本段代码在fun_a中调用了fun_b</span></span><br><span class="line"><span class="string">运行结果：</span></span><br><span class="line"><span class="string">---1---</span></span><br><span class="line"><span class="string">---2---</span></span><br><span class="line"><span class="string">---3---</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="变量作用域"><a href="#变量作用域" class="headerlink" title="变量作用域"></a>变量作用域</h1><ol>
-<li>变量主要分为局部变量和全局变量</li>
-<li>局部变量：定义在函数体内的局部变量，即只在函数体内部生效</li>
-<li>全局变量：在函数体内、外都能生效的变量</li>
-<li>在函数内部定义一个与全局变量同名的变量，并对其运算，对全局变量无影响</li>
-<li>在函数内部声明全局变量，需要使用global关键字</li>
-</ol>
 ]]></content>
       <categories>
         <category>Python</category>
@@ -7010,6 +7323,27 @@
 ]]></content>
       <categories>
         <category>Python</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2023/04/12/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+      <categories>
+        <category>others</category>
       </categories>
   </entry>
   <entry>
@@ -7491,27 +7825,6 @@
 ]]></content>
       <categories>
         <category>Python</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2023/04/12/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-      <categories>
-        <category>others</category>
       </categories>
   </entry>
 </search>
