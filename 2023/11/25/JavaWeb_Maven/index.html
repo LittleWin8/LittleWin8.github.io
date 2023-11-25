@@ -11,7 +11,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
-      <title>Java_网络通信 |  小稳</title>
+      <title>Maven |  小稳</title>
   <meta name="generator" content="hexo-theme-ayer">
       
       <link rel="shortcut icon" href="/littlewin.png" />
@@ -56,7 +56,7 @@
     <main class="content on">
       <section class="outer">
   <article
-  id="post-Java_网络通信"
+  id="post-JavaWeb_Maven"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
@@ -67,7 +67,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  Java_网络通信
+  Maven
 </h1>
  
 
@@ -75,8 +75,8 @@
     </header>
      
     <div class="article-meta">
-      <a href="/2023/11/21/Java_%E7%BD%91%E7%BB%9C%E9%80%9A%E4%BF%A1/" class="article-date">
-  <time datetime="2023-11-21T10:51:23.000Z" itemprop="datePublished">2023-11-21</time>
+      <a href="/2023/11/25/JavaWeb_Maven/" class="article-date">
+  <time datetime="2023-11-25T04:48:57.000Z" itemprop="datePublished">2023-11-25</time>
 </a> 
   <div class="article-category">
     <a class="article-category-link" href="/categories/Java/">Java</a>
@@ -87,7 +87,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">1.7k</span>
+            <span class="post-count">1.6k</span>
         </span>
     </span>
 
@@ -111,308 +111,201 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <h1 id="网络编程"><a href="#网络编程" class="headerlink" title="网络编程"></a>网络编程</h1><ol>
-<li>什么是网络编程？<ul>
-<li>可以让设备中的程序与网络搜索其他设备中的程序进行数据交互（实现网络通信的）</li>
+  <h1 id="一、Maven概述"><a href="#一、Maven概述" class="headerlink" title="一、Maven概述"></a>一、Maven概述</h1><h2 id="1-1-介绍"><a href="#1-1-介绍" class="headerlink" title="1.1 介绍"></a>1.1 介绍</h2><ol>
+<li><p>Maven：</p>
+<ul>
+<li>Maven是apache旗下的一个开源项目，是一款用于管理和构建java项目的工具</li>
+<li>Apache Maven是一个项目管理和构建的工具，他基于项目对象模型（POM）的概念，通过一小段描述信息来管理项目的构建</li>
 </ul>
 </li>
-<li>Java提供了哪些网络编程的解决方法？<ul>
-<li><code>java.net.*</code>包下提供了网络编程的解决方法</li>
+<li><p>apache：</p>
+<ul>
+<li>Apache软件基金会，成立于1999年7月，是目前世界上最大的最受欢迎的开源软件基金会，也是一个专门为支持开源项目而生的非盈利组织</li>
+<li>开源项目：<a target="_blank" rel="noopener" href="https://www.apache.org/index.html#projects-list">https://www.apache.org/index.html#projects-list</a></li>
 </ul>
 </li>
-<li>基本的通信架构<ul>
-<li>基本的通信架构有2种形式：CS架构（Client客户端&#x2F;Server服务端）、BS架构（Browser浏览器&#x2F;Server服务端）</li>
-<li>无论是CS架构，还是BS架构的软件必须依赖网络编程</li>
+<li><p>Maven作用：</p>
+<ul>
+<li>依赖管理：方便快捷的管理项目依赖的资源（jar包），避免版本冲突问题</li>
+<li>统一项目结构：提供标准、统一的项目结构</li>
+<li>项目构建：标准跨平台（Linux、Windows、MacOS）的自动化项目构建方式</li>
+</ul>
+</li>
+<li><p>Maven官网：<a target="_blank" rel="noopener" href="http://maven.apache.org/">http://maven.apache.org/</a></p>
+</li>
+<li><p>Mave模型介绍：</p>
+<p><img src="/../image/Maven%E6%A8%A1%E5%9E%8B.png"></p>
+<p>仓库：用于存储资源，管理各种jar包。</p>
+<ul>
+<li>本地仓库：自己计算机上的一个目录</li>
+<li>中央仓库：由Maven团队维护的全球唯一的。仓库地址：<a target="_blank" rel="noopener" href="https://repo1.maven.org/maven2/">https://repo1.maven.org/maven2/</a></li>
+<li>远程仓库(私服)：一般由公司团队搭建的私有仓库</li>
 </ul>
 </li>
 </ol>
-<h1 id="网络通信三要素"><a href="#网络通信三要素" class="headerlink" title="网络通信三要素"></a>网络通信三要素</h1><h2 id="IP地址"><a href="#IP地址" class="headerlink" title="IP地址"></a>IP地址</h2><ol>
-<li><p>IP（Internet Protocol）：全称”互联网协议地址“，是分配给上网设备的唯一标识</p>
+<h2 id="1-2-安装"><a href="#1-2-安装" class="headerlink" title="1.2 安装"></a>1.2 安装</h2><ol>
+<li><p>解压<code>apache-maven-3.6.1-bin.zip</code></p>
 </li>
-<li><p>IP地址有两种形式：</p>
-<ul>
-<li>IPv4：由32bit（4字节）组成，点分十进制表示法</li>
-<li>IPv6：共128位，号称可以为地球每一粒沙子编号</li>
-<li>IPv6分成8段表示，每段每四位编码成一个十六进制位表示，数之间用（:）分开</li>
+<li><p>配置本地仓库：修改<code>conf/settings.xml</code>中的<code>&lt;localRepository&gt;</code>为一个指定目录</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">localRepository</span>&gt;</span>D:\Develop\apache-maven-3.9.5<span class="tag">&lt;/<span class="name">localRepository</span>&gt;</span>    </span><br></pre></td></tr></table></figure>
+</li>
+<li><p>配置阿里云私服：修改<code>conf/settings.xml</code>中的<code>&lt;mirrors&gt;</code>标签，为其添加如下子标签：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">mirror</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">id</span>&gt;</span>alimaven<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>aliyun maven<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url</span>&gt;</span>http://maven.aliyun.com/nexus/content/groups/public/<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">mirrorOf</span>&gt;</span>central<span class="tag">&lt;/<span class="name">mirrorOf</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mirror</span>&gt;</span>  </span><br></pre></td></tr></table></figure>
+</li>
+<li><p>配置环境变量：<code>MAVEN_HOME</code>为maven的解压目录，并将其bin目录添加到PATH环境变量</p>
+</li>
+<li><p>测试：<code>mvn -v</code></p>
+</li>
+</ol>
+<h1 id="二-、IDEA集成Maven"><a href="#二-、IDEA集成Maven" class="headerlink" title="二 、IDEA集成Maven"></a>二 、IDEA集成Maven</h1><h2 id="2-1配置Maven环境"><a href="#2-1配置Maven环境" class="headerlink" title="2.1配置Maven环境"></a>2.1配置Maven环境</h2><h3 id="2-1-1-配置当前Maven环境-当前工程"><a href="#2-1-1-配置当前Maven环境-当前工程" class="headerlink" title="2.1.1 配置当前Maven环境(当前工程)"></a>2.1.1 配置当前Maven环境(当前工程)</h3><ol>
+<li>选择 IDEA 中<code> File --&gt; Settings --&gt; Build,Execution,Deployment --&gt; Build Tools --&gt; Maven</code></li>
+<li>设置 IDEA 使用本地安装的 Maven，并 修改配置文件 及 本地仓库路径</li>
+<li>确定 JRE 和 项目字节码 的版本一致</li>
+</ol>
+<h3 id="2-1-2-配置Maven环境-全局"><a href="#2-1-2-配置Maven环境-全局" class="headerlink" title="2.1.2 配置Maven环境(全局)"></a>2.1.2 配置Maven环境(全局)</h3><ol>
+<li>在 IDEA 初识界面，点击 <code>Customize --&gt; All settings...</code></li>
+<li>其余步骤同上</li>
+</ol>
+<h2 id="2-2-创建Maven项目"><a href="#2-2-创建Maven项目" class="headerlink" title="2.2 创建Maven项目"></a>2.2 创建Maven项目</h2><h3 id="2-2-1-IDEA-创建-Maven-项目"><a href="#2-2-1-IDEA-创建-Maven-项目" class="headerlink" title="2.2.1  IDEA 创建 Maven 项目"></a>2.2.1  IDEA 创建 Maven 项目</h3><ol>
+<li>创建模块，选择Maven，点击Next</li>
+<li>填写模块信息，坐标信息，点击finish，创建完成</li>
+<li>编写程序、运行</li>
+</ol>
+<h3 id="2-2-2-Maven-坐标"><a href="#2-2-2-Maven-坐标" class="headerlink" title="2.2.2 Maven 坐标"></a>2.2.2 Maven 坐标</h3><ol>
+<li>什么是坐标？<ul>
+<li>Maven 中的坐标是资源配置的唯一标识，通过该坐标可以唯一定位资源位置</li>
+<li>使用坐标来定义项目或引入项目中需要的依赖</li>
 </ul>
 </li>
-<li><p>IP域名：</p>
-<ul>
-<li>电脑的<code>DNS服务器</code>会将域名解析成<code>IP地址</code>，然后再使用该<code>IP地址</code>访问对应的服务器</li>
+<li>Maven 坐标主要组成<ul>
+<li>groupId：定义当前Maven项目隶属的组织名称（通常是域名反写）</li>
+<li>artifactId：定义当前Maven项目名称（通常是模块名称）</li>
+<li>version：定义当前项目版本号</li>
 </ul>
 </li>
-<li><p>公网IP、内网IP</p>
-<ul>
-<li>公网IP：是可以连接互联网的IP地址</li>
-<li>内网IP：也叫局域网IP，只能组织机构内部使用</li>
-<li><code>192.168.</code>开头的就是常见的局域网地址，范围即为<code>192.168.00--192.168.255.255</code>，专门为组织机构内部使用</li>
+</ol>
+<h2 id="2-3-导入-Maven-项目"><a href="#2-3-导入-Maven-项目" class="headerlink" title="2.3 导入 Maven 项目"></a>2.3 导入 Maven 项目</h2><h3 id="2-3-1-IDEA-导入Maven-项目"><a href="#2-3-1-IDEA-导入Maven-项目" class="headerlink" title="2.3.1 IDEA 导入Maven 项目"></a>2.3.1 IDEA 导入Maven 项目</h3><ol>
+<li>方式一：打开IDEA，选择右侧Maven面板，点击 + 号，选中对象项目的pom.xml文件，双击即可</li>
+<li>方式二：打开IDEA，选择 <code>File --&gt; Project Structure </code>，点击 + 号，点击<code>import Module</code>，选中对象项目的pom.xml文件，双击即可</li>
+</ol>
+<h1 id="三、依赖管理"><a href="#三、依赖管理" class="headerlink" title="三、依赖管理"></a>三、依赖管理</h1><h2 id="3-1-依赖配置"><a href="#3-1-依赖配置" class="headerlink" title="3.1 依赖配置"></a>3.1 依赖配置</h2><ol>
+<li>依赖：指当前项目运行所需的 jar 包，一个项目中可以引入多个依赖</li>
+<li>配置：<ul>
+<li>在 pom.xml 中编写<code>&lt;dependencies&gt;</code>标签</li>
+<li>在<code>&lt;dependencies&gt;</code>标签中，使用<code>&lt;dependency&gt;</code>引入坐标</li>
+<li>定义坐标的<code>groupId</code>、<code>artifactId</code>、<code>version</code></li>
+<li>点击刷新按钮，引入最新加入的坐标</li>
 </ul>
 </li>
-<li><p>特殊IP地址：</p>
-<ul>
-<li><code>127.0.0.1</code>、<code>localhost</code>：代表本机IP，只会寻找当前所在的主机</li>
+<li>注意：<ul>
+<li>如果引入的依赖，本地仓库不存在，将会连接远程仓库&#x2F;中央仓库，然后下载资源。（这个过程会比较耗时，耐心等待）</li>
+<li>如果不知道依赖的坐标信息，可以到 <a target="_blank" rel="noopener" href="https://mvnrepository.com/">https://mvnrepository.com/)</a> 中搜索</li>
 </ul>
 </li>
-<li><p>IP常用命令：</p>
+</ol>
+<h2 id="3-2-依赖传递"><a href="#3-2-依赖传递" class="headerlink" title="3.2 依赖传递"></a>3.2 依赖传递</h2><ol>
+<li><p>依赖具有传递性</p>
 <ul>
-<li><code>ipconfig</code> ：查看本机IP地址。</li>
-<li><code>ping IP地址</code>：查看网络是否连通</li>
+<li>直接依赖：在当前项目中通过依赖配置建立的依赖关系</li>
+<li>间接依赖：被依赖的资源如果依赖其他资源，当前项目间接依赖其他资源</li>
 </ul>
 </li>
-<li><p>InetAddress</p>
+<li><p>排除依赖</p>
 <ul>
-<li>代表IP地址</li>
+<li><p>排除依赖指主动断开依赖的资源，被排除的资源无需指定版本</p>
+</li>
+<li><p>在<code>&lt;dependency&gt;</code>标签中添加<code>&lt;exclusions&gt;</code>标签</p>
+</li>
+<li><p>在<code>&lt;exclusions&gt;</code>标签中添加<code>&lt;exclusion&gt;</code>标签，填写对应的<code>groupId</code>、<code>artifactId</code>并刷新即可</p>
+</li>
+<li><p>如下即可排除xxxx对yyyy的依赖</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>xxxx<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>xxxx<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">version</span>&gt;</span>1.2.3<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">	<span class="tag">&lt;<span class="name">exclusions</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">exclusion</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>yyyy<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>yyyy<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;/<span class="name">exclusion</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;/<span class="name">exclusions</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
-<li><p>InetAddress的产用方法</p>
+</ol>
+<h2 id="3-3-依赖范围"><a href="#3-3-依赖范围" class="headerlink" title="3.3 依赖范围"></a>3.3 依赖范围</h2><ol>
+<li><p>依赖的 jar 包，默认情况下，可以在任何地方使用。通过<code>&lt;scope&gt;...&lt;/scope&gt;</code>设置其作用范围。</p>
+</li>
+<li><p>作用范围：</p>
+<ul>
+<li>主程序范围有效。（main文件夹范围内）</li>
+<li>测试程序范围有效。（test文件夹范围内）</li>
+<li>是否参与打包运行。（package指令范围内）</li>
+</ul>
+</li>
+<li><p>scope值：</p>
 <table>
 <thead>
 <tr>
-<th align="center">方法名称</th>
-<th align="center">说明</th>
+<th align="center">scope值</th>
+<th align="center">主程序</th>
+<th align="center">测试程序</th>
+<th align="center">打包（运行）</th>
+<th align="center">范例</th>
 </tr>
 </thead>
 <tbody><tr>
-<td align="center"><code>public static InetAddress getLocalhost()</code></td>
-<td align="center">获取本机IP，会以一个<code>InetAddress</code>的对象返回</td>
+<td align="center">compile(默认)</td>
+<td align="center">Y</td>
+<td align="center">Y</td>
+<td align="center">Y</td>
+<td align="center">log4j</td>
 </tr>
 <tr>
-<td align="center"><code>public static InetAddress getByName(String host)</code></td>
-<td align="center">根据ip地址域名，返回一个inetAddress对象</td>
+<td align="center">test</td>
+<td align="center">-</td>
+<td align="center">Y</td>
+<td align="center">-</td>
+<td align="center">junit</td>
 </tr>
 <tr>
-<td align="center"><code>public String getHostName()</code></td>
-<td align="center">获取该ip地址对象对应的主机名</td>
+<td align="center">provided</td>
+<td align="center">Y</td>
+<td align="center">Y</td>
+<td align="center">-</td>
+<td align="center">servlet-api</td>
 </tr>
 <tr>
-<td align="center"><code>public String getHostAddress()</code></td>
-<td align="center">获取该ip地址对象中的ip地址信息</td>
-</tr>
-<tr>
-<td align="center"><code>public boolean isReachable(int timeout)</code></td>
-<td align="center">在指定毫秒内，判断主机与该ip对应的主机是否联通</td>
+<td align="center">runtime</td>
+<td align="center">-</td>
+<td align="center">Y</td>
+<td align="center">Y</td>
+<td align="center">jdbc驱动</td>
 </tr>
 </tbody></table>
 </li>
 </ol>
-<h2 id="端口号"><a href="#端口号" class="headerlink" title="端口号"></a>端口号</h2><ol>
-<li>端口：<ul>
-<li>标记正在计算机设备上运行的应用程序的，被规定为一个16位的二进制，范围是0~65535</li>
-</ul>
+<h2 id="3-4-生命周期"><a href="#3-4-生命周期" class="headerlink" title="3.4 生命周期"></a>3.4 生命周期</h2><ol>
+<li><p>Maven的生命周期就是为了对所有的maven项目构建过程进行抽象和统一</p>
 </li>
-<li>分类：<ul>
-<li>周知端口：0~1023，被预先定义的知名应用占用（如：HTTP占用80，FIP占用21）</li>
-<li>注册端口：1024~49151，分配给用户进程或某些应用程序</li>
-<li>动态端口：49151~65535，之所以成为动态端口，是因为它一般不固定分配某种进程，而是动态分配</li>
-</ul>
-</li>
-<li>注意：我们自己开发发程序一般选择使用注册端口，且一个设备中不能出现两个程序的端口一样，否则出错</li>
-</ol>
-<h2 id="协议"><a href="#协议" class="headerlink" title="协议"></a>协议</h2><ol>
-<li><p>通信协议：</p>
+<li><p>Maven中有3套相互独立的生命周期：</p>
 <ul>
-<li>网络上通信的设备，实现规定的连接规则，以及传输数据的规则被称为网络通信协议</li>
+<li>clean：清理工作</li>
+<li>default：核心工作，如：编译、测试、打包、安装、部署等。</li>
+<li>site：生成报告、发布站点等。</li>
 </ul>
 </li>
-<li><p>开放式网络互联标准：OSI网络参考模型</p>
+<li><p>每套生命周期包含一些阶段（phase），阶段是有顺序的，后面的阶段依赖于前面的阶段</p>
+<p><img src="/../image/Maven%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.png"></p>
+</li>
+<li><p>生命周期阶段：</p>
 <ul>
-<li><p>OSI网络参考模型：全球网络互联标准</p>
-</li>
-<li><p>TCP&#x2F;IP网络模型：事实上的国际标准</p>
-<p><img src="/../image/%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B.png"></p>
-</li>
+<li>clean：移除上一次构建生成的文件</li>
+<li>compile：编译项目源代码</li>
+<li>test：使用合适的单元测试框架啊运行测试(junit)</li>
+<li>package：将编译后的文件打包，如：jar、war等</li>
+<li>install：安装项目到本地仓库</li>
 </ul>
 </li>
-<li><p>传输层的2个通信协议：</p>
+<li><p>注意：</p>
 <ul>
-<li>UDP(User Datagram Protocol)：用户数据报协议</li>
-<li>TCP(Transmission Control Protocol)：传输控制协议</li>
+<li>在同一套生命周期中，当运行后面的阶段时，前面的阶段都会运行</li>
 </ul>
 </li>
-<li><p>UDP协议</p>
+<li><p>执行指定生命周期的两种方式：</p>
 <ul>
-<li>特点：无连接、不可靠通信</li>
-<li>不事先建立连接，按照包发，一包数据包含：自己的IP、程序端口、目的地IP、程序端口和数据（限制在64KB内）等</li>
-<li>发送方不管对方是否在线，数据在中间丢失也不管，如果接收方收到的数据也不返回确认，故是不可靠的。</li>
-<li>通信效率搞，用于语音通话，视频直播</li>
-</ul>
-</li>
-<li><p>TCP协议</p>
-<ul>
-<li>特点：面向连接、可靠通信</li>
-<li>TCP的最终目的：要保证在不可靠的信道上实现可靠的传输</li>
-<li>TCP主要有三个步骤实现可靠传输：三次握手建立连接，传输数据进行确认，四次挥手断开连接</li>
-<li>通信效率相对不高，用于网页、文件下载、支付</li>
-</ul>
-</li>
-<li><p>TCP协议：三次握手建立可靠连接</p>
-<ul>
-<li>可靠连接：确定通信双方，收发消息都是正常无问题的！（全双工）</li>
-</ul>
-</li>
-<li><p>TCP协议：四次挥手断开连接</p>
-<ul>
-<li>目的：确保双方数据的收发都已完成</li>
-</ul>
-</li>
-</ol>
-<h1 id="UDP通信"><a href="#UDP通信" class="headerlink" title="UDP通信"></a>UDP通信</h1><ol>
-<li><p>特点：无连接、不可靠通信</p>
-</li>
-<li><p>不事先建立连接；发送端每次把要发送的数据（限制在64KB内）、接收端IP、等信息封装成一个数据包，发出去就不管了。</p>
-</li>
-<li><p>Java提供了一个<code>java.net.DatagramSocket</code>类来实现UDP通信</p>
-</li>
-<li><p>DatagramSocket：用于创建客户端、服务端</p>
-<table>
-<thead>
-<tr>
-<th align="center">构造方法</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"><code>public DatagramSocket()</code></td>
-<td align="center">创建客户端的Socket对象，系统会随机分配一个端口号</td>
-</tr>
-<tr>
-<td align="center"><code>public DatagramSocket(int port)</code></td>
-<td align="center">创建服务端的Socket对象，并指定端口号</td>
-</tr>
-</tbody></table>
-<table>
-<thead>
-<tr>
-<th align="center">方法名称</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"><code>public void send(DatagramPacket dp)</code></td>
-<td align="center">发送数据包</td>
-</tr>
-<tr>
-<td align="center"><code>public void receive(DatagramPacket p)</code></td>
-<td align="center">使用数据包接收数据</td>
-</tr>
-</tbody></table>
-</li>
-<li><p>DatagramPacket：创建数据包</p>
-<table>
-<thead>
-<tr>
-<th align="center">构造方法</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"><code>public DatagramPacket(byte[] buf, int length, InetAddress addresss, int port)</code></td>
-<td align="center">创建发出去的数据包对象</td>
-</tr>
-<tr>
-<td align="center"><code>public DatagramPacket(byte[] buf, int length)</code></td>
-<td align="center">创建用来接收数据的数据包</td>
-</tr>
-</tbody></table>
-<table>
-<thead>
-<tr>
-<th align="center">方法名称</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"><code>public int getLength()</code></td>
-<td align="center">获取数据包，实际接收到的字节个数</td>
-</tr>
-</tbody></table>
-</li>
-<li><p>客户端实现步骤：</p>
-<ul>
-<li>创建DatagramSocket对象（客户端对象）</li>
-<li>创建DatagramPacket对象封装需要发送的数据（数据包对象）</li>
-<li>使用DatagramSocket对象的send方法，传入DatagramPacket对象</li>
-<li>释放资源</li>
-</ul>
-</li>
-<li><p>服务端实现步骤：</p>
-<ul>
-<li>创建DatagramSocket对象并指定端口（服务端对象）</li>
-<li>创建DatagramPacket对象接收对象（数据包对象）</li>
-<li>使用DatagramSocket对象的receive方法，传入DatagramPacket对象</li>
-<li>释放资源</li>
-</ul>
-</li>
-</ol>
-<h1 id="TCP通信"><a href="#TCP通信" class="headerlink" title="TCP通信"></a>TCP通信</h1><ol>
-<li><p>特点：面向连接、可靠通信</p>
-</li>
-<li><p>通信双方事先会采用“三次握手”方式建立可靠联系，实现端到端通信，底层能保证数据成功成功传给服务段</p>
-</li>
-<li><p>Java提供了一个<code>java.net.Socket</code>类来实现TCP通信</p>
-</li>
-<li><p>TCP通信-客户端开发</p>
-<ul>
-<li><p>客户端程序就是通过<code>java.net</code>包下的Socket类来实现</p>
-<table>
-<thead>
-<tr>
-<th align="center">构造方法</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"><code>public Socket(String host, int port)</code></td>
-<td align="center">根据指定的服务端ip、端口号请求与服务端建立连接，连接通过，就获得客户端socket</td>
-</tr>
-</tbody></table>
-<table>
-<thead>
-<tr>
-<th align="center">方法名称</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"><code>public OutputStream getOutputStream()</code></td>
-<td align="center">获得字节输出流</td>
-</tr>
-<tr>
-<td align="center"><code>public InputStream getInputStream()</code></td>
-<td align="center">获得字节输入流</td>
-</tr>
-</tbody></table>
-</li>
-</ul>
-</li>
-<li><p>TCP通信-服务端开发</p>
-<ul>
-<li><p>服务端就是通过<code>java.net</code>包下的ServerSocket类来实现的</p>
-<table>
-<thead>
-<tr>
-<th align="center">构造方法</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"><code>public ServerSocket(int port)</code></td>
-<td align="center">为服务端程序注册端口</td>
-</tr>
-</tbody></table>
-<table>
-<thead>
-<tr>
-<th align="center">方法名称</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"><code>public Socket accept()</code></td>
-<td align="center">阻塞等待用户端的连接请求，一旦与某个客户端成功连接，则返回服务端这边的Socket对象</td>
-</tr>
-</tbody></table>
-</li>
+<li>在idea中，右侧的 Maven 工具栏，选中对应的生命周期，双击执行</li>
+<li>在命令行中，通过命令执行：<code>mvn xxx</code></li>
 </ul>
 </li>
 </ol>
@@ -480,12 +373,12 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://littlewin8.github.io/2023/11/21/Java_%E7%BD%91%E7%BB%9C%E9%80%9A%E4%BF%A1/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://littlewin8.github.io/2023/11/25/JavaWeb_Maven/" alt="微信分享二维码">
     </div>
 </div>
 
 <div id="share-mask"></div>  
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%85%A5%E9%97%A8/" rel="tag">入门</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%90%8E%E7%AB%AF/" rel="tag">后端</a></li></ul>
 
     </footer>
   </div>
@@ -493,19 +386,10 @@
    
   <nav class="article-nav">
     
+    
       <a href="/2023/11/23/Java%E9%AB%98%E7%BA%A7%E6%8A%80%E6%9C%AF/" class="article-nav-link">
-        <strong class="article-nav-caption">上一篇</strong>
-        <div class="article-nav-title">
-          
-            Java高级技术
-          
-        </div>
-      </a>
-    
-    
-      <a href="/2023/11/19/Java_%E5%A4%9A%E7%BA%BF%E7%A8%8B/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">Java_多线程</div>
+        <div class="article-nav-title">Java高级技术</div>
       </a>
     
   </nav>
