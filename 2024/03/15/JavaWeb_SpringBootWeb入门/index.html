@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+  
+
+    <head>
+      <meta charset="utf-8" />
+        
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1"
+      />
+      <title>SpringBootWeb入门 |  小稳</title>
+  <meta name="generator" content="hexo-theme-ayer">
+      
+      <link rel="shortcut icon" href="/littlewin.png" />
+       
+<link rel="stylesheet" href="/dist/main.css">
+
+      
+<link rel="stylesheet" href="/css/fonts/remixicon.css">
+
+      
+<link rel="stylesheet" href="/css/custom.css">
+ 
+      <script src="https://cdn.staticfile.org/pace/1.2.4/pace.min.js"></script>
+       
+ 
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-bulma@5.0.1/bulma.min.css"
+      />
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
+
+      <!-- mermaid -->
+      
+      <script src="https://cdn.staticfile.org/mermaid/8.14.0/mermaid.min.js"></script>
+      
+      <style>
+        .swal2-styled.swal2-confirm {
+          font-size: 1.6rem;
+        }
+      </style>
+    <link rel="alternate" href="/atom.xml" title="小稳" type="application/atom+xml">
+</head>
+  </html>
+</html>
+
+
+<body>
+  <div id="app">
+    
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-JavaWeb_SpringBootWeb入门"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  SpringBootWeb入门
+</h1>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2024/03/15/JavaWeb_SpringBootWeb%E5%85%A5%E9%97%A8/" class="article-date">
+  <time datetime="2024-03-15T12:46:45.000Z" itemprop="datePublished">2024-03-15</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Java/">Java</a>
+  </div>
+  
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> Word count:</span>
+            <span class="post-count">1.9k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> Reading time≈</span>
+            <span class="post-count">7 min</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="一、SpringBootWeb入门"><a href="#一、SpringBootWeb入门" class="headerlink" title="一、SpringBootWeb入门"></a>一、SpringBootWeb入门</h1><h2 id="1-1-介绍"><a href="#1-1-介绍" class="headerlink" title="1.1 介绍"></a>1.1 介绍</h2><ol>
+<li><p>官网：<a target="_blank" rel="noopener" href="https://spring.io/">https://spring.io/</a></p>
+</li>
+<li><p>Spring发展到今天已经形成一种开发生态圈，Spring提供了若干个子项目，每个项目用于完成特定的功能。</p>
+<p><img src="/../JavaWebImage/Spring%E5%85%A8%E5%AE%B6%E6%A1%B6.png"></p>
+</li>
+<li><p>SpringBoot</p>
+<ul>
+<li>Spring Boot 可以帮助我们非常快速的构建应用程序、简化开发、提高效率。</li>
+</ul>
+</li>
+</ol>
+<h2 id="1-2-SpringBootWeb快速入门吧"><a href="#1-2-SpringBootWeb快速入门吧" class="headerlink" title="1.2 SpringBootWeb快速入门吧"></a>1.2 SpringBootWeb快速入门吧</h2><ol>
+<li>步骤：<ul>
+<li>创建springboot工程，并勾选web开发相关依赖</li>
+<li>定义HelloController类，添加方法 hello，并添加注解</li>
+<li>运行测试</li>
+</ul>
+</li>
+</ol>
+<h1 id="二、HTTP协议"><a href="#二、HTTP协议" class="headerlink" title="二、HTTP协议"></a>二、HTTP协议</h1><h2 id="2-1-HTTP-概述"><a href="#2-1-HTTP-概述" class="headerlink" title="2.1 HTTP-概述"></a>2.1 HTTP-概述</h2><ol>
+<li><p>HTTP概念：Hyper Text Transfer Protocol，超文本传输协议，规定了浏览器与服务器之间的数据传输的规则</p>
+<p><img src="/../JavaWebImage/HTTP%E5%8D%8F%E8%AE%AE.png"></p>
+</li>
+<li><p>特点：</p>
+<ul>
+<li>基于TCP协议：面向连接，安全</li>
+<li>基于请求-响应模型的：一个请求对应一次相应</li>
+<li>HTTP协议是无状态的协议：对于事物处理没有记忆能力。每次请求-响应都是独立的<ul>
+<li>缺点：多次请求间不能共享数据</li>
+<li>优点：速度快</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="2-2-HTTP-请求协议"><a href="#2-2-HTTP-请求协议" class="headerlink" title="2.2 HTTP-请求协议"></a>2.2 HTTP-请求协议</h2><ol>
+<li><p>HTTP-请求数据格式</p>
+<p><img src="/../JavaWebImage/HTTP%E8%AF%B7%E6%B1%82%E6%A0%BC%E5%BC%8F.png"></p>
+</li>
+<li><p>常见请求头代表的含义:</p>
+<table>
+<thead>
+<tr>
+<th align="center">请求头</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">Host</td>
+<td>请求的主机名</td>
+</tr>
+<tr>
+<td align="center">User-Agent</td>
+<td>浏览器版本，例如Chrome浏览器的标识类似Mozilla&#x2F;5.0 … Chrome&#x2F;79，IE浏览器的标识类似Mozilla&#x2F;5.0(Windows NT …)like Gecko</td>
+</tr>
+<tr>
+<td align="center">Accept</td>
+<td>表示浏览器能接收的资源类型，如<code>text/*</code>，<code>image/*</code>或者<code>*/*</code>标识所有</td>
+</tr>
+<tr>
+<td align="center">Accept-Language</td>
+<td>表示浏览器偏好语言，服务器可以据此返回不同语言的网页</td>
+</tr>
+<tr>
+<td align="center">Accept-Encoding</td>
+<td>表示浏览器可以支持的压缩类型，例如gzip，deflate等</td>
+</tr>
+<tr>
+<td align="center">Content-Type</td>
+<td>请求主体的数据类型</td>
+</tr>
+<tr>
+<td align="center">Content-Length</td>
+<td>请求主体的大小（单位：字节）</td>
+</tr>
+</tbody></table>
+</li>
+</ol>
+<h2 id="2-3-HTTP-响应协议"><a href="#2-3-HTTP-响应协议" class="headerlink" title="2.3 HTTP-响应协议"></a>2.3 HTTP-响应协议</h2><ol>
+<li><p>HTTP-响应数据格式</p>
+<p><img src="/../JavaWebImage/HTTP%E5%93%8D%E5%BA%94%E6%A0%BC%E5%BC%8F.png"></p>
+</li>
+<li><p>常见状态码</p>
+<table>
+<thead>
+<tr>
+<th align="center">状态码</th>
+<th align="center">含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">200</td>
+<td align="center">客户端请求成功</td>
+</tr>
+<tr>
+<td align="center">404</td>
+<td align="center">请求资源不存在，一般是 URL 输入有误，或者网站资源被删除了</td>
+</tr>
+<tr>
+<td align="center">500</td>
+<td align="center">服务器发生不可预期的错误</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>常见响应头：</p>
+<table>
+<thead>
+<tr>
+<th align="center">响应头</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">Content-Type</td>
+<td>表示响应内容的类型，例如text&#x2F;html，application&#x2F;json</td>
+</tr>
+<tr>
+<td align="center">Content-Length</td>
+<td>表示该响应内容的长度（字节数）</td>
+</tr>
+<tr>
+<td align="center">Content-Encoding</td>
+<td>表示该响应头压缩算法，例如gzip</td>
+</tr>
+<tr>
+<td align="center">Cache-Control</td>
+<td>指示客户端应如何缓存，例如max-age&#x3D;300表示可以最多缓存300秒</td>
+</tr>
+<tr>
+<td align="center">Set-Cookie</td>
+<td>告诉浏览器为当前页面所在的域设置cookie</td>
+</tr>
+</tbody></table>
+</li>
+</ol>
+<h1 id="三、Web服务器-Tomcat"><a href="#三、Web服务器-Tomcat" class="headerlink" title="三、Web服务器-Tomcat"></a>三、Web服务器-Tomcat</h1><h2 id="3-1-简介"><a href="#3-1-简介" class="headerlink" title="3.1 简介"></a>3.1 简介</h2><h3 id="3-1-1-服务器概述"><a href="#3-1-1-服务器概述" class="headerlink" title="3.1.1 服务器概述"></a>3.1.1 服务器概述</h3><ol>
+<li><p>服务器硬件：指的也是计算机，只不过服务器要比我们日常使用的计算机大很多。</p>
+<ul>
+<li>服务器，也称伺服器。是提供计算服务的设备。由于服务器需要响应服务请求，并进行处理，因此一般来说服务器应具备承担服务并且保障服务的能力。</li>
+<li>服务器的构成包括处理器、硬盘、内存、系统总线等，和通用的计算机架构类似，但是由于需要提供高可靠的服务，因此在处理能力、稳定性、可靠性、安全性、可扩展性、可管理性等方面要求较高。</li>
+<li>在网络环境下，根据服务器提供的服务类型不同，可分为：<em>文件服务器</em>，<em>数据库服务器</em>，<em>应用程序服务器</em>，<em>WEB服务器</em>等。</li>
+<li>服务器只是一台设备，必须安装服务器软件才能提供相应的服务。</li>
+</ul>
+</li>
+<li><p>服务器软件：基于ServerSocket编写的程序</p>
+<ul>
+<li>服务器软件本质是一个运行在服务器设备上的应用程序</li>
+<li>能够接收客户端请求，并根据请求给客户端响应数据</li>
+</ul>
+</li>
+<li><p>服务器概念：</p>
+<p><img src="/../JavaWebImage/%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%A6%82%E5%BF%B5.png"></p>
+</li>
+</ol>
+<h3 id="3-1-2-Web服务器"><a href="#3-1-2-Web服务器" class="headerlink" title="3.1.2 Web服务器"></a>3.1.2 Web服务器</h3><ol>
+<li>Web服务器：<ul>
+<li>Web服务器是一个软件程序，对HTTP协议进行封装，使得程序员不必对协议进行操作，让Web开发更加便捷。</li>
+<li>主要功能是“提供网上信息浏览服务”。</li>
+</ul>
+</li>
+<li>常见的Web服务器：<ul>
+<li>Tomcat</li>
+<li>jetty</li>
+<li>WebLogic</li>
+<li>WebSphere</li>
+</ul>
+</li>
+<li>Tomcat<ul>
+<li>概念：Tomcat 是 Apache 软件基金会一个核心项目，是一个开源免费的轻量级Web服务器，支持 Servlet&#x2F;JSP 少量 JavaEE 规范。</li>
+<li>JavaEE：Java Enterprise Edition，Java企业版。指Java企业级开发的技术规范总和。包含13项技术：JDBC、JNDI、EJB、RMI、JSP、Servlet、XML、Java IDL、JTS、JTA、JavaMail、JAF</li>
+<li>Tomcat 也被称为 Web容器、Servlet容器。Servlet程序需要依赖 Tomcat才能运行</li>
+<li>官网：<a target="_blank" rel="noopener" href="https://tomcat.apache.org/">https://tomcat.apache.org/</a></li>
+</ul>
+</li>
+</ol>
+<h2 id="3-2-基本使用"><a href="#3-2-基本使用" class="headerlink" title="3.2 基本使用"></a>3.2 基本使用</h2><h3 id="3-2-1-下载"><a href="#3-2-1-下载" class="headerlink" title="3.2.1 下载"></a>3.2.1 下载</h3><ol>
+<li>直接从官方网站下载：<a target="_blank" rel="noopener" href="https://tomcat.apache.org/download-90.cgi">https://tomcat.apache.org/download-90.cgi</a></li>
+<li>打开官网选择：<code>64-bit Windows zip(pgp,sha512)</code></li>
+<li>Tomcat软件类型说明<ul>
+<li>tar.gz文件，是linux和mac操作系统下的压缩版本</li>
+<li>zip文件，是window操作系统下压缩版本（我们选择zip文件）</li>
+</ul>
+</li>
+</ol>
+<h3 id="3-2-2-安装与卸载"><a href="#3-2-2-安装与卸载" class="headerlink" title="3.2.2 安装与卸载"></a>3.2.2 安装与卸载</h3><ol>
+<li><p><strong>安装:</strong> Tomcat是绿色版，直接解压即安装</p>
+<ul>
+<li><p>注意，Tomcat在解压缩的时候，解压所在的目录可以任意，但最好解压到一个&#x3D;&#x3D;不包含中文和空格的目录&#x3D;&#x3D;，因为后期在部署项目的时候，如果路径有中文或者空格可能会导致程序部署失败。</p>
+</li>
+<li><p>打开<code>Tomcat</code>目录就能看到如下目录结构，每个目录中包含的内容需要认识下</p>
+<p><img src="/../JavaWebImage/Tomcat%E7%9B%AE%E5%BD%95.png"></p>
+</li>
+<li><p>bin：目录下有两类文件，一种是以<code>.bat</code>结尾的，是Windows系统的可执行文件，一种是以<code>.sh</code>结尾的，是Linux系统的可执行文件。</p>
+</li>
+<li><p>webapps：就是以后项目部署的目录</p>
+</li>
+</ul>
+</li>
+<li><p><strong>卸载：</strong>卸载比较简单，可以直接删除目录即可</p>
+</li>
+</ol>
+<h3 id="3-2-3-启动与关闭"><a href="#3-2-3-启动与关闭" class="headerlink" title="3.2.3 启动与关闭"></a>3.2.3 启动与关闭</h3><ol>
+<li><p>启动Tomcat</p>
+<ul>
+<li><p>双击tomcat解压目录<code>/bin/startup.bat</code>文件即可启动tomcat</p>
+</li>
+<li><p>注意: tomcat服务器启动后,黑窗口不会关闭,只要黑窗口不关闭,就证明tomcat服务器正在运行</p>
+</li>
+<li><p>Tomcat的默认端口为8080，所以在浏览器的地址栏输入：<code>http://IP地址:8080</code> 即可访问tomcat服务器</p>
+</li>
+<li><p>Tomcat启动的过程中，遇到控制台有中文乱码时，可以通常修改<code>conf/logging.prooperties</code>文件解决</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">java.util.logging.ConsoleHandler.encoding</span> = <span class="string">GBK</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>关闭有三种方式 </p>
+<ul>
+<li>强制关闭：直接x掉Tomcat窗口（不建议）</li>
+<li>正常关闭：<code>bin\shutdown.bat</code></li>
+<li>正常关闭：在Tomcat启动窗口中按下 Ctrl+C</li>
+</ul>
+</li>
+</ol>
+<h3 id="3-2-4-部署项目"><a href="#3-2-4-部署项目" class="headerlink" title="3.2.4 部署项目"></a>3.2.4 部署项目</h3><ol>
+<li>Tomcat部署项目：<ul>
+<li>将项目放置到 webapps 目录下，即部署完成</li>
+</ul>
+</li>
+</ol>
+<h3 id="3-2-5-常见问题"><a href="#3-2-5-常见问题" class="headerlink" title="3.2.5 常见问题"></a>3.2.5 常见问题</h3><ol>
+<li><p>Tomcat启动时，窗口一闪而过</p>
+<ul>
+<li>检查Java环境变量是否配置正确</li>
+</ul>
+</li>
+<li><p>端口号冲突</p>
+<ul>
+<li><p>发生问题的原因：Tomcat使用的端口被占用了。</p>
+</li>
+<li><p>解决方案一：结束占用8080端口的程序</p>
+</li>
+<li><p>解决方案二：换Tomcat端口号,要想修改Tomcat启动的端口号，需要修改<code>conf/server.xml</code>文件</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Connector</span> <span class="attr">port</span>=<span class="string">&quot;8080&quot;</span> <span class="attr">protocol</span>=<span class="string">&quot;HTTP/1.1&quot;</span></span></span><br><span class="line"><span class="tag">               <span class="attr">connectionTimeout</span>=<span class="string">&quot;20000&quot;</span></span></span><br><span class="line"><span class="tag">               <span class="attr">redirectPort</span>=<span class="string">&quot;8443&quot;</span></span></span><br><span class="line"><span class="tag">               <span class="attr">maxParameterCount</span>=<span class="string">&quot;1000&quot;</span></span></span><br><span class="line"><span class="tag">               /&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>HTTP协议默认端口号为80，如果将Tomcat端口号改为80，则将来访问Tomcat时，将不用输入端口号。</p>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="3-3-入门程序解析"><a href="#3-3-入门程序解析" class="headerlink" title="3.3 入门程序解析"></a>3.3 入门程序解析</h2><ol>
+<li><p>起步依赖：</p>
+<ul>
+<li>spring-boot-starter-web：包含了web应用开发所需要的常见依赖</li>
+<li>spring-boot-starter-test：包含了单元测试所需要的常见依赖</li>
+</ul>
+</li>
+<li><p>内嵌Tomcat</p>
+<ul>
+<li>在我们的SpringBoot中，引入了web运行环境(也就是引入spring-boot-starter-web起步依赖)，其内部已经集成了内置的Tomcat服务器。</li>
+</ul>
+</li>
+</ol>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>Copyright： </strong>
+          
+          Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source.
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://littlewin8.github.io/2024/03/15/JavaWeb_SpringBootWeb%E5%85%A5%E9%97%A8/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%90%8E%E7%AB%AF/" rel="tag">后端</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+    
+      <a href="/2023/11/25/JavaWeb_Maven/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">Maven</div>
+      </a>
+    
+  </nav>
+
+  
+   
+  
+   
+    <script src="https://cdn.staticfile.org/twikoo/1.4.18/twikoo.all.min.js"></script>
+    <div id="twikoo" class="twikoo"></div>
+    <script>
+        twikoo.init({
+            envId: ""
+        })
+    </script>
+ 
+</article>
+
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2023-2024
+        <i class="ri-heart-fill heart_icon"></i> LittleWin
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>Visitors:<span id="busuanzi_value_site_uv"></span></span>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>Views:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914'></script>
+        
+      </li>
+    </ul>
+  </div>
+</footer>    
+    </main>
+    <div class="float_btns">
+      <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+    </div>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/littlewin.png" alt="小稳"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags">标签</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/friends">友链</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/2023/about">关于我</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="Search">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-3.6.0.min.js"></script>
+ 
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+ 
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: ".tocbot",
+    contentSelector: ".article-entry",
+    headingSelector: "h1, h2, h3, h4, h5, h6",
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: "main",
+    positionFixedSelector: ".tocbot",
+    positionFixedClass: "is-position-fixed",
+    fixedSidebarOffset: "auto",
+  });
+</script>
+
+<script src="https://cdn.staticfile.org/jquery-modal/0.9.2/jquery.modal.min.js"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.staticfile.org/jquery-modal/0.9.2/jquery.modal.min.css"
+/>
+<script src="https://cdn.staticfile.org/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+ <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.staticfile.org/photoswipe/4.1.3/default-skin/default-skin.min.css">
+<script src="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe.min.js"></script>
+<script src="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script> 
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+ 
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+ 
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+ 
+<link rel="stylesheet" href="/css/clipboard.css">
+ <script src="https://cdn.staticfile.org/clipboard.js/2.0.10/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+ 
+<!-- CanvasBackground -->
+
+<script>
+  if (window.mermaid) {
+    mermaid.initialize({ theme: "forest" });
+  }
+</script>
+
+
+    
+    
+
+  </div>
+</body>
+
+</html>
