@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+  
+
+    <head>
+      <meta charset="utf-8" />
+        
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1"
+      />
+      <title>SpringBootWeb请求响应 |  小稳</title>
+  <meta name="generator" content="hexo-theme-ayer">
+      
+      <link rel="shortcut icon" href="/littlewin.png" />
+       
+<link rel="stylesheet" href="/dist/main.css">
+
+      
+<link rel="stylesheet" href="/css/fonts/remixicon.css">
+
+      
+<link rel="stylesheet" href="/css/custom.css">
+ 
+      <script src="https://cdn.staticfile.org/pace/1.2.4/pace.min.js"></script>
+       
+ 
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-bulma@5.0.1/bulma.min.css"
+      />
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
+
+      <!-- mermaid -->
+      
+      <script src="https://cdn.staticfile.org/mermaid/8.14.0/mermaid.min.js"></script>
+      
+      <style>
+        .swal2-styled.swal2-confirm {
+          font-size: 1.6rem;
+        }
+      </style>
+    <link rel="alternate" href="/atom.xml" title="小稳" type="application/atom+xml">
+</head>
+  </html>
+</html>
+
+
+<body>
+  <div id="app">
+    
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-JavaWeb_SpringBootWeb请求响应"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  SpringBootWeb请求响应
+</h1>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2024/03/16/JavaWeb_SpringBootWeb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/" class="article-date">
+  <time datetime="2024-03-16T05:49:42.000Z" itemprop="datePublished">2024-03-16</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Java/">Java</a>
+  </div>
+  
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> Word count:</span>
+            <span class="post-count">2.4k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> Reading time≈</span>
+            <span class="post-count">9 min</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h1><ol>
+<li><p>请求响应：</p>
+<p><img src="/..%5CJavaWebImage%5C%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94.png"></p>
+<ul>
+<li>请求（HttpServletRequest)：获取请求数据</li>
+<li>响应（HttpServletResponse）：设置响应请求</li>
+<li>BS架构：Browser&#x2F;Server，浏览器&#x2F;服务器架构模式。客户端只需要浏览器，应用程序的逻辑和数据都存储在服务器。(维护方便 体验一般)</li>
+<li>CS架构：Client&#x2F;Server，客户端&#x2F;服务器架构模式。(开发、维护麻烦 体验不错)</li>
+</ul>
+</li>
+</ol>
+<h1 id="二、请求"><a href="#二、请求" class="headerlink" title="二、请求"></a>二、请求</h1><h2 id="2-1-Postman"><a href="#2-1-Postman" class="headerlink" title="2.1 Postman"></a>2.1 Postman</h2><ol>
+<li>在前后端分离开发模式下，前端技术人员基于”接口文档”，开发前端程序；后端技术人员也基于”接口文档”，开发后端程序。由于前后端分离，对我们后端技术人员来讲，在开发过程中，是没有前端页面的，那我们怎么测试自己所开发的程序呢<ul>
+<li>方式1：直接使用浏览器。在浏览器中输入地址，测试后端程序。</li>
+<li>方式2：使用专业的接口测试工具（就是下面的Postman）</li>
+</ul>
+</li>
+<li>Postman是一款功能强大的网页调试与发送网页HTTP请求的Chrome插件，下载地址：<a target="_blank" rel="noopener" href="https://www.postman.com/downloads/">https://www.postman.com/downloads/</a></li>
+</ol>
+<h2 id="2-2-简单参数"><a href="#2-2-简单参数" class="headerlink" title="2.2 简单参数"></a>2.2 简单参数</h2><h3 id="2-2-1-原始方式"><a href="#2-2-1-原始方式" class="headerlink" title="2.2.1 原始方式"></a>2.2.1 原始方式</h3><ul>
+<li><p>在原始的web程序中，获取请求参数，需要通过<code>HttpServletRequest</code>对象手动获取。在Controller中，我们要想获取Request对象，可以直接在方法的形参中声明 HttpServletRequest 对象。然后就可以通过该对象来获取请求信息：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//根据指定的参数名获取请求参数的数据值</span></span><br><span class="line">String  request.getParameter(<span class="string">&quot;参数名&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">RequestController</span> &#123;</span><br><span class="line">    <span class="comment">//原始方式</span></span><br><span class="line">    <span class="meta">@RequestMapping(&quot;/simpleParam&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">simpleParam</span><span class="params">(HttpServletRequest request)</span>&#123;</span><br><span class="line">        <span class="comment">// http://localhost:8080/simpleParam?name=Tom&amp;age=10</span></span><br><span class="line">        <span class="comment">// 请求参数： name=Tom&amp;age=10   （有2个请求参数）</span></span><br><span class="line">        <span class="comment">// 第1个请求参数： name=Tom   参数名:name，参数值:Tom</span></span><br><span class="line">        <span class="comment">// 第2个请求参数： age=10     参数名:age , 参数值:10</span></span><br><span class="line"></span><br><span class="line">        <span class="type">String</span> <span class="variable">name</span> <span class="operator">=</span> request.getParameter(<span class="string">&quot;name&quot;</span>);<span class="comment">//name就是请求参数名</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">ageStr</span> <span class="operator">=</span> request.getParameter(<span class="string">&quot;age&quot;</span>);<span class="comment">//age就是请求参数名</span></span><br><span class="line"></span><br><span class="line">        <span class="type">int</span> <span class="variable">age</span> <span class="operator">=</span> Integer.parseInt(ageStr);<span class="comment">//需要手动进行类型转换</span></span><br><span class="line">        System.out.println(name+<span class="string">&quot;  :  &quot;</span>+age);</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;OK&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>以上这种方式，我们仅做了解。（在以后的开发中不会使用到）</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="2-2-2-SpringBoot方式"><a href="#2-2-2-SpringBoot方式" class="headerlink" title="2.2.2 SpringBoot方式"></a>2.2.2 SpringBoot方式</h3><ol>
+<li>在Springboot的环境中，对原始的API进行了封装，接收参数的形式更加简单。 如果是简单参数，参数名与形参变量名相同，定义同名的形参即可接收参数。</li>
+</ol>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">RequestController</span> &#123;</span><br><span class="line">    <span class="comment">// http://localhost:8080/simpleParam?name=Tom&amp;age=10</span></span><br><span class="line">    <span class="comment">// 第1个请求参数： name=Tom   参数名:name，参数值:Tom</span></span><br><span class="line">    <span class="comment">// 第2个请求参数： age=10     参数名:age , 参数值:10</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">//springboot方式</span></span><br><span class="line">    <span class="meta">@RequestMapping(&quot;/simpleParam&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">simpleParam</span><span class="params">(String name , Integer age )</span>&#123;<span class="comment">//形参名和请求参数名保持一致</span></span><br><span class="line">        System.out.println(name+<span class="string">&quot;  :  &quot;</span>+age);</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;OK&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><strong>结论：不论是GET请求还是POST请求，对于简单参数来讲，只要保证&#x3D;&#x3D;请求参数名和Controller方法中的形参名保持一致&#x3D;&#x3D;，就可以获取到请求参数中的数据值。</strong> </p>
+</blockquote>
+<ol start="2">
+<li><p>参数名不一致：如果方法形参名称与请求参数名称不一致时运行没有报错。 controller方法中的name值为：null，age值为10。由此可知对于简单参数来讲，请求参数名和controller方法中的形参名不一致时，无法接收到请求数据</p>
+</li>
+<li><p>那么如果我们开发中，遇到了这种请求参数名和controller方法中的形参名不相同时候，可以使用Spring提供的@RequestParam注解完成映射：</p>
+</li>
+</ol>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">RequestController</span> &#123;</span><br><span class="line">    <span class="comment">// http://localhost:8080/simpleParam?name=Tom&amp;age=20</span></span><br><span class="line">    <span class="comment">// 请求参数名：name</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//springboot方式</span></span><br><span class="line">    <span class="meta">@RequestMapping(&quot;/simpleParam&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">simpleParam</span><span class="params">(<span class="meta">@RequestParam(name = &quot;name&quot;)</span> String username , Integer age )</span>&#123;</span><br><span class="line">        System.out.println(username+<span class="string">&quot;  :  &quot;</span>+age);</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;OK&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意事项：</p>
+<p>@RequestParam中的required属性默认为true（默认值也是true），代表该请求参数必须传递，如果不传递将报错</p>
+<p>如果该参数是可选的，可以将required属性设置为false</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"> &gt;<span class="meta">@RequestMapping(&quot;/simpleParam&quot;)</span></span><br><span class="line"> &gt;<span class="keyword">public</span> String <span class="title function_">simpleParam</span><span class="params">(<span class="meta">@RequestParam(name = &quot;name&quot;, required = false)</span> String username, Integer age)</span>&#123;</span><br><span class="line">System.out.println(username+ <span class="string">&quot;:&quot;</span> + age);</span><br><span class="line"><span class="keyword">return</span> <span class="string">&quot;OK&quot;</span>;</span><br><span class="line"> &gt;&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h2 id="2-3-实体参数"><a href="#2-3-实体参数" class="headerlink" title="2.3 实体参数"></a>2.3 实体参数</h2><ol>
+<li><p>简单实体参数：请求参数名与形参对象属性名相同，定义POJO接收即可</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMapping(&quot;/simplePojo&quot;)</span></span><br><span class="line"><span class="keyword">public</span> String <span class="title function_">simplePojo</span><span class="params">(User user)</span>&#123;</span><br><span class="line">	System.out.println(user);</span><br><span class="line">	<span class="keyword">return</span> <span class="string">&quot;OK&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">User</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> Integer age;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>复杂实体参数：请求参数名与形参对象属性名相同，按照对象层次结构关系即可接收嵌套POJO属性参数</p>
+</li>
+</ol>
+<h2 id="2-4-数组集合参数"><a href="#2-4-数组集合参数" class="headerlink" title="2.4 数组集合参数"></a>2.4 数组集合参数</h2><ol>
+<li>数组参数：请求参数名与形参数组名称相同且请求参数为多个，定义数组类型形参即可接收参数</li>
+<li>集合参数：请求参数名与形参集合名称相同且请求参数为多个，通过 <code>@RequestParam </code> 绑定参数关系</li>
+</ol>
+<h2 id="2-4-日期参数"><a href="#2-4-日期参数" class="headerlink" title="2.4 日期参数"></a>2.4 日期参数</h2><ol>
+<li>日期的格式多种多样（如：2022-12-12 10:05:45 、2022&#x2F;12&#x2F;12 10:05:45），那么对于日期类型的参数在进行封装的时候，需要通过<code>@DateTimeFormat注解</code>，以及其<code>pattern</code>属性来设置日期的格式。</li>
+<li>后端controller方法中，需要使用Date类型或LocalDateTime类型，来封装传递的参数。</li>
+</ol>
+<h2 id="2-5-JSON参数"><a href="#2-5-JSON参数" class="headerlink" title="2.5 JSON参数"></a>2.5 JSON参数</h2><ol>
+<li>JSON参数：JSON参数键名与形参对象属性名相同，定义POJO类型形参即可接收参数，需要使用 <code>@ReauestBody</code> 标识。</li>
+</ol>
+<h2 id="2-6-路径参数"><a href="#2-6-路径参数" class="headerlink" title="2.6 路径参数"></a>2.6 路径参数</h2><ol>
+<li>路径参数：通过请求URL直接传递参数，使用 <code>&#123;...&#125;</code> 来标识路径参数，需要使用 <code>@PathVariable</code> 获取路径参数。</li>
+<li>可以传递多层参数</li>
+</ol>
+<h2 id="2-7-总结"><a href="#2-7-总结" class="headerlink" title="2.7 总结"></a>2.7 总结</h2><p><img src="/..%5CJavaWebImage%5C%E8%AF%B7%E6%B1%82%E6%80%BB%E7%BB%93.png"></p>
+<h1 id="三、响应"><a href="#三、响应" class="headerlink" title="三、响应"></a>三、响应</h1><h2 id="3-1-ResponseBody-amp-统一响应结果"><a href="#3-1-ResponseBody-amp-统一响应结果" class="headerlink" title="3.1 @ResponseBody &amp; 统一响应结果"></a>3.1 @ResponseBody &amp; 统一响应结果</h2><ol>
+<li><p><code>@ResponseBody</code></p>
+<ul>
+<li>类型：方法注解、类注解</li>
+<li>位置：Controller方法上&#x2F;类上</li>
+<li>作用：将方法返回值直接响应，如果返回值类型是 实体对象&#x2F;集合，将会转换为 JSON 格式响应</li>
+<li>说明：<code>@RestController</code> &#x3D; <code>@Controller</code> + <code>@ResponseBody</code></li>
+</ul>
+</li>
+<li><p>统一响应结果</p>
+<ul>
+<li><p>在真实的项目开发中，我们都会定义一个统一的返回结果。方案如下：</p>
+<p><img src="/..%5CJavaWebImage%5C%E7%BB%9F%E4%B8%80%E5%93%8D%E5%BA%94%E7%BB%93%E6%9E%9C.png"></p>
+</li>
+<li><p>统一的返回结果使用类来描述，在这个结果中包含：</p>
+<ul>
+<li>响应状态码：当前请求是成功，还是失败</li>
+<li>状态码信息：给页面的提示信息</li>
+<li>返回的数据：给前端响应的数据（字符串、对象、集合）</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="3-2-拓展"><a href="#3-2-拓展" class="headerlink" title="3.2 拓展"></a>3.2 拓展</h2><pre><code>  1. springboot 项目的静态资源 (html、css、js等前端资源) 默认存放目录为：
+     - `classpath:/static`
+     - ``classpath:/public`
+     - `classpath:/resources`
+</code></pre>
+<h1 id="四、分层解耦"><a href="#四、分层解耦" class="headerlink" title="四、分层解耦"></a>四、分层解耦</h1><h2 id="4-1-三层架构"><a href="#4-1-三层架构" class="headerlink" title="4.1 三层架构"></a>4.1 三层架构</h2><ol>
+<li>Controller：接受请求、响应数据<ul>
+<li>控制层，接收前端发送的请求，对请求进行出来，并影响数据</li>
+</ul>
+</li>
+<li>Service：逻辑处理<ul>
+<li>业务逻辑层，处理具体的业务逻辑</li>
+</ul>
+</li>
+<li>Dao：数据访问<ul>
+<li>数据访问层 (Data Access Object)（持久层），负责数据访问操作，包括数据的增、删、改、查</li>
+</ul>
+</li>
+</ol>
+<h2 id="4-2-分层解耦"><a href="#4-2-分层解耦" class="headerlink" title="4.2 分层解耦"></a>4.2 分层解耦</h2><ol>
+<li><p>内聚：软件中各个功能模块内部的功能联系。</p>
+</li>
+<li><p>耦合：衡量软件中各个层&#x2F;模块之间的依赖、关联的程度</p>
+</li>
+<li><p>软件设计原则：高内聚低耦合 </p>
+</li>
+<li><p>分层解耦：</p>
+<p><img src="/..%5CJavaWebImage%5C%E5%88%86%E5%B1%82%E8%A7%A3%E8%80%A6.png"></p>
+<ul>
+<li><strong>控制反转：</strong> Inversion Of Control，简称IOC。对象的创建控制权由程序自身转移到外部（容器），这种思想称为控制反转。</li>
+<li><strong>依赖注入：</strong> Dependency Injection，简称DI。容器为应用程序提供运行时，所依赖的资源，称之为依赖注入。</li>
+<li><strong>Bean对象：</strong>IOC容器中创建、管理的对象，称之为bean。</li>
+</ul>
+</li>
+</ol>
+<h2 id="4-3-IOC-amp-DI"><a href="#4-3-IOC-amp-DI" class="headerlink" title="4.3 IOC &amp; DI"></a>4.3 IOC &amp; DI</h2><h3 id="4-3-1-入门"><a href="#4-3-1-入门" class="headerlink" title="4.3.1 入门"></a>4.3.1 入门</h3><ol>
+<li>Service 层 及 Dao 层的实现类，交给 IOC 容器管理。<ul>
+<li>@Component：在接口的实现类上使用该注解，将其交给 IOC 容器管理</li>
+</ul>
+</li>
+<li>为 Controller 及 Service 注入运行时需要依赖的对象。<ul>
+<li>@Autowired：无需创建对象，就可以实现程序运行时IOC容器自动注入需要的依赖对象</li>
+</ul>
+</li>
+</ol>
+<h3 id="4-3-2-IOC-详解"><a href="#4-3-2-IOC-详解" class="headerlink" title="4.3.2 IOC 详解"></a>4.3.2 IOC 详解</h3><ol>
+<li><p>Bean的声明</p>
+<ul>
+<li><p>要把某个对象交给 IOC 容器管理，需要在对应的类上加上如下注解之一：</p>
+<table>
+<thead>
+<tr>
+<th align="center">注解</th>
+<th align="center">说明</th>
+<th align="center">位置</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">@Component</td>
+<td align="center">声明bean的基础注解</td>
+<td align="center">不属于以下三类时，用此注解</td>
+</tr>
+<tr>
+<td align="center">@Controller</td>
+<td align="center">@Component 的衍生注解</td>
+<td align="center">标注在控制器上</td>
+</tr>
+<tr>
+<td align="center">@Service</td>
+<td align="center">@Component 的衍生注解</td>
+<td align="center">标注在业务类上</td>
+</tr>
+<tr>
+<td align="center">@Repository</td>
+<td align="center">@Component 的衍生注解</td>
+<td align="center">标注在数据访问类上（由于 mybaits 整合，用的少）</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+</li>
+<li><p>注意事项：</p>
+<ul>
+<li>声明bean的时候，可以通过 value 属性指定 bean 的名字，如果没有指定，默认为类名首字母小写。</li>
+<li>使用以上四个注解都可以声明bean，但是在springboot集成web开发中，声明控制器bean只能用 @Controller</li>
+</ul>
+</li>
+<li><p>Bean 组件扫描</p>
+<ul>
+<li>前面声明 bean 的四大注解，要想生效，还需要被组件扫描注解 @ComponentScan 扫描，</li>
+<li>@ComponentScan 注解虽然没有显式配置，但是实际上已经包含在了启动类声明注解 @SpringBootApplication 中，默认扫描的范围是启动类所在包及其子包</li>
+</ul>
+</li>
+</ol>
+<h3 id="4-3-3-DI详解"><a href="#4-3-3-DI详解" class="headerlink" title="4.3.3 DI详解"></a>4.3.3 DI详解</h3><ol>
+<li><p>Bean 注入</p>
+<ul>
+<li>@Autowired 注解，默认是按照类型进行，如果存在多个相同类型的 bean，将会报错\</li>
+</ul>
+</li>
+<li><p>通过以下几个方案来解决：</p>
+<ul>
+<li><code>@Primary</code>：设置优先级</li>
+<li><code>@Qualifier</code>：指定注入对象</li>
+<li><code>@Resource</code>：取代<code>@Autowired</code>，指定类名注入</li>
+</ul>
+</li>
+<li><p><code>@Resource</code> 和 <code>@Autowired</code> 区别</p>
+<ul>
+<li><code>@Autowired</code>是spring框架提供的注解，而 <code>@Resource</code> 是JDK 提供的注解。</li>
+<li><code>@Autowired</code> 默认是按照类型注入，而 <code>@Resource</code> 默认是按照名称注入</li>
+</ul>
+</li>
+</ol>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>Copyright： </strong>
+          
+          Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source.
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://littlewin8.github.io/2024/03/16/JavaWeb_SpringBootWeb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%90%8E%E7%AB%AF/" rel="tag">后端</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+    
+      <a href="/2024/03/15/JavaWeb_SpringBootWeb%E5%85%A5%E9%97%A8/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">SpringBootWeb入门</div>
+      </a>
+    
+  </nav>
+
+  
+   
+  
+   
+    <script src="https://cdn.staticfile.org/twikoo/1.4.18/twikoo.all.min.js"></script>
+    <div id="twikoo" class="twikoo"></div>
+    <script>
+        twikoo.init({
+            envId: ""
+        })
+    </script>
+ 
+</article>
+
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2023-2024
+        <i class="ri-heart-fill heart_icon"></i> LittleWin
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>Visitors:<span id="busuanzi_value_site_uv"></span></span>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>Views:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914'></script>
+        
+      </li>
+    </ul>
+  </div>
+</footer>    
+    </main>
+    <div class="float_btns">
+      <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+    </div>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/littlewin.png" alt="小稳"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags">标签</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/friends">友链</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/2023/about">关于我</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="Search">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-3.6.0.min.js"></script>
+ 
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+ 
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: ".tocbot",
+    contentSelector: ".article-entry",
+    headingSelector: "h1, h2, h3, h4, h5, h6",
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: "main",
+    positionFixedSelector: ".tocbot",
+    positionFixedClass: "is-position-fixed",
+    fixedSidebarOffset: "auto",
+  });
+</script>
+
+<script src="https://cdn.staticfile.org/jquery-modal/0.9.2/jquery.modal.min.js"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.staticfile.org/jquery-modal/0.9.2/jquery.modal.min.css"
+/>
+<script src="https://cdn.staticfile.org/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+ <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.staticfile.org/photoswipe/4.1.3/default-skin/default-skin.min.css">
+<script src="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe.min.js"></script>
+<script src="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script> 
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+ 
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+ 
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+ 
+<link rel="stylesheet" href="/css/clipboard.css">
+ <script src="https://cdn.staticfile.org/clipboard.js/2.0.10/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+ 
+<!-- CanvasBackground -->
+
+<script>
+  if (window.mermaid) {
+    mermaid.initialize({ theme: "forest" });
+  }
+</script>
+
+
+    
+    
+
+  </div>
+</body>
+
+</html>

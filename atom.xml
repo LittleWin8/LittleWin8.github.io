@@ -6,7 +6,7 @@
   <link href="http://littlewin8.github.io/atom.xml" rel="self"/>
   
   <link href="http://littlewin8.github.io/"/>
-  <updated>2024-03-15T12:52:46.661Z</updated>
+  <updated>2024-03-16T05:53:06.528Z</updated>
   <id>http://littlewin8.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>SpringBootWeb请求响应</title>
+    <link href="http://littlewin8.github.io/2024/03/16/JavaWeb_SpringBootWeb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/"/>
+    <id>http://littlewin8.github.io/2024/03/16/JavaWeb_SpringBootWeb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/</id>
+    <published>2024-03-16T05:49:42.000Z</published>
+    <updated>2024-03-16T05:53:06.528Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;一、概述&quot;&gt;&lt;a href=&quot;#一、概述&quot; class=&quot;headerlink&quot; title=&quot;一、概述&quot;&gt;&lt;/a&gt;一、概述&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;请求响应：&lt;/p&gt;
+&lt;p&gt;&lt;img</summary>
+        
+      
+    
+    
+    
+    <category term="Java" scheme="http://littlewin8.github.io/categories/Java/"/>
+    
+    
+    <category term="后端" scheme="http://littlewin8.github.io/tags/%E5%90%8E%E7%AB%AF/"/>
+    
+  </entry>
   
   <entry>
     <title>SpringBootWeb入门</title>
@@ -483,31 +510,6 @@
         
         
     <summary type="html">&lt;h1 id=&quot;成员方法&quot;&gt;&lt;a href=&quot;#成员方法&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Python" scheme="http://littlewin8.github.io/categories/Python/"/>
-    
-    
-    <category term="入门" scheme="http://littlewin8.github.io/tags/%E5%85%A5%E9%97%A8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python集合(七)——异常、模块与包</title>
-    <link href="http://littlewin8.github.io/2023/08/18/Python%E5%9F%BA%E7%A1%80(%E4%B8%83)%E2%80%94%E2%80%94%E5%BC%82%E5%B8%B8%E3%80%81%E6%A8%A1%E5%9D%97%E4%B8%8E%E5%8C%85/"/>
-    <id>http://littlewin8.github.io/2023/08/18/Python%E5%9F%BA%E7%A1%80(%E4%B8%83)%E2%80%94%E2%80%94%E5%BC%82%E5%B8%B8%E3%80%81%E6%A8%A1%E5%9D%97%E4%B8%8E%E5%8C%85/</id>
-    <published>2023-08-18T03:58:45.000Z</published>
-    <updated>2023-11-25T05:12:40.357Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;了解异常&quot;&gt;&lt;a href=&quot;#了解异常&quot; class=&quot;headerlink&quot;</summary>
         
       
     
