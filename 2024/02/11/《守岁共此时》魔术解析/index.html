@@ -11,7 +11,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
-      <title>SpringBootWeb入门 |  小稳</title>
+      <title>《守岁共此时》魔术解析 |  小稳</title>
   <meta name="generator" content="hexo-theme-ayer">
       
       <link rel="shortcut icon" href="/littlewin.png" />
@@ -56,7 +56,7 @@
     <main class="content on">
       <section class="outer">
   <article
-  id="post-JavaWeb_SpringBootWeb入门"
+  id="post-《守岁共此时》魔术解析"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
@@ -67,7 +67,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  SpringBootWeb入门
+  《守岁共此时》魔术解析
 </h1>
  
 
@@ -75,11 +75,11 @@
     </header>
      
     <div class="article-meta">
-      <a href="/2024/03/15/JavaWeb_SpringBootWeb%E5%85%A5%E9%97%A8/" class="article-date">
-  <time datetime="2024-03-15T12:46:45.000Z" itemprop="datePublished">2024-03-15</time>
+      <a href="/2024/02/11/%E3%80%8A%E5%AE%88%E5%B2%81%E5%85%B1%E6%AD%A4%E6%97%B6%E3%80%8B%E9%AD%94%E6%9C%AF%E8%A7%A3%E6%9E%90/" class="article-date">
+  <time datetime="2024-02-11T06:32:48.000Z" itemprop="datePublished">2024-02-11</time>
 </a> 
   <div class="article-category">
-    <a class="article-category-link" href="/categories/Java/">Java</a>
+    <a class="article-category-link" href="/categories/others/">others</a>
   </div>
   
 <div class="word_count">
@@ -87,7 +87,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">1.9k</span>
+            <span class="post-count">1.3k</span>
         </span>
     </span>
 
@@ -96,7 +96,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> Reading time≈</span>
-            <span class="post-count">7 min</span>
+            <span class="post-count">5 min</span>
         </span>
     </span>
 </div>
@@ -111,268 +111,50 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <h1 id="一、SpringBootWeb入门"><a href="#一、SpringBootWeb入门" class="headerlink" title="一、SpringBootWeb入门"></a>一、SpringBootWeb入门</h1><h2 id="1-1-介绍"><a href="#1-1-介绍" class="headerlink" title="1.1 介绍"></a>1.1 介绍</h2><ol>
-<li><p>官网：<a target="_blank" rel="noopener" href="https://spring.io/">https://spring.io/</a></p>
+  <h1 id="一、引言"><a href="#一、引言" class="headerlink" title="一、引言"></a>一、引言</h1><p>​		在2024年央视春晚上，魔术师刘谦的表演<strong>《守岁共此时》</strong>成为了众多观众热议的焦点。不仅因为其精湛的魔术技巧，更因为节目中主持人尼格买提出现的意外“穿帮”和随后的即兴表演，成为了当晚的笑点和高潮。本文将带您剖析这一魔术表演背后的算法逻辑，带您一探究竟。</p>
+<h1 id="二、具体步骤"><a href="#二、具体步骤" class="headerlink" title="二、具体步骤"></a>二、具体步骤</h1><ul>
+<li><p><strong>第一步：</strong>任意准备四张牌，随机打乱，不妨设打乱后的四张牌的顺序为：<code>J、Q、K、A</code></p>
 </li>
-<li><p>Spring发展到今天已经形成一种开发生态圈，Spring提供了若干个子项目，每个项目用于完成特定的功能。</p>
-<p><img src="/../JavaWebImage/Spring%E5%85%A8%E5%AE%B6%E6%A1%B6.png"></p>
+<li><p><strong>第二步：</strong>对半撕开分为 8 张牌，其中一半置于另一半下面，此时牌序为<code>J、Q、K、A、J、Q、K、A</code>，则此时满足：第 n 张牌与第 n+4 张牌相同，即：<code>n = n + 4</code></p>
 </li>
-<li><p>SpringBoot</p>
+<li><p><strong>第三步：</strong>根据个人的名字字数将牌堆顶部相同数量的牌置于最下面，一般人都是 2~4 张，这里假设为三字的姓名，此时牌序为：<code>A、J、Q、K、A、J、Q、K</code>，但往下移动多少张牌并不重要，因为不会改变相同牌的相对顺序，即依然满足：<code>n = n + 4</code></p>
+</li>
+<li><p><strong>第四步：</strong>拿起最上面三张，插入剩余卡牌中间的任意位置，这里假设插入剩余牌堆的第一张与第二张之间，此时牌序为：<code>K、A、J、Q、A、J、Q、K</code>，这里的牌序可简化看成：<code>K******K</code></p>
+</li>
+<li><p><strong>第五步：</strong>将最上面的牌藏起来，即藏起来的牌为<code>K</code>，此刻牌序为：<code>******K</code></p>
+</li>
+<li><p><strong>第六步：</strong>根据南北方人属性的不同，从牌堆顶部取出 1~3 张，插入中间，但取出多张在并不重要，最后一张牌的位置不变就行：此刻牌序依然为：<code>******K</code>。<em>（主持人尼格买提即在这步出错，抽出的牌置于牌堆底部，改变了最后一张牌的位置）</em></p>
+<img src="..\others\失误.png" style="zoom:50%;" />
+</li>
+<li><p><strong>第七步：</strong>男生丢弃 1 张牌，女生丢弃 2 张牌，则此刻</p>
 <ul>
-<li>Spring Boot 可以帮助我们非常快速的构建应用程序、简化开发、提高效率。</li>
+<li>男生牌序为：<code>*****K</code></li>
+<li>女生牌序为：<code>****K</code></li>
 </ul>
 </li>
-</ol>
-<h2 id="1-2-SpringBootWeb快速入门吧"><a href="#1-2-SpringBootWeb快速入门吧" class="headerlink" title="1.2 SpringBootWeb快速入门吧"></a>1.2 SpringBootWeb快速入门吧</h2><ol>
-<li>步骤：<ul>
-<li>创建springboot工程，并勾选web开发相关依赖</li>
-<li>定义HelloController类，添加方法 hello，并添加注解</li>
-<li>运行测试</li>
-</ul>
-</li>
-</ol>
-<h1 id="二、HTTP协议"><a href="#二、HTTP协议" class="headerlink" title="二、HTTP协议"></a>二、HTTP协议</h1><h2 id="2-1-HTTP-概述"><a href="#2-1-HTTP-概述" class="headerlink" title="2.1 HTTP-概述"></a>2.1 HTTP-概述</h2><ol>
-<li><p>HTTP概念：Hyper Text Transfer Protocol，超文本传输协议，规定了浏览器与服务器之间的数据传输的规则</p>
-<p><img src="/../JavaWebImage/HTTP%E5%8D%8F%E8%AE%AE.png"></p>
-</li>
-<li><p>特点：</p>
+<li><p><strong>第八步：</strong>「见证奇迹的时刻」，即从牌顶向下放七张牌，则此刻</p>
 <ul>
-<li>基于TCP协议：面向连接，安全</li>
-<li>基于请求-响应模型的：一个请求对应一次相应</li>
-<li>HTTP协议是无状态的协议：对于事物处理没有记忆能力。每次请求-响应都是独立的<ul>
-<li>缺点：多次请求间不能共享数据</li>
-<li>优点：速度快</li>
+<li>男生牌序为：<code>****K*</code></li>
+<li>女生牌序为：<code>**K**</code></li>
 </ul>
 </li>
-</ul>
-</li>
-</ol>
-<h2 id="2-2-HTTP-请求协议"><a href="#2-2-HTTP-请求协议" class="headerlink" title="2.2 HTTP-请求协议"></a>2.2 HTTP-请求协议</h2><ol>
-<li><p>HTTP-请求数据格式</p>
-<p><img src="/../JavaWebImage/HTTP%E8%AF%B7%E6%B1%82%E6%A0%BC%E5%BC%8F.png"></p>
-</li>
-<li><p>常见请求头代表的含义:</p>
-<table>
-<thead>
-<tr>
-<th align="center">请求头</th>
-<th>含义</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">Host</td>
-<td>请求的主机名</td>
-</tr>
-<tr>
-<td align="center">User-Agent</td>
-<td>浏览器版本，例如Chrome浏览器的标识类似Mozilla&#x2F;5.0 … Chrome&#x2F;79，IE浏览器的标识类似Mozilla&#x2F;5.0(Windows NT …)like Gecko</td>
-</tr>
-<tr>
-<td align="center">Accept</td>
-<td>表示浏览器能接收的资源类型，如<code>text/*</code>，<code>image/*</code>或者<code>*/*</code>标识所有</td>
-</tr>
-<tr>
-<td align="center">Accept-Language</td>
-<td>表示浏览器偏好语言，服务器可以据此返回不同语言的网页</td>
-</tr>
-<tr>
-<td align="center">Accept-Encoding</td>
-<td>表示浏览器可以支持的压缩类型，例如gzip，deflate等</td>
-</tr>
-<tr>
-<td align="center">Content-Type</td>
-<td>请求主体的数据类型</td>
-</tr>
-<tr>
-<td align="center">Content-Length</td>
-<td>请求主体的大小（单位：字节）</td>
-</tr>
-</tbody></table>
-</li>
-</ol>
-<h2 id="2-3-HTTP-响应协议"><a href="#2-3-HTTP-响应协议" class="headerlink" title="2.3 HTTP-响应协议"></a>2.3 HTTP-响应协议</h2><ol>
-<li><p>HTTP-响应数据格式</p>
-<p><img src="/../JavaWebImage/HTTP%E5%93%8D%E5%BA%94%E6%A0%BC%E5%BC%8F.png"></p>
-</li>
-<li><p>常见状态码</p>
-<table>
-<thead>
-<tr>
-<th align="center">状态码</th>
-<th align="center">含义</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">200</td>
-<td align="center">客户端请求成功</td>
-</tr>
-<tr>
-<td align="center">404</td>
-<td align="center">请求资源不存在，一般是 URL 输入有误，或者网站资源被删除了</td>
-</tr>
-<tr>
-<td align="center">500</td>
-<td align="center">服务器发生不可预期的错误</td>
-</tr>
-</tbody></table>
-</li>
-<li><p>常见响应头：</p>
-<table>
-<thead>
-<tr>
-<th align="center">响应头</th>
-<th>含义</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">Content-Type</td>
-<td>表示响应内容的类型，例如text&#x2F;html，application&#x2F;json</td>
-</tr>
-<tr>
-<td align="center">Content-Length</td>
-<td>表示该响应内容的长度（字节数）</td>
-</tr>
-<tr>
-<td align="center">Content-Encoding</td>
-<td>表示该响应头压缩算法，例如gzip</td>
-</tr>
-<tr>
-<td align="center">Cache-Control</td>
-<td>指示客户端应如何缓存，例如max-age&#x3D;300表示可以最多缓存300秒</td>
-</tr>
-<tr>
-<td align="center">Set-Cookie</td>
-<td>告诉浏览器为当前页面所在的域设置cookie</td>
-</tr>
-</tbody></table>
-</li>
-</ol>
-<h1 id="三、Web服务器-Tomcat"><a href="#三、Web服务器-Tomcat" class="headerlink" title="三、Web服务器-Tomcat"></a>三、Web服务器-Tomcat</h1><h2 id="3-1-简介"><a href="#3-1-简介" class="headerlink" title="3.1 简介"></a>3.1 简介</h2><h3 id="3-1-1-服务器概述"><a href="#3-1-1-服务器概述" class="headerlink" title="3.1.1 服务器概述"></a>3.1.1 服务器概述</h3><ol>
-<li><p>服务器硬件：指的也是计算机，只不过服务器要比我们日常使用的计算机大很多。</p>
+<li><p><strong>第九步：</strong>「好运留下来，烦恼丢出去」，即取顶部的牌置于牌堆底部，然后丢一张，如此循环：</p>
 <ul>
-<li>服务器，也称伺服器。是提供计算服务的设备。由于服务器需要响应服务请求，并进行处理，因此一般来说服务器应具备承担服务并且保障服务的能力。</li>
-<li>服务器的构成包括处理器、硬盘、内存、系统总线等，和通用的计算机架构类似，但是由于需要提供高可靠的服务，因此在处理能力、稳定性、可靠性、安全性、可扩展性、可管理性等方面要求较高。</li>
-<li>在网络环境下，根据服务器提供的服务类型不同，可分为：<em>文件服务器</em>，<em>数据库服务器</em>，<em>应用程序服务器</em>，<em>WEB服务器</em>等。</li>
-<li>服务器只是一台设备，必须安装服务器软件才能提供相应的服务。</li>
+<li>第一轮：男生：<code>**K**</code>，女生：<code>K***</code></li>
+<li>第二轮：男生：<code>K***</code>，女生：<code>**K</code></li>
+<li>第三轮：男生：<code>**K</code>，女生：<code>K*</code></li>
+<li>第四轮：男生：<code>K*</code>，女生：<code>K</code></li>
+<li>第五轮：男生：<code>K</code></li>
 </ul>
 </li>
-<li><p>服务器软件：基于ServerSocket编写的程序</p>
-<ul>
-<li>服务器软件本质是一个运行在服务器设备上的应用程序</li>
-<li>能够接收客户端请求，并根据请求给客户端响应数据</li>
+<li><p><strong>第十步：</strong>此时我们发现剩余的一张牌与藏起来的牌可以合成一整张</p>
+<img src="..\others\小尼.png" style="zoom:50%;" /></li>
 </ul>
-</li>
-<li><p>服务器概念：</p>
-<p><img src="/../JavaWebImage/%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%A6%82%E5%BF%B5.png"></p>
-</li>
-</ol>
-<h3 id="3-1-2-Web服务器"><a href="#3-1-2-Web服务器" class="headerlink" title="3.1.2 Web服务器"></a>3.1.2 Web服务器</h3><ol>
-<li>Web服务器：<ul>
-<li>Web服务器是一个软件程序，对HTTP协议进行封装，使得程序员不必对协议进行操作，让Web开发更加便捷。</li>
-<li>主要功能是“提供网上信息浏览服务”。</li>
-</ul>
-</li>
-<li>常见的Web服务器：<ul>
-<li>Tomcat</li>
-<li>jetty</li>
-<li>WebLogic</li>
-<li>WebSphere</li>
-</ul>
-</li>
-<li>Tomcat<ul>
-<li>概念：Tomcat 是 Apache 软件基金会一个核心项目，是一个开源免费的轻量级Web服务器，支持 Servlet&#x2F;JSP 少量 JavaEE 规范。</li>
-<li>JavaEE：Java Enterprise Edition，Java企业版。指Java企业级开发的技术规范总和。包含13项技术：JDBC、JNDI、EJB、RMI、JSP、Servlet、XML、Java IDL、JTS、JTA、JavaMail、JAF</li>
-<li>Tomcat 也被称为 Web容器、Servlet容器。Servlet程序需要依赖 Tomcat才能运行</li>
-<li>官网：<a target="_blank" rel="noopener" href="https://tomcat.apache.org/">https://tomcat.apache.org/</a></li>
-</ul>
-</li>
-</ol>
-<h2 id="3-2-基本使用"><a href="#3-2-基本使用" class="headerlink" title="3.2 基本使用"></a>3.2 基本使用</h2><h3 id="3-2-1-下载"><a href="#3-2-1-下载" class="headerlink" title="3.2.1 下载"></a>3.2.1 下载</h3><ol>
-<li>直接从官方网站下载：<a target="_blank" rel="noopener" href="https://tomcat.apache.org/download-90.cgi">https://tomcat.apache.org/download-90.cgi</a></li>
-<li>打开官网选择：<code>64-bit Windows zip(pgp,sha512)</code></li>
-<li>Tomcat软件类型说明<ul>
-<li>tar.gz文件，是linux和mac操作系统下的压缩版本</li>
-<li>zip文件，是window操作系统下压缩版本（我们选择zip文件）</li>
-</ul>
-</li>
-</ol>
-<h3 id="3-2-2-安装与卸载"><a href="#3-2-2-安装与卸载" class="headerlink" title="3.2.2 安装与卸载"></a>3.2.2 安装与卸载</h3><ol>
-<li><p><strong>安装:</strong> Tomcat是绿色版，直接解压即安装</p>
-<ul>
-<li><p>注意，Tomcat在解压缩的时候，解压所在的目录可以任意，但最好解压到一个&#x3D;&#x3D;不包含中文和空格的目录&#x3D;&#x3D;，因为后期在部署项目的时候，如果路径有中文或者空格可能会导致程序部署失败。</p>
-</li>
-<li><p>打开<code>Tomcat</code>目录就能看到如下目录结构，每个目录中包含的内容需要认识下</p>
-<p><img src="/../JavaWebImage/Tomcat%E7%9B%AE%E5%BD%95.png"></p>
-</li>
-<li><p>bin：目录下有两类文件，一种是以<code>.bat</code>结尾的，是Windows系统的可执行文件，一种是以<code>.sh</code>结尾的，是Linux系统的可执行文件。</p>
-</li>
-<li><p>webapps：就是以后项目部署的目录</p>
-</li>
-</ul>
-</li>
-<li><p><strong>卸载：</strong>卸载比较简单，可以直接删除目录即可</p>
-</li>
-</ol>
-<h3 id="3-2-3-启动与关闭"><a href="#3-2-3-启动与关闭" class="headerlink" title="3.2.3 启动与关闭"></a>3.2.3 启动与关闭</h3><ol>
-<li><p>启动Tomcat</p>
-<ul>
-<li><p>双击tomcat解压目录<code>/bin/startup.bat</code>文件即可启动tomcat</p>
-</li>
-<li><p>注意: tomcat服务器启动后,黑窗口不会关闭,只要黑窗口不关闭,就证明tomcat服务器正在运行</p>
-</li>
-<li><p>Tomcat的默认端口为8080，所以在浏览器的地址栏输入：<code>http://IP地址:8080</code> 即可访问tomcat服务器</p>
-</li>
-<li><p>Tomcat启动的过程中，遇到控制台有中文乱码时，可以通常修改<code>conf/logging.prooperties</code>文件解决</p>
-<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">java.util.logging.ConsoleHandler.encoding</span> = <span class="string">GBK</span></span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li><p>关闭有三种方式 </p>
-<ul>
-<li>强制关闭：直接x掉Tomcat窗口（不建议）</li>
-<li>正常关闭：<code>bin\shutdown.bat</code></li>
-<li>正常关闭：在Tomcat启动窗口中按下 Ctrl+C</li>
-</ul>
-</li>
-</ol>
-<h3 id="3-2-4-部署项目"><a href="#3-2-4-部署项目" class="headerlink" title="3.2.4 部署项目"></a>3.2.4 部署项目</h3><ol>
-<li>Tomcat部署项目：<ul>
-<li>将项目放置到 webapps 目录下，即部署完成</li>
-</ul>
-</li>
-</ol>
-<h3 id="3-2-5-常见问题"><a href="#3-2-5-常见问题" class="headerlink" title="3.2.5 常见问题"></a>3.2.5 常见问题</h3><ol>
-<li><p>Tomcat启动时，窗口一闪而过</p>
-<ul>
-<li>检查Java环境变量是否配置正确</li>
-</ul>
-</li>
-<li><p>端口号冲突</p>
-<ul>
-<li><p>发生问题的原因：Tomcat使用的端口被占用了。</p>
-</li>
-<li><p>解决方案一：结束占用8080端口的程序</p>
-</li>
-<li><p>解决方案二：换Tomcat端口号,要想修改Tomcat启动的端口号，需要修改<code>conf/server.xml</code>文件</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Connector</span> <span class="attr">port</span>=<span class="string">&quot;8080&quot;</span> <span class="attr">protocol</span>=<span class="string">&quot;HTTP/1.1&quot;</span></span></span><br><span class="line"><span class="tag">               <span class="attr">connectionTimeout</span>=<span class="string">&quot;20000&quot;</span></span></span><br><span class="line"><span class="tag">               <span class="attr">redirectPort</span>=<span class="string">&quot;8443&quot;</span></span></span><br><span class="line"><span class="tag">               <span class="attr">maxParameterCount</span>=<span class="string">&quot;1000&quot;</span></span></span><br><span class="line"><span class="tag">               /&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="三、代码实现（Python）"><a href="#三、代码实现（Python）" class="headerlink" title="三、代码实现（Python）"></a>三、代码实现（Python）</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">cards = [<span class="string">&#x27;J&#x27;</span>, <span class="string">&#x27;Q&#x27;</span>, <span class="string">&#x27;K&#x27;</span>, <span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;J&#x27;</span>, <span class="string">&#x27;Q&#x27;</span>, <span class="string">&#x27;K&#x27;</span>, <span class="string">&#x27;A&#x27;</span>]</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;原始排序：<span class="subst">&#123;cards&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># step1：把最顶上和名字字数相同的牌数放到最下面</span></span><br><span class="line">name_len = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&quot;      请输入您名字的字数：&quot;</span>))</span><br><span class="line"><span class="keyword">if</span> name_len &gt; <span class="number">8</span>:</span><br><span class="line">    name_len -= <span class="number">8</span></span><br><span class="line">step1 = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(name_len):</span><br><span class="line">    step1.append(cards[i])</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(name_len):</span><br><span class="line">    cards.pop(<span class="number">0</span>)</span><br><span class="line">cards.extend(step1)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;step1排序：<span class="subst">&#123;cards&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># step2：拿出3张牌插入中间任意位置，本代码将其插入取出后牌堆的第一张和第二张牌之间</span></span><br><span class="line">step2 = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">3</span>):</span><br><span class="line">    step2.append(cards[i])</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">3</span>):</span><br><span class="line">    cards.pop(<span class="number">0</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">3</span>):</span><br><span class="line">    cards.insert(<span class="number">1</span>, step2[<span class="number">2</span>-i])</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;step2排序：<span class="subst">&#123;cards&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># step3：将第一张牌取出来</span></span><br><span class="line">hide_card = cards.pop(<span class="number">0</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;step3排序：<span class="subst">&#123;cards&#125;</span>，藏起来的牌为“<span class="subst">&#123;hide_card&#125;</span>”&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># step4：根据南北方人随机抽 1 ~ 3 张牌，将其插入中间任意位置，本代码将其插入取出后牌堆的第一张和第二张牌之间</span></span><br><span class="line">local = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&quot;      南方人扣1，北方人扣2，不确定扣3：&quot;</span>))</span><br><span class="line">step3 = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(local):</span><br><span class="line">    step2.append(cards[i])</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(local):</span><br><span class="line">    cards.pop(<span class="number">0</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(local):</span><br><span class="line">    cards.insert(<span class="number">1</span>, step2[local - <span class="number">1</span> -i])</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;step4排序：<span class="subst">&#123;cards&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># step5：男生丢一张牌，女生丢两张牌</span></span><br><span class="line">gender = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&quot;      男生扣1，女生扣2，都不是扣3：&quot;</span>))</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(gender):</span><br><span class="line">    cards.pop(<span class="number">0</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;step5排序：<span class="subst">&#123;cards&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># step6：“见证奇迹的时刻”</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">7</span>):</span><br><span class="line">    card = cards.pop(<span class="number">0</span>)</span><br><span class="line">    cards.append(card)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;step6排序：<span class="subst">&#123;cards&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># step7：“好运留下来，烦恼丢出去”</span></span><br><span class="line"><span class="keyword">while</span> <span class="built_in">len</span>(cards) != <span class="number">1</span>:</span><br><span class="line">    card = cards.pop(<span class="number">0</span>)</span><br><span class="line">    cards.append(card)</span><br><span class="line">    card = cards.pop(<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;您藏起来的牌为：<span class="subst">&#123;hide_card&#125;</span>，最后剩余的牌为：<span class="subst">&#123;cards&#125;</span>&quot;</span>)</span><br></pre></td></tr></table></figure>
 
-<p>HTTP协议默认端口号为80，如果将Tomcat端口号改为80，则将来访问Tomcat时，将不用输入端口号。</p>
-</li>
-</ul>
-</li>
-</ol>
-<h2 id="3-3-入门程序解析"><a href="#3-3-入门程序解析" class="headerlink" title="3.3 入门程序解析"></a>3.3 入门程序解析</h2><ol>
-<li><p>起步依赖：</p>
-<ul>
-<li>spring-boot-starter-web：包含了web应用开发所需要的常见依赖</li>
-<li>spring-boot-starter-test：包含了单元测试所需要的常见依赖</li>
-</ul>
-</li>
-<li><p>内嵌Tomcat</p>
-<ul>
-<li>在我们的SpringBoot中，引入了web运行环境(也就是引入spring-boot-starter-web起步依赖)，其内部已经集成了内置的Tomcat服务器。</li>
-</ul>
-</li>
-</ol>
+
+
+<h1 id="四、总结"><a href="#四、总结" class="headerlink" title="四、总结"></a>四、总结</h1><p>​		根据实现步骤的第九步，于是我们可以总结发现被藏起来的牌永远在奇数位置，这是一种特殊的“约瑟夫环”问题。通过对春晚魔术《守岁共此时》的技术剖析，我们可以看到数学与艺术的完美结合所带来的独特魅力。这种魅力不仅让观众在欣赏魔术表演的过程中感受到了欢乐和惊奇，也让我们对数学和艺术的关系有了更深刻的认识，并为我们带来更多的欢乐和享受。</p>
  
       <!-- reward -->
       
@@ -437,32 +219,30 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://littlewin8.github.io/2024/03/15/JavaWeb_SpringBootWeb%E5%85%A5%E9%97%A8/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://littlewin8.github.io/2024/02/11/%E3%80%8A%E5%AE%88%E5%B2%81%E5%85%B1%E6%AD%A4%E6%97%B6%E3%80%8B%E9%AD%94%E6%9C%AF%E8%A7%A3%E6%9E%90/" alt="微信分享二维码">
     </div>
 </div>
 
 <div id="share-mask"></div>  
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%90%8E%E7%AB%AF/" rel="tag">后端</a></li></ul>
-
     </footer>
   </div>
 
    
   <nav class="article-nav">
     
-      <a href="/2024/03/16/JavaWeb_SpringBootWeb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/" class="article-nav-link">
+      <a href="/2024/03/15/JavaWeb_SpringBootWeb%E5%85%A5%E9%97%A8/" class="article-nav-link">
         <strong class="article-nav-caption">上一篇</strong>
         <div class="article-nav-title">
           
-            SpringBootWeb请求响应
+            SpringBootWeb入门
           
         </div>
       </a>
     
     
-      <a href="/2024/02/11/%E3%80%8A%E5%AE%88%E5%B2%81%E5%85%B1%E6%AD%A4%E6%97%B6%E3%80%8B%E9%AD%94%E6%9C%AF%E8%A7%A3%E6%9E%90/" class="article-nav-link">
+      <a href="/2023/11/25/JavaWeb_Maven/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">《守岁共此时》魔术解析</div>
+        <div class="article-nav-title">Maven</div>
       </a>
     
   </nav>
